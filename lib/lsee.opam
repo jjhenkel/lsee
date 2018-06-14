@@ -1,0 +1,14 @@
+opam-version: "1.2.2"
+name: "lsee"
+version: "1.0"
+maintainer: "Jordan Henkel <jjhenkel@cs.wisc.edu>"
+author: "Jordan Henkel <jjhenkel@cs.wisc.edu>"
+homepage: "https://github.com/jjhenkel/lsee"
+bug-reports: "https://github.com/jjhenkel/lsee/issues"
+license: "MIT"
+dev-repo: "https://github.com/jjhenkel/lsee"
+build: [
+  ["jbuilder build"]
+]
+remove: ["ocamlfind" "remove" "project"]
+depends: "ocamlfind"

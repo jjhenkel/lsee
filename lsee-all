@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CNT=1
+TOT=$(find $1 -type f -name "*.ml" | wc -l)
+
+for t in $(find $1 -type f -name "*.ml"); do
+  echo "[lsee][$CNT/$TOT] Ingesting $t... " 
+  $DIR/lsee $t
+  CNT=$((CNT+1))
+done

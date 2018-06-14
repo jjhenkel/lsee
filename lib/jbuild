@@ -1,0 +1,6 @@
+(jbuild_version 1)
+
+(library
+ ((name        lsee)
+  (public_name lsee)
+  (libraries (zarith z3 hashcons batteries stdio))))
