@@ -2,6 +2,9 @@
 
 TRACE_FILE="/output/$(basename $1 .ml).traces"
 
+sudo touch "$TRACE_FILE"
+sudo chown opam "$TRACE_FILE"
+
 # Get setup
 cd /app 
 ulimit -s unlimited 
