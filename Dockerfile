@@ -26,7 +26,7 @@ RUN sudo git clone https://github.com/Z3Prover/z3.git /z3 && \
 
 RUN opam init -y && eval `opam config env` && \
   cd /z3 && python3 scripts/mk_make.py -g --ml && \ 
-  cd build && make -j$(nproc) && sudo "PATH=$PATH" make install && \
+  cd build && make -j$(getconf _NPROCESSORS_ONLN) && sudo "PATH=$PATH" make install && \
   ocamlfind install z3 /home/opam/.opam/4.05.0+flambda/lib/Z3/*
 
 COPY . /app 
