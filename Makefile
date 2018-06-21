@@ -29,6 +29,7 @@ MAKE:=${ROOT_DIR}/../tools/make
 .PHONY: hexchat
 .PHONY: nmap
 .PHONY: curl
+.PHONY: rq4
 .PHONY: linux
 .PHONY: collect
 
@@ -85,6 +86,22 @@ curl: lsee ## Generates traces for curl and creates merged trace corpus.
 	time ${MAKE} --output-sync -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
 	@echo "[lsee] Generated traces! Run 'NAME=curl make collect' to build a trace corpus."
+
+rq4: lsee ## Generates traces for rq4 and creates good/bad trace corpora.
+	@echo "[lsee] Generating traces for rq4..."
+	@echo "[lsee] Using $$(getconf _NPROCESSORS_ONLN) workers..."
+	${ROOT_DIR}/lsee-all ../c2ocaml/artifacts/rq4
+	time ${MAKE} --output-sync -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
+	@echo "[lsee] Creating trace corpus ${ROOT_DIR}/rq4-good.traces.txt"
+	cat ${ROOT_DIR}/artifacts/rq4-*-good.c.traces > "${ROOT_DIR}/rq4-good.traces.txt"
+	@echo "[lsee] Corpus created with $$(cat ${ROOT_DIR}/rq4-good.traces.txt | wc -l) traces."
+	@echo "[lsee] Creating trace corpus ${ROOT_DIR}/rq4-bad.traces.txt"
+	cat ${ROOT_DIR}/artifacts/rq4-*-bad.c.traces > "${ROOT_DIR}/rq4-bad.traces.txt"
+	@echo "[lsee] Corpus created with $$(cat ${ROOT_DIR}/rq4-bad.traces.txt | wc -l) traces."
+	@rm -f ${ROOT_DIR}/artifacts/*.traces
+	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
+	@echo "[lsee] Cleaned up ${ROOT_DIR}/artifacts"
+	@echo "[lsee] All done."
 
 linux: lsee ## Generates traces for linux v4.5-rc4 and creates merged trace corpus.
 	@echo "[lsee] Generating traces for linux (WARNING: VERY SLOW)..."
