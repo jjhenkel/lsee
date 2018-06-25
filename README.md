@@ -1,2 +1,3 @@
-# lse
-lsee - a lightweight symbolic execution engine written in OCaml
+# lsee
+
+lsee - a lightweight symbolic execution engine written in OCaml.
