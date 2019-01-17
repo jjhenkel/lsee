@@ -1,6 +1,6 @@
-FROM ocaml/opam:debian-9_ocaml-4.05.0_flambda
+FROM ocaml/opam:debian-9_ocaml-4.06.0_flambda
 
-RUN sudo apt-get install -y \
+RUN sudo apt-get update && sudo apt-get install -y \
   libgmp-dev \
   libmpfr-dev \
   make \
@@ -20,14 +20,14 @@ RUN sudo -u opam sh -c "opam update && opam install --no-checksums -y \
   mlgmpidl\
 "
 
-RUN sudo git clone https://github.com/Z3Prover/z3.git /z3 && \
+RUN sudo git clone -b z3-4.6.0 https://github.com/Z3Prover/z3.git /z3 && \
  cd /z3 && sudo git checkout tags/z3-4.6.0 && \
  sudo chown -R opam /z3
 
 RUN opam init -y && eval `opam config env` && \
   cd /z3 && python3 scripts/mk_make.py -g --ml && \ 
   cd build && make -j$(getconf _NPROCESSORS_ONLN) && sudo "PATH=$PATH" make install && \
-  ocamlfind install z3 /home/opam/.opam/4.05.0+flambda/lib/Z3/*
+  ocamlfind install z3 /home/opam/.opam/4.06.0+flambda/lib/Z3/*
 
 COPY . /app 
 WORKDIR /app
