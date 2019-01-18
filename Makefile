@@ -115,9 +115,9 @@ linux: lsee ## Generates traces for linux v4.5-rc4 and creates merged trace corp
 	@echo "[lsee] Generated traces! Run 'NAME=linux make collect' to build a trace corpus."
 
 collect: ## REQUIRES PARAMETER 'NAME=<name>' : collects all traces in the artifacts directory into a trace corpus.
-	@echo "[lsee] Creating trace corpus ${ROOT_DIR}/${NAME}.traces.txt"
-	cat ${ROOT_DIR}/artifacts/*.traces > "${ROOT_DIR}/${NAME}.traces.txt"
-	@echo "[lsee] Corpus created with $$(cat ${ROOT_DIR}/${NAME}.traces.txt | wc -l) traces."
+	@echo "[lsee] Creating trace corpus ${ROOT_DIR}/${NAME}.traces.gz"
+	find ./artifacts/ -type f -name "*.traces" -print0 | xargs -0 -n1 -I'{}' bash -c "cat {} | gzip - >> ${ROOT_DIR}/${NAME}.traces.gz"
+	@echo "[lsee] Corpus created with $$(cat ${ROOT_DIR}/${NAME}.traces.gz | gzip -cd | wc -l) traces."
 	@rm -f ${ROOT_DIR}/artifacts/*.traces
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
 	@echo "[lsee] Cleaned up ${ROOT_DIR}/artifacts"
