@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Cross-platform realpath from 
+# https://stackoverflow.com/a/18443300
+realpath() {
+  OURPWD=$PWD
+  cd "$(dirname "$1")"
+  LINK=$(readlink "$(basename "$1")")
+  while [ "$LINK" ]; do
+    cd "$(dirname "$LINK")"
+    LINK=$(readlink "$(basename "$1")")
+  done
+  REALPATH="$PWD/$(basename "$1")"
+  cd "$OURPWD"
+  echo "$REALPATH"
+}
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+MOUNT_DIR=$(realpath $(dirname $1))
+TARG=$(basename $1)
+
+docker run --rm -v "$MOUNT_DIR:/target" -v "$DIR/artifacts:/output" jjhenkel/lsee:no-df "$TARG"
