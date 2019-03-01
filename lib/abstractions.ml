@@ -288,6 +288,24 @@ module Abstractions =
                         match p.Hashcons.node with 
                         | Expr.Impl.SIntegerConstant (_, _) -> ()
                         | Expr.Impl.UIntegerConstant (_, _) -> ()
+                        (* if we have: *parameter *)
+                        | Expr.Impl.MemoryReference (_, r, _) -> (
+                            match Hashtbl.find_opt pr r.Hashcons.hkey with 
+                            | Some s -> 
+                                Hashtbl.replace pr r.Hashcons.hkey (SS.add (n ^ "$p" ^ (string_of_int idx)) s)
+                            | None -> 
+                                Hashtbl.add pr r.Hashcons.hkey (SS.add (n ^ "$p" ^ (string_of_int idx)) SS.empty)
+                        )
+                        (* or we have: &parameter 
+                           we probably still want to know if there were constraints on that parameter
+                         *)
+                        | Expr.Impl.AddressOf (_, r) -> (
+                            match Hashtbl.find_opt pr r.Hashcons.hkey with 
+                            | Some s -> 
+                                Hashtbl.replace pr r.Hashcons.hkey (SS.add (n ^ "$p" ^ (string_of_int idx)) s)
+                            | None -> 
+                                Hashtbl.add pr r.Hashcons.hkey (SS.add (n ^ "$p" ^ (string_of_int idx)) SS.empty)
+                        )
                         | _ -> (
                             match Hashtbl.find_opt pr p.Hashcons.hkey with 
                             | Some s -> 
