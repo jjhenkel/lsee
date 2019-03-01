@@ -19,4 +19,5 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 MOUNT_DIR=$(realpath $(dirname $1))
 TARG=$(basename $1)
 
+docker build -t jjhenkel/lsee .
 docker run --rm -v "$MOUNT_DIR:/target" -v "$DIR/artifacts:/output" jjhenkel/lsee "$TARG"

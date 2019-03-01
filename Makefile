@@ -58,37 +58,37 @@ redis: lsee ## Generates traces for redis and creates merged trace corpus.
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
 	@echo "[lsee] Generated traces! Run 'NAME=redis make collect' to build a trace corpus."
 
-nginx: lsee ## Generates traces for nginx and creates merged trace corpus.
+nginx-no-df: lsee-no-df ## Generates traces for nginx and creates merged trace corpus.
 	@echo "[lsee] Generating traces for nginx..."
 	@echo "[lsee] Using $$(getconf _NPROCESSORS_ONLN) workers..."
-	${ROOT_DIR}/lsee-all ../c2ocaml/artifacts/nginx
+	${ROOT_DIR}/lsee-all-no-df ../c2ocaml/artifacts/nginx
 	time make -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
-	@echo "[lsee] Generated traces! Run 'NAME=nginx make collect' to build a trace corpus."
+	@echo "[lsee] Generated traces! Run 'NAME=nginx-no-df make collect' to build a trace corpus."
 
-hexchat: lsee ## Generates traces for hexchat and creates merged trace corpus.
+hexchat-no-df: lsee-no-df ## Generates traces for hexchat and creates merged trace corpus.
 	@echo "[lsee] Generating traces for hexchat..."
 	@echo "[lsee] Using $$(getconf _NPROCESSORS_ONLN) workers..."
-	${ROOT_DIR}/lsee-all ../c2ocaml/artifacts/hexchat
+	${ROOT_DIR}/lsee-all-no-df ../c2ocaml/artifacts/hexchat
 	time make -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
-	@echo "[lsee] Generated traces! Run 'NAME=hexchat make collect' to build a trace corpus."
+	@echo "[lsee] Generated traces! Run 'NAME=hexchat-no-df make collect' to build a trace corpus."
 
-nmap: lsee ## Generates traces for nmap and creates merged trace corpus.
+nmap-no-df: lsee-no-df ## Generates traces for nmap and creates merged trace corpus.
 	@echo "[lsee] Generating traces for nmap..."
 	@echo "[lsee] Using $$(getconf _NPROCESSORS_ONLN) workers..."
-	${ROOT_DIR}/lsee-all ../c2ocaml/artifacts/nmap
+	${ROOT_DIR}/lsee-all-no-df ../c2ocaml/artifacts/nmap
 	time make -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
-	@echo "[lsee] Generated traces! Run 'NAME=nmap make collect' to build a trace corpus."
+	@echo "[lsee] Generated traces! Run 'NAME=nmap-no-df make collect' to build a trace corpus."
 
-curl: lsee ## Generates traces for curl and creates merged trace corpus.
+curl-no-df: lsee-no-df ## Generates traces for curl and creates merged trace corpus.
 	@echo "[lsee] Generating traces for curl..."
 	@echo "[lsee] Using $$(getconf _NPROCESSORS_ONLN) workers..."
-	${ROOT_DIR}/lsee-all ../c2ocaml/artifacts/curl
+	${ROOT_DIR}/lsee-all-no-df ../c2ocaml/artifacts/curl
 	time make -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
-	@echo "[lsee] Generated traces! Run 'NAME=curl make collect' to build a trace corpus."
+	@echo "[lsee] Generated traces! Run 'NAME=curl-no-df make collect' to build a trace corpus."
 
 rq4: lsee-no-df ## Generates traces for rq4 and creates good/bad trace corpora.
 	@echo "[lsee] Generating traces for rq4..."
