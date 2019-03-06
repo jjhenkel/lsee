@@ -50,24 +50,37 @@ module Driver =
               state.State.depth <- state.State.depth - 1 ;
               state.State.onpath <- Z.succ state.State.onpath ;
               (* print_endline ("On path :: " ^ (Z.to_string state.State.onpath) ^ "/" ^ (Z.to_string f.Proc.cfg.Cfg.paths)) ; *)
-              ExecutionTree.pop state.State.etree ; 
+              (* print_endline ("Pre-pop: ") ; *)
               (* ExecutionTree.pprint state.State.etree ; *)
-              if state.State.onpath == (Z.of_string "5000") then 
+              ExecutionTree.pop state.State.etree ; 
+              (* print_endline ("Post-pop: ") ; *)
+              (* ExecutionTree.pprint state.State.etree ; *)
+              if state.State.onpath == (Z.of_string "5000") then (
+                (* ExecutionTree.pprint state.State.etree ;  *)
                 ExecutionTree.traces f.Proc.name state.State.etree
-            | None -> ExecutionTree.traces f.Proc.name state.State.etree 
+              ) else ()
+            | None -> ExecutionTree.traces f.Proc.name state.State.etree
           ),
           (* Performed on push *)
           (fun (curr, state) -> 
-            (* print_endline ("PUSH :: " ^ Z.to_string state.State.idx) ; *)
+            if curr.Cfg.Vert.pushes == (Array.length curr.Cfg.Vert.succ) - 2 then (
+            (* print_endline ("PUSH :: " ^ (string_of_int curr.Cfg.Vert.pushes)) ; *)
+            (* print_endline ("CHILDREN :: " ^ (string_of_int (Array.length curr.Cfg.Vert.succ))) ; *)
             state.State.depth <- state.State.depth + 1 ;
             ExecutionTree.push state.State.etree (
-              ExecutionTree.create [] (Hashtbl.create 5012) (Array.length curr.Cfg.Vert.succ) state.State.idx)
+              ExecutionTree.create [] (Hashtbl.create 5012) (Array.length curr.Cfg.Vert.succ) state.State.idx
+            )
+            ) else ()
           ),
           (* Performed to refresh state (directly after pop) *)
           (fun (curr, state) -> 
+            (* print_endline ("PUSH 2 :: " ^ Z.to_string state.State.idx) ; *)
+            (* print_endline ("CHILDREN :: " ^ (string_of_int (Array.length curr.Cfg.Vert.succ))) ; *)
+            let _ = State.execute curr state in 
             state.State.lastblk <- curr.Cfg.Vert.blk.Block.bid ;
             ExecutionTree.push state.State.etree (
-              ExecutionTree.create [] (Hashtbl.create 5012) (Array.length curr.Cfg.Vert.succ) state.State.idx)
+              ExecutionTree.create [] (Hashtbl.create 5012) (Array.length curr.Cfg.Vert.succ) state.State.idx
+            )
           ),
           (* Initializer *)
           (fun () -> State.empty ()),

@@ -46,6 +46,7 @@ module Cfg =
     let rec dfs (curr, last, path, bl, state, skipvisit) =
       (* We only work on paths up to the threshold (upto) *)
       if path > upto then () else 
+        (* let _ = print_endline ("Visit " ^ curr.Vert.uid) in *)
         (* Visit this vertex (if we should) *)
         let _ = if skipvisit then refresh (curr, state) else visit (curr, state) in
         match curr.Vert.succ with 

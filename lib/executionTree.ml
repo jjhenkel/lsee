@@ -11,7 +11,7 @@ struct
   type t = {
     mutable a: (Abstractions.t list);
     mutable pr: (int, SS.t) Hashtbl.t;
-    d: int;
+    mutable d: int;
     i: Z.t;
     mutable c: (t list);
     mutable p: bool; 
@@ -26,7 +26,9 @@ struct
     p = true;
   }
 
-  let create a pr d i = {
+  let create a pr d i = 
+    (* let _ = print_endline ("Created abs #: " ^ (string_of_int (List.length a))) in  *)
+  {
     a = a;
     pr = pr;
     d;
@@ -34,6 +36,21 @@ struct
     c = [ ];
     p = true;
   }
+
+  let needsrefresh t = 
+    let rec worker t' = 
+      if t'.p == true then
+        Some (t'.d == ((List.length t'.c) + 1))
+      else match t'.c with 
+      | [] -> None
+      | c -> List.fold_left (
+          fun acc t'' -> match (worker t'') with 
+          | Some v -> Some v 
+          | None -> acc 
+      ) None c
+    in match (worker t) with 
+    | Some v -> v 
+    | None -> raise (Invalid_argument "Should be impossible")
 
   let currentpr t = 
     let rec worker t' = 
@@ -53,9 +70,11 @@ struct
   let push t c =
     let rec worker t' c' = 
       if t'.p == true then 
+        let _ = c'.p <- true in
+        let _ = c'.pr <- t'.pr in
         let _ = t'.c <- c' :: t'.c in 
-        let _ = t'.p <- false in
-        (c'.p <- true ; c'.pr <- t'.pr)
+        let _ = t'.d <- c'.d in
+        let _ = t'.p <- false in () 
       else match t'.c with
       | [] -> ()
       | c -> List.iter (fun t'' -> worker t'' c') c
@@ -64,7 +83,7 @@ struct
   let append t c = 
     let rec worker t' c' = 
       if t'.p == true then 
-        (t'.a <- t'.a @ c'.a ; 
+        (t'.d <- c'.d ; t'.a <- t'.a @ c'.a ; 
            Hashtbl.iter (fun k a ->
              match Hashtbl.find_opt t'.pr k with 
              | Some s -> Hashtbl.replace t'.pr k (SS.union s a)
@@ -101,10 +120,12 @@ struct
         ) a 
     in let rec worker t' d = match t'.c with
     | [] -> 
-      print_abs t'.a d ; print_endline ""
+      let toprint = (String.make (2*(d+1)) ' ') ^  (if t'.p == true then "(***) " ^ (string_of_int (List.length t'.c)) ^ "/" ^ (string_of_int t'.d) else (string_of_int (List.length t'.c)) ^ "/" ^ (string_of_int t'.d))
+      in (print_abs t'.a d ; print_endline toprint)
     | c -> 
-      print_abs t'.a d ; print_endline "" ; 
-      List.iter (fun t'' -> worker t'' (d+1) ;) c 
+      let toprint = (String.make (2*(d+1)) ' ') ^  (if t'.p == true then "(***) " ^ (string_of_int (List.length t'.c)) ^ "/" ^ (string_of_int t'.d) else (string_of_int (List.length t'.c)) ^ "/" ^  (string_of_int t'.d))
+      in (print_abs t'.a d ; print_endline toprint ; 
+      List.iter (fun t'' -> worker t'' (d+1) ;) c)
     in worker tree 0 
 
   let rec final_cleanup traces = match traces with 

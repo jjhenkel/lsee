@@ -58,9 +58,9 @@ module State =
     | Action.Impl.Called e -> 
         Action.call (Expr.substitute e (get state))  
     | Action.Impl.Assumed (idx, e) -> 
-        if state.lastblk == idx then 
-          Action.assume (idx, (Expr.substitute e (get state)))
-        else 
+        if state.lastblk == idx then (
+          Action.assume (idx, (Expr.substitute e (get state))) 
+        ) else 
           Action.nop
     | Action.Impl.Observed e -> 
         Action.observe (Expr.substitute e (get state))
