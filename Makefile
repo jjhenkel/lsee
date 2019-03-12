@@ -122,6 +122,14 @@ linux-no-df: lsee-no-df ## Generates traces for linux v4.5-rc4 using no-df confi
 	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
 	@echo "[lsee] Generated traces! Run 'NAME=linux-no-df make collect' to build a trace corpus."
 
+linux-spec-stuff: ## Generates traces for linux v4.5-rc4 using no-df configuration.
+	@echo "[lsee] Generating traces for linux (WARNING: VERY SLOW)..."
+	@echo "[lsee] Using $$(getconf _NPROCESSORS_ONLN) workers..."
+	${ROOT_DIR}/lsee-all-spec-stuff ../c2ocaml/artifacts/linux-latest
+	time make -f ./artifacts/Makefile.temp -j$$(getconf _NPROCESSORS_ONLN) all
+	@rm -f ${ROOT_DIR}/artifacts/Makefile.temp
+	@echo "[lsee] Generated traces! Run 'NAME=linux-spec-stuff make collect' to build a trace corpus."
+
 collect: ## REQUIRES PARAMETER 'NAME=<name>' : collects all traces in the artifacts directory into a trace corpus.
 	@echo "[lsee] Creating trace corpus ${ROOT_DIR}/${NAME}.traces.gz"
 	find ./artifacts/ -type f -name "*.traces" -print0 | xargs -0 -n1 -I'{}' bash -c "cat {} | gzip - >> ${ROOT_DIR}/${NAME}.traces.gz"

@@ -1,1 +1,4 @@
 artifacts/
+*.traces.gz
+test*.ml
+README.md

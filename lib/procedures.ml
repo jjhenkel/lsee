@@ -45,7 +45,7 @@ module Cfg =
   let traversepaths (upto, visit, visitpath, visitpush, refresh, initstate, cfg) = 
     let rec dfs (curr, last, path, bl, state, skipvisit) =
       (* We only work on paths up to the threshold (upto) *)
-      if path > upto then () else 
+      if path > upto then () else (
         (* let _ = print_endline ("Visit " ^ curr.Vert.uid) in *)
         (* Visit this vertex (if we should) *)
         let _ = if skipvisit then refresh (curr, state) else visit (curr, state) in
@@ -55,20 +55,23 @@ module Cfg =
            reached the end of a path! Increment our counter and continue
            the depth first exploration
         *)
-        | [| |] -> 
+        | [| |] -> (
           (* Make sure we can keep going *)
-          if Stack.is_empty last then visitpath (None, state) else 
+          if Stack.is_empty last then visitpath (None, state) else (
             (* Pop off the stack, we've reached an exit *)
             let (newcurr, newbl) = Stack.pop last
             (* Visit this path *)
             in let _ = visitpath (Some newcurr, state)
             (* Continue our search from this new starting point *)
-            in dfs (newcurr, last, Z.succ path, newbl, state, true)  
+            in dfs (newcurr, last, Z.succ path, newbl, state, true)
+          )
+        )
         (* No choice, so we just continue on *)
-        | [| e |] -> 
+        | [| e |] -> (
           dfs (cfg.adj.(e.Edge.idx), last, path, Z.sub bl e.Edge.low, state, false)
+        )
         (* In this case we have a branch or switch *)
-        | _ as arr -> 
+        | _ as arr -> (
           (* If we are coming in 'clean' refersh push count *)
           let _ = if skipvisit then () 
             else 
@@ -90,6 +93,8 @@ module Cfg =
           in let newcurr = cfg.adj.(correctedge.Edge.idx) 
           (* Continue our depth first exploration *)
           in dfs (newcurr, last, path, Z.sub bl correctedge.Edge.low, state, false)
+        )
+      )
     (* Start our search from entry (always 0 in adj list) *)
     in dfs (cfg.adj.(0), Stack.create (), Z.zero, Z.zero, initstate (), false)
 end

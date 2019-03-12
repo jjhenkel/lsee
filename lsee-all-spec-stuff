@@ -1,0 +1,33 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CNT=1
+TOT=$(find $1 -type f -name "*.ml" | wc -l)
+MAKEFILE="$DIR/artifacts/Makefile.temp"
+
+rm -f "$MAKEFILE" &> /dev/null
+
+echo -e "SHELL := /bin/bash\n" >> "$MAKEFILE"
+
+echo "" >> "$MAKEFILE"
+for t in $(find $1 -type f -name "*.ml"); do
+  echo -e "all: $t" >> "$MAKEFILE"
+done
+
+echo "" >> "$MAKEFILE"
+for t in $(find $1 -type f -name "*.ml"); do
+  echo -e "$t:" >> "$MAKEFILE"
+  echo -e "\t$DIR/lsee-spec-stuff $t" >> "$MAKEFILE"
+  echo -e "\t@echo '[lsee][$CNT/$TOT] Ingesting $t...'" >> "$MAKEFILE" 
+  echo "" >> "$MAKEFILE"
+  CNT=$((CNT+1))
+done
+
+echo "" >> "$MAKEFILE"
+echo ".PHONY: all" >> "$MAKEFILE"
+for t in $(find $1 -type f -name "*.ml"); do
+  echo ".PHONY: $t" >> "$MAKEFILE"
+done
+
+echo "[lsee] Temporary Makefile generated"
+
