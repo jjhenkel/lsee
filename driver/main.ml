@@ -12,40 +12,18 @@ open Expressions;;
 
 let main = 
 (*-------------------------------------------------------- 
-  // working_directory: /target/hexchat/build
-  // source_file_name: ../src/common/server.c
-  // base_name: server.c
-  // name: traverse_http
-  // fid: 1008
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: bugReportStart
+  // fid: 57
   ---------------------------------------------------------*)
 
   let _typeSELF = GccType.pointer(GccType.self)
-  in let type0x7f9e66d6c690 = 
-    GccType.integer(false, 32, 32, Z.of_string "0", Z.of_string "4294967295")
-  in let type0x7f9e66d6c5e8 = 
+  in let type0x7f41993c45e8 = 
     GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
-  in let type0x7f9e66d6c3f0 = 
-    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
-  in let type0x7f9e660ccbd0 = 
-    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
-  in let type0x7f9e64864d20 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "511")
-  in let type0x7f9e64864dc8 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e64864d20)
-  in let type0x7f9e64864b28 = 
-    GccType.pointer(type0x7f9e64864dc8)
-  in let type0x7f9e66d6c7e0 = 
-    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
-  in let type0x7f9e64889690 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "24")
-  in let type0x7f9e64889738 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e64889690)
-  in let type0x7f9e648897e0 = 
-    GccType.pointer(type0x7f9e64889738)
-  in let type0x7f9e66d77f18 = 
-    GccType.pointer(type0x7f9e66d6c3f0)
-  in let type0x7f9e64b5ab28 = 
-    GccType.record("hexchatprefs", [|
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
         (* var decls *)
       |], [|
         (* field decls *)
@@ -54,313 +32,43 @@ let main =
       |], [|
         (* const decls *)
       |])
-  in let type0x7f9e6489f0a8 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "251")
-  in let type0x7f9e6489f2a0 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e6489f0a8)
-  in let type0x7f9e6489f348 = 
-    GccType.pointer(type0x7f9e6489f2a0)
-  in let type0x7f9e65e7f150 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "5")
-  in let type0x7f9e65e7f2a0 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e65e7f150)
-  in let type0x7f9e6484dbd0 = 
-    GccType.pointer(type0x7f9e65e7f2a0)
-  in let type0x7f9e65f68348 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "31")
-  in let type0x7f9e65f683f0 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e65f68348)
-  in let type0x7f9e6486cbd0 = 
-    GccType.pointer(type0x7f9e65f683f0)
-  in let type0x7f9e66d6cf18 = 
+  in let type0x7f41993c4f18 = 
     GccType.void
-  in let type0x7f9e65d94d20 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "255")
-  in let type0x7f9e65d94dc8 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e65d94d20)
-  in let type0x7f9e64864930 = 
-    GccType.pointer(type0x7f9e65d94dc8)
-  in let type0x7f9e66d6c000 = 
-    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
-  in let type0x7f9e660cc7e0 = 
-    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
-  in let type0x7f9e660e8150 = 
-    GccType.pointer(type0x7f9e660cc7e0)
-  in let type0x7f9e65f6d738 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "2")
-  in let type0x7f9e64878f18 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e65f6d738)
-  in let type0x7f9e64889348 = 
-    GccType.pointer(type0x7f9e64878f18)
-  in let type0x7f9e66ed7dc8 = 
-    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
-  in let type0x7f9e66e72498 = 
-    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
-  in let type0x7f9e66d74150 = 
-    GccType.void
-  in let type0x7f9e66d741f8 = 
-    GccType.pointer(type0x7f9e66d74150)
-  in let type0x7f9e66eb81f8 = 
-    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "3")
-  in let type0x7f9e66eb82a0 = 
-    GccType.array(type0x7f9e66d6c3f0, type0x7f9e66eb81f8)
-  in let type0x7f9e6489f7e0 = 
-    GccType.pointer(type0x7f9e66eb82a0)
-  in let expr0x7f9e64980e58 = 
-    Expr.ssa("_1", 1, Expr.nothing(type0x7f9e66d6c690))
-  in let expr0x7f9e66d54f48 = 
-    Expr.u_int_cst(type0x7f9e66d6c690, Z.of_string "0")
-  in let expr0x7f9e6489e510 = 
-    Expr.variable_decl(type0x7f9e66d6c5e8, VarDecl.make("n", 32, 32))
-  in let expr0x7f9e649ed090 = 
-    Expr.ssa("n_16", 16, expr0x7f9e6489e510)
-  in let expr0x7f9e649ed318 = 
-    Expr.ssa("n_25", 25, expr0x7f9e6489e510)
-  in let expr0x7f9e649ed4c8 = 
-    Expr.ssa("n_31", 31, expr0x7f9e6489e510)
-  in let expr0x7f9e649ed708 = 
-    Expr.ssa("n_39", 39, expr0x7f9e6489e510)
-  in let expr0x7f9e65fa1240 = 
-    Expr.s_int_cst(type0x7f9e66d6c5e8, Z.of_string "11")
-  in let expr0x7f9e6498d318 = 
-    Expr.ssa("_12", 12, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e66d71078 = 
-    Expr.s_int_cst(type0x7f9e66d6c5e8, Z.of_string "0")
-  in let expr0x7f9e6498d3f0 = 
-    Expr.ssa("_14", 14, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e649ed798 = 
-    Expr.ssa("n_41", 41, expr0x7f9e6489e510)
-  in let expr0x7f9e66d71090 = 
-    Expr.s_int_cst(type0x7f9e66d6c5e8, Z.of_string "1")
-  in let expr0x7f9e6498d480 = 
-    Expr.ssa("_15", 15, Expr.nothing(type0x7f9e66d6c3f0))
-  in let expr0x7f9e648a0f90 = 
-    Expr.u_int_cst(type0x7f9e66d6c3f0, Z.of_string "10")
-  in let expr0x7f9e649ed0d8 = 
-    Expr.ssa("_17", 17, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e649ed870 = 
-    Expr.ssa("_44", 44, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e649ed828 = 
-    Expr.ssa("_43", 43, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e649ed7e0 = 
-    Expr.ssa("_42", 42, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e6489e360 = 
-    Expr.variable_decl(type0x7f9e64864dc8, VarDecl.make("buf", 4096, 8))
-  in let expr0x7f9e648a4780 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e64862738 = 
-    Expr.u_int_cst(type0x7f9e66d6c7e0, Z.of_string "512")
-  in let expr0x7f9e6489a9c0 = 
-    Expr.string_cst(type0x7f9e64889738, 25, "\"CONNECT %s:%d HTTP/1.0\\r\\n\"")
-  in let expr0x7f9e648a47c0 = 
-    Expr.address_of(type0x7f9e648897e0, expr0x7f9e6489a9c0)
-  in let expr0x7f9e64894e80 = 
-    Expr.parameter_decl(type0x7f9e66d77f18, "serverAddr", type0x7f9e66d77f18)
-  in let expr0x7f9e649ed240 = 
-    Expr.ssa("serverAddr_22(D)", 22, expr0x7f9e64894e80)
-  in let expr0x7f9e64894f00 = 
-    Expr.parameter_decl(type0x7f9e66d6c5e8, "port", type0x7f9e66d6c5e8)
-  in let expr0x7f9e649ed288 = 
-    Expr.ssa("port_23(D)", 23, expr0x7f9e64894f00)
-  in let expr0x7f9e64b6a8e8 = 
-    Expr.field_decl(type0x7f9e66d6c690, FieldDecl.make("hex_net_proxy_auth", "32", 32, "352", 128, 64, false))
-  in let expr0x7f9e64c02090 = 
-    Expr.variable_decl(type0x7f9e64b5ab28, VarDecl.make("prefs", 46656, 32))
-  in let expr0x7f9e64964a20 = 
-    Expr.component_ref(type0x7f9e66d6c690, expr0x7f9e64c02090, expr0x7f9e64b6a8e8)
-  in let expr0x7f9e6489e480 = 
-    Expr.variable_decl(type0x7f9e6489f2a0, VarDecl.make("auth_data2", 2016, 8))
-  in let expr0x7f9e648a4860 = 
-    Expr.address_of(type0x7f9e6489f348, expr0x7f9e6489e480)
-  in let expr0x7f9e648a6180 = 
-    Expr.u_int_cst(type0x7f9e66d6c7e0, Z.of_string "252")
-  in let expr0x7f9e648a48a0 = 
-    Expr.string_cst(type0x7f9e65e7f2a0, 6, "\"%s:%s\"")
-  in let expr0x7f9e648a48c0 = 
-    Expr.address_of(type0x7f9e6484dbd0, expr0x7f9e648a48a0)
-  in let expr0x7f9e64b71da8 = 
-    Expr.field_decl(type0x7f9e65f683f0, FieldDecl.make("hex_net_proxy_user", "256", 8, "4304", 128, 80, false))
-  in let expr0x7f9e6489aa20 = 
-    Expr.component_ref(type0x7f9e65f683f0, expr0x7f9e64c02090, expr0x7f9e64b71da8)
-  in let expr0x7f9e648a4900 = 
-    Expr.address_of(type0x7f9e6486cbd0, expr0x7f9e6489aa20)
-  in let expr0x7f9e64b71d10 = 
-    Expr.field_decl(type0x7f9e65f683f0, FieldDecl.make("hex_net_proxy_pass", "256", 8, "4272", 128, 80, false))
-  in let expr0x7f9e6489aa50 = 
-    Expr.component_ref(type0x7f9e65f683f0, expr0x7f9e64c02090, expr0x7f9e64b71d10)
-  in let expr0x7f9e648a4940 = 
-    Expr.address_of(type0x7f9e6486cbd0, expr0x7f9e6489aa50)
-  in let expr0x7f9e6489e5a0 = 
-    Expr.variable_decl(type0x7f9e66d6c5e8, VarDecl.make("n2", 32, 32))
-  in let expr0x7f9e649ed3a8 = 
-    Expr.ssa("n2_27", 27, expr0x7f9e6489e5a0)
-  in let expr0x7f9e6498d000 = 
-    Expr.ssa("n2.27_2", 2, Expr.nothing(type0x7f9e66d6c690))
-  in let expr0x7f9e6489e3f0 = 
-    Expr.variable_decl(type0x7f9e65d94dc8, VarDecl.make("auth_data", 2048, 8))
-  in let expr0x7f9e648a49e0 = 
-    Expr.address_of(type0x7f9e64864930, expr0x7f9e6489e3f0)
-  in let expr0x7f9e648a4a20 = 
-    Expr.address_of(type0x7f9e6489f348, expr0x7f9e6489e480)
-  in let expr0x7f9e6498d048 = 
-    Expr.ssa("_3", 3, Expr.nothing(type0x7f9e66d6c7e0))
-  in let expr0x7f9e6498d090 = 
-    Expr.ssa("_4", 4, Expr.nothing(type0x7f9e66d6c7e0))
-  in let expr0x7f9e6498d0d8 = 
-    Expr.ssa("_5", 5, Expr.nothing(type0x7f9e66d6c000))
-  in let expr0x7f9e6498d120 = 
-    Expr.ssa("_6", 6, Expr.nothing(type0x7f9e660e8150))
-  in let expr0x7f9e6497fea0 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e648967a8 = 
-    Expr.string_cst(type0x7f9e65f683f0, 32, "\"Proxy-Authorization: Basic %s\\r\\n\"")
-  in let expr0x7f9e6497ff20 = 
-    Expr.address_of(type0x7f9e6486cbd0, expr0x7f9e648967a8)
-  in let expr0x7f9e6497ff40 = 
-    Expr.address_of(type0x7f9e64864930, expr0x7f9e6489e3f0)
-  in let expr0x7f9e649ed480 = 
-    Expr.ssa("_30", 30, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e6498d168 = 
-    Expr.ssa("_7", 7, Expr.nothing(type0x7f9e66d6c7e0))
-  in let expr0x7f9e6498d1b0 = 
-    Expr.ssa("_8", 8, Expr.nothing(type0x7f9e66d6c7e0))
-  in let expr0x7f9e6498d1f8 = 
-    Expr.ssa("_9", 9, Expr.nothing(type0x7f9e66d6c000))
-  in let expr0x7f9e6498d240 = 
-    Expr.ssa("_10", 10, Expr.nothing(type0x7f9e660e8150))
-  in let expr0x7f9e6497ffe0 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e648a6288 = 
-    Expr.string_cst(type0x7f9e64878f18, 3, "\"\\r\\n\"")
-  in let expr0x7f9e6498e060 = 
-    Expr.address_of(type0x7f9e64889348, expr0x7f9e648a6288)
-  in let expr0x7f9e649ed558 = 
-    Expr.ssa("_33", 33, Expr.nothing(type0x7f9e66d6c5e8))
-  in let expr0x7f9e649ed5a0 = 
-    Expr.ssa("n_34", 34, expr0x7f9e6489e510)
-  in let expr0x7f9e6498d2d0 = 
-    Expr.ssa("_11", 11, Expr.nothing(type0x7f9e66d6c7e0))
-  in let expr0x7f9e64894e00 = 
-    Expr.parameter_decl(type0x7f9e66d6c5e8, "sok", type0x7f9e66d6c5e8)
-  in let expr0x7f9e649ed5e8 = 
-    Expr.ssa("sok_35(D)", 35, expr0x7f9e64894e00)
-  in let expr0x7f9e648a4e20 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e64894d80 = 
-    Expr.parameter_decl(type0x7f9e66d6c5e8, "print_fd", type0x7f9e66d6c5e8)
-  in let expr0x7f9e649ed678 = 
-    Expr.ssa("print_fd_37(D)", 37, expr0x7f9e64894d80)
-  in let expr0x7f9e648a4ec0 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e65fb0150 = 
-    Expr.s_int_cst(type0x7f9e66d6c5e8, Z.of_string "512")
-  in let expr0x7f9e6498e260 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e648a4f80 = 
-    Expr.string_cst(type0x7f9e65e7f2a0, 6, "\"HTTP/\"")
-  in let expr0x7f9e6498e280 = 
-    Expr.address_of(type0x7f9e6484dbd0, expr0x7f9e648a4f80)
-  in let expr0x7f9e648a6330 = 
-    Expr.u_int_cst(type0x7f9e66e72498, Z.of_string "5")
-  in let expr0x7f9e6498d3a8 = 
-    Expr.ssa("_13", 13, Expr.nothing(type0x7f9e66d741f8))
-  in let expr0x7f9e6498e2e0 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e66ec7960 = 
-    Expr.u_int_cst(type0x7f9e66d6c000, Z.of_string "9")
-  in let expr0x7f9e648a8080 = 
-    Expr.string_cst(type0x7f9e66eb82a0, 4, "\"200\"")
-  in let expr0x7f9e6498e380 = 
-    Expr.address_of(type0x7f9e6489f7e0, expr0x7f9e648a8080)
-  in let expr0x7f9e6484e5a0 = 
-    Expr.u_int_cst(type0x7f9e66e72498, Z.of_string "3")
-  in let expr0x7f9e648a8180 = 
-    Expr.address_of(type0x7f9e64864b28, expr0x7f9e6489e360)
-  in let expr0x7f9e6498a3b8 = 
-    Expr.array_ref(type0x7f9e66d6c3f0, expr0x7f9e6489e360, expr0x7f9e66d71078)
-  in let expr0x7f9e6496fb40 = 
-    Expr.constructor(type0x7f9e64864dc8)
-  in let expr0x7f9e6496fb58 = 
-    Expr.constructor(type0x7f9e65d94dc8)
-  in let expr0x7f9e6496fb70 = 
-    Expr.constructor(type0x7f9e6489f2a0)
-  in let call0x7f9e64981738 = Expr.call(
-    type0x7f9e660ccbd0,
-    "g_snprintf", [|
-      (Expr.parameter("p1", 0, expr0x7f9e648a4780));
-      (Expr.parameter("p2", 1, expr0x7f9e64862738));
-      (Expr.parameter("p3", 2, expr0x7f9e648a47c0));
-      (Expr.parameter("p4", 3, expr0x7f9e649ed240));
-      (Expr.parameter("p5", 4, expr0x7f9e649ed288));
-  |])
-  in let call0x7f9e649817e0 = Expr.call(
-    type0x7f9e660ccbd0,
-    "g_snprintf", [|
-      (Expr.parameter("p1", 0, expr0x7f9e648a4860));
-      (Expr.parameter("p2", 1, expr0x7f9e648a6180));
-      (Expr.parameter("p3", 2, expr0x7f9e648a48c0));
-      (Expr.parameter("p4", 3, expr0x7f9e648a4900));
-      (Expr.parameter("p5", 4, expr0x7f9e648a4940));
-  |])
-  in let call0x7f9e64966b48 = Expr.call(
-    type0x7f9e66d6cf18,
-    "base64_encode", [|
-      (Expr.parameter("to", 0, expr0x7f9e648a49e0));
-      (Expr.parameter("from", 1, expr0x7f9e648a4a20));
-      (Expr.parameter("len", 2, expr0x7f9e6498d000));
-  |])
-  in let call0x7f9e64981888 = Expr.call(
-    type0x7f9e660ccbd0,
-    "g_snprintf", [|
-      (Expr.parameter("p1", 0, expr0x7f9e6498d120));
-      (Expr.parameter("p2", 1, expr0x7f9e6498d090));
-      (Expr.parameter("p3", 2, expr0x7f9e6497ff20));
-      (Expr.parameter("p4", 3, expr0x7f9e6497ff40));
-  |])
-  in let call0x7f9e64966be0 = Expr.call(
-    type0x7f9e660ccbd0,
-    "g_snprintf", [|
-      (Expr.parameter("p1", 0, expr0x7f9e6498d240));
-      (Expr.parameter("p2", 1, expr0x7f9e6498d1b0));
-      (Expr.parameter("p3", 2, expr0x7f9e6498e060));
-  |])
-  in let call0x7f9e64981930 = Expr.call(
-    type0x7f9e66ed7dc8,
-    "send", [|
-      (Expr.parameter("p1", 0, expr0x7f9e649ed5e8));
-      (Expr.parameter("p2", 1, expr0x7f9e648a4e20));
-      (Expr.parameter("p3", 2, expr0x7f9e6498d2d0));
-      (Expr.parameter("p4", 3, expr0x7f9e66d71078));
-  |])
-  in let call0x7f9e649819d8 = Expr.call(
-    type0x7f9e66d6c5e8,
-    "http_read_line", [|
-      (Expr.parameter("print_fd", 0, expr0x7f9e649ed678));
-      (Expr.parameter("sok", 1, expr0x7f9e649ed5e8));
-      (Expr.parameter("buf", 2, expr0x7f9e648a4ec0));
-      (Expr.parameter("len", 3, expr0x7f9e65fb0150));
-  |])
-  in let call0x7f9e64966c78 = Expr.call(
-    type0x7f9e66d6c5e8,
-    "memcmp", [|
-      (Expr.parameter("p1", 0, expr0x7f9e6498e260));
-      (Expr.parameter("p2", 1, expr0x7f9e6498e280));
-      (Expr.parameter("p3", 2, expr0x7f9e648a6330));
-  |])
-  in let call0x7f9e64966d10 = Expr.call(
-    type0x7f9e66d6c5e8,
-    "memcmp", [|
-      (Expr.parameter("p1", 0, expr0x7f9e6498d3a8));
-      (Expr.parameter("p2", 1, expr0x7f9e6498e380));
-      (Expr.parameter("p3", 2, expr0x7f9e6484e5a0));
-  |])
-  in let call0x7f9e64981a80 = Expr.call(
-    type0x7f9e66d6c5e8,
-    "http_read_line", [|
-      (Expr.parameter("print_fd", 0, expr0x7f9e649ed678));
-      (Expr.parameter("sok", 1, expr0x7f9e649ed5e8));
-      (Expr.parameter("buf", 2, expr0x7f9e648a8180));
-      (Expr.parameter("len", 3, expr0x7f9e65fb0150));
+  in let type0x7f4198227dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "65")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4198227e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198227dc8)
+  in let type0x7f4198227f18 = 
+    GccType.pointer(type0x7f4198227e70)
+  in let expr0x7f41982c3d80 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41984da980 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("bug_report_start", "32", 32, "3040", 128, 32, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982a4ae0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984da980)
+  in let expr0x7f419821bd20 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1027")
+  in let expr0x7f41982230b0 = 
+    Expr.string_cst(type0x7f4198227e70, 66, "\"\\n\\n=== REDIS BUG REPORT START: Cut & paste starting from here ===\\n\"")
+  in let expr0x7f41982266c0 = 
+    Expr.address_of(type0x7f4198227f18, expr0x7f41982230b0)
+  in let expr0x7f41982245d0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984da980)
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982a3120 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f41982266c0));
   |])
   in let block_0 = 
     let step_0_0 = Action.start 
@@ -372,15 +80,189 @@ let main =
     )
   in let block_2 = 
     let step_2_1 = 
-      Action.call(call0x7f9e64981738)
+      Action.assign(expr0x7f41982c3d80, expr0x7f41982a4ae0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_3(D)>\n_1 = server.bug_report_start;";
+      |]
+    )
+  in let block_3 = 
+    let step_3_2 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f41982c3d80, expr0x7f41993c9078))
+    in let step_3_3 = 
+      Action.call(call0x7f41982a3120)
+    in let step_3_4 = 
+      Action.assign(expr0x7f41982245d0, expr0x7f41993c9090)
+    in Block.block(
+      3,
+      [|
+        step_3_2;
+        step_3_3;
+        step_3_4;
+      |],
+      [|
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume TRUE (_1 == 0)";
+        "# .MEM_4 = VDEF <.MEM_3(D)>\nserverLogRaw (1027, \"\\n\\n=== REDIS BUG REPORT START: Cut & paste starting from here ===\\n\");";
+        "# .MEM_5 = VDEF <.MEM_4>\nserver.bug_report_start = 1;";
+      |]
+    )
+  in let block_4 = 
+    let step_4_5 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f41982c3d80, expr0x7f41993c9078))
+    in let step_4_6 = 
+      Action.return(expr0)
+    in Block.block(
+      4,
+      [|
+        step_4_5;
+        step_4_6;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_1 == 0)";
+        "# VUSE <.MEM_2>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_7 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_7 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    5,
+    Z.of_string "2",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "bugReportStart",
+    57,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: closeDirectLogFiledes
+  // fid: 62
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41993c4b28 = 
+    GccType.boolean
+  in let expr0x7f419821f480 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("log_to_stdout", 32, 32))
+  in let expr0x7f4198333480 = 
+    Expr.ssa("log_to_stdout_6", 6, expr0x7f419821f480)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41982d2cf0 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41984d32f8 = 
+    Expr.field_decl(type0x7f41993cff18, FieldDecl.make("logfile", "64", 64, "2192", 128, 0, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982d4390 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984d32f8)
+  in let expr0x7f41982d2d38 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c43f0))
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f41982d5780 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982d2cf0, expr0x7f41985ed570)
+  in let expr0x7f41982d2d80 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41985ed6d8 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "0")
+  in let expr0x7f4198218d80 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "fd", type0x7f41993c45e8)
+  in let expr0x7f41983334c8 = 
+    Expr.ssa("fd_7(D)", 7, expr0x7f4198218d80)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982d1240 = Expr.call(
+    type0x7f41993c45e8,
+    "close", [|
+      (Expr.parameter("p1", 0, expr0x7f41983334c8));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982d2cf0, expr0x7f41982d4390)
     in let step_2_2 = 
-      Action.assign(expr0x7f9e649ed318, call0x7f9e64981738)
+      Action.assign(expr0x7f41982d2d38, expr0x7f41982d5780)
     in let step_2_3 = 
-      Action.debug("# DEBUG n => n_25")
+      Action.assign(expr0x7f41982d2d80, Expr.beq(
+        type0x7f41993c4b28, expr0x7f41982d2d38, expr0x7f41985ed6d8))
     in let step_2_4 = 
-      Action.assign(expr0x7f9e64980e58, expr0x7f9e64964a20)
+      Action.assign(expr0x7f4198333480, expr0x7f41982d2d80)
     in let step_2_5 = 
-      Action.assign(expr0x7f9e649ed090, expr0x7f9e649ed318)
+      Action.debug("# DEBUG log_to_stdout => log_to_stdout_6")
     in Block.block(
       2,
       [|
@@ -391,53 +273,16270 @@ let main =
         step_2_5;
       |],
       [|
-        ("g_snprintf", 1);
+        (* no calls *)
       |],
       [|
-        "# .MEM_24 = VDEF <.MEM_21(D)>\nn_25 = g_snprintf (&buf, 512, \"CONNECT %s:%d HTTP/1.0\\r\\n\", serverAddr_22(D), port_23(D));";
-        "<CAPTURES RETURN>";
-        "# DEBUG n => n_25";
-        "# VUSE <.MEM_24>\n_1 = prefs.hex_net_proxy_auth;";
-        "n_16 = n_25";
+        "# VUSE <.MEM_5(D)>\n_1 = server.logfile;";
+        "# VUSE <.MEM_5(D)>\n_2 = *_1;";
+        "_3 = _2 == 0;";
+        "log_to_stdout_6 = (int) _3;";
+        "# DEBUG log_to_stdout => log_to_stdout_6";
       |]
     )
   in let block_3 = 
     let step_3_6 = 
-      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f9e64980e58, expr0x7f9e66d54f48))
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f4198333480, expr0x7f41993c9078))
     in let step_3_7 = 
-      Action.call(call0x7f9e649817e0)
-    in let step_3_8 = 
-      Action.assign(expr0x7f9e649ed3a8, call0x7f9e649817e0)
-    in let step_3_9 = 
-      Action.debug("# DEBUG n2 => n2_27")
-    in let step_3_10 = 
-      Action.assign(expr0x7f9e6498d000, expr0x7f9e649ed3a8)
-    in let step_3_11 = 
-      Action.call(call0x7f9e64966b48)
-    in let step_3_12 = 
-      Action.assign(expr0x7f9e6498d048, expr0x7f9e649ed318)
-    in let step_3_13 = 
-      Action.assign(expr0x7f9e6498d090, Expr.minus(
-        type0x7f9e66d6c7e0, expr0x7f9e64862738, expr0x7f9e6498d048))
-    in let step_3_14 = 
-      Action.assign(expr0x7f9e6498d0d8, expr0x7f9e649ed318)
-    in let step_3_15 = 
-      Action.assign(expr0x7f9e6498d120, Expr.pointer_plus(
-        type0x7f9e660e8150, expr0x7f9e6497fea0, expr0x7f9e6498d0d8))
-    in let step_3_16 = 
-      Action.call(call0x7f9e64981888)
-    in let step_3_17 = 
-      Action.assign(expr0x7f9e649ed480, call0x7f9e64981888)
-    in let step_3_18 = 
-      Action.assign(expr0x7f9e649ed4c8, Expr.plus(
-        type0x7f9e66d6c5e8, expr0x7f9e649ed480, expr0x7f9e649ed318))
-    in let step_3_19 = 
-      Action.debug("# DEBUG n => n_31")
-    in let step_3_20 = 
-      Action.assign(expr0x7f9e649ed090, expr0x7f9e649ed4c8)
+      Action.call(call0x7f41982d1240)
     in Block.block(
       3,
       [|
+        step_3_6;
+        step_3_7;
+      |],
+      [|
+        ("close", 1);
+      |],
+      [|
+        "assume TRUE (log_to_stdout_6 == 0)";
+        "# .MEM_8 = VDEF <.MEM_5(D)>\nclose (fd_7(D));";
+      |]
+    )
+  in let block_4 = 
+    let step_4_8 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f4198333480, expr0x7f41993c9078))
+    in let step_4_9 = 
+      Action.return(expr0)
+    in Block.block(
+      4,
+      [|
+        step_4_8;
+        step_4_9;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (log_to_stdout_6 == 0)";
+        "# VUSE <.MEM_4>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_10 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_10 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    5,
+    Z.of_string "2",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "closeDirectLogFiledes",
+    62,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: computeDatasetDigest
+  // fid: 49
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41995875e8 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let type0x7f41993c4690 = 
+    GccType.integer(false, 32, 32, Z.of_string "0", Z.of_string "4294967295")
+  in let type0x7f41983fc3f0 = 
+    GccType.record("dictEntry", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198405000 = 
+    GccType.pointer(type0x7f41983fc3f0)
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f419950ac78 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f419847e9d8 = 
+    GccType.record("RedisModuleDigest", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984912a0 = 
+    GccType.pointer(type0x7f419847e9d8)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f4198491348 = 
+    GccType.func("T4901", type0x7f41993c4f18, [|
+        type0x7f41984912a0;
+        type0x7f41993cc0a8;
+      |], false)
+  in let type0x7f41984913f0 = 
+    GccType.pointer(type0x7f4198491348)
+  in let type0x7f4198491498 = 
+    GccType.pointer(type0x7f4198491348)
+  in let type0x7f41993c4888 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f4198409498 = 
+    GccType.record("dictIterator", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419840e690 = 
+    GccType.pointer(type0x7f4198409498)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41984970a8 = 
+    GccType.record("redisDb", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419849e5e8 = 
+    GccType.pointer(type0x7f41984970a8)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984052a0 = 
+    GccType.record("dict", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984055e8 = 
+    GccType.pointer(type0x7f41984052a0)
+  in let type0x7f41994fb0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "1")
+  in let type0x7f4198405690 = 
+    GccType.record("dictht", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198405a80 = 
+    GccType.array(type0x7f4198405690, type0x7f41994fb0a8)
+  in let type0x7f419957e3f0 = 
+    GccType.integer(false, 32, 32, Z.of_string "0", Z.of_string "4294967295")
+  in let type0x7f4198771540 = 
+    GccType.pointer(type0x7f419957e3f0)
+  in let type0x7f4199542dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "19")
+  in let type0x7f419847e540 = 
+    GccType.array(type0x7f41993c4348, type0x7f4199542dc8)
+  in let type0x7f41981e2690 = 
+    GccType.pointer(type0x7f419847e540)
+  in let type0x7f4198497738 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198497540 = 
+    GccType.pointer(type0x7f4198497738)
+  in let type0x7f41983fcb28 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984972a0 = 
+    GccType.integer(false, 4, 8, Z.of_string "0", Z.of_string "15")
+  in let type0x7f4198505888 = 
+    GccType.record("listTypeIterator", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198505b28 = 
+    GccType.pointer(type0x7f4198505888)
+  in let type0x7f419850a348 = 
+    GccType.record("listTypeEntry", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198537930 = 
+    GccType.pointer(type0x7f419850a348)
+  in let type0x7f419850a930 = 
+    GccType.record("setTypeIterator", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41985739d8 = 
+    GccType.pointer(type0x7f419850a930)
+  in let type0x7f41985cc498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "12")
+  in let type0x7f41981ec0a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985cc498)
+  in let type0x7f41981ec150 = 
+    GccType.pointer(type0x7f41981ec0a8)
+  in let type0x7f419952e498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "7")
+  in let type0x7f419952e540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419952e498)
+  in let type0x7f41981ec348 = 
+    GccType.pointer(type0x7f419952e540)
+  in let type0x7f419876d348 = 
+    GccType.pointer(type0x7f4199574f18)
+  in let type0x7f41993d0e70 = 
+    GccType.pointer(type0x7f41993c4690)
+  in let type0x7f41993d40a8 = 
+    GccType.pointer(type0x7f41993c4888)
+  in let type0x7f41981ec9d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "33")
+  in let type0x7f41981eca80 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981ec9d8)
+  in let type0x7f41981ecb28 = 
+    GccType.pointer(type0x7f41981eca80)
+  in let type0x7f41993cc3f0 = 
+    GccType.real(64)
+  in let type0x7f419846f2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "127")
+  in let type0x7f41981e20a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419846f2a0)
+  in let type0x7f41981ecdc8 = 
+    GccType.pointer(type0x7f41981e20a8)
+  in let type0x7f41984ce150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "5")
+  in let type0x7f41981ec2a0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41984ce150)
+  in let type0x7f41981ec690 = 
+    GccType.pointer(type0x7f41981ec2a0)
+  in let type0x7f41984bd2a0 = 
+    GccType.record("zset", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981ecbd0 = 
+    GccType.pointer(type0x7f41984bd2a0)
+  in let type0x7f41993cc930 = 
+    GccType.pointer(type0x7f41993cc3f0)
+  in let type0x7f419879d9d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "27")
+  in let type0x7f41981f0498 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419879d9d8)
+  in let type0x7f41981f0540 = 
+    GccType.pointer(type0x7f41981f0498)
+  in let type0x7f419850a150 = 
+    GccType.record("hashTypeIterator", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419857ce70 = 
+    GccType.pointer(type0x7f419850a150)
+  in let type0x7f4198511a80 = 
+    GccType.record("streamIterator", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419851b2a0 = 
+    GccType.pointer(type0x7f4198511a80)
+  in let type0x7f41985111f8 = 
+    GccType.record("streamID", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198517888 = 
+    GccType.pointer(type0x7f41985111f8)
+  in let type0x7f419957e690 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f419844c5e8 = 
+    GccType.pointer(type0x7f419950ac78)
+  in let type0x7f4198492150 = 
+    GccType.record("moduleValue", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981f50a8 = 
+    GccType.pointer(type0x7f4198492150)
+  in let type0x7f4198492bd0 = 
+    GccType.record("moduleType", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198492dc8 = 
+    GccType.pointer(type0x7f4198492bd0)
+  in let type0x7f4198497150 = 
+    GccType.record("RedisModuleDigest", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4199542e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199542dc8)
+  in let type0x7f41981f5540 = 
+    GccType.pointer(type0x7f4199542e70)
+  in let type0x7f41985e6150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "10")
+  in let type0x7f41985e6000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985e6150)
+  in let type0x7f41981f5738 = 
+    GccType.pointer(type0x7f41985e6000)
+  in let expr0x7f4198257900 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41993acfa8 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "0")
+  in let expr0x7f4198257bd0 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41993acdf8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "0")
+  in let expr0x7f4198257c60 = 
+    Expr.ssa("_20", 20, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981db8d0 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "1")
+  in let expr0x7f4198257ca8 = 
+    Expr.ssa("_21", 21, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f4198257d38 = 
+    Expr.ssa("_23", 23, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dba50 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "2")
+  in let expr0x7f41981e93f0 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("sdsele", 64, 64))
+  in let expr0x7f4198329cf0 = 
+    Expr.ssa("sdsele_218", 218, expr0x7f41981e93f0)
+  in let expr0x7f41981dba98 = 
+    Expr.u_int_cst(type0x7f41995875e8, Z.of_string "0")
+  in let expr0x7f4198257e10 = 
+    Expr.ssa("_26", 26, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f419955ce70 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "3")
+  in let expr0x7f4198257ea0 = 
+    Expr.ssa("_28", 28, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbbe8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "80")
+  in let expr0x7f4198257f30 = 
+    Expr.ssa("eptr.1_30", 30, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981dbcc0 = 
+    Expr.u_int_cst(type0x7f4199574f18, Z.of_string "0")
+  in let expr0x7f4198262048 = 
+    Expr.ssa("sptr.3_33", 33, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41982620d8 = 
+    Expr.ssa("_35", 35, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f41993acf48 = 
+    Expr.u_int_cst(type0x7f41993c4690, Z.of_string "0")
+  in let expr0x7f4198262168 = 
+    Expr.ssa("vstr.6_37", 37, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f4198262360 = 
+    Expr.ssa("eptr.10_44", 44, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41982623f0 = 
+    Expr.ssa("_46", 46, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbf48 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "112")
+  in let expr0x7f41981e9990 = 
+    Expr.variable_decl(type0x7f4198405000, VarDecl.make("de", 64, 64))
+  in let expr0x7f4198329168 = 
+    Expr.ssa("de_177", 177, expr0x7f41981e9990)
+  in let expr0x7f41981db720 = 
+    Expr.u_int_cst(type0x7f4198405000, Z.of_string "0")
+  in let expr0x7f41982625a0 = 
+    Expr.ssa("_52", 52, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981f1210 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "4")
+  in let expr0x7f4198262678 = 
+    Expr.ssa("_55", 55, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c90c0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "-1")
+  in let expr0x7f4198262708 = 
+    Expr.ssa("_57", 57, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981f1420 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "6")
+  in let expr0x7f4198262ab0 = 
+    Expr.ssa("numfields.18_70", 70, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41981f1510 = 
+    Expr.s_int_cst(type0x7f419950ac78, Z.of_string "0")
+  in let expr0x7f4198262b40 = 
+    Expr.ssa("_72", 72, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198262c18 = 
+    Expr.ssa("_74", 74, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbbd0 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "5")
+  in let expr0x7f4198262c60 = 
+    Expr.ssa("_75", 75, Expr.nothing(type0x7f41984913f0))
+  in let expr0x7f41981f17c8 = 
+    Expr.u_int_cst(type0x7f4198491498, Z.of_string "0")
+  in let expr0x7f41981e9120 = 
+    Expr.variable_decl(type0x7f41993c4888, VarDecl.make("expiretime", 64, 64))
+  in let expr0x7f4198327240 = 
+    Expr.ssa("expiretime_124", 124, expr0x7f41981e9120)
+  in let expr0x7f41981f19f0 = 
+    Expr.s_int_cst(type0x7f41993c4888, Z.of_string "-1")
+  in let expr0x7f4198520cf0 = 
+    Expr.variable_decl(type0x7f4198405000, VarDecl.make("de", 64, 64))
+  in let expr0x7f4198323e10 = 
+    Expr.ssa("de_110", 110, expr0x7f4198520cf0)
+  in let expr0x7f4198520d80 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("j", 32, 32))
+  in let expr0x7f4198323558 = 
+    Expr.ssa("j_79", 79, expr0x7f4198520d80)
+  in let expr0x7f4198323af8 = 
+    Expr.ssa("j_99", 99, expr0x7f4198520d80)
+  in let expr0x7f419832a240 = 
+    Expr.ssa("j_236", 236, expr0x7f4198520d80)
+  in let expr0x7f4198262d38 = 
+    Expr.ssa("_78", 78, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198520c60 = 
+    Expr.variable_decl(type0x7f419840e690, VarDecl.make("di", 64, 64))
+  in let expr0x7f41983239d8 = 
+    Expr.ssa("di_95", 95, expr0x7f4198520c60)
+  in let expr0x7f41981db5a0 = 
+    Expr.u_int_cst(type0x7f419840e690, Z.of_string "0")
+  in let expr0x7f41981e0b80 = 
+    Expr.parameter_decl(type0x7f4199574f18, "final", type0x7f4199574f18)
+  in let expr0x7f4198323a68 = 
+    Expr.ssa("final_97(D)", 97, expr0x7f41981e0b80)
+  in let expr0x7f41981db618 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "20")
+  in let expr0x7f4198257708 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f41984c5a18 = 
+    Expr.field_decl(type0x7f419849e5e8, FieldDecl.make("db", "64", 64, "32", 128, 64, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f419824ea20 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f41987a4cf0, expr0x7f41984c5a18)
+  in let expr0x7f4198257750 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198257798 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41994f8d80 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "64")
+  in let expr0x7f4198520ea0 = 
+    Expr.variable_decl(type0x7f419849e5e8, VarDecl.make("db", 64, 64))
+  in let expr0x7f4198323c18 = 
+    Expr.ssa("db_103", 103, expr0x7f4198520ea0)
+  in let expr0x7f41982577e0 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198494c78 = 
+    Expr.field_decl(type0x7f41984055e8, FieldDecl.make("dict", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198243a20 = 
+    Expr.u_int_cst(type0x7f419849e5e8, Z.of_string "0")
+  in let expr0x7f41982597f8 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f4198323c18, expr0x7f4198243a20)
+  in let expr0x7f419824ea50 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f41982597f8, expr0x7f4198494c78)
+  in let expr0x7f4198257828 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41983ffd10 = 
+    Expr.field_decl(type0x7f41993c47e0, FieldDecl.make("used", "64", 64, "16", 128, 64, false))
+  in let expr0x7f4198407098 = 
+    Expr.field_decl(type0x7f4198405a80, FieldDecl.make("ht", "512", 64, "16", 128, 0, false))
+  in let expr0x7f419820cc60 = 
+    Expr.u_int_cst(type0x7f41984055e8, Z.of_string "0")
+  in let expr0x7f4198259870 = 
+    Expr.memory_ref(type0x7f41984052a0, expr0x7f41982577e0, expr0x7f419820cc60)
+  in let expr0x7f419824eab0 = 
+    Expr.component_ref(type0x7f4198405a80, expr0x7f4198259870, expr0x7f4198407098)
+  in let expr0x7f4198255af0 = 
+    Expr.array_ref(type0x7f4198405690, expr0x7f419824eab0, expr0x7f41993c9078)
+  in let expr0x7f419824ea80 = 
+    Expr.component_ref(type0x7f41993c47e0, expr0x7f4198255af0, expr0x7f41983ffd10)
+  in let expr0x7f4198257870 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f41982598e8 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f4198323c18, expr0x7f4198243a20)
+  in let expr0x7f419824eae0 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f41982598e8, expr0x7f4198494c78)
+  in let expr0x7f41982578b8 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f4198259960 = 
+    Expr.memory_ref(type0x7f41984052a0, expr0x7f4198257870, expr0x7f419820cc60)
+  in let expr0x7f419824eb40 = 
+    Expr.component_ref(type0x7f4198405a80, expr0x7f4198259960, expr0x7f4198407098)
+  in let expr0x7f4198255b28 = 
+    Expr.array_ref(type0x7f4198405690, expr0x7f419824eb40, expr0x7f41993c9090)
+  in let expr0x7f419824eb10 = 
+    Expr.component_ref(type0x7f41993c47e0, expr0x7f4198255b28, expr0x7f41983ffd10)
+  in let expr0x7f4198257948 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198259a50 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f4198323c18, expr0x7f4198243a20)
+  in let expr0x7f419824eb70 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f4198259a50, expr0x7f4198494c78)
+  in let expr0x7f4198323ca8 = 
+    Expr.ssa("di_105", 105, expr0x7f4198520c60)
+  in let expr0x7f4198257990 = 
+    Expr.ssa("j.0_10", 10, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f41982579d8 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f4198520e10 = 
+    Expr.variable_decl(type0x7f419957e3f0, VarDecl.make("aux", 32, 32))
+  in let expr0x7f41981e7160 = 
+    Expr.address_of(type0x7f4198771540, expr0x7f4198520e10)
+  in let expr0x7f419953f780 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "4")
+  in let expr0x7f4198520b40 = 
+    Expr.variable_decl(type0x7f419847e540, VarDecl.make("digest", 160, 8))
+  in let expr0x7f41981e72c0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f4198520f30 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("key", 64, 64))
+  in let expr0x7f4198323ee8 = 
+    Expr.ssa("key_113", 113, expr0x7f4198520f30)
+  in let expr0x7f41983ff098 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("key", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198259af0 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f4198323e10, expr0x7f41981db720)
+  in let expr0x7f41981dec90 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259af0, expr0x7f41983ff098)
+  in let expr0x7f4198257a20 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981e9000 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("keyobj", 64, 64))
+  in let expr0x7f4198327000 = 
+    Expr.ssa("keyobj_116", 116, expr0x7f41981e9000)
+  in let expr0x7f4198257a68 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981e73e0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981e9090 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("o", 64, 64))
+  in let expr0x7f41983270d8 = 
+    Expr.ssa("o_119", 119, expr0x7f41981e9090)
+  in let expr0x7f41983ff1c8 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("val", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41983ff428 = 
+    Expr.field_decl(type0x7f41983fcb28, FieldDecl.make("v", "64", 64, "0", 128, 64, false))
+  in let expr0x7f4198259b68 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f4198323e10, expr0x7f41981db720)
+  in let expr0x7f41981decc0 = 
+    Expr.component_ref(type0x7f41983fcb28, expr0x7f4198259b68, expr0x7f41983ff428)
+  in let expr0x7f41981decf0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41981decc0, expr0x7f41983ff1c8)
+  in let expr0x7f4198257ab0 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f4198494720 = 
+    Expr.field_decl(type0x7f41984972a0, FieldDecl.make("type", "4", 1, "0", 128, 0, true))
+  in let expr0x7f41981fef18 = 
+    Expr.u_int_cst(type0x7f4198497540, Z.of_string "0")
+  in let expr0x7f4198259bb8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824eba0 = 
+    Expr.component_ref(type0x7f41984972a0, expr0x7f4198259bb8, expr0x7f4198494720)
+  in let expr0x7f4198257af8 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f4198257b40 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f41981e7520 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981e7560 = 
+    Expr.address_of(type0x7f4198771540, expr0x7f4198520e10)
+  in let expr0x7f4198257b88 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259c80 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ebd0 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259c80, 8, 0)
+  in let expr0x7f41981db870 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "15")
+  in let expr0x7f41981e7680 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f4198257c18 = 
+    Expr.ssa("_19", 19, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259d48 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ec00 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259d48, 8, 0)
+  in let expr0x7f419953f720 = 
+    Expr.s_int_cst(type0x7f41993c4738, Z.of_string "0")
+  in let expr0x7f41981e91b0 = 
+    Expr.variable_decl(type0x7f4198505b28, VarDecl.make("li", 64, 64))
+  in let expr0x7f4198329ea0 = 
+    Expr.ssa("li_224", 224, expr0x7f41981e91b0)
+  in let expr0x7f41981e9240 = 
+    Expr.variable_decl(type0x7f419850a348, VarDecl.make("entry", 448, 64))
+  in let expr0x7f41981e7860 = 
+    Expr.address_of(type0x7f4198537930, expr0x7f41981e9240)
+  in let expr0x7f41981e92d0 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("eleobj", 64, 64))
+  in let expr0x7f419832a048 = 
+    Expr.ssa("eleobj_229", 229, expr0x7f41981e92d0)
+  in let expr0x7f41981e78c0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f419825e0e0 = 
+    Expr.address_of(type0x7f4198537930, expr0x7f41981e9240)
+  in let expr0x7f4198243c48 = 
+    Expr.constructor(type0x7f419850a348)
+  in let expr0x7f4198257cf0 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259e88 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ec30 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259e88, 8, 0)
+  in let expr0x7f41981e9360 = 
+    Expr.variable_decl(type0x7f41985739d8, VarDecl.make("si", 64, 64))
+  in let expr0x7f4198329c60 = 
+    Expr.ssa("si_216", 216, expr0x7f41981e9360)
+  in let expr0x7f4198257d80 = 
+    Expr.ssa("_24", 24, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981e7b80 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f4198257dc8 = 
+    Expr.ssa("_25", 25, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259fa0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ec60 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259fa0, 8, 0)
+  in let expr0x7f4198257e58 = 
+    Expr.ssa("_27", 27, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259140 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ec90 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259140, 8, 0)
+  in let expr0x7f41981db858 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "240")
+  in let expr0x7f41981e9480 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("zl", 64, 64))
+  in let expr0x7f4198329438 = 
+    Expr.ssa("zl_187", 187, expr0x7f41981e9480)
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f4198259550 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f41981eb2a0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259550, expr0x7f4198494980)
+  in let expr0x7f4198257ee8 = 
+    Expr.ssa("_29", 29, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981e9510 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("eptr", 64, 64))
+  in let expr0x7f41981e5cd0 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"eptr != NULL\"")
+  in let expr0x7f41981e7fa0 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f41981e5cd0)
+  in let expr0x7f41981e7fe0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f41981ed000 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981e7fe0)
+  in let expr0x7f4198666cd8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "186")
+  in let expr0x7f4198257f78 = 
+    Expr.ssa("eptr.2_31", 31, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f4198262000 = 
+    Expr.ssa("_32", 32, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981e95a0 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("sptr", 64, 64))
+  in let expr0x7f41981e5d98 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"sptr != NULL\"")
+  in let expr0x7f41981ed100 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f41981e5d98)
+  in let expr0x7f41981ed140 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f41981ed160 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981ed140)
+  in let expr0x7f4198666d50 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "188")
+  in let expr0x7f4198262090 = 
+    Expr.ssa("eptr.4_34", 34, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981e9630 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("vstr", 64, 64))
+  in let expr0x7f419825e5c0 = 
+    Expr.address_of(type0x7f419876d348, expr0x7f41981e9630)
+  in let expr0x7f41981e96c0 = 
+    Expr.variable_decl(type0x7f41993c4690, VarDecl.make("vlen", 32, 32))
+  in let expr0x7f419825e5e0 = 
+    Expr.address_of(type0x7f41993d0e70, expr0x7f41981e96c0)
+  in let expr0x7f41981e9750 = 
+    Expr.variable_decl(type0x7f41993c4888, VarDecl.make("vll", 64, 64))
+  in let expr0x7f419825e600 = 
+    Expr.address_of(type0x7f41993d40a8, expr0x7f41981e9750)
+  in let expr0x7f41981e36c8 = 
+    Expr.string_cst(type0x7f41981eca80, 34, "\"ziplistGet(eptr,&vstr,&vlen,&vll)\"")
+  in let expr0x7f41981ed320 = 
+    Expr.address_of(type0x7f41981ecb28, expr0x7f41981e36c8)
+  in let expr0x7f41981ed360 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f41981ed380 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981ed360)
+  in let expr0x7f4198666e10 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "191")
+  in let expr0x7f4198262120 = 
+    Expr.ssa("sptr.5_36", 36, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981e97e0 = 
+    Expr.variable_decl(type0x7f41993cc3f0, VarDecl.make("score", 64, 64))
+  in let expr0x7f4198329798 = 
+    Expr.ssa("score_199", 199, expr0x7f41981e97e0)
+  in let expr0x7f4199597990 = 
+    Expr.variable_decl(type0x7f419847e540, VarDecl.make("eledigest", 160, 8))
+  in let expr0x7f41981ed460 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41982621b0 = 
+    Expr.ssa("vlen.7_38", 38, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f41982621f8 = 
+    Expr.ssa("_39", 39, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198262240 = 
+    Expr.ssa("vstr.8_40", 40, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981ed540 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f4198262288 = 
+    Expr.ssa("vll.9_41", 41, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198520bd0 = 
+    Expr.variable_decl(type0x7f41981e20a8, VarDecl.make("buf", 1024, 8))
+  in let expr0x7f41981ed5e0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41987155d0 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "128")
+  in let expr0x7f419825e7e0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41982622d0 = 
+    Expr.ssa("_42", 42, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981ed640 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41981ed680 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41981ed780 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41981ed7c0 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"%.17g\"")
+  in let expr0x7f41981ed7e0 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f41981ed7c0)
+  in let expr0x7f419825e900 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f4198262318 = 
+    Expr.ssa("_43", 43, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981ed860 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41981ed8a0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41981ed9a0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981ed9e0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41981eda60 = 
+    Expr.address_of(type0x7f419876d348, expr0x7f41981e9510)
+  in let expr0x7f41981eda80 = 
+    Expr.address_of(type0x7f419876d348, expr0x7f41981e95a0)
+  in let expr0x7f4198243e40 = 
+    Expr.constructor(type0x7f4199574f18)
+  in let expr0x7f4198243e58 = 
+    Expr.constructor(type0x7f4199574f18)
+  in let expr0x7f4198243e70 = 
+    Expr.constructor(type0x7f4199574f18)
+  in let expr0x7f4198243e88 = 
+    Expr.constructor(type0x7f41993c4690)
+  in let expr0x7f4198243ea0 = 
+    Expr.constructor(type0x7f41993c4888)
+  in let expr0x7f41982623a8 = 
+    Expr.ssa("_45", 45, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259578 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ecc0 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259578, 8, 0)
+  in let expr0x7f41981e9870 = 
+    Expr.variable_decl(type0x7f41981ecbd0, VarDecl.make("zs", 64, 64))
+  in let expr0x7f4198329048 = 
+    Expr.ssa("zs_173", 173, expr0x7f41981e9870)
+  in let expr0x7f4198259730 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f41981eb6f0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259730, expr0x7f4198494980)
+  in let expr0x7f4198262438 = 
+    Expr.ssa("_47", 47, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f41984bc130 = 
+    Expr.field_decl(type0x7f41984055e8, FieldDecl.make("dict", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198243ed0 = 
+    Expr.u_int_cst(type0x7f41981ecbd0, Z.of_string "0")
+  in let expr0x7f4198259708 = 
+    Expr.memory_ref(type0x7f41984bd2a0, expr0x7f4198329048, expr0x7f4198243ed0)
+  in let expr0x7f419824ecf0 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f4198259708, expr0x7f41984bc130)
+  in let expr0x7f41981e9900 = 
+    Expr.variable_decl(type0x7f419840e690, VarDecl.make("di", 64, 64))
+  in let expr0x7f41983290d8 = 
+    Expr.ssa("di_175", 175, expr0x7f41981e9900)
+  in let expr0x7f41981e9a20 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("sdsele", 64, 64))
+  in let expr0x7f41983291f8 = 
+    Expr.ssa("sdsele_179", 179, expr0x7f41981e9a20)
+  in let expr0x7f41982597a8 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f4198329168, expr0x7f41981db720)
+  in let expr0x7f41981eb750 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982597a8, expr0x7f41983ff098)
+  in let expr0x7f41981e9ab0 = 
+    Expr.variable_decl(type0x7f41993cc930, VarDecl.make("score", 64, 64))
+  in let expr0x7f4198329240 = 
+    Expr.ssa("score_180", 180, expr0x7f41981e9ab0)
+  in let expr0x7f4198259820 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f4198329168, expr0x7f41981db720)
+  in let expr0x7f41981eb780 = 
+    Expr.component_ref(type0x7f41983fcb28, expr0x7f4198259820, expr0x7f41983ff428)
+  in let expr0x7f41981eb7b0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41981eb780, expr0x7f41983ff1c8)
+  in let expr0x7f4198262480 = 
+    Expr.ssa("_48", 48, Expr.nothing(type0x7f41993cc3f0))
+  in let expr0x7f4198243f00 = 
+    Expr.u_int_cst(type0x7f41993cc930, Z.of_string "0")
+  in let expr0x7f4198259898 = 
+    Expr.memory_ref(type0x7f41993cc3f0, expr0x7f4198329240, expr0x7f4198243f00)
+  in let expr0x7f41981edda0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41981edde0 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"%.17g\"")
+  in let expr0x7f41981ede00 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f41981edde0)
+  in let expr0x7f41981edea0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41982624c8 = 
+    Expr.ssa("_49", 49, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981edf20 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f419825ebe0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f4198262510 = 
+    Expr.ssa("_50", 50, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981edfc0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41981f2000 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198520bd0)
+  in let expr0x7f41981f2100 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981f2140 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4199597990)
+  in let expr0x7f41981f22a0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f41981f22c0 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981f22a0)
+  in let expr0x7f41981f1138 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "224")
+  in let expr0x7f41981e3968 = 
+    Expr.string_cst(type0x7f41981f0498, 28, "\"Unknown sorted set encoding\"")
+  in let expr0x7f41981f2300 = 
+    Expr.address_of(type0x7f41981f0540, expr0x7f41981e3968)
+  in let expr0x7f4198243fa8 = 
+    Expr.constructor(type0x7f419847e540)
+  in let expr0x7f4198262558 = 
+    Expr.ssa("_51", 51, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259988 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ed20 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259988, 8, 0)
+  in let expr0x7f41981e9b40 = 
+    Expr.variable_decl(type0x7f419857ce70, VarDecl.make("hi", 64, 64))
+  in let expr0x7f4198327af8 = 
+    Expr.ssa("hi_155", 155, expr0x7f41981e9b40)
+  in let expr0x7f41981e9bd0 = 
+    Expr.variable_decl(type0x7f419847e540, VarDecl.make("eledigest", 160, 8))
+  in let expr0x7f41981f24a0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981e9bd0)
+  in let expr0x7f41981e9c60 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("sdsele", 64, 64))
+  in let expr0x7f4198327c60 = 
+    Expr.ssa("sdsele_160", 160, expr0x7f41981e9c60)
+  in let expr0x7f41982625e8 = 
+    Expr.ssa("_53", 53, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981f2540 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981e9bd0)
+  in let expr0x7f41993c93d8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "2")
+  in let expr0x7f4198327dc8 = 
+    Expr.ssa("sdsele_165", 165, expr0x7f41981e9c60)
+  in let expr0x7f4198262630 = 
+    Expr.ssa("_54", 54, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981f2620 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981e9bd0)
+  in let expr0x7f41981f26e0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981f2720 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981e9bd0)
+  in let expr0x7f41982660c0 = 
+    Expr.constructor(type0x7f419847e540)
+  in let expr0x7f41982626c0 = 
+    Expr.ssa("_56", 56, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259a78 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ed50 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259a78, 8, 0)
+  in let expr0x7f4198262750 = 
+    Expr.ssa("_58", 58, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198259b18 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ed80 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259b18, expr0x7f4198494980)
+  in let expr0x7f41981e9cf0 = 
+    Expr.variable_decl(type0x7f4198511a80, VarDecl.make("si", 5056, 64))
+  in let expr0x7f41981f2900 = 
+    Expr.address_of(type0x7f419851b2a0, expr0x7f41981e9cf0)
+  in let expr0x7f41981f1450 = 
+    Expr.u_int_cst(type0x7f4198517888, Z.of_string "0")
+  in let expr0x7f4198262798 = 
+    Expr.ssa("_59", 59, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198510098 = 
+    Expr.field_decl(type0x7f419957e690, FieldDecl.make("seq", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41981e9d80 = 
+    Expr.variable_decl(type0x7f41985111f8, VarDecl.make("id", 128, 64))
+  in let expr0x7f419824edb0 = 
+    Expr.component_ref(type0x7f419957e690, expr0x7f41981e9d80, expr0x7f4198510098)
+  in let expr0x7f41982627e0 = 
+    Expr.ssa("_60", 60, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198510000 = 
+    Expr.field_decl(type0x7f419957e690, FieldDecl.make("ms", "64", 64, "0", 128, 0, false))
+  in let expr0x7f419824ede0 = 
+    Expr.component_ref(type0x7f419957e690, expr0x7f41981e9d80, expr0x7f4198510000)
+  in let expr0x7f4198262828 = 
+    Expr.ssa("_61", 61, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41981f2ae0 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"%U.%U\"")
+  in let expr0x7f41981f2b00 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f41981f2ae0)
+  in let expr0x7f41981e9ea0 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("itemid", 64, 64))
+  in let expr0x7f4198327750 = 
+    Expr.ssa("itemid_142", 142, expr0x7f41981e9ea0)
+  in let expr0x7f4198262870 = 
+    Expr.ssa("_62", 62, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41981f2ba0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981f2d40 = 
+    Expr.address_of(type0x7f419851b2a0, expr0x7f41981e9cf0)
+  in let expr0x7f41981e9f30 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("field", 64, 64))
+  in let expr0x7f41981f2d60 = 
+    Expr.address_of(type0x7f419876d348, expr0x7f41981e9f30)
+  in let expr0x7f41981f3000 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("value", 64, 64))
+  in let expr0x7f41981f2d80 = 
+    Expr.address_of(type0x7f419876d348, expr0x7f41981f3000)
+  in let expr0x7f41981f3090 = 
+    Expr.variable_decl(type0x7f419950ac78, VarDecl.make("field_len", 64, 64))
+  in let expr0x7f41981f2da0 = 
+    Expr.address_of(type0x7f419844c5e8, expr0x7f41981f3090)
+  in let expr0x7f41981f3120 = 
+    Expr.variable_decl(type0x7f419950ac78, VarDecl.make("value_len", 64, 64))
+  in let expr0x7f41981f2dc0 = 
+    Expr.address_of(type0x7f419844c5e8, expr0x7f41981f3120)
+  in let expr0x7f41982628b8 = 
+    Expr.ssa("field_len.11_63", 63, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f4198262900 = 
+    Expr.ssa("field_len.12_64", 64, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198262948 = 
+    Expr.ssa("field.13_65", 65, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981f2e00 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f4198262990 = 
+    Expr.ssa("value_len.14_66", 66, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982629d8 = 
+    Expr.ssa("value_len.15_67", 67, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198262a20 = 
+    Expr.ssa("value.16_68", 68, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981f2ea0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f4198266198 = 
+    Expr.constructor(type0x7f4199574f18)
+  in let expr0x7f41982661b0 = 
+    Expr.constructor(type0x7f4199574f18)
+  in let expr0x7f41982661c8 = 
+    Expr.constructor(type0x7f419950ac78)
+  in let expr0x7f41982661e0 = 
+    Expr.constructor(type0x7f419950ac78)
+  in let expr0x7f4198262a68 = 
+    Expr.ssa("numfields.17_69", 69, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41981e9e10 = 
+    Expr.variable_decl(type0x7f419950ac78, VarDecl.make("numfields", 64, 64))
+  in let expr0x7f4198262af8 = 
+    Expr.ssa("_71", 71, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982661f8 = 
+    Expr.s_int_cst(type0x7f419950ac78, Z.of_string "-1")
+  in let expr0x7f4198267460 = 
+    Expr.address_of(type0x7f419851b2a0, expr0x7f41981e9cf0)
+  in let expr0x7f4198267480 = 
+    Expr.address_of(type0x7f4198517888, expr0x7f41981e9d80)
+  in let expr0x7f41982674a0 = 
+    Expr.address_of(type0x7f419844c5e8, expr0x7f41981e9e10)
+  in let expr0x7f41981f40c0 = 
+    Expr.address_of(type0x7f419851b2a0, expr0x7f41981e9cf0)
+  in let expr0x7f4198266240 = 
+    Expr.constructor(type0x7f4198511a80)
+  in let expr0x7f4198266258 = 
+    Expr.constructor(type0x7f41985111f8)
+  in let expr0x7f4198266270 = 
+    Expr.constructor(type0x7f419950ac78)
+  in let expr0x7f4198262bd0 = 
+    Expr.ssa("_73", 73, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198259ca8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f419824ee40 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198259ca8, 8, 0)
+  in let expr0x7f41981f3240 = 
+    Expr.variable_decl(type0x7f41981f50a8, VarDecl.make("mv", 64, 64))
+  in let expr0x7f4198327318 = 
+    Expr.ssa("mv_127", 127, expr0x7f41981f3240)
+  in let expr0x7f4198259dc0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41983270d8, expr0x7f41981fef18)
+  in let expr0x7f41981ebc90 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259dc0, expr0x7f4198494980)
+  in let expr0x7f41981f32d0 = 
+    Expr.variable_decl(type0x7f4198492dc8, VarDecl.make("mt", 64, 64))
+  in let expr0x7f4198327360 = 
+    Expr.ssa("mt_128", 128, expr0x7f41981f32d0)
+  in let expr0x7f419847ded8 = 
+    Expr.field_decl(type0x7f4198492dc8, FieldDecl.make("type", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198266288 = 
+    Expr.u_int_cst(type0x7f41981f50a8, Z.of_string "0")
+  in let expr0x7f4198259e10 = 
+    Expr.memory_ref(type0x7f4198492150, expr0x7f4198327318, expr0x7f4198266288)
+  in let expr0x7f41981ebcc0 = 
+    Expr.component_ref(type0x7f4198492dc8, expr0x7f4198259e10, expr0x7f419847ded8)
+  in let expr0x7f4198494558 = 
+    Expr.field_decl(type0x7f419847e540, FieldDecl.make("o", "160", 8, "0", 128, 0, false))
+  in let expr0x7f41981f31b0 = 
+    Expr.variable_decl(type0x7f4198497150, VarDecl.make("md", 320, 8))
+  in let expr0x7f41981ebcf0 = 
+    Expr.component_ref(type0x7f419847e540, expr0x7f41981f31b0, expr0x7f4198494558)
+  in let expr0x7f41981f4240 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981ebcf0)
+  in let expr0x7f419953f7f8 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "20")
+  in let expr0x7f41984945f0 = 
+    Expr.field_decl(type0x7f419847e540, FieldDecl.make("x", "160", 8, "16", 128, 32, false))
+  in let expr0x7f41981ebd50 = 
+    Expr.component_ref(type0x7f419847e540, expr0x7f41981f31b0, expr0x7f41984945f0)
+  in let expr0x7f41981f42c0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981ebd50)
+  in let expr0x7f419847dbe0 = 
+    Expr.field_decl(type0x7f4198491498, FieldDecl.make("digest", "64", 64, "48", 128, 0, false))
+  in let expr0x7f41982662a0 = 
+    Expr.u_int_cst(type0x7f4198492dc8, Z.of_string "0")
+  in let expr0x7f4198259d70 = 
+    Expr.memory_ref(type0x7f4198492bd0, expr0x7f4198327360, expr0x7f41982662a0)
+  in let expr0x7f419824ee70 = 
+    Expr.component_ref(type0x7f4198491498, expr0x7f4198259d70, expr0x7f419847dbe0)
+  in let expr0x7f4198262ca8 = 
+    Expr.ssa("_76", 76, Expr.nothing(type0x7f41984913f0))
+  in let expr0x7f4198259eb0 = 
+    Expr.memory_ref(type0x7f4198492bd0, expr0x7f4198327360, expr0x7f41982662a0)
+  in let expr0x7f419824eea0 = 
+    Expr.component_ref(type0x7f4198491498, expr0x7f4198259eb0, expr0x7f419847dbe0)
+  in let expr0x7f4198262cf0 = 
+    Expr.ssa("_77", 77, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198494000 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("value", "64", 64, "0", 128, 64, false))
+  in let expr0x7f4198259f50 = 
+    Expr.memory_ref(type0x7f4198492150, expr0x7f4198327318, expr0x7f4198266288)
+  in let expr0x7f419824eed0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259f50, expr0x7f4198494000)
+  in let expr0x7f41981f4400 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981ebe40 = 
+    Expr.component_ref(type0x7f419847e540, expr0x7f41981f31b0, expr0x7f41984945f0)
+  in let expr0x7f41981f4440 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f41981ebe40)
+  in let expr0x7f41982662b8 = 
+    Expr.constructor(type0x7f4198497150)
+  in let expr0x7f41981f44c0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f41981f44e0 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981f44c0)
+  in let expr0x7f41984f8e88 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "273")
+  in let expr0x7f41981ebf00 = 
+    Expr.string_cst(type0x7f4199542e70, 20, "\"Unknown object type\"")
+  in let expr0x7f41981f4520 = 
+    Expr.address_of(type0x7f41981f5540, expr0x7f41981ebf00)
+  in let expr0x7f41981f45e0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41981f4620 = 
+    Expr.string_cst(type0x7f41985e6000, 11, "\"!!expire!!\"")
+  in let expr0x7f41981f4640 = 
+    Expr.address_of(type0x7f41981f5738, expr0x7f41981f4620)
+  in let expr0x7f41981f1a08 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "10")
+  in let expr0x7f41981f46c0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520b40)
+  in let expr0x7f41984cdbe0 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("dbnum", "32", 32, "1760", 128, 0, false))
+  in let expr0x7f419824ef00 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984cdbe0)
+  in let expr0x7f4198266318 = 
+    Expr.constructor(type0x7f419847e540)
+  in let expr0x7f4198266330 = 
+    Expr.constructor(type0x7f41981e20a8)
+  in let expr0x7f4198266348 = 
+    Expr.constructor(type0x7f419957e3f0)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982467b8 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f4198323a68));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f4198251900 = Expr.call(
+    type0x7f419840e690,
+    "dictGetSafeIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f4198257948));
+  |])
+  in let call0x7f4198251990 = Expr.call(
+    type0x7f41993c4690,
+    "__bswap_32", [|
+      (Expr.parameter("__bsx", 0, expr0x7f4198257990));
+  |])
+  in let call0x7f4198246850 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f4198323a68));
+      (Expr.parameter("ptr", 1, expr0x7f41981e7160));
+      (Expr.parameter("len", 2, expr0x7f419953f780));
+  |])
+  in let call0x7f41982468e8 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f41981e72c0));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f4198251a20 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198323ee8));
+  |])
+  in let call0x7f4198251ab0 = Expr.call(
+    type0x7f4198497540,
+    "createStringObject", [|
+      (Expr.parameter("p1", 0, expr0x7f4198323ee8));
+      (Expr.parameter("p2", 1, expr0x7f4198257a20));
+  |])
+  in let call0x7f4198251b40 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198323ee8));
+  |])
+  in let call0x7f4198246980 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981e73e0));
+      (Expr.parameter("ptr", 1, expr0x7f4198323ee8));
+      (Expr.parameter("len", 2, expr0x7f4198257a68));
+  |])
+  in let call0x7f4198251bd0 = Expr.call(
+    type0x7f41993c4690,
+    "__bswap_32", [|
+      (Expr.parameter("__bsx", 0, expr0x7f4198257af8));
+  |])
+  in let call0x7f4198246a18 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981e7520));
+      (Expr.parameter("ptr", 1, expr0x7f41981e7560));
+      (Expr.parameter("len", 2, expr0x7f419953f780));
+  |])
+  in let call0x7f4198251c60 = Expr.call(
+    type0x7f41993c4888,
+    "getExpire", [|
+      (Expr.parameter("p1", 0, expr0x7f4198323c18));
+      (Expr.parameter("p2", 1, expr0x7f4198327000));
+  |])
+  in let call0x7f4198251cf0 = Expr.call(
+    type0x7f41993c4f18,
+    "mixObjectDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981e7680));
+      (Expr.parameter("o", 1, expr0x7f41983270d8));
+  |])
+  in let call0x7f4198246ab0 = Expr.call(
+    type0x7f4198505b28,
+    "listTypeInitIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f41983270d8));
+      (Expr.parameter("p2", 1, expr0x7f419953f720));
+      (Expr.parameter("p3", 2, expr0x7f41993c9090));
+  |])
+  in let call0x7f4198251d80 = Expr.call(
+    type0x7f4198497540,
+    "listTypeGet", [|
+      (Expr.parameter("p1", 0, expr0x7f41981e7860));
+  |])
+  in let call0x7f4198251e10 = Expr.call(
+    type0x7f41993c4f18,
+    "mixObjectDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981e78c0));
+      (Expr.parameter("o", 1, expr0x7f419832a048));
+  |])
+  in let call0x7f4198251ea0 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a048));
+  |])
+  in let call0x7f4198251f30 = Expr.call(
+    type0x7f41993c45e8,
+    "listTypeNext", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329ea0));
+      (Expr.parameter("p2", 1, expr0x7f419825e0e0));
+  |])
+  in let call0x7f419825f000 = Expr.call(
+    type0x7f41993c4f18,
+    "listTypeReleaseIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329ea0));
+  |])
+  in let call0x7f419825f090 = Expr.call(
+    type0x7f41985739d8,
+    "setTypeInitIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f41983270d8));
+  |])
+  in let call0x7f419825f120 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198329cf0));
+  |])
+  in let call0x7f4198246b48 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981e7b80));
+      (Expr.parameter("ptr", 1, expr0x7f4198329cf0));
+      (Expr.parameter("len", 2, expr0x7f4198257d80));
+  |])
+  in let call0x7f419825f1b0 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329cf0));
+  |])
+  in let call0x7f419825f240 = Expr.call(
+    type0x7f41995875e8,
+    "setTypeNextObject", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329c60));
+  |])
+  in let call0x7f419825f2d0 = Expr.call(
+    type0x7f41993c4f18,
+    "setTypeReleaseIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329c60));
+  |])
+  in let call0x7f419825f360 = Expr.call(
+    type0x7f4199574f18,
+    "ziplistIndex", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329438));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+  |])
+  in let call0x7f4198246be0 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssert", [|
+      (Expr.parameter("estr", 0, expr0x7f41981e7fa0));
+      (Expr.parameter("file", 1, expr0x7f41981ed000));
+      (Expr.parameter("line", 2, expr0x7f4198666cd8));
+  |])
+  in let call0x7f419825f3f0 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f419825f480 = Expr.call(
+    type0x7f4199574f18,
+    "ziplistNext", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329438));
+      (Expr.parameter("p2", 1, expr0x7f4198257f78));
+  |])
+  in let call0x7f4198246c78 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssert", [|
+      (Expr.parameter("estr", 0, expr0x7f41981ed100));
+      (Expr.parameter("file", 1, expr0x7f41981ed160));
+      (Expr.parameter("line", 2, expr0x7f4198666d50));
+  |])
+  in let call0x7f419825f510 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f419824de70 = Expr.call(
+    type0x7f41993c4690,
+    "ziplistGet", [|
+      (Expr.parameter("p1", 0, expr0x7f4198262090));
+      (Expr.parameter("p2", 1, expr0x7f419825e5c0));
+      (Expr.parameter("p3", 2, expr0x7f419825e5e0));
+      (Expr.parameter("p4", 3, expr0x7f419825e600));
+  |])
+  in let call0x7f4198246d10 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssert", [|
+      (Expr.parameter("estr", 0, expr0x7f41981ed320));
+      (Expr.parameter("file", 1, expr0x7f41981ed380));
+      (Expr.parameter("line", 2, expr0x7f4198666e10));
+  |])
+  in let call0x7f419825f5a0 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f419825f630 = Expr.call(
+    type0x7f41993cc3f0,
+    "zzlGetScore", [|
+      (Expr.parameter("p1", 0, expr0x7f4198262120));
+  |])
+  in let call0x7f4198246da8 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f41981ed460));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f4198246e40 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981ed540));
+      (Expr.parameter("ptr", 1, expr0x7f4198262240));
+      (Expr.parameter("len", 2, expr0x7f41982621f8));
+  |])
+  in let call0x7f4198246ed8 = Expr.call(
+    type0x7f41993c45e8,
+    "ll2string", [|
+      (Expr.parameter("p1", 0, expr0x7f41981ed5e0));
+      (Expr.parameter("p2", 1, expr0x7f41987155d0));
+      (Expr.parameter("p3", 2, expr0x7f4198262288));
+  |])
+  in let call0x7f419825f6c0 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f419825e7e0));
+  |])
+  in let call0x7f4198264000 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981ed640));
+      (Expr.parameter("ptr", 1, expr0x7f41981ed680));
+      (Expr.parameter("len", 2, expr0x7f41982622d0));
+  |])
+  in let call0x7f419824df18 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41981ed780));
+      (Expr.parameter("p2", 1, expr0x7f41987155d0));
+      (Expr.parameter("p3", 2, expr0x7f41981ed7e0));
+      (Expr.parameter("p4", 3, expr0x7f4198329798));
+  |])
+  in let call0x7f419825f750 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f419825e900));
+  |])
+  in let call0x7f4198264098 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981ed860));
+      (Expr.parameter("ptr", 1, expr0x7f41981ed8a0));
+      (Expr.parameter("len", 2, expr0x7f4198262318));
+  |])
+  in let call0x7f4198264130 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981ed9a0));
+      (Expr.parameter("ptr", 1, expr0x7f41981ed9e0));
+      (Expr.parameter("len", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f41982641c8 = Expr.call(
+    type0x7f41993c4f18,
+    "zzlNext", [|
+      (Expr.parameter("p1", 0, expr0x7f4198329438));
+      (Expr.parameter("p2", 1, expr0x7f41981eda60));
+      (Expr.parameter("p3", 2, expr0x7f41981eda80));
+  |])
+  in let call0x7f419825f7e0 = Expr.call(
+    type0x7f419840e690,
+    "dictGetIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f4198262438));
+  |])
+  in let call0x7f419824d150 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41981edda0));
+      (Expr.parameter("p2", 1, expr0x7f41987155d0));
+      (Expr.parameter("p3", 2, expr0x7f41981ede00));
+      (Expr.parameter("p4", 3, expr0x7f4198262480));
+  |])
+  in let call0x7f4198264260 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f41981edea0));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f419825f870 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f41983291f8));
+  |])
+  in let call0x7f41982642f8 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981edf20));
+      (Expr.parameter("ptr", 1, expr0x7f41983291f8));
+      (Expr.parameter("len", 2, expr0x7f41982624c8));
+  |])
+  in let call0x7f419825f900 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f419825ebe0));
+  |])
+  in let call0x7f4198264390 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981edfc0));
+      (Expr.parameter("ptr", 1, expr0x7f41981f2000));
+      (Expr.parameter("len", 2, expr0x7f4198262510));
+  |])
+  in let call0x7f4198264428 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f2100));
+      (Expr.parameter("ptr", 1, expr0x7f41981f2140));
+      (Expr.parameter("len", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f419825f990 = Expr.call(
+    type0x7f4198405000,
+    "dictNext", [|
+      (Expr.parameter("p1", 0, expr0x7f41983290d8));
+  |])
+  in let call0x7f419825fa20 = Expr.call(
+    type0x7f41993c4f18,
+    "dictReleaseIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f41983290d8));
+  |])
+  in let call0x7f41982644c0 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverPanic", [|
+      (Expr.parameter("file", 0, expr0x7f41981f22c0));
+      (Expr.parameter("line", 1, expr0x7f41981f1138));
+      (Expr.parameter("msg", 2, expr0x7f41981f2300));
+  |])
+  in let call0x7f419825fab0 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f419825fb40 = Expr.call(
+    type0x7f419857ce70,
+    "hashTypeInitIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f41983270d8));
+  |])
+  in let call0x7f4198264558 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f41981f24a0));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f419825fbd0 = Expr.call(
+    type0x7f41995875e8,
+    "hashTypeCurrentObjectNewSds", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327af8));
+      (Expr.parameter("p2", 1, expr0x7f41993c9090));
+  |])
+  in let call0x7f419825fc60 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198327c60));
+  |])
+  in let call0x7f41982645f0 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f2540));
+      (Expr.parameter("ptr", 1, expr0x7f4198327c60));
+      (Expr.parameter("len", 2, expr0x7f41982625e8));
+  |])
+  in let call0x7f419825fcf0 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327c60));
+  |])
+  in let call0x7f419825fd80 = Expr.call(
+    type0x7f41995875e8,
+    "hashTypeCurrentObjectNewSds", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327af8));
+      (Expr.parameter("p2", 1, expr0x7f41993c93d8));
+  |])
+  in let call0x7f419825fe10 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198327dc8));
+  |])
+  in let call0x7f4198264688 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f2620));
+      (Expr.parameter("ptr", 1, expr0x7f4198327dc8));
+      (Expr.parameter("len", 2, expr0x7f4198262630));
+  |])
+  in let call0x7f419825fea0 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327dc8));
+  |])
+  in let call0x7f4198264720 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f26e0));
+      (Expr.parameter("ptr", 1, expr0x7f41981f2720));
+      (Expr.parameter("len", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f419825ff30 = Expr.call(
+    type0x7f41993c45e8,
+    "hashTypeNext", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327af8));
+  |])
+  in let call0x7f4198268000 = Expr.call(
+    type0x7f41993c4f18,
+    "hashTypeReleaseIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327af8));
+  |])
+  in let call0x7f419824d1f8 = Expr.call(
+    type0x7f41993c4f18,
+    "streamIteratorStart", [|
+      (Expr.parameter("p1", 0, expr0x7f41981f2900));
+      (Expr.parameter("p2", 1, expr0x7f4198262750));
+      (Expr.parameter("p3", 2, expr0x7f41981f1450));
+      (Expr.parameter("p4", 3, expr0x7f41981f1450));
+      (Expr.parameter("p5", 4, expr0x7f41993c9078));
+  |])
+  in let call0x7f4198261b00 = Expr.call(
+    type0x7f41995875e8,
+    "sdsempty", [|
+  |])
+  in let call0x7f419824d348 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatfmt", [|
+      (Expr.parameter("p1", 0, expr0x7f4198262828));
+      (Expr.parameter("p2", 1, expr0x7f41981f2b00));
+      (Expr.parameter("p3", 2, expr0x7f41982627e0));
+      (Expr.parameter("p4", 3, expr0x7f4198262798));
+  |])
+  in let call0x7f4198268090 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198327750));
+  |])
+  in let call0x7f41982647b8 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f2ba0));
+      (Expr.parameter("ptr", 1, expr0x7f4198327750));
+      (Expr.parameter("len", 2, expr0x7f4198262870));
+  |])
+  in let call0x7f4198268120 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327750));
+  |])
+  in let call0x7f419824d3f0 = Expr.call(
+    type0x7f41993c4f18,
+    "streamIteratorGetField", [|
+      (Expr.parameter("p1", 0, expr0x7f41981f2d40));
+      (Expr.parameter("p2", 1, expr0x7f41981f2d60));
+      (Expr.parameter("p3", 2, expr0x7f41981f2d80));
+      (Expr.parameter("p4", 3, expr0x7f41981f2da0));
+      (Expr.parameter("p5", 4, expr0x7f41981f2dc0));
+  |])
+  in let call0x7f4198264850 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f2e00));
+      (Expr.parameter("ptr", 1, expr0x7f4198262948));
+      (Expr.parameter("len", 2, expr0x7f4198262900));
+  |])
+  in let call0x7f41982648e8 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f2ea0));
+      (Expr.parameter("ptr", 1, expr0x7f4198262a20));
+      (Expr.parameter("len", 2, expr0x7f41982629d8));
+  |])
+  in let call0x7f4198264980 = Expr.call(
+    type0x7f41993c45e8,
+    "streamIteratorGetID", [|
+      (Expr.parameter("p1", 0, expr0x7f4198267460));
+      (Expr.parameter("p2", 1, expr0x7f4198267480));
+      (Expr.parameter("p3", 2, expr0x7f41982674a0));
+  |])
+  in let call0x7f41982681b0 = Expr.call(
+    type0x7f41993c4f18,
+    "streamIteratorStop", [|
+      (Expr.parameter("p1", 0, expr0x7f41981f40c0));
+  |])
+  in let call0x7f4198264a18 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f41981f4240));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f419953f7f8));
+  |])
+  in let call0x7f4198264ab0 = Expr.call(
+    type0x7f41993cc0a8,
+    "memset", [|
+      (Expr.parameter("p1", 0, expr0x7f41981f42c0));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f419953f7f8));
+  |])
+  in let call0x7f4198264b48 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f4400));
+      (Expr.parameter("ptr", 1, expr0x7f41981f4440));
+      (Expr.parameter("len", 2, expr0x7f419953f7f8));
+  |])
+  in let call0x7f4198264be0 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverPanic", [|
+      (Expr.parameter("file", 0, expr0x7f41981f44e0));
+      (Expr.parameter("line", 1, expr0x7f41984f8e88));
+      (Expr.parameter("msg", 2, expr0x7f41981f4520));
+  |])
+  in let call0x7f41982682d0 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f4198264c78 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f41981f45e0));
+      (Expr.parameter("ptr", 1, expr0x7f41981f4640));
+      (Expr.parameter("len", 2, expr0x7f41981f1a08));
+  |])
+  in let call0x7f4198264d10 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f4198323a68));
+      (Expr.parameter("ptr", 1, expr0x7f41981f46c0));
+      (Expr.parameter("len", 2, expr0x7f41981db618));
+  |])
+  in let call0x7f4198268360 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f4198327000));
+  |])
+  in let call0x7f41982683f0 = Expr.call(
+    type0x7f4198405000,
+    "dictNext", [|
+      (Expr.parameter("p1", 0, expr0x7f4198323ca8));
+  |])
+  in let call0x7f4198268480 = Expr.call(
+    type0x7f41993c4f18,
+    "dictReleaseIterator", [|
+      (Expr.parameter("p1", 0, expr0x7f4198323ca8));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41983239d8, expr0x7f41981db5a0)
+    in let step_2_2 = 
+      Action.debug("# DEBUG di => di_95")
+    in let step_2_3 = 
+      Action.call(call0x7f41982467b8)
+    in let step_2_4 = 
+      Action.assign(expr0x7f4198323af8, expr0x7f41993c9078)
+    in let step_2_5 = 
+      Action.debug("# DEBUG j => j_99")
+    in let step_2_6 = 
+      Action.assign(expr0x7f4198323558, expr0x7f4198323af8)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+      |],
+      [|
+        ("memset", 1);
+      |],
+      [|
+        "di_95 = 0B;";
+        "# DEBUG di => di_95";
+        "# .MEM_98 = VDEF <.MEM_96(D)>\nmemset (final_97(D), 0, 20);";
+        "j_99 = 0;";
+        "# DEBUG j => j_99";
+        "j_79 = j_99";
+      |]
+    )
+  in let block_3 = 
+    let step_3_7 = 
+      Action.assume(62, Expr.blt(GccType.boolean, expr0x7f4198323558, expr0x7f4198262d38))
+    in let step_3_8 = 
+      Action.assign(expr0x7f4198257708, expr0x7f419824ea20)
+    in let step_3_9 = 
+      Action.assign(expr0x7f4198257750, expr0x7f4198323558)
+    in let step_3_10 = 
+      Action.assign(expr0x7f4198257798, Expr.times(
+        type0x7f41993c47e0, expr0x7f4198257750, expr0x7f41994f8d80))
+    in let step_3_11 = 
+      Action.assign(expr0x7f4198323c18, Expr.pointer_plus(
+        type0x7f419849e5e8, expr0x7f4198257708, expr0x7f4198257798))
+    in let step_3_12 = 
+      Action.debug("# DEBUG db => db_103")
+    in let step_3_13 = 
+      Action.assign(expr0x7f41982577e0, expr0x7f419824ea50)
+    in let step_3_14 = 
+      Action.assign(expr0x7f4198257828, expr0x7f419824ea80)
+    in let step_3_15 = 
+      Action.assign(expr0x7f4198257870, expr0x7f419824eae0)
+    in let step_3_16 = 
+      Action.assign(expr0x7f41982578b8, expr0x7f419824eb10)
+    in let step_3_17 = 
+      Action.assign(expr0x7f4198257900, Expr.plus(
+        type0x7f41993c47e0, expr0x7f4198257828, expr0x7f41982578b8))
+    in Block.block(
+      3,
+      [|
+        step_3_7;
+        step_3_8;
+        step_3_9;
+        step_3_10;
+        step_3_11;
+        step_3_12;
+        step_3_13;
+        step_3_14;
+        step_3_15;
+        step_3_16;
+        step_3_17;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (j_79 < _78)";
+        "# VUSE <.MEM_94>\n_1 = server.db;";
+        "_2 = (long unsigned int) j_79;";
+        "_3 = _2 * 64;";
+        "db_103 = _1 + _3;";
+        "# DEBUG db => db_103";
+        "# VUSE <.MEM_94>\n_4 = db_103->dict;";
+        "# VUSE <.MEM_94>\n_5 = _4->ht[0].used;";
+        "# VUSE <.MEM_94>\n_6 = db_103->dict;";
+        "# VUSE <.MEM_94>\n_7 = _6->ht[1].used;";
+        "_8 = _5 + _7;";
+      |]
+    )
+  in let block_4 = 
+    let step_4_18 = 
+      Action.assume(3, Expr.beq(GccType.boolean, expr0x7f4198257900, expr0x7f41993acfa8))
+    in let step_4_19 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in Block.block(
+      4,
+      [|
+        step_4_18;
+        step_4_19;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_8 == 0)";
+        "// predicted unlikely by continue predictor.";
+      |]
+    )
+  in let block_5 = 
+    let step_5_20 = 
+      Action.assume(3, Expr.bneq(GccType.boolean, expr0x7f4198257900, expr0x7f41993acfa8))
+    in let step_5_21 = 
+      Action.assign(expr0x7f4198257948, expr0x7f419824eb70)
+    in let step_5_22 = 
+      Action.call(call0x7f4198251900)
+    in let step_5_23 = 
+      Action.assign(expr0x7f4198323ca8, call0x7f4198251900)
+    in let step_5_24 = 
+      Action.debug("# DEBUG di => di_105")
+    in let step_5_25 = 
+      Action.assign(expr0x7f4198257990, expr0x7f4198323558)
+    in let step_5_26 = 
+      Action.call(call0x7f4198251990)
+    in let step_5_27 = 
+      Action.assign(expr0x7f41982579d8, call0x7f4198251990)
+    in let step_5_28 = 
+      Action.assign(expr0x7f4198520e10, expr0x7f41982579d8)
+    in let step_5_29 = 
+      Action.call(call0x7f4198246850)
+    in Block.block(
+      5,
+      [|
+        step_5_20;
+        step_5_21;
+        step_5_22;
+        step_5_23;
+        step_5_24;
+        step_5_25;
+        step_5_26;
+        step_5_27;
+        step_5_28;
+        step_5_29;
+      |],
+      [|
+        ("__bswap_32", 1);
+        ("dictGetSafeIterator", 1);
+        ("mixDigest", 1);
+      |],
+      [|
+        "assume FALSE (_8 == 0)";
+        "# VUSE <.MEM_94>\n_9 = db_103->dict;";
+        "# .MEM_104 = VDEF <.MEM_94>\ndi_105 = dictGetSafeIterator (_9);";
+        "<CAPTURES RETURN>";
+        "# DEBUG di => di_105";
+        "j.0_10 = (unsigned int) j_79;";
+        "# .MEM_106 = VDEF <.MEM_104>\n_11 = __bswap_32 (j.0_10);";
+        "<CAPTURES RETURN>";
+        "# .MEM_107 = VDEF <.MEM_106>\naux = _11;";
+        "# .MEM_108 = VDEF <.MEM_107>\nmixDigest (final_97(D), &aux, 4);";
+      |]
+    )
+  in let block_6 = 
+    let step_6_30 = 
+      Action.assume(59, Expr.bneq(GccType.boolean, expr0x7f4198323e10, expr0x7f41981db720))
+    in let step_6_31 = 
+      Action.call(call0x7f41982468e8)
+    in let step_6_32 = 
+      Action.assign(expr0x7f4198323ee8, expr0x7f41981dec90)
+    in let step_6_33 = 
+      Action.debug("# DEBUG key => key_113")
+    in let step_6_34 = 
+      Action.call(call0x7f4198251a20)
+    in let step_6_35 = 
+      Action.assign(expr0x7f4198257a20, call0x7f4198251a20)
+    in let step_6_36 = 
+      Action.call(call0x7f4198251ab0)
+    in let step_6_37 = 
+      Action.assign(expr0x7f4198327000, call0x7f4198251ab0)
+    in let step_6_38 = 
+      Action.debug("# DEBUG keyobj => keyobj_116")
+    in let step_6_39 = 
+      Action.call(call0x7f4198251b40)
+    in let step_6_40 = 
+      Action.assign(expr0x7f4198257a68, call0x7f4198251b40)
+    in let step_6_41 = 
+      Action.call(call0x7f4198246980)
+    in let step_6_42 = 
+      Action.assign(expr0x7f41983270d8, expr0x7f41981decf0)
+    in let step_6_43 = 
+      Action.debug("# DEBUG o => o_119")
+    in let step_6_44 = 
+      Action.assign(expr0x7f4198257ab0, expr0x7f419824eba0)
+    in let step_6_45 = 
+      Action.assign(expr0x7f4198257af8, expr0x7f4198257ab0)
+    in let step_6_46 = 
+      Action.call(call0x7f4198251bd0)
+    in let step_6_47 = 
+      Action.assign(expr0x7f4198257b40, call0x7f4198251bd0)
+    in let step_6_48 = 
+      Action.assign(expr0x7f4198520e10, expr0x7f4198257b40)
+    in let step_6_49 = 
+      Action.call(call0x7f4198246a18)
+    in let step_6_50 = 
+      Action.call(call0x7f4198251c60)
+    in let step_6_51 = 
+      Action.assign(expr0x7f4198327240, call0x7f4198251c60)
+    in let step_6_52 = 
+      Action.debug("# DEBUG expiretime => expiretime_124")
+    in let step_6_53 = 
+      Action.assign(expr0x7f4198257b88, expr0x7f419824ebd0)
+    in let step_6_54 = 
+      Action.assign(expr0x7f4198257bd0, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198257b88, expr0x7f41981db870))
+    in Block.block(
+      6,
+      [|
+        step_6_30;
+        step_6_31;
+        step_6_32;
+        step_6_33;
+        step_6_34;
+        step_6_35;
+        step_6_36;
+        step_6_37;
+        step_6_38;
+        step_6_39;
+        step_6_40;
+        step_6_41;
+        step_6_42;
+        step_6_43;
+        step_6_44;
+        step_6_45;
+        step_6_46;
+        step_6_47;
+        step_6_48;
+        step_6_49;
+        step_6_50;
+        step_6_51;
+        step_6_52;
+        step_6_53;
+        step_6_54;
+      |],
+      [|
+        ("__bswap_32", 1);
+        ("createStringObject", 1);
+        ("getExpire", 1);
+        ("memset", 1);
+        ("mixDigest", 2);
+        ("sdslen", 2);
+      |],
+      [|
+        "assume TRUE (de_110 != 0B)";
+        "# .MEM_112 = VDEF <.MEM_109>\nmemset (&digest, 0, 20);";
+        "# VUSE <.MEM_112>\nkey_113 = de_110->key;";
+        "# DEBUG key => key_113";
+        "# .MEM_114 = VDEF <.MEM_112>\n_12 = sdslen (key_113);";
+        "<CAPTURES RETURN>";
+        "# .MEM_115 = VDEF <.MEM_114>\nkeyobj_116 = createStringObject (key_113, _12);";
+        "<CAPTURES RETURN>";
+        "# DEBUG keyobj => keyobj_116";
+        "# .MEM_117 = VDEF <.MEM_115>\n_13 = sdslen (key_113);";
+        "<CAPTURES RETURN>";
+        "# .MEM_118 = VDEF <.MEM_117>\nmixDigest (&digest, key_113, _13);";
+        "# VUSE <.MEM_118>\no_119 = de_110->v.val;";
+        "# DEBUG o => o_119";
+        "# VUSE <.MEM_118>\n_14 = o_119->type;";
+        "_15 = (unsigned int) _14;";
+        "# .MEM_120 = VDEF <.MEM_118>\n_16 = __bswap_32 (_15);";
+        "<CAPTURES RETURN>";
+        "# .MEM_121 = VDEF <.MEM_120>\naux = _16;";
+        "# .MEM_122 = VDEF <.MEM_121>\nmixDigest (&digest, &aux, 4);";
+        "# .MEM_123 = VDEF <.MEM_122>\nexpiretime_124 = getExpire (db_103, keyobj_116);";
+        "<CAPTURES RETURN>";
+        "# DEBUG expiretime => expiretime_124";
+        "# VUSE <.MEM_123>\n_17 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_18 = _17 & 15;";
+      |]
+    )
+  in let block_7 = 
+    let step_7_55 = 
+      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f4198257bd0, expr0x7f41993acdf8))
+    in let step_7_56 = 
+      Action.call(call0x7f4198251cf0)
+    in Block.block(
+      7,
+      [|
+        step_7_55;
+        step_7_56;
+      |],
+      [|
+        ("mixObjectDigest", 1);
+      |],
+      [|
+        "assume TRUE (_18 == 0)";
+        "# .MEM_232 = VDEF <.MEM_123>\nmixObjectDigest (&digest, o_119);";
+      |]
+    )
+  in let block_8 = 
+    let step_8_57 = 
+      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f4198257bd0, expr0x7f41993acdf8))
+    in let step_8_58 = 
+      Action.assign(expr0x7f4198257c18, expr0x7f419824ec00)
+    in let step_8_59 = 
+      Action.assign(expr0x7f4198257c60, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198257c18, expr0x7f41981db870))
+    in Block.block(
+      8,
+      [|
+        step_8_57;
+        step_8_58;
+        step_8_59;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_18 == 0)";
+        "# VUSE <.MEM_123>\n_19 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_20 = _19 & 15;";
+      |]
+    )
+  in let block_9 = 
+    let step_9_60 = 
+      Action.assume(8, Expr.beq(GccType.boolean, expr0x7f4198257c60, expr0x7f41981db8d0))
+    in let step_9_61 = 
+      Action.call(call0x7f4198246ab0)
+    in let step_9_62 = 
+      Action.assign(expr0x7f4198329ea0, call0x7f4198246ab0)
+    in let step_9_63 = 
+      Action.debug("# DEBUG li => li_224")
+    in Block.block(
+      9,
+      [|
+        step_9_60;
+        step_9_61;
+        step_9_62;
+        step_9_63;
+      |],
+      [|
+        ("listTypeInitIterator", 1);
+      |],
+      [|
+        "assume TRUE (_20 == 1)";
+        "# .MEM_223 = VDEF <.MEM_123>\nli_224 = listTypeInitIterator (o_119, 0, 1);";
+        "<CAPTURES RETURN>";
+        "# DEBUG li => li_224";
+      |]
+    )
+  in let block_10 = 
+    let step_10_64 = 
+      Action.assume(11, Expr.bneq(GccType.boolean, expr0x7f4198257ca8, expr0x7f41993c9078))
+    in let step_10_65 = 
+      Action.call(call0x7f4198251d80)
+    in let step_10_66 = 
+      Action.assign(expr0x7f419832a048, call0x7f4198251d80)
+    in let step_10_67 = 
+      Action.debug("# DEBUG eleobj => eleobj_229")
+    in let step_10_68 = 
+      Action.call(call0x7f4198251e10)
+    in let step_10_69 = 
+      Action.call(call0x7f4198251ea0)
+    in Block.block(
+      10,
+      [|
+        step_10_64;
+        step_10_65;
+        step_10_66;
+        step_10_67;
+        step_10_68;
+        step_10_69;
+      |],
+      [|
+        ("decrRefCount", 1);
+        ("listTypeGet", 1);
+        ("mixObjectDigest", 1);
+      |],
+      [|
+        "assume TRUE (_21 != 0)";
+        "# .MEM_228 = VDEF <.MEM_225>\neleobj_229 = listTypeGet (&entry);";
+        "<CAPTURES RETURN>";
+        "# DEBUG eleobj => eleobj_229";
+        "# .MEM_230 = VDEF <.MEM_228>\nmixObjectDigest (&digest, eleobj_229);";
+        "# .MEM_231 = VDEF <.MEM_230>\ndecrRefCount (eleobj_229);";
+      |]
+    )
+  in let block_11 = 
+    let step_11_70 = 
+      Action.call(call0x7f4198251f30)
+    in let step_11_71 = 
+      Action.assign(expr0x7f4198257ca8, call0x7f4198251f30)
+    in Block.block(
+      11,
+      [|
+        step_11_70;
+        step_11_71;
+      |],
+      [|
+        ("listTypeNext", 1);
+      |],
+      [|
+        "# .MEM_225 = VDEF <.MEM_80>\n_21 = listTypeNext (li_224, &entry);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_12 = 
+    let step_12_72 = 
+      Action.assume(11, Expr.beq(GccType.boolean, expr0x7f4198257ca8, expr0x7f41993c9078))
+    in let step_12_73 = 
+      Action.call(call0x7f419825f000)
+    in let step_12_74 = 
+      Action.assign(expr0x7f41981e9240, expr0x7f4198243c48)
+    in Block.block(
+      12,
+      [|
+        step_12_72;
+        step_12_73;
+        step_12_74;
+      |],
+      [|
+        ("listTypeReleaseIterator", 1);
+      |],
+      [|
+        "assume FALSE (_21 != 0)";
+        "# .MEM_226 = VDEF <.MEM_225>\nlistTypeReleaseIterator (li_224);";
+        "# .MEM_227 = VDEF <.MEM_226>\nentry ={v} {CLOBBER};";
+      |]
+    )
+  in let block_13 = 
+    let step_13_75 = 
+      Action.assume(8, Expr.bneq(GccType.boolean, expr0x7f4198257c60, expr0x7f41981db8d0))
+    in let step_13_76 = 
+      Action.assign(expr0x7f4198257cf0, expr0x7f419824ec30)
+    in let step_13_77 = 
+      Action.assign(expr0x7f4198257d38, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198257cf0, expr0x7f41981db870))
+    in Block.block(
+      13,
+      [|
+        step_13_75;
+        step_13_76;
+        step_13_77;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_20 == 1)";
+        "# VUSE <.MEM_123>\n_22 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_23 = _22 & 15;";
+      |]
+    )
+  in let block_14 = 
+    let step_14_78 = 
+      Action.assume(13, Expr.beq(GccType.boolean, expr0x7f4198257d38, expr0x7f41981dba50))
+    in let step_14_79 = 
+      Action.call(call0x7f419825f090)
+    in let step_14_80 = 
+      Action.assign(expr0x7f4198329c60, call0x7f419825f090)
+    in let step_14_81 = 
+      Action.debug("# DEBUG si => si_216")
+    in Block.block(
+      14,
+      [|
+        step_14_78;
+        step_14_79;
+        step_14_80;
+        step_14_81;
+      |],
+      [|
+        ("setTypeInitIterator", 1);
+      |],
+      [|
+        "assume TRUE (_23 == 2)";
+        "# .MEM_215 = VDEF <.MEM_123>\nsi_216 = setTypeInitIterator (o_119);";
+        "<CAPTURES RETURN>";
+        "# DEBUG si => si_216";
+      |]
+    )
+  in let block_15 = 
+    let step_15_82 = 
+      Action.assume(16, Expr.bneq(GccType.boolean, expr0x7f4198329cf0, expr0x7f41981dba98))
+    in let step_15_83 = 
+      Action.call(call0x7f419825f120)
+    in let step_15_84 = 
+      Action.assign(expr0x7f4198257d80, call0x7f419825f120)
+    in let step_15_85 = 
+      Action.call(call0x7f4198246b48)
+    in let step_15_86 = 
+      Action.call(call0x7f419825f1b0)
+    in Block.block(
+      15,
+      [|
+        step_15_82;
+        step_15_83;
+        step_15_84;
+        step_15_85;
+        step_15_86;
+      |],
+      [|
+        ("sdsfree", 1);
+        ("sdslen", 1);
+        ("xorDigest", 1);
+      |],
+      [|
+        "assume TRUE (sdsele_218 != 0B)";
+        "# .MEM_220 = VDEF <.MEM_217>\n_24 = sdslen (sdsele_218);";
+        "<CAPTURES RETURN>";
+        "# .MEM_221 = VDEF <.MEM_220>\nxorDigest (&digest, sdsele_218, _24);";
+        "# .MEM_222 = VDEF <.MEM_221>\nsdsfree (sdsele_218);";
+      |]
+    )
+  in let block_16 = 
+    let step_16_87 = 
+      Action.call(call0x7f419825f240)
+    in let step_16_88 = 
+      Action.assign(expr0x7f4198329cf0, call0x7f419825f240)
+    in let step_16_89 = 
+      Action.debug("# DEBUG sdsele => sdsele_218")
+    in Block.block(
+      16,
+      [|
+        step_16_87;
+        step_16_88;
+        step_16_89;
+      |],
+      [|
+        ("setTypeNextObject", 1);
+      |],
+      [|
+        "# .MEM_217 = VDEF <.MEM_81>\nsdsele_218 = setTypeNextObject (si_216);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sdsele => sdsele_218";
+      |]
+    )
+  in let block_17 = 
+    let step_17_90 = 
+      Action.assume(16, Expr.beq(GccType.boolean, expr0x7f4198329cf0, expr0x7f41981dba98))
+    in let step_17_91 = 
+      Action.call(call0x7f419825f2d0)
+    in Block.block(
+      17,
+      [|
+        step_17_90;
+        step_17_91;
+      |],
+      [|
+        ("setTypeReleaseIterator", 1);
+      |],
+      [|
+        "assume FALSE (sdsele_218 != 0B)";
+        "# .MEM_219 = VDEF <.MEM_217>\nsetTypeReleaseIterator (si_216);";
+      |]
+    )
+  in let block_18 = 
+    let step_18_92 = 
+      Action.assume(13, Expr.bneq(GccType.boolean, expr0x7f4198257d38, expr0x7f41981dba50))
+    in let step_18_93 = 
+      Action.assign(expr0x7f4198257dc8, expr0x7f419824ec60)
+    in let step_18_94 = 
+      Action.assign(expr0x7f4198257e10, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198257dc8, expr0x7f41981db870))
+    in Block.block(
+      18,
+      [|
+        step_18_92;
+        step_18_93;
+        step_18_94;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_23 == 2)";
+        "# VUSE <.MEM_123>\n_25 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_26 = _25 & 15;";
+      |]
+    )
+  in let block_19 = 
+    let step_19_95 = 
+      Action.assume(18, Expr.beq(GccType.boolean, expr0x7f4198257e10, expr0x7f419955ce70))
+    in let step_19_96 = 
+      Action.assign(expr0x7f4198257e58, expr0x7f419824ec90)
+    in let step_19_97 = 
+      Action.assign(expr0x7f4198257ea0, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198257e58, expr0x7f41981db858))
+    in Block.block(
+      19,
+      [|
+        step_19_95;
+        step_19_96;
+        step_19_97;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_26 == 3)";
+        "# VUSE <.MEM_123>\n_27 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_28 = _27 & 240;";
+      |]
+    )
+  in let block_20 = 
+    let step_20_98 = 
+      Action.assume(19, Expr.beq(GccType.boolean, expr0x7f4198257ea0, expr0x7f41981dbbe8))
+    in let step_20_99 = 
+      Action.assign(expr0x7f4198329438, expr0x7f41981eb2a0)
+    in let step_20_100 = 
+      Action.debug("# DEBUG zl => zl_187")
+    in let step_20_101 = 
+      Action.call(call0x7f419825f360)
+    in let step_20_102 = 
+      Action.assign(expr0x7f4198257ee8, call0x7f419825f360)
+    in let step_20_103 = 
+      Action.assign(expr0x7f41981e9510, expr0x7f4198257ee8)
+    in let step_20_104 = 
+      Action.assign(expr0x7f4198257f30, expr0x7f41981e9510)
+    in Block.block(
+      20,
+      [|
+        step_20_98;
+        step_20_99;
+        step_20_100;
+        step_20_101;
+        step_20_102;
+        step_20_103;
+        step_20_104;
+      |],
+      [|
+        ("ziplistIndex", 1);
+      |],
+      [|
+        "assume TRUE (_28 == 80)";
+        "# VUSE <.MEM_123>\nzl_187 = o_119->ptr;";
+        "# DEBUG zl => zl_187";
+        "# .MEM_188 = VDEF <.MEM_123>\n_29 = ziplistIndex (zl_187, 0);";
+        "<CAPTURES RETURN>";
+        "# .MEM_189 = VDEF <.MEM_188>\neptr = _29;";
+        "# VUSE <.MEM_189>\neptr.1_30 = eptr;";
+      |]
+    )
+  in let block_21 = 
+    let step_21_105 = 
+      Action.assume(20, Expr.beq(GccType.boolean, expr0x7f4198257f30, expr0x7f41981dbcc0))
+    in let step_21_106 = 
+      Action.call(call0x7f4198246be0)
+    in let step_21_107 = 
+      Action.call(call0x7f419825f3f0)
+    in Block.block(
+      21,
+      [|
+        step_21_105;
+        step_21_106;
+        step_21_107;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverAssert", 1);
+      |],
+      [|
+        "assume TRUE (eptr.1_30 == 0B)";
+        "# .MEM_212 = VDEF <.MEM_189>\n_serverAssert (\"eptr != NULL\", \"debug.c\", 186);";
+        "# .MEM_213 = VDEF <.MEM_212>\n_exit (1);";
+      |]
+    )
+  in let block_22 = 
+    let step_22_108 = 
+      Action.assume(20, Expr.bneq(GccType.boolean, expr0x7f4198257f30, expr0x7f41981dbcc0))
+    in let step_22_109 = 
+      Action.assign(expr0x7f4198257f78, expr0x7f41981e9510)
+    in let step_22_110 = 
+      Action.call(call0x7f419825f480)
+    in let step_22_111 = 
+      Action.assign(expr0x7f4198262000, call0x7f419825f480)
+    in let step_22_112 = 
+      Action.assign(expr0x7f41981e95a0, expr0x7f4198262000)
+    in let step_22_113 = 
+      Action.assign(expr0x7f4198262048, expr0x7f41981e95a0)
+    in Block.block(
+      22,
+      [|
+        step_22_108;
+        step_22_109;
+        step_22_110;
+        step_22_111;
+        step_22_112;
+        step_22_113;
+      |],
+      [|
+        ("ziplistNext", 1);
+      |],
+      [|
+        "assume FALSE (eptr.1_30 == 0B)";
+        "# VUSE <.MEM_189>\neptr.2_31 = eptr;";
+        "# .MEM_190 = VDEF <.MEM_189>\n_32 = ziplistNext (zl_187, eptr.2_31);";
+        "<CAPTURES RETURN>";
+        "# .MEM_191 = VDEF <.MEM_190>\nsptr = _32;";
+        "# VUSE <.MEM_191>\nsptr.3_33 = sptr;";
+      |]
+    )
+  in let block_23 = 
+    let step_23_114 = 
+      Action.assume(22, Expr.beq(GccType.boolean, expr0x7f4198262048, expr0x7f41981dbcc0))
+    in let step_23_115 = 
+      Action.call(call0x7f4198246c78)
+    in let step_23_116 = 
+      Action.call(call0x7f419825f510)
+    in Block.block(
+      23,
+      [|
+        step_23_114;
+        step_23_115;
+        step_23_116;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverAssert", 1);
+      |],
+      [|
+        "assume TRUE (sptr.3_33 == 0B)";
+        "# .MEM_210 = VDEF <.MEM_191>\n_serverAssert (\"sptr != NULL\", \"debug.c\", 188);";
+        "# .MEM_211 = VDEF <.MEM_210>\n_exit (1);";
+      |]
+    )
+  in let block_24 = 
+    let step_24_117 = 
+      Action.assume(30, Expr.bneq(GccType.boolean, expr0x7f4198262360, expr0x7f41981dbcc0))
+    in let step_24_118 = 
+      Action.assign(expr0x7f4198262090, expr0x7f41981e9510)
+    in let step_24_119 = 
+      Action.call(call0x7f419824de70)
+    in let step_24_120 = 
+      Action.assign(expr0x7f41982620d8, call0x7f419824de70)
+    in Block.block(
+      24,
+      [|
+        step_24_117;
+        step_24_118;
+        step_24_119;
+        step_24_120;
+      |],
+      [|
+        ("ziplistGet", 1);
+      |],
+      [|
+        "assume TRUE (eptr.10_44 != 0B)";
+        "# VUSE <.MEM_83>\neptr.4_34 = eptr;";
+        "# .MEM_197 = VDEF <.MEM_83>\n_35 = ziplistGet (eptr.4_34, &vstr, &vlen, &vll);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_25 = 
+    let step_25_121 = 
+      Action.assume(24, Expr.beq(GccType.boolean, expr0x7f41982620d8, expr0x7f41993acf48))
+    in let step_25_122 = 
+      Action.call(call0x7f4198246d10)
+    in let step_25_123 = 
+      Action.call(call0x7f419825f5a0)
+    in Block.block(
+      25,
+      [|
+        step_25_121;
+        step_25_122;
+        step_25_123;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverAssert", 1);
+      |],
+      [|
+        "assume TRUE (_35 == 0)";
+        "# .MEM_208 = VDEF <.MEM_197>\n_serverAssert (\"ziplistGet(eptr,&vstr,&vlen,&vll)\", \"debug.c\", 191);";
+        "# .MEM_209 = VDEF <.MEM_208>\n_exit (1);";
+      |]
+    )
+  in let block_26 = 
+    let step_26_124 = 
+      Action.assume(24, Expr.bneq(GccType.boolean, expr0x7f41982620d8, expr0x7f41993acf48))
+    in let step_26_125 = 
+      Action.assign(expr0x7f4198262120, expr0x7f41981e95a0)
+    in let step_26_126 = 
+      Action.call(call0x7f419825f630)
+    in let step_26_127 = 
+      Action.assign(expr0x7f4198329798, call0x7f419825f630)
+    in let step_26_128 = 
+      Action.debug("# DEBUG score => score_199")
+    in let step_26_129 = 
+      Action.call(call0x7f4198246da8)
+    in let step_26_130 = 
+      Action.assign(expr0x7f4198262168, expr0x7f41981e9630)
+    in Block.block(
+      26,
+      [|
+        step_26_124;
+        step_26_125;
+        step_26_126;
+        step_26_127;
+        step_26_128;
+        step_26_129;
+        step_26_130;
+      |],
+      [|
+        ("memset", 1);
+        ("zzlGetScore", 1);
+      |],
+      [|
+        "assume FALSE (_35 == 0)";
+        "# VUSE <.MEM_197>\nsptr.5_36 = sptr;";
+        "# .MEM_198 = VDEF <.MEM_197>\nscore_199 = zzlGetScore (sptr.5_36);";
+        "<CAPTURES RETURN>";
+        "# DEBUG score => score_199";
+        "# .MEM_200 = VDEF <.MEM_198>\nmemset (&eledigest, 0, 20);";
+        "# VUSE <.MEM_200>\nvstr.6_37 = vstr;";
+      |]
+    )
+  in let block_27 = 
+    let step_27_131 = 
+      Action.assume(26, Expr.bneq(GccType.boolean, expr0x7f4198262168, expr0x7f41981dbcc0))
+    in let step_27_132 = 
+      Action.assign(expr0x7f41982621b0, expr0x7f41981e96c0)
+    in let step_27_133 = 
+      Action.assign(expr0x7f41982621f8, expr0x7f41982621b0)
+    in let step_27_134 = 
+      Action.assign(expr0x7f4198262240, expr0x7f41981e9630)
+    in let step_27_135 = 
+      Action.call(call0x7f4198246e40)
+    in Block.block(
+      27,
+      [|
+        step_27_131;
+        step_27_132;
+        step_27_133;
+        step_27_134;
+        step_27_135;
+      |],
+      [|
+        ("mixDigest", 1);
+      |],
+      [|
+        "assume TRUE (vstr.6_37 != 0B)";
+        "# VUSE <.MEM_200>\nvlen.7_38 = vlen;";
+        "_39 = (long unsigned int) vlen.7_38;";
+        "# VUSE <.MEM_200>\nvstr.8_40 = vstr;";
+        "# .MEM_203 = VDEF <.MEM_200>\nmixDigest (&eledigest, vstr.8_40, _39);";
+      |]
+    )
+  in let block_28 = 
+    let step_28_136 = 
+      Action.assume(26, Expr.beq(GccType.boolean, expr0x7f4198262168, expr0x7f41981dbcc0))
+    in let step_28_137 = 
+      Action.assign(expr0x7f4198262288, expr0x7f41981e9750)
+    in let step_28_138 = 
+      Action.call(call0x7f4198246ed8)
+    in let step_28_139 = 
+      Action.call(call0x7f419825f6c0)
+    in let step_28_140 = 
+      Action.assign(expr0x7f41982622d0, call0x7f419825f6c0)
+    in let step_28_141 = 
+      Action.call(call0x7f4198264000)
+    in Block.block(
+      28,
+      [|
+        step_28_136;
+        step_28_137;
+        step_28_138;
+        step_28_139;
+        step_28_140;
+        step_28_141;
+      |],
+      [|
+        ("ll2string", 1);
+        ("mixDigest", 1);
+        ("strlen", 1);
+      |],
+      [|
+        "assume FALSE (vstr.6_37 != 0B)";
+        "# VUSE <.MEM_200>\nvll.9_41 = vll;";
+        "# .MEM_201 = VDEF <.MEM_200>\nll2string (&buf, 128, vll.9_41);";
+        "# VUSE <.MEM_201>\n_42 = strlen (&buf);";
+        "<CAPTURES RETURN>";
+        "# .MEM_202 = VDEF <.MEM_201>\nmixDigest (&eledigest, &buf, _42);";
+      |]
+    )
+  in let block_29 = 
+    let step_29_142 = 
+      Action.call(call0x7f419824df18)
+    in let step_29_143 = 
+      Action.call(call0x7f419825f750)
+    in let step_29_144 = 
+      Action.assign(expr0x7f4198262318, call0x7f419825f750)
+    in let step_29_145 = 
+      Action.call(call0x7f4198264098)
+    in let step_29_146 = 
+      Action.call(call0x7f4198264130)
+    in let step_29_147 = 
+      Action.call(call0x7f41982641c8)
+    in Block.block(
+      29,
+      [|
+        step_29_142;
+        step_29_143;
+        step_29_144;
+        step_29_145;
+        step_29_146;
+        step_29_147;
+      |],
+      [|
+        ("mixDigest", 1);
+        ("snprintf", 1);
+        ("strlen", 1);
+        ("xorDigest", 1);
+        ("zzlNext", 1);
+      |],
+      [|
+        "# .MEM_204 = VDEF <.MEM_82>\nsnprintf (&buf, 128, \"%.17g\", score_199);";
+        "# VUSE <.MEM_204>\n_43 = strlen (&buf);";
+        "<CAPTURES RETURN>";
+        "# .MEM_205 = VDEF <.MEM_204>\nmixDigest (&eledigest, &buf, _43);";
+        "# .MEM_206 = VDEF <.MEM_205>\nxorDigest (&digest, &eledigest, 20);";
+        "# .MEM_207 = VDEF <.MEM_206>\nzzlNext (zl_187, &eptr, &sptr);";
+      |]
+    )
+  in let block_30 = 
+    let step_30_148 = 
+      Action.assume(22, Expr.bneq(GccType.boolean, expr0x7f4198262048, expr0x7f41981dbcc0))
+    in let step_30_149 = 
+      Action.assign(expr0x7f4198262360, expr0x7f41981e9510)
+    in Block.block(
+      30,
+      [|
+        step_30_148;
+        step_30_149;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (sptr.3_33 == 0B)";
+        "# VUSE <.MEM_83>\neptr.10_44 = eptr;";
+      |]
+    )
+  in let block_31 = 
+    let step_31_150 = 
+      Action.assume(30, Expr.beq(GccType.boolean, expr0x7f4198262360, expr0x7f41981dbcc0))
+    in let step_31_151 = 
+      Action.assign(expr0x7f41981e9510, expr0x7f4198243e40)
+    in let step_31_152 = 
+      Action.assign(expr0x7f41981e95a0, expr0x7f4198243e58)
+    in let step_31_153 = 
+      Action.assign(expr0x7f41981e9630, expr0x7f4198243e70)
+    in let step_31_154 = 
+      Action.assign(expr0x7f41981e96c0, expr0x7f4198243e88)
+    in let step_31_155 = 
+      Action.assign(expr0x7f41981e9750, expr0x7f4198243ea0)
+    in Block.block(
+      31,
+      [|
+        step_31_150;
+        step_31_151;
+        step_31_152;
+        step_31_153;
+        step_31_154;
+        step_31_155;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (eptr.10_44 != 0B)";
+        "# .MEM_192 = VDEF <.MEM_83>\neptr ={v} {CLOBBER};";
+        "# .MEM_193 = VDEF <.MEM_192>\nsptr ={v} {CLOBBER};";
+        "# .MEM_194 = VDEF <.MEM_193>\nvstr ={v} {CLOBBER};";
+        "# .MEM_195 = VDEF <.MEM_194>\nvlen ={v} {CLOBBER};";
+        "# .MEM_196 = VDEF <.MEM_195>\nvll ={v} {CLOBBER};";
+      |]
+    )
+  in let block_32 = 
+    let step_32_156 = 
+      Action.assume(19, Expr.bneq(GccType.boolean, expr0x7f4198257ea0, expr0x7f41981dbbe8))
+    in let step_32_157 = 
+      Action.assign(expr0x7f41982623a8, expr0x7f419824ecc0)
+    in let step_32_158 = 
+      Action.assign(expr0x7f41982623f0, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982623a8, expr0x7f41981db858))
+    in Block.block(
+      32,
+      [|
+        step_32_156;
+        step_32_157;
+        step_32_158;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_28 == 80)";
+        "# VUSE <.MEM_123>\n_45 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_46 = _45 & 240;";
+      |]
+    )
+  in let block_33 = 
+    let step_33_159 = 
+      Action.assume(32, Expr.beq(GccType.boolean, expr0x7f41982623f0, expr0x7f41981dbf48))
+    in let step_33_160 = 
+      Action.assign(expr0x7f4198329048, expr0x7f41981eb6f0)
+    in let step_33_161 = 
+      Action.debug("# DEBUG zs => zs_173")
+    in let step_33_162 = 
+      Action.assign(expr0x7f4198262438, expr0x7f419824ecf0)
+    in let step_33_163 = 
+      Action.call(call0x7f419825f7e0)
+    in let step_33_164 = 
+      Action.assign(expr0x7f41983290d8, call0x7f419825f7e0)
+    in let step_33_165 = 
+      Action.debug("# DEBUG di => di_175")
+    in Block.block(
+      33,
+      [|
+        step_33_159;
+        step_33_160;
+        step_33_161;
+        step_33_162;
+        step_33_163;
+        step_33_164;
+        step_33_165;
+      |],
+      [|
+        ("dictGetIterator", 1);
+      |],
+      [|
+        "assume TRUE (_46 == 112)";
+        "# VUSE <.MEM_123>\nzs_173 = o_119->ptr;";
+        "# DEBUG zs => zs_173";
+        "# VUSE <.MEM_123>\n_47 = zs_173->dict;";
+        "# .MEM_174 = VDEF <.MEM_123>\ndi_175 = dictGetIterator (_47);";
+        "<CAPTURES RETURN>";
+        "# DEBUG di => di_175";
+      |]
+    )
+  in let block_34 = 
+    let step_34_166 = 
+      Action.assume(35, Expr.bneq(GccType.boolean, expr0x7f4198329168, expr0x7f41981db720))
+    in let step_34_167 = 
+      Action.assign(expr0x7f41983291f8, expr0x7f41981eb750)
+    in let step_34_168 = 
+      Action.debug("# DEBUG sdsele => sdsele_179")
+    in let step_34_169 = 
+      Action.assign(expr0x7f4198329240, expr0x7f41981eb7b0)
+    in let step_34_170 = 
+      Action.debug("# DEBUG score => score_180")
+    in let step_34_171 = 
+      Action.assign(expr0x7f4198262480, expr0x7f4198259898)
+    in let step_34_172 = 
+      Action.call(call0x7f419824d150)
+    in let step_34_173 = 
+      Action.call(call0x7f4198264260)
+    in let step_34_174 = 
+      Action.call(call0x7f419825f870)
+    in let step_34_175 = 
+      Action.assign(expr0x7f41982624c8, call0x7f419825f870)
+    in let step_34_176 = 
+      Action.call(call0x7f41982642f8)
+    in let step_34_177 = 
+      Action.call(call0x7f419825f900)
+    in let step_34_178 = 
+      Action.assign(expr0x7f4198262510, call0x7f419825f900)
+    in let step_34_179 = 
+      Action.call(call0x7f4198264390)
+    in let step_34_180 = 
+      Action.call(call0x7f4198264428)
+    in Block.block(
+      34,
+      [|
+        step_34_166;
+        step_34_167;
+        step_34_168;
+        step_34_169;
+        step_34_170;
+        step_34_171;
+        step_34_172;
+        step_34_173;
+        step_34_174;
+        step_34_175;
+        step_34_176;
+        step_34_177;
+        step_34_178;
+        step_34_179;
+        step_34_180;
+      |],
+      [|
+        ("memset", 1);
+        ("mixDigest", 2);
+        ("sdslen", 1);
+        ("snprintf", 1);
+        ("strlen", 1);
+        ("xorDigest", 1);
+      |],
+      [|
+        "assume TRUE (de_177 != 0B)";
+        "# VUSE <.MEM_176>\nsdsele_179 = de_177->key;";
+        "# DEBUG sdsele => sdsele_179";
+        "# VUSE <.MEM_176>\nscore_180 = de_177->v.val;";
+        "# DEBUG score => score_180";
+        "# VUSE <.MEM_176>\n_48 = *score_180;";
+        "# .MEM_181 = VDEF <.MEM_176>\nsnprintf (&buf, 128, \"%.17g\", _48);";
+        "# .MEM_182 = VDEF <.MEM_181>\nmemset (&eledigest, 0, 20);";
+        "# .MEM_183 = VDEF <.MEM_182>\n_49 = sdslen (sdsele_179);";
+        "<CAPTURES RETURN>";
+        "# .MEM_184 = VDEF <.MEM_183>\nmixDigest (&eledigest, sdsele_179, _49);";
+        "# VUSE <.MEM_184>\n_50 = strlen (&buf);";
+        "<CAPTURES RETURN>";
+        "# .MEM_185 = VDEF <.MEM_184>\nmixDigest (&eledigest, &buf, _50);";
+        "# .MEM_186 = VDEF <.MEM_185>\nxorDigest (&digest, &eledigest, 20);";
+      |]
+    )
+  in let block_35 = 
+    let step_35_181 = 
+      Action.call(call0x7f419825f990)
+    in let step_35_182 = 
+      Action.assign(expr0x7f4198329168, call0x7f419825f990)
+    in let step_35_183 = 
+      Action.debug("# DEBUG de => de_177")
+    in Block.block(
+      35,
+      [|
+        step_35_181;
+        step_35_182;
+        step_35_183;
+      |],
+      [|
+        ("dictNext", 1);
+      |],
+      [|
+        "# .MEM_176 = VDEF <.MEM_84>\nde_177 = dictNext (di_175);";
+        "<CAPTURES RETURN>";
+        "# DEBUG de => de_177";
+      |]
+    )
+  in let block_36 = 
+    let step_36_184 = 
+      Action.assume(35, Expr.beq(GccType.boolean, expr0x7f4198329168, expr0x7f41981db720))
+    in let step_36_185 = 
+      Action.call(call0x7f419825fa20)
+    in Block.block(
+      36,
+      [|
+        step_36_184;
+        step_36_185;
+      |],
+      [|
+        ("dictReleaseIterator", 1);
+      |],
+      [|
+        "assume FALSE (de_177 != 0B)";
+        "# .MEM_178 = VDEF <.MEM_176>\ndictReleaseIterator (di_175);";
+      |]
+    )
+  in let block_37 = 
+    let step_37_186 = 
+      Action.assume(32, Expr.bneq(GccType.boolean, expr0x7f41982623f0, expr0x7f41981dbf48))
+    in let step_37_187 = 
+      Action.call(call0x7f41982644c0)
+    in let step_37_188 = 
+      Action.call(call0x7f419825fab0)
+    in Block.block(
+      37,
+      [|
+        step_37_186;
+        step_37_187;
+        step_37_188;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverPanic", 1);
+      |],
+      [|
+        "assume FALSE (_46 == 112)";
+        "# .MEM_171 = VDEF <.MEM_123>\n_serverPanic (\"debug.c\", 224, \"Unknown sorted set encoding\");";
+        "# .MEM_172 = VDEF <.MEM_171>\n_exit (1);";
+      |]
+    )
+  in let block_38 = 
+    let step_38_189 = 
+      Action.assign(expr0x7f4199597990, expr0x7f4198243fa8)
+    in Block.block(
+      38,
+      [|
+        step_38_189;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# .MEM_214 = VDEF <.MEM_85>\neledigest ={v} {CLOBBER};";
+      |]
+    )
+  in let block_39 = 
+    let step_39_190 = 
+      Action.assume(18, Expr.bneq(GccType.boolean, expr0x7f4198257e10, expr0x7f419955ce70))
+    in let step_39_191 = 
+      Action.assign(expr0x7f4198262558, expr0x7f419824ed20)
+    in let step_39_192 = 
+      Action.assign(expr0x7f41982625a0, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198262558, expr0x7f41981db870))
+    in Block.block(
+      39,
+      [|
+        step_39_190;
+        step_39_191;
+        step_39_192;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_26 == 3)";
+        "# VUSE <.MEM_123>\n_51 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_52 = _51 & 15;";
+      |]
+    )
+  in let block_40 = 
+    let step_40_193 = 
+      Action.assume(39, Expr.beq(GccType.boolean, expr0x7f41982625a0, expr0x7f41981f1210))
+    in let step_40_194 = 
+      Action.call(call0x7f419825fb40)
+    in let step_40_195 = 
+      Action.assign(expr0x7f4198327af8, call0x7f419825fb40)
+    in let step_40_196 = 
+      Action.debug("# DEBUG hi => hi_155")
+    in Block.block(
+      40,
+      [|
+        step_40_193;
+        step_40_194;
+        step_40_195;
+        step_40_196;
+      |],
+      [|
+        ("hashTypeInitIterator", 1);
+      |],
+      [|
+        "assume TRUE (_52 == 4)";
+        "# .MEM_154 = VDEF <.MEM_123>\nhi_155 = hashTypeInitIterator (o_119);";
+        "<CAPTURES RETURN>";
+        "# DEBUG hi => hi_155";
+      |]
+    )
+  in let block_41 = 
+    let step_41_197 = 
+      Action.assume(42, Expr.bneq(GccType.boolean, expr0x7f4198262678, expr0x7f41993c90c0))
+    in let step_41_198 = 
+      Action.call(call0x7f4198264558)
+    in let step_41_199 = 
+      Action.call(call0x7f419825fbd0)
+    in let step_41_200 = 
+      Action.assign(expr0x7f4198327c60, call0x7f419825fbd0)
+    in let step_41_201 = 
+      Action.debug("# DEBUG sdsele => sdsele_160")
+    in let step_41_202 = 
+      Action.call(call0x7f419825fc60)
+    in let step_41_203 = 
+      Action.assign(expr0x7f41982625e8, call0x7f419825fc60)
+    in let step_41_204 = 
+      Action.call(call0x7f41982645f0)
+    in let step_41_205 = 
+      Action.call(call0x7f419825fcf0)
+    in let step_41_206 = 
+      Action.call(call0x7f419825fd80)
+    in let step_41_207 = 
+      Action.assign(expr0x7f4198327dc8, call0x7f419825fd80)
+    in let step_41_208 = 
+      Action.debug("# DEBUG sdsele => sdsele_165")
+    in let step_41_209 = 
+      Action.call(call0x7f419825fe10)
+    in let step_41_210 = 
+      Action.assign(expr0x7f4198262630, call0x7f419825fe10)
+    in let step_41_211 = 
+      Action.call(call0x7f4198264688)
+    in let step_41_212 = 
+      Action.call(call0x7f419825fea0)
+    in let step_41_213 = 
+      Action.call(call0x7f4198264720)
+    in let step_41_214 = 
+      Action.assign(expr0x7f41981e9bd0, expr0x7f41982660c0)
+    in Block.block(
+      41,
+      [|
+        step_41_197;
+        step_41_198;
+        step_41_199;
+        step_41_200;
+        step_41_201;
+        step_41_202;
+        step_41_203;
+        step_41_204;
+        step_41_205;
+        step_41_206;
+        step_41_207;
+        step_41_208;
+        step_41_209;
+        step_41_210;
+        step_41_211;
+        step_41_212;
+        step_41_213;
+        step_41_214;
+      |],
+      [|
+        ("hashTypeCurrentObjectNewSds", 2);
+        ("memset", 1);
+        ("mixDigest", 2);
+        ("sdsfree", 2);
+        ("sdslen", 2);
+        ("xorDigest", 1);
+      |],
+      [|
+        "assume TRUE (_55 != -1)";
+        "# .MEM_158 = VDEF <.MEM_156>\nmemset (&eledigest, 0, 20);";
+        "# .MEM_159 = VDEF <.MEM_158>\nsdsele_160 = hashTypeCurrentObjectNewSds (hi_155, 1);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sdsele => sdsele_160";
+        "# .MEM_161 = VDEF <.MEM_159>\n_53 = sdslen (sdsele_160);";
+        "<CAPTURES RETURN>";
+        "# .MEM_162 = VDEF <.MEM_161>\nmixDigest (&eledigest, sdsele_160, _53);";
+        "# .MEM_163 = VDEF <.MEM_162>\nsdsfree (sdsele_160);";
+        "# .MEM_164 = VDEF <.MEM_163>\nsdsele_165 = hashTypeCurrentObjectNewSds (hi_155, 2);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sdsele => sdsele_165";
+        "# .MEM_166 = VDEF <.MEM_164>\n_54 = sdslen (sdsele_165);";
+        "<CAPTURES RETURN>";
+        "# .MEM_167 = VDEF <.MEM_166>\nmixDigest (&eledigest, sdsele_165, _54);";
+        "# .MEM_168 = VDEF <.MEM_167>\nsdsfree (sdsele_165);";
+        "# .MEM_169 = VDEF <.MEM_168>\nxorDigest (&digest, &eledigest, 20);";
+        "# .MEM_170 = VDEF <.MEM_169>\neledigest ={v} {CLOBBER};";
+      |]
+    )
+  in let block_42 = 
+    let step_42_215 = 
+      Action.call(call0x7f419825ff30)
+    in let step_42_216 = 
+      Action.assign(expr0x7f4198262678, call0x7f419825ff30)
+    in Block.block(
+      42,
+      [|
+        step_42_215;
+        step_42_216;
+      |],
+      [|
+        ("hashTypeNext", 1);
+      |],
+      [|
+        "# .MEM_156 = VDEF <.MEM_86>\n_55 = hashTypeNext (hi_155);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_43 = 
+    let step_43_217 = 
+      Action.assume(42, Expr.beq(GccType.boolean, expr0x7f4198262678, expr0x7f41993c90c0))
+    in let step_43_218 = 
+      Action.call(call0x7f4198268000)
+    in Block.block(
+      43,
+      [|
+        step_43_217;
+        step_43_218;
+      |],
+      [|
+        ("hashTypeReleaseIterator", 1);
+      |],
+      [|
+        "assume FALSE (_55 != -1)";
+        "# .MEM_157 = VDEF <.MEM_156>\nhashTypeReleaseIterator (hi_155);";
+      |]
+    )
+  in let block_44 = 
+    let step_44_219 = 
+      Action.assume(39, Expr.bneq(GccType.boolean, expr0x7f41982625a0, expr0x7f41981f1210))
+    in let step_44_220 = 
+      Action.assign(expr0x7f41982626c0, expr0x7f419824ed50)
+    in let step_44_221 = 
+      Action.assign(expr0x7f4198262708, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982626c0, expr0x7f41981db870))
+    in Block.block(
+      44,
+      [|
+        step_44_219;
+        step_44_220;
+        step_44_221;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_52 == 4)";
+        "# VUSE <.MEM_123>\n_56 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_57 = _56 & 15;";
+      |]
+    )
+  in let block_45 = 
+    let step_45_222 = 
+      Action.assume(44, Expr.beq(GccType.boolean, expr0x7f4198262708, expr0x7f41981f1420))
+    in let step_45_223 = 
+      Action.assign(expr0x7f4198262750, expr0x7f419824ed80)
+    in let step_45_224 = 
+      Action.call(call0x7f419824d1f8)
+    in Block.block(
+      45,
+      [|
+        step_45_222;
+        step_45_223;
+        step_45_224;
+      |],
+      [|
+        ("streamIteratorStart", 1);
+      |],
+      [|
+        "assume TRUE (_57 == 6)";
+        "# VUSE <.MEM_123>\n_58 = o_119->ptr;";
+        "# .MEM_134 = VDEF <.MEM_123>\nstreamIteratorStart (&si, _58, 0B, 0B, 0);";
+      |]
+    )
+  in let block_46 = 
+    let step_46_225 = 
+      Action.assume(49, Expr.bneq(GccType.boolean, expr0x7f4198262b40, expr0x7f41993c9078))
+    in let step_46_226 = 
+      Action.assign(expr0x7f4198262798, expr0x7f419824edb0)
+    in let step_46_227 = 
+      Action.assign(expr0x7f41982627e0, expr0x7f419824ede0)
+    in let step_46_228 = 
+      Action.call(call0x7f4198261b00)
+    in let step_46_229 = 
+      Action.assign(expr0x7f4198262828, call0x7f4198261b00)
+    in let step_46_230 = 
+      Action.call(call0x7f419824d348)
+    in let step_46_231 = 
+      Action.assign(expr0x7f4198327750, call0x7f419824d348)
+    in let step_46_232 = 
+      Action.debug("# DEBUG itemid => itemid_142")
+    in let step_46_233 = 
+      Action.call(call0x7f4198268090)
+    in let step_46_234 = 
+      Action.assign(expr0x7f4198262870, call0x7f4198268090)
+    in let step_46_235 = 
+      Action.call(call0x7f41982647b8)
+    in let step_46_236 = 
+      Action.call(call0x7f4198268120)
+    in Block.block(
+      46,
+      [|
+        step_46_225;
+        step_46_226;
+        step_46_227;
+        step_46_228;
+        step_46_229;
+        step_46_230;
+        step_46_231;
+        step_46_232;
+        step_46_233;
+        step_46_234;
+        step_46_235;
+        step_46_236;
+      |],
+      [|
+        ("mixDigest", 1);
+        ("sdscatfmt", 1);
+        ("sdsempty", 1);
+        ("sdsfree", 1);
+        ("sdslen", 1);
+      |],
+      [|
+        "assume TRUE (_72 != 0)";
+        "# VUSE <.MEM_135>\n_59 = id.seq;";
+        "# VUSE <.MEM_135>\n_60 = id.ms;";
+        "# .MEM_140 = VDEF <.MEM_135>\n_61 = sdsempty ();";
+        "<CAPTURES RETURN>";
+        "# .MEM_141 = VDEF <.MEM_140>\nitemid_142 = sdscatfmt (_61, \"%U.%U\", _60, _59);";
+        "<CAPTURES RETURN>";
+        "# DEBUG itemid => itemid_142";
+        "# .MEM_143 = VDEF <.MEM_141>\n_62 = sdslen (itemid_142);";
+        "<CAPTURES RETURN>";
+        "# .MEM_144 = VDEF <.MEM_143>\nmixDigest (&digest, itemid_142, _62);";
+        "# .MEM_145 = VDEF <.MEM_144>\nsdsfree (itemid_142);";
+      |]
+    )
+  in let block_47 = 
+    let step_47_237 = 
+      Action.assume(48, Expr.bneq(GccType.boolean, expr0x7f4198262ab0, expr0x7f41981f1510))
+    in let step_47_238 = 
+      Action.call(call0x7f419824d3f0)
+    in let step_47_239 = 
+      Action.assign(expr0x7f41982628b8, expr0x7f41981f3090)
+    in let step_47_240 = 
+      Action.assign(expr0x7f4198262900, expr0x7f41982628b8)
+    in let step_47_241 = 
+      Action.assign(expr0x7f4198262948, expr0x7f41981e9f30)
+    in let step_47_242 = 
+      Action.call(call0x7f4198264850)
+    in let step_47_243 = 
+      Action.assign(expr0x7f4198262990, expr0x7f41981f3120)
+    in let step_47_244 = 
+      Action.assign(expr0x7f41982629d8, expr0x7f4198262990)
+    in let step_47_245 = 
+      Action.assign(expr0x7f4198262a20, expr0x7f41981f3000)
+    in let step_47_246 = 
+      Action.call(call0x7f41982648e8)
+    in let step_47_247 = 
+      Action.assign(expr0x7f41981e9f30, expr0x7f4198266198)
+    in let step_47_248 = 
+      Action.assign(expr0x7f41981f3000, expr0x7f41982661b0)
+    in let step_47_249 = 
+      Action.assign(expr0x7f41981f3090, expr0x7f41982661c8)
+    in let step_47_250 = 
+      Action.assign(expr0x7f41981f3120, expr0x7f41982661e0)
+    in Block.block(
+      47,
+      [|
+        step_47_237;
+        step_47_238;
+        step_47_239;
+        step_47_240;
+        step_47_241;
+        step_47_242;
+        step_47_243;
+        step_47_244;
+        step_47_245;
+        step_47_246;
+        step_47_247;
+        step_47_248;
+        step_47_249;
+        step_47_250;
+      |],
+      [|
+        ("mixDigest", 2);
+        ("streamIteratorGetField", 1);
+      |],
+      [|
+        "assume TRUE (numfields.18_70 != 0)";
+        "# .MEM_147 = VDEF <.MEM_146>\nstreamIteratorGetField (&si, &field, &value, &field_len, &value_len);";
+        "# VUSE <.MEM_147>\nfield_len.11_63 = field_len;";
+        "field_len.12_64 = (long unsigned int) field_len.11_63;";
+        "# VUSE <.MEM_147>\nfield.13_65 = field;";
+        "# .MEM_148 = VDEF <.MEM_147>\nmixDigest (&digest, field.13_65, field_len.12_64);";
+        "# VUSE <.MEM_148>\nvalue_len.14_66 = value_len;";
+        "value_len.15_67 = (long unsigned int) value_len.14_66;";
+        "# VUSE <.MEM_148>\nvalue.16_68 = value;";
+        "# .MEM_149 = VDEF <.MEM_148>\nmixDigest (&digest, value.16_68, value_len.15_67);";
+        "# .MEM_150 = VDEF <.MEM_149>\nfield ={v} {CLOBBER};";
+        "# .MEM_151 = VDEF <.MEM_150>\nvalue ={v} {CLOBBER};";
+        "# .MEM_152 = VDEF <.MEM_151>\nfield_len ={v} {CLOBBER};";
+        "# .MEM_153 = VDEF <.MEM_152>\nvalue_len ={v} {CLOBBER};";
+      |]
+    )
+  in let block_48 = 
+    let step_48_251 = 
+      Action.assign(expr0x7f4198262a68, expr0x7f41981e9e10)
+    in let step_48_252 = 
+      Action.assign(expr0x7f4198262ab0, expr0x7f4198262a68)
+    in let step_48_253 = 
+      Action.assign(expr0x7f4198262af8, Expr.plus(
+        type0x7f41993c4738, expr0x7f4198262ab0, expr0x7f41982661f8))
+    in let step_48_254 = 
+      Action.assign(expr0x7f41981e9e10, expr0x7f4198262af8)
+    in Block.block(
+      48,
+      [|
+        step_48_251;
+        step_48_252;
+        step_48_253;
+        step_48_254;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_87>\nnumfields.17_69 = numfields;";
+        "numfields.18_70 = numfields.17_69;";
+        "_71 = numfields.18_70 + -1;";
+        "# .MEM_146 = VDEF <.MEM_87>\nnumfields = _71;";
+      |]
+    )
+  in let block_49 = 
+    let step_49_255 = 
+      Action.assume(48, Expr.beq(GccType.boolean, expr0x7f4198262ab0, expr0x7f41981f1510))
+    in let step_49_256 = 
+      Action.call(call0x7f4198264980)
+    in let step_49_257 = 
+      Action.assign(expr0x7f4198262b40, call0x7f4198264980)
+    in Block.block(
+      49,
+      [|
+        step_49_255;
+        step_49_256;
+        step_49_257;
+      |],
+      [|
+        ("streamIteratorGetID", 1);
+      |],
+      [|
+        "assume FALSE (numfields.18_70 != 0)";
+        "# .MEM_135 = VDEF <.MEM_88>\n_72 = streamIteratorGetID (&si, &id, &numfields);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_50 = 
+    let step_50_258 = 
+      Action.assume(49, Expr.beq(GccType.boolean, expr0x7f4198262b40, expr0x7f41993c9078))
+    in let step_50_259 = 
+      Action.call(call0x7f41982681b0)
+    in let step_50_260 = 
+      Action.assign(expr0x7f41981e9cf0, expr0x7f4198266240)
+    in let step_50_261 = 
+      Action.assign(expr0x7f41981e9d80, expr0x7f4198266258)
+    in let step_50_262 = 
+      Action.assign(expr0x7f41981e9e10, expr0x7f4198266270)
+    in Block.block(
+      50,
+      [|
+        step_50_258;
+        step_50_259;
+        step_50_260;
+        step_50_261;
+        step_50_262;
+      |],
+      [|
+        ("streamIteratorStop", 1);
+      |],
+      [|
+        "assume FALSE (_72 != 0)";
+        "# .MEM_136 = VDEF <.MEM_135>\nstreamIteratorStop (&si);";
+        "# .MEM_137 = VDEF <.MEM_136>\nsi ={v} {CLOBBER};";
+        "# .MEM_138 = VDEF <.MEM_137>\nid ={v} {CLOBBER};";
+        "# .MEM_139 = VDEF <.MEM_138>\nnumfields ={v} {CLOBBER};";
+      |]
+    )
+  in let block_51 = 
+    let step_51_263 = 
+      Action.assume(44, Expr.bneq(GccType.boolean, expr0x7f4198262708, expr0x7f41981f1420))
+    in let step_51_264 = 
+      Action.assign(expr0x7f4198262bd0, expr0x7f419824ee40)
+    in let step_51_265 = 
+      Action.assign(expr0x7f4198262c18, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198262bd0, expr0x7f41981db870))
+    in Block.block(
+      51,
+      [|
+        step_51_263;
+        step_51_264;
+        step_51_265;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_57 == 6)";
+        "# VUSE <.MEM_123>\n_73 = BIT_FIELD_REF <*o_119, 8, 0>;";
+        "_74 = _73 & 15;";
+      |]
+    )
+  in let block_52 = 
+    let step_52_266 = 
+      Action.assume(51, Expr.beq(GccType.boolean, expr0x7f4198262c18, expr0x7f41981dbbd0))
+    in let step_52_267 = 
+      Action.assign(expr0x7f4198327318, expr0x7f41981ebc90)
+    in let step_52_268 = 
+      Action.debug("# DEBUG mv => mv_127")
+    in let step_52_269 = 
+      Action.assign(expr0x7f4198327360, expr0x7f41981ebcc0)
+    in let step_52_270 = 
+      Action.debug("# DEBUG mt => mt_128")
+    in let step_52_271 = 
+      Action.call(call0x7f4198264a18)
+    in let step_52_272 = 
+      Action.call(call0x7f4198264ab0)
+    in let step_52_273 = 
+      Action.assign(expr0x7f4198262c60, expr0x7f419824ee70)
+    in Block.block(
+      52,
+      [|
+        step_52_266;
+        step_52_267;
+        step_52_268;
+        step_52_269;
+        step_52_270;
+        step_52_271;
+        step_52_272;
+        step_52_273;
+      |],
+      [|
+        ("memset", 2);
+      |],
+      [|
+        "assume TRUE (_74 == 5)";
+        "# VUSE <.MEM_123>\nmv_127 = o_119->ptr;";
+        "# DEBUG mv => mv_127";
+        "# VUSE <.MEM_123>\nmt_128 = mv_127->type;";
+        "# DEBUG mt => mt_128";
+        "# .MEM_129 = VDEF <.MEM_123>\nmemset (&md.o, 0, 20);";
+        "# .MEM_130 = VDEF <.MEM_129>\nmemset (&md.x, 0, 20);";
+        "# VUSE <.MEM_130>\n_75 = mt_128->digest;";
+      |]
+    )
+  in let block_53 = 
+    let step_53_274 = 
+      Action.assume(52, Expr.bneq(GccType.boolean, expr0x7f4198262c60, expr0x7f41981f17c8))
+    in let step_53_275 = 
+      Action.assign(expr0x7f4198262ca8, expr0x7f419824eea0)
+    in let step_53_276 = 
+      Action.assign(expr0x7f4198262cf0, expr0x7f419824eed0)
+    in let step_53_277 = 
+      Action.unsupport("Called function pointer?")
+    in let step_53_278 = 
+      Action.call(call0x7f4198264b48)
+    in Block.block(
+      53,
+      [|
+        step_53_274;
+        step_53_275;
+        step_53_276;
+        step_53_277;
+        step_53_278;
+      |],
+      [|
+        ("xorDigest", 1);
+      |],
+      [|
+        "assume TRUE (_75 != 0B)";
+        "# VUSE <.MEM_130>\n_76 = mt_128->digest;";
+        "# VUSE <.MEM_130>\n_77 = mv_127->value;";
+        "# .MEM_131 = VDEF <.MEM_130>\n_76 (&md, _77);";
+        "# .MEM_132 = VDEF <.MEM_131>\nxorDigest (&digest, &md.x, 20);";
+      |]
+    )
+  in let block_54 = 
+    let step_54_279 = 
+      Action.assume(52, Expr.beq(GccType.boolean, expr0x7f4198262c60, expr0x7f41981f17c8))
+    in let step_54_280 = 
+      Action.assign(expr0x7f41981f31b0, expr0x7f41982662b8)
+    in Block.block(
+      54,
+      [|
+        step_54_279;
+        step_54_280;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_75 != 0B)";
+        "# .MEM_133 = VDEF <.MEM_89>\nmd ={v} {CLOBBER};";
+      |]
+    )
+  in let block_55 = 
+    let step_55_281 = 
+      Action.assume(51, Expr.bneq(GccType.boolean, expr0x7f4198262c18, expr0x7f41981dbbd0))
+    in let step_55_282 = 
+      Action.call(call0x7f4198264be0)
+    in let step_55_283 = 
+      Action.call(call0x7f41982682d0)
+    in Block.block(
+      55,
+      [|
+        step_55_281;
+        step_55_282;
+        step_55_283;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverPanic", 1);
+      |],
+      [|
+        "assume FALSE (_74 == 5)";
+        "# .MEM_125 = VDEF <.MEM_123>\n_serverPanic (\"debug.c\", 273, \"Unknown object type\");";
+        "# .MEM_126 = VDEF <.MEM_125>\n_exit (1);";
+      |]
+    )
+  in let block_56 = 
+    Block.block(
+      56,
+      [|
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+      |]
+    )
+  in let block_57 = 
+    let step_57_284 = 
+      Action.assume(56, Expr.bneq(GccType.boolean, expr0x7f4198327240, expr0x7f41981f19f0))
+    in let step_57_285 = 
+      Action.call(call0x7f4198264c78)
+    in Block.block(
+      57,
+      [|
+        step_57_284;
+        step_57_285;
+      |],
+      [|
+        ("xorDigest", 1);
+      |],
+      [|
+        "assume TRUE (expiretime_124 != -1)";
+        "# .MEM_233 = VDEF <.MEM_90>\nxorDigest (&digest, \"!!expire!!\", 10);";
+      |]
+    )
+  in let block_58 = 
+    let step_58_286 = 
+      Action.assume(56, Expr.beq(GccType.boolean, expr0x7f4198327240, expr0x7f41981f19f0))
+    in let step_58_287 = 
+      Action.call(call0x7f4198264d10)
+    in let step_58_288 = 
+      Action.call(call0x7f4198268360)
+    in Block.block(
+      58,
+      [|
+        step_58_286;
+        step_58_287;
+        step_58_288;
+      |],
+      [|
+        ("decrRefCount", 1);
+        ("xorDigest", 1);
+      |],
+      [|
+        "assume FALSE (expiretime_124 != -1)";
+        "# .MEM_234 = VDEF <.MEM_91>\nxorDigest (final_97(D), &digest, 20);";
+        "# .MEM_235 = VDEF <.MEM_234>\ndecrRefCount (keyobj_116);";
+      |]
+    )
+  in let block_59 = 
+    let step_59_289 = 
+      Action.call(call0x7f41982683f0)
+    in let step_59_290 = 
+      Action.assign(expr0x7f4198323e10, call0x7f41982683f0)
+    in let step_59_291 = 
+      Action.debug("# DEBUG de => de_110")
+    in Block.block(
+      59,
+      [|
+        step_59_289;
+        step_59_290;
+        step_59_291;
+      |],
+      [|
+        ("dictNext", 1);
+      |],
+      [|
+        "# .MEM_109 = VDEF <.MEM_92>\nde_110 = dictNext (di_105);";
+        "<CAPTURES RETURN>";
+        "# DEBUG de => de_110";
+      |]
+    )
+  in let block_60 = 
+    let step_60_292 = 
+      Action.assume(59, Expr.beq(GccType.boolean, expr0x7f4198323e10, expr0x7f41981db720))
+    in let step_60_293 = 
+      Action.call(call0x7f4198268480)
+    in Block.block(
+      60,
+      [|
+        step_60_292;
+        step_60_293;
+      |],
+      [|
+        ("dictReleaseIterator", 1);
+      |],
+      [|
+        "assume FALSE (de_110 != 0B)";
+        "# .MEM_111 = VDEF <.MEM_109>\ndictReleaseIterator (di_105);";
+      |]
+    )
+  in let block_61 = 
+    let step_61_294 = 
+      Action.assign(expr0x7f419832a240, Expr.plus(
+        type0x7f41993c45e8, expr0x7f4198323558, expr0x7f41993c9090))
+    in let step_61_295 = 
+      Action.debug("# DEBUG j => j_236")
+    in let step_61_296 = 
+      Action.assign(expr0x7f4198323558, expr0x7f419832a240)
+    in Block.block(
+      61,
+      [|
+        step_61_294;
+        step_61_295;
+        step_61_296;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "j_236 = j_79 + 1;";
+        "# DEBUG j => j_236";
+        "j_79 = j_236";
+      |]
+    )
+  in let block_62 = 
+    let step_62_297 = 
+      Action.debug("# DEBUG j => j_79")
+    in let step_62_298 = 
+      Action.assign(expr0x7f4198262d38, expr0x7f419824ef00)
+    in Block.block(
+      62,
+      [|
+        step_62_297;
+        step_62_298;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_79";
+        "# VUSE <.MEM_94>\n_78 = server.dbnum;";
+      |]
+    )
+  in let block_63 = 
+    let step_63_299 = 
+      Action.assume(62, Expr.bgte(GccType.boolean, expr0x7f4198323558, expr0x7f4198262d38))
+    in let step_63_300 = 
+      Action.assign(expr0x7f4198520b40, expr0x7f4198266318)
+    in let step_63_301 = 
+      Action.assign(expr0x7f4198520bd0, expr0x7f4198266330)
+    in let step_63_302 = 
+      Action.assign(expr0x7f4198520e10, expr0x7f4198266348)
+    in let step_63_303 = 
+      Action.return(expr0)
+    in Block.block(
+      63,
+      [|
+        step_63_299;
+        step_63_300;
+        step_63_301;
+        step_63_302;
+        step_63_303;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (j_79 < _78)";
+        "# .MEM_100 = VDEF <.MEM_94>\ndigest ={v} {CLOBBER};";
+        "# .MEM_101 = VDEF <.MEM_100>\nbuf ={v} {CLOBBER};";
+        "# .MEM_102 = VDEF <.MEM_101>\naux ={v} {CLOBBER};";
+        "# VUSE <.MEM_102>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_304 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_304 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    64,
+    Z.of_string "0",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (14, "[0 | 62]", block_62, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[21]", block_21, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[23]", block_23, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[25]", block_25, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[37]", block_37, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[55]", block_55, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[63]", block_63, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 3]", block_3, [|
+          Cfg.edge (10, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (11, "[0 | 5]", block_5, Z.of_string "1", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (13, "[0 | 61]", block_61, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 5]", block_5, [|
+          Cfg.edge (45, "[0 0 | 59]", block_59, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[0 | 60]", block_60, [|
+          Cfg.edge (13, "[0 | 61]", block_61, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 61]", block_61, [|
+          Cfg.edge (72, "[1 | 62]", block_62, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 62]", block_62, [|
+          Cfg.edge (9, "[0 | 3]", block_3, Z.of_string "0", Z.of_string "-1");
+          Cfg.edge (8, "[63]", block_63, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 0 | 6]", block_6, [|
+          Cfg.edge (16, "[0 0 | 7]", block_7, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (17, "[0 0 | 8]", block_8, Z.of_string "2", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 7]", block_7, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 8]", block_8, [|
+          Cfg.edge (18, "[0 0 | 9]", block_9, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (20, "[0 0 | 13]", block_13, Z.of_string "4", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 9]", block_9, [|
+          Cfg.edge (47, "[0 0 0 | 11]", block_11, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 12]", block_12, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 13]", block_13, [|
+          Cfg.edge (21, "[0 0 | 14]", block_14, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (23, "[0 0 | 18]", block_18, Z.of_string "4", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 14]", block_14, [|
+          Cfg.edge (49, "[0 0 0 | 16]", block_16, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 17]", block_17, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 18]", block_18, [|
+          Cfg.edge (24, "[0 0 | 19]", block_19, Z.of_string "0", Z.of_string "13");
+          Cfg.edge (32, "[0 0 | 39]", block_39, Z.of_string "14", Z.of_string "13");
+        |]
+      );
+      Cfg.vert ("[0 0 | 19]", block_19, [|
+          Cfg.edge (25, "[0 0 | 20]", block_20, Z.of_string "0", Z.of_string "8");
+          Cfg.edge (28, "[0 0 | 32]", block_32, Z.of_string "9", Z.of_string "13");
+        |]
+      );
+      Cfg.vert ("[0 0 | 20]", block_20, [|
+          Cfg.edge (3, "[21]", block_21, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (26, "[0 0 | 22]", block_22, Z.of_string "1", Z.of_string "8");
+        |]
+      );
+      Cfg.vert ("[0 0 | 22]", block_22, [|
+          Cfg.edge (4, "[23]", block_23, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (55, "[0 0 0 | 30]", block_30, Z.of_string "1", Z.of_string "7");
+        |]
+      );
+      Cfg.vert ("[0 0 | 31]", block_31, [|
+          Cfg.edge (31, "[0 0 | 38]", block_38, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 32]", block_32, [|
+          Cfg.edge (29, "[0 0 | 33]", block_33, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (6, "[37]", block_37, Z.of_string "4", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[0 0 | 33]", block_33, [|
+          Cfg.edge (57, "[0 0 0 | 35]", block_35, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 36]", block_36, [|
+          Cfg.edge (31, "[0 0 | 38]", block_38, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 38]", block_38, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 39]", block_39, [|
+          Cfg.edge (33, "[0 0 | 40]", block_40, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (35, "[0 0 | 44]", block_44, Z.of_string "4", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 40]", block_40, [|
+          Cfg.edge (59, "[0 0 0 | 42]", block_42, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 43]", block_43, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 44]", block_44, [|
+          Cfg.edge (36, "[0 0 | 45]", block_45, Z.of_string "0", Z.of_string "-1");
+          Cfg.edge (38, "[0 0 | 51]", block_51, Z.of_string "0", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[0 0 | 45]", block_45, [|
+          Cfg.edge (61, "[0 0 0 | 49]", block_49, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 50]", block_50, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 51]", block_51, [|
+          Cfg.edge (39, "[0 0 | 52]", block_52, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (7, "[55]", block_55, Z.of_string "4", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[0 0 | 52]", block_52, [|
+          Cfg.edge (40, "[0 0 | 53]", block_53, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (41, "[0 0 | 54]", block_54, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 | 53]", block_53, [|
+          Cfg.edge (41, "[0 0 | 54]", block_54, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 54]", block_54, [|
+          Cfg.edge (42, "[0 0 | 56]", block_56, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 56]", block_56, [|
+          Cfg.edge (43, "[0 0 | 57]", block_57, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (44, "[0 0 | 58]", block_58, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 | 57]", block_57, [|
+          Cfg.edge (44, "[0 0 | 58]", block_58, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 0 | 58]", block_58, [|
+          Cfg.edge (71, "[0 1 | 59]", block_59, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 0 | 59]", block_59, [|
+          Cfg.edge (15, "[0 0 | 6]", block_6, Z.of_string "0", Z.of_string "-1");
+          Cfg.edge (12, "[0 | 60]", block_60, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 10]", block_10, [|
+          Cfg.edge (65, "[0 0 1 | 11]", block_11, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 11]", block_11, [|
+          Cfg.edge (46, "[0 0 0 | 10]", block_10, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (19, "[0 0 | 12]", block_12, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 15]", block_15, [|
+          Cfg.edge (66, "[0 0 1 | 16]", block_16, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 16]", block_16, [|
+          Cfg.edge (48, "[0 0 0 | 15]", block_15, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (22, "[0 0 | 17]", block_17, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 24]", block_24, [|
+          Cfg.edge (5, "[25]", block_25, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (51, "[0 0 0 | 26]", block_26, Z.of_string "1", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 26]", block_26, [|
+          Cfg.edge (52, "[0 0 0 | 27]", block_27, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (53, "[0 0 0 | 28]", block_28, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 27]", block_27, [|
+          Cfg.edge (54, "[0 0 0 | 29]", block_29, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 28]", block_28, [|
+          Cfg.edge (54, "[0 0 0 | 29]", block_29, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 29]", block_29, [|
+          Cfg.edge (67, "[0 0 1 | 30]", block_30, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 30]", block_30, [|
+          Cfg.edge (50, "[0 0 0 | 24]", block_24, Z.of_string "0", Z.of_string "4");
+          Cfg.edge (27, "[0 0 | 31]", block_31, Z.of_string "5", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 34]", block_34, [|
+          Cfg.edge (68, "[0 0 1 | 35]", block_35, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 35]", block_35, [|
+          Cfg.edge (56, "[0 0 0 | 34]", block_34, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (30, "[0 0 | 36]", block_36, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 41]", block_41, [|
+          Cfg.edge (69, "[0 0 1 | 42]", block_42, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 42]", block_42, [|
+          Cfg.edge (58, "[0 0 0 | 41]", block_41, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (34, "[0 0 | 43]", block_43, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 46]", block_46, [|
+          Cfg.edge (63, "[0 0 0 0 | 48]", block_48, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 | 49]", block_49, [|
+          Cfg.edge (60, "[0 0 0 | 46]", block_46, Z.of_string "0", Z.of_string "-1");
+          Cfg.edge (37, "[0 0 | 50]", block_50, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 0 | 47]", block_47, [|
+          Cfg.edge (64, "[0 0 0 1 | 48]", block_48, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 0 | 48]", block_48, [|
+          Cfg.edge (62, "[0 0 0 0 | 47]", block_47, Z.of_string "0", Z.of_string "-1");
+          Cfg.edge (61, "[0 0 0 | 49]", block_49, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[0 0 0 1 | 48]", block_48, [|
+          Cfg.edge (61, "[0 0 0 | 49]", block_49, Z.of_string "0", Z.of_string "-1");
+        |]
+      );
+      Cfg.vert ("[0 0 1 | 11]", block_11, [|
+          Cfg.edge (19, "[0 0 | 12]", block_12, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 1 | 16]", block_16, [|
+          Cfg.edge (22, "[0 0 | 17]", block_17, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 1 | 30]", block_30, [|
+          Cfg.edge (27, "[0 0 | 31]", block_31, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 1 | 35]", block_35, [|
+          Cfg.edge (30, "[0 0 | 36]", block_36, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 1 | 42]", block_42, [|
+          Cfg.edge (34, "[0 0 | 43]", block_43, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 0 1 | 49]", block_49, [|
+          Cfg.edge (37, "[0 0 | 50]", block_50, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 1 | 59]", block_59, [|
+          Cfg.edge (12, "[0 | 60]", block_60, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1 | 62]", block_62, [|
+          Cfg.edge (8, "[63]", block_63, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "computeDatasetDigest",
+    49,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: debugCommand
+  // fid: 50
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c4888 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41983fc3f0 = 
+    GccType.record("dictEntry", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198405000 = 
+    GccType.pointer(type0x7f41983fc3f0)
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4198456738 = 
+    GccType.record("quicklistNode", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419845e690 = 
+    GccType.pointer(type0x7f4198456738)
+  in let type0x7f41993c4b28 = 
+    GccType.boolean
+  in let type0x7f4198497738 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198497540 = 
+    GccType.pointer(type0x7f4198497738)
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41995875e8 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41984972a0 = 
+    GccType.integer(false, 4, 8, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41984052a0 = 
+    GccType.record("dict", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984055e8 = 
+    GccType.pointer(type0x7f41984052a0)
+  in let type0x7f41984a81f8 = 
+    GccType.record("client", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984c29d8 = 
+    GccType.pointer(type0x7f41984a81f8)
+  in let type0x7f41984975e8 = 
+    GccType.pointer(type0x7f4198497540)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41983d8738 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "4")
+  in let type0x7f41981f59d8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41983d8738)
+  in let type0x7f41981f5a80 = 
+    GccType.pointer(type0x7f41981f59d8)
+  in let type0x7f4198511dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "20")
+  in let type0x7f41993d0348 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993d03f0 = 
+    GccType.pointer(type0x7f41993d0348)
+  in let type0x7f41981fbb28 = 
+    GccType.array(type0x7f41993d03f0, type0x7f4198511dc8)
+  in let type0x7f41981f5d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "36")
+  in let type0x7f41981f5dc8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981f5d20)
+  in let type0x7f41981f5e70 = 
+    GccType.pointer(type0x7f41981f5dc8)
+  in let type0x7f41981f52a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "131")
+  in let type0x7f41981f5348 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981f52a0)
+  in let type0x7f41981f53f0 = 
+    GccType.pointer(type0x7f41981f5348)
+  in let type0x7f41981f5498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "86")
+  in let type0x7f41981f55e8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981f5498)
+  in let type0x7f41981f5690 = 
+    GccType.pointer(type0x7f41981f55e8)
+  in let type0x7f41981f57e0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "71")
+  in let type0x7f41981f5888 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981f57e0)
+  in let type0x7f41981f5930 = 
+    GccType.pointer(type0x7f41981f5888)
+  in let type0x7f41981f5c78 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "79")
+  in let type0x7f41981fa000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981f5c78)
+  in let type0x7f41981fa0a8 = 
+    GccType.pointer(type0x7f41981fa000)
+  in let type0x7f41981fa2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "70")
+  in let type0x7f41981fa348 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fa2a0)
+  in let type0x7f41981fa3f0 = 
+    GccType.pointer(type0x7f41981fa348)
+  in let type0x7f41981fa498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "176")
+  in let type0x7f41981fa540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fa498)
+  in let type0x7f41981fa5e8 = 
+    GccType.pointer(type0x7f41981fa540)
+  in let type0x7f41981fa690 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "67")
+  in let type0x7f41981fa738 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fa690)
+  in let type0x7f41981fa7e0 = 
+    GccType.pointer(type0x7f41981fa738)
+  in let type0x7f419849ea80 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "45")
+  in let type0x7f419849ebd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419849ea80)
+  in let type0x7f41981fa9d8 = 
+    GccType.pointer(type0x7f419849ebd0)
+  in let type0x7f41981fab28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "141")
+  in let type0x7f41981fabd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fab28)
+  in let type0x7f41981fac78 = 
+    GccType.pointer(type0x7f41981fabd0)
+  in let type0x7f41981fad20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "60")
+  in let type0x7f41981fadc8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fad20)
+  in let type0x7f41981fae70 = 
+    GccType.pointer(type0x7f41981fadc8)
+  in let type0x7f41981faf18 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "54")
+  in let type0x7f41981fa150 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981faf18)
+  in let type0x7f41981fa1f8 = 
+    GccType.pointer(type0x7f41981fa150)
+  in let type0x7f41981fa888 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "74")
+  in let type0x7f41981fa930 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fa888)
+  in let type0x7f41981fb000 = 
+    GccType.pointer(type0x7f41981fa930)
+  in let type0x7f41981fb0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "42")
+  in let type0x7f41981fb150 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fb0a8)
+  in let type0x7f41981fb1f8 = 
+    GccType.pointer(type0x7f41981fb150)
+  in let type0x7f41981fb2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "182")
+  in let type0x7f41981fb348 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fb2a0)
+  in let type0x7f41981fb3f0 = 
+    GccType.pointer(type0x7f41981fb348)
+  in let type0x7f41983cf2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "64")
+  in let type0x7f41981fb7e0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41983cf2a0)
+  in let type0x7f41981fb888 = 
+    GccType.pointer(type0x7f41981fb7e0)
+  in let type0x7f41981fb930 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "129")
+  in let type0x7f41981fb9d8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fb930)
+  in let type0x7f41981fba80 = 
+    GccType.pointer(type0x7f41981fb9d8)
+  in let type0x7f41981fbc78 = 
+    GccType.pointer(type0x7f41981fbb28)
+  in let type0x7f4199571348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "8")
+  in let type0x7f41995713f0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199571348)
+  in let type0x7f41981fb498 = 
+    GccType.pointer(type0x7f41995713f0)
+  in let type0x7f41984ce150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "5")
+  in let type0x7f41981ec2a0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41984ce150)
+  in let type0x7f41981ec690 = 
+    GccType.pointer(type0x7f41981ec2a0)
+  in let type0x7f4199506c78 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f419862fe70 = 
+    GccType.pointer(type0x7f4199506c78)
+  in let type0x7f419952e498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "7")
+  in let type0x7f419952e540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419952e498)
+  in let type0x7f41981ec348 = 
+    GccType.pointer(type0x7f419952e540)
+  in let type0x7f41981fb540 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "35")
+  in let type0x7f41981fb5e8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fb540)
+  in let type0x7f41981fb690 = 
+    GccType.pointer(type0x7f41981fb5e8)
+  in let type0x7f41981d6888 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "17")
+  in let type0x7f41981d6930 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981d6888)
+  in let type0x7f41981fbe70 = 
+    GccType.pointer(type0x7f41981d6930)
+  in let type0x7f41993d40a8 = 
+    GccType.pointer(type0x7f41993c4888)
+  in let type0x7f4198201348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "48")
+  in let type0x7f41982013f0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198201348)
+  in let type0x7f4198201498 = 
+    GccType.pointer(type0x7f41982013f0)
+  in let type0x7f4199527dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "3")
+  in let type0x7f4199527e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199527dc8)
+  in let type0x7f41982017e0 = 
+    GccType.pointer(type0x7f4199527e70)
+  in let type0x7f41984a8498 = 
+    GccType.record("sharedObjectsStruct", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419952e0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "6")
+  in let type0x7f41981d60a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419952e0a8)
+  in let type0x7f4198201c78 = 
+    GccType.pointer(type0x7f41981d60a8)
+  in let type0x7f41984c2738 = 
+    GccType.record("rdbSaveInfo", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41985602a0 = 
+    GccType.pointer(type0x7f41984c2738)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41993d6a80 = 
+    GccType.func("T186", type0x7f41993c4f18, [|
+        type0x7f41993cc0a8;
+      |], false)
+  in let type0x7f41993d9930 = 
+    GccType.pointer(type0x7f41993d6a80)
+  in let type0x7f41981ec9d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "33")
+  in let type0x7f41981eca80 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981ec9d8)
+  in let type0x7f41981ecb28 = 
+    GccType.pointer(type0x7f41981eca80)
+  in let type0x7f419879d9d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "27")
+  in let type0x7f41981f0498 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419879d9d8)
+  in let type0x7f41981f0540 = 
+    GccType.pointer(type0x7f41981f0498)
+  in let type0x7f419849ee70 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "40")
+  in let type0x7f419849ef18 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419849ee70)
+  in let type0x7f4198204150 = 
+    GccType.pointer(type0x7f419849ef18)
+  in let type0x7f41984970a8 = 
+    GccType.record("redisDb", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419849e5e8 = 
+    GccType.pointer(type0x7f41984970a8)
+  in let type0x7f4198204540 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "137")
+  in let type0x7f41982045e8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204540)
+  in let type0x7f41983fcb28 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198204690 = 
+    GccType.pointer(type0x7f41982045e8)
+  in let type0x7f419845ec78 = 
+    GccType.record("quicklist", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984630a8 = 
+    GccType.pointer(type0x7f419845ec78)
+  in let type0x7f4198713498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "13")
+  in let type0x7f4198713540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198713498)
+  in let type0x7f4198204888 = 
+    GccType.pointer(type0x7f4198713540)
+  in let type0x7f41993cc3f0 = 
+    GccType.real(64)
+  in let type0x7f41993c4498 = 
+    GccType.integer(true, 16, 16, Z.of_string "-32768", Z.of_string "32767")
+  in let type0x7f4198204a80 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "18")
+  in let type0x7f4198204b28 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204a80)
+  in let type0x7f4198204bd0 = 
+    GccType.pointer(type0x7f4198204b28)
+  in let type0x7f41993c4540 = 
+    GccType.integer(false, 16, 16, Z.of_string "0", Z.of_string "65535")
+  in let type0x7f41993c4690 = 
+    GccType.integer(false, 32, 32, Z.of_string "0", Z.of_string "4294967295")
+  in let type0x7f4198456f18 = 
+    GccType.record("quicklistNode", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984560a8 = 
+    GccType.pointer(type0x7f4198456f18)
+  in let type0x7f4198204dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "25")
+  in let type0x7f4198204e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204dc8)
+  in let type0x7f4198204f18 = 
+    GccType.pointer(type0x7f4198204e70)
+  in let type0x7f41993c4930 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4198497348 = 
+    GccType.integer(false, 24, 32, Z.of_string "0", Z.of_string "16777215")
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4198204000 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "87")
+  in let type0x7f41982040a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204000)
+  in let type0x7f41982041f8 = 
+    GccType.pointer(type0x7f41982040a8)
+  in let type0x7f4198204d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "26")
+  in let type0x7f419820a000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204d20)
+  in let type0x7f419820a0a8 = 
+    GccType.pointer(type0x7f419820a000)
+  in let type0x7f419820a150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "112")
+  in let type0x7f419820a1f8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419820a150)
+  in let type0x7f419820a2a0 = 
+    GccType.pointer(type0x7f419820a1f8)
+  in let type0x7f41993d0f18 = 
+    GccType.pointer(type0x7f41993c4738)
+  in let type0x7f419846f2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "127")
+  in let type0x7f41981e20a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419846f2a0)
+  in let type0x7f41981ecdc8 = 
+    GccType.pointer(type0x7f41981e20a8)
+  in let type0x7f419955b3f0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "9")
+  in let type0x7f419955b498 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419955b3f0)
+  in let type0x7f419820a738 = 
+    GccType.pointer(type0x7f419955b498)
+  in let type0x7f4199542dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "19")
+  in let type0x7f419847e540 = 
+    GccType.array(type0x7f41993c4348, type0x7f4199542dc8)
+  in let type0x7f41981e2690 = 
+    GccType.pointer(type0x7f419847e540)
+  in let type0x7f4199567690 = 
+    GccType.pointer(type0x7f41993cff18)
+  in let type0x7f41994fbb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f419951c000 = 
+    GccType.record("timespec", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41995010a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41986383f0 = 
+    GccType.pointer(type0x7f419951c000)
+  in let type0x7f4198211498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "29")
+  in let type0x7f4198211540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198211498)
+  in let type0x7f41982115e8 = 
+    GccType.pointer(type0x7f4198211540)
+  in let type0x7f41994fb0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "1")
+  in let type0x7f4198211888 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41994fb0a8)
+  in let type0x7f4198211930 = 
+    GccType.pointer(type0x7f4198211888)
+  in let type0x7f41985db498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "2")
+  in let type0x7f4198211d20 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985db498)
+  in let type0x7f4198211dc8 = 
+    GccType.pointer(type0x7f4198211d20)
+  in let type0x7f41985e6150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "10")
+  in let type0x7f41985e6000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985e6150)
+  in let type0x7f41981f5738 = 
+    GccType.pointer(type0x7f41985e6000)
+  in let type0x7f41985e65e8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "11")
+  in let type0x7f41985e6690 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985e65e8)
+  in let type0x7f41982117e0 = 
+    GccType.pointer(type0x7f41985e6690)
+  in let type0x7f41985cc498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "12")
+  in let type0x7f41981ec0a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985cc498)
+  in let type0x7f41981ec150 = 
+    GccType.pointer(type0x7f41981ec0a8)
+  in let type0x7f4198211f18 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "21")
+  in let type0x7f4198216000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198211f18)
+  in let type0x7f41982160a8 = 
+    GccType.pointer(type0x7f4198216000)
+  in let type0x7f4198216150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "16")
+  in let type0x7f41982161f8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216150)
+  in let type0x7f41982162a0 = 
+    GccType.pointer(type0x7f41982161f8)
+  in let type0x7f4198211c78 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "4095")
+  in let type0x7f4198211e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198211c78)
+  in let type0x7f4198216348 = 
+    GccType.pointer(type0x7f4198211e70)
+  in let type0x7f41984bd2a0 = 
+    GccType.record("zset", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981ecbd0 = 
+    GccType.pointer(type0x7f41984bd2a0)
+  in let type0x7f4198216930 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "76")
+  in let type0x7f41982169d8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216930)
+  in let type0x7f4198216a80 = 
+    GccType.pointer(type0x7f41982169d8)
+  in let type0x7f41983c1e70 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "14")
+  in let type0x7f41983c1f18 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41983c1e70)
+  in let type0x7f4198216dc8 = 
+    GccType.pointer(type0x7f41983c1f18)
+  in let type0x7f4198216e70 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "61")
+  in let type0x7f4198216f18 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216e70)
+  in let type0x7f4198216690 = 
+    GccType.pointer(type0x7f4198216f18)
+  in let type0x7f4198216738 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "72")
+  in let type0x7f41982167e0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216738)
+  in let type0x7f4198216888 = 
+    GccType.pointer(type0x7f41982167e0)
+  in let expr0x7f4198262ee8 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c93d8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "2")
+  in let expr0x7f4198279000 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f4198279168 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279318 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982794c8 = 
+    Expr.ssa("_23", 23, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279630 = 
+    Expr.ssa("_28", 28, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279678 = 
+    Expr.ssa("_29", 29, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279798 = 
+    Expr.ssa("_33", 33, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982797e0 = 
+    Expr.ssa("delay.19_34", 34, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41981fe1c8 = 
+    Expr.s_int_cst(type0x7f41993c4888, Z.of_string "0")
+  in let expr0x7f4198279948 = 
+    Expr.ssa("_39", 39, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419832a480 = 
+    Expr.ssa("iftmp.20_332", 332, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198331ab0 = 
+    Expr.ssa("iftmp.20_578", 578, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198331a68 = 
+    Expr.ssa("iftmp.20_577", 577, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279af8 = 
+    Expr.ssa("_45", 45, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279ca8 = 
+    Expr.ssa("_51", 51, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198279cf0 = 
+    Expr.ssa("_52", 52, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982810d8 = 
+    Expr.ssa("_65", 65, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198281168 = 
+    Expr.ssa("_67", 67, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198281240 = 
+    Expr.ssa("_70", 70, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982813f0 = 
+    Expr.ssa("_76", 76, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198281438 = 
+    Expr.ssa("_77", 77, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41982814c8 = 
+    Expr.ssa("_79", 79, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982816c0 = 
+    Expr.ssa("_86", 86, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198281708 = 
+    Expr.ssa("_87", 87, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f41981f37e0 = 
+    Expr.variable_decl(type0x7f4198405000, VarDecl.make("de", 64, 64))
+  in let expr0x7f419832d048 = 
+    Expr.ssa("de_373", 373, expr0x7f41981f37e0)
+  in let expr0x7f41981db720 = 
+    Expr.u_int_cst(type0x7f4198405000, Z.of_string "0")
+  in let expr0x7f4198281a20 = 
+    Expr.ssa("_98", 98, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981fe888 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "144")
+  in let expr0x7f41981f3d80 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("sz", 64, 64))
+  in let expr0x7f419832a288 = 
+    Expr.ssa("sz_325", 325, expr0x7f41981f3d80)
+  in let expr0x7f419832d798 = 
+    Expr.ssa("sz_399", 399, expr0x7f41981f3d80)
+  in let expr0x7f419832d948 = 
+    Expr.ssa("sz_405", 405, expr0x7f41981f3d80)
+  in let expr0x7f41981f3e10 = 
+    Expr.variable_decl(type0x7f419845e690, VarDecl.make("node", 64, 64))
+  in let expr0x7f419832a2d0 = 
+    Expr.ssa("node_326", 326, expr0x7f41981f3e10)
+  in let expr0x7f419832d7e0 = 
+    Expr.ssa("node_400", 400, expr0x7f41981f3e10)
+  in let expr0x7f419832d990 = 
+    Expr.ssa("node_406", 406, expr0x7f41981f3e10)
+  in let expr0x7f41981fea98 = 
+    Expr.u_int_cst(type0x7f419845e690, Z.of_string "0")
+  in let expr0x7f4198285360 = 
+    Expr.ssa("_130", 130, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982853a8 = 
+    Expr.ssa("_131", 131, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41981f3360 = 
+    Expr.variable_decl(type0x7f4198405000, VarDecl.make("de", 64, 64))
+  in let expr0x7f419832dbd0 = 
+    Expr.ssa("de_414", 414, expr0x7f41981f3360)
+  in let expr0x7f4198285630 = 
+    Expr.ssa("_140", 140, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41993acdf8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "0")
+  in let expr0x7f4198285750 = 
+    Expr.ssa("_144", 144, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41993c9030 = 
+    Expr.u_int_cst(type0x7f41993c4b28, Z.of_string "0")
+  in let expr0x7f4198285ca8 = 
+    Expr.ssa("_163", 163, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198285cf0 = 
+    Expr.ssa("_164", 164, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982091b0 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("o", 64, 64))
+  in let expr0x7f419832f000 = 
+    Expr.ssa("o_428", 428, expr0x7f41982091b0)
+  in let expr0x7f41981fef18 = 
+    Expr.u_int_cst(type0x7f4198497540, Z.of_string "0")
+  in let expr0x7f4198285ea0 = 
+    Expr.ssa("_170", 170, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbbe8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "80")
+  in let expr0x7f419828e090 = 
+    Expr.ssa("_176", 176, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828e0d8 = 
+    Expr.ssa("_177", 177, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828e120 = 
+    Expr.ssa("_178", 178, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9408 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "5")
+  in let expr0x7f419828e240 = 
+    Expr.ssa("_182", 182, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828e3a8 = 
+    Expr.ssa("_187", 187, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419832a4c8 = 
+    Expr.ssa("iftmp.24_333", 333, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f419832f360 = 
+    Expr.ssa("iftmp.24_440", 440, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f419832f318 = 
+    Expr.ssa("iftmp.24_439", 439, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f419828e510 = 
+    Expr.ssa("_192", 192, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828e630 = 
+    Expr.ssa("_196", 196, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828e6c0 = 
+    Expr.ssa("_198", 198, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828e708 = 
+    Expr.ssa("valsize.25_199", 199, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419953f720 = 
+    Expr.s_int_cst(type0x7f41993c4738, Z.of_string "0")
+  in let expr0x7f41982093f0 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("val", 64, 64))
+  in let expr0x7f419832a360 = 
+    Expr.ssa("val_328", 328, expr0x7f41982093f0)
+  in let expr0x7f419832f708 = 
+    Expr.ssa("val_453", 453, expr0x7f41982093f0)
+  in let expr0x7f419832f630 = 
+    Expr.ssa("val_450", 450, expr0x7f41982093f0)
+  in let expr0x7f41982092d0 = 
+    Expr.variable_decl(type0x7f41993c4738, VarDecl.make("j", 64, 64))
+  in let expr0x7f419832a318 = 
+    Expr.ssa("j_327", 327, expr0x7f41982092d0)
+  in let expr0x7f419832f1b0 = 
+    Expr.ssa("j_434", 434, expr0x7f41982092d0)
+  in let expr0x7f419832f900 = 
+    Expr.ssa("j_460", 460, expr0x7f41982092d0)
+  in let expr0x7f419828ea68 = 
+    Expr.ssa("keys.29_211", 211, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419828ec18 = 
+    Expr.ssa("_217", 217, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828ec60 = 
+    Expr.ssa("_218", 218, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982096c0 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("d", 64, 64))
+  in let expr0x7f419832a3a8 = 
+    Expr.ssa("d_329", 329, expr0x7f41982096c0)
+  in let expr0x7f419832fa20 = 
+    Expr.ssa("d_464", 464, expr0x7f41982096c0)
+  in let expr0x7f419832fc18 = 
+    Expr.ssa("d_471", 471, expr0x7f41982096c0)
+  in let expr0x7f4198209750 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("j", 32, 32))
+  in let expr0x7f419832a3f0 = 
+    Expr.ssa("j_330", 330, expr0x7f4198209750)
+  in let expr0x7f419832fab0 = 
+    Expr.ssa("j_466", 466, expr0x7f4198209750)
+  in let expr0x7f419832fc60 = 
+    Expr.ssa("j_472", 472, expr0x7f4198209750)
+  in let expr0x7f41986473f0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "19")
+  in let expr0x7f419828ee58 = 
+    Expr.ssa("_225", 225, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419828eea0 = 
+    Expr.ssa("_226", 226, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982962d0 = 
+    Expr.ssa("_240", 240, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296318 = 
+    Expr.ssa("_241", 241, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296630 = 
+    Expr.ssa("_252", 252, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296678 = 
+    Expr.ssa("_253", 253, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296990 = 
+    Expr.ssa("_264", 264, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982969d8 = 
+    Expr.ssa("_265", 265, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296c60 = 
+    Expr.ssa("_274", 274, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296ca8 = 
+    Expr.ssa("_275", 275, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296e10 = 
+    Expr.ssa("_280", 280, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296e58 = 
+    Expr.ssa("_281", 281, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198296f78 = 
+    Expr.ssa("_285", 285, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419829b000 = 
+    Expr.ssa("dbid.30_286", 286, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419829b090 = 
+    Expr.ssa("_288", 288, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419829b0d8 = 
+    Expr.ssa("dbid.31_289", 289, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419829b5a0 = 
+    Expr.ssa("_306", 306, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419829b5e8 = 
+    Expr.ssa("_307", 307, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198209c60 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("o", 64, 64))
+  in let expr0x7f4198330e10 = 
+    Expr.ssa("o_534", 534, expr0x7f4198209c60)
+  in let expr0x7f419829b798 = 
+    Expr.ssa("_313", 313, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41981dba38 = 
+    Expr.u_int_cst(type0x7f41984972a0, Z.of_string "2")
+  in let expr0x7f41981dbf30 = 
+    Expr.u_int_cst(type0x7f41984972a0, Z.of_string "7")
+  in let expr0x7f4198209cf0 = 
+    Expr.variable_decl(type0x7f41984055e8, VarDecl.make("ht", 64, 64))
+  in let expr0x7f419832a438 = 
+    Expr.ssa("ht_331", 331, expr0x7f4198209cf0)
+  in let expr0x7f4198330d80 = 
+    Expr.ssa("ht_532", 532, expr0x7f4198209cf0)
+  in let expr0x7f4198330ea0 = 
+    Expr.ssa("ht_536", 536, expr0x7f4198209cf0)
+  in let expr0x7f4198330ee8 = 
+    Expr.ssa("ht_537", 537, expr0x7f4198209cf0)
+  in let expr0x7f419820cc60 = 
+    Expr.u_int_cst(type0x7f41984055e8, Z.of_string "0")
+  in let expr0x7f419829b900 = 
+    Expr.ssa("_318", 318, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419829b948 = 
+    Expr.ssa("_319", 319, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984a18e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("argc", "32", 32, "48", 128, 64, false))
+  in let expr0x7f4198229660 = 
+    Expr.u_int_cst(type0x7f41984c29d8, Z.of_string "0")
+  in let expr0x7f41981eea00 = 
+    Expr.parameter_decl(type0x7f41984c29d8, "c", type0x7f41984c29d8)
+  in let expr0x7f419832a900 = 
+    Expr.ssa("c_348(D)", 348, expr0x7f41981eea00)
+  in let expr0x7f4198270618 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278000 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198270618, expr0x7f41984a18e8)
+  in let expr0x7f4198262f30 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41984a1980 = 
+    Expr.field_decl(type0x7f41984975e8, FieldDecl.make("argv", "64", 64, "64", 128, 0, false))
+  in let expr0x7f4198270690 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278030 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270690, expr0x7f41984a1980)
+  in let expr0x7f4198262f78 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41993accf0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "8")
+  in let expr0x7f4198262d80 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198266468 = 
+    Expr.u_int_cst(type0x7f41984975e8, Z.of_string "0")
+  in let expr0x7f4198270758 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198262f78, expr0x7f4198266468)
+  in let expr0x7f4198262e58 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41982707d0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198262d80, expr0x7f41981fef18)
+  in let expr0x7f4198278060 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982707d0, expr0x7f4198494980)
+  in let expr0x7f41981f49a0 = 
+    Expr.string_cst(type0x7f41981f59d8, 5, "\"help\"")
+  in let expr0x7f41982679e0 = 
+    Expr.address_of(type0x7f41981f5a80, expr0x7f41981f49a0)
+  in let expr0x7f41993acd08 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "0")
+  in let expr0x7f41981f33f0 = 
+    Expr.variable_decl(type0x7f41981fbb28, VarDecl.make("help", 1344, 64))
+  in let expr0x7f419826f738 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41993acd08)
+  in let expr0x7f41986bde80 = 
+    Expr.string_cst(type0x7f41981f5dc8, 37, "\"assert -- Crash by assertion failed.\"")
+  in let expr0x7f41981f4a60 = 
+    Expr.address_of(type0x7f41981f5e70, expr0x7f41986bde80)
+  in let expr0x7f41993acde0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "1")
+  in let expr0x7f419826f770 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41993acde0)
+  in let expr0x7f41981f5f18 = 
+    Expr.string_cst(type0x7f41981f5348, 132, "\"change-repl-id -- Change the replication IDs of the instance. Dangerous, should be used only for testing the replication subsystem.\"")
+  in let expr0x7f41981f4ac0 = 
+    Expr.address_of(type0x7f41981f53f0, expr0x7f41981f5f18)
+  in let expr0x7f41993acea0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "2")
+  in let expr0x7f419826f7a8 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41993acea0)
+  in let expr0x7f41983e49a0 = 
+    Expr.string_cst(type0x7f41981f55e8, 87, "\"crash-and-recover <milliseconds> -- Hard crash and restart after <milliseconds> delay.\"")
+  in let expr0x7f41981f4b20 = 
+    Expr.address_of(type0x7f41981f5690, expr0x7f41983e49a0)
+  in let expr0x7f4199523738 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "3")
+  in let expr0x7f419826f7e0 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199523738)
+  in let expr0x7f419877bde0 = 
+    Expr.string_cst(type0x7f41981f5888, 72, "\"digest -- Outputs an hex signature representing the current DB content.\"")
+  in let expr0x7f41981f4b80 = 
+    Expr.address_of(type0x7f41981f5930, expr0x7f419877bde0)
+  in let expr0x7f41993acf30 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "4")
+  in let expr0x7f419826f818 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41993acf30)
+  in let expr0x7f4198735548 = 
+    Expr.string_cst(type0x7f41981fa000, 80, "\"htstats <dbid> -- Return hash table statistics of the specified Redis database.\"")
+  in let expr0x7f41981f4be0 = 
+    Expr.address_of(type0x7f41981fa0a8, expr0x7f4198735548)
+  in let expr0x7f419955c2e8 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "5")
+  in let expr0x7f419826f850 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f419955c2e8)
+  in let expr0x7f41987355b0 = 
+    Expr.string_cst(type0x7f41981fa000, 80, "\"htstats-key <key> -- Like htstats but for the hash table stored as key\\'s value.\"")
+  in let expr0x7f41981f4c40 = 
+    Expr.address_of(type0x7f41981fa0a8, expr0x7f41987355b0)
+  in let expr0x7f4199523900 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "6")
+  in let expr0x7f419826f888 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199523900)
+  in let expr0x7f419877be40 = 
+    Expr.string_cst(type0x7f41981fa348, 71, "\"loadaof -- Flush the AOF buffers on disk and reload the AOF in memory.\"")
+  in let expr0x7f41981f4ca0 = 
+    Expr.address_of(type0x7f41981fa3f0, expr0x7f419877be40)
+  in let expr0x7f4199523918 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "7")
+  in let expr0x7f419826f8c0 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199523918)
+  in let expr0x7f41981f8300 = 
+    Expr.string_cst(type0x7f41981fa540, 177, "\"lua-always-replicate-commands (0|1) -- Setting it to 1 makes Lua replication defaulting to replicating single commands, without the script having to enable effects replication.\"")
+  in let expr0x7f41981f4d00 = 
+    Expr.address_of(type0x7f41981fa5e8, expr0x7f41981f8300)
+  in let expr0x7f419826f8f8 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41993accf0)
+  in let expr0x7f419877bea0 = 
+    Expr.string_cst(type0x7f41981fa738, 68, "\"object <key> -- Show low level info about key and associated value.\"")
+  in let expr0x7f41981f4d60 = 
+    Expr.address_of(type0x7f41981fa7e0, expr0x7f419877bea0)
+  in let expr0x7f419955c060 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "9")
+  in let expr0x7f419826f930 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f419955c060)
+  in let expr0x7f41981e4dc8 = 
+    Expr.string_cst(type0x7f419849ebd0, 46, "\"panic -- Crash the server simulating a panic.\"")
+  in let expr0x7f41981f4dc0 = 
+    Expr.address_of(type0x7f41981fa9d8, expr0x7f41981e4dc8)
+  in let expr0x7f419955c078 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "10")
+  in let expr0x7f419826f968 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f419955c078)
+  in let expr0x7f41981faa80 = 
+    Expr.string_cst(type0x7f41981fabd0, 142, "\"populate <count> [prefix] [size] -- Create <count> string keys named key:<num>. If a prefix is specified is used instead of the \\'key\\' prefix.\"")
+  in let expr0x7f41981f4e20 = 
+    Expr.address_of(type0x7f41981fac78, expr0x7f41981faa80)
+  in let expr0x7f4199599f78 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "11")
+  in let expr0x7f419826f9a0 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199599f78)
+  in let expr0x7f4198428cb8 = 
+    Expr.string_cst(type0x7f41981fadc8, 61, "\"reload -- Save the RDB on disk and reload it back in memory.\"")
+  in let expr0x7f41981f4e80 = 
+    Expr.address_of(type0x7f41981fae70, expr0x7f4198428cb8)
+  in let expr0x7f4199599d68 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "12")
+  in let expr0x7f419826f9d8 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199599d68)
+  in let expr0x7f41981dfb40 = 
+    Expr.string_cst(type0x7f41981fa150, 55, "\"restart -- Graceful restart: save config, db, restart.\"")
+  in let expr0x7f41981f4ee0 = 
+    Expr.address_of(type0x7f41981fa1f8, expr0x7f41981dfb40)
+  in let expr0x7f4199599d80 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "13")
+  in let expr0x7f419826fa10 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199599d80)
+  in let expr0x7f419877bf00 = 
+    Expr.string_cst(type0x7f41981fa930, 75, "\"sdslen <key> -- Show low level SDS string info representing key and value.\"")
+  in let expr0x7f41981f4f40 = 
+    Expr.address_of(type0x7f41981fb000, expr0x7f419877bf00)
+  in let expr0x7f4199599f18 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "14")
+  in let expr0x7f419826fa48 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4199599f18)
+  in let expr0x7f41986bdec0 = 
+    Expr.string_cst(type0x7f41981fb150, 43, "\"segfault -- Crash the server with sigsegv.\"")
+  in let expr0x7f41981f4fa0 = 
+    Expr.address_of(type0x7f41981fb1f8, expr0x7f41986bdec0)
+  in let expr0x7f41994f8df8 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "15")
+  in let expr0x7f419826fa80 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41994f8df8)
+  in let expr0x7f41981f8400 = 
+    Expr.string_cst(type0x7f41981fb348, 183, "\"set-active-expire (0|1) -- Setting it to 0 disables expiring keys in background when they are not accessed (otherwise the Redis behavior). Setting it to 1 reenables back the default.\"")
+  in let expr0x7f41981fc000 = 
+    Expr.address_of(type0x7f41981fb3f0, expr0x7f41981f8400)
+  in let expr0x7f41993acd38 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "16")
+  in let expr0x7f419826fab8 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f41993acd38)
+  in let expr0x7f419877bf60 = 
+    Expr.string_cst(type0x7f41981fa738, 68, "\"sleep <seconds> -- Stop the server for <seconds>. Decimals allowed.\"")
+  in let expr0x7f41981fc060 = 
+    Expr.address_of(type0x7f41981fa7e0, expr0x7f419877bf60)
+  in let expr0x7f419955c888 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "17")
+  in let expr0x7f419826faf0 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f419955c888)
+  in let expr0x7f41981fd000 = 
+    Expr.string_cst(type0x7f41981fa738, 68, "\"structsize -- Return the size of different Redis core C structures.\"")
+  in let expr0x7f41981fc0c0 = 
+    Expr.address_of(type0x7f41981fa7e0, expr0x7f41981fd000)
+  in let expr0x7f4198424c90 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "18")
+  in let expr0x7f419826fb28 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f4198424c90)
+  in let expr0x7f4198428d10 = 
+    Expr.string_cst(type0x7f41981fb7e0, 65, "\"ziplist <key> -- Show low level info about the ziplist encoding.\"")
+  in let expr0x7f41981fc120 = 
+    Expr.address_of(type0x7f41981fb888, expr0x7f4198428d10)
+  in let expr0x7f419953f840 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "19")
+  in let expr0x7f419826fb60 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f419953f840)
+  in let expr0x7f41981d3e40 = 
+    Expr.string_cst(type0x7f41981fb9d8, 130, "\"error <string> -- Return a Redis protocol error with <string> as message. Useful for clients unit tests to simulate Redis errors.\"")
+  in let expr0x7f41981fc180 = 
+    Expr.address_of(type0x7f41981fba80, expr0x7f41981d3e40)
+  in let expr0x7f419953f5d0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "20")
+  in let expr0x7f419826fb98 = 
+    Expr.array_ref(type0x7f41993d03f0, expr0x7f41981f33f0, expr0x7f419953f5d0)
+  in let expr0x7f41981fe060 = 
+    Expr.u_int_cst(type0x7f41993d03f0, Z.of_string "0")
+  in let expr0x7f41981fc220 = 
+    Expr.address_of(type0x7f41981fbc78, expr0x7f41981f33f0)
+  in let expr0x7f41982664b0 = 
+    Expr.constructor(type0x7f41981fbb28)
+  in let expr0x7f4198279048 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270be0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278090 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270be0, expr0x7f41984a1980)
+  in let expr0x7f4198279090 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982790d8 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198270ca8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279090, expr0x7f4198266468)
+  in let expr0x7f4198279120 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198270d20 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982790d8, expr0x7f41981fef18)
+  in let expr0x7f41982780c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198270d20, expr0x7f4198494980)
+  in let expr0x7f41981fc2e0 = 
+    Expr.string_cst(type0x7f41995713f0, 9, "\"segfault\"")
+  in let expr0x7f4198267ae0 = 
+    Expr.address_of(type0x7f41981fb498, expr0x7f41981fc2e0)
+  in let expr0x7f41982791b0 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41981fc3a0 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "-1")
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f4198270dc0 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982791b0, expr0x7f41985ed570)
+  in let expr0x7f41981fe108 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "120")
+  in let expr0x7f41982791f8 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270e10 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982780f0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270e10, expr0x7f41984a1980)
+  in let expr0x7f4198279240 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279288 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198270ed8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279240, expr0x7f4198266468)
+  in let expr0x7f41982792d0 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198270f50 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198279288, expr0x7f41981fef18)
+  in let expr0x7f4198278120 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198270f50, expr0x7f4198494980)
+  in let expr0x7f41981fc440 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"panic\"")
+  in let expr0x7f4198267bc0 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f41981fc440)
+  in let expr0x7f41981fe180 = 
+    Expr.u_int_cst(type0x7f419862fe70, Z.of_string "0")
+  in let expr0x7f4198279360 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41981fc500 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f41981fc520 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981fc500)
+  in let expr0x7f41981f1fd8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "314")
+  in let expr0x7f41986bdfc0 = 
+    Expr.string_cst(type0x7f41981fb5e8, 36, "\"DEBUG PANIC called at Unix time %ld\"")
+  in let expr0x7f41981fc560 = 
+    Expr.address_of(type0x7f41981fb690, expr0x7f41986bdfc0)
+  in let expr0x7f41982793a8 = 
+    Expr.ssa("_19", 19, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270640 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982781b0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270640, expr0x7f41984a1980)
+  in let expr0x7f41982793f0 = 
+    Expr.ssa("_20", 20, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279438 = 
+    Expr.ssa("_21", 21, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198270780 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982793f0, expr0x7f4198266468)
+  in let expr0x7f4198279480 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198270848 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198279438, expr0x7f41981fef18)
+  in let expr0x7f41982781e0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198270848, expr0x7f4198494980)
+  in let expr0x7f41981fc6c0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"restart\"")
+  in let expr0x7f4198267e80 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981fc6c0)
+  in let expr0x7f4198279510 = 
+    Expr.ssa("_24", 24, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982708e8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278210 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982708e8, expr0x7f41984a1980)
+  in let expr0x7f4198279558 = 
+    Expr.ssa("_25", 25, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982795a0 = 
+    Expr.ssa("_26", 26, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982709b0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279558, expr0x7f4198266468)
+  in let expr0x7f41982795e8 = 
+    Expr.ssa("_27", 27, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198270a28 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982795a0, expr0x7f41981fef18)
+  in let expr0x7f4198278240 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198270a28, expr0x7f4198494980)
+  in let expr0x7f4198200028 = 
+    Expr.string_cst(type0x7f41981d6930, 18, "\"crash-and-recover\"")
+  in let expr0x7f4198267f60 = 
+    Expr.address_of(type0x7f41981fbe70, expr0x7f4198200028)
+  in let expr0x7f41981f3510 = 
+    Expr.variable_decl(type0x7f41993c4888, VarDecl.make("delay", 64, 64))
+  in let expr0x7f4198270af0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278270 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198270af0, expr0x7f41984a18e8)
+  in let expr0x7f41982796c0 = 
+    Expr.ssa("_30", 30, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270b68 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982782a0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270b68, expr0x7f41984a1980)
+  in let expr0x7f4198279708 = 
+    Expr.ssa("_31", 31, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279750 = 
+    Expr.ssa("_32", 32, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198270870 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279708, expr0x7f4198266468)
+  in let expr0x7f419827b040 = 
+    Expr.address_of(type0x7f41993d40a8, expr0x7f41981f3510)
+  in let expr0x7f4198279828 = 
+    Expr.ssa("_35", 35, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270a78 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982782d0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270a78, expr0x7f41984a1980)
+  in let expr0x7f4198279870 = 
+    Expr.ssa("_36", 36, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982798b8 = 
+    Expr.ssa("_37", 37, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198270b90 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279870, expr0x7f4198266468)
+  in let expr0x7f4198279900 = 
+    Expr.ssa("_38", 38, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198270c58 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982798b8, expr0x7f41981fef18)
+  in let expr0x7f4198278300 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198270c58, expr0x7f4198494980)
+  in let expr0x7f41981fc9c0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"restart\"")
+  in let expr0x7f419827b120 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981fc9c0)
+  in let expr0x7f41981f35a0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("flags", 32, 32))
+  in let expr0x7f4198331af8 = 
+    Expr.ssa("flags_579", 579, expr0x7f41981f35a0)
+  in let expr0x7f4198279990 = 
+    Expr.ssa("delay.21_40", 40, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41981e4e10 = 
+    Expr.string_cst(type0x7f41982013f0, 49, "\"failed to restart the server. Check server logs.\"")
+  in let expr0x7f41981fcac0 = 
+    Expr.address_of(type0x7f4198201498, expr0x7f41981e4e10)
+  in let expr0x7f41982a1018 = 
+    Expr.constructor(type0x7f41993c4888)
+  in let expr0x7f41982a1030 = 
+    Expr.constructor(type0x7f41993c4888)
+  in let expr0x7f41982799d8 = 
+    Expr.ssa("_41", 41, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270cd0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278330 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270cd0, expr0x7f41984a1980)
+  in let expr0x7f4198279a20 = 
+    Expr.ssa("_42", 42, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279a68 = 
+    Expr.ssa("_43", 43, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198270d98 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279a20, expr0x7f4198266468)
+  in let expr0x7f4198279ab0 = 
+    Expr.ssa("_44", 44, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198270e88 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198279a68, expr0x7f41981fef18)
+  in let expr0x7f4198278360 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198270e88, expr0x7f4198494980)
+  in let expr0x7f41981fcba0 = 
+    Expr.string_cst(type0x7f4199527e70, 4, "\"oom\"")
+  in let expr0x7f419827b240 = 
+    Expr.address_of(type0x7f41982017e0, expr0x7f41981fcba0)
+  in let expr0x7f41993ae520 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "18446744073709551615")
+  in let expr0x7f41981f3630 = 
+    Expr.variable_decl(type0x7f41993cc0a8, VarDecl.make("ptr", 64, 64))
+  in let expr0x7f4198331870 = 
+    Expr.ssa("ptr_570", 570, expr0x7f41981f3630)
+  in let expr0x7f4198279b40 = 
+    Expr.ssa("_46", 46, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41984a7850 = 
+    Expr.field_decl(type0x7f4198497540, FieldDecl.make("ok", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41987a4d80 = 
+    Expr.variable_decl(type0x7f41984a8498, VarDecl.make("shared", 647744, 64))
+  in let expr0x7f4198278390 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f4198279b88 = 
+    Expr.ssa("_47", 47, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198270f78 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982783c0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198270f78, expr0x7f41984a1980)
+  in let expr0x7f4198279bd0 = 
+    Expr.ssa("_48", 48, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279c18 = 
+    Expr.ssa("_49", 49, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e000 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279bd0, expr0x7f4198266468)
+  in let expr0x7f4198279c60 = 
+    Expr.ssa("_50", 50, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827e078 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198279c18, expr0x7f41981fef18)
+  in let expr0x7f41982783f0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827e078, expr0x7f4198494980)
+  in let expr0x7f41981fcd80 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"assert\"")
+  in let expr0x7f419827b3a0 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f41981fcd80)
+  in let expr0x7f419827e118 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278420 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f419827e118, expr0x7f41984a18e8)
+  in let expr0x7f4198279d38 = 
+    Expr.ssa("_53", 53, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827e190 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278450 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827e190, expr0x7f41984a1980)
+  in let expr0x7f4198279d80 = 
+    Expr.ssa("_54", 54, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279dc8 = 
+    Expr.ssa("_55", 55, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e258 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279d80, expr0x7f4198266468)
+  in let expr0x7f4198279e10 = 
+    Expr.ssa("_56", 56, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827e2d0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278480 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827e2d0, expr0x7f41984a1980)
+  in let expr0x7f4198279e58 = 
+    Expr.ssa("_57", 57, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198279ea0 = 
+    Expr.ssa("_58", 58, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e370 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279e58, expr0x7f4198266468)
+  in let expr0x7f4198279ee8 = 
+    Expr.ssa("_59", 59, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827e3e8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982784b0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827e3e8, expr0x7f41984a1980)
+  in let expr0x7f4198279f30 = 
+    Expr.ssa("_60", 60, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e460 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198279ee8, expr0x7f4198266468)
+  in let expr0x7f41981fcf80 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"1 == 2\"")
+  in let expr0x7f41981fcfa0 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f41981fcf80)
+  in let expr0x7f41981fcfe0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"debug.c\"")
+  in let expr0x7f4198202000 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41981fcfe0)
+  in let expr0x7f41981fe348 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "335")
+  in let expr0x7f4198279f78 = 
+    Expr.ssa("_61", 61, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827e4d8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982784e0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827e4d8, expr0x7f41984a1980)
+  in let expr0x7f4198281000 = 
+    Expr.ssa("_62", 62, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198281048 = 
+    Expr.ssa("_63", 63, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e5a0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198281000, expr0x7f4198266468)
+  in let expr0x7f4198281090 = 
+    Expr.ssa("_64", 64, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827e618 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198281048, expr0x7f41981fef18)
+  in let expr0x7f4198278510 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827e618, expr0x7f4198494980)
+  in let expr0x7f4198202160 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"reload\"")
+  in let expr0x7f419827b5a0 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f4198202160)
+  in let expr0x7f41981f36c0 = 
+    Expr.variable_decl(type0x7f41984c2738, VarDecl.make("rsi", 512, 64))
+  in let expr0x7f4198202280 = 
+    Expr.address_of(type0x7f41985602a0, expr0x7f41981f36c0)
+  in let expr0x7f41981f3750 = 
+    Expr.variable_decl(type0x7f41985602a0, VarDecl.make("rsiptr", 64, 64))
+  in let expr0x7f4198331438 = 
+    Expr.ssa("rsiptr_555", 555, expr0x7f41981f3750)
+  in let expr0x7f4198281120 = 
+    Expr.ssa("_66", 66, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41984d2688 = 
+    Expr.field_decl(type0x7f41993cff18, FieldDecl.make("rdb_filename", "64", 64, "2064", 128, 64, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f4198278540 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984d2688)
+  in let expr0x7f41982811b0 = 
+    Expr.ssa("_68", 68, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41984a78e8 = 
+    Expr.field_decl(type0x7f4198497540, FieldDecl.make("err", "64", 64, "16", 128, 0, false))
+  in let expr0x7f4198278570 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a78e8)
+  in let expr0x7f41993c90c0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "-1")
+  in let expr0x7f41981fe4e0 = 
+    Expr.u_int_cst(type0x7f41993d9930, Z.of_string "0")
+  in let expr0x7f41982811f8 = 
+    Expr.ssa("_69", 69, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982785a0 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984d2688)
+  in let expr0x7f41981fe510 = 
+    Expr.u_int_cst(type0x7f41985602a0, Z.of_string "0")
+  in let expr0x7f4198203000 = 
+    Expr.string_cst(type0x7f41981eca80, 34, "\"Error trying to load the RDB dump\"")
+  in let expr0x7f4198202420 = 
+    Expr.address_of(type0x7f41981ecb28, expr0x7f4198203000)
+  in let expr0x7f4198203038 = 
+    Expr.string_cst(type0x7f41981f0498, 28, "\"DB reloaded by DEBUG RELOAD\"")
+  in let expr0x7f41982024c0 = 
+    Expr.address_of(type0x7f41981f0540, expr0x7f4198203038)
+  in let expr0x7f4198281288 = 
+    Expr.ssa("_71", 71, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982785d0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f41982a1048 = 
+    Expr.constructor(type0x7f41984c2738)
+  in let expr0x7f41982a1060 = 
+    Expr.constructor(type0x7f41984c2738)
+  in let expr0x7f41982812d0 = 
+    Expr.ssa("_72", 72, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827e7a8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278600 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827e7a8, expr0x7f41984a1980)
+  in let expr0x7f4198281318 = 
+    Expr.ssa("_73", 73, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198281360 = 
+    Expr.ssa("_74", 74, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e870 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198281318, expr0x7f4198266468)
+  in let expr0x7f41982813a8 = 
+    Expr.ssa("_75", 75, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827e8e8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198281360, expr0x7f41981fef18)
+  in let expr0x7f4198278630 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827e8e8, expr0x7f4198494980)
+  in let expr0x7f41982025c0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"loadaof\"")
+  in let expr0x7f419827b8e0 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41982025c0)
+  in let expr0x7f41984cded8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("aof_state", "32", 32, "1840", 128, 64, false))
+  in let expr0x7f4198278660 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984cded8)
+  in let expr0x7f4198281480 = 
+    Expr.ssa("_78", 78, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41984cf098 = 
+    Expr.field_decl(type0x7f41993cff18, FieldDecl.make("aof_filename", "64", 64, "1856", 128, 0, false))
+  in let expr0x7f4198278690 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984cf098)
+  in let expr0x7f4198281510 = 
+    Expr.ssa("_80", 80, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982786c0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a78e8)
+  in let expr0x7f41984d2390 = 
+    Expr.field_decl(type0x7f41993c4888, FieldDecl.make("dirty", "64", 64, "2032", 128, 0, false))
+  in let expr0x7f41981f6b70 = 
+    Expr.component_ref(type0x7f41993c4888, expr0x7f41987a4cf0, expr0x7f41984d2390)
+  in let expr0x7f41981ff440 = 
+    Expr.string_cst(type0x7f419849ef18, 41, "\"Append Only File loaded by DEBUG LOADAOF\"")
+  in let expr0x7f41982027a0 = 
+    Expr.address_of(type0x7f4198204150, expr0x7f41981ff440)
+  in let expr0x7f4198281558 = 
+    Expr.ssa("_81", 81, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982786f0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f41982815a0 = 
+    Expr.ssa("_82", 82, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827ea50 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278780 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827ea50, expr0x7f41984a1980)
+  in let expr0x7f41982815e8 = 
+    Expr.ssa("_83", 83, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198281630 = 
+    Expr.ssa("_84", 84, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827eb18 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982815e8, expr0x7f4198266468)
+  in let expr0x7f4198281678 = 
+    Expr.ssa("_85", 85, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827eb90 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198281630, expr0x7f41981fef18)
+  in let expr0x7f41982787b0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827eb90, expr0x7f4198494980)
+  in let expr0x7f41982028a0 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"object\"")
+  in let expr0x7f419827bbc0 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f41982028a0)
+  in let expr0x7f419827ec30 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982787e0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f419827ec30, expr0x7f41984a18e8)
+  in let expr0x7f4198281750 = 
+    Expr.ssa("_88", 88, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827eca8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278810 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827eca8, expr0x7f41984a1980)
+  in let expr0x7f4198281798 = 
+    Expr.ssa("_89", 89, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982817e0 = 
+    Expr.ssa("_90", 90, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827ed70 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198281798, expr0x7f4198266468)
+  in let expr0x7f4198281828 = 
+    Expr.ssa("_91", 91, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827ede8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982817e0, expr0x7f41981fef18)
+  in let expr0x7f4198278840 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827ede8, expr0x7f4198494980)
+  in let expr0x7f4198281870 = 
+    Expr.ssa("_92", 92, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f41984a15f0 = 
+    Expr.field_decl(type0x7f419849e5e8, FieldDecl.make("db", "64", 64, "16", 128, 0, false))
+  in let expr0x7f419827ee60 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278870 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f419827ee60, expr0x7f41984a15f0)
+  in let expr0x7f41982818b8 = 
+    Expr.ssa("_93", 93, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198494c78 = 
+    Expr.field_decl(type0x7f41984055e8, FieldDecl.make("dict", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198243a20 = 
+    Expr.u_int_cst(type0x7f419849e5e8, Z.of_string "0")
+  in let expr0x7f419827eed8 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f4198281870, expr0x7f4198243a20)
+  in let expr0x7f41982788a0 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f419827eed8, expr0x7f4198494c78)
+  in let expr0x7f4198281900 = 
+    Expr.ssa("_94", 94, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41984b0130 = 
+    Expr.field_decl(type0x7f4198497540, FieldDecl.make("nokeyerr", "64", 64, "112", 128, 64, false))
+  in let expr0x7f41982788d0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984b0130)
+  in let expr0x7f41981f3990 = 
+    Expr.variable_decl(type0x7f41982045e8, VarDecl.make("extra", 1104, 8))
+  in let expr0x7f41982a1090 = 
+    Expr.constructor(type0x7f41982045e8)
+  in let expr0x7f41981f3870 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("val", 64, 64))
+  in let expr0x7f419832d090 = 
+    Expr.ssa("val_374", 374, expr0x7f41981f3870)
+  in let expr0x7f41983ff1c8 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("val", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41983ff428 = 
+    Expr.field_decl(type0x7f41983fcb28, FieldDecl.make("v", "64", 64, "0", 128, 64, false))
+  in let expr0x7f419827ef50 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f419832d048, expr0x7f41981db720)
+  in let expr0x7f41981f6d80 = 
+    Expr.component_ref(type0x7f41983fcb28, expr0x7f419827ef50, expr0x7f41983ff428)
+  in let expr0x7f41981f6db0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41981f6d80, expr0x7f41983ff1c8)
+  in let expr0x7f4198281948 = 
+    Expr.ssa("_95", 95, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f41984947b8 = 
+    Expr.field_decl(type0x7f41984972a0, FieldDecl.make("encoding", "4", 1, "0", 128, 4, true))
+  in let expr0x7f419827efa0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832d090, expr0x7f41981fef18)
+  in let expr0x7f4198278900 = 
+    Expr.component_ref(type0x7f41984972a0, expr0x7f419827efa0, expr0x7f41984947b8)
+  in let expr0x7f4198281990 = 
+    Expr.ssa("_96", 96, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41981f3900 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("strenc", 64, 64))
+  in let expr0x7f419832d120 = 
+    Expr.ssa("strenc_376", 376, expr0x7f41981f3900)
+  in let expr0x7f41981fe828 = 
+    Expr.constructor(type0x7f41982045e8)
+  in let expr0x7f41982819d8 = 
+    Expr.ssa("_97", 97, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f419827e0a0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832d090, expr0x7f41981fef18)
+  in let expr0x7f4198278930 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f419827e0a0, 8, 0)
+  in let expr0x7f41981db858 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "240")
+  in let expr0x7f41981f3a20 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("nextra", 64, 64))
+  in let expr0x7f419832d1b0 = 
+    Expr.ssa("nextra_378", 378, expr0x7f41981f3a20)
+  in let expr0x7f4198202ca0 = 
+    Expr.address_of(type0x7f4198204690, expr0x7f41981f3990)
+  in let expr0x7f41981f3ab0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("remaining", 32, 32))
+  in let expr0x7f419832d1f8 = 
+    Expr.ssa("remaining_379", 379, expr0x7f41981f3ab0)
+  in let expr0x7f4198666168 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "138")
+  in let expr0x7f41981f3b40 = 
+    Expr.variable_decl(type0x7f41984630a8, VarDecl.make("ql", 64, 64))
+  in let expr0x7f419832d240 = 
+    Expr.ssa("ql_380", 380, expr0x7f41981f3b40)
+  in let expr0x7f419827e1b8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832d090, expr0x7f41981fef18)
+  in let expr0x7f41981f6e70 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827e1b8, expr0x7f4198494980)
+  in let expr0x7f4198281a68 = 
+    Expr.ssa("_99", 99, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198457e40 = 
+    Expr.field_decl(type0x7f41993c47e0, FieldDecl.make("len", "64", 64, "16", 128, 64, false))
+  in let expr0x7f4198266a80 = 
+    Expr.u_int_cst(type0x7f41984630a8, Z.of_string "0")
+  in let expr0x7f419827e280 = 
+    Expr.memory_ref(type0x7f419845ec78, expr0x7f419832d240, expr0x7f4198266a80)
+  in let expr0x7f4198278960 = 
+    Expr.component_ref(type0x7f41993c47e0, expr0x7f419827e280, expr0x7f4198457e40)
+  in let expr0x7f4198281ab0 = 
+    Expr.ssa("_100", 100, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198205488 = 
+    Expr.string_cst(type0x7f4198713540, 14, "\" ql_nodes:%lu\"")
+  in let expr0x7f4198202d80 = 
+    Expr.address_of(type0x7f4198204888, expr0x7f4198205488)
+  in let expr0x7f41981f3bd0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("used", 32, 32))
+  in let expr0x7f419832d2d0 = 
+    Expr.ssa("used_382", 382, expr0x7f41981f3bd0)
+  in let expr0x7f4198281af8 = 
+    Expr.ssa("_101", 101, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f419832d318 = 
+    Expr.ssa("nextra_383", 383, expr0x7f41981f3a20)
+  in let expr0x7f419832d360 = 
+    Expr.ssa("remaining_384", 384, expr0x7f41981f3ab0)
+  in let expr0x7f4198281b40 = 
+    Expr.ssa("_102", 102, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198457da8 = 
+    Expr.field_decl(type0x7f41993c47e0, FieldDecl.make("count", "64", 64, "16", 128, 0, false))
+  in let expr0x7f419827e348 = 
+    Expr.memory_ref(type0x7f419845ec78, expr0x7f419832d240, expr0x7f4198266a80)
+  in let expr0x7f4198278990 = 
+    Expr.component_ref(type0x7f41993c47e0, expr0x7f419827e348, expr0x7f4198457da8)
+  in let expr0x7f4198281b88 = 
+    Expr.ssa("_103", 103, Expr.nothing(type0x7f41993cc3f0))
+  in let expr0x7f4198281bd0 = 
+    Expr.ssa("_104", 104, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419827e410 = 
+    Expr.memory_ref(type0x7f419845ec78, expr0x7f419832d240, expr0x7f4198266a80)
+  in let expr0x7f41982789c0 = 
+    Expr.component_ref(type0x7f41993c47e0, expr0x7f419827e410, expr0x7f4198457e40)
+  in let expr0x7f4198281c18 = 
+    Expr.ssa("_105", 105, Expr.nothing(type0x7f41993cc3f0))
+  in let expr0x7f41981f3c60 = 
+    Expr.variable_decl(type0x7f41993cc3f0, VarDecl.make("avg", 64, 64))
+  in let expr0x7f419832d3a8 = 
+    Expr.ssa("avg_385", 385, expr0x7f41981f3c60)
+  in let expr0x7f4198281c60 = 
+    Expr.ssa("_106", 106, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198205690 = 
+    Expr.string_cst(type0x7f41981d6930, 18, "\" ql_avg_node:%.2f\"")
+  in let expr0x7f4198202f60 = 
+    Expr.address_of(type0x7f41981fbe70, expr0x7f4198205690)
+  in let expr0x7f419832d438 = 
+    Expr.ssa("used_387", 387, expr0x7f41981f3bd0)
+  in let expr0x7f4198281ca8 = 
+    Expr.ssa("_107", 107, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f419832d480 = 
+    Expr.ssa("nextra_388", 388, expr0x7f41981f3a20)
+  in let expr0x7f419832d4c8 = 
+    Expr.ssa("remaining_389", 389, expr0x7f41981f3ab0)
+  in let expr0x7f4198281cf0 = 
+    Expr.ssa("_108", 108, Expr.nothing(type0x7f41993c4498))
+  in let expr0x7f4198457ed8 = 
+    Expr.field_decl(type0x7f41993c4498, FieldDecl.make("fill", "16", 16, "32", 128, 0, false))
+  in let expr0x7f419827e488 = 
+    Expr.memory_ref(type0x7f419845ec78, expr0x7f419832d240, expr0x7f4198266a80)
+  in let expr0x7f41982789f0 = 
+    Expr.component_ref(type0x7f41993c4498, expr0x7f419827e488, expr0x7f4198457ed8)
+  in let expr0x7f4198281d38 = 
+    Expr.ssa("_109", 109, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198281d80 = 
+    Expr.ssa("_110", 110, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198205820 = 
+    Expr.string_cst(type0x7f4198204b28, 19, "\" ql_ziplist_max:%d\"")
+  in let expr0x7f4198206060 = 
+    Expr.address_of(type0x7f4198204bd0, expr0x7f4198205820)
+  in let expr0x7f419832d558 = 
+    Expr.ssa("used_391", 391, expr0x7f41981f3bd0)
+  in let expr0x7f4198281dc8 = 
+    Expr.ssa("_111", 111, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f419832d5a0 = 
+    Expr.ssa("nextra_392", 392, expr0x7f41981f3a20)
+  in let expr0x7f419832d5e8 = 
+    Expr.ssa("remaining_393", 393, expr0x7f41981f3ab0)
+  in let expr0x7f4198281e10 = 
+    Expr.ssa("_112", 112, Expr.nothing(type0x7f41993c4540))
+  in let expr0x7f419845f000 = 
+    Expr.field_decl(type0x7f41993c4540, FieldDecl.make("compress", "16", 16, "32", 128, 16, false))
+  in let expr0x7f419827e5c8 = 
+    Expr.memory_ref(type0x7f419845ec78, expr0x7f419832d240, expr0x7f4198266a80)
+  in let expr0x7f4198278a20 = 
+    Expr.component_ref(type0x7f41993c4540, expr0x7f419827e5c8, expr0x7f419845f000)
+  in let expr0x7f4198281e58 = 
+    Expr.ssa("_113", 113, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41993aceb8 = 
+    Expr.u_int_cst(type0x7f41993c4540, Z.of_string "0")
+  in let expr0x7f41981f3cf0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("compressed", 32, 32))
+  in let expr0x7f419832d630 = 
+    Expr.ssa("compressed_394", 394, expr0x7f41981f3cf0)
+  in let expr0x7f4198281ea0 = 
+    Expr.ssa("_114", 114, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198205a78 = 
+    Expr.string_cst(type0x7f41981d6930, 18, "\" ql_compressed:%d\"")
+  in let expr0x7f4198206200 = 
+    Expr.address_of(type0x7f41981fbe70, expr0x7f4198205a78)
+  in let expr0x7f419832d6c0 = 
+    Expr.ssa("used_396", 396, expr0x7f41981f3bd0)
+  in let expr0x7f4198281ee8 = 
+    Expr.ssa("_115", 115, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f419832d708 = 
+    Expr.ssa("nextra_397", 397, expr0x7f41981f3a20)
+  in let expr0x7f419832d750 = 
+    Expr.ssa("remaining_398", 398, expr0x7f41981f3ab0)
+  in let expr0x7f41993acfa8 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "0")
+  in let expr0x7f4198457c78 = 
+    Expr.field_decl(type0x7f419845e690, FieldDecl.make("head", "64", 64, "0", 128, 0, false))
+  in let expr0x7f419827e758 = 
+    Expr.memory_ref(type0x7f419845ec78, expr0x7f419832d240, expr0x7f4198266a80)
+  in let expr0x7f41981f6f90 = 
+    Expr.component_ref(type0x7f419845e690, expr0x7f419827e758, expr0x7f4198457c78)
+  in let expr0x7f4198281f30 = 
+    Expr.ssa("_116", 116, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f4198457428 = 
+    Expr.field_decl(type0x7f41993c4690, FieldDecl.make("sz", "32", 32, "16", 128, 64, false))
+  in let expr0x7f419827e640 = 
+    Expr.memory_ref(type0x7f4198456738, expr0x7f419832a2d0, expr0x7f41981fea98)
+  in let expr0x7f4198278a50 = 
+    Expr.component_ref(type0x7f41993c4690, expr0x7f419827e640, expr0x7f4198457428)
+  in let expr0x7f4198281f78 = 
+    Expr.ssa("_117", 117, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41984572f8 = 
+    Expr.field_decl(type0x7f41984560a8, FieldDecl.make("next", "64", 64, "0", 128, 64, false))
+  in let expr0x7f419827e6e0 = 
+    Expr.memory_ref(type0x7f4198456738, expr0x7f419832a2d0, expr0x7f41981fea98)
+  in let expr0x7f41981f6fc0 = 
+    Expr.component_ref(type0x7f41984560a8, expr0x7f419827e6e0, expr0x7f41984572f8)
+  in let expr0x7f4198285000 = 
+    Expr.ssa("_118", 118, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198207090 = 
+    Expr.string_cst(type0x7f4198204e70, 26, "\" ql_uncompressed_size:%lu\"")
+  in let expr0x7f4198206520 = 
+    Expr.address_of(type0x7f4198204f18, expr0x7f4198207090)
+  in let expr0x7f419832d870 = 
+    Expr.ssa("used_402", 402, expr0x7f41981f3bd0)
+  in let expr0x7f4198285048 = 
+    Expr.ssa("_119", 119, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f419832d8b8 = 
+    Expr.ssa("nextra_403", 403, expr0x7f41981f3a20)
+  in let expr0x7f419832d900 = 
+    Expr.ssa("remaining_404", 404, expr0x7f41981f3ab0)
+  in let expr0x7f4198285090 = 
+    Expr.ssa("_120", 120, Expr.nothing(type0x7f41993c4930))
+  in let expr0x7f41982850d8 = 
+    Expr.ssa("_121", 121, Expr.nothing(type0x7f41993c4930))
+  in let expr0x7f41981fe9f0 = 
+    Expr.u_int_cst(type0x7f41993c4930, Z.of_string "1000")
+  in let expr0x7f4198285120 = 
+    Expr.ssa("_122", 122, Expr.nothing(type0x7f4198497348))
+  in let expr0x7f4198494850 = 
+    Expr.field_decl(type0x7f4198497348, FieldDecl.make("lru", "24", 1, "0", 128, 8, true))
+  in let expr0x7f419827e708 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832d090, expr0x7f41981fef18)
+  in let expr0x7f4198278a80 = 
+    Expr.component_ref(type0x7f4198497348, expr0x7f419827e708, expr0x7f4198494850)
+  in let expr0x7f4198285168 = 
+    Expr.ssa("_123", 123, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982851b0 = 
+    Expr.ssa("_124", 124, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982851f8 = 
+    Expr.ssa("_125", 125, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984948e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("refcount", "32", 32, "0", 128, 32, false))
+  in let expr0x7f419827e7d0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832d090, expr0x7f41981fef18)
+  in let expr0x7f4198278ab0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f419827e7d0, expr0x7f41984948e8)
+  in let expr0x7f41983e4a10 = 
+    Expr.string_cst(type0x7f41982040a8, 88, "\"Value at:%p refcount:%d encoding:%s serializedlength:%zu lru:%d lru_seconds_idle:%llu%s\"")
+  in let expr0x7f4198206620 = 
+    Expr.address_of(type0x7f41982041f8, expr0x7f41983e4a10)
+  in let expr0x7f4198206700 = 
+    Expr.address_of(type0x7f4198204690, expr0x7f41981f3990)
+  in let expr0x7f41982a1078 = 
+    Expr.constructor(type0x7f41982045e8)
+  in let expr0x7f4198285240 = 
+    Expr.ssa("_126", 126, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827e898 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278b40 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827e898, expr0x7f41984a1980)
+  in let expr0x7f4198285288 = 
+    Expr.ssa("_127", 127, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982852d0 = 
+    Expr.ssa("_128", 128, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827e9b0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198285288, expr0x7f4198266468)
+  in let expr0x7f4198285318 = 
+    Expr.ssa("_129", 129, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827e910 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982852d0, expr0x7f41981fef18)
+  in let expr0x7f4198278b70 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827e910, expr0x7f4198494980)
+  in let expr0x7f4198206800 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"sdslen\"")
+  in let expr0x7f4198286320 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f4198206800)
+  in let expr0x7f419827e9d8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278ba0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f419827e9d8, expr0x7f41984a18e8)
+  in let expr0x7f41982853f0 = 
+    Expr.ssa("_132", 132, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419827eac8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278bd0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419827eac8, expr0x7f41984a1980)
+  in let expr0x7f4198285438 = 
+    Expr.ssa("_133", 133, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198285480 = 
+    Expr.ssa("_134", 134, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419827ebb8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198285438, expr0x7f4198266468)
+  in let expr0x7f41982854c8 = 
+    Expr.ssa("_135", 135, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419827ecd0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198285480, expr0x7f41981fef18)
+  in let expr0x7f4198278c00 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827ecd0, expr0x7f4198494980)
+  in let expr0x7f4198285510 = 
+    Expr.ssa("_136", 136, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f419827ed98 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278c30 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f419827ed98, expr0x7f41984a15f0)
+  in let expr0x7f4198285558 = 
+    Expr.ssa("_137", 137, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f419827ee88 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f4198285510, expr0x7f4198243a20)
+  in let expr0x7f4198278c60 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f419827ee88, expr0x7f4198494c78)
+  in let expr0x7f41982855a0 = 
+    Expr.ssa("_138", 138, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198278c90 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984b0130)
+  in let expr0x7f41981f3480 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("val", 64, 64))
+  in let expr0x7f419832dc18 = 
+    Expr.ssa("val_415", 415, expr0x7f41981f3480)
+  in let expr0x7f419827ef00 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f419832dbd0, expr0x7f41981db720)
+  in let expr0x7f4198207360 = 
+    Expr.component_ref(type0x7f41983fcb28, expr0x7f419827ef00, expr0x7f41983ff428)
+  in let expr0x7f4198207390 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198207360, expr0x7f41983ff1c8)
+  in let expr0x7f4198209000 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("key", 64, 64))
+  in let expr0x7f419832dc60 = 
+    Expr.ssa("key_416", 416, expr0x7f4198209000)
+  in let expr0x7f41983ff098 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("key", "64", 64, "0", 128, 0, false))
+  in let expr0x7f419827ef28 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f419832dbd0, expr0x7f41981db720)
+  in let expr0x7f41982073c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419827ef28, expr0x7f41983ff098)
+  in let expr0x7f41982855e8 = 
+    Expr.ssa("_139", 139, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198288000 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832dc18, expr0x7f41981fef18)
+  in let expr0x7f4198278d20 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198288000, 8, 0)
+  in let expr0x7f41981db870 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "15")
+  in let expr0x7f4198285678 = 
+    Expr.ssa("_141", 141, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982880c8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832dc18, expr0x7f41981fef18)
+  in let expr0x7f4198278d50 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982880c8, 8, 0)
+  in let expr0x7f419832dca8 = 
+    Expr.ssa("_417", 417, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982856c0 = 
+    Expr.ssa("_142", 142, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f4198285708 = 
+    Expr.ssa("_143", 143, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41981fedc8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "128")
+  in let expr0x7f4198207510 = 
+    Expr.string_cst(type0x7f419820a000, 27, "\"Not an sds encoded string.\"")
+  in let expr0x7f4198206c20 = 
+    Expr.address_of(type0x7f419820a0a8, expr0x7f4198207510)
+  in let expr0x7f4198285798 = 
+    Expr.ssa("_145", 145, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982857e0 = 
+    Expr.ssa("_146", 146, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198285828 = 
+    Expr.ssa("_147", 147, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982882d0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832dc18, expr0x7f41981fef18)
+  in let expr0x7f4198278d80 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982882d0, expr0x7f4198494980)
+  in let expr0x7f4198285870 = 
+    Expr.ssa("_148", 148, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982858b8 = 
+    Expr.ssa("_149", 149, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198285900 = 
+    Expr.ssa("_150", 150, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198288398 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832dc18, expr0x7f41981fef18)
+  in let expr0x7f4198278db0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288398, expr0x7f4198494980)
+  in let expr0x7f4198285948 = 
+    Expr.ssa("_151", 151, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198285990 = 
+    Expr.ssa("_152", 152, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41982859d8 = 
+    Expr.ssa("_153", 153, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198285a20 = 
+    Expr.ssa("_154", 154, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198285a68 = 
+    Expr.ssa("_155", 155, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198285ab0 = 
+    Expr.ssa("_156", 156, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198285af8 = 
+    Expr.ssa("_157", 157, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198285b40 = 
+    Expr.ssa("_158", 158, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198209120 = 
+    Expr.string_cst(type0x7f419820a1f8, 113, "\"key_sds_len:%lld, key_sds_avail:%lld, key_zmalloc: %lld, val_sds_len:%lld, val_sds_avail:%lld, val_zmalloc: %lld\"")
+  in let expr0x7f4198206ca0 = 
+    Expr.address_of(type0x7f419820a2a0, expr0x7f4198209120)
+  in let expr0x7f4198285b88 = 
+    Expr.ssa("_159", 159, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198288550 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278e40 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198288550, expr0x7f41984a1980)
+  in let expr0x7f4198285bd0 = 
+    Expr.ssa("_160", 160, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198285c18 = 
+    Expr.ssa("_161", 161, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288618 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198285bd0, expr0x7f4198266468)
+  in let expr0x7f4198285c60 = 
+    Expr.ssa("_162", 162, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198288690 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198285c18, expr0x7f41981fef18)
+  in let expr0x7f4198278e70 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288690, expr0x7f4198494980)
+  in let expr0x7f4198206f80 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"ziplist\"")
+  in let expr0x7f4198286ba0 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f4198206f80)
+  in let expr0x7f4198288730 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278ea0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198288730, expr0x7f41984a18e8)
+  in let expr0x7f4198285d38 = 
+    Expr.ssa("_165", 165, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198278ed0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984b0130)
+  in let expr0x7f4198285d80 = 
+    Expr.ssa("_166", 166, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982887d0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f4198278f00 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982887d0, expr0x7f41984a1980)
+  in let expr0x7f4198285dc8 = 
+    Expr.ssa("_167", 167, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198285e10 = 
+    Expr.ssa("_168", 168, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288898 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198285dc8, expr0x7f4198266468)
+  in let expr0x7f4198285e58 = 
+    Expr.ssa("_169", 169, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198288910 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832f000, expr0x7f41981fef18)
+  in let expr0x7f4198278f30 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f4198288910, 8, 0)
+  in let expr0x7f41982077b0 = 
+    Expr.string_cst(type0x7f419820a000, 27, "\"Not an sds encoded string.\"")
+  in let expr0x7f419820b1c0 = 
+    Expr.address_of(type0x7f419820a0a8, expr0x7f41982077b0)
+  in let expr0x7f4198285ee8 = 
+    Expr.ssa("_171", 171, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982889d8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832f000, expr0x7f41981fef18)
+  in let expr0x7f4198278f60 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982889d8, expr0x7f4198494980)
+  in let expr0x7f41981ff740 = 
+    Expr.string_cst(type0x7f41981fb5e8, 36, "\"Ziplist structure printed on stdout\"")
+  in let expr0x7f419820b2a0 = 
+    Expr.address_of(type0x7f41981fb690, expr0x7f41981ff740)
+  in let expr0x7f4198285f30 = 
+    Expr.ssa("_172", 172, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198288a50 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d030 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198288a50, expr0x7f41984a1980)
+  in let expr0x7f4198285f78 = 
+    Expr.ssa("_173", 173, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419828e000 = 
+    Expr.ssa("_174", 174, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288b18 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198285f78, expr0x7f4198266468)
+  in let expr0x7f419828e048 = 
+    Expr.ssa("_175", 175, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198288b90 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419828e000, expr0x7f41981fef18)
+  in let expr0x7f419828d060 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288b90, expr0x7f4198494980)
+  in let expr0x7f419820b380 = 
+    Expr.string_cst(type0x7f41995713f0, 9, "\"populate\"")
+  in let expr0x7f4198286e00 = 
+    Expr.address_of(type0x7f41981fb498, expr0x7f419820b380)
+  in let expr0x7f4198288c30 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d090 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198288c30, expr0x7f41984a18e8)
+  in let expr0x7f4198288ca8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d0c0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198288ca8, expr0x7f41984a18e8)
+  in let expr0x7f419828e168 = 
+    Expr.ssa("_179", 179, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198288d20 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d0f0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198288d20, expr0x7f41984a1980)
+  in let expr0x7f419828e1b0 = 
+    Expr.ssa("_180", 180, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419828e1f8 = 
+    Expr.ssa("_181", 181, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288de8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419828e1b0, expr0x7f4198266468)
+  in let expr0x7f4198209240 = 
+    Expr.variable_decl(type0x7f41993c4738, VarDecl.make("keys", 64, 64))
+  in let expr0x7f4198286ee0 = 
+    Expr.address_of(type0x7f41993d0f18, expr0x7f4198209240)
+  in let expr0x7f419828e288 = 
+    Expr.ssa("keys.22_183", 183, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419828e2d0 = 
+    Expr.ssa("keys.23_184", 184, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419828e318 = 
+    Expr.ssa("_185", 185, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f4198288ed8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d120 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f4198288ed8, expr0x7f41984a15f0)
+  in let expr0x7f419828e360 = 
+    Expr.ssa("_186", 186, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198288f50 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f419828e318, expr0x7f4198243a20)
+  in let expr0x7f419828d150 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f4198288f50, expr0x7f4198494c78)
+  in let expr0x7f4198209510 = 
+    Expr.variable_decl(type0x7f41993c4738, VarDecl.make("valsize", 64, 64))
+  in let expr0x7f41982880f0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d180 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982880f0, expr0x7f41984a18e8)
+  in let expr0x7f419828e3f0 = 
+    Expr.ssa("_188", 188, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198288190 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d1b0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198288190, expr0x7f41984a1980)
+  in let expr0x7f419828e438 = 
+    Expr.ssa("_189", 189, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41993c9168 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "24")
+  in let expr0x7f419828e480 = 
+    Expr.ssa("_190", 190, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288280 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419828e438, expr0x7f4198266468)
+  in let expr0x7f4198288230 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419828e480, expr0x7f41981fef18)
+  in let expr0x7f4198207ab0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288230, expr0x7f4198494980)
+  in let expr0x7f419820b7a0 = 
+    Expr.string_cst(type0x7f4199527e70, 4, "\"key\"")
+  in let expr0x7f419820b7c0 = 
+    Expr.address_of(type0x7f41982017e0, expr0x7f419820b7a0)
+  in let expr0x7f4198209480 = 
+    Expr.variable_decl(type0x7f41981e20a8, VarDecl.make("buf", 1024, 8))
+  in let expr0x7f419820b6e0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f41987155d0 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "128")
+  in let expr0x7f419820b720 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"%s:%lu\"")
+  in let expr0x7f419820b740 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f419820b720)
+  in let expr0x7f4198290020 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f419828e4c8 = 
+    Expr.ssa("_191", 191, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419820b8c0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f4198209360 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("key", 64, 64))
+  in let expr0x7f419832f438 = 
+    Expr.ssa("key_443", 443, expr0x7f4198209360)
+  in let expr0x7f4198288348 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d1e0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198288348, expr0x7f41984a18e8)
+  in let expr0x7f419828e558 = 
+    Expr.ssa("_193", 193, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982883c0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d210 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982883c0, expr0x7f41984a1980)
+  in let expr0x7f419828e5a0 = 
+    Expr.ssa("_194", 194, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41993c9138 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "32")
+  in let expr0x7f419828e5e8 = 
+    Expr.ssa("_195", 195, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288488 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419828e5a0, expr0x7f4198266468)
+  in let expr0x7f4198290140 = 
+    Expr.address_of(type0x7f41993d0f18, expr0x7f4198209510)
+  in let expr0x7f419828e678 = 
+    Expr.ssa("_197", 197, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f41982883e8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d240 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f41982883e8, expr0x7f41984a15f0)
+  in let expr0x7f41982a10d8 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f419820bba0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f419820bbe0 = 
+    Expr.string_cst(type0x7f419955b498, 10, "\"value:%lu\"")
+  in let expr0x7f419820bc00 = 
+    Expr.address_of(type0x7f419820a738, expr0x7f419820bbe0)
+  in let expr0x7f4198290320 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f419828e750 = 
+    Expr.ssa("_200", 200, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419820bc80 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f4198290440 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f419828e798 = 
+    Expr.ssa("_201", 201, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982095a0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("buflen", 32, 32))
+  in let expr0x7f419832f5a0 = 
+    Expr.ssa("buflen_448", 448, expr0x7f41982095a0)
+  in let expr0x7f419828e7e0 = 
+    Expr.ssa("valsize.26_202", 202, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419828e828 = 
+    Expr.ssa("valsize.27_203", 203, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419828e870 = 
+    Expr.ssa("_204", 204, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419828e8b8 = 
+    Expr.ssa("valsize.28_205", 205, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419828e900 = 
+    Expr.ssa("_206", 206, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419828e948 = 
+    Expr.ssa("_207", 207, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419828e990 = 
+    Expr.ssa("_208", 208, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198288578 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419832f630, expr0x7f41981fef18)
+  in let expr0x7f419828d270 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288578, expr0x7f4198494980)
+  in let expr0x7f419820bea0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209480)
+  in let expr0x7f419828e9d8 = 
+    Expr.ssa("_209", 209, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f4198288640 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d2a0 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f4198288640, expr0x7f41984a15f0)
+  in let expr0x7f419828ea20 = 
+    Expr.ssa("_210", 210, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f41982886b8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d2d0 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f41982886b8, expr0x7f41984a15f0)
+  in let expr0x7f41982a10a8 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f41982a10c0 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f41994f84c8 = 
+    Expr.s_int_cst(type0x7f41993c4738, Z.of_string "1")
+  in let expr0x7f419828eab0 = 
+    Expr.ssa("_212", 212, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828d300 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f41982a10f0 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f41982a1108 = 
+    Expr.constructor(type0x7f41981e20a8)
+  in let expr0x7f41982a1120 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f41982a1138 = 
+    Expr.constructor(type0x7f41981e20a8)
+  in let expr0x7f419828eaf8 = 
+    Expr.ssa("_213", 213, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198288848 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d390 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198288848, expr0x7f41984a1980)
+  in let expr0x7f419828eb40 = 
+    Expr.ssa("_214", 214, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419828eb88 = 
+    Expr.ssa("_215", 215, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288988 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419828eb40, expr0x7f4198266468)
+  in let expr0x7f419828ebd0 = 
+    Expr.ssa("_216", 216, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198288a78 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419828eb88, expr0x7f41981fef18)
+  in let expr0x7f419828d3c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288a78, expr0x7f4198494980)
+  in let expr0x7f419820f180 = 
+    Expr.string_cst(type0x7f41981d60a8, 7, "\"digest\"")
+  in let expr0x7f4198290740 = 
+    Expr.address_of(type0x7f4198201c78, expr0x7f419820f180)
+  in let expr0x7f4198288b40 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d3f0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198288b40, expr0x7f41984a18e8)
+  in let expr0x7f4198209630 = 
+    Expr.variable_decl(type0x7f419847e540, VarDecl.make("digest", 160, 8))
+  in let expr0x7f419820f2e0 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198209630)
+  in let expr0x7f419828eca8 = 
+    Expr.ssa("_219", 219, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f419828f700 = 
+    Expr.array_ref(type0x7f41993c4348, expr0x7f4198209630, expr0x7f419832a3f0)
+  in let expr0x7f419828ecf0 = 
+    Expr.ssa("_220", 220, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419820f360 = 
+    Expr.string_cst(type0x7f41981f59d8, 5, "\"%02x\"")
+  in let expr0x7f419820f380 = 
+    Expr.address_of(type0x7f41981f5a80, expr0x7f419820f360)
+  in let expr0x7f419828c420 = 
+    Expr.constructor(type0x7f419847e540)
+  in let expr0x7f419828ed38 = 
+    Expr.ssa("_221", 221, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198288cd0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d480 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198288cd0, expr0x7f41984a1980)
+  in let expr0x7f419828ed80 = 
+    Expr.ssa("_222", 222, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419828edc8 = 
+    Expr.ssa("_223", 223, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288e10 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419828ed80, expr0x7f4198266468)
+  in let expr0x7f419828ee10 = 
+    Expr.ssa("_224", 224, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198288e88 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419828edc8, expr0x7f41981fef18)
+  in let expr0x7f419828d4b0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198288e88, expr0x7f4198494980)
+  in let expr0x7f419820f5a0 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"sleep\"")
+  in let expr0x7f4198290a00 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f419820f5a0)
+  in let expr0x7f4198288f00 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d4e0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198288f00, expr0x7f41984a18e8)
+  in let expr0x7f419828eee8 = 
+    Expr.ssa("_227", 227, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295000 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d510 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295000, expr0x7f41984a1980)
+  in let expr0x7f419828ef30 = 
+    Expr.ssa("_228", 228, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419828ef78 = 
+    Expr.ssa("_229", 229, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982950c8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419828ef30, expr0x7f4198266468)
+  in let expr0x7f4198296000 = 
+    Expr.ssa("_230", 230, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295140 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419828ef78, expr0x7f41981fef18)
+  in let expr0x7f419828d540 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295140, expr0x7f4198494980)
+  in let expr0x7f419820c600 = 
+    Expr.u_int_cst(type0x7f4199567690, Z.of_string "0")
+  in let expr0x7f41982097e0 = 
+    Expr.variable_decl(type0x7f41993cc3f0, VarDecl.make("dtime", 64, 64))
+  in let expr0x7f419832fcf0 = 
+    Expr.ssa("dtime_474", 474, expr0x7f41982097e0)
+  in let expr0x7f4198296048 = 
+    Expr.ssa("_231", 231, Expr.nothing(type0x7f41993cc3f0))
+  in let expr0x7f419820c648 = 
+    Expr.real_cst(type0x7f41993cc3f0, 1.0e+6)
+  in let expr0x7f4198209870 = 
+    Expr.variable_decl(type0x7f41993c4888, VarDecl.make("utime", 64, 64))
+  in let expr0x7f419832fd38 = 
+    Expr.ssa("utime_475", 475, expr0x7f4198209870)
+  in let expr0x7f4198296090 = 
+    Expr.ssa("_232", 232, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f419820c630 = 
+    Expr.s_int_cst(type0x7f41993c4888, Z.of_string "1000000")
+  in let expr0x7f4199517390 = 
+    Expr.field_decl(type0x7f41994fbb28, FieldDecl.make("tv_sec", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198209900 = 
+    Expr.variable_decl(type0x7f419951c000, VarDecl.make("tv", 128, 64))
+  in let expr0x7f4198210120 = 
+    Expr.component_ref(type0x7f41994fbb28, expr0x7f4198209900, expr0x7f4199517390)
+  in let expr0x7f41982960d8 = 
+    Expr.ssa("_233", 233, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198296120 = 
+    Expr.ssa("_234", 234, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f419820c690 = 
+    Expr.s_int_cst(type0x7f41993c4888, Z.of_string "1000")
+  in let expr0x7f4199517428 = 
+    Expr.field_decl(type0x7f41995010a8, FieldDecl.make("tv_nsec", "64", 64, "0", 128, 64, false))
+  in let expr0x7f4198210150 = 
+    Expr.component_ref(type0x7f41995010a8, expr0x7f4198209900, expr0x7f4199517428)
+  in let expr0x7f419820f860 = 
+    Expr.address_of(type0x7f41986383f0, expr0x7f4198209900)
+  in let expr0x7f419820c6f0 = 
+    Expr.u_int_cst(type0x7f41986383f0, Z.of_string "0")
+  in let expr0x7f4198296168 = 
+    Expr.ssa("_235", 235, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828d570 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f419828c540 = 
+    Expr.constructor(type0x7f419951c000)
+  in let expr0x7f41982961b0 = 
+    Expr.ssa("_236", 236, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295348 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d600 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295348, expr0x7f41984a1980)
+  in let expr0x7f41982961f8 = 
+    Expr.ssa("_237", 237, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296240 = 
+    Expr.ssa("_238", 238, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295410 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982961f8, expr0x7f4198266468)
+  in let expr0x7f4198296288 = 
+    Expr.ssa("_239", 239, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295488 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198296240, expr0x7f41981fef18)
+  in let expr0x7f419828d630 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295488, expr0x7f4198494980)
+  in let expr0x7f41982121e0 = 
+    Expr.string_cst(type0x7f41981d6930, 18, "\"set-active-expire\"")
+  in let expr0x7f4198290c20 = 
+    Expr.address_of(type0x7f41981fbe70, expr0x7f41982121e0)
+  in let expr0x7f4198295528 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d660 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198295528, expr0x7f41984a18e8)
+  in let expr0x7f4198296360 = 
+    Expr.ssa("_242", 242, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982955a0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d690 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982955a0, expr0x7f41984a1980)
+  in let expr0x7f41982963a8 = 
+    Expr.ssa("_243", 243, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982963f0 = 
+    Expr.ssa("_244", 244, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295668 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982963a8, expr0x7f4198266468)
+  in let expr0x7f4198296438 = 
+    Expr.ssa("_245", 245, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982956e0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982963f0, expr0x7f41981fef18)
+  in let expr0x7f419828d6c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982956e0, expr0x7f4198494980)
+  in let expr0x7f4198296480 = 
+    Expr.ssa("_246", 246, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984cd688 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("active_expire_enabled", "32", 32, "1696", 128, 96, false))
+  in let expr0x7f4198210270 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984cd688)
+  in let expr0x7f41982964c8 = 
+    Expr.ssa("_247", 247, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828d6f0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f4198296510 = 
+    Expr.ssa("_248", 248, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982957a8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d780 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982957a8, expr0x7f41984a1980)
+  in let expr0x7f4198296558 = 
+    Expr.ssa("_249", 249, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982965a0 = 
+    Expr.ssa("_250", 250, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295870 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198296558, expr0x7f4198266468)
+  in let expr0x7f41982965e8 = 
+    Expr.ssa("_251", 251, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982958e8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982965a0, expr0x7f41981fef18)
+  in let expr0x7f419828d7b0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982958e8, expr0x7f4198494980)
+  in let expr0x7f4198203738 = 
+    Expr.string_cst(type0x7f4198211540, 30, "\"lua-always-replicate-commands\"")
+  in let expr0x7f4198290ea0 = 
+    Expr.address_of(type0x7f41982115e8, expr0x7f4198203738)
+  in let expr0x7f4198295988 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d7e0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198295988, expr0x7f41984a18e8)
+  in let expr0x7f41982966c0 = 
+    Expr.ssa("_254", 254, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295a00 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d810 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295a00, expr0x7f41984a1980)
+  in let expr0x7f4198296708 = 
+    Expr.ssa("_255", 255, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296750 = 
+    Expr.ssa("_256", 256, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295ac8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198296708, expr0x7f4198266468)
+  in let expr0x7f4198296798 = 
+    Expr.ssa("_257", 257, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295b40 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198296750, expr0x7f41981fef18)
+  in let expr0x7f419828d840 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295b40, expr0x7f4198494980)
+  in let expr0x7f41982967e0 = 
+    Expr.ssa("_258", 258, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984da428 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("lua_always_replicate_commands", "32", 32, "2976", 128, 96, false))
+  in let expr0x7f41982103f0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984da428)
+  in let expr0x7f4198296828 = 
+    Expr.ssa("_259", 259, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828d870 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f4198296870 = 
+    Expr.ssa("_260", 260, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295c08 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d900 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295c08, expr0x7f41984a1980)
+  in let expr0x7f41982968b8 = 
+    Expr.ssa("_261", 261, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296900 = 
+    Expr.ssa("_262", 262, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295cd0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982968b8, expr0x7f4198266468)
+  in let expr0x7f4198296948 = 
+    Expr.ssa("_263", 263, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295d48 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198296900, expr0x7f41981fef18)
+  in let expr0x7f419828d930 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295d48, expr0x7f4198494980)
+  in let expr0x7f419820fe00 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"error\"")
+  in let expr0x7f419829a120 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f419820fe00)
+  in let expr0x7f4198295de8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d960 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198295de8, expr0x7f41984a18e8)
+  in let expr0x7f419820c7b0 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\"-\"")
+  in let expr0x7f419820ff20 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f419820c7b0)
+  in let expr0x7f41995996c0 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "1")
+  in let expr0x7f4198209990 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("errstr", 64, 64))
+  in let expr0x7f4198330090 = 
+    Expr.ssa("errstr_486", 486, expr0x7f4198209990)
+  in let expr0x7f4198296a20 = 
+    Expr.ssa("_266", 266, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295e88 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828d990 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295e88, expr0x7f41984a1980)
+  in let expr0x7f4198296a68 = 
+    Expr.ssa("_267", 267, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296ab0 = 
+    Expr.ssa("_268", 268, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295f50 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198296a68, expr0x7f4198266468)
+  in let expr0x7f4198296af8 = 
+    Expr.ssa("_269", 269, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295fc8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198296ab0, expr0x7f41981fef18)
+  in let expr0x7f419828d9c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295fc8, expr0x7f4198494980)
+  in let expr0x7f4198330120 = 
+    Expr.ssa("errstr_488", 488, expr0x7f4198209990)
+  in let expr0x7f419820c7f8 = 
+    Expr.string_cst(type0x7f4198211d20, 3, "\"\\n\\r\"")
+  in let expr0x7f4198213060 = 
+    Expr.address_of(type0x7f4198211dc8, expr0x7f419820c7f8)
+  in let expr0x7f419820c810 = 
+    Expr.string_cst(type0x7f4198211d20, 3, "\"  \"")
+  in let expr0x7f41982130a0 = 
+    Expr.address_of(type0x7f4198211dc8, expr0x7f419820c810)
+  in let expr0x7f41985ed0f0 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "2")
+  in let expr0x7f41983301b0 = 
+    Expr.ssa("errstr_490", 490, expr0x7f4198209990)
+  in let expr0x7f419820c840 = 
+    Expr.string_cst(type0x7f4198211d20, 3, "\"\\r\\n\"")
+  in let expr0x7f4198213140 = 
+    Expr.address_of(type0x7f4198211dc8, expr0x7f419820c840)
+  in let expr0x7f4198330240 = 
+    Expr.ssa("errstr_492", 492, expr0x7f4198209990)
+  in let expr0x7f4198296b40 = 
+    Expr.ssa("_270", 270, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295078 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828da50 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295078, expr0x7f41984a1980)
+  in let expr0x7f4198296b88 = 
+    Expr.ssa("_271", 271, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296bd0 = 
+    Expr.ssa("_272", 272, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295168 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198296b88, expr0x7f4198266468)
+  in let expr0x7f4198296c18 = 
+    Expr.ssa("_273", 273, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295230 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198296bd0, expr0x7f41981fef18)
+  in let expr0x7f419828da80 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295230, expr0x7f4198494980)
+  in let expr0x7f4198213260 = 
+    Expr.string_cst(type0x7f41985e6000, 11, "\"structsize\"")
+  in let expr0x7f419829a3e0 = 
+    Expr.address_of(type0x7f41981f5738, expr0x7f4198213260)
+  in let expr0x7f41982952d0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828dab0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982952d0, expr0x7f41984a18e8)
+  in let expr0x7f4198209a20 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("sizes", 64, 64))
+  in let expr0x7f4198330318 = 
+    Expr.ssa("sizes_495", 495, expr0x7f4198209a20)
+  in let expr0x7f41982133c0 = 
+    Expr.string_cst(type0x7f41995713f0, 9, "\"bits:%d \"")
+  in let expr0x7f41982133e0 = 
+    Expr.address_of(type0x7f41981fb498, expr0x7f41982133c0)
+  in let expr0x7f41994f8f18 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "64")
+  in let expr0x7f41983303a8 = 
+    Expr.ssa("sizes_497", 497, expr0x7f4198209a20)
+  in let expr0x7f4198213460 = 
+    Expr.string_cst(type0x7f41995713f0, 9, "\"robj:%d \"")
+  in let expr0x7f4198213480 = 
+    Expr.address_of(type0x7f41981fb498, expr0x7f4198213460)
+  in let expr0x7f41994f8f30 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "16")
+  in let expr0x7f4198330438 = 
+    Expr.ssa("sizes_499", 499, expr0x7f4198209a20)
+  in let expr0x7f4198212dc0 = 
+    Expr.string_cst(type0x7f4198713540, 14, "\"dictentry:%d \"")
+  in let expr0x7f4198213500 = 
+    Expr.address_of(type0x7f4198204888, expr0x7f4198212dc0)
+  in let expr0x7f4198647870 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "24")
+  in let expr0x7f41983304c8 = 
+    Expr.ssa("sizes_501", 501, expr0x7f4198209a20)
+  in let expr0x7f4198212e88 = 
+    Expr.string_cst(type0x7f41985e6690, 12, "\"sdshdr5:%d \"")
+  in let expr0x7f4198213580 = 
+    Expr.address_of(type0x7f41982117e0, expr0x7f4198212e88)
+  in let expr0x7f4198330558 = 
+    Expr.ssa("sizes_503", 503, expr0x7f4198209a20)
+  in let expr0x7f4198212f50 = 
+    Expr.string_cst(type0x7f41985e6690, 12, "\"sdshdr8:%d \"")
+  in let expr0x7f4198213600 = 
+    Expr.address_of(type0x7f41982117e0, expr0x7f4198212f50)
+  in let expr0x7f41983305e8 = 
+    Expr.ssa("sizes_505", 505, expr0x7f4198209a20)
+  in let expr0x7f4198215028 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"sdshdr16:%d \"")
+  in let expr0x7f4198213680 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f4198215028)
+  in let expr0x7f4198330678 = 
+    Expr.ssa("sizes_507", 507, expr0x7f4198209a20)
+  in let expr0x7f41982150f0 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"sdshdr32:%d \"")
+  in let expr0x7f4198213700 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f41982150f0)
+  in let expr0x7f41986471f8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "9")
+  in let expr0x7f4198330708 = 
+    Expr.ssa("sizes_509", 509, expr0x7f4198209a20)
+  in let expr0x7f41982151b8 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"sdshdr64:%d \"")
+  in let expr0x7f4198213780 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f41982151b8)
+  in let expr0x7f4198647360 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "17")
+  in let expr0x7f4198330798 = 
+    Expr.ssa("sizes_511", 511, expr0x7f4198209a20)
+  in let expr0x7f4198296cf0 = 
+    Expr.ssa("_276", 276, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295370 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828db40 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295370, expr0x7f41984a1980)
+  in let expr0x7f4198296d38 = 
+    Expr.ssa("_277", 277, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296d80 = 
+    Expr.ssa("_278", 278, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982954b0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198296d38, expr0x7f4198266468)
+  in let expr0x7f4198296dc8 = 
+    Expr.ssa("_279", 279, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295550 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198296d80, expr0x7f41981fef18)
+  in let expr0x7f419828db70 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295550, expr0x7f4198494980)
+  in let expr0x7f41982138a0 = 
+    Expr.string_cst(type0x7f419952e540, 8, "\"htstats\"")
+  in let expr0x7f419829a7e0 = 
+    Expr.address_of(type0x7f41981ec348, expr0x7f41982138a0)
+  in let expr0x7f4198295618 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828dba0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198295618, expr0x7f41984a18e8)
+  in let expr0x7f4198209b40 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("stats", 64, 64))
+  in let expr0x7f4198330870 = 
+    Expr.ssa("stats_514", 514, expr0x7f4198209b40)
+  in let expr0x7f4198296ea0 = 
+    Expr.ssa("_282", 282, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295708 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828dbd0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295708, expr0x7f41984a1980)
+  in let expr0x7f4198296ee8 = 
+    Expr.ssa("_283", 283, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198296f30 = 
+    Expr.ssa("_284", 284, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982957d0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f4198296ee8, expr0x7f4198266468)
+  in let expr0x7f4198209ab0 = 
+    Expr.variable_decl(type0x7f41993c4738, VarDecl.make("dbid", 64, 64))
+  in let expr0x7f419829a900 = 
+    Expr.address_of(type0x7f41993d0f18, expr0x7f4198209ab0)
+  in let expr0x7f419829b048 = 
+    Expr.ssa("_287", 287, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984cdbe0 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("dbnum", "32", 32, "1760", 128, 0, false))
+  in let expr0x7f419828dc60 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984cdbe0)
+  in let expr0x7f41982109c0 = 
+    Expr.string_cst(type0x7f4198216000, 22, "\"Out of range database\"")
+  in let expr0x7f4198213b60 = 
+    Expr.address_of(type0x7f41982160a8, expr0x7f41982109c0)
+  in let expr0x7f41982156e0 = 
+    Expr.string_cst(type0x7f41982161f8, 17, "\"[Dictionary HT]\\n\"")
+  in let expr0x7f4198213c00 = 
+    Expr.address_of(type0x7f41982162a0, expr0x7f41982156e0)
+  in let expr0x7f4198330948 = 
+    Expr.ssa("stats_517", 517, expr0x7f4198209b40)
+  in let expr0x7f419829b120 = 
+    Expr.ssa("_290", 290, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f41984c5a18 = 
+    Expr.field_decl(type0x7f419849e5e8, FieldDecl.make("db", "64", 64, "32", 128, 64, false))
+  in let expr0x7f419828dc90 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f41987a4cf0, expr0x7f41984c5a18)
+  in let expr0x7f419829b168 = 
+    Expr.ssa("dbid.32_291", 291, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419829b1b0 = 
+    Expr.ssa("dbid.33_292", 292, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419829b1f8 = 
+    Expr.ssa("_293", 293, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41994f8d80 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "64")
+  in let expr0x7f419829b240 = 
+    Expr.ssa("_294", 294, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f419829b288 = 
+    Expr.ssa("_295", 295, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198295910 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f419829b240, expr0x7f4198243a20)
+  in let expr0x7f419828dcc0 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f4198295910, expr0x7f4198494c78)
+  in let expr0x7f4198209bd0 = 
+    Expr.variable_decl(type0x7f4198211e70, VarDecl.make("buf", 32768, 8))
+  in let expr0x7f4198213c80 = 
+    Expr.address_of(type0x7f4198216348, expr0x7f4198209bd0)
+  in let expr0x7f419820ca80 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "4096")
+  in let expr0x7f4198213d40 = 
+    Expr.address_of(type0x7f4198216348, expr0x7f4198209bd0)
+  in let expr0x7f4198330a20 = 
+    Expr.ssa("stats_520", 520, expr0x7f4198209b40)
+  in let expr0x7f4198215848 = 
+    Expr.string_cst(type0x7f4198713540, 14, "\"[Expires HT]\\n\"")
+  in let expr0x7f4198213dc0 = 
+    Expr.address_of(type0x7f4198204888, expr0x7f4198215848)
+  in let expr0x7f4198330ab0 = 
+    Expr.ssa("stats_522", 522, expr0x7f4198209b40)
+  in let expr0x7f419829b2d0 = 
+    Expr.ssa("_296", 296, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f419828dcf0 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f41987a4cf0, expr0x7f41984c5a18)
+  in let expr0x7f419829b318 = 
+    Expr.ssa("dbid.34_297", 297, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419829b360 = 
+    Expr.ssa("dbid.35_298", 298, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419829b3a8 = 
+    Expr.ssa("_299", 299, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419829b3f0 = 
+    Expr.ssa("_300", 300, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f419829b438 = 
+    Expr.ssa("_301", 301, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198494d10 = 
+    Expr.field_decl(type0x7f41984055e8, FieldDecl.make("expires", "64", 64, "0", 128, 64, false))
+  in let expr0x7f4198295af0 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f419829b3f0, expr0x7f4198243a20)
+  in let expr0x7f419828dd20 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f4198295af0, expr0x7f4198494d10)
+  in let expr0x7f4198213e40 = 
+    Expr.address_of(type0x7f4198216348, expr0x7f4198209bd0)
+  in let expr0x7f4198213f00 = 
+    Expr.address_of(type0x7f4198216348, expr0x7f4198209bd0)
+  in let expr0x7f4198330b88 = 
+    Expr.ssa("stats_525", 525, expr0x7f4198209b40)
+  in let expr0x7f41982a1150 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f41982a1168 = 
+    Expr.constructor(type0x7f4198211e70)
+  in let expr0x7f41982a1180 = 
+    Expr.constructor(type0x7f41993c4738)
+  in let expr0x7f41982a1198 = 
+    Expr.constructor(type0x7f4198211e70)
+  in let expr0x7f419829b480 = 
+    Expr.ssa("_302", 302, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295bb8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828ddb0 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295bb8, expr0x7f41984a1980)
+  in let expr0x7f419829b4c8 = 
+    Expr.ssa("_303", 303, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419829b510 = 
+    Expr.ssa("_304", 304, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198295c80 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419829b4c8, expr0x7f4198266468)
+  in let expr0x7f419829b558 = 
+    Expr.ssa("_305", 305, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198295d70 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419829b510, expr0x7f41981fef18)
+  in let expr0x7f419828dde0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198295d70, expr0x7f4198494980)
+  in let expr0x7f4198215a28 = 
+    Expr.string_cst(type0x7f41985e6690, 12, "\"htstats-key\"")
+  in let expr0x7f419829ad20 = 
+    Expr.address_of(type0x7f41982117e0, expr0x7f4198215a28)
+  in let expr0x7f4198295e10 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828de10 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198295e10, expr0x7f41984a18e8)
+  in let expr0x7f419829b630 = 
+    Expr.ssa("_308", 308, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828de40 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984b0130)
+  in let expr0x7f419829b678 = 
+    Expr.ssa("_309", 309, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f4198295eb0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828de70 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f4198295eb0, expr0x7f41984a1980)
+  in let expr0x7f419829b6c0 = 
+    Expr.ssa("_310", 310, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419829b708 = 
+    Expr.ssa("_311", 311, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198288fa0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419829b6c0, expr0x7f4198266468)
+  in let expr0x7f419829b750 = 
+    Expr.ssa("_312", 312, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f419829e050 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198330e10, expr0x7f41981fef18)
+  in let expr0x7f419828dea0 = 
+    Expr.component_ref(type0x7f41984972a0, expr0x7f419829e050, expr0x7f41984947b8)
+  in let expr0x7f41981eef80 = 
+    Expr.label_decl(type0x7f41993c4f18, "<L132>")
+  in let expr0x7f4198209d80 = 
+    Expr.variable_decl(type0x7f41981ecbd0, VarDecl.make("zs", 64, 64))
+  in let expr0x7f4198330e58 = 
+    Expr.ssa("zs_535", 535, expr0x7f4198209d80)
+  in let expr0x7f419829e0f0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198330e10, expr0x7f41981fef18)
+  in let expr0x7f4198210d20 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419829e0f0, expr0x7f4198494980)
+  in let expr0x7f41984bc130 = 
+    Expr.field_decl(type0x7f41984055e8, FieldDecl.make("dict", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198243ed0 = 
+    Expr.u_int_cst(type0x7f41981ecbd0, Z.of_string "0")
+  in let expr0x7f419829e118 = 
+    Expr.memory_ref(type0x7f41984bd2a0, expr0x7f4198330e58, expr0x7f4198243ed0)
+  in let expr0x7f4198210d50 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f419829e118, expr0x7f41984bc130)
+  in let expr0x7f4198218080 = 
+    Expr.label_decl(type0x7f41993c4f18, "<L133>")
+  in let expr0x7f419829e140 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198330e10, expr0x7f41981fef18)
+  in let expr0x7f4198210db0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419829e140, expr0x7f4198494980)
+  in let expr0x7f419829d200 = 
+    Expr.label_decl(type0x7f41993c4f18, "<L134>")
+  in let expr0x7f4198735618 = 
+    Expr.string_cst(type0x7f41982169d8, 77, "\"The value stored at the specified key is not represented using an hash table\"")
+  in let expr0x7f41982173c0 = 
+    Expr.address_of(type0x7f4198216a80, expr0x7f4198735618)
+  in let expr0x7f4198209e10 = 
+    Expr.variable_decl(type0x7f4198211e70, VarDecl.make("buf", 32768, 8))
+  in let expr0x7f4198217460 = 
+    Expr.address_of(type0x7f4198216348, expr0x7f4198209e10)
+  in let expr0x7f41982174c0 = 
+    Expr.address_of(type0x7f4198216348, expr0x7f4198209e10)
+  in let expr0x7f419828cf48 = 
+    Expr.constructor(type0x7f4198211e70)
+  in let expr0x7f419829b7e0 = 
+    Expr.ssa("_314", 314, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419829e190 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828df30 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419829e190, expr0x7f41984a1980)
+  in let expr0x7f419829b828 = 
+    Expr.ssa("_315", 315, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419829b870 = 
+    Expr.ssa("_316", 316, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419829e258 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419829b828, expr0x7f4198266468)
+  in let expr0x7f419829b8b8 = 
+    Expr.ssa("_317", 317, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419829e2d0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419829b870, expr0x7f41981fef18)
+  in let expr0x7f419828df60 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419829e2d0, expr0x7f4198494980)
+  in let expr0x7f4198215e38 = 
+    Expr.string_cst(type0x7f41983c1f18, 15, "\"change-repl-id\"")
+  in let expr0x7f419829af80 = 
+    Expr.address_of(type0x7f4198216dc8, expr0x7f4198215e38)
+  in let expr0x7f419829e370 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f419828df90 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f419829e370, expr0x7f41984a18e8)
+  in let expr0x7f4198428ec8 = 
+    Expr.string_cst(type0x7f4198216f18, 62, "\"Changing replication IDs after receiving DEBUG change-repl-id\"")
+  in let expr0x7f4198217680 = 
+    Expr.address_of(type0x7f4198216690, expr0x7f4198428ec8)
+  in let expr0x7f419829b990 = 
+    Expr.ssa("_320", 320, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419828dfc0 = 
+    Expr.component_ref(type0x7f4198497540, expr0x7f41987a4d80, expr0x7f41984a7850)
+  in let expr0x7f419829b9d8 = 
+    Expr.ssa("_321", 321, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419829e410 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f419832a900, expr0x7f4198229660)
+  in let expr0x7f41982a4000 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f419829e410, expr0x7f41984a1980)
+  in let expr0x7f419829ba20 = 
+    Expr.ssa("_322", 322, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f419829ba68 = 
+    Expr.ssa("_323", 323, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f419829e4d8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f419829ba20, expr0x7f4198266468)
+  in let expr0x7f419829bab0 = 
+    Expr.ssa("_324", 324, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419829e550 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419829ba68, expr0x7f41981fef18)
+  in let expr0x7f41982a4030 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419829e550, expr0x7f4198494980)
+  in let expr0x7f41981fd7e0 = 
+    Expr.string_cst(type0x7f41982167e0, 73, "\"Unknown subcommand or wrong number of arguments for \\'%s\\'. Try DEBUG HELP\"")
+  in let expr0x7f4198217780 = 
+    Expr.address_of(type0x7f4198216888, expr0x7f41981fd7e0)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f4198268750 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198262e58));
+      (Expr.parameter("p2", 1, expr0x7f41982679e0));
+  |])
+  in let call0x7f41982687e0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyHelp", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41981fc220));
+  |])
+  in let call0x7f4198268870 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198279120));
+      (Expr.parameter("p2", 1, expr0x7f4198267ae0));
+  |])
+  in let call0x7f4198268900 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f41982792d0));
+      (Expr.parameter("p2", 1, expr0x7f4198267bc0));
+  |])
+  in let call0x7f4198268990 = Expr.call(
+    type0x7f4199506c78,
+    "time", [|
+      (Expr.parameter("p1", 0, expr0x7f41981fe180));
+  |])
+  in let call0x7f419824d690 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverPanic", [|
+      (Expr.parameter("file", 0, expr0x7f41981fc520));
+      (Expr.parameter("line", 1, expr0x7f41981f1fd8));
+      (Expr.parameter("msg", 2, expr0x7f41981fc560));
+      (Expr.parameter("p4", 3, expr0x7f4198279360));
+  |])
+  in let call0x7f4198268a20 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f4198268ab0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198279480));
+      (Expr.parameter("p2", 1, expr0x7f4198267e80));
+  |])
+  in let call0x7f4198268b40 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f41982795e8));
+      (Expr.parameter("p2", 1, expr0x7f4198267f60));
+  |])
+  in let call0x7f419827c000 = Expr.call(
+    type0x7f41993c45e8,
+    "getLongLongFromObjectOrReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198279750));
+      (Expr.parameter("p3", 2, expr0x7f419827b040));
+      (Expr.parameter("p4", 3, expr0x7f41981fe060));
+  |])
+  in let call0x7f4198268c60 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198279900));
+      (Expr.parameter("p2", 1, expr0x7f419827b120));
+  |])
+  in let call0x7f4198268cf0 = Expr.call(
+    type0x7f41993c45e8,
+    "restartServer", [|
+      (Expr.parameter("p1", 0, expr0x7f4198331af8));
+      (Expr.parameter("p2", 1, expr0x7f4198279990));
+  |])
+  in let call0x7f4198268d80 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyError", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41981fcac0));
+  |])
+  in let call0x7f4198268e10 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198279ab0));
+      (Expr.parameter("p2", 1, expr0x7f419827b240));
+  |])
+  in let call0x7f4198268ea0 = Expr.call(
+    type0x7f41993cc0a8,
+    "zmalloc", [|
+      (Expr.parameter("p1", 0, expr0x7f41993ae520));
+  |])
+  in let call0x7f4198268f30 = Expr.call(
+    type0x7f41993c4f18,
+    "zfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198331870));
+  |])
+  in let call0x7f4198268510 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198279b40));
+  |])
+  in let call0x7f419827f000 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198279c60));
+      (Expr.parameter("p2", 1, expr0x7f419827b3a0));
+  |])
+  in let call0x7f419827f090 = Expr.call(
+    type0x7f4198497540,
+    "tryObjectEncoding", [|
+      (Expr.parameter("p1", 0, expr0x7f4198279dc8));
+  |])
+  in let call0x7f419827c0a8 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssertWithInfo", [|
+      (Expr.parameter("c", 0, expr0x7f419832a900));
+      (Expr.parameter("o", 1, expr0x7f4198279f30));
+      (Expr.parameter("estr", 2, expr0x7f41981fcfa0));
+      (Expr.parameter("file", 3, expr0x7f4198202000));
+      (Expr.parameter("line", 4, expr0x7f41981fe348));
+  |])
+  in let call0x7f419827f120 = Expr.call(
+    type0x7f41993c4f18,
+    "_exit", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f419827f1b0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198281090));
+      (Expr.parameter("p2", 1, expr0x7f419827b5a0));
+  |])
+  in let call0x7f419827f240 = Expr.call(
+    type0x7f41985602a0,
+    "rdbPopulateSaveInfo", [|
+      (Expr.parameter("p1", 0, expr0x7f4198202280));
+  |])
+  in let call0x7f419827f2d0 = Expr.call(
+    type0x7f41993c45e8,
+    "rdbSave", [|
+      (Expr.parameter("p1", 0, expr0x7f4198281120));
+      (Expr.parameter("p2", 1, expr0x7f4198331438));
+  |])
+  in let call0x7f419827f360 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41982811b0));
+  |])
+  in let call0x7f4198264da8 = Expr.call(
+    type0x7f41993c4888,
+    "emptyDb", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90c0));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981fe4e0));
+  |])
+  in let call0x7f419827f3f0 = Expr.call(
+    type0x7f41993c45e8,
+    "rdbLoad", [|
+      (Expr.parameter("p1", 0, expr0x7f41982811f8));
+      (Expr.parameter("p2", 1, expr0x7f41981fe510));
+  |])
+  in let call0x7f419827f480 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyError", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198202420));
+  |])
+  in let call0x7f419827f510 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982024c0));
+  |])
+  in let call0x7f419827f5a0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198281288));
+  |])
+  in let call0x7f419827f630 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f41982813a8));
+      (Expr.parameter("p2", 1, expr0x7f419827b8e0));
+  |])
+  in let call0x7f419827f6c0 = Expr.call(
+    type0x7f41993c4f18,
+    "flushAppendOnlyFile", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c9090));
+  |])
+  in let call0x7f4198264e40 = Expr.call(
+    type0x7f41993c4888,
+    "emptyDb", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90c0));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+      (Expr.parameter("p3", 2, expr0x7f41981fe4e0));
+  |])
+  in let call0x7f419827f750 = Expr.call(
+    type0x7f41993c45e8,
+    "loadAppendOnlyFile", [|
+      (Expr.parameter("p1", 0, expr0x7f4198281480));
+  |])
+  in let call0x7f419827f7e0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198281510));
+  |])
+  in let call0x7f419827f870 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982027a0));
+  |])
+  in let call0x7f419827f900 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198281558));
+  |])
+  in let call0x7f419827f990 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198281678));
+      (Expr.parameter("p2", 1, expr0x7f419827bbc0));
+  |])
+  in let call0x7f419827fa20 = Expr.call(
+    type0x7f4198405000,
+    "dictFind", [|
+      (Expr.parameter("p1", 0, expr0x7f41982818b8));
+      (Expr.parameter("p2", 1, expr0x7f4198281828));
+  |])
+  in let call0x7f419827fab0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198281900));
+  |])
+  in let call0x7f419827fb40 = Expr.call(
+    type0x7f41993cff18,
+    "strEncoding", [|
+      (Expr.parameter("p1", 0, expr0x7f4198281990));
+  |])
+  in let call0x7f419827c150 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d1b0));
+      (Expr.parameter("p2", 1, expr0x7f4198281ab0));
+      (Expr.parameter("p3", 2, expr0x7f4198202d80));
+      (Expr.parameter("p4", 3, expr0x7f4198281a68));
+  |])
+  in let call0x7f419827c1f8 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d318));
+      (Expr.parameter("p2", 1, expr0x7f4198281c60));
+      (Expr.parameter("p3", 2, expr0x7f4198202f60));
+      (Expr.parameter("p4", 3, expr0x7f419832d3a8));
+  |])
+  in let call0x7f419827c2a0 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d480));
+      (Expr.parameter("p2", 1, expr0x7f4198281d80));
+      (Expr.parameter("p3", 2, expr0x7f4198206060));
+      (Expr.parameter("p4", 3, expr0x7f4198281d38));
+  |])
+  in let call0x7f419827c348 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d5a0));
+      (Expr.parameter("p2", 1, expr0x7f4198281ea0));
+      (Expr.parameter("p3", 2, expr0x7f4198206200));
+      (Expr.parameter("p4", 3, expr0x7f419832d630));
+  |])
+  in let call0x7f419827c3f0 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d708));
+      (Expr.parameter("p2", 1, expr0x7f4198285000));
+      (Expr.parameter("p3", 2, expr0x7f4198206520));
+      (Expr.parameter("p4", 3, expr0x7f419832a288));
+  |])
+  in let call0x7f419827fbd0 = Expr.call(
+    type0x7f41993c4930,
+    "estimateObjectIdleTime", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d090));
+  |])
+  in let call0x7f419827fc60 = Expr.call(
+    type0x7f419950a348,
+    "rdbSavedObjectLen", [|
+      (Expr.parameter("p1", 0, expr0x7f419832d090));
+  |])
+  in let call0x7f4198250500 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyStatusFormat", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198206620));
+      (Expr.parameter("p3", 2, expr0x7f419832d090));
+      (Expr.parameter("p4", 3, expr0x7f41982851f8));
+      (Expr.parameter("p5", 4, expr0x7f419832d120));
+      (Expr.parameter("p6", 5, expr0x7f41982851b0));
+      (Expr.parameter("p7", 6, expr0x7f4198285168));
+      (Expr.parameter("p8", 7, expr0x7f41982850d8));
+      (Expr.parameter("p9", 8, expr0x7f4198206700));
+  |])
+  in let call0x7f419827fcf0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198285318));
+      (Expr.parameter("p2", 1, expr0x7f4198286320));
+  |])
+  in let call0x7f419827fd80 = Expr.call(
+    type0x7f4198405000,
+    "dictFind", [|
+      (Expr.parameter("p1", 0, expr0x7f4198285558));
+      (Expr.parameter("p2", 1, expr0x7f41982854c8));
+  |])
+  in let call0x7f419827fe10 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41982855a0));
+  |])
+  in let call0x7f419827ff30 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyError", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198206c20));
+  |])
+  in let call0x7f4198289000 = Expr.call(
+    type0x7f419950a348,
+    "getStringObjectSdsUsedMemory", [|
+      (Expr.parameter("p1", 0, expr0x7f419832dc18));
+  |])
+  in let call0x7f4198289090 = Expr.call(
+    type0x7f419950a348,
+    "sdsavail", [|
+      (Expr.parameter("s", 0, expr0x7f4198285828));
+  |])
+  in let call0x7f4198289120 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198285900));
+  |])
+  in let call0x7f41982891b0 = Expr.call(
+    type0x7f419950a348,
+    "sdsZmallocSize", [|
+      (Expr.parameter("p1", 0, expr0x7f419832dc60));
+  |])
+  in let call0x7f4198289240 = Expr.call(
+    type0x7f419950a348,
+    "sdsavail", [|
+      (Expr.parameter("s", 0, expr0x7f419832dc60));
+  |])
+  in let call0x7f41982892d0 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f419832dc60));
+  |])
+  in let call0x7f4198250d00 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyStatusFormat", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198206ca0));
+      (Expr.parameter("p3", 2, expr0x7f4198285b40));
+      (Expr.parameter("p4", 3, expr0x7f4198285ab0));
+      (Expr.parameter("p5", 4, expr0x7f4198285a20));
+      (Expr.parameter("p6", 5, expr0x7f4198285990));
+      (Expr.parameter("p7", 6, expr0x7f41982858b8));
+      (Expr.parameter("p8", 7, expr0x7f41982857e0));
+  |])
+  in let call0x7f4198289360 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198285c60));
+      (Expr.parameter("p2", 1, expr0x7f4198286ba0));
+  |])
+  in let call0x7f4198264ed8 = Expr.call(
+    type0x7f4198497540,
+    "objectCommandLookupOrReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198285e10));
+      (Expr.parameter("p3", 2, expr0x7f4198285d38));
+  |])
+  in let call0x7f41982893f0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyError", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419820b1c0));
+  |])
+  in let call0x7f4198289480 = Expr.call(
+    type0x7f41993c4f18,
+    "ziplistRepr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198285ee8));
+  |])
+  in let call0x7f4198289510 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyStatus", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419820b2a0));
+  |])
+  in let call0x7f41982895a0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f419828e048));
+      (Expr.parameter("p2", 1, expr0x7f4198286e00));
+  |])
+  in let call0x7f419827c498 = Expr.call(
+    type0x7f41993c45e8,
+    "getLongFromObjectOrReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419828e1f8));
+      (Expr.parameter("p3", 2, expr0x7f4198286ee0));
+      (Expr.parameter("p4", 3, expr0x7f41981fe060));
+  |])
+  in let call0x7f4198289630 = Expr.call(
+    type0x7f41993c45e8,
+    "dictExpand", [|
+      (Expr.parameter("p1", 0, expr0x7f419828e360));
+      (Expr.parameter("p2", 1, expr0x7f419828e2d0));
+  |])
+  in let call0x7f419827c540 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419820b6e0));
+      (Expr.parameter("p2", 1, expr0x7f41987155d0));
+      (Expr.parameter("p3", 2, expr0x7f419820b740));
+      (Expr.parameter("p4", 3, expr0x7f419832a4c8));
+      (Expr.parameter("p5", 4, expr0x7f419832a318));
+  |])
+  in let call0x7f4198289750 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f4198290020));
+  |])
+  in let call0x7f41982897e0 = Expr.call(
+    type0x7f4198497540,
+    "createStringObject", [|
+      (Expr.parameter("p1", 0, expr0x7f419820b8c0));
+      (Expr.parameter("p2", 1, expr0x7f419828e4c8));
+  |])
+  in let call0x7f419827c5e8 = Expr.call(
+    type0x7f41993c45e8,
+    "getLongFromObjectOrReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419828e5e8));
+      (Expr.parameter("p3", 2, expr0x7f4198290140));
+      (Expr.parameter("p4", 3, expr0x7f41981fe060));
+  |])
+  in let call0x7f4198289870 = Expr.call(
+    type0x7f4198497540,
+    "lookupKeyWrite", [|
+      (Expr.parameter("p1", 0, expr0x7f419828e678));
+      (Expr.parameter("p2", 1, expr0x7f419832f438));
+  |])
+  in let call0x7f4198289900 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f419832f438));
+  |])
+  in let call0x7f419827c690 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419820bba0));
+      (Expr.parameter("p2", 1, expr0x7f41987155d0));
+      (Expr.parameter("p3", 2, expr0x7f419820bc00));
+      (Expr.parameter("p4", 3, expr0x7f419832a318));
+  |])
+  in let call0x7f4198289990 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f4198290320));
+  |])
+  in let call0x7f4198289a20 = Expr.call(
+    type0x7f4198497540,
+    "createStringObject", [|
+      (Expr.parameter("p1", 0, expr0x7f419820bc80));
+      (Expr.parameter("p2", 1, expr0x7f419828e750));
+  |])
+  in let call0x7f4198289ab0 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f4198290440));
+  |])
+  in let call0x7f4198289b40 = Expr.call(
+    type0x7f4198497540,
+    "createStringObject", [|
+      (Expr.parameter("p1", 0, expr0x7f41981fe060));
+      (Expr.parameter("p2", 1, expr0x7f419828e828));
+  |])
+  in let call0x7f4198292000 = Expr.call(
+    type0x7f41993cc0a8,
+    "memcpy", [|
+      (Expr.parameter("p1", 0, expr0x7f419828e990));
+      (Expr.parameter("p2", 1, expr0x7f419820bea0));
+      (Expr.parameter("p3", 2, expr0x7f419828e948));
+  |])
+  in let call0x7f4198292098 = Expr.call(
+    type0x7f41993c4f18,
+    "dbAdd", [|
+      (Expr.parameter("p1", 0, expr0x7f419828e9d8));
+      (Expr.parameter("p2", 1, expr0x7f419832f438));
+      (Expr.parameter("p3", 2, expr0x7f419832a360));
+  |])
+  in let call0x7f4198289bd0 = Expr.call(
+    type0x7f41993c4f18,
+    "signalModifiedKey", [|
+      (Expr.parameter("p1", 0, expr0x7f419828ea20));
+      (Expr.parameter("p2", 1, expr0x7f419832f438));
+  |])
+  in let call0x7f4198289c60 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f419832f438));
+  |])
+  in let call0x7f4198289cf0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419828eab0));
+  |])
+  in let call0x7f4198289d80 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f419828ebd0));
+      (Expr.parameter("p2", 1, expr0x7f4198290740));
+  |])
+  in let call0x7f419828af00 = Expr.call(
+    type0x7f41995875e8,
+    "sdsempty", [|
+  |])
+  in let call0x7f4198289e10 = Expr.call(
+    type0x7f41993c4f18,
+    "computeDatasetDigest", [|
+      (Expr.parameter("final", 0, expr0x7f419820f2e0));
+  |])
+  in let call0x7f4198292130 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a3a8));
+      (Expr.parameter("p2", 1, expr0x7f419820f380));
+      (Expr.parameter("p3", 2, expr0x7f419828ecf0));
+  |])
+  in let call0x7f4198289ea0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyStatus", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419832a3a8));
+  |])
+  in let call0x7f4198289f30 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a3a8));
+  |])
+  in let call0x7f4198294000 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f419828ee10));
+      (Expr.parameter("p2", 1, expr0x7f4198290a00));
+  |])
+  in let call0x7f4198294090 = Expr.call(
+    type0x7f41993cc3f0,
+    "strtod", [|
+      (Expr.parameter("p1", 0, expr0x7f4198296000));
+      (Expr.parameter("p2", 1, expr0x7f419820c600));
+  |])
+  in let call0x7f4198294120 = Expr.call(
+    type0x7f41993c45e8,
+    "nanosleep", [|
+      (Expr.parameter("p1", 0, expr0x7f419820f860));
+      (Expr.parameter("p2", 1, expr0x7f419820c6f0));
+  |])
+  in let call0x7f41982941b0 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198296168));
+  |])
+  in let call0x7f4198294240 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198296288));
+      (Expr.parameter("p2", 1, expr0x7f4198290c20));
+  |])
+  in let call0x7f41982942d0 = Expr.call(
+    type0x7f41993c45e8,
+    "atoi", [|
+      (Expr.parameter("__nptr", 0, expr0x7f4198296438));
+  |])
+  in let call0x7f4198294360 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41982964c8));
+  |])
+  in let call0x7f41982943f0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f41982965e8));
+      (Expr.parameter("p2", 1, expr0x7f4198290ea0));
+  |])
+  in let call0x7f4198294480 = Expr.call(
+    type0x7f41993c45e8,
+    "atoi", [|
+      (Expr.parameter("__nptr", 0, expr0x7f4198296798));
+  |])
+  in let call0x7f4198294510 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198296828));
+  |])
+  in let call0x7f41982945a0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198296948));
+      (Expr.parameter("p2", 1, expr0x7f419829a120));
+  |])
+  in let call0x7f4198294630 = Expr.call(
+    type0x7f41995875e8,
+    "sdsnewlen", [|
+      (Expr.parameter("p1", 0, expr0x7f419820ff20));
+      (Expr.parameter("p2", 1, expr0x7f41995996c0));
+  |])
+  in let call0x7f41982946c0 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatsds", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330090));
+      (Expr.parameter("p2", 1, expr0x7f4198296af8));
+  |])
+  in let call0x7f419827c930 = Expr.call(
+    type0x7f41995875e8,
+    "sdsmapchars", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330120));
+      (Expr.parameter("p2", 1, expr0x7f4198213060));
+      (Expr.parameter("p3", 2, expr0x7f41982130a0));
+      (Expr.parameter("p4", 3, expr0x7f41985ed0f0));
+  |])
+  in let call0x7f41982921c8 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatlen", [|
+      (Expr.parameter("p1", 0, expr0x7f41983301b0));
+      (Expr.parameter("p2", 1, expr0x7f4198213140));
+      (Expr.parameter("p3", 2, expr0x7f41985ed0f0));
+  |])
+  in let call0x7f4198294750 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplySds", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198330240));
+  |])
+  in let call0x7f41982947e0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198296c18));
+      (Expr.parameter("p2", 1, expr0x7f419829a3e0));
+  |])
+  in let call0x7f4198293980 = Expr.call(
+    type0x7f41995875e8,
+    "sdsempty", [|
+  |])
+  in let call0x7f4198292260 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330318));
+      (Expr.parameter("p2", 1, expr0x7f41982133e0));
+      (Expr.parameter("p3", 2, expr0x7f41994f8f18));
+  |])
+  in let call0x7f41982922f8 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41983303a8));
+      (Expr.parameter("p2", 1, expr0x7f4198213480));
+      (Expr.parameter("p3", 2, expr0x7f41994f8f30));
+  |])
+  in let call0x7f4198292390 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330438));
+      (Expr.parameter("p2", 1, expr0x7f4198213500));
+      (Expr.parameter("p3", 2, expr0x7f4198647870));
+  |])
+  in let call0x7f4198292428 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41983304c8));
+      (Expr.parameter("p2", 1, expr0x7f4198213580));
+      (Expr.parameter("p3", 2, expr0x7f41993c9090));
+  |])
+  in let call0x7f41982924c0 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330558));
+      (Expr.parameter("p2", 1, expr0x7f4198213600));
+      (Expr.parameter("p3", 2, expr0x7f41993c90a8));
+  |])
+  in let call0x7f4198292558 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41983305e8));
+      (Expr.parameter("p2", 1, expr0x7f4198213680));
+      (Expr.parameter("p3", 2, expr0x7f41993c9408));
+  |])
+  in let call0x7f41982925f0 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330678));
+      (Expr.parameter("p2", 1, expr0x7f4198213700));
+      (Expr.parameter("p3", 2, expr0x7f41986471f8));
+  |])
+  in let call0x7f4198292688 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330708));
+      (Expr.parameter("p2", 1, expr0x7f4198213780));
+      (Expr.parameter("p3", 2, expr0x7f4198647360));
+  |])
+  in let call0x7f4198294870 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyBulkSds", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198330798));
+  |])
+  in let call0x7f4198294900 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f4198296dc8));
+      (Expr.parameter("p2", 1, expr0x7f419829a7e0));
+  |])
+  in let call0x7f4198293c00 = Expr.call(
+    type0x7f41995875e8,
+    "sdsempty", [|
+  |])
+  in let call0x7f419827c9d8 = Expr.call(
+    type0x7f41993c45e8,
+    "getLongFromObjectOrReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198296f30));
+      (Expr.parameter("p3", 2, expr0x7f419829a900));
+      (Expr.parameter("p4", 3, expr0x7f41981fe060));
+  |])
+  in let call0x7f4198294990 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyError", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198213b60));
+  |])
+  in let call0x7f4198294a20 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330870));
+      (Expr.parameter("p2", 1, expr0x7f4198213c00));
+  |])
+  in let call0x7f4198292720 = Expr.call(
+    type0x7f41993c4f18,
+    "dictGetStats", [|
+      (Expr.parameter("p1", 0, expr0x7f4198213c80));
+      (Expr.parameter("p2", 1, expr0x7f419820ca80));
+      (Expr.parameter("p3", 2, expr0x7f419829b288));
+  |])
+  in let call0x7f4198294ab0 = Expr.call(
+    type0x7f41995875e8,
+    "sdscat", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330948));
+      (Expr.parameter("p2", 1, expr0x7f4198213d40));
+  |])
+  in let call0x7f4198294b40 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330a20));
+      (Expr.parameter("p2", 1, expr0x7f4198213dc0));
+  |])
+  in let call0x7f41982927b8 = Expr.call(
+    type0x7f41993c4f18,
+    "dictGetStats", [|
+      (Expr.parameter("p1", 0, expr0x7f4198213e40));
+      (Expr.parameter("p2", 1, expr0x7f419820ca80));
+      (Expr.parameter("p3", 2, expr0x7f419829b438));
+  |])
+  in let call0x7f4198294bd0 = Expr.call(
+    type0x7f41995875e8,
+    "sdscat", [|
+      (Expr.parameter("p1", 0, expr0x7f4198330ab0));
+      (Expr.parameter("p2", 1, expr0x7f4198213f00));
+  |])
+  in let call0x7f4198294c60 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyBulkSds", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198330b88));
+  |])
+  in let call0x7f4198294cf0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f419829b558));
+      (Expr.parameter("p2", 1, expr0x7f419829ad20));
+  |])
+  in let call0x7f4198292850 = Expr.call(
+    type0x7f4198497540,
+    "objectCommandLookupOrReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419829b708));
+      (Expr.parameter("p3", 2, expr0x7f419829b630));
+  |])
+  in let call0x7f4198294d80 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyError", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41982173c0));
+  |])
+  in let call0x7f41982928e8 = Expr.call(
+    type0x7f41993c4f18,
+    "dictGetStats", [|
+      (Expr.parameter("p1", 0, expr0x7f4198217460));
+      (Expr.parameter("p2", 1, expr0x7f419820ca80));
+      (Expr.parameter("p3", 2, expr0x7f419832a438));
+  |])
+  in let call0x7f4198294e10 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyBulkCString", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f41982174c0));
+  |])
+  in let call0x7f4198294ea0 = Expr.call(
+    type0x7f41993c45e8,
+    "strcasecmp", [|
+      (Expr.parameter("p1", 0, expr0x7f419829b8b8));
+      (Expr.parameter("p2", 1, expr0x7f419829af80));
+  |])
+  in let call0x7f4198294f30 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198217680));
+  |])
+  in let call0x7f419829d600 = Expr.call(
+    type0x7f41993c4f18,
+    "changeReplicationId", [|
+  |])
+  in let call0x7f419829d680 = Expr.call(
+    type0x7f41993c4f18,
+    "clearReplicationId2", [|
+  |])
+  in let call0x7f41982a3000 = Expr.call(
+    type0x7f41993c4f18,
+    "addReply", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f419829b990));
+  |])
+  in let call0x7f4198292980 = Expr.call(
+    type0x7f41993c4f18,
+    "addReplyErrorFormat", [|
+      (Expr.parameter("p1", 0, expr0x7f419832a900));
+      (Expr.parameter("p2", 1, expr0x7f4198217780));
+      (Expr.parameter("p3", 2, expr0x7f419829bab0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f4198262ee8, expr0x7f4198278000)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_347(D)>\n_1 = c_348(D)->argc;";
+      |]
+    )
+  in let block_3 = 
+    let step_3_2 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f4198262ee8, expr0x7f41993c93d8))
+    in let step_3_3 = 
+      Action.assign(expr0x7f4198262f30, expr0x7f4198278030)
+    in let step_3_4 = 
+      Action.assign(expr0x7f4198262f78, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198262f30, expr0x7f41993accf0))
+    in let step_3_5 = 
+      Action.assign(expr0x7f4198262d80, expr0x7f4198270758)
+    in let step_3_6 = 
+      Action.assign(expr0x7f4198262e58, expr0x7f4198278060)
+    in let step_3_7 = 
+      Action.call(call0x7f4198268750)
+    in let step_3_8 = 
+      Action.assign(expr0x7f4198279000, call0x7f4198268750)
+    in Block.block(
+      3,
+      [|
+        step_3_2;
+        step_3_3;
+        step_3_4;
+        step_3_5;
+        step_3_6;
+        step_3_7;
+        step_3_8;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume TRUE (_1 == 2)";
+        "# VUSE <.MEM_347(D)>\n_2 = c_348(D)->argv;";
+        "_3 = _2 + 8;";
+        "# VUSE <.MEM_347(D)>\n_4 = *_3;";
+        "# VUSE <.MEM_347(D)>\n_5 = _4->ptr;";
+        "# VUSE <.MEM_347(D)>\n_6 = strcasecmp (_5, \"help\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_4 = 
+    let step_4_9 = 
+      Action.assume(3, Expr.beq(GccType.boolean, expr0x7f4198279000, expr0x7f41993c9078))
+    in let step_4_10 = 
+      Action.assign(expr0x7f419826f738, expr0x7f41981f4a60)
+    in let step_4_11 = 
+      Action.assign(expr0x7f419826f770, expr0x7f41981f4ac0)
+    in let step_4_12 = 
+      Action.assign(expr0x7f419826f7a8, expr0x7f41981f4b20)
+    in let step_4_13 = 
+      Action.assign(expr0x7f419826f7e0, expr0x7f41981f4b80)
+    in let step_4_14 = 
+      Action.assign(expr0x7f419826f818, expr0x7f41981f4be0)
+    in let step_4_15 = 
+      Action.assign(expr0x7f419826f850, expr0x7f41981f4c40)
+    in let step_4_16 = 
+      Action.assign(expr0x7f419826f888, expr0x7f41981f4ca0)
+    in let step_4_17 = 
+      Action.assign(expr0x7f419826f8c0, expr0x7f41981f4d00)
+    in let step_4_18 = 
+      Action.assign(expr0x7f419826f8f8, expr0x7f41981f4d60)
+    in let step_4_19 = 
+      Action.assign(expr0x7f419826f930, expr0x7f41981f4dc0)
+    in let step_4_20 = 
+      Action.assign(expr0x7f419826f968, expr0x7f41981f4e20)
+    in let step_4_21 = 
+      Action.assign(expr0x7f419826f9a0, expr0x7f41981f4e80)
+    in let step_4_22 = 
+      Action.assign(expr0x7f419826f9d8, expr0x7f41981f4ee0)
+    in let step_4_23 = 
+      Action.assign(expr0x7f419826fa10, expr0x7f41981f4f40)
+    in let step_4_24 = 
+      Action.assign(expr0x7f419826fa48, expr0x7f41981f4fa0)
+    in let step_4_25 = 
+      Action.assign(expr0x7f419826fa80, expr0x7f41981fc000)
+    in let step_4_26 = 
+      Action.assign(expr0x7f419826fab8, expr0x7f41981fc060)
+    in let step_4_27 = 
+      Action.assign(expr0x7f419826faf0, expr0x7f41981fc0c0)
+    in let step_4_28 = 
+      Action.assign(expr0x7f419826fb28, expr0x7f41981fc120)
+    in let step_4_29 = 
+      Action.assign(expr0x7f419826fb60, expr0x7f41981fc180)
+    in let step_4_30 = 
+      Action.assign(expr0x7f419826fb98, expr0x7f41981fe060)
+    in let step_4_31 = 
+      Action.call(call0x7f41982687e0)
+    in let step_4_32 = 
+      Action.assign(expr0x7f41981f33f0, expr0x7f41982664b0)
+    in Block.block(
+      4,
+      [|
+        step_4_9;
+        step_4_10;
+        step_4_11;
+        step_4_12;
+        step_4_13;
+        step_4_14;
+        step_4_15;
+        step_4_16;
+        step_4_17;
+        step_4_18;
+        step_4_19;
+        step_4_20;
+        step_4_21;
+        step_4_22;
+        step_4_23;
+        step_4_24;
+        step_4_25;
+        step_4_26;
+        step_4_27;
+        step_4_28;
+        step_4_29;
+        step_4_30;
+        step_4_31;
+        step_4_32;
+      |],
+      [|
+        ("addReplyHelp", 1);
+      |],
+      [|
+        "assume TRUE (_6 == 0)";
+        "# .MEM_349 = VDEF <.MEM_347(D)>\nhelp[0] = \"assert -- Crash by assertion failed.\";";
+        "# .MEM_350 = VDEF <.MEM_349>\nhelp[1] = \"change-repl-id -- Change the replication IDs of the instance. Dangerous, should be used only for testing the replication subsystem.\";";
+        "# .MEM_351 = VDEF <.MEM_350>\nhelp[2] = \"crash-and-recover <milliseconds> -- Hard crash and restart after <milliseconds> delay.\";";
+        "# .MEM_352 = VDEF <.MEM_351>\nhelp[3] = \"digest -- Outputs an hex signature representing the current DB content.\";";
+        "# .MEM_353 = VDEF <.MEM_352>\nhelp[4] = \"htstats <dbid> -- Return hash table statistics of the specified Redis database.\";";
+        "# .MEM_354 = VDEF <.MEM_353>\nhelp[5] = \"htstats-key <key> -- Like htstats but for the hash table stored as key\\'s value.\";";
+        "# .MEM_355 = VDEF <.MEM_354>\nhelp[6] = \"loadaof -- Flush the AOF buffers on disk and reload the AOF in memory.\";";
+        "# .MEM_356 = VDEF <.MEM_355>\nhelp[7] = \"lua-always-replicate-commands (0|1) -- Setting it to 1 makes Lua replication defaulting to replicating single commands, without the script having to enable effects replication.\";";
+        "# .MEM_357 = VDEF <.MEM_356>\nhelp[8] = \"object <key> -- Show low level info about key and associated value.\";";
+        "# .MEM_358 = VDEF <.MEM_357>\nhelp[9] = \"panic -- Crash the server simulating a panic.\";";
+        "# .MEM_359 = VDEF <.MEM_358>\nhelp[10] = \"populate <count> [prefix] [size] -- Create <count> string keys named key:<num>. If a prefix is specified is used instead of the \\'key\\' prefix.\";";
+        "# .MEM_360 = VDEF <.MEM_359>\nhelp[11] = \"reload -- Save the RDB on disk and reload it back in memory.\";";
+        "# .MEM_361 = VDEF <.MEM_360>\nhelp[12] = \"restart -- Graceful restart: save config, db, restart.\";";
+        "# .MEM_362 = VDEF <.MEM_361>\nhelp[13] = \"sdslen <key> -- Show low level SDS string info representing key and value.\";";
+        "# .MEM_363 = VDEF <.MEM_362>\nhelp[14] = \"segfault -- Crash the server with sigsegv.\";";
+        "# .MEM_364 = VDEF <.MEM_363>\nhelp[15] = \"set-active-expire (0|1) -- Setting it to 0 disables expiring keys in background when they are not accessed (otherwise the Redis behavior). Setting it to 1 reenables back the default.\";";
+        "# .MEM_365 = VDEF <.MEM_364>\nhelp[16] = \"sleep <seconds> -- Stop the server for <seconds>. Decimals allowed.\";";
+        "# .MEM_366 = VDEF <.MEM_365>\nhelp[17] = \"structsize -- Return the size of different Redis core C structures.\";";
+        "# .MEM_367 = VDEF <.MEM_366>\nhelp[18] = \"ziplist <key> -- Show low level info about the ziplist encoding.\";";
+        "# .MEM_368 = VDEF <.MEM_367>\nhelp[19] = \"error <string> -- Return a Redis protocol error with <string> as message. Useful for clients unit tests to simulate Redis errors.\";";
+        "# .MEM_369 = VDEF <.MEM_368>\nhelp[20] = 0B;";
+        "# .MEM_370 = VDEF <.MEM_369>\naddReplyHelp (c_348(D), &help);";
+        "# .MEM_371 = VDEF <.MEM_370>\nhelp ={v} {CLOBBER};";
+      |]
+    )
+  in let block_5 = 
+    let step_5_33 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f4198262ee8, expr0x7f41993c93d8))
+    in let step_5_34 = 
+      Action.assume(3, Expr.bneq(GccType.boolean, expr0x7f4198279000, expr0x7f41993c9078))
+    in let step_5_35 = 
+      Action.assign(expr0x7f4198279048, expr0x7f4198278090)
+    in let step_5_36 = 
+      Action.assign(expr0x7f4198279090, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279048, expr0x7f41993accf0))
+    in let step_5_37 = 
+      Action.assign(expr0x7f41982790d8, expr0x7f4198270ca8)
+    in let step_5_38 = 
+      Action.assign(expr0x7f4198279120, expr0x7f41982780c0)
+    in let step_5_39 = 
+      Action.call(call0x7f4198268870)
+    in let step_5_40 = 
+      Action.assign(expr0x7f4198279168, call0x7f4198268870)
+    in Block.block(
+      5,
+      [|
+        step_5_33;
+        step_5_34;
+        step_5_35;
+        step_5_36;
+        step_5_37;
+        step_5_38;
+        step_5_39;
+        step_5_40;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_1 == 2)";
+        "assume FALSE (_6 == 0)";
+        "# VUSE <.MEM_347(D)>\n_7 = c_348(D)->argv;";
+        "_8 = _7 + 8;";
+        "# VUSE <.MEM_347(D)>\n_9 = *_8;";
+        "# VUSE <.MEM_347(D)>\n_10 = _9->ptr;";
+        "# VUSE <.MEM_347(D)>\n_11 = strcasecmp (_10, \"segfault\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_6 = 
+    let step_6_41 = 
+      Action.assume(5, Expr.beq(GccType.boolean, expr0x7f4198279168, expr0x7f41993c9078))
+    in let step_6_42 = 
+      Action.assign(expr0x7f41982791b0, expr0x7f41981fc3a0)
+    in let step_6_43 = 
+      Action.assign(expr0x7f4198270dc0, expr0x7f41981fe108)
+    in Block.block(
+      6,
+      [|
+        step_6_41;
+        step_6_42;
+        step_6_43;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_11 == 0)";
+        "_12 = -1B;";
+        "# .MEM_586 = VDEF <.MEM_347(D)>\n*_12 = 120;";
+      |]
+    )
+  in let block_7 = 
+    let step_7_44 = 
+      Action.assume(5, Expr.bneq(GccType.boolean, expr0x7f4198279168, expr0x7f41993c9078))
+    in let step_7_45 = 
+      Action.assign(expr0x7f41982791f8, expr0x7f41982780f0)
+    in let step_7_46 = 
+      Action.assign(expr0x7f4198279240, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982791f8, expr0x7f41993accf0))
+    in let step_7_47 = 
+      Action.assign(expr0x7f4198279288, expr0x7f4198270ed8)
+    in let step_7_48 = 
+      Action.assign(expr0x7f41982792d0, expr0x7f4198278120)
+    in let step_7_49 = 
+      Action.call(call0x7f4198268900)
+    in let step_7_50 = 
+      Action.assign(expr0x7f4198279318, call0x7f4198268900)
+    in Block.block(
+      7,
+      [|
+        step_7_44;
+        step_7_45;
+        step_7_46;
+        step_7_47;
+        step_7_48;
+        step_7_49;
+        step_7_50;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_11 == 0)";
+        "# VUSE <.MEM_347(D)>\n_13 = c_348(D)->argv;";
+        "_14 = _13 + 8;";
+        "# VUSE <.MEM_347(D)>\n_15 = *_14;";
+        "# VUSE <.MEM_347(D)>\n_16 = _15->ptr;";
+        "# VUSE <.MEM_347(D)>\n_17 = strcasecmp (_16, \"panic\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_8 = 
+    let step_8_51 = 
+      Action.assume(7, Expr.beq(GccType.boolean, expr0x7f4198279318, expr0x7f41993c9078))
+    in let step_8_52 = 
+      Action.call(call0x7f4198268990)
+    in let step_8_53 = 
+      Action.assign(expr0x7f4198279360, call0x7f4198268990)
+    in let step_8_54 = 
+      Action.call(call0x7f419824d690)
+    in let step_8_55 = 
+      Action.call(call0x7f4198268a20)
+    in Block.block(
+      8,
+      [|
+        step_8_51;
+        step_8_52;
+        step_8_53;
+        step_8_54;
+        step_8_55;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverPanic", 1);
+        ("time", 1);
+      |],
+      [|
+        "assume TRUE (_17 == 0)";
+        "# .MEM_583 = VDEF <.MEM_347(D)>\n_18 = time (0B);";
+        "<CAPTURES RETURN>";
+        "# .MEM_584 = VDEF <.MEM_583>\n_serverPanic (\"debug.c\", 314, \"DEBUG PANIC called at Unix time %ld\", _18);";
+        "# .MEM_585 = VDEF <.MEM_584>\n_exit (1);";
+      |]
+    )
+  in let block_9 = 
+    let step_9_56 = 
+      Action.assume(7, Expr.bneq(GccType.boolean, expr0x7f4198279318, expr0x7f41993c9078))
+    in let step_9_57 = 
+      Action.assign(expr0x7f41982793a8, expr0x7f41982781b0)
+    in let step_9_58 = 
+      Action.assign(expr0x7f41982793f0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982793a8, expr0x7f41993accf0))
+    in let step_9_59 = 
+      Action.assign(expr0x7f4198279438, expr0x7f4198270780)
+    in let step_9_60 = 
+      Action.assign(expr0x7f4198279480, expr0x7f41982781e0)
+    in let step_9_61 = 
+      Action.call(call0x7f4198268ab0)
+    in let step_9_62 = 
+      Action.assign(expr0x7f41982794c8, call0x7f4198268ab0)
+    in Block.block(
+      9,
+      [|
+        step_9_56;
+        step_9_57;
+        step_9_58;
+        step_9_59;
+        step_9_60;
+        step_9_61;
+        step_9_62;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_17 == 0)";
+        "# VUSE <.MEM_347(D)>\n_19 = c_348(D)->argv;";
+        "_20 = _19 + 8;";
+        "# VUSE <.MEM_347(D)>\n_21 = *_20;";
+        "# VUSE <.MEM_347(D)>\n_22 = _21->ptr;";
+        "# VUSE <.MEM_347(D)>\n_23 = strcasecmp (_22, \"restart\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_10 = 
+    let step_10_63 = 
+      Action.assume(9, Expr.bneq(GccType.boolean, expr0x7f41982794c8, expr0x7f41993c9078))
+    in let step_10_64 = 
+      Action.assign(expr0x7f4198279510, expr0x7f4198278210)
+    in let step_10_65 = 
+      Action.assign(expr0x7f4198279558, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279510, expr0x7f41993accf0))
+    in let step_10_66 = 
+      Action.assign(expr0x7f41982795a0, expr0x7f41982709b0)
+    in let step_10_67 = 
+      Action.assign(expr0x7f41982795e8, expr0x7f4198278240)
+    in let step_10_68 = 
+      Action.call(call0x7f4198268b40)
+    in let step_10_69 = 
+      Action.assign(expr0x7f4198279630, call0x7f4198268b40)
+    in Block.block(
+      10,
+      [|
+        step_10_63;
+        step_10_64;
+        step_10_65;
+        step_10_66;
+        step_10_67;
+        step_10_68;
+        step_10_69;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_23 == 0)";
+        "# VUSE <.MEM_347(D)>\n_24 = c_348(D)->argv;";
+        "_25 = _24 + 8;";
+        "# VUSE <.MEM_347(D)>\n_26 = *_25;";
+        "# VUSE <.MEM_347(D)>\n_27 = _26->ptr;";
+        "# VUSE <.MEM_347(D)>\n_28 = strcasecmp (_27, \"crash-and-recover\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_11 = 
+    let step_11_70 = 
+      Action.assume(9, Expr.beq(GccType.boolean, expr0x7f41982794c8, expr0x7f41993c9078))
+    in let step_11_71 = 
+      Action.assume(10, Expr.beq(GccType.boolean, expr0x7f4198279630, expr0x7f41993c9078))
+    in let step_11_72 = 
+      Action.assign(expr0x7f41981f3510, expr0x7f41981fe1c8)
+    in let step_11_73 = 
+      Action.assign(expr0x7f4198279678, expr0x7f4198278270)
+    in Block.block(
+      11,
+      [|
+        step_11_70;
+        step_11_71;
+        step_11_72;
+        step_11_73;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_23 == 0)";
+        "assume TRUE (_28 == 0)";
+        "# .MEM_573 = VDEF <.MEM_347(D)>\ndelay = 0;";
+        "# VUSE <.MEM_573>\n_29 = c_348(D)->argc;";
+      |]
+    )
+  in let block_12 = 
+    let step_12_74 = 
+      Action.assume(11, Expr.bgt(GccType.boolean, expr0x7f4198279678, expr0x7f41993c93d8))
+    in let step_12_75 = 
+      Action.assign(expr0x7f41982796c0, expr0x7f41982782a0)
+    in let step_12_76 = 
+      Action.assign(expr0x7f4198279708, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982796c0, expr0x7f41993acd38))
+    in let step_12_77 = 
+      Action.assign(expr0x7f4198279750, expr0x7f4198270870)
+    in let step_12_78 = 
+      Action.call(call0x7f419827c000)
+    in let step_12_79 = 
+      Action.assign(expr0x7f4198279798, call0x7f419827c000)
+    in Block.block(
+      12,
+      [|
+        step_12_74;
+        step_12_75;
+        step_12_76;
+        step_12_77;
+        step_12_78;
+        step_12_79;
+      |],
+      [|
+        ("getLongLongFromObjectOrReply", 1);
+      |],
+      [|
+        "assume TRUE (_29 > 2)";
+        "# VUSE <.MEM_573>\n_30 = c_348(D)->argv;";
+        "_31 = _30 + 16;";
+        "# VUSE <.MEM_573>\n_32 = *_31;";
+        "# .MEM_574 = VDEF <.MEM_573>\n_33 = getLongLongFromObjectOrReply (c_348(D), _32, &delay, 0B);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_13 = 
+    let step_13_80 = 
+      Action.assume(12, Expr.beq(GccType.boolean, expr0x7f4198279798, expr0x7f41993c9078))
+    in let step_13_81 = 
+      Action.assign(expr0x7f41982797e0, expr0x7f41981f3510)
+    in Block.block(
+      13,
+      [|
+        step_13_80;
+        step_13_81;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_33 != 0)";
+        "# VUSE <.MEM_574>\ndelay.19_34 = delay;";
+      |]
+    )
+  in let block_14 = 
+    let step_14_82 = 
+      Action.assume(13, Expr.blt(GccType.boolean, expr0x7f41982797e0, expr0x7f41981fe1c8))
+    in let step_14_83 = 
+      Action.assign(expr0x7f41981f3510, expr0x7f41981fe1c8)
+    in Block.block(
+      14,
+      [|
+        step_14_82;
+        step_14_83;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (delay.19_34 < 0)";
+        "# .MEM_575 = VDEF <.MEM_574>\ndelay = 0;";
+      |]
+    )
+  in let block_15 = 
+    let step_15_84 = 
+      Action.assume(11, Expr.blte(GccType.boolean, expr0x7f4198279678, expr0x7f41993c93d8))
+    in let step_15_85 = 
+      Action.assume(13, Expr.bgte(GccType.boolean, expr0x7f41982797e0, expr0x7f41981fe1c8))
+    in let step_15_86 = 
+      Action.assign(expr0x7f4198279828, expr0x7f41982782d0)
+    in let step_15_87 = 
+      Action.assign(expr0x7f4198279870, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279828, expr0x7f41993accf0))
+    in let step_15_88 = 
+      Action.assign(expr0x7f41982798b8, expr0x7f4198270b90)
+    in let step_15_89 = 
+      Action.assign(expr0x7f4198279900, expr0x7f4198278300)
+    in let step_15_90 = 
+      Action.call(call0x7f4198268c60)
+    in let step_15_91 = 
+      Action.assign(expr0x7f4198279948, call0x7f4198268c60)
+    in Block.block(
+      15,
+      [|
+        step_15_84;
+        step_15_85;
+        step_15_86;
+        step_15_87;
+        step_15_88;
+        step_15_89;
+        step_15_90;
+        step_15_91;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_29 > 2)";
+        "assume FALSE (delay.19_34 < 0)";
+        "# VUSE <.MEM_334>\n_35 = c_348(D)->argv;";
+        "_36 = _35 + 8;";
+        "# VUSE <.MEM_334>\n_37 = *_36;";
+        "# VUSE <.MEM_334>\n_38 = _37->ptr;";
+        "# VUSE <.MEM_334>\n_39 = strcasecmp (_38, \"restart\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_16 = 
+    let step_16_92 = 
+      Action.assume(15, Expr.beq(GccType.boolean, expr0x7f4198279948, expr0x7f41993c9078))
+    in let step_16_93 = 
+      Action.assign(expr0x7f4198331ab0, expr0x7f41993c90a8)
+    in let step_16_94 = 
+      Action.assign(expr0x7f419832a480, expr0x7f4198331ab0)
+    in Block.block(
+      16,
+      [|
+        step_16_92;
+        step_16_93;
+        step_16_94;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_39 == 0)";
+        "iftmp.20_578 = 3;";
+        "iftmp.20_332 = iftmp.20_578";
+      |]
+    )
+  in let block_17 = 
+    let step_17_95 = 
+      Action.assume(15, Expr.bneq(GccType.boolean, expr0x7f4198279948, expr0x7f41993c9078))
+    in let step_17_96 = 
+      Action.assign(expr0x7f4198331a68, expr0x7f41993c9078)
+    in let step_17_97 = 
+      Action.assign(expr0x7f419832a480, expr0x7f4198331a68)
+    in Block.block(
+      17,
+      [|
+        step_17_95;
+        step_17_96;
+        step_17_97;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_39 == 0)";
+        "iftmp.20_577 = 0;";
+        "iftmp.20_332 = iftmp.20_577";
+      |]
+    )
+  in let block_18 = 
+    let step_18_98 = 
+      Action.assign(expr0x7f4198331af8, expr0x7f419832a480)
+    in let step_18_99 = 
+      Action.debug("# DEBUG flags => flags_579")
+    in let step_18_100 = 
+      Action.assign(expr0x7f4198279990, expr0x7f41981f3510)
+    in let step_18_101 = 
+      Action.call(call0x7f4198268cf0)
+    in let step_18_102 = 
+      Action.call(call0x7f4198268d80)
+    in let step_18_103 = 
+      Action.assign(expr0x7f41981f3510, expr0x7f41982a1018)
+    in Block.block(
+      18,
+      [|
+        step_18_98;
+        step_18_99;
+        step_18_100;
+        step_18_101;
+        step_18_102;
+        step_18_103;
+      |],
+      [|
+        ("addReplyError", 1);
+        ("restartServer", 1);
+      |],
+      [|
+        "flags_579 = iftmp.20_332;";
+        "# DEBUG flags => flags_579";
+        "# VUSE <.MEM_334>\ndelay.21_40 = delay;";
+        "# .MEM_580 = VDEF <.MEM_334>\nrestartServer (flags_579, delay.21_40);";
+        "# .MEM_581 = VDEF <.MEM_580>\naddReplyError (c_348(D), \"failed to restart the server. Check server logs.\");";
+        "# .MEM_582 = VDEF <.MEM_581>\ndelay ={v} {CLOBBER};";
+      |]
+    )
+  in let block_19 = 
+    let step_19_104 = 
+      Action.assume(12, Expr.bneq(GccType.boolean, expr0x7f4198279798, expr0x7f41993c9078))
+    in let step_19_105 = 
+      Action.assign(expr0x7f41981f3510, expr0x7f41982a1030)
+    in Block.block(
+      19,
+      [|
+        step_19_104;
+        step_19_105;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_33 != 0)";
+        "# .MEM_576 = VDEF <.MEM_574>\ndelay ={v} {CLOBBER};";
+      |]
+    )
+  in let block_20 = 
+    let step_20_106 = 
+      Action.assume(10, Expr.bneq(GccType.boolean, expr0x7f4198279630, expr0x7f41993c9078))
+    in let step_20_107 = 
+      Action.assign(expr0x7f41982799d8, expr0x7f4198278330)
+    in let step_20_108 = 
+      Action.assign(expr0x7f4198279a20, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982799d8, expr0x7f41993accf0))
+    in let step_20_109 = 
+      Action.assign(expr0x7f4198279a68, expr0x7f4198270d98)
+    in let step_20_110 = 
+      Action.assign(expr0x7f4198279ab0, expr0x7f4198278360)
+    in let step_20_111 = 
+      Action.call(call0x7f4198268e10)
+    in let step_20_112 = 
+      Action.assign(expr0x7f4198279af8, call0x7f4198268e10)
+    in Block.block(
+      20,
+      [|
+        step_20_106;
+        step_20_107;
+        step_20_108;
+        step_20_109;
+        step_20_110;
+        step_20_111;
+        step_20_112;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_28 == 0)";
+        "# VUSE <.MEM_347(D)>\n_41 = c_348(D)->argv;";
+        "_42 = _41 + 8;";
+        "# VUSE <.MEM_347(D)>\n_43 = *_42;";
+        "# VUSE <.MEM_347(D)>\n_44 = _43->ptr;";
+        "# VUSE <.MEM_347(D)>\n_45 = strcasecmp (_44, \"oom\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_21 = 
+    let step_21_113 = 
+      Action.assume(20, Expr.beq(GccType.boolean, expr0x7f4198279af8, expr0x7f41993c9078))
+    in let step_21_114 = 
+      Action.call(call0x7f4198268ea0)
+    in let step_21_115 = 
+      Action.assign(expr0x7f4198331870, call0x7f4198268ea0)
+    in let step_21_116 = 
+      Action.debug("# DEBUG ptr => ptr_570")
+    in let step_21_117 = 
+      Action.call(call0x7f4198268f30)
+    in let step_21_118 = 
+      Action.assign(expr0x7f4198279b40, expr0x7f4198278390)
+    in let step_21_119 = 
+      Action.call(call0x7f4198268510)
+    in Block.block(
+      21,
+      [|
+        step_21_113;
+        step_21_114;
+        step_21_115;
+        step_21_116;
+        step_21_117;
+        step_21_118;
+        step_21_119;
+      |],
+      [|
+        ("addReply", 1);
+        ("zfree", 1);
+        ("zmalloc", 1);
+      |],
+      [|
+        "assume TRUE (_45 == 0)";
+        "# .MEM_569 = VDEF <.MEM_347(D)>\nptr_570 = zmalloc (18446744073709551615);";
+        "<CAPTURES RETURN>";
+        "# DEBUG ptr => ptr_570";
+        "# .MEM_571 = VDEF <.MEM_569>\nzfree (ptr_570);";
+        "# VUSE <.MEM_571>\n_46 = shared.ok;";
+        "# .MEM_572 = VDEF <.MEM_571>\naddReply (c_348(D), _46);";
+      |]
+    )
+  in let block_22 = 
+    let step_22_120 = 
+      Action.assume(20, Expr.bneq(GccType.boolean, expr0x7f4198279af8, expr0x7f41993c9078))
+    in let step_22_121 = 
+      Action.assign(expr0x7f4198279b88, expr0x7f41982783c0)
+    in let step_22_122 = 
+      Action.assign(expr0x7f4198279bd0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279b88, expr0x7f41993accf0))
+    in let step_22_123 = 
+      Action.assign(expr0x7f4198279c18, expr0x7f419827e000)
+    in let step_22_124 = 
+      Action.assign(expr0x7f4198279c60, expr0x7f41982783f0)
+    in let step_22_125 = 
+      Action.call(call0x7f419827f000)
+    in let step_22_126 = 
+      Action.assign(expr0x7f4198279ca8, call0x7f419827f000)
+    in Block.block(
+      22,
+      [|
+        step_22_120;
+        step_22_121;
+        step_22_122;
+        step_22_123;
+        step_22_124;
+        step_22_125;
+        step_22_126;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_45 == 0)";
+        "# VUSE <.MEM_347(D)>\n_47 = c_348(D)->argv;";
+        "_48 = _47 + 8;";
+        "# VUSE <.MEM_347(D)>\n_49 = *_48;";
+        "# VUSE <.MEM_347(D)>\n_50 = _49->ptr;";
+        "# VUSE <.MEM_347(D)>\n_51 = strcasecmp (_50, \"assert\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_23 = 
+    let step_23_127 = 
+      Action.assume(22, Expr.beq(GccType.boolean, expr0x7f4198279ca8, expr0x7f41993c9078))
+    in let step_23_128 = 
+      Action.assign(expr0x7f4198279cf0, expr0x7f4198278420)
+    in Block.block(
+      23,
+      [|
+        step_23_127;
+        step_23_128;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_51 == 0)";
+        "# VUSE <.MEM_347(D)>\n_52 = c_348(D)->argc;";
+      |]
+    )
+  in let block_24 = 
+    let step_24_129 = 
+      Action.assume(23, Expr.bgt(GccType.boolean, expr0x7f4198279cf0, expr0x7f41993c93d8))
+    in let step_24_130 = 
+      Action.assign(expr0x7f4198279d38, expr0x7f4198278450)
+    in let step_24_131 = 
+      Action.assign(expr0x7f4198279d80, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279d38, expr0x7f41993acd38))
+    in let step_24_132 = 
+      Action.assign(expr0x7f4198279dc8, expr0x7f419827e258)
+    in let step_24_133 = 
+      Action.assign(expr0x7f4198279e10, expr0x7f4198278480)
+    in let step_24_134 = 
+      Action.assign(expr0x7f4198279e58, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279e10, expr0x7f41993acd38))
+    in let step_24_135 = 
+      Action.call(call0x7f419827f090)
+    in let step_24_136 = 
+      Action.assign(expr0x7f4198279ea0, call0x7f419827f090)
+    in let step_24_137 = 
+      Action.assign(expr0x7f419827e370, expr0x7f4198279ea0)
+    in Block.block(
+      24,
+      [|
+        step_24_129;
+        step_24_130;
+        step_24_131;
+        step_24_132;
+        step_24_133;
+        step_24_134;
+        step_24_135;
+        step_24_136;
+        step_24_137;
+      |],
+      [|
+        ("tryObjectEncoding", 1);
+      |],
+      [|
+        "assume TRUE (_52 > 2)";
+        "# VUSE <.MEM_347(D)>\n_53 = c_348(D)->argv;";
+        "_54 = _53 + 16;";
+        "# VUSE <.MEM_347(D)>\n_55 = *_54;";
+        "# VUSE <.MEM_347(D)>\n_56 = c_348(D)->argv;";
+        "_57 = _56 + 16;";
+        "# .MEM_565 = VDEF <.MEM_347(D)>\n_58 = tryObjectEncoding (_55);";
+        "<CAPTURES RETURN>";
+        "# .MEM_566 = VDEF <.MEM_565>\n*_57 = _58;";
+      |]
+    )
+  in let block_25 = 
+    let step_25_138 = 
+      Action.assume(23, Expr.blte(GccType.boolean, expr0x7f4198279cf0, expr0x7f41993c93d8))
+    in let step_25_139 = 
+      Action.assign(expr0x7f4198279ee8, expr0x7f41982784b0)
+    in let step_25_140 = 
+      Action.assign(expr0x7f4198279f30, expr0x7f419827e460)
+    in let step_25_141 = 
+      Action.call(call0x7f419827c0a8)
+    in let step_25_142 = 
+      Action.call(call0x7f419827f120)
+    in Block.block(
+      25,
+      [|
+        step_25_138;
+        step_25_139;
+        step_25_140;
+        step_25_141;
+        step_25_142;
+      |],
+      [|
+        ("_exit", 1);
+        ("_serverAssertWithInfo", 1);
+      |],
+      [|
+        "assume FALSE (_52 > 2)";
+        "# VUSE <.MEM_335>\n_59 = c_348(D)->argv;";
+        "# VUSE <.MEM_335>\n_60 = *_59;";
+        "# .MEM_567 = VDEF <.MEM_335>\n_serverAssertWithInfo (c_348(D), _60, \"1 == 2\", \"debug.c\", 335);";
+        "# .MEM_568 = VDEF <.MEM_567>\n_exit (1);";
+      |]
+    )
+  in let block_26 = 
+    let step_26_143 = 
+      Action.assume(22, Expr.bneq(GccType.boolean, expr0x7f4198279ca8, expr0x7f41993c9078))
+    in let step_26_144 = 
+      Action.assign(expr0x7f4198279f78, expr0x7f41982784e0)
+    in let step_26_145 = 
+      Action.assign(expr0x7f4198281000, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198279f78, expr0x7f41993accf0))
+    in let step_26_146 = 
+      Action.assign(expr0x7f4198281048, expr0x7f419827e5a0)
+    in let step_26_147 = 
+      Action.assign(expr0x7f4198281090, expr0x7f4198278510)
+    in let step_26_148 = 
+      Action.call(call0x7f419827f1b0)
+    in let step_26_149 = 
+      Action.assign(expr0x7f41982810d8, call0x7f419827f1b0)
+    in Block.block(
+      26,
+      [|
+        step_26_143;
+        step_26_144;
+        step_26_145;
+        step_26_146;
+        step_26_147;
+        step_26_148;
+        step_26_149;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_51 == 0)";
+        "# VUSE <.MEM_347(D)>\n_61 = c_348(D)->argv;";
+        "_62 = _61 + 8;";
+        "# VUSE <.MEM_347(D)>\n_63 = *_62;";
+        "# VUSE <.MEM_347(D)>\n_64 = _63->ptr;";
+        "# VUSE <.MEM_347(D)>\n_65 = strcasecmp (_64, \"reload\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_27 = 
+    let step_27_150 = 
+      Action.assume(26, Expr.beq(GccType.boolean, expr0x7f41982810d8, expr0x7f41993c9078))
+    in let step_27_151 = 
+      Action.call(call0x7f419827f240)
+    in let step_27_152 = 
+      Action.assign(expr0x7f4198331438, call0x7f419827f240)
+    in let step_27_153 = 
+      Action.debug("# DEBUG rsiptr => rsiptr_555")
+    in let step_27_154 = 
+      Action.assign(expr0x7f4198281120, expr0x7f4198278540)
+    in let step_27_155 = 
+      Action.call(call0x7f419827f2d0)
+    in let step_27_156 = 
+      Action.assign(expr0x7f4198281168, call0x7f419827f2d0)
+    in Block.block(
+      27,
+      [|
+        step_27_150;
+        step_27_151;
+        step_27_152;
+        step_27_153;
+        step_27_154;
+        step_27_155;
+        step_27_156;
+      |],
+      [|
+        ("rdbPopulateSaveInfo", 1);
+        ("rdbSave", 1);
+      |],
+      [|
+        "assume TRUE (_65 == 0)";
+        "# .MEM_554 = VDEF <.MEM_347(D)>\nrsiptr_555 = rdbPopulateSaveInfo (&rsi);";
+        "<CAPTURES RETURN>";
+        "# DEBUG rsiptr => rsiptr_555";
+        "# VUSE <.MEM_554>\n_66 = server.rdb_filename;";
+        "# .MEM_556 = VDEF <.MEM_554>\n_67 = rdbSave (_66, rsiptr_555);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_28 = 
+    let step_28_157 = 
+      Action.assume(27, Expr.bneq(GccType.boolean, expr0x7f4198281168, expr0x7f41993c9078))
+    in let step_28_158 = 
+      Action.assign(expr0x7f41982811b0, expr0x7f4198278570)
+    in let step_28_159 = 
+      Action.call(call0x7f419827f360)
+    in Block.block(
+      28,
+      [|
+        step_28_157;
+        step_28_158;
+        step_28_159;
+      |],
+      [|
+        ("addReply", 1);
+      |],
+      [|
+        "assume TRUE (_67 != 0)";
+        "# VUSE <.MEM_556>\n_68 = shared.err;";
+        "# .MEM_563 = VDEF <.MEM_556>\naddReply (c_348(D), _68);";
+      |]
+    )
+  in let block_29 = 
+    let step_29_160 = 
+      Action.assume(27, Expr.beq(GccType.boolean, expr0x7f4198281168, expr0x7f41993c9078))
+    in let step_29_161 = 
+      Action.call(call0x7f4198264da8)
+    in let step_29_162 = 
+      Action.assign(expr0x7f41982811f8, expr0x7f41982785a0)
+    in let step_29_163 = 
+      Action.call(call0x7f419827f3f0)
+    in let step_29_164 = 
+      Action.assign(expr0x7f4198281240, call0x7f419827f3f0)
+    in Block.block(
+      29,
+      [|
+        step_29_160;
+        step_29_161;
+        step_29_162;
+        step_29_163;
+        step_29_164;
+      |],
+      [|
+        ("emptyDb", 1);
+        ("rdbLoad", 1);
+      |],
+      [|
+        "assume FALSE (_67 != 0)";
+        "# .MEM_557 = VDEF <.MEM_556>\nemptyDb (-1, 0, 0B);";
+        "# VUSE <.MEM_557>\n_69 = server.rdb_filename;";
+        "# .MEM_558 = VDEF <.MEM_557>\n_70 = rdbLoad (_69, 0B);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_30 = 
+    let step_30_165 = 
+      Action.assume(29, Expr.bneq(GccType.boolean, expr0x7f4198281240, expr0x7f41993c9078))
+    in let step_30_166 = 
+      Action.call(call0x7f419827f480)
+    in Block.block(
+      30,
+      [|
+        step_30_165;
+        step_30_166;
+      |],
+      [|
+        ("addReplyError", 1);
+      |],
+      [|
+        "assume TRUE (_70 != 0)";
+        "# .MEM_562 = VDEF <.MEM_558>\naddReplyError (c_348(D), \"Error trying to load the RDB dump\");";
+      |]
+    )
+  in let block_31 = 
+    let step_31_167 = 
+      Action.assume(29, Expr.beq(GccType.boolean, expr0x7f4198281240, expr0x7f41993c9078))
+    in let step_31_168 = 
+      Action.call(call0x7f419827f510)
+    in let step_31_169 = 
+      Action.assign(expr0x7f4198281288, expr0x7f41982785d0)
+    in let step_31_170 = 
+      Action.call(call0x7f419827f5a0)
+    in let step_31_171 = 
+      Action.assign(expr0x7f41981f36c0, expr0x7f41982a1048)
+    in Block.block(
+      31,
+      [|
+        step_31_167;
+        step_31_168;
+        step_31_169;
+        step_31_170;
+        step_31_171;
+      |],
+      [|
+        ("addReply", 1);
+        ("serverLog", 1);
+      |],
+      [|
+        "assume FALSE (_70 != 0)";
+        "# .MEM_559 = VDEF <.MEM_558>\nserverLog (3, \"DB reloaded by DEBUG RELOAD\");";
+        "# VUSE <.MEM_559>\n_71 = shared.ok;";
+        "# .MEM_560 = VDEF <.MEM_559>\naddReply (c_348(D), _71);";
+        "# .MEM_561 = VDEF <.MEM_560>\nrsi ={v} {CLOBBER};";
+      |]
+    )
+  in let block_32 = 
+    let step_32_172 = 
+      Action.assign(expr0x7f41981f36c0, expr0x7f41982a1060)
+    in Block.block(
+      32,
+      [|
+        step_32_172;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# .MEM_564 = VDEF <.MEM_336>\nrsi ={v} {CLOBBER};";
+      |]
+    )
+  in let block_33 = 
+    let step_33_173 = 
+      Action.assume(26, Expr.bneq(GccType.boolean, expr0x7f41982810d8, expr0x7f41993c9078))
+    in let step_33_174 = 
+      Action.assign(expr0x7f41982812d0, expr0x7f4198278600)
+    in let step_33_175 = 
+      Action.assign(expr0x7f4198281318, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982812d0, expr0x7f41993accf0))
+    in let step_33_176 = 
+      Action.assign(expr0x7f4198281360, expr0x7f419827e870)
+    in let step_33_177 = 
+      Action.assign(expr0x7f41982813a8, expr0x7f4198278630)
+    in let step_33_178 = 
+      Action.call(call0x7f419827f630)
+    in let step_33_179 = 
+      Action.assign(expr0x7f41982813f0, call0x7f419827f630)
+    in Block.block(
+      33,
+      [|
+        step_33_173;
+        step_33_174;
+        step_33_175;
+        step_33_176;
+        step_33_177;
+        step_33_178;
+        step_33_179;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_65 == 0)";
+        "# VUSE <.MEM_347(D)>\n_72 = c_348(D)->argv;";
+        "_73 = _72 + 8;";
+        "# VUSE <.MEM_347(D)>\n_74 = *_73;";
+        "# VUSE <.MEM_347(D)>\n_75 = _74->ptr;";
+        "# VUSE <.MEM_347(D)>\n_76 = strcasecmp (_75, \"loadaof\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_34 = 
+    let step_34_180 = 
+      Action.assume(33, Expr.beq(GccType.boolean, expr0x7f41982813f0, expr0x7f41993c9078))
+    in let step_34_181 = 
+      Action.assign(expr0x7f4198281438, expr0x7f4198278660)
+    in Block.block(
+      34,
+      [|
+        step_34_180;
+        step_34_181;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_76 == 0)";
+        "# VUSE <.MEM_347(D)>\n_77 = server.aof_state;";
+      |]
+    )
+  in let block_35 = 
+    let step_35_182 = 
+      Action.assume(34, Expr.beq(GccType.boolean, expr0x7f4198281438, expr0x7f41993c9090))
+    in let step_35_183 = 
+      Action.call(call0x7f419827f6c0)
+    in Block.block(
+      35,
+      [|
+        step_35_182;
+        step_35_183;
+      |],
+      [|
+        ("flushAppendOnlyFile", 1);
+      |],
+      [|
+        "assume TRUE (_77 == 1)";
+        "# .MEM_547 = VDEF <.MEM_347(D)>\nflushAppendOnlyFile (1);";
+      |]
+    )
+  in let block_36 = 
+    let step_36_184 = 
+      Action.assume(34, Expr.bneq(GccType.boolean, expr0x7f4198281438, expr0x7f41993c9090))
+    in let step_36_185 = 
+      Action.call(call0x7f4198264e40)
+    in let step_36_186 = 
+      Action.assign(expr0x7f4198281480, expr0x7f4198278690)
+    in let step_36_187 = 
+      Action.call(call0x7f419827f750)
+    in let step_36_188 = 
+      Action.assign(expr0x7f41982814c8, call0x7f419827f750)
+    in Block.block(
+      36,
+      [|
+        step_36_184;
+        step_36_185;
+        step_36_186;
+        step_36_187;
+        step_36_188;
+      |],
+      [|
+        ("emptyDb", 1);
+        ("loadAppendOnlyFile", 1);
+      |],
+      [|
+        "assume FALSE (_77 == 1)";
+        "# .MEM_548 = VDEF <.MEM_337>\nemptyDb (-1, 0, 0B);";
+        "# VUSE <.MEM_548>\n_78 = server.aof_filename;";
+        "# .MEM_549 = VDEF <.MEM_548>\n_79 = loadAppendOnlyFile (_78);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_37 = 
+    let step_37_189 = 
+      Action.assume(36, Expr.bneq(GccType.boolean, expr0x7f41982814c8, expr0x7f41993c9078))
+    in let step_37_190 = 
+      Action.assign(expr0x7f4198281510, expr0x7f41982786c0)
+    in let step_37_191 = 
+      Action.call(call0x7f419827f7e0)
+    in Block.block(
+      37,
+      [|
+        step_37_189;
+        step_37_190;
+        step_37_191;
+      |],
+      [|
+        ("addReply", 1);
+      |],
+      [|
+        "assume TRUE (_79 != 0)";
+        "# VUSE <.MEM_549>\n_80 = shared.err;";
+        "# .MEM_553 = VDEF <.MEM_549>\naddReply (c_348(D), _80);";
+      |]
+    )
+  in let block_38 = 
+    let step_38_192 = 
+      Action.assume(36, Expr.beq(GccType.boolean, expr0x7f41982814c8, expr0x7f41993c9078))
+    in let step_38_193 = 
+      Action.assign(expr0x7f41981f6b70, expr0x7f41981fe1c8)
+    in let step_38_194 = 
+      Action.call(call0x7f419827f870)
+    in let step_38_195 = 
+      Action.assign(expr0x7f4198281558, expr0x7f41982786f0)
+    in let step_38_196 = 
+      Action.call(call0x7f419827f900)
+    in Block.block(
+      38,
+      [|
+        step_38_192;
+        step_38_193;
+        step_38_194;
+        step_38_195;
+        step_38_196;
+      |],
+      [|
+        ("addReply", 1);
+        ("serverLog", 1);
+      |],
+      [|
+        "assume FALSE (_79 != 0)";
+        "# .MEM_550 = VDEF <.MEM_549>\nserver.dirty = 0;";
+        "# .MEM_551 = VDEF <.MEM_550>\nserverLog (3, \"Append Only File loaded by DEBUG LOADAOF\");";
+        "# VUSE <.MEM_551>\n_81 = shared.ok;";
+        "# .MEM_552 = VDEF <.MEM_551>\naddReply (c_348(D), _81);";
+      |]
+    )
+  in let block_39 = 
+    let step_39_197 = 
+      Action.assume(33, Expr.bneq(GccType.boolean, expr0x7f41982813f0, expr0x7f41993c9078))
+    in let step_39_198 = 
+      Action.assign(expr0x7f41982815a0, expr0x7f4198278780)
+    in let step_39_199 = 
+      Action.assign(expr0x7f41982815e8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982815a0, expr0x7f41993accf0))
+    in let step_39_200 = 
+      Action.assign(expr0x7f4198281630, expr0x7f419827eb18)
+    in let step_39_201 = 
+      Action.assign(expr0x7f4198281678, expr0x7f41982787b0)
+    in let step_39_202 = 
+      Action.call(call0x7f419827f990)
+    in let step_39_203 = 
+      Action.assign(expr0x7f41982816c0, call0x7f419827f990)
+    in Block.block(
+      39,
+      [|
+        step_39_197;
+        step_39_198;
+        step_39_199;
+        step_39_200;
+        step_39_201;
+        step_39_202;
+        step_39_203;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_76 == 0)";
+        "# VUSE <.MEM_347(D)>\n_82 = c_348(D)->argv;";
+        "_83 = _82 + 8;";
+        "# VUSE <.MEM_347(D)>\n_84 = *_83;";
+        "# VUSE <.MEM_347(D)>\n_85 = _84->ptr;";
+        "# VUSE <.MEM_347(D)>\n_86 = strcasecmp (_85, \"object\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_40 = 
+    let step_40_204 = 
+      Action.assume(39, Expr.beq(GccType.boolean, expr0x7f41982816c0, expr0x7f41993c9078))
+    in let step_40_205 = 
+      Action.assign(expr0x7f4198281708, expr0x7f41982787e0)
+    in Block.block(
+      40,
+      [|
+        step_40_204;
+        step_40_205;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_86 == 0)";
+        "# VUSE <.MEM_347(D)>\n_87 = c_348(D)->argc;";
+      |]
+    )
+  in let block_41 = 
+    let step_41_206 = 
+      Action.assume(40, Expr.beq(GccType.boolean, expr0x7f4198281708, expr0x7f41993c90a8))
+    in let step_41_207 = 
+      Action.assign(expr0x7f4198281750, expr0x7f4198278810)
+    in let step_41_208 = 
+      Action.assign(expr0x7f4198281798, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198281750, expr0x7f41993acd38))
+    in let step_41_209 = 
+      Action.assign(expr0x7f41982817e0, expr0x7f419827ed70)
+    in let step_41_210 = 
+      Action.assign(expr0x7f4198281828, expr0x7f4198278840)
+    in let step_41_211 = 
+      Action.assign(expr0x7f4198281870, expr0x7f4198278870)
+    in let step_41_212 = 
+      Action.assign(expr0x7f41982818b8, expr0x7f41982788a0)
+    in let step_41_213 = 
+      Action.call(call0x7f419827fa20)
+    in let step_41_214 = 
+      Action.assign(expr0x7f419832d048, call0x7f419827fa20)
+    in let step_41_215 = 
+      Action.debug("# DEBUG de => de_373")
+    in Block.block(
+      41,
+      [|
+        step_41_206;
+        step_41_207;
+        step_41_208;
+        step_41_209;
+        step_41_210;
+        step_41_211;
+        step_41_212;
+        step_41_213;
+        step_41_214;
+        step_41_215;
+      |],
+      [|
+        ("dictFind", 1);
+      |],
+      [|
+        "assume TRUE (_87 == 3)";
+        "# VUSE <.MEM_347(D)>\n_88 = c_348(D)->argv;";
+        "_89 = _88 + 16;";
+        "# VUSE <.MEM_347(D)>\n_90 = *_89;";
+        "# VUSE <.MEM_347(D)>\n_91 = _90->ptr;";
+        "# VUSE <.MEM_347(D)>\n_92 = c_348(D)->db;";
+        "# VUSE <.MEM_347(D)>\n_93 = _92->dict;";
+        "# .MEM_372 = VDEF <.MEM_347(D)>\nde_373 = dictFind (_93, _91);";
+        "<CAPTURES RETURN>";
+        "# DEBUG de => de_373";
+      |]
+    )
+  in let block_42 = 
+    let step_42_216 = 
+      Action.assume(41, Expr.beq(GccType.boolean, expr0x7f419832d048, expr0x7f41981db720))
+    in let step_42_217 = 
+      Action.assign(expr0x7f4198281900, expr0x7f41982788d0)
+    in let step_42_218 = 
+      Action.call(call0x7f419827fab0)
+    in let step_42_219 = 
+      Action.assign(expr0x7f41981f3990, expr0x7f41982a1090)
+    in Block.block(
+      42,
+      [|
+        step_42_216;
+        step_42_217;
+        step_42_218;
+        step_42_219;
+      |],
+      [|
+        ("addReply", 1);
+      |],
+      [|
+        "assume TRUE (de_373 == 0B)";
+        "# VUSE <.MEM_372>\n_94 = shared.nokeyerr;";
+        "# .MEM_411 = VDEF <.MEM_372>\naddReply (c_348(D), _94);";
+        "# .MEM_412 = VDEF <.MEM_411>\nextra ={v} {CLOBBER};";
+      |]
+    )
+  in let block_43 = 
+    let step_43_220 = 
+      Action.assume(41, Expr.bneq(GccType.boolean, expr0x7f419832d048, expr0x7f41981db720))
+    in let step_43_221 = 
+      Action.assign(expr0x7f419832d090, expr0x7f41981f6db0)
+    in let step_43_222 = 
+      Action.debug("# DEBUG val => val_374")
+    in let step_43_223 = 
+      Action.assign(expr0x7f4198281948, expr0x7f4198278900)
+    in let step_43_224 = 
+      Action.assign(expr0x7f4198281990, expr0x7f4198281948)
+    in let step_43_225 = 
+      Action.call(call0x7f419827fb40)
+    in let step_43_226 = 
+      Action.assign(expr0x7f419832d120, call0x7f419827fb40)
+    in let step_43_227 = 
+      Action.debug("# DEBUG strenc => strenc_376")
+    in let step_43_228 = 
+      Action.assign(expr0x7f41981f3990, expr0x7f41981fe828)
+    in let step_43_229 = 
+      Action.assign(expr0x7f41982819d8, expr0x7f4198278930)
+    in let step_43_230 = 
+      Action.assign(expr0x7f4198281a20, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982819d8, expr0x7f41981db858))
+    in Block.block(
+      43,
+      [|
+        step_43_220;
+        step_43_221;
+        step_43_222;
+        step_43_223;
+        step_43_224;
+        step_43_225;
+        step_43_226;
+        step_43_227;
+        step_43_228;
+        step_43_229;
+        step_43_230;
+      |],
+      [|
+        ("strEncoding", 1);
+      |],
+      [|
+        "assume FALSE (de_373 == 0B)";
+        "# VUSE <.MEM_372>\nval_374 = de_373->v.val;";
+        "# DEBUG val => val_374";
+        "# VUSE <.MEM_372>\n_95 = val_374->encoding;";
+        "_96 = (int) _95;";
+        "# .MEM_375 = VDEF <.MEM_372>\nstrenc_376 = strEncoding (_96);";
+        "<CAPTURES RETURN>";
+        "# DEBUG strenc => strenc_376";
+        "# .MEM_377 = VDEF <.MEM_375>\nextra = {};";
+        "# VUSE <.MEM_377>\n_97 = BIT_FIELD_REF <*val_374, 8, 0>;";
+        "_98 = _97 & 240;";
+      |]
+    )
+  in let block_44 = 
+    let step_44_231 = 
+      Action.assume(43, Expr.beq(GccType.boolean, expr0x7f4198281a20, expr0x7f41981fe888))
+    in let step_44_232 = 
+      Action.assign(expr0x7f419832d1b0, expr0x7f4198202ca0)
+    in let step_44_233 = 
+      Action.debug("# DEBUG nextra => nextra_378")
+    in let step_44_234 = 
+      Action.assign(expr0x7f419832d1f8, expr0x7f4198666168)
+    in let step_44_235 = 
+      Action.debug("# DEBUG remaining => remaining_379")
+    in let step_44_236 = 
+      Action.assign(expr0x7f419832d240, expr0x7f41981f6e70)
+    in let step_44_237 = 
+      Action.debug("# DEBUG ql => ql_380")
+    in let step_44_238 = 
+      Action.assign(expr0x7f4198281a68, expr0x7f4198278960)
+    in let step_44_239 = 
+      Action.assign(expr0x7f4198281ab0, expr0x7f419832d1f8)
+    in let step_44_240 = 
+      Action.call(call0x7f419827c150)
+    in let step_44_241 = 
+      Action.assign(expr0x7f419832d2d0, call0x7f419827c150)
+    in let step_44_242 = 
+      Action.debug("# DEBUG used => used_382")
+    in let step_44_243 = 
+      Action.assign(expr0x7f4198281af8, expr0x7f419832d2d0)
+    in let step_44_244 = 
+      Action.assign(expr0x7f419832d318, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419832d1b0, expr0x7f4198281af8))
+    in let step_44_245 = 
+      Action.debug("# DEBUG nextra => nextra_383")
+    in let step_44_246 = 
+      Action.assign(expr0x7f419832d360, Expr.minus(
+        type0x7f41993c45e8, expr0x7f419832d1f8, expr0x7f419832d2d0))
+    in let step_44_247 = 
+      Action.debug("# DEBUG remaining => remaining_384")
+    in let step_44_248 = 
+      Action.assign(expr0x7f4198281b40, expr0x7f4198278990)
+    in let step_44_249 = 
+      Action.assign(expr0x7f4198281b88, expr0x7f4198281b40)
+    in let step_44_250 = 
+      Action.assign(expr0x7f4198281bd0, expr0x7f41982789c0)
+    in let step_44_251 = 
+      Action.assign(expr0x7f4198281c18, expr0x7f4198281bd0)
+    in let step_44_252 = 
+      Action.assign(expr0x7f419832d3a8, Expr.real_div(
+        type0x7f41993cc3f0, expr0x7f4198281b88, expr0x7f4198281c18))
+    in let step_44_253 = 
+      Action.debug("# DEBUG avg => avg_385")
+    in let step_44_254 = 
+      Action.assign(expr0x7f4198281c60, expr0x7f419832d360)
+    in let step_44_255 = 
+      Action.call(call0x7f419827c1f8)
+    in let step_44_256 = 
+      Action.assign(expr0x7f419832d438, call0x7f419827c1f8)
+    in let step_44_257 = 
+      Action.debug("# DEBUG used => used_387")
+    in let step_44_258 = 
+      Action.assign(expr0x7f4198281ca8, expr0x7f419832d438)
+    in let step_44_259 = 
+      Action.assign(expr0x7f419832d480, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419832d318, expr0x7f4198281ca8))
+    in let step_44_260 = 
+      Action.debug("# DEBUG nextra => nextra_388")
+    in let step_44_261 = 
+      Action.assign(expr0x7f419832d4c8, Expr.minus(
+        type0x7f41993c45e8, expr0x7f419832d360, expr0x7f419832d438))
+    in let step_44_262 = 
+      Action.debug("# DEBUG remaining => remaining_389")
+    in let step_44_263 = 
+      Action.assign(expr0x7f4198281cf0, expr0x7f41982789f0)
+    in let step_44_264 = 
+      Action.assign(expr0x7f4198281d38, expr0x7f4198281cf0)
+    in let step_44_265 = 
+      Action.assign(expr0x7f4198281d80, expr0x7f419832d4c8)
+    in let step_44_266 = 
+      Action.call(call0x7f419827c2a0)
+    in let step_44_267 = 
+      Action.assign(expr0x7f419832d558, call0x7f419827c2a0)
+    in let step_44_268 = 
+      Action.debug("# DEBUG used => used_391")
+    in let step_44_269 = 
+      Action.assign(expr0x7f4198281dc8, expr0x7f419832d558)
+    in let step_44_270 = 
+      Action.assign(expr0x7f419832d5a0, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419832d480, expr0x7f4198281dc8))
+    in let step_44_271 = 
+      Action.debug("# DEBUG nextra => nextra_392")
+    in let step_44_272 = 
+      Action.assign(expr0x7f419832d5e8, Expr.minus(
+        type0x7f41993c45e8, expr0x7f419832d4c8, expr0x7f419832d558))
+    in let step_44_273 = 
+      Action.debug("# DEBUG remaining => remaining_393")
+    in let step_44_274 = 
+      Action.assign(expr0x7f4198281e10, expr0x7f4198278a20)
+    in let step_44_275 = 
+      Action.assign(expr0x7f4198281e58, Expr.bneq(
+        type0x7f41993c4b28, expr0x7f4198281e10, expr0x7f41993aceb8))
+    in let step_44_276 = 
+      Action.assign(expr0x7f419832d630, expr0x7f4198281e58)
+    in let step_44_277 = 
+      Action.debug("# DEBUG compressed => compressed_394")
+    in let step_44_278 = 
+      Action.assign(expr0x7f4198281ea0, expr0x7f419832d5e8)
+    in let step_44_279 = 
+      Action.call(call0x7f419827c348)
+    in let step_44_280 = 
+      Action.assign(expr0x7f419832d6c0, call0x7f419827c348)
+    in let step_44_281 = 
+      Action.debug("# DEBUG used => used_396")
+    in let step_44_282 = 
+      Action.assign(expr0x7f4198281ee8, expr0x7f419832d6c0)
+    in let step_44_283 = 
+      Action.assign(expr0x7f419832d708, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419832d5a0, expr0x7f4198281ee8))
+    in let step_44_284 = 
+      Action.debug("# DEBUG nextra => nextra_397")
+    in let step_44_285 = 
+      Action.assign(expr0x7f419832d750, Expr.minus(
+        type0x7f41993c45e8, expr0x7f419832d5e8, expr0x7f419832d6c0))
+    in let step_44_286 = 
+      Action.debug("# DEBUG remaining => remaining_398")
+    in let step_44_287 = 
+      Action.assign(expr0x7f419832d798, expr0x7f41993acfa8)
+    in let step_44_288 = 
+      Action.debug("# DEBUG sz => sz_399")
+    in let step_44_289 = 
+      Action.assign(expr0x7f419832d7e0, expr0x7f41981f6f90)
+    in let step_44_290 = 
+      Action.debug("# DEBUG node => node_400")
+    in let step_44_291 = 
+      Action.assign(expr0x7f419832a288, expr0x7f419832d798)
+    in let step_44_292 = 
+      Action.assign(expr0x7f419832a2d0, expr0x7f419832d7e0)
+    in Block.block(
+      44,
+      [|
+        step_44_231;
+        step_44_232;
+        step_44_233;
+        step_44_234;
+        step_44_235;
+        step_44_236;
+        step_44_237;
+        step_44_238;
+        step_44_239;
+        step_44_240;
+        step_44_241;
+        step_44_242;
+        step_44_243;
+        step_44_244;
+        step_44_245;
+        step_44_246;
+        step_44_247;
+        step_44_248;
+        step_44_249;
+        step_44_250;
+        step_44_251;
+        step_44_252;
+        step_44_253;
+        step_44_254;
+        step_44_255;
+        step_44_256;
+        step_44_257;
+        step_44_258;
+        step_44_259;
+        step_44_260;
+        step_44_261;
+        step_44_262;
+        step_44_263;
+        step_44_264;
+        step_44_265;
+        step_44_266;
+        step_44_267;
+        step_44_268;
+        step_44_269;
+        step_44_270;
+        step_44_271;
+        step_44_272;
+        step_44_273;
+        step_44_274;
+        step_44_275;
+        step_44_276;
+        step_44_277;
+        step_44_278;
+        step_44_279;
+        step_44_280;
+        step_44_281;
+        step_44_282;
+        step_44_283;
+        step_44_284;
+        step_44_285;
+        step_44_286;
+        step_44_287;
+        step_44_288;
+        step_44_289;
+        step_44_290;
+        step_44_291;
+        step_44_292;
+      |],
+      [|
+        ("snprintf", 4);
+      |],
+      [|
+        "assume TRUE (_98 == 144)";
+        "nextra_378 = &extra;";
+        "# DEBUG nextra => nextra_378";
+        "remaining_379 = 138;";
+        "# DEBUG remaining => remaining_379";
+        "# VUSE <.MEM_377>\nql_380 = val_374->ptr;";
+        "# DEBUG ql => ql_380";
+        "# VUSE <.MEM_377>\n_99 = ql_380->len;";
+        "_100 = (long unsigned int) remaining_379;";
+        "# .MEM_381 = VDEF <.MEM_377>\nused_382 = snprintf (nextra_378, _100, \" ql_nodes:%lu\", _99);";
+        "<CAPTURES RETURN>";
+        "# DEBUG used => used_382";
+        "_101 = (sizetype) used_382;";
+        "nextra_383 = nextra_378 + _101;";
+        "# DEBUG nextra => nextra_383";
+        "remaining_384 = remaining_379 - used_382;";
+        "# DEBUG remaining => remaining_384";
+        "# VUSE <.MEM_381>\n_102 = ql_380->count;";
+        "_103 = (double) _102;";
+        "# VUSE <.MEM_381>\n_104 = ql_380->len;";
+        "_105 = (double) _104;";
+        "avg_385 = _103 / _105;";
+        "# DEBUG avg => avg_385";
+        "_106 = (long unsigned int) remaining_384;";
+        "# .MEM_386 = VDEF <.MEM_381>\nused_387 = snprintf (nextra_383, _106, \" ql_avg_node:%.2f\", avg_385);";
+        "<CAPTURES RETURN>";
+        "# DEBUG used => used_387";
+        "_107 = (sizetype) used_387;";
+        "nextra_388 = nextra_383 + _107;";
+        "# DEBUG nextra => nextra_388";
+        "remaining_389 = remaining_384 - used_387;";
+        "# DEBUG remaining => remaining_389";
+        "# VUSE <.MEM_386>\n_108 = ql_380->fill;";
+        "_109 = (int) _108;";
+        "_110 = (long unsigned int) remaining_389;";
+        "# .MEM_390 = VDEF <.MEM_386>\nused_391 = snprintf (nextra_388, _110, \" ql_ziplist_max:%d\", _109);";
+        "<CAPTURES RETURN>";
+        "# DEBUG used => used_391";
+        "_111 = (sizetype) used_391;";
+        "nextra_392 = nextra_388 + _111;";
+        "# DEBUG nextra => nextra_392";
+        "remaining_393 = remaining_389 - used_391;";
+        "# DEBUG remaining => remaining_393";
+        "# VUSE <.MEM_390>\n_112 = ql_380->compress;";
+        "_113 = _112 != 0;";
+        "compressed_394 = (int) _113;";
+        "# DEBUG compressed => compressed_394";
+        "_114 = (long unsigned int) remaining_393;";
+        "# .MEM_395 = VDEF <.MEM_390>\nused_396 = snprintf (nextra_392, _114, \" ql_compressed:%d\", compressed_394);";
+        "<CAPTURES RETURN>";
+        "# DEBUG used => used_396";
+        "_115 = (sizetype) used_396;";
+        "nextra_397 = nextra_392 + _115;";
+        "# DEBUG nextra => nextra_397";
+        "remaining_398 = remaining_393 - used_396;";
+        "# DEBUG remaining => remaining_398";
+        "sz_399 = 0;";
+        "# DEBUG sz => sz_399";
+        "# VUSE <.MEM_395>\nnode_400 = ql_380->head;";
+        "# DEBUG node => node_400";
+        "sz_325 = sz_399";
+        "node_326 = node_400";
+      |]
+    )
+  in let block_45 = 
+    let step_45_293 = 
+      Action.assume(46, Expr.bneq(GccType.boolean, expr0x7f419832a2d0, expr0x7f41981fea98))
+    in let step_45_294 = 
+      Action.assign(expr0x7f4198281f30, expr0x7f4198278a50)
+    in let step_45_295 = 
+      Action.assign(expr0x7f4198281f78, expr0x7f4198281f30)
+    in let step_45_296 = 
+      Action.assign(expr0x7f419832d948, Expr.plus(
+        type0x7f41993c47e0, expr0x7f419832a288, expr0x7f4198281f78))
+    in let step_45_297 = 
+      Action.debug("# DEBUG sz => sz_405")
+    in let step_45_298 = 
+      Action.assign(expr0x7f419832d990, expr0x7f41981f6fc0)
+    in let step_45_299 = 
+      Action.debug("# DEBUG node => node_406")
+    in let step_45_300 = 
+      Action.assign(expr0x7f419832a288, expr0x7f419832d948)
+    in let step_45_301 = 
+      Action.assign(expr0x7f419832a2d0, expr0x7f419832d990)
+    in Block.block(
+      45,
+      [|
+        step_45_293;
+        step_45_294;
+        step_45_295;
+        step_45_296;
+        step_45_297;
+        step_45_298;
+        step_45_299;
+        step_45_300;
+        step_45_301;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (node_326 != 0B)";
+        "# VUSE <.MEM_395>\n_116 = node_326->sz;";
+        "_117 = (long unsigned int) _116;";
+        "sz_405 = sz_325 + _117;";
+        "# DEBUG sz => sz_405";
+        "# VUSE <.MEM_395>\nnode_406 = node_326->next;";
+        "# DEBUG node => node_406";
+        "sz_325 = sz_405";
+        "node_326 = node_406";
+      |]
+    )
+  in let block_46 = 
+    let step_46_302 = 
+      Action.debug("# DEBUG node => node_326")
+    in let step_46_303 = 
+      Action.debug("# DEBUG sz => sz_325")
+    in Block.block(
+      46,
+      [|
+        step_46_302;
+        step_46_303;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG node => node_326";
+        "# DEBUG sz => sz_325";
+      |]
+    )
+  in let block_47 = 
+    let step_47_304 = 
+      Action.assume(46, Expr.beq(GccType.boolean, expr0x7f419832a2d0, expr0x7f41981fea98))
+    in let step_47_305 = 
+      Action.assign(expr0x7f4198285000, expr0x7f419832d750)
+    in let step_47_306 = 
+      Action.call(call0x7f419827c3f0)
+    in let step_47_307 = 
+      Action.assign(expr0x7f419832d870, call0x7f419827c3f0)
+    in let step_47_308 = 
+      Action.debug("# DEBUG used => used_402")
+    in let step_47_309 = 
+      Action.assign(expr0x7f4198285048, expr0x7f419832d870)
+    in let step_47_310 = 
+      Action.assign(expr0x7f419832d8b8, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419832d708, expr0x7f4198285048))
+    in let step_47_311 = 
+      Action.debug("# DEBUG nextra => nextra_403")
+    in let step_47_312 = 
+      Action.assign(expr0x7f419832d900, Expr.minus(
+        type0x7f41993c45e8, expr0x7f419832d750, expr0x7f419832d870))
+    in let step_47_313 = 
+      Action.debug("# DEBUG remaining => remaining_404")
+    in Block.block(
+      47,
+      [|
+        step_47_304;
+        step_47_305;
+        step_47_306;
+        step_47_307;
+        step_47_308;
+        step_47_309;
+        step_47_310;
+        step_47_311;
+        step_47_312;
+        step_47_313;
+      |],
+      [|
+        ("snprintf", 1);
+      |],
+      [|
+        "assume FALSE (node_326 != 0B)";
+        "_118 = (long unsigned int) remaining_398;";
+        "# .MEM_401 = VDEF <.MEM_395>\nused_402 = snprintf (nextra_397, _118, \" ql_uncompressed_size:%lu\", sz_325);";
+        "<CAPTURES RETURN>";
+        "# DEBUG used => used_402";
+        "_119 = (sizetype) used_402;";
+        "nextra_403 = nextra_397 + _119;";
+        "# DEBUG nextra => nextra_403";
+        "remaining_404 = remaining_398 - used_402;";
+        "# DEBUG remaining => remaining_404";
+      |]
+    )
+  in let block_48 = 
+    let step_48_314 = 
+      Action.assume(43, Expr.bneq(GccType.boolean, expr0x7f4198281a20, expr0x7f41981fe888))
+    in let step_48_315 = 
+      Action.call(call0x7f419827fbd0)
+    in let step_48_316 = 
+      Action.assign(expr0x7f4198285090, call0x7f419827fbd0)
+    in let step_48_317 = 
+      Action.assign(expr0x7f41982850d8, Expr.truncated_div(
+        type0x7f41993c4930, expr0x7f4198285090, expr0x7f41981fe9f0))
+    in let step_48_318 = 
+      Action.assign(expr0x7f4198285120, expr0x7f4198278a80)
+    in let step_48_319 = 
+      Action.assign(expr0x7f4198285168, expr0x7f4198285120)
+    in let step_48_320 = 
+      Action.call(call0x7f419827fc60)
+    in let step_48_321 = 
+      Action.assign(expr0x7f41982851b0, call0x7f419827fc60)
+    in let step_48_322 = 
+      Action.assign(expr0x7f41982851f8, expr0x7f4198278ab0)
+    in let step_48_323 = 
+      Action.call(call0x7f4198250500)
+    in let step_48_324 = 
+      Action.assign(expr0x7f41981f3990, expr0x7f41982a1078)
+    in Block.block(
+      48,
+      [|
+        step_48_314;
+        step_48_315;
+        step_48_316;
+        step_48_317;
+        step_48_318;
+        step_48_319;
+        step_48_320;
+        step_48_321;
+        step_48_322;
+        step_48_323;
+        step_48_324;
+      |],
+      [|
+        ("addReplyStatusFormat", 1);
+        ("estimateObjectIdleTime", 1);
+        ("rdbSavedObjectLen", 1);
+      |],
+      [|
+        "assume FALSE (_98 == 144)";
+        "# .MEM_407 = VDEF <.MEM_338>\n_120 = estimateObjectIdleTime (val_374);";
+        "<CAPTURES RETURN>";
+        "_121 = _120 / 1000;";
+        "# VUSE <.MEM_407>\n_122 = val_374->lru;";
+        "_123 = (int) _122;";
+        "# .MEM_408 = VDEF <.MEM_407>\n_124 = rdbSavedObjectLen (val_374);";
+        "<CAPTURES RETURN>";
+        "# VUSE <.MEM_408>\n_125 = val_374->refcount;";
+        "# .MEM_409 = VDEF <.MEM_408>\naddReplyStatusFormat (c_348(D), \"Value at:%p refcount:%d encoding:%s serializedlength:%zu lru:%d lru_seconds_idle:%llu%s\", val_374, _125, strenc_376, _124, _123, _121, &extra);";
+        "# .MEM_410 = VDEF <.MEM_409>\nextra ={v} {CLOBBER};";
+      |]
+    )
+  in let block_49 = 
+    let step_49_325 = 
+      Action.assume(39, Expr.bneq(GccType.boolean, expr0x7f41982816c0, expr0x7f41993c9078))
+    in let step_49_326 = 
+      Action.assume(40, Expr.bneq(GccType.boolean, expr0x7f4198281708, expr0x7f41993c90a8))
+    in let step_49_327 = 
+      Action.assign(expr0x7f4198285240, expr0x7f4198278b40)
+    in let step_49_328 = 
+      Action.assign(expr0x7f4198285288, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198285240, expr0x7f41993accf0))
+    in let step_49_329 = 
+      Action.assign(expr0x7f41982852d0, expr0x7f419827e9b0)
+    in let step_49_330 = 
+      Action.assign(expr0x7f4198285318, expr0x7f4198278b70)
+    in let step_49_331 = 
+      Action.call(call0x7f419827fcf0)
+    in let step_49_332 = 
+      Action.assign(expr0x7f4198285360, call0x7f419827fcf0)
+    in Block.block(
+      49,
+      [|
+        step_49_325;
+        step_49_326;
+        step_49_327;
+        step_49_328;
+        step_49_329;
+        step_49_330;
+        step_49_331;
+        step_49_332;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_86 == 0)";
+        "assume FALSE (_87 == 3)";
+        "# VUSE <.MEM_347(D)>\n_126 = c_348(D)->argv;";
+        "_127 = _126 + 8;";
+        "# VUSE <.MEM_347(D)>\n_128 = *_127;";
+        "# VUSE <.MEM_347(D)>\n_129 = _128->ptr;";
+        "# VUSE <.MEM_347(D)>\n_130 = strcasecmp (_129, \"sdslen\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_50 = 
+    let step_50_333 = 
+      Action.assume(49, Expr.beq(GccType.boolean, expr0x7f4198285360, expr0x7f41993c9078))
+    in let step_50_334 = 
+      Action.assign(expr0x7f41982853a8, expr0x7f4198278ba0)
+    in Block.block(
+      50,
+      [|
+        step_50_333;
+        step_50_334;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_130 == 0)";
+        "# VUSE <.MEM_347(D)>\n_131 = c_348(D)->argc;";
+      |]
+    )
+  in let block_51 = 
+    let step_51_335 = 
+      Action.assume(50, Expr.beq(GccType.boolean, expr0x7f41982853a8, expr0x7f41993c90a8))
+    in let step_51_336 = 
+      Action.assign(expr0x7f41982853f0, expr0x7f4198278bd0)
+    in let step_51_337 = 
+      Action.assign(expr0x7f4198285438, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982853f0, expr0x7f41993acd38))
+    in let step_51_338 = 
+      Action.assign(expr0x7f4198285480, expr0x7f419827ebb8)
+    in let step_51_339 = 
+      Action.assign(expr0x7f41982854c8, expr0x7f4198278c00)
+    in let step_51_340 = 
+      Action.assign(expr0x7f4198285510, expr0x7f4198278c30)
+    in let step_51_341 = 
+      Action.assign(expr0x7f4198285558, expr0x7f4198278c60)
+    in let step_51_342 = 
+      Action.call(call0x7f419827fd80)
+    in let step_51_343 = 
+      Action.assign(expr0x7f419832dbd0, call0x7f419827fd80)
+    in let step_51_344 = 
+      Action.debug("# DEBUG de => de_414")
+    in Block.block(
+      51,
+      [|
+        step_51_335;
+        step_51_336;
+        step_51_337;
+        step_51_338;
+        step_51_339;
+        step_51_340;
+        step_51_341;
+        step_51_342;
+        step_51_343;
+        step_51_344;
+      |],
+      [|
+        ("dictFind", 1);
+      |],
+      [|
+        "assume TRUE (_131 == 3)";
+        "# VUSE <.MEM_347(D)>\n_132 = c_348(D)->argv;";
+        "_133 = _132 + 16;";
+        "# VUSE <.MEM_347(D)>\n_134 = *_133;";
+        "# VUSE <.MEM_347(D)>\n_135 = _134->ptr;";
+        "# VUSE <.MEM_347(D)>\n_136 = c_348(D)->db;";
+        "# VUSE <.MEM_347(D)>\n_137 = _136->dict;";
+        "# .MEM_413 = VDEF <.MEM_347(D)>\nde_414 = dictFind (_137, _135);";
+        "<CAPTURES RETURN>";
+        "# DEBUG de => de_414";
+      |]
+    )
+  in let block_52 = 
+    let step_52_345 = 
+      Action.assume(51, Expr.beq(GccType.boolean, expr0x7f419832dbd0, expr0x7f41981db720))
+    in let step_52_346 = 
+      Action.assign(expr0x7f41982855a0, expr0x7f4198278c90)
+    in let step_52_347 = 
+      Action.call(call0x7f419827fe10)
+    in Block.block(
+      52,
+      [|
+        step_52_345;
+        step_52_346;
+        step_52_347;
+      |],
+      [|
+        ("addReply", 1);
+      |],
+      [|
+        "assume TRUE (de_414 == 0B)";
+        "# VUSE <.MEM_413>\n_138 = shared.nokeyerr;";
+        "# .MEM_426 = VDEF <.MEM_413>\naddReply (c_348(D), _138);";
+      |]
+    )
+  in let block_53 = 
+    let step_53_348 = 
+      Action.assume(51, Expr.bneq(GccType.boolean, expr0x7f419832dbd0, expr0x7f41981db720))
+    in let step_53_349 = 
+      Action.assign(expr0x7f419832dc18, expr0x7f4198207390)
+    in let step_53_350 = 
+      Action.debug("# DEBUG val => val_415")
+    in let step_53_351 = 
+      Action.assign(expr0x7f419832dc60, expr0x7f41982073c0)
+    in let step_53_352 = 
+      Action.debug("# DEBUG key => key_416")
+    in let step_53_353 = 
+      Action.assign(expr0x7f41982855e8, expr0x7f4198278d20)
+    in let step_53_354 = 
+      Action.assign(expr0x7f4198285630, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982855e8, expr0x7f41981db870))
+    in Block.block(
+      53,
+      [|
+        step_53_348;
+        step_53_349;
+        step_53_350;
+        step_53_351;
+        step_53_352;
+        step_53_353;
+        step_53_354;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (de_414 == 0B)";
+        "# VUSE <.MEM_413>\nval_415 = de_414->v.val;";
+        "# DEBUG val => val_415";
+        "# VUSE <.MEM_413>\nkey_416 = de_414->key;";
+        "# DEBUG key => key_416";
+        "# VUSE <.MEM_413>\n_139 = BIT_FIELD_REF <*val_415, 8, 0>;";
+        "_140 = _139 & 15;";
+      |]
+    )
+  in let block_54 = 
+    let step_54_355 = 
+      Action.assume(53, Expr.beq(GccType.boolean, expr0x7f4198285630, expr0x7f41993acdf8))
+    in let step_54_356 = 
+      Action.assign(expr0x7f4198285678, expr0x7f4198278d50)
+    in let step_54_357 = 
+      Action.assign(expr0x7f419832dca8, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198285678, expr0x7f41981db858))
+    in let step_54_358 = 
+      Action.assign(expr0x7f41982856c0, Expr.bneq(
+        type0x7f41993c4b28, expr0x7f419832dca8, expr0x7f41993acdf8))
+    in let step_54_359 = 
+      Action.assign(expr0x7f4198285708, Expr.bneq(
+        type0x7f41993c4b28, expr0x7f419832dca8, expr0x7f41981fedc8))
+    in let step_54_360 = 
+      Action.assign(expr0x7f4198285750, Expr.bit_and(
+        type0x7f41993c4b28, expr0x7f41982856c0, expr0x7f4198285708))
+    in Block.block(
+      54,
+      [|
+        step_54_355;
+        step_54_356;
+        step_54_357;
+        step_54_358;
+        step_54_359;
+        step_54_360;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_140 != 0)";
+        "# VUSE <.MEM_413>\n_141 = BIT_FIELD_REF <*val_415, 8, 0>;";
+        "_417 = _141 & 240;";
+        "_142 = _417 != 0;";
+        "_143 = _417 != 128;";
+        "_144 = _142 & _143;";
+      |]
+    )
+  in let block_55 = 
+    let step_55_361 = 
+      Action.assume(53, Expr.bneq(GccType.boolean, expr0x7f4198285630, expr0x7f41993acdf8))
+    in let step_55_362 = 
+      Action.assume(54, Expr.bneq(GccType.boolean, expr0x7f4198285750, expr0x7f41993c9030))
+    in let step_55_363 = 
+      Action.call(call0x7f419827ff30)
+    in Block.block(
+      55,
+      [|
+        step_55_361;
+        step_55_362;
+        step_55_363;
+      |],
+      [|
+        ("addReplyError", 1);
+      |],
+      [|
+        "assume TRUE (_140 != 0)";
+        "assume TRUE (_144 != 0)";
+        "# .MEM_425 = VDEF <.MEM_413>\naddReplyError (c_348(D), \"Not an sds encoded string.\");";
+      |]
+    )
+  in let block_56 = 
+    let step_56_364 = 
+      Action.assume(54, Expr.beq(GccType.boolean, expr0x7f4198285750, expr0x7f41993c9030))
+    in let step_56_365 = 
+      Action.call(call0x7f4198289000)
+    in let step_56_366 = 
+      Action.assign(expr0x7f4198285798, call0x7f4198289000)
+    in let step_56_367 = 
+      Action.assign(expr0x7f41982857e0, expr0x7f4198285798)
+    in let step_56_368 = 
+      Action.assign(expr0x7f4198285828, expr0x7f4198278d80)
+    in let step_56_369 = 
+      Action.call(call0x7f4198289090)
+    in let step_56_370 = 
+      Action.assign(expr0x7f4198285870, call0x7f4198289090)
+    in let step_56_371 = 
+      Action.assign(expr0x7f41982858b8, expr0x7f4198285870)
+    in let step_56_372 = 
+      Action.assign(expr0x7f4198285900, expr0x7f4198278db0)
+    in let step_56_373 = 
+      Action.call(call0x7f4198289120)
+    in let step_56_374 = 
+      Action.assign(expr0x7f4198285948, call0x7f4198289120)
+    in let step_56_375 = 
+      Action.assign(expr0x7f4198285990, expr0x7f4198285948)
+    in let step_56_376 = 
+      Action.call(call0x7f41982891b0)
+    in let step_56_377 = 
+      Action.assign(expr0x7f41982859d8, call0x7f41982891b0)
+    in let step_56_378 = 
+      Action.assign(expr0x7f4198285a20, expr0x7f41982859d8)
+    in let step_56_379 = 
+      Action.call(call0x7f4198289240)
+    in let step_56_380 = 
+      Action.assign(expr0x7f4198285a68, call0x7f4198289240)
+    in let step_56_381 = 
+      Action.assign(expr0x7f4198285ab0, expr0x7f4198285a68)
+    in let step_56_382 = 
+      Action.call(call0x7f41982892d0)
+    in let step_56_383 = 
+      Action.assign(expr0x7f4198285af8, call0x7f41982892d0)
+    in let step_56_384 = 
+      Action.assign(expr0x7f4198285b40, expr0x7f4198285af8)
+    in let step_56_385 = 
+      Action.call(call0x7f4198250d00)
+    in Block.block(
+      56,
+      [|
+        step_56_364;
+        step_56_365;
+        step_56_366;
+        step_56_367;
+        step_56_368;
+        step_56_369;
+        step_56_370;
+        step_56_371;
+        step_56_372;
+        step_56_373;
+        step_56_374;
+        step_56_375;
+        step_56_376;
+        step_56_377;
+        step_56_378;
+        step_56_379;
+        step_56_380;
+        step_56_381;
+        step_56_382;
+        step_56_383;
+        step_56_384;
+        step_56_385;
+      |],
+      [|
+        ("addReplyStatusFormat", 1);
+        ("getStringObjectSdsUsedMemory", 1);
+        ("sdsZmallocSize", 1);
+        ("sdsavail", 2);
+        ("sdslen", 2);
+      |],
+      [|
+        "assume FALSE (_144 != 0)";
+        "# .MEM_418 = VDEF <.MEM_413>\n_145 = getStringObjectSdsUsedMemory (val_415);";
+        "<CAPTURES RETURN>";
+        "_146 = (long long int) _145;";
+        "# VUSE <.MEM_418>\n_147 = val_415->ptr;";
+        "# .MEM_419 = VDEF <.MEM_418>\n_148 = sdsavail (_147);";
+        "<CAPTURES RETURN>";
+        "_149 = (long long int) _148;";
+        "# VUSE <.MEM_419>\n_150 = val_415->ptr;";
+        "# .MEM_420 = VDEF <.MEM_419>\n_151 = sdslen (_150);";
+        "<CAPTURES RETURN>";
+        "_152 = (long long int) _151;";
+        "# .MEM_421 = VDEF <.MEM_420>\n_153 = sdsZmallocSize (key_416);";
+        "<CAPTURES RETURN>";
+        "_154 = (long long int) _153;";
+        "# .MEM_422 = VDEF <.MEM_421>\n_155 = sdsavail (key_416);";
+        "<CAPTURES RETURN>";
+        "_156 = (long long int) _155;";
+        "# .MEM_423 = VDEF <.MEM_422>\n_157 = sdslen (key_416);";
+        "<CAPTURES RETURN>";
+        "_158 = (long long int) _157;";
+        "# .MEM_424 = VDEF <.MEM_423>\naddReplyStatusFormat (c_348(D), \"key_sds_len:%lld, key_sds_avail:%lld, key_zmalloc: %lld, val_sds_len:%lld, val_sds_avail:%lld, val_zmalloc: %lld\", _158, _156, _154, _152, _149, _146);";
+      |]
+    )
+  in let block_57 = 
+    let step_57_386 = 
+      Action.assume(49, Expr.bneq(GccType.boolean, expr0x7f4198285360, expr0x7f41993c9078))
+    in let step_57_387 = 
+      Action.assume(50, Expr.bneq(GccType.boolean, expr0x7f41982853a8, expr0x7f41993c90a8))
+    in let step_57_388 = 
+      Action.assign(expr0x7f4198285b88, expr0x7f4198278e40)
+    in let step_57_389 = 
+      Action.assign(expr0x7f4198285bd0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198285b88, expr0x7f41993accf0))
+    in let step_57_390 = 
+      Action.assign(expr0x7f4198285c18, expr0x7f4198288618)
+    in let step_57_391 = 
+      Action.assign(expr0x7f4198285c60, expr0x7f4198278e70)
+    in let step_57_392 = 
+      Action.call(call0x7f4198289360)
+    in let step_57_393 = 
+      Action.assign(expr0x7f4198285ca8, call0x7f4198289360)
+    in Block.block(
+      57,
+      [|
+        step_57_386;
+        step_57_387;
+        step_57_388;
+        step_57_389;
+        step_57_390;
+        step_57_391;
+        step_57_392;
+        step_57_393;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_130 == 0)";
+        "assume FALSE (_131 == 3)";
+        "# VUSE <.MEM_347(D)>\n_159 = c_348(D)->argv;";
+        "_160 = _159 + 8;";
+        "# VUSE <.MEM_347(D)>\n_161 = *_160;";
+        "# VUSE <.MEM_347(D)>\n_162 = _161->ptr;";
+        "# VUSE <.MEM_347(D)>\n_163 = strcasecmp (_162, \"ziplist\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_58 = 
+    let step_58_394 = 
+      Action.assume(57, Expr.beq(GccType.boolean, expr0x7f4198285ca8, expr0x7f41993c9078))
+    in let step_58_395 = 
+      Action.assign(expr0x7f4198285cf0, expr0x7f4198278ea0)
+    in Block.block(
+      58,
+      [|
+        step_58_394;
+        step_58_395;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_163 == 0)";
+        "# VUSE <.MEM_347(D)>\n_164 = c_348(D)->argc;";
+      |]
+    )
+  in let block_59 = 
+    let step_59_396 = 
+      Action.assume(58, Expr.beq(GccType.boolean, expr0x7f4198285cf0, expr0x7f41993c90a8))
+    in let step_59_397 = 
+      Action.assign(expr0x7f4198285d38, expr0x7f4198278ed0)
+    in let step_59_398 = 
+      Action.assign(expr0x7f4198285d80, expr0x7f4198278f00)
+    in let step_59_399 = 
+      Action.assign(expr0x7f4198285dc8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198285d80, expr0x7f41993acd38))
+    in let step_59_400 = 
+      Action.assign(expr0x7f4198285e10, expr0x7f4198288898)
+    in let step_59_401 = 
+      Action.call(call0x7f4198264ed8)
+    in let step_59_402 = 
+      Action.assign(expr0x7f419832f000, call0x7f4198264ed8)
+    in let step_59_403 = 
+      Action.debug("# DEBUG o => o_428")
+    in Block.block(
+      59,
+      [|
+        step_59_396;
+        step_59_397;
+        step_59_398;
+        step_59_399;
+        step_59_400;
+        step_59_401;
+        step_59_402;
+        step_59_403;
+      |],
+      [|
+        ("objectCommandLookupOrReply", 1);
+      |],
+      [|
+        "assume TRUE (_164 == 3)";
+        "# VUSE <.MEM_347(D)>\n_165 = shared.nokeyerr;";
+        "# VUSE <.MEM_347(D)>\n_166 = c_348(D)->argv;";
+        "_167 = _166 + 16;";
+        "# VUSE <.MEM_347(D)>\n_168 = *_167;";
+        "# .MEM_427 = VDEF <.MEM_347(D)>\no_428 = objectCommandLookupOrReply (c_348(D), _168, _165);";
+        "<CAPTURES RETURN>";
+        "# DEBUG o => o_428";
+      |]
+    )
+  in let block_60 = 
+    let step_60_404 = 
+      Action.assume(59, Expr.bneq(GccType.boolean, expr0x7f419832f000, expr0x7f41981fef18))
+    in let step_60_405 = 
+      Action.assign(expr0x7f4198285e58, expr0x7f4198278f30)
+    in let step_60_406 = 
+      Action.assign(expr0x7f4198285ea0, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f4198285e58, expr0x7f41981db858))
+    in Block.block(
+      60,
+      [|
+        step_60_404;
+        step_60_405;
+        step_60_406;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (o_428 == 0B)";
+        "# VUSE <.MEM_427>\n_169 = BIT_FIELD_REF <*o_428, 8, 0>;";
+        "_170 = _169 & 240;";
+      |]
+    )
+  in let block_61 = 
+    let step_61_407 = 
+      Action.assume(60, Expr.bneq(GccType.boolean, expr0x7f4198285ea0, expr0x7f41981dbbe8))
+    in let step_61_408 = 
+      Action.call(call0x7f41982893f0)
+    in Block.block(
+      61,
+      [|
+        step_61_407;
+        step_61_408;
+      |],
+      [|
+        ("addReplyError", 1);
+      |],
+      [|
+        "assume TRUE (_170 != 80)";
+        "# .MEM_431 = VDEF <.MEM_427>\naddReplyError (c_348(D), \"Not an sds encoded string.\");";
+      |]
+    )
+  in let block_62 = 
+    let step_62_409 = 
+      Action.assume(60, Expr.beq(GccType.boolean, expr0x7f4198285ea0, expr0x7f41981dbbe8))
+    in let step_62_410 = 
+      Action.assign(expr0x7f4198285ee8, expr0x7f4198278f60)
+    in let step_62_411 = 
+      Action.call(call0x7f4198289480)
+    in let step_62_412 = 
+      Action.call(call0x7f4198289510)
+    in Block.block(
+      62,
+      [|
+        step_62_409;
+        step_62_410;
+        step_62_411;
+        step_62_412;
+      |],
+      [|
+        ("addReplyStatus", 1);
+        ("ziplistRepr", 1);
+      |],
+      [|
+        "assume FALSE (_170 != 80)";
+        "# VUSE <.MEM_427>\n_171 = o_428->ptr;";
+        "# .MEM_429 = VDEF <.MEM_427>\nziplistRepr (_171);";
+        "# .MEM_430 = VDEF <.MEM_429>\naddReplyStatus (c_348(D), \"Ziplist structure printed on stdout\");";
+      |]
+    )
+  in let block_63 = 
+    let step_63_413 = 
+      Action.assume(57, Expr.bneq(GccType.boolean, expr0x7f4198285ca8, expr0x7f41993c9078))
+    in let step_63_414 = 
+      Action.assume(58, Expr.bneq(GccType.boolean, expr0x7f4198285cf0, expr0x7f41993c90a8))
+    in let step_63_415 = 
+      Action.assign(expr0x7f4198285f30, expr0x7f419828d030)
+    in let step_63_416 = 
+      Action.assign(expr0x7f4198285f78, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198285f30, expr0x7f41993accf0))
+    in let step_63_417 = 
+      Action.assign(expr0x7f419828e000, expr0x7f4198288b18)
+    in let step_63_418 = 
+      Action.assign(expr0x7f419828e048, expr0x7f419828d060)
+    in let step_63_419 = 
+      Action.call(call0x7f41982895a0)
+    in let step_63_420 = 
+      Action.assign(expr0x7f419828e090, call0x7f41982895a0)
+    in Block.block(
+      63,
+      [|
+        step_63_413;
+        step_63_414;
+        step_63_415;
+        step_63_416;
+        step_63_417;
+        step_63_418;
+        step_63_419;
+        step_63_420;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_163 == 0)";
+        "assume FALSE (_164 == 3)";
+        "# VUSE <.MEM_347(D)>\n_172 = c_348(D)->argv;";
+        "_173 = _172 + 8;";
+        "# VUSE <.MEM_347(D)>\n_174 = *_173;";
+        "# VUSE <.MEM_347(D)>\n_175 = _174->ptr;";
+        "# VUSE <.MEM_347(D)>\n_176 = strcasecmp (_175, \"populate\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_64 = 
+    let step_64_421 = 
+      Action.assume(63, Expr.beq(GccType.boolean, expr0x7f419828e090, expr0x7f41993c9078))
+    in let step_64_422 = 
+      Action.assign(expr0x7f419828e0d8, expr0x7f419828d090)
+    in Block.block(
+      64,
+      [|
+        step_64_421;
+        step_64_422;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_176 == 0)";
+        "# VUSE <.MEM_347(D)>\n_177 = c_348(D)->argc;";
+      |]
+    )
+  in let block_65 = 
+    let step_65_423 = 
+      Action.assume(64, Expr.bgt(GccType.boolean, expr0x7f419828e0d8, expr0x7f41993c93d8))
+    in let step_65_424 = 
+      Action.assign(expr0x7f419828e120, expr0x7f419828d0c0)
+    in Block.block(
+      65,
+      [|
+        step_65_423;
+        step_65_424;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_177 > 2)";
+        "# VUSE <.MEM_347(D)>\n_178 = c_348(D)->argc;";
+      |]
+    )
+  in let block_66 = 
+    let step_66_425 = 
+      Action.assume(65, Expr.blte(GccType.boolean, expr0x7f419828e120, expr0x7f41993c9408))
+    in let step_66_426 = 
+      Action.assign(expr0x7f419828e168, expr0x7f419828d0f0)
+    in let step_66_427 = 
+      Action.assign(expr0x7f419828e1b0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419828e168, expr0x7f41993acd38))
+    in let step_66_428 = 
+      Action.assign(expr0x7f419828e1f8, expr0x7f4198288de8)
+    in let step_66_429 = 
+      Action.call(call0x7f419827c498)
+    in let step_66_430 = 
+      Action.assign(expr0x7f419828e240, call0x7f419827c498)
+    in Block.block(
+      66,
+      [|
+        step_66_425;
+        step_66_426;
+        step_66_427;
+        step_66_428;
+        step_66_429;
+        step_66_430;
+      |],
+      [|
+        ("getLongFromObjectOrReply", 1);
+      |],
+      [|
+        "assume TRUE (_178 <= 5)";
+        "# VUSE <.MEM_347(D)>\n_179 = c_348(D)->argv;";
+        "_180 = _179 + 16;";
+        "# VUSE <.MEM_347(D)>\n_181 = *_180;";
+        "# .MEM_432 = VDEF <.MEM_347(D)>\n_182 = getLongFromObjectOrReply (c_348(D), _181, &keys, 0B);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_67 = 
+    let step_67_431 = 
+      Action.assume(66, Expr.beq(GccType.boolean, expr0x7f419828e240, expr0x7f41993c9078))
+    in let step_67_432 = 
+      Action.assign(expr0x7f419828e288, expr0x7f4198209240)
+    in let step_67_433 = 
+      Action.assign(expr0x7f419828e2d0, expr0x7f419828e288)
+    in let step_67_434 = 
+      Action.assign(expr0x7f419828e318, expr0x7f419828d120)
+    in let step_67_435 = 
+      Action.assign(expr0x7f419828e360, expr0x7f419828d150)
+    in let step_67_436 = 
+      Action.call(call0x7f4198289630)
+    in let step_67_437 = 
+      Action.assign(expr0x7f419832f1b0, expr0x7f419953f720)
+    in let step_67_438 = 
+      Action.debug("# DEBUG j => j_434")
+    in let step_67_439 = 
+      Action.assign(expr0x7f419832a318, expr0x7f419832f1b0)
+    in Block.block(
+      67,
+      [|
+        step_67_431;
+        step_67_432;
+        step_67_433;
+        step_67_434;
+        step_67_435;
+        step_67_436;
+        step_67_437;
+        step_67_438;
+        step_67_439;
+      |],
+      [|
+        ("dictExpand", 1);
+      |],
+      [|
+        "assume FALSE (_182 != 0)";
+        "# VUSE <.MEM_432>\nkeys.22_183 = keys;";
+        "keys.23_184 = (long unsigned int) keys.22_183;";
+        "# VUSE <.MEM_432>\n_185 = c_348(D)->db;";
+        "# VUSE <.MEM_432>\n_186 = _185->dict;";
+        "# .MEM_433 = VDEF <.MEM_432>\ndictExpand (_186, keys.23_184);";
+        "j_434 = 0;";
+        "# DEBUG j => j_434";
+        "j_327 = j_434";
+      |]
+    )
+  in let block_68 = 
+    let step_68_440 = 
+      Action.assume(81, Expr.blt(GccType.boolean, expr0x7f419832a318, expr0x7f419828ea68))
+    in let step_68_441 = 
+      Action.assign(expr0x7f4198209510, expr0x7f419953f720)
+    in let step_68_442 = 
+      Action.assign(expr0x7f419828e3a8, expr0x7f419828d180)
+    in Block.block(
+      68,
+      [|
+        step_68_440;
+        step_68_441;
+        step_68_442;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (j_327 < keys.29_211)";
+        "# .MEM_438 = VDEF <.MEM_342>\nvalsize = 0;";
+        "# VUSE <.MEM_438>\n_187 = c_348(D)->argc;";
+      |]
+    )
+  in let block_69 = 
+    let step_69_443 = 
+      Action.assume(68, Expr.bneq(GccType.boolean, expr0x7f419828e3a8, expr0x7f41993c90a8))
+    in let step_69_444 = 
+      Action.assign(expr0x7f419828e3f0, expr0x7f419828d1b0)
+    in let step_69_445 = 
+      Action.assign(expr0x7f419828e438, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419828e3f0, expr0x7f41993c9168))
+    in let step_69_446 = 
+      Action.assign(expr0x7f419828e480, expr0x7f4198288280)
+    in let step_69_447 = 
+      Action.assign(expr0x7f419832f360, expr0x7f4198207ab0)
+    in let step_69_448 = 
+      Action.assign(expr0x7f419832a4c8, expr0x7f419832f360)
+    in Block.block(
+      69,
+      [|
+        step_69_443;
+        step_69_444;
+        step_69_445;
+        step_69_446;
+        step_69_447;
+        step_69_448;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_187 != 3)";
+        "# VUSE <.MEM_438>\n_188 = c_348(D)->argv;";
+        "_189 = _188 + 24;";
+        "# VUSE <.MEM_438>\n_190 = *_189;";
+        "# VUSE <.MEM_438>\niftmp.24_440 = _190->ptr;";
+        "iftmp.24_333 = iftmp.24_440";
+      |]
+    )
+  in let block_70 = 
+    let step_70_449 = 
+      Action.assume(68, Expr.beq(GccType.boolean, expr0x7f419828e3a8, expr0x7f41993c90a8))
+    in let step_70_450 = 
+      Action.assign(expr0x7f419832f318, expr0x7f419820b7c0)
+    in let step_70_451 = 
+      Action.assign(expr0x7f419832a4c8, expr0x7f419832f318)
+    in Block.block(
+      70,
+      [|
+        step_70_449;
+        step_70_450;
+        step_70_451;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_187 != 3)";
+        "iftmp.24_439 = \"key\";";
+        "iftmp.24_333 = iftmp.24_439";
+      |]
+    )
+  in let block_71 = 
+    let step_71_452 = 
+      Action.call(call0x7f419827c540)
+    in let step_71_453 = 
+      Action.call(call0x7f4198289750)
+    in let step_71_454 = 
+      Action.assign(expr0x7f419828e4c8, call0x7f4198289750)
+    in let step_71_455 = 
+      Action.call(call0x7f41982897e0)
+    in let step_71_456 = 
+      Action.assign(expr0x7f419832f438, call0x7f41982897e0)
+    in let step_71_457 = 
+      Action.debug("# DEBUG key => key_443")
+    in let step_71_458 = 
+      Action.assign(expr0x7f419828e510, expr0x7f419828d1e0)
+    in Block.block(
+      71,
+      [|
+        step_71_452;
+        step_71_453;
+        step_71_454;
+        step_71_455;
+        step_71_456;
+        step_71_457;
+        step_71_458;
+      |],
+      [|
+        ("createStringObject", 1);
+        ("snprintf", 1);
+        ("strlen", 1);
+      |],
+      [|
+        "# .MEM_441 = VDEF <.MEM_438>\nsnprintf (&buf, 128, \"%s:%lu\", iftmp.24_333, j_327);";
+        "# VUSE <.MEM_441>\n_191 = strlen (&buf);";
+        "<CAPTURES RETURN>";
+        "# .MEM_442 = VDEF <.MEM_441>\nkey_443 = createStringObject (&buf, _191);";
+        "<CAPTURES RETURN>";
+        "# DEBUG key => key_443";
+        "# VUSE <.MEM_442>\n_192 = c_348(D)->argc;";
+      |]
+    )
+  in let block_72 = 
+    let step_72_459 = 
+      Action.assume(71, Expr.beq(GccType.boolean, expr0x7f419828e510, expr0x7f41993c9408))
+    in let step_72_460 = 
+      Action.assign(expr0x7f419828e558, expr0x7f419828d210)
+    in let step_72_461 = 
+      Action.assign(expr0x7f419828e5a0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419828e558, expr0x7f41993c9138))
+    in let step_72_462 = 
+      Action.assign(expr0x7f419828e5e8, expr0x7f4198288488)
+    in let step_72_463 = 
+      Action.call(call0x7f419827c5e8)
+    in let step_72_464 = 
+      Action.assign(expr0x7f419828e630, call0x7f419827c5e8)
+    in Block.block(
+      72,
+      [|
+        step_72_459;
+        step_72_460;
+        step_72_461;
+        step_72_462;
+        step_72_463;
+        step_72_464;
+      |],
+      [|
+        ("getLongFromObjectOrReply", 1);
+      |],
+      [|
+        "assume TRUE (_192 == 5)";
+        "# VUSE <.MEM_442>\n_193 = c_348(D)->argv;";
+        "_194 = _193 + 32;";
+        "# VUSE <.MEM_442>\n_195 = *_194;";
+        "# .MEM_444 = VDEF <.MEM_442>\n_196 = getLongFromObjectOrReply (c_348(D), _195, &valsize, 0B);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_73 = 
+    let step_73_465 = 
+      Action.assume(71, Expr.bneq(GccType.boolean, expr0x7f419828e510, expr0x7f41993c9408))
+    in let step_73_466 = 
+      Action.assume(72, Expr.beq(GccType.boolean, expr0x7f419828e630, expr0x7f41993c9078))
+    in let step_73_467 = 
+      Action.assign(expr0x7f419828e678, expr0x7f419828d240)
+    in let step_73_468 = 
+      Action.call(call0x7f4198289870)
+    in let step_73_469 = 
+      Action.assign(expr0x7f419828e6c0, call0x7f4198289870)
+    in Block.block(
+      73,
+      [|
+        step_73_465;
+        step_73_466;
+        step_73_467;
+        step_73_468;
+        step_73_469;
+      |],
+      [|
+        ("lookupKeyWrite", 1);
+      |],
+      [|
+        "assume FALSE (_192 == 5)";
+        "assume FALSE (_196 != 0)";
+        "# VUSE <.MEM_339>\n_197 = c_348(D)->db;";
+        "# .MEM_446 = VDEF <.MEM_339>\n_198 = lookupKeyWrite (_197, key_443);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_74 = 
+    let step_74_470 = 
+      Action.assume(73, Expr.bneq(GccType.boolean, expr0x7f419828e6c0, expr0x7f41981fef18))
+    in let step_74_471 = 
+      Action.call(call0x7f4198289900)
+    in let step_74_472 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_74_473 = 
+      Action.assign(expr0x7f4198209510, expr0x7f41982a10d8)
+    in Block.block(
+      74,
+      [|
+        step_74_470;
+        step_74_471;
+        step_74_472;
+        step_74_473;
+      |],
+      [|
+        ("decrRefCount", 1);
+      |],
+      [|
+        "assume TRUE (_198 != 0B)";
+        "# .MEM_458 = VDEF <.MEM_446>\ndecrRefCount (key_443);";
+        "// predicted unlikely by continue predictor.";
+        "# .MEM_459 = VDEF <.MEM_458>\nvalsize ={v} {CLOBBER};";
+      |]
+    )
+  in let block_75 = 
+    let step_75_474 = 
+      Action.assume(73, Expr.beq(GccType.boolean, expr0x7f419828e6c0, expr0x7f41981fef18))
+    in let step_75_475 = 
+      Action.call(call0x7f419827c690)
+    in let step_75_476 = 
+      Action.assign(expr0x7f419828e708, expr0x7f4198209510)
+    in Block.block(
+      75,
+      [|
+        step_75_474;
+        step_75_475;
+        step_75_476;
+      |],
+      [|
+        ("snprintf", 1);
+      |],
+      [|
+        "assume FALSE (_198 != 0B)";
+        "# .MEM_447 = VDEF <.MEM_446>\nsnprintf (&buf, 128, \"value:%lu\", j_327);";
+        "# VUSE <.MEM_447>\nvalsize.25_199 = valsize;";
+      |]
+    )
+  in let block_76 = 
+    let step_76_477 = 
+      Action.assume(75, Expr.beq(GccType.boolean, expr0x7f419828e708, expr0x7f419953f720))
+    in let step_76_478 = 
+      Action.call(call0x7f4198289990)
+    in let step_76_479 = 
+      Action.assign(expr0x7f419828e750, call0x7f4198289990)
+    in let step_76_480 = 
+      Action.call(call0x7f4198289a20)
+    in let step_76_481 = 
+      Action.assign(expr0x7f419832f708, call0x7f4198289a20)
+    in let step_76_482 = 
+      Action.debug("# DEBUG val => val_453")
+    in let step_76_483 = 
+      Action.assign(expr0x7f419832a360, expr0x7f419832f708)
+    in Block.block(
+      76,
+      [|
+        step_76_477;
+        step_76_478;
+        step_76_479;
+        step_76_480;
+        step_76_481;
+        step_76_482;
+        step_76_483;
+      |],
+      [|
+        ("createStringObject", 1);
+        ("strlen", 1);
+      |],
+      [|
+        "assume TRUE (valsize.25_199 == 0)";
+        "# VUSE <.MEM_447>\n_200 = strlen (&buf);";
+        "<CAPTURES RETURN>";
+        "# .MEM_452 = VDEF <.MEM_447>\nval_453 = createStringObject (&buf, _200);";
+        "<CAPTURES RETURN>";
+        "# DEBUG val => val_453";
+        "val_328 = val_453";
+      |]
+    )
+  in let block_77 = 
+    let step_77_484 = 
+      Action.assume(75, Expr.bneq(GccType.boolean, expr0x7f419828e708, expr0x7f419953f720))
+    in let step_77_485 = 
+      Action.call(call0x7f4198289ab0)
+    in let step_77_486 = 
+      Action.assign(expr0x7f419828e798, call0x7f4198289ab0)
+    in let step_77_487 = 
+      Action.assign(expr0x7f419832f5a0, expr0x7f419828e798)
+    in let step_77_488 = 
+      Action.debug("# DEBUG buflen => buflen_448")
+    in let step_77_489 = 
+      Action.assign(expr0x7f419828e7e0, expr0x7f4198209510)
+    in let step_77_490 = 
+      Action.assign(expr0x7f419828e828, expr0x7f419828e7e0)
+    in let step_77_491 = 
+      Action.call(call0x7f4198289b40)
+    in let step_77_492 = 
+      Action.assign(expr0x7f419832f630, call0x7f4198289b40)
+    in let step_77_493 = 
+      Action.debug("# DEBUG val => val_450")
+    in let step_77_494 = 
+      Action.assign(expr0x7f419828e870, expr0x7f419832f5a0)
+    in let step_77_495 = 
+      Action.assign(expr0x7f419828e8b8, expr0x7f4198209510)
+    in let step_77_496 = 
+      Action.assign(expr0x7f419828e900, Expr.minimum(
+        type0x7f41993c4738, expr0x7f419828e870, expr0x7f419828e8b8))
+    in let step_77_497 = 
+      Action.assign(expr0x7f419828e948, expr0x7f419828e900)
+    in let step_77_498 = 
+      Action.assign(expr0x7f419828e990, expr0x7f419828d270)
+    in let step_77_499 = 
+      Action.call(call0x7f4198292000)
+    in let step_77_500 = 
+      Action.assign(expr0x7f419832a360, expr0x7f419832f630)
+    in Block.block(
+      77,
+      [|
+        step_77_484;
+        step_77_485;
+        step_77_486;
+        step_77_487;
+        step_77_488;
+        step_77_489;
+        step_77_490;
+        step_77_491;
+        step_77_492;
+        step_77_493;
+        step_77_494;
+        step_77_495;
+        step_77_496;
+        step_77_497;
+        step_77_498;
+        step_77_499;
+        step_77_500;
+      |],
+      [|
+        ("createStringObject", 1);
+        ("memcpy", 1);
+        ("strlen", 1);
+      |],
+      [|
+        "assume FALSE (valsize.25_199 == 0)";
+        "# VUSE <.MEM_447>\n_201 = strlen (&buf);";
+        "<CAPTURES RETURN>";
+        "buflen_448 = (int) _201;";
+        "# DEBUG buflen => buflen_448";
+        "# VUSE <.MEM_447>\nvalsize.26_202 = valsize;";
+        "valsize.27_203 = (long unsigned int) valsize.26_202;";
+        "# .MEM_449 = VDEF <.MEM_447>\nval_450 = createStringObject (0B, valsize.27_203);";
+        "<CAPTURES RETURN>";
+        "# DEBUG val => val_450";
+        "_204 = (long int) buflen_448;";
+        "# VUSE <.MEM_449>\nvalsize.28_205 = valsize;";
+        "_206 = MIN_EXPR <_204, valsize.28_205>;";
+        "_207 = (long unsigned int) _206;";
+        "# VUSE <.MEM_449>\n_208 = val_450->ptr;";
+        "# .MEM_451 = VDEF <.MEM_449>\nmemcpy (_208, &buf, _207);";
+        "val_328 = val_450";
+      |]
+    )
+  in let block_78 = 
+    let step_78_501 = 
+      Action.debug("# DEBUG val => val_328")
+    in let step_78_502 = 
+      Action.assign(expr0x7f419828e9d8, expr0x7f419828d2a0)
+    in let step_78_503 = 
+      Action.call(call0x7f4198292098)
+    in let step_78_504 = 
+      Action.assign(expr0x7f419828ea20, expr0x7f419828d2d0)
+    in let step_78_505 = 
+      Action.call(call0x7f4198289bd0)
+    in let step_78_506 = 
+      Action.call(call0x7f4198289c60)
+    in let step_78_507 = 
+      Action.assign(expr0x7f4198209510, expr0x7f41982a10a8)
+    in Block.block(
+      78,
+      [|
+        step_78_501;
+        step_78_502;
+        step_78_503;
+        step_78_504;
+        step_78_505;
+        step_78_506;
+        step_78_507;
+      |],
+      [|
+        ("dbAdd", 1);
+        ("decrRefCount", 1);
+        ("signalModifiedKey", 1);
+      |],
+      [|
+        "# DEBUG val => val_328";
+        "# VUSE <.MEM_340>\n_209 = c_348(D)->db;";
+        "# .MEM_454 = VDEF <.MEM_340>\ndbAdd (_209, key_443, val_328);";
+        "# VUSE <.MEM_454>\n_210 = c_348(D)->db;";
+        "# .MEM_455 = VDEF <.MEM_454>\nsignalModifiedKey (_210, key_443);";
+        "# .MEM_456 = VDEF <.MEM_455>\ndecrRefCount (key_443);";
+        "# .MEM_457 = VDEF <.MEM_456>\nvalsize ={v} {CLOBBER};";
+      |]
+    )
+  in let block_79 = 
+    let step_79_508 = 
+      Action.assume(72, Expr.bneq(GccType.boolean, expr0x7f419828e630, expr0x7f41993c9078))
+    in let step_79_509 = 
+      Action.assign(expr0x7f4198209510, expr0x7f41982a10c0)
+    in Block.block(
+      79,
+      [|
+        step_79_508;
+        step_79_509;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_196 != 0)";
+        "# .MEM_445 = VDEF <.MEM_444>\nvalsize ={v} {CLOBBER};";
+      |]
+    )
+  in let block_80 = 
+    let step_80_510 = 
+      Action.assign(expr0x7f419832f900, Expr.plus(
+        type0x7f41993c4738, expr0x7f419832a318, expr0x7f41994f84c8))
+    in let step_80_511 = 
+      Action.debug("# DEBUG j => j_460")
+    in let step_80_512 = 
+      Action.assign(expr0x7f419832a318, expr0x7f419832f900)
+    in Block.block(
+      80,
+      [|
+        step_80_510;
+        step_80_511;
+        step_80_512;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "j_460 = j_327 + 1;";
+        "# DEBUG j => j_460";
+        "j_327 = j_460";
+      |]
+    )
+  in let block_81 = 
+    let step_81_513 = 
+      Action.debug("# DEBUG j => j_327")
+    in let step_81_514 = 
+      Action.assign(expr0x7f419828ea68, expr0x7f4198209240)
+    in Block.block(
+      81,
+      [|
+        step_81_513;
+        step_81_514;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_327";
+        "# VUSE <.MEM_342>\nkeys.29_211 = keys;";
+      |]
+    )
+  in let block_82 = 
+    let step_82_515 = 
+      Action.assume(81, Expr.bgte(GccType.boolean, expr0x7f419832a318, expr0x7f419828ea68))
+    in let step_82_516 = 
+      Action.assign(expr0x7f419828eab0, expr0x7f419828d300)
+    in let step_82_517 = 
+      Action.call(call0x7f4198289cf0)
+    in let step_82_518 = 
+      Action.assign(expr0x7f4198209240, expr0x7f41982a10f0)
+    in let step_82_519 = 
+      Action.assign(expr0x7f4198209480, expr0x7f41982a1108)
+    in Block.block(
+      82,
+      [|
+        step_82_515;
+        step_82_516;
+        step_82_517;
+        step_82_518;
+        step_82_519;
+      |],
+      [|
+        ("addReply", 1);
+      |],
+      [|
+        "assume FALSE (j_327 < keys.29_211)";
+        "# VUSE <.MEM_342>\n_212 = shared.ok;";
+        "# .MEM_435 = VDEF <.MEM_342>\naddReply (c_348(D), _212);";
+        "# .MEM_436 = VDEF <.MEM_435>\nkeys ={v} {CLOBBER};";
+        "# .MEM_437 = VDEF <.MEM_436>\nbuf ={v} {CLOBBER};";
+      |]
+    )
+  in let block_83 = 
+    let step_83_520 = 
+      Action.assume(66, Expr.bneq(GccType.boolean, expr0x7f419828e240, expr0x7f41993c9078))
+    in let step_83_521 = 
+      Action.assign(expr0x7f4198209240, expr0x7f41982a1120)
+    in let step_83_522 = 
+      Action.assign(expr0x7f4198209480, expr0x7f41982a1138)
+    in Block.block(
+      83,
+      [|
+        step_83_520;
+        step_83_521;
+        step_83_522;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_182 != 0)";
+        "# .MEM_461 = VDEF <.MEM_343>\nkeys ={v} {CLOBBER};";
+        "# .MEM_462 = VDEF <.MEM_461>\nbuf ={v} {CLOBBER};";
+      |]
+    )
+  in let block_84 = 
+    let step_84_523 = 
+      Action.assume(63, Expr.bneq(GccType.boolean, expr0x7f419828e090, expr0x7f41993c9078))
+    in let step_84_524 = 
+      Action.assume(64, Expr.blte(GccType.boolean, expr0x7f419828e0d8, expr0x7f41993c93d8))
+    in let step_84_525 = 
+      Action.assume(65, Expr.bgt(GccType.boolean, expr0x7f419828e120, expr0x7f41993c9408))
+    in let step_84_526 = 
+      Action.assign(expr0x7f419828eaf8, expr0x7f419828d390)
+    in let step_84_527 = 
+      Action.assign(expr0x7f419828eb40, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419828eaf8, expr0x7f41993accf0))
+    in let step_84_528 = 
+      Action.assign(expr0x7f419828eb88, expr0x7f4198288988)
+    in let step_84_529 = 
+      Action.assign(expr0x7f419828ebd0, expr0x7f419828d3c0)
+    in let step_84_530 = 
+      Action.call(call0x7f4198289d80)
+    in let step_84_531 = 
+      Action.assign(expr0x7f419828ec18, call0x7f4198289d80)
+    in Block.block(
+      84,
+      [|
+        step_84_523;
+        step_84_524;
+        step_84_525;
+        step_84_526;
+        step_84_527;
+        step_84_528;
+        step_84_529;
+        step_84_530;
+        step_84_531;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_176 == 0)";
+        "assume FALSE (_177 > 2)";
+        "assume FALSE (_178 <= 5)";
+        "# VUSE <.MEM_347(D)>\n_213 = c_348(D)->argv;";
+        "_214 = _213 + 8;";
+        "# VUSE <.MEM_347(D)>\n_215 = *_214;";
+        "# VUSE <.MEM_347(D)>\n_216 = _215->ptr;";
+        "# VUSE <.MEM_347(D)>\n_217 = strcasecmp (_216, \"digest\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_85 = 
+    let step_85_532 = 
+      Action.assume(84, Expr.beq(GccType.boolean, expr0x7f419828ec18, expr0x7f41993c9078))
+    in let step_85_533 = 
+      Action.assign(expr0x7f419828ec60, expr0x7f419828d3f0)
+    in Block.block(
+      85,
+      [|
+        step_85_532;
+        step_85_533;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_217 == 0)";
+        "# VUSE <.MEM_347(D)>\n_218 = c_348(D)->argc;";
+      |]
+    )
+  in let block_86 = 
+    let step_86_534 = 
+      Action.assume(85, Expr.beq(GccType.boolean, expr0x7f419828ec60, expr0x7f41993c93d8))
+    in let step_86_535 = 
+      Action.call(call0x7f419828af00)
+    in let step_86_536 = 
+      Action.assign(expr0x7f419832fa20, call0x7f419828af00)
+    in let step_86_537 = 
+      Action.debug("# DEBUG d => d_464")
+    in let step_86_538 = 
+      Action.call(call0x7f4198289e10)
+    in let step_86_539 = 
+      Action.assign(expr0x7f419832fab0, expr0x7f41993c9078)
+    in let step_86_540 = 
+      Action.debug("# DEBUG j => j_466")
+    in let step_86_541 = 
+      Action.assign(expr0x7f419832a3a8, expr0x7f419832fa20)
+    in let step_86_542 = 
+      Action.assign(expr0x7f419832a3f0, expr0x7f419832fab0)
+    in Block.block(
+      86,
+      [|
+        step_86_534;
+        step_86_535;
+        step_86_536;
+        step_86_537;
+        step_86_538;
+        step_86_539;
+        step_86_540;
+        step_86_541;
+        step_86_542;
+      |],
+      [|
+        ("computeDatasetDigest", 1);
+        ("sdsempty", 1);
+      |],
+      [|
+        "assume TRUE (_218 == 2)";
+        "# .MEM_463 = VDEF <.MEM_347(D)>\nd_464 = sdsempty ();";
+        "<CAPTURES RETURN>";
+        "# DEBUG d => d_464";
+        "# .MEM_465 = VDEF <.MEM_463>\ncomputeDatasetDigest (&digest);";
+        "j_466 = 0;";
+        "# DEBUG j => j_466";
+        "d_329 = d_464";
+        "j_330 = j_466";
+      |]
+    )
+  in let block_87 = 
+    let step_87_543 = 
+      Action.assume(88, Expr.blte(GccType.boolean, expr0x7f419832a3f0, expr0x7f41986473f0))
+    in let step_87_544 = 
+      Action.assign(expr0x7f419828eca8, expr0x7f419828f700)
+    in let step_87_545 = 
+      Action.assign(expr0x7f419828ecf0, expr0x7f419828eca8)
+    in let step_87_546 = 
+      Action.call(call0x7f4198292130)
+    in let step_87_547 = 
+      Action.assign(expr0x7f419832fc18, call0x7f4198292130)
+    in let step_87_548 = 
+      Action.debug("# DEBUG d => d_471")
+    in let step_87_549 = 
+      Action.assign(expr0x7f419832fc60, Expr.plus(
+        type0x7f41993c45e8, expr0x7f419832a3f0, expr0x7f41993c9090))
+    in let step_87_550 = 
+      Action.debug("# DEBUG j => j_472")
+    in let step_87_551 = 
+      Action.assign(expr0x7f419832a3a8, expr0x7f419832fc18)
+    in let step_87_552 = 
+      Action.assign(expr0x7f419832a3f0, expr0x7f419832fc60)
+    in Block.block(
+      87,
+      [|
+        step_87_543;
+        step_87_544;
+        step_87_545;
+        step_87_546;
+        step_87_547;
+        step_87_548;
+        step_87_549;
+        step_87_550;
+        step_87_551;
+        step_87_552;
+      |],
+      [|
+        ("sdscatprintf", 1);
+      |],
+      [|
+        "assume TRUE (j_330 <= 19)";
+        "# VUSE <.MEM_344>\n_219 = digest[j_330];";
+        "_220 = (int) _219;";
+        "# .MEM_470 = VDEF <.MEM_344>\nd_471 = sdscatprintf (d_329, \"%02x\", _220);";
+        "<CAPTURES RETURN>";
+        "# DEBUG d => d_471";
+        "j_472 = j_330 + 1;";
+        "# DEBUG j => j_472";
+        "d_329 = d_471";
+        "j_330 = j_472";
+      |]
+    )
+  in let block_88 = 
+    let step_88_553 = 
+      Action.debug("# DEBUG j => j_330")
+    in let step_88_554 = 
+      Action.debug("# DEBUG d => d_329")
+    in Block.block(
+      88,
+      [|
+        step_88_553;
+        step_88_554;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_330";
+        "# DEBUG d => d_329";
+      |]
+    )
+  in let block_89 = 
+    let step_89_555 = 
+      Action.assume(88, Expr.bgt(GccType.boolean, expr0x7f419832a3f0, expr0x7f41986473f0))
+    in let step_89_556 = 
+      Action.call(call0x7f4198289ea0)
+    in let step_89_557 = 
+      Action.call(call0x7f4198289f30)
+    in let step_89_558 = 
+      Action.assign(expr0x7f4198209630, expr0x7f419828c420)
+    in Block.block(
+      89,
+      [|
+        step_89_555;
+        step_89_556;
+        step_89_557;
+        step_89_558;
+      |],
+      [|
+        ("addReplyStatus", 1);
+        ("sdsfree", 1);
+      |],
+      [|
+        "assume FALSE (j_330 <= 19)";
+        "# .MEM_467 = VDEF <.MEM_344>\naddReplyStatus (c_348(D), d_329);";
+        "# .MEM_468 = VDEF <.MEM_467>\nsdsfree (d_329);";
+        "# .MEM_469 = VDEF <.MEM_468>\ndigest ={v} {CLOBBER};";
+      |]
+    )
+  in let block_90 = 
+    let step_90_559 = 
+      Action.assume(84, Expr.bneq(GccType.boolean, expr0x7f419828ec18, expr0x7f41993c9078))
+    in let step_90_560 = 
+      Action.assume(85, Expr.bneq(GccType.boolean, expr0x7f419828ec60, expr0x7f41993c93d8))
+    in let step_90_561 = 
+      Action.assign(expr0x7f419828ed38, expr0x7f419828d480)
+    in let step_90_562 = 
+      Action.assign(expr0x7f419828ed80, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419828ed38, expr0x7f41993accf0))
+    in let step_90_563 = 
+      Action.assign(expr0x7f419828edc8, expr0x7f4198288e10)
+    in let step_90_564 = 
+      Action.assign(expr0x7f419828ee10, expr0x7f419828d4b0)
+    in let step_90_565 = 
+      Action.call(call0x7f4198294000)
+    in let step_90_566 = 
+      Action.assign(expr0x7f419828ee58, call0x7f4198294000)
+    in Block.block(
+      90,
+      [|
+        step_90_559;
+        step_90_560;
+        step_90_561;
+        step_90_562;
+        step_90_563;
+        step_90_564;
+        step_90_565;
+        step_90_566;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_217 == 0)";
+        "assume FALSE (_218 == 2)";
+        "# VUSE <.MEM_347(D)>\n_221 = c_348(D)->argv;";
+        "_222 = _221 + 8;";
+        "# VUSE <.MEM_347(D)>\n_223 = *_222;";
+        "# VUSE <.MEM_347(D)>\n_224 = _223->ptr;";
+        "# VUSE <.MEM_347(D)>\n_225 = strcasecmp (_224, \"sleep\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_91 = 
+    let step_91_567 = 
+      Action.assume(90, Expr.beq(GccType.boolean, expr0x7f419828ee58, expr0x7f41993c9078))
+    in let step_91_568 = 
+      Action.assign(expr0x7f419828eea0, expr0x7f419828d4e0)
+    in Block.block(
+      91,
+      [|
+        step_91_567;
+        step_91_568;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_225 == 0)";
+        "# VUSE <.MEM_347(D)>\n_226 = c_348(D)->argc;";
+      |]
+    )
+  in let block_92 = 
+    let step_92_569 = 
+      Action.assume(91, Expr.beq(GccType.boolean, expr0x7f419828eea0, expr0x7f41993c90a8))
+    in let step_92_570 = 
+      Action.assign(expr0x7f419828eee8, expr0x7f419828d510)
+    in let step_92_571 = 
+      Action.assign(expr0x7f419828ef30, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419828eee8, expr0x7f41993acd38))
+    in let step_92_572 = 
+      Action.assign(expr0x7f419828ef78, expr0x7f41982950c8)
+    in let step_92_573 = 
+      Action.assign(expr0x7f4198296000, expr0x7f419828d540)
+    in let step_92_574 = 
+      Action.call(call0x7f4198294090)
+    in let step_92_575 = 
+      Action.assign(expr0x7f419832fcf0, call0x7f4198294090)
+    in let step_92_576 = 
+      Action.debug("# DEBUG dtime => dtime_474")
+    in let step_92_577 = 
+      Action.assign(expr0x7f4198296048, Expr.times(
+        type0x7f41993cc3f0, expr0x7f419832fcf0, expr0x7f419820c648))
+    in let step_92_578 = 
+      Action.assign(expr0x7f419832fd38, expr0x7f4198296048)
+    in let step_92_579 = 
+      Action.debug("# DEBUG utime => utime_475")
+    in let step_92_580 = 
+      Action.assign(expr0x7f4198296090, Expr.truncated_div(
+        type0x7f41993c4888, expr0x7f419832fd38, expr0x7f419820c630))
+    in let step_92_581 = 
+      Action.assign(expr0x7f4198210120, expr0x7f4198296090)
+    in let step_92_582 = 
+      Action.assign(expr0x7f41982960d8, Expr.truncated_mod(
+        type0x7f41993c4888, expr0x7f419832fd38, expr0x7f419820c630))
+    in let step_92_583 = 
+      Action.assign(expr0x7f4198296120, Expr.times(
+        type0x7f41993c4888, expr0x7f41982960d8, expr0x7f419820c690))
+    in let step_92_584 = 
+      Action.assign(expr0x7f4198210150, expr0x7f4198296120)
+    in let step_92_585 = 
+      Action.call(call0x7f4198294120)
+    in let step_92_586 = 
+      Action.assign(expr0x7f4198296168, expr0x7f419828d570)
+    in let step_92_587 = 
+      Action.call(call0x7f41982941b0)
+    in let step_92_588 = 
+      Action.assign(expr0x7f4198209900, expr0x7f419828c540)
+    in Block.block(
+      92,
+      [|
+        step_92_569;
+        step_92_570;
+        step_92_571;
+        step_92_572;
+        step_92_573;
+        step_92_574;
+        step_92_575;
+        step_92_576;
+        step_92_577;
+        step_92_578;
+        step_92_579;
+        step_92_580;
+        step_92_581;
+        step_92_582;
+        step_92_583;
+        step_92_584;
+        step_92_585;
+        step_92_586;
+        step_92_587;
+        step_92_588;
+      |],
+      [|
+        ("addReply", 1);
+        ("nanosleep", 1);
+        ("strtod", 1);
+      |],
+      [|
+        "assume TRUE (_226 == 3)";
+        "# VUSE <.MEM_347(D)>\n_227 = c_348(D)->argv;";
+        "_228 = _227 + 16;";
+        "# VUSE <.MEM_347(D)>\n_229 = *_228;";
+        "# VUSE <.MEM_347(D)>\n_230 = _229->ptr;";
+        "# .MEM_473 = VDEF <.MEM_347(D)>\ndtime_474 = strtod (_230, 0B);";
+        "<CAPTURES RETURN>";
+        "# DEBUG dtime => dtime_474";
+        "_231 = dtime_474 * 1.0e+6;";
+        "utime_475 = (long long int) _231;";
+        "# DEBUG utime => utime_475";
+        "_232 = utime_475 / 1000000;";
+        "# .MEM_476 = VDEF <.MEM_473>\ntv.tv_sec = _232;";
+        "_233 = utime_475 % 1000000;";
+        "_234 = _233 * 1000;";
+        "# .MEM_477 = VDEF <.MEM_476>\ntv.tv_nsec = _234;";
+        "# .MEM_478 = VDEF <.MEM_477>\nnanosleep (&tv, 0B);";
+        "# VUSE <.MEM_478>\n_235 = shared.ok;";
+        "# .MEM_479 = VDEF <.MEM_478>\naddReply (c_348(D), _235);";
+        "# .MEM_480 = VDEF <.MEM_479>\ntv ={v} {CLOBBER};";
+      |]
+    )
+  in let block_93 = 
+    let step_93_589 = 
+      Action.assume(90, Expr.bneq(GccType.boolean, expr0x7f419828ee58, expr0x7f41993c9078))
+    in let step_93_590 = 
+      Action.assume(91, Expr.bneq(GccType.boolean, expr0x7f419828eea0, expr0x7f41993c90a8))
+    in let step_93_591 = 
+      Action.assign(expr0x7f41982961b0, expr0x7f419828d600)
+    in let step_93_592 = 
+      Action.assign(expr0x7f41982961f8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982961b0, expr0x7f41993accf0))
+    in let step_93_593 = 
+      Action.assign(expr0x7f4198296240, expr0x7f4198295410)
+    in let step_93_594 = 
+      Action.assign(expr0x7f4198296288, expr0x7f419828d630)
+    in let step_93_595 = 
+      Action.call(call0x7f4198294240)
+    in let step_93_596 = 
+      Action.assign(expr0x7f41982962d0, call0x7f4198294240)
+    in Block.block(
+      93,
+      [|
+        step_93_589;
+        step_93_590;
+        step_93_591;
+        step_93_592;
+        step_93_593;
+        step_93_594;
+        step_93_595;
+        step_93_596;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_225 == 0)";
+        "assume FALSE (_226 == 3)";
+        "# VUSE <.MEM_347(D)>\n_236 = c_348(D)->argv;";
+        "_237 = _236 + 8;";
+        "# VUSE <.MEM_347(D)>\n_238 = *_237;";
+        "# VUSE <.MEM_347(D)>\n_239 = _238->ptr;";
+        "# VUSE <.MEM_347(D)>\n_240 = strcasecmp (_239, \"set-active-expire\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_94 = 
+    let step_94_597 = 
+      Action.assume(93, Expr.beq(GccType.boolean, expr0x7f41982962d0, expr0x7f41993c9078))
+    in let step_94_598 = 
+      Action.assign(expr0x7f4198296318, expr0x7f419828d660)
+    in Block.block(
+      94,
+      [|
+        step_94_597;
+        step_94_598;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_240 == 0)";
+        "# VUSE <.MEM_347(D)>\n_241 = c_348(D)->argc;";
+      |]
+    )
+  in let block_95 = 
+    let step_95_599 = 
+      Action.assume(94, Expr.beq(GccType.boolean, expr0x7f4198296318, expr0x7f41993c90a8))
+    in let step_95_600 = 
+      Action.assign(expr0x7f4198296360, expr0x7f419828d690)
+    in let step_95_601 = 
+      Action.assign(expr0x7f41982963a8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296360, expr0x7f41993acd38))
+    in let step_95_602 = 
+      Action.assign(expr0x7f41982963f0, expr0x7f4198295668)
+    in let step_95_603 = 
+      Action.assign(expr0x7f4198296438, expr0x7f419828d6c0)
+    in let step_95_604 = 
+      Action.call(call0x7f41982942d0)
+    in let step_95_605 = 
+      Action.assign(expr0x7f4198296480, call0x7f41982942d0)
+    in let step_95_606 = 
+      Action.assign(expr0x7f4198210270, expr0x7f4198296480)
+    in let step_95_607 = 
+      Action.assign(expr0x7f41982964c8, expr0x7f419828d6f0)
+    in let step_95_608 = 
+      Action.call(call0x7f4198294360)
+    in Block.block(
+      95,
+      [|
+        step_95_599;
+        step_95_600;
+        step_95_601;
+        step_95_602;
+        step_95_603;
+        step_95_604;
+        step_95_605;
+        step_95_606;
+        step_95_607;
+        step_95_608;
+      |],
+      [|
+        ("addReply", 1);
+        ("atoi", 1);
+      |],
+      [|
+        "assume TRUE (_241 == 3)";
+        "# VUSE <.MEM_347(D)>\n_242 = c_348(D)->argv;";
+        "_243 = _242 + 16;";
+        "# VUSE <.MEM_347(D)>\n_244 = *_243;";
+        "# VUSE <.MEM_347(D)>\n_245 = _244->ptr;";
+        "# VUSE <.MEM_347(D)>\n_246 = atoi (_245);";
+        "<CAPTURES RETURN>";
+        "# .MEM_481 = VDEF <.MEM_347(D)>\nserver.active_expire_enabled = _246;";
+        "# VUSE <.MEM_481>\n_247 = shared.ok;";
+        "# .MEM_482 = VDEF <.MEM_481>\naddReply (c_348(D), _247);";
+      |]
+    )
+  in let block_96 = 
+    let step_96_609 = 
+      Action.assume(93, Expr.bneq(GccType.boolean, expr0x7f41982962d0, expr0x7f41993c9078))
+    in let step_96_610 = 
+      Action.assume(94, Expr.bneq(GccType.boolean, expr0x7f4198296318, expr0x7f41993c90a8))
+    in let step_96_611 = 
+      Action.assign(expr0x7f4198296510, expr0x7f419828d780)
+    in let step_96_612 = 
+      Action.assign(expr0x7f4198296558, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296510, expr0x7f41993accf0))
+    in let step_96_613 = 
+      Action.assign(expr0x7f41982965a0, expr0x7f4198295870)
+    in let step_96_614 = 
+      Action.assign(expr0x7f41982965e8, expr0x7f419828d7b0)
+    in let step_96_615 = 
+      Action.call(call0x7f41982943f0)
+    in let step_96_616 = 
+      Action.assign(expr0x7f4198296630, call0x7f41982943f0)
+    in Block.block(
+      96,
+      [|
+        step_96_609;
+        step_96_610;
+        step_96_611;
+        step_96_612;
+        step_96_613;
+        step_96_614;
+        step_96_615;
+        step_96_616;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_240 == 0)";
+        "assume FALSE (_241 == 3)";
+        "# VUSE <.MEM_347(D)>\n_248 = c_348(D)->argv;";
+        "_249 = _248 + 8;";
+        "# VUSE <.MEM_347(D)>\n_250 = *_249;";
+        "# VUSE <.MEM_347(D)>\n_251 = _250->ptr;";
+        "# VUSE <.MEM_347(D)>\n_252 = strcasecmp (_251, \"lua-always-replicate-commands\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_97 = 
+    let step_97_617 = 
+      Action.assume(96, Expr.beq(GccType.boolean, expr0x7f4198296630, expr0x7f41993c9078))
+    in let step_97_618 = 
+      Action.assign(expr0x7f4198296678, expr0x7f419828d7e0)
+    in Block.block(
+      97,
+      [|
+        step_97_617;
+        step_97_618;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_252 == 0)";
+        "# VUSE <.MEM_347(D)>\n_253 = c_348(D)->argc;";
+      |]
+    )
+  in let block_98 = 
+    let step_98_619 = 
+      Action.assume(97, Expr.beq(GccType.boolean, expr0x7f4198296678, expr0x7f41993c90a8))
+    in let step_98_620 = 
+      Action.assign(expr0x7f41982966c0, expr0x7f419828d810)
+    in let step_98_621 = 
+      Action.assign(expr0x7f4198296708, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982966c0, expr0x7f41993acd38))
+    in let step_98_622 = 
+      Action.assign(expr0x7f4198296750, expr0x7f4198295ac8)
+    in let step_98_623 = 
+      Action.assign(expr0x7f4198296798, expr0x7f419828d840)
+    in let step_98_624 = 
+      Action.call(call0x7f4198294480)
+    in let step_98_625 = 
+      Action.assign(expr0x7f41982967e0, call0x7f4198294480)
+    in let step_98_626 = 
+      Action.assign(expr0x7f41982103f0, expr0x7f41982967e0)
+    in let step_98_627 = 
+      Action.assign(expr0x7f4198296828, expr0x7f419828d870)
+    in let step_98_628 = 
+      Action.call(call0x7f4198294510)
+    in Block.block(
+      98,
+      [|
+        step_98_619;
+        step_98_620;
+        step_98_621;
+        step_98_622;
+        step_98_623;
+        step_98_624;
+        step_98_625;
+        step_98_626;
+        step_98_627;
+        step_98_628;
+      |],
+      [|
+        ("addReply", 1);
+        ("atoi", 1);
+      |],
+      [|
+        "assume TRUE (_253 == 3)";
+        "# VUSE <.MEM_347(D)>\n_254 = c_348(D)->argv;";
+        "_255 = _254 + 16;";
+        "# VUSE <.MEM_347(D)>\n_256 = *_255;";
+        "# VUSE <.MEM_347(D)>\n_257 = _256->ptr;";
+        "# VUSE <.MEM_347(D)>\n_258 = atoi (_257);";
+        "<CAPTURES RETURN>";
+        "# .MEM_483 = VDEF <.MEM_347(D)>\nserver.lua_always_replicate_commands = _258;";
+        "# VUSE <.MEM_483>\n_259 = shared.ok;";
+        "# .MEM_484 = VDEF <.MEM_483>\naddReply (c_348(D), _259);";
+      |]
+    )
+  in let block_99 = 
+    let step_99_629 = 
+      Action.assume(96, Expr.bneq(GccType.boolean, expr0x7f4198296630, expr0x7f41993c9078))
+    in let step_99_630 = 
+      Action.assume(97, Expr.bneq(GccType.boolean, expr0x7f4198296678, expr0x7f41993c90a8))
+    in let step_99_631 = 
+      Action.assign(expr0x7f4198296870, expr0x7f419828d900)
+    in let step_99_632 = 
+      Action.assign(expr0x7f41982968b8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296870, expr0x7f41993accf0))
+    in let step_99_633 = 
+      Action.assign(expr0x7f4198296900, expr0x7f4198295cd0)
+    in let step_99_634 = 
+      Action.assign(expr0x7f4198296948, expr0x7f419828d930)
+    in let step_99_635 = 
+      Action.call(call0x7f41982945a0)
+    in let step_99_636 = 
+      Action.assign(expr0x7f4198296990, call0x7f41982945a0)
+    in Block.block(
+      99,
+      [|
+        step_99_629;
+        step_99_630;
+        step_99_631;
+        step_99_632;
+        step_99_633;
+        step_99_634;
+        step_99_635;
+        step_99_636;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_252 == 0)";
+        "assume FALSE (_253 == 3)";
+        "# VUSE <.MEM_347(D)>\n_260 = c_348(D)->argv;";
+        "_261 = _260 + 8;";
+        "# VUSE <.MEM_347(D)>\n_262 = *_261;";
+        "# VUSE <.MEM_347(D)>\n_263 = _262->ptr;";
+        "# VUSE <.MEM_347(D)>\n_264 = strcasecmp (_263, \"error\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_100 = 
+    let step_100_637 = 
+      Action.assume(99, Expr.beq(GccType.boolean, expr0x7f4198296990, expr0x7f41993c9078))
+    in let step_100_638 = 
+      Action.assign(expr0x7f41982969d8, expr0x7f419828d960)
+    in Block.block(
+      100,
+      [|
+        step_100_637;
+        step_100_638;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_264 == 0)";
+        "# VUSE <.MEM_347(D)>\n_265 = c_348(D)->argc;";
+      |]
+    )
+  in let block_101 = 
+    let step_101_639 = 
+      Action.assume(100, Expr.beq(GccType.boolean, expr0x7f41982969d8, expr0x7f41993c90a8))
+    in let step_101_640 = 
+      Action.call(call0x7f4198294630)
+    in let step_101_641 = 
+      Action.assign(expr0x7f4198330090, call0x7f4198294630)
+    in let step_101_642 = 
+      Action.debug("# DEBUG errstr => errstr_486")
+    in let step_101_643 = 
+      Action.assign(expr0x7f4198296a20, expr0x7f419828d990)
+    in let step_101_644 = 
+      Action.assign(expr0x7f4198296a68, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296a20, expr0x7f41993acd38))
+    in let step_101_645 = 
+      Action.assign(expr0x7f4198296ab0, expr0x7f4198295f50)
+    in let step_101_646 = 
+      Action.assign(expr0x7f4198296af8, expr0x7f419828d9c0)
+    in let step_101_647 = 
+      Action.call(call0x7f41982946c0)
+    in let step_101_648 = 
+      Action.assign(expr0x7f4198330120, call0x7f41982946c0)
+    in let step_101_649 = 
+      Action.debug("# DEBUG errstr => errstr_488")
+    in let step_101_650 = 
+      Action.call(call0x7f419827c930)
+    in let step_101_651 = 
+      Action.assign(expr0x7f41983301b0, call0x7f419827c930)
+    in let step_101_652 = 
+      Action.debug("# DEBUG errstr => errstr_490")
+    in let step_101_653 = 
+      Action.call(call0x7f41982921c8)
+    in let step_101_654 = 
+      Action.assign(expr0x7f4198330240, call0x7f41982921c8)
+    in let step_101_655 = 
+      Action.debug("# DEBUG errstr => errstr_492")
+    in let step_101_656 = 
+      Action.call(call0x7f4198294750)
+    in Block.block(
+      101,
+      [|
+        step_101_639;
+        step_101_640;
+        step_101_641;
+        step_101_642;
+        step_101_643;
+        step_101_644;
+        step_101_645;
+        step_101_646;
+        step_101_647;
+        step_101_648;
+        step_101_649;
+        step_101_650;
+        step_101_651;
+        step_101_652;
+        step_101_653;
+        step_101_654;
+        step_101_655;
+        step_101_656;
+      |],
+      [|
+        ("addReplySds", 1);
+        ("sdscatlen", 1);
+        ("sdscatsds", 1);
+        ("sdsmapchars", 1);
+        ("sdsnewlen", 1);
+      |],
+      [|
+        "assume TRUE (_265 == 3)";
+        "# .MEM_485 = VDEF <.MEM_347(D)>\nerrstr_486 = sdsnewlen (\"-\", 1);";
+        "<CAPTURES RETURN>";
+        "# DEBUG errstr => errstr_486";
+        "# VUSE <.MEM_485>\n_266 = c_348(D)->argv;";
+        "_267 = _266 + 16;";
+        "# VUSE <.MEM_485>\n_268 = *_267;";
+        "# VUSE <.MEM_485>\n_269 = _268->ptr;";
+        "# .MEM_487 = VDEF <.MEM_485>\nerrstr_488 = sdscatsds (errstr_486, _269);";
+        "<CAPTURES RETURN>";
+        "# DEBUG errstr => errstr_488";
+        "# .MEM_489 = VDEF <.MEM_487>\nerrstr_490 = sdsmapchars (errstr_488, \"\\n\\r\", \"  \", 2);";
+        "<CAPTURES RETURN>";
+        "# DEBUG errstr => errstr_490";
+        "# .MEM_491 = VDEF <.MEM_489>\nerrstr_492 = sdscatlen (errstr_490, \"\\r\\n\", 2);";
+        "<CAPTURES RETURN>";
+        "# DEBUG errstr => errstr_492";
+        "# .MEM_493 = VDEF <.MEM_491>\naddReplySds (c_348(D), errstr_492);";
+      |]
+    )
+  in let block_102 = 
+    let step_102_657 = 
+      Action.assume(99, Expr.bneq(GccType.boolean, expr0x7f4198296990, expr0x7f41993c9078))
+    in let step_102_658 = 
+      Action.assume(100, Expr.bneq(GccType.boolean, expr0x7f41982969d8, expr0x7f41993c90a8))
+    in let step_102_659 = 
+      Action.assign(expr0x7f4198296b40, expr0x7f419828da50)
+    in let step_102_660 = 
+      Action.assign(expr0x7f4198296b88, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296b40, expr0x7f41993accf0))
+    in let step_102_661 = 
+      Action.assign(expr0x7f4198296bd0, expr0x7f4198295168)
+    in let step_102_662 = 
+      Action.assign(expr0x7f4198296c18, expr0x7f419828da80)
+    in let step_102_663 = 
+      Action.call(call0x7f41982947e0)
+    in let step_102_664 = 
+      Action.assign(expr0x7f4198296c60, call0x7f41982947e0)
+    in Block.block(
+      102,
+      [|
+        step_102_657;
+        step_102_658;
+        step_102_659;
+        step_102_660;
+        step_102_661;
+        step_102_662;
+        step_102_663;
+        step_102_664;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_264 == 0)";
+        "assume FALSE (_265 == 3)";
+        "# VUSE <.MEM_347(D)>\n_270 = c_348(D)->argv;";
+        "_271 = _270 + 8;";
+        "# VUSE <.MEM_347(D)>\n_272 = *_271;";
+        "# VUSE <.MEM_347(D)>\n_273 = _272->ptr;";
+        "# VUSE <.MEM_347(D)>\n_274 = strcasecmp (_273, \"structsize\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_103 = 
+    let step_103_665 = 
+      Action.assume(102, Expr.beq(GccType.boolean, expr0x7f4198296c60, expr0x7f41993c9078))
+    in let step_103_666 = 
+      Action.assign(expr0x7f4198296ca8, expr0x7f419828dab0)
+    in Block.block(
+      103,
+      [|
+        step_103_665;
+        step_103_666;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_274 == 0)";
+        "# VUSE <.MEM_347(D)>\n_275 = c_348(D)->argc;";
+      |]
+    )
+  in let block_104 = 
+    let step_104_667 = 
+      Action.assume(103, Expr.beq(GccType.boolean, expr0x7f4198296ca8, expr0x7f41993c93d8))
+    in let step_104_668 = 
+      Action.call(call0x7f4198293980)
+    in let step_104_669 = 
+      Action.assign(expr0x7f4198330318, call0x7f4198293980)
+    in let step_104_670 = 
+      Action.debug("# DEBUG sizes => sizes_495")
+    in let step_104_671 = 
+      Action.call(call0x7f4198292260)
+    in let step_104_672 = 
+      Action.assign(expr0x7f41983303a8, call0x7f4198292260)
+    in let step_104_673 = 
+      Action.debug("# DEBUG sizes => sizes_497")
+    in let step_104_674 = 
+      Action.call(call0x7f41982922f8)
+    in let step_104_675 = 
+      Action.assign(expr0x7f4198330438, call0x7f41982922f8)
+    in let step_104_676 = 
+      Action.debug("# DEBUG sizes => sizes_499")
+    in let step_104_677 = 
+      Action.call(call0x7f4198292390)
+    in let step_104_678 = 
+      Action.assign(expr0x7f41983304c8, call0x7f4198292390)
+    in let step_104_679 = 
+      Action.debug("# DEBUG sizes => sizes_501")
+    in let step_104_680 = 
+      Action.call(call0x7f4198292428)
+    in let step_104_681 = 
+      Action.assign(expr0x7f4198330558, call0x7f4198292428)
+    in let step_104_682 = 
+      Action.debug("# DEBUG sizes => sizes_503")
+    in let step_104_683 = 
+      Action.call(call0x7f41982924c0)
+    in let step_104_684 = 
+      Action.assign(expr0x7f41983305e8, call0x7f41982924c0)
+    in let step_104_685 = 
+      Action.debug("# DEBUG sizes => sizes_505")
+    in let step_104_686 = 
+      Action.call(call0x7f4198292558)
+    in let step_104_687 = 
+      Action.assign(expr0x7f4198330678, call0x7f4198292558)
+    in let step_104_688 = 
+      Action.debug("# DEBUG sizes => sizes_507")
+    in let step_104_689 = 
+      Action.call(call0x7f41982925f0)
+    in let step_104_690 = 
+      Action.assign(expr0x7f4198330708, call0x7f41982925f0)
+    in let step_104_691 = 
+      Action.debug("# DEBUG sizes => sizes_509")
+    in let step_104_692 = 
+      Action.call(call0x7f4198292688)
+    in let step_104_693 = 
+      Action.assign(expr0x7f4198330798, call0x7f4198292688)
+    in let step_104_694 = 
+      Action.debug("# DEBUG sizes => sizes_511")
+    in let step_104_695 = 
+      Action.call(call0x7f4198294870)
+    in Block.block(
+      104,
+      [|
+        step_104_667;
+        step_104_668;
+        step_104_669;
+        step_104_670;
+        step_104_671;
+        step_104_672;
+        step_104_673;
+        step_104_674;
+        step_104_675;
+        step_104_676;
+        step_104_677;
+        step_104_678;
+        step_104_679;
+        step_104_680;
+        step_104_681;
+        step_104_682;
+        step_104_683;
+        step_104_684;
+        step_104_685;
+        step_104_686;
+        step_104_687;
+        step_104_688;
+        step_104_689;
+        step_104_690;
+        step_104_691;
+        step_104_692;
+        step_104_693;
+        step_104_694;
+        step_104_695;
+      |],
+      [|
+        ("addReplyBulkSds", 1);
+        ("sdscatprintf", 8);
+        ("sdsempty", 1);
+      |],
+      [|
+        "assume TRUE (_275 == 2)";
+        "# .MEM_494 = VDEF <.MEM_347(D)>\nsizes_495 = sdsempty ();";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_495";
+        "# .MEM_496 = VDEF <.MEM_494>\nsizes_497 = sdscatprintf (sizes_495, \"bits:%d \", 64);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_497";
+        "# .MEM_498 = VDEF <.MEM_496>\nsizes_499 = sdscatprintf (sizes_497, \"robj:%d \", 16);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_499";
+        "# .MEM_500 = VDEF <.MEM_498>\nsizes_501 = sdscatprintf (sizes_499, \"dictentry:%d \", 24);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_501";
+        "# .MEM_502 = VDEF <.MEM_500>\nsizes_503 = sdscatprintf (sizes_501, \"sdshdr5:%d \", 1);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_503";
+        "# .MEM_504 = VDEF <.MEM_502>\nsizes_505 = sdscatprintf (sizes_503, \"sdshdr8:%d \", 3);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_505";
+        "# .MEM_506 = VDEF <.MEM_504>\nsizes_507 = sdscatprintf (sizes_505, \"sdshdr16:%d \", 5);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_507";
+        "# .MEM_508 = VDEF <.MEM_506>\nsizes_509 = sdscatprintf (sizes_507, \"sdshdr32:%d \", 9);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_509";
+        "# .MEM_510 = VDEF <.MEM_508>\nsizes_511 = sdscatprintf (sizes_509, \"sdshdr64:%d \", 17);";
+        "<CAPTURES RETURN>";
+        "# DEBUG sizes => sizes_511";
+        "# .MEM_512 = VDEF <.MEM_510>\naddReplyBulkSds (c_348(D), sizes_511);";
+      |]
+    )
+  in let block_105 = 
+    let step_105_696 = 
+      Action.assume(102, Expr.bneq(GccType.boolean, expr0x7f4198296c60, expr0x7f41993c9078))
+    in let step_105_697 = 
+      Action.assume(103, Expr.bneq(GccType.boolean, expr0x7f4198296ca8, expr0x7f41993c93d8))
+    in let step_105_698 = 
+      Action.assign(expr0x7f4198296cf0, expr0x7f419828db40)
+    in let step_105_699 = 
+      Action.assign(expr0x7f4198296d38, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296cf0, expr0x7f41993accf0))
+    in let step_105_700 = 
+      Action.assign(expr0x7f4198296d80, expr0x7f41982954b0)
+    in let step_105_701 = 
+      Action.assign(expr0x7f4198296dc8, expr0x7f419828db70)
+    in let step_105_702 = 
+      Action.call(call0x7f4198294900)
+    in let step_105_703 = 
+      Action.assign(expr0x7f4198296e10, call0x7f4198294900)
+    in Block.block(
+      105,
+      [|
+        step_105_696;
+        step_105_697;
+        step_105_698;
+        step_105_699;
+        step_105_700;
+        step_105_701;
+        step_105_702;
+        step_105_703;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_274 == 0)";
+        "assume FALSE (_275 == 2)";
+        "# VUSE <.MEM_347(D)>\n_276 = c_348(D)->argv;";
+        "_277 = _276 + 8;";
+        "# VUSE <.MEM_347(D)>\n_278 = *_277;";
+        "# VUSE <.MEM_347(D)>\n_279 = _278->ptr;";
+        "# VUSE <.MEM_347(D)>\n_280 = strcasecmp (_279, \"htstats\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_106 = 
+    let step_106_704 = 
+      Action.assume(105, Expr.beq(GccType.boolean, expr0x7f4198296e10, expr0x7f41993c9078))
+    in let step_106_705 = 
+      Action.assign(expr0x7f4198296e58, expr0x7f419828dba0)
+    in Block.block(
+      106,
+      [|
+        step_106_704;
+        step_106_705;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_280 == 0)";
+        "# VUSE <.MEM_347(D)>\n_281 = c_348(D)->argc;";
+      |]
+    )
+  in let block_107 = 
+    let step_107_706 = 
+      Action.assume(106, Expr.beq(GccType.boolean, expr0x7f4198296e58, expr0x7f41993c90a8))
+    in let step_107_707 = 
+      Action.call(call0x7f4198293c00)
+    in let step_107_708 = 
+      Action.assign(expr0x7f4198330870, call0x7f4198293c00)
+    in let step_107_709 = 
+      Action.debug("# DEBUG stats => stats_514")
+    in let step_107_710 = 
+      Action.assign(expr0x7f4198296ea0, expr0x7f419828dbd0)
+    in let step_107_711 = 
+      Action.assign(expr0x7f4198296ee8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f4198296ea0, expr0x7f41993acd38))
+    in let step_107_712 = 
+      Action.assign(expr0x7f4198296f30, expr0x7f41982957d0)
+    in let step_107_713 = 
+      Action.call(call0x7f419827c9d8)
+    in let step_107_714 = 
+      Action.assign(expr0x7f4198296f78, call0x7f419827c9d8)
+    in Block.block(
+      107,
+      [|
+        step_107_706;
+        step_107_707;
+        step_107_708;
+        step_107_709;
+        step_107_710;
+        step_107_711;
+        step_107_712;
+        step_107_713;
+        step_107_714;
+      |],
+      [|
+        ("getLongFromObjectOrReply", 1);
+        ("sdsempty", 1);
+      |],
+      [|
+        "assume TRUE (_281 == 3)";
+        "# .MEM_513 = VDEF <.MEM_347(D)>\nstats_514 = sdsempty ();";
+        "<CAPTURES RETURN>";
+        "# DEBUG stats => stats_514";
+        "# VUSE <.MEM_513>\n_282 = c_348(D)->argv;";
+        "_283 = _282 + 16;";
+        "# VUSE <.MEM_513>\n_284 = *_283;";
+        "# .MEM_515 = VDEF <.MEM_513>\n_285 = getLongFromObjectOrReply (c_348(D), _284, &dbid, 0B);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_108 = 
+    let step_108_715 = 
+      Action.assume(107, Expr.beq(GccType.boolean, expr0x7f4198296f78, expr0x7f41993c9078))
+    in let step_108_716 = 
+      Action.assign(expr0x7f419829b000, expr0x7f4198209ab0)
+    in Block.block(
+      108,
+      [|
+        step_108_715;
+        step_108_716;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_285 != 0)";
+        "# VUSE <.MEM_515>\ndbid.30_286 = dbid;";
+      |]
+    )
+  in let block_109 = 
+    let step_109_717 = 
+      Action.assume(108, Expr.bgte(GccType.boolean, expr0x7f419829b000, expr0x7f419953f720))
+    in let step_109_718 = 
+      Action.assign(expr0x7f419829b048, expr0x7f419828dc60)
+    in let step_109_719 = 
+      Action.assign(expr0x7f419829b090, expr0x7f419829b048)
+    in let step_109_720 = 
+      Action.assign(expr0x7f419829b0d8, expr0x7f4198209ab0)
+    in Block.block(
+      109,
+      [|
+        step_109_717;
+        step_109_718;
+        step_109_719;
+        step_109_720;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (dbid.30_286 < 0)";
+        "# VUSE <.MEM_515>\n_287 = server.dbnum;";
+        "_288 = (long int) _287;";
+        "# VUSE <.MEM_515>\ndbid.31_289 = dbid;";
+      |]
+    )
+  in let block_110 = 
+    let step_110_721 = 
+      Action.assume(108, Expr.blt(GccType.boolean, expr0x7f419829b000, expr0x7f419953f720))
+    in let step_110_722 = 
+      Action.assume(109, Expr.blte(GccType.boolean, expr0x7f419829b090, expr0x7f419829b0d8))
+    in let step_110_723 = 
+      Action.call(call0x7f4198294990)
+    in Block.block(
+      110,
+      [|
+        step_110_721;
+        step_110_722;
+        step_110_723;
+      |],
+      [|
+        ("addReplyError", 1);
+      |],
+      [|
+        "assume TRUE (dbid.30_286 < 0)";
+        "assume TRUE (_288 <= dbid.31_289)";
+        "# .MEM_529 = VDEF <.MEM_515>\naddReplyError (c_348(D), \"Out of range database\");";
+      |]
+    )
+  in let block_111 = 
+    let step_111_724 = 
+      Action.assume(109, Expr.bgt(GccType.boolean, expr0x7f419829b090, expr0x7f419829b0d8))
+    in let step_111_725 = 
+      Action.call(call0x7f4198294a20)
+    in let step_111_726 = 
+      Action.assign(expr0x7f4198330948, call0x7f4198294a20)
+    in let step_111_727 = 
+      Action.debug("# DEBUG stats => stats_517")
+    in let step_111_728 = 
+      Action.assign(expr0x7f419829b120, expr0x7f419828dc90)
+    in let step_111_729 = 
+      Action.assign(expr0x7f419829b168, expr0x7f4198209ab0)
+    in let step_111_730 = 
+      Action.assign(expr0x7f419829b1b0, expr0x7f419829b168)
+    in let step_111_731 = 
+      Action.assign(expr0x7f419829b1f8, Expr.times(
+        type0x7f41993c47e0, expr0x7f419829b1b0, expr0x7f41994f8d80))
+    in let step_111_732 = 
+      Action.assign(expr0x7f419829b240, Expr.pointer_plus(
+        type0x7f419849e5e8, expr0x7f419829b120, expr0x7f419829b1f8))
+    in let step_111_733 = 
+      Action.assign(expr0x7f419829b288, expr0x7f419828dcc0)
+    in let step_111_734 = 
+      Action.call(call0x7f4198292720)
+    in let step_111_735 = 
+      Action.call(call0x7f4198294ab0)
+    in let step_111_736 = 
+      Action.assign(expr0x7f4198330a20, call0x7f4198294ab0)
+    in let step_111_737 = 
+      Action.debug("# DEBUG stats => stats_520")
+    in let step_111_738 = 
+      Action.call(call0x7f4198294b40)
+    in let step_111_739 = 
+      Action.assign(expr0x7f4198330ab0, call0x7f4198294b40)
+    in let step_111_740 = 
+      Action.debug("# DEBUG stats => stats_522")
+    in let step_111_741 = 
+      Action.assign(expr0x7f419829b2d0, expr0x7f419828dcf0)
+    in let step_111_742 = 
+      Action.assign(expr0x7f419829b318, expr0x7f4198209ab0)
+    in let step_111_743 = 
+      Action.assign(expr0x7f419829b360, expr0x7f419829b318)
+    in let step_111_744 = 
+      Action.assign(expr0x7f419829b3a8, Expr.times(
+        type0x7f41993c47e0, expr0x7f419829b360, expr0x7f41994f8d80))
+    in let step_111_745 = 
+      Action.assign(expr0x7f419829b3f0, Expr.pointer_plus(
+        type0x7f419849e5e8, expr0x7f419829b2d0, expr0x7f419829b3a8))
+    in let step_111_746 = 
+      Action.assign(expr0x7f419829b438, expr0x7f419828dd20)
+    in let step_111_747 = 
+      Action.call(call0x7f41982927b8)
+    in let step_111_748 = 
+      Action.call(call0x7f4198294bd0)
+    in let step_111_749 = 
+      Action.assign(expr0x7f4198330b88, call0x7f4198294bd0)
+    in let step_111_750 = 
+      Action.debug("# DEBUG stats => stats_525")
+    in let step_111_751 = 
+      Action.call(call0x7f4198294c60)
+    in let step_111_752 = 
+      Action.assign(expr0x7f4198209ab0, expr0x7f41982a1150)
+    in let step_111_753 = 
+      Action.assign(expr0x7f4198209bd0, expr0x7f41982a1168)
+    in Block.block(
+      111,
+      [|
+        step_111_724;
+        step_111_725;
+        step_111_726;
+        step_111_727;
+        step_111_728;
+        step_111_729;
+        step_111_730;
+        step_111_731;
+        step_111_732;
+        step_111_733;
+        step_111_734;
+        step_111_735;
+        step_111_736;
+        step_111_737;
+        step_111_738;
+        step_111_739;
+        step_111_740;
+        step_111_741;
+        step_111_742;
+        step_111_743;
+        step_111_744;
+        step_111_745;
+        step_111_746;
+        step_111_747;
+        step_111_748;
+        step_111_749;
+        step_111_750;
+        step_111_751;
+        step_111_752;
+        step_111_753;
+      |],
+      [|
+        ("addReplyBulkSds", 1);
+        ("dictGetStats", 2);
+        ("sdscat", 2);
+        ("sdscatprintf", 2);
+      |],
+      [|
+        "assume FALSE (_288 <= dbid.31_289)";
+        "# .MEM_516 = VDEF <.MEM_515>\nstats_517 = sdscatprintf (stats_514, \"[Dictionary HT]\\n\");";
+        "<CAPTURES RETURN>";
+        "# DEBUG stats => stats_517";
+        "# VUSE <.MEM_516>\n_290 = server.db;";
+        "# VUSE <.MEM_516>\ndbid.32_291 = dbid;";
+        "dbid.33_292 = (long unsigned int) dbid.32_291;";
+        "_293 = dbid.33_292 * 64;";
+        "_294 = _290 + _293;";
+        "# VUSE <.MEM_516>\n_295 = _294->dict;";
+        "# .MEM_518 = VDEF <.MEM_516>\ndictGetStats (&buf, 4096, _295);";
+        "# .MEM_519 = VDEF <.MEM_518>\nstats_520 = sdscat (stats_517, &buf);";
+        "<CAPTURES RETURN>";
+        "# DEBUG stats => stats_520";
+        "# .MEM_521 = VDEF <.MEM_519>\nstats_522 = sdscatprintf (stats_520, \"[Expires HT]\\n\");";
+        "<CAPTURES RETURN>";
+        "# DEBUG stats => stats_522";
+        "# VUSE <.MEM_521>\n_296 = server.db;";
+        "# VUSE <.MEM_521>\ndbid.34_297 = dbid;";
+        "dbid.35_298 = (long unsigned int) dbid.34_297;";
+        "_299 = dbid.35_298 * 64;";
+        "_300 = _296 + _299;";
+        "# VUSE <.MEM_521>\n_301 = _300->expires;";
+        "# .MEM_523 = VDEF <.MEM_521>\ndictGetStats (&buf, 4096, _301);";
+        "# .MEM_524 = VDEF <.MEM_523>\nstats_525 = sdscat (stats_522, &buf);";
+        "<CAPTURES RETURN>";
+        "# DEBUG stats => stats_525";
+        "# .MEM_526 = VDEF <.MEM_524>\naddReplyBulkSds (c_348(D), stats_525);";
+        "# .MEM_527 = VDEF <.MEM_526>\ndbid ={v} {CLOBBER};";
+        "# .MEM_528 = VDEF <.MEM_527>\nbuf ={v} {CLOBBER};";
+      |]
+    )
+  in let block_112 = 
+    let step_112_754 = 
+      Action.assume(107, Expr.bneq(GccType.boolean, expr0x7f4198296f78, expr0x7f41993c9078))
+    in let step_112_755 = 
+      Action.assign(expr0x7f4198209ab0, expr0x7f41982a1180)
+    in let step_112_756 = 
+      Action.assign(expr0x7f4198209bd0, expr0x7f41982a1198)
+    in Block.block(
+      112,
+      [|
+        step_112_754;
+        step_112_755;
+        step_112_756;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_285 != 0)";
+        "# .MEM_530 = VDEF <.MEM_345>\ndbid ={v} {CLOBBER};";
+        "# .MEM_531 = VDEF <.MEM_530>\nbuf ={v} {CLOBBER};";
+      |]
+    )
+  in let block_113 = 
+    let step_113_757 = 
+      Action.assume(105, Expr.bneq(GccType.boolean, expr0x7f4198296e10, expr0x7f41993c9078))
+    in let step_113_758 = 
+      Action.assume(106, Expr.bneq(GccType.boolean, expr0x7f4198296e58, expr0x7f41993c90a8))
+    in let step_113_759 = 
+      Action.assign(expr0x7f419829b480, expr0x7f419828ddb0)
+    in let step_113_760 = 
+      Action.assign(expr0x7f419829b4c8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419829b480, expr0x7f41993accf0))
+    in let step_113_761 = 
+      Action.assign(expr0x7f419829b510, expr0x7f4198295c80)
+    in let step_113_762 = 
+      Action.assign(expr0x7f419829b558, expr0x7f419828dde0)
+    in let step_113_763 = 
+      Action.call(call0x7f4198294cf0)
+    in let step_113_764 = 
+      Action.assign(expr0x7f419829b5a0, call0x7f4198294cf0)
+    in Block.block(
+      113,
+      [|
+        step_113_757;
+        step_113_758;
+        step_113_759;
+        step_113_760;
+        step_113_761;
+        step_113_762;
+        step_113_763;
+        step_113_764;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_280 == 0)";
+        "assume FALSE (_281 == 3)";
+        "# VUSE <.MEM_347(D)>\n_302 = c_348(D)->argv;";
+        "_303 = _302 + 8;";
+        "# VUSE <.MEM_347(D)>\n_304 = *_303;";
+        "# VUSE <.MEM_347(D)>\n_305 = _304->ptr;";
+        "# VUSE <.MEM_347(D)>\n_306 = strcasecmp (_305, \"htstats-key\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_114 = 
+    let step_114_765 = 
+      Action.assume(113, Expr.beq(GccType.boolean, expr0x7f419829b5a0, expr0x7f41993c9078))
+    in let step_114_766 = 
+      Action.assign(expr0x7f419829b5e8, expr0x7f419828de10)
+    in Block.block(
+      114,
+      [|
+        step_114_765;
+        step_114_766;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_306 == 0)";
+        "# VUSE <.MEM_347(D)>\n_307 = c_348(D)->argc;";
+      |]
+    )
+  in let block_115 = 
+    let step_115_767 = 
+      Action.assume(114, Expr.beq(GccType.boolean, expr0x7f419829b5e8, expr0x7f41993c90a8))
+    in let step_115_768 = 
+      Action.assign(expr0x7f4198330d80, expr0x7f419820cc60)
+    in let step_115_769 = 
+      Action.debug("# DEBUG ht => ht_532")
+    in let step_115_770 = 
+      Action.assign(expr0x7f419829b630, expr0x7f419828de40)
+    in let step_115_771 = 
+      Action.assign(expr0x7f419829b678, expr0x7f419828de70)
+    in let step_115_772 = 
+      Action.assign(expr0x7f419829b6c0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419829b678, expr0x7f41993acd38))
+    in let step_115_773 = 
+      Action.assign(expr0x7f419829b708, expr0x7f4198288fa0)
+    in let step_115_774 = 
+      Action.call(call0x7f4198292850)
+    in let step_115_775 = 
+      Action.assign(expr0x7f4198330e10, call0x7f4198292850)
+    in let step_115_776 = 
+      Action.debug("# DEBUG o => o_534")
+    in Block.block(
+      115,
+      [|
+        step_115_767;
+        step_115_768;
+        step_115_769;
+        step_115_770;
+        step_115_771;
+        step_115_772;
+        step_115_773;
+        step_115_774;
+        step_115_775;
+        step_115_776;
+      |],
+      [|
+        ("objectCommandLookupOrReply", 1);
+      |],
+      [|
+        "assume TRUE (_307 == 3)";
+        "ht_532 = 0B;";
+        "# DEBUG ht => ht_532";
+        "# VUSE <.MEM_347(D)>\n_308 = shared.nokeyerr;";
+        "# VUSE <.MEM_347(D)>\n_309 = c_348(D)->argv;";
+        "_310 = _309 + 16;";
+        "# VUSE <.MEM_347(D)>\n_311 = *_310;";
+        "# .MEM_533 = VDEF <.MEM_347(D)>\no_534 = objectCommandLookupOrReply (c_348(D), _311, _308);";
+        "<CAPTURES RETURN>";
+        "# DEBUG o => o_534";
+      |]
+    )
+  in let block_116 = 
+    let step_116_777 = 
+      Action.assume(115, Expr.bneq(GccType.boolean, expr0x7f4198330e10, expr0x7f41981fef18))
+    in let step_116_778 = 
+      Action.assign(expr0x7f419829b750, expr0x7f419828dea0)
+    in let step_116_779 = 
+      Action.assign(expr0x7f419829b798, expr0x7f419829b750)
+    in let step_116_780 = 
+      Action.assign(expr0x7f419832a438, expr0x7f4198330d80)
+    in Block.block(
+      116,
+      [|
+        step_116_777;
+        step_116_778;
+        step_116_779;
+        step_116_780;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (o_534 == 0B)";
+        "# VUSE <.MEM_533>\n_312 = o_534->encoding;";
+        "_313 = (int) _312;";
+        "ht_331 = ht_532";
+      |]
+    )
+  in let block_117 = 
+    let step_117_781 = 
+      Action.assume(116, Expr.beq(GccType.boolean, expr0x7f419829b798, expr0x7f41981dbf30))
+    in let step_117_782 = 
+      Action.observe(expr0x7f41981eef80)
+    in let step_117_783 = 
+      Action.assign(expr0x7f4198330e58, expr0x7f4198210d20)
+    in let step_117_784 = 
+      Action.debug("# DEBUG zs => zs_535")
+    in let step_117_785 = 
+      Action.assign(expr0x7f4198330ea0, expr0x7f4198210d50)
+    in let step_117_786 = 
+      Action.debug("# DEBUG ht => ht_536")
+    in let step_117_787 = 
+      Action.assign(expr0x7f419832a438, expr0x7f4198330ea0)
+    in Block.block(
+      117,
+      [|
+        step_117_781;
+        step_117_782;
+        step_117_783;
+        step_117_784;
+        step_117_785;
+        step_117_786;
+        step_117_787;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_313 == 7)";
+        "<L132> [0.00%]:";
+        "# VUSE <.MEM_533>\nzs_535 = o_534->ptr;";
+        "# DEBUG zs => zs_535";
+        "# VUSE <.MEM_533>\nht_536 = zs_535->dict;";
+        "# DEBUG ht => ht_536";
+        "ht_331 = ht_536";
+      |]
+    )
+  in let block_118 = 
+    let step_118_788 = 
+      Action.assume(116, Expr.beq(GccType.boolean, expr0x7f419829b798, expr0x7f41981dba38))
+    in let step_118_789 = 
+      Action.observe(expr0x7f4198218080)
+    in let step_118_790 = 
+      Action.assign(expr0x7f4198330ee8, expr0x7f4198210db0)
+    in let step_118_791 = 
+      Action.debug("# DEBUG ht => ht_537")
+    in let step_118_792 = 
+      Action.assign(expr0x7f419832a438, expr0x7f4198330ee8)
+    in Block.block(
+      118,
+      [|
+        step_118_788;
+        step_118_789;
+        step_118_790;
+        step_118_791;
+        step_118_792;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_313 == 2)";
+        "<L133> [0.00%]:";
+        "# VUSE <.MEM_533>\nht_537 = o_534->ptr;";
+        "# DEBUG ht => ht_537";
+        "ht_331 = ht_537";
+      |]
+    )
+  in let block_119 = 
+    let step_119_793 = 
+      Action.assume(116, Expr.bnot(GccType.boolean, Expr.bor(GccType.boolean, Expr.beq(GccType.boolean, expr0x7f419829b798, expr0x7f41981dba38), Expr.beq(GccType.boolean, expr0x7f419829b798, expr0x7f41981dbf30))))
+    in let step_119_794 = 
+      Action.observe(expr0x7f419829d200)
+    in let step_119_795 = 
+      Action.debug("# DEBUG ht => ht_331")
+    in Block.block(
+      119,
+      [|
+        step_119_793;
+        step_119_794;
+        step_119_795;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE ((_313 == 2) or (_313 == 7))";
+        "<L134> [0.00%]:";
+        "# DEBUG ht => ht_331";
+      |]
+    )
+  in let block_120 = 
+    let step_120_796 = 
+      Action.assume(119, Expr.beq(GccType.boolean, expr0x7f419832a438, expr0x7f419820cc60))
+    in let step_120_797 = 
+      Action.call(call0x7f4198294d80)
+    in Block.block(
+      120,
+      [|
+        step_120_796;
+        step_120_797;
+      |],
+      [|
+        ("addReplyError", 1);
+      |],
+      [|
+        "assume TRUE (ht_331 == 0B)";
+        "# .MEM_541 = VDEF <.MEM_533>\naddReplyError (c_348(D), \"The value stored at the specified key is not represented using an hash table\");";
+      |]
+    )
+  in let block_121 = 
+    let step_121_798 = 
+      Action.assume(119, Expr.bneq(GccType.boolean, expr0x7f419832a438, expr0x7f419820cc60))
+    in let step_121_799 = 
+      Action.call(call0x7f41982928e8)
+    in let step_121_800 = 
+      Action.call(call0x7f4198294e10)
+    in let step_121_801 = 
+      Action.assign(expr0x7f4198209e10, expr0x7f419828cf48)
+    in Block.block(
+      121,
+      [|
+        step_121_798;
+        step_121_799;
+        step_121_800;
+        step_121_801;
+      |],
+      [|
+        ("addReplyBulkCString", 1);
+        ("dictGetStats", 1);
+      |],
+      [|
+        "assume FALSE (ht_331 == 0B)";
+        "# .MEM_538 = VDEF <.MEM_533>\ndictGetStats (&buf, 4096, ht_331);";
+        "# .MEM_539 = VDEF <.MEM_538>\naddReplyBulkCString (c_348(D), &buf);";
+        "# .MEM_540 = VDEF <.MEM_539>\nbuf ={v} {CLOBBER};";
+      |]
+    )
+  in let block_122 = 
+    let step_122_802 = 
+      Action.assume(113, Expr.bneq(GccType.boolean, expr0x7f419829b5a0, expr0x7f41993c9078))
+    in let step_122_803 = 
+      Action.assume(114, Expr.bneq(GccType.boolean, expr0x7f419829b5e8, expr0x7f41993c90a8))
+    in let step_122_804 = 
+      Action.assign(expr0x7f419829b7e0, expr0x7f419828df30)
+    in let step_122_805 = 
+      Action.assign(expr0x7f419829b828, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419829b7e0, expr0x7f41993accf0))
+    in let step_122_806 = 
+      Action.assign(expr0x7f419829b870, expr0x7f419829e258)
+    in let step_122_807 = 
+      Action.assign(expr0x7f419829b8b8, expr0x7f419828df60)
+    in let step_122_808 = 
+      Action.call(call0x7f4198294ea0)
+    in let step_122_809 = 
+      Action.assign(expr0x7f419829b900, call0x7f4198294ea0)
+    in Block.block(
+      122,
+      [|
+        step_122_802;
+        step_122_803;
+        step_122_804;
+        step_122_805;
+        step_122_806;
+        step_122_807;
+        step_122_808;
+        step_122_809;
+      |],
+      [|
+        ("strcasecmp", 1);
+      |],
+      [|
+        "assume FALSE (_306 == 0)";
+        "assume FALSE (_307 == 3)";
+        "# VUSE <.MEM_347(D)>\n_314 = c_348(D)->argv;";
+        "_315 = _314 + 8;";
+        "# VUSE <.MEM_347(D)>\n_316 = *_315;";
+        "# VUSE <.MEM_347(D)>\n_317 = _316->ptr;";
+        "# VUSE <.MEM_347(D)>\n_318 = strcasecmp (_317, \"change-repl-id\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_123 = 
+    let step_123_810 = 
+      Action.assume(122, Expr.beq(GccType.boolean, expr0x7f419829b900, expr0x7f41993c9078))
+    in let step_123_811 = 
+      Action.assign(expr0x7f419829b948, expr0x7f419828df90)
+    in Block.block(
+      123,
+      [|
+        step_123_810;
+        step_123_811;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_318 == 0)";
+        "# VUSE <.MEM_347(D)>\n_319 = c_348(D)->argc;";
+      |]
+    )
+  in let block_124 = 
+    let step_124_812 = 
+      Action.assume(123, Expr.beq(GccType.boolean, expr0x7f419829b948, expr0x7f41993c93d8))
+    in let step_124_813 = 
+      Action.call(call0x7f4198294f30)
+    in let step_124_814 = 
+      Action.call(call0x7f419829d600)
+    in let step_124_815 = 
+      Action.call(call0x7f419829d680)
+    in let step_124_816 = 
+      Action.assign(expr0x7f419829b990, expr0x7f419828dfc0)
+    in let step_124_817 = 
+      Action.call(call0x7f41982a3000)
+    in Block.block(
+      124,
+      [|
+        step_124_812;
+        step_124_813;
+        step_124_814;
+        step_124_815;
+        step_124_816;
+        step_124_817;
+      |],
+      [|
+        ("addReply", 1);
+        ("changeReplicationId", 1);
+        ("clearReplicationId2", 1);
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (_319 == 2)";
+        "# .MEM_542 = VDEF <.MEM_347(D)>\nserverLog (3, \"Changing replication IDs after receiving DEBUG change-repl-id\");";
+        "# .MEM_543 = VDEF <.MEM_542>\nchangeReplicationId ();";
+        "# .MEM_544 = VDEF <.MEM_543>\nclearReplicationId2 ();";
+        "# VUSE <.MEM_544>\n_320 = shared.ok;";
+        "# .MEM_545 = VDEF <.MEM_544>\naddReply (c_348(D), _320);";
+      |]
+    )
+  in let block_125 = 
+    let step_125_818 = 
+      Action.assume(122, Expr.bneq(GccType.boolean, expr0x7f419829b900, expr0x7f41993c9078))
+    in let step_125_819 = 
+      Action.assume(123, Expr.bneq(GccType.boolean, expr0x7f419829b948, expr0x7f41993c93d8))
+    in let step_125_820 = 
+      Action.assign(expr0x7f419829b9d8, expr0x7f41982a4000)
+    in let step_125_821 = 
+      Action.assign(expr0x7f419829ba20, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f419829b9d8, expr0x7f41993accf0))
+    in let step_125_822 = 
+      Action.assign(expr0x7f419829ba68, expr0x7f419829e4d8)
+    in let step_125_823 = 
+      Action.assign(expr0x7f419829bab0, expr0x7f41982a4030)
+    in let step_125_824 = 
+      Action.call(call0x7f4198292980)
+    in Block.block(
+      125,
+      [|
+        step_125_818;
+        step_125_819;
+        step_125_820;
+        step_125_821;
+        step_125_822;
+        step_125_823;
+        step_125_824;
+      |],
+      [|
+        ("addReplyErrorFormat", 1);
+      |],
+      [|
+        "assume FALSE (_318 == 0)";
+        "assume FALSE (_319 == 2)";
+        "# VUSE <.MEM_347(D)>\n_321 = c_348(D)->argv;";
+        "_322 = _321 + 8;";
+        "# VUSE <.MEM_347(D)>\n_323 = *_322;";
+        "# VUSE <.MEM_347(D)>\n_324 = _323->ptr;";
+        "# .MEM_546 = VDEF <.MEM_347(D)>\naddReplyErrorFormat (c_348(D), \"Unknown subcommand or wrong number of arguments for \\'%s\\'. Try DEBUG HELP\", _324);";
+      |]
+    )
+  in let block_126 = 
+    let step_126_825 = 
+      Action.assume(59, Expr.beq(GccType.boolean, expr0x7f419832f000, expr0x7f41981fef18))
+    in let step_126_826 = 
+      Action.assume(115, Expr.beq(GccType.boolean, expr0x7f4198330e10, expr0x7f41981fef18))
+    in let step_126_827 = 
+      Action.return(expr0)
+    in Block.block(
+      126,
+      [|
+        step_126_825;
+        step_126_826;
+        step_126_827;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (o_428 == 0B)";
+        "assume TRUE (o_534 == 0B)";
+        "# VUSE <.MEM_346>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_828 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_828 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    127,
+    Z.of_string "95589",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "95588");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "47794");
+          Cfg.edge (5, "[5]", block_5, Z.of_string "47795", Z.of_string "95588");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (5, "[5]", block_5, Z.of_string "1", Z.of_string "47794");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (6, "[6]", block_6, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (7, "[7]", block_7, Z.of_string "1", Z.of_string "47793");
+        |]
+      );
+      Cfg.vert ("[6]", block_6, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[7]", block_7, [|
+          Cfg.edge (8, "[8]", block_8, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (9, "[9]", block_9, Z.of_string "1", Z.of_string "47792");
+        |]
+      );
+      Cfg.vert ("[8]", block_8, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[9]", block_9, [|
+          Cfg.edge (10, "[10]", block_10, Z.of_string "0", Z.of_string "47784");
+          Cfg.edge (11, "[11]", block_11, Z.of_string "47785", Z.of_string "47791");
+        |]
+      );
+      Cfg.vert ("[10]", block_10, [|
+          Cfg.edge (11, "[11]", block_11, Z.of_string "0", Z.of_string "6");
+          Cfg.edge (20, "[20]", block_20, Z.of_string "7", Z.of_string "47784");
+        |]
+      );
+      Cfg.vert ("[11]", block_11, [|
+          Cfg.edge (12, "[12]", block_12, Z.of_string "0", Z.of_string "4");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "5", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[12]", block_12, [|
+          Cfg.edge (13, "[13]", block_13, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (19, "[19]", block_19, Z.of_string "4", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[13]", block_13, [|
+          Cfg.edge (14, "[14]", block_14, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[14]", block_14, [|
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[15]", block_15, [|
+          Cfg.edge (16, "[16]", block_16, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (17, "[17]", block_17, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[16]", block_16, [|
+          Cfg.edge (18, "[18]", block_18, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[17]", block_17, [|
+          Cfg.edge (18, "[18]", block_18, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[18]", block_18, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[19]", block_19, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[20]", block_20, [|
+          Cfg.edge (21, "[21]", block_21, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (22, "[22]", block_22, Z.of_string "1", Z.of_string "47777");
+        |]
+      );
+      Cfg.vert ("[21]", block_21, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[22]", block_22, [|
+          Cfg.edge (23, "[23]", block_23, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (26, "[26]", block_26, Z.of_string "2", Z.of_string "47776");
+        |]
+      );
+      Cfg.vert ("[23]", block_23, [|
+          Cfg.edge (24, "[24]", block_24, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (25, "[25]", block_25, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[24]", block_24, [|
+          Cfg.edge (25, "[25]", block_25, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[25]", block_25, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[26]", block_26, [|
+          Cfg.edge (27, "[27]", block_27, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (33, "[33]", block_33, Z.of_string "3", Z.of_string "47774");
+        |]
+      );
+      Cfg.vert ("[27]", block_27, [|
+          Cfg.edge (28, "[28]", block_28, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (29, "[29]", block_29, Z.of_string "1", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[28]", block_28, [|
+          Cfg.edge (32, "[32]", block_32, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[29]", block_29, [|
+          Cfg.edge (30, "[30]", block_30, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (31, "[31]", block_31, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[30]", block_30, [|
+          Cfg.edge (32, "[32]", block_32, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[31]", block_31, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[32]", block_32, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[33]", block_33, [|
+          Cfg.edge (34, "[34]", block_34, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (39, "[39]", block_39, Z.of_string "4", Z.of_string "47771");
+        |]
+      );
+      Cfg.vert ("[34]", block_34, [|
+          Cfg.edge (35, "[35]", block_35, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (36, "[36]", block_36, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[35]", block_35, [|
+          Cfg.edge (36, "[36]", block_36, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[36]", block_36, [|
+          Cfg.edge (37, "[37]", block_37, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (38, "[38]", block_38, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[37]", block_37, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[38]", block_38, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[39]", block_39, [|
+          Cfg.edge (40, "[40]", block_40, Z.of_string "0", Z.of_string "23885");
+          Cfg.edge (47, "[49]", block_49, Z.of_string "23886", Z.of_string "47767");
+        |]
+      );
+      Cfg.vert ("[40]", block_40, [|
+          Cfg.edge (41, "[41]", block_41, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (47, "[49]", block_49, Z.of_string "4", Z.of_string "23885");
+        |]
+      );
+      Cfg.vert ("[41]", block_41, [|
+          Cfg.edge (42, "[42]", block_42, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (43, "[43]", block_43, Z.of_string "1", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[42]", block_42, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[43]", block_43, [|
+          Cfg.edge (44, "[44]", block_44, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (46, "[48]", block_48, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[44]", block_44, [|
+          Cfg.edge (111, "[0 | 46]", block_46, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[47]", block_47, [|
+          Cfg.edge (46, "[48]", block_48, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[48]", block_48, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[49]", block_49, [|
+          Cfg.edge (48, "[50]", block_50, Z.of_string "0", Z.of_string "11942");
+          Cfg.edge (55, "[57]", block_57, Z.of_string "11943", Z.of_string "23881");
+        |]
+      );
+      Cfg.vert ("[50]", block_50, [|
+          Cfg.edge (49, "[51]", block_51, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (55, "[57]", block_57, Z.of_string "4", Z.of_string "11942");
+        |]
+      );
+      Cfg.vert ("[51]", block_51, [|
+          Cfg.edge (50, "[52]", block_52, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (51, "[53]", block_53, Z.of_string "1", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[52]", block_52, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[53]", block_53, [|
+          Cfg.edge (52, "[54]", block_54, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (53, "[55]", block_55, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[54]", block_54, [|
+          Cfg.edge (53, "[55]", block_55, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (54, "[56]", block_56, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[55]", block_55, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[56]", block_56, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[57]", block_57, [|
+          Cfg.edge (56, "[58]", block_58, Z.of_string "0", Z.of_string "5970");
+          Cfg.edge (61, "[63]", block_63, Z.of_string "5971", Z.of_string "11938");
+        |]
+      );
+      Cfg.vert ("[58]", block_58, [|
+          Cfg.edge (57, "[59]", block_59, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (61, "[63]", block_63, Z.of_string "3", Z.of_string "5970");
+        |]
+      );
+      Cfg.vert ("[59]", block_59, [|
+          Cfg.edge (58, "[60]", block_60, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (109, "[126]", block_126, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[60]", block_60, [|
+          Cfg.edge (59, "[61]", block_61, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (60, "[62]", block_62, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[61]", block_61, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[62]", block_62, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[63]", block_63, [|
+          Cfg.edge (62, "[64]", block_64, Z.of_string "0", Z.of_string "3983");
+          Cfg.edge (69, "[84]", block_84, Z.of_string "3984", Z.of_string "5967");
+        |]
+      );
+      Cfg.vert ("[64]", block_64, [|
+          Cfg.edge (63, "[65]", block_65, Z.of_string "0", Z.of_string "1999");
+          Cfg.edge (69, "[84]", block_84, Z.of_string "2000", Z.of_string "3983");
+        |]
+      );
+      Cfg.vert ("[65]", block_65, [|
+          Cfg.edge (64, "[66]", block_66, Z.of_string "0", Z.of_string "15");
+          Cfg.edge (69, "[84]", block_84, Z.of_string "16", Z.of_string "1999");
+        |]
+      );
+      Cfg.vert ("[66]", block_66, [|
+          Cfg.edge (65, "[67]", block_67, Z.of_string "0", Z.of_string "14");
+          Cfg.edge (68, "[83]", block_83, Z.of_string "15", Z.of_string "15");
+        |]
+      );
+      Cfg.vert ("[67]", block_67, [|
+          Cfg.edge (124, "[0 | 81]", block_81, Z.of_string "0", Z.of_string "14");
+        |]
+      );
+      Cfg.vert ("[79]", block_79, [|
+          Cfg.edge (68, "[83]", block_83, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[82]", block_82, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[83]", block_83, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[84]", block_84, [|
+          Cfg.edge (70, "[85]", block_85, Z.of_string "0", Z.of_string "992");
+          Cfg.edge (73, "[90]", block_90, Z.of_string "993", Z.of_string "1983");
+        |]
+      );
+      Cfg.vert ("[85]", block_85, [|
+          Cfg.edge (71, "[86]", block_86, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (73, "[90]", block_90, Z.of_string "2", Z.of_string "992");
+        |]
+      );
+      Cfg.vert ("[86]", block_86, [|
+          Cfg.edge (126, "[0 | 88]", block_88, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[89]", block_89, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[90]", block_90, [|
+          Cfg.edge (74, "[91]", block_91, Z.of_string "0", Z.of_string "495");
+          Cfg.edge (76, "[93]", block_93, Z.of_string "496", Z.of_string "990");
+        |]
+      );
+      Cfg.vert ("[91]", block_91, [|
+          Cfg.edge (75, "[92]", block_92, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (76, "[93]", block_93, Z.of_string "1", Z.of_string "495");
+        |]
+      );
+      Cfg.vert ("[92]", block_92, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[93]", block_93, [|
+          Cfg.edge (77, "[94]", block_94, Z.of_string "0", Z.of_string "247");
+          Cfg.edge (79, "[96]", block_96, Z.of_string "248", Z.of_string "494");
+        |]
+      );
+      Cfg.vert ("[94]", block_94, [|
+          Cfg.edge (78, "[95]", block_95, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (79, "[96]", block_96, Z.of_string "1", Z.of_string "247");
+        |]
+      );
+      Cfg.vert ("[95]", block_95, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[96]", block_96, [|
+          Cfg.edge (80, "[97]", block_97, Z.of_string "0", Z.of_string "123");
+          Cfg.edge (82, "[99]", block_99, Z.of_string "124", Z.of_string "246");
+        |]
+      );
+      Cfg.vert ("[97]", block_97, [|
+          Cfg.edge (81, "[98]", block_98, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (82, "[99]", block_99, Z.of_string "1", Z.of_string "123");
+        |]
+      );
+      Cfg.vert ("[98]", block_98, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[99]", block_99, [|
+          Cfg.edge (83, "[100]", block_100, Z.of_string "0", Z.of_string "61");
+          Cfg.edge (85, "[102]", block_102, Z.of_string "62", Z.of_string "122");
+        |]
+      );
+      Cfg.vert ("[100]", block_100, [|
+          Cfg.edge (84, "[101]", block_101, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (85, "[102]", block_102, Z.of_string "1", Z.of_string "61");
+        |]
+      );
+      Cfg.vert ("[101]", block_101, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[102]", block_102, [|
+          Cfg.edge (86, "[103]", block_103, Z.of_string "0", Z.of_string "30");
+          Cfg.edge (88, "[105]", block_105, Z.of_string "31", Z.of_string "60");
+        |]
+      );
+      Cfg.vert ("[103]", block_103, [|
+          Cfg.edge (87, "[104]", block_104, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (88, "[105]", block_105, Z.of_string "1", Z.of_string "30");
+        |]
+      );
+      Cfg.vert ("[104]", block_104, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[105]", block_105, [|
+          Cfg.edge (89, "[106]", block_106, Z.of_string "0", Z.of_string "16");
+          Cfg.edge (96, "[113]", block_113, Z.of_string "17", Z.of_string "29");
+        |]
+      );
+      Cfg.vert ("[106]", block_106, [|
+          Cfg.edge (90, "[107]", block_107, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (96, "[113]", block_113, Z.of_string "4", Z.of_string "16");
+        |]
+      );
+      Cfg.vert ("[107]", block_107, [|
+          Cfg.edge (91, "[108]", block_108, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (95, "[112]", block_112, Z.of_string "3", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[108]", block_108, [|
+          Cfg.edge (92, "[109]", block_109, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (93, "[110]", block_110, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[109]", block_109, [|
+          Cfg.edge (93, "[110]", block_110, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (94, "[111]", block_111, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[110]", block_110, [|
+          Cfg.edge (95, "[112]", block_112, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[111]", block_111, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[112]", block_112, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[113]", block_113, [|
+          Cfg.edge (97, "[114]", block_114, Z.of_string "0", Z.of_string "9");
+          Cfg.edge (105, "[122]", block_122, Z.of_string "10", Z.of_string "12");
+        |]
+      );
+      Cfg.vert ("[114]", block_114, [|
+          Cfg.edge (98, "[115]", block_115, Z.of_string "0", Z.of_string "6");
+          Cfg.edge (105, "[122]", block_122, Z.of_string "7", Z.of_string "9");
+        |]
+      );
+      Cfg.vert ("[115]", block_115, [|
+          Cfg.edge (99, "[116]", block_116, Z.of_string "0", Z.of_string "5");
+          Cfg.edge (109, "[126]", block_126, Z.of_string "6", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[116]", block_116, [|
+          Cfg.edge (100, "[117]", block_117, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (101, "[118]", block_118, Z.of_string "2", Z.of_string "3");
+          Cfg.edge (102, "[119]", block_119, Z.of_string "4", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[117]", block_117, [|
+          Cfg.edge (102, "[119]", block_119, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[118]", block_118, [|
+          Cfg.edge (102, "[119]", block_119, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[119]", block_119, [|
+          Cfg.edge (103, "[120]", block_120, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (104, "[121]", block_121, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[120]", block_120, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[121]", block_121, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[122]", block_122, [|
+          Cfg.edge (106, "[123]", block_123, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (108, "[125]", block_125, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[123]", block_123, [|
+          Cfg.edge (107, "[124]", block_124, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (108, "[125]", block_125, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[124]", block_124, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[125]", block_125, [|
+          Cfg.edge (109, "[126]", block_126, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[126]", block_126, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 45]", block_45, [|
+          Cfg.edge (127, "[1 | 46]", block_46, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 46]", block_46, [|
+          Cfg.edge (110, "[0 | 45]", block_45, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (45, "[47]", block_47, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 | 68]", block_68, [|
+          Cfg.edge (113, "[0 | 69]", block_69, Z.of_string "0", Z.of_string "6");
+          Cfg.edge (114, "[0 | 70]", block_70, Z.of_string "7", Z.of_string "13");
+        |]
+      );
+      Cfg.vert ("[0 | 69]", block_69, [|
+          Cfg.edge (115, "[0 | 71]", block_71, Z.of_string "0", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[0 | 70]", block_70, [|
+          Cfg.edge (115, "[0 | 71]", block_71, Z.of_string "0", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[0 | 71]", block_71, [|
+          Cfg.edge (116, "[0 | 72]", block_72, Z.of_string "0", Z.of_string "3");
+          Cfg.edge (117, "[0 | 73]", block_73, Z.of_string "4", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[0 | 72]", block_72, [|
+          Cfg.edge (117, "[0 | 73]", block_73, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (66, "[79]", block_79, Z.of_string "3", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 | 73]", block_73, [|
+          Cfg.edge (118, "[0 | 74]", block_74, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (119, "[0 | 75]", block_75, Z.of_string "1", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 74]", block_74, [|
+          Cfg.edge (123, "[0 | 80]", block_80, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 75]", block_75, [|
+          Cfg.edge (120, "[0 | 76]", block_76, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (121, "[0 | 77]", block_77, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 | 76]", block_76, [|
+          Cfg.edge (122, "[0 | 78]", block_78, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 77]", block_77, [|
+          Cfg.edge (122, "[0 | 78]", block_78, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 78]", block_78, [|
+          Cfg.edge (123, "[0 | 80]", block_80, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 80]", block_80, [|
+          Cfg.edge (128, "[1 | 81]", block_81, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 81]", block_81, [|
+          Cfg.edge (112, "[0 | 68]", block_68, Z.of_string "0", Z.of_string "13");
+          Cfg.edge (67, "[82]", block_82, Z.of_string "14", Z.of_string "14");
+        |]
+      );
+      Cfg.vert ("[0 | 87]", block_87, [|
+          Cfg.edge (129, "[1 | 88]", block_88, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 88]", block_88, [|
+          Cfg.edge (125, "[0 | 87]", block_87, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (72, "[89]", block_89, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1 | 46]", block_46, [|
+          Cfg.edge (45, "[47]", block_47, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1 | 81]", block_81, [|
+          Cfg.edge (67, "[82]", block_82, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1 | 88]", block_88, [|
+          Cfg.edge (72, "[89]", block_89, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "debugCommand",
+    50,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: disableWatchdog
+  // fid: 72
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f419950ff18 = 
+    GccType.record("__sigset_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983c7738 = 
+    GccType.record("sigaction", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419879d2a0 = 
+    GccType.pointer(type0x7f419950ff18)
+  in let type0x7f41993d6dc8 = 
+    GccType.func("T191", type0x7f41993c4f18, [|
+        type0x7f41993c45e8;
+      |], false)
+  in let type0x7f41983bd1f8 = 
+    GccType.pointer(type0x7f41993d6dc8)
+  in let type0x7f41983c77e0 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983bd0a8 = 
+    GccType.pointer(type0x7f41993d6dc8)
+  in let type0x7f41983cac78 = 
+    GccType.pointer(type0x7f41983c7738)
+  in let type0x7f41983cad20 = 
+    GccType.pointer(type0x7f41983c7738)
+  in let expr0x7f41982f8510 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41984daa18 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("watchdog_period", "32", 32, "3040", 128, 64, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982d4ed0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984daa18)
+  in let expr0x7f41983c9130 = 
+    Expr.field_decl(type0x7f419950ff18, FieldDecl.make("sa_mask", "1024", 64, "0", 128, 64, false))
+  in let expr0x7f4198251240 = 
+    Expr.variable_decl(type0x7f41983c7738, VarDecl.make("act", 1216, 64))
+  in let expr0x7f419824e630 = 
+    Expr.component_ref(type0x7f419950ff18, expr0x7f4198251240, expr0x7f41983c9130)
+  in let expr0x7f4198252360 = 
+    Expr.address_of(type0x7f419879d2a0, expr0x7f419824e630)
+  in let expr0x7f41983c91c8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("sa_flags", "32", 32, "128", 128, 64, false))
+  in let expr0x7f419824e660 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198251240, expr0x7f41983c91c8)
+  in let expr0x7f41983b4ed8 = 
+    Expr.field_decl(type0x7f41983bd1f8, FieldDecl.make("sa_handler", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41983c9098 = 
+    Expr.field_decl(type0x7f41983c77e0, FieldDecl.make("__sigaction_handler", "64", 64, "0", 128, 0, false))
+  in let expr0x7f419824e690 = 
+    Expr.component_ref(type0x7f41983c77e0, expr0x7f4198251240, expr0x7f41983c9098)
+  in let expr0x7f419824e6c0 = 
+    Expr.component_ref(type0x7f41983bd1f8, expr0x7f419824e690, expr0x7f41983b4ed8)
+  in let expr0x7f4198243558 = 
+    Expr.u_int_cst(type0x7f41983bd0a8, Z.of_string "1")
+  in let expr0x7f41986472b8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "14")
+  in let expr0x7f41982523c0 = 
+    Expr.address_of(type0x7f41983cac78, expr0x7f4198251240)
+  in let expr0x7f419823bf60 = 
+    Expr.u_int_cst(type0x7f41983cad20, Z.of_string "0")
+  in let expr0x7f419824e750 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984daa18)
+  in let expr0x7f41982ef1c8 = 
+    Expr.constructor(type0x7f41983c7738)
+  in let expr0x7f41982ef1e0 = 
+    Expr.constructor(type0x7f41983c7738)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982f3510 = Expr.call(
+    type0x7f41993c4f18,
+    "watchdogScheduleSignal", [|
+      (Expr.parameter("period", 0, expr0x7f41993c9078));
+  |])
+  in let call0x7f41982f35a0 = Expr.call(
+    type0x7f41993c45e8,
+    "sigemptyset", [|
+      (Expr.parameter("p1", 0, expr0x7f4198252360));
+  |])
+  in let call0x7f41982fd130 = Expr.call(
+    type0x7f41993c45e8,
+    "sigaction", [|
+      (Expr.parameter("p1", 0, expr0x7f41986472b8));
+      (Expr.parameter("p2", 1, expr0x7f41982523c0));
+      (Expr.parameter("p3", 2, expr0x7f419823bf60));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982f8510, expr0x7f41982d4ed0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_3(D)>\n_1 = server.watchdog_period;";
+      |]
+    )
+  in let block_3 = 
+    let step_3_2 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f41982f8510, expr0x7f41993c9078))
+    in let step_3_3 = 
+      Action.call(call0x7f41982f3510)
+    in let step_3_4 = 
+      Action.call(call0x7f41982f35a0)
+    in let step_3_5 = 
+      Action.assign(expr0x7f419824e660, expr0x7f41993c9078)
+    in let step_3_6 = 
+      Action.assign(expr0x7f419824e6c0, expr0x7f4198243558)
+    in let step_3_7 = 
+      Action.call(call0x7f41982fd130)
+    in let step_3_8 = 
+      Action.assign(expr0x7f419824e750, expr0x7f41993c9078)
+    in let step_3_9 = 
+      Action.assign(expr0x7f4198251240, expr0x7f41982ef1c8)
+    in Block.block(
+      3,
+      [|
+        step_3_2;
+        step_3_3;
+        step_3_4;
+        step_3_5;
+        step_3_6;
+        step_3_7;
+        step_3_8;
+        step_3_9;
+      |],
+      [|
+        ("sigaction", 1);
+        ("sigemptyset", 1);
+        ("watchdogScheduleSignal", 1);
+      |],
+      [|
+        "assume FALSE (_1 == 0)";
+        "# .MEM_4 = VDEF <.MEM_3(D)>\nwatchdogScheduleSignal (0);";
+        "# .MEM_5 = VDEF <.MEM_4>\nsigemptyset (&act.sa_mask);";
+        "# .MEM_6 = VDEF <.MEM_5>\nact.sa_flags = 0;";
+        "# .MEM_7 = VDEF <.MEM_6>\nact.__sigaction_handler.sa_handler = 1B;";
+        "# .MEM_8 = VDEF <.MEM_7>\nsigaction (14, &act, 0B);";
+        "# .MEM_9 = VDEF <.MEM_8>\nserver.watchdog_period = 0;";
+        "# .MEM_10 = VDEF <.MEM_9>\nact ={v} {CLOBBER};";
+      |]
+    )
+  in let block_4 = 
+    let step_4_10 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f41982f8510, expr0x7f41993c9078))
+    in let step_4_11 = 
+      Action.assign(expr0x7f4198251240, expr0x7f41982ef1e0)
+    in Block.block(
+      4,
+      [|
+        step_4_10;
+        step_4_11;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_1 == 0)";
+        "# .MEM_11 = VDEF <.MEM_3(D)>\nact ={v} {CLOBBER};";
+      |]
+    )
+  in let block_5 = 
+    let step_5_12 = 
+      Action.return(expr0)
+    in Block.block(
+      5,
+      [|
+        step_5_12;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_2>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_13 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_13 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    6,
+    Z.of_string "2",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "disableWatchdog",
+    72,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: dumpX86Calls
+  // fid: 66
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993d0348 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993d03f0 = 
+    GccType.pointer(type0x7f41993d0348)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41984c2d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41982377e0 = 
+    GccType.array(type0x7f41993c47e0, type0x7f41984c2d20)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f419950ab28 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41985d2498 = 
+    GccType.pointer(type0x7f419950ab28)
+  in let type0x7f41993cc150 = 
+    GccType.void
+  in let type0x7f41993cc1f8 = 
+    GccType.pointer(type0x7f41993cc150)
+  in let type0x7f41981b9000 = 
+    GccType.record("Dl_info", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981b9888 = 
+    GccType.pointer(type0x7f41981b9000)
+  in let type0x7f4198216bd0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "24")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4198216c78 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216bd0)
+  in let type0x7f4198216d20 = 
+    GccType.pointer(type0x7f4198216c78)
+  in let expr0x7f4198234480 = 
+    Expr.parameter_decl(type0x7f419950a348, "len", type0x7f419950a348)
+  in let expr0x7f419833b6c0 = 
+    Expr.ssa("len_27(D)", 27, expr0x7f4198234480)
+  in let expr0x7f419823b3d8 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "4")
+  in let expr0x7f41982d8f78 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f419823b468 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "232")
+  in let expr0x7f41982ec1b0 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41982ec1f8 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993d03f0))
+  in let expr0x7f41981fe060 = 
+    Expr.u_int_cst(type0x7f41993d03f0, Z.of_string "0")
+  in let expr0x7f41982386c0 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("target", 64, 64))
+  in let expr0x7f419833b828 = 
+    Expr.ssa("target_32", 32, expr0x7f41982386c0)
+  in let expr0x7f41982ec288 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198238480 = 
+    Expr.variable_decl(type0x7f419950a348, VarDecl.make("j", 64, 64))
+  in let expr0x7f419833b3f0 = 
+    Expr.ssa("j_17", 17, expr0x7f4198238480)
+  in let expr0x7f419833b438 = 
+    Expr.ssa("j_18", 18, expr0x7f4198238480)
+  in let expr0x7f419833b948 = 
+    Expr.ssa("j_36", 36, expr0x7f4198238480)
+  in let expr0x7f419833b708 = 
+    Expr.ssa("j_28", 28, expr0x7f4198238480)
+  in let expr0x7f419833b990 = 
+    Expr.ssa("j_37", 37, expr0x7f4198238480)
+  in let expr0x7f41982ec360 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198238510 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("p", 64, 64))
+  in let expr0x7f419833b5e8 = 
+    Expr.ssa("p_24", 24, expr0x7f4198238510)
+  in let expr0x7f4198234400 = 
+    Expr.parameter_decl(type0x7f41993cc0a8, "addr", type0x7f41993cc0a8)
+  in let expr0x7f419833b5a0 = 
+    Expr.ssa("addr_23(D)", 23, expr0x7f4198234400)
+  in let expr0x7f4198238630 = 
+    Expr.variable_decl(type0x7f41982377e0, VarDecl.make("ht", 16384, 64))
+  in let expr0x7f419823b390 = 
+    Expr.constructor(type0x7f41982377e0)
+  in let expr0x7f419955cb58 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "0")
+  in let expr0x7f41982d8f30 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981dbcc0 = 
+    Expr.u_int_cst(type0x7f4199574f18, Z.of_string "0")
+  in let expr0x7f41982e71b8 = 
+    Expr.memory_ref(type0x7f41993c4348, expr0x7f41982d8f30, expr0x7f41981dbcc0)
+  in let expr0x7f41982d8e58 = 
+    Expr.ssa("addr.41_3", 3, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ec000 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419833b7e0 = 
+    Expr.ssa("target_31", 31, expr0x7f41982386c0)
+  in let expr0x7f419955ca80 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "5")
+  in let expr0x7f41982ec048 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f41993acde0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "1")
+  in let expr0x7f41982ec090 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41982ec0d8 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982a1e70 = 
+    Expr.u_int_cst(type0x7f41985d2498, Z.of_string "0")
+  in let expr0x7f41982e7398 = 
+    Expr.memory_ref(type0x7f419950ab28, expr0x7f41982ec090, expr0x7f41982a1e70)
+  in let expr0x7f41982ec120 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ec168 = 
+    Expr.ssa("target.42_9", 9, Expr.nothing(type0x7f41993cc1f8))
+  in let expr0x7f41982385a0 = 
+    Expr.variable_decl(type0x7f41981b9000, VarDecl.make("info", 256, 64))
+  in let expr0x7f41982e8120 = 
+    Expr.address_of(type0x7f41981b9888, expr0x7f41982385a0)
+  in let expr0x7f419856a5f0 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("dli_sname", "64", 64, "16", 128, 0, false))
+  in let expr0x7f41982d4840 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f41982385a0, expr0x7f419856a5f0)
+  in let expr0x7f41982ec240 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198229ac8 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "255")
+  in let expr0x7f41982e4b98 = 
+    Expr.array_ref(type0x7f41993c47e0, expr0x7f4198238630, expr0x7f41982ec240)
+  in let expr0x7f41982ec2d0 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993d03f0))
+  in let expr0x7f41982d4870 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f41982385a0, expr0x7f419856a5f0)
+  in let expr0x7f419823d1b0 = 
+    Expr.string_cst(type0x7f4198216c78, 25, "\"Function at 0x%lx is %s\\n\"")
+  in let expr0x7f419823e540 = 
+    Expr.address_of(type0x7f4198216d20, expr0x7f419823d1b0)
+  in let expr0x7f41982ec318 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419822c738 = 
+    Expr.array_ref(type0x7f41993c47e0, expr0x7f4198238630, expr0x7f41982ec318)
+  in let expr0x7f41995996c0 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "1")
+  in let expr0x7f419823e220 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "18446744073709551612")
+  in let expr0x7f41982a1ee8 = 
+    Expr.constructor(type0x7f41981b9000)
+  in let expr0x7f41982a1f00 = 
+    Expr.constructor(type0x7f41982377e0)
+  in let expr0x7f41982a1f18 = 
+    Expr.constructor(type0x7f41981b9000)
+  in let expr0x7f41982a1f30 = 
+    Expr.constructor(type0x7f41982377e0)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982e2480 = Expr.call(
+    type0x7f41993c45e8,
+    "dladdr", [|
+      (Expr.parameter("p1", 0, expr0x7f41982ec168));
+      (Expr.parameter("p2", 1, expr0x7f41982e8120));
+  |])
+  in let call0x7f41982c5d10 = Expr.call(
+    type0x7f41993c45e8,
+    "printf", [|
+      (Expr.parameter("p1", 0, expr0x7f419823e540));
+      (Expr.parameter("p2", 1, expr0x7f419833b828));
+      (Expr.parameter("p3", 2, expr0x7f41982ec2d0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f419833b5e8, expr0x7f419833b5a0)
+    in let step_2_2 = 
+      Action.debug("# DEBUG p => p_24")
+    in let step_2_3 = 
+      Action.assign(expr0x7f4198238630, expr0x7f419823b390)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "p_24 = addr_23(D);";
+        "# DEBUG p => p_24";
+        "# .MEM_26 = VDEF <.MEM_25(D)>\nht = {};";
+      |]
+    )
+  in let block_3 = 
+    let step_3_4 = 
+      Action.assume(2, Expr.bgt(GccType.boolean, expr0x7f419833b6c0, expr0x7f419823b3d8))
+    in let step_3_5 = 
+      Action.assign(expr0x7f419833b708, expr0x7f419955cb58)
+    in let step_3_6 = 
+      Action.debug("# DEBUG j => j_28")
+    in let step_3_7 = 
+      Action.assign(expr0x7f419833b438, expr0x7f419833b708)
+    in Block.block(
+      3,
+      [|
+        step_3_4;
+        step_3_5;
+        step_3_6;
+        step_3_7;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (len_27(D) <= 4)";
+        "j_28 = 0;";
+        "# DEBUG j => j_28";
+        "j_18 = j_28";
+      |]
+    )
+  in let block_4 = 
+    let step_4_8 = 
+      Action.assume(12, Expr.blt(GccType.boolean, expr0x7f419833b438, expr0x7f41982ec360))
+    in let step_4_9 = 
+      Action.assign(expr0x7f41982d8f30, Expr.pointer_plus(
+        type0x7f4199574f18, expr0x7f419833b5e8, expr0x7f419833b438))
+    in let step_4_10 = 
+      Action.assign(expr0x7f41982d8f78, expr0x7f41982e71b8)
+    in Block.block(
+      4,
+      [|
+        step_4_8;
+        step_4_9;
+        step_4_10;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (j_18 < _16)";
+        "_1 = p_24 + j_18;";
+        "# VUSE <.MEM_21>\n_2 = *_1;";
+      |]
+    )
+  in let block_5 = 
+    let step_5_11 = 
+      Action.assume(4, Expr.bneq(GccType.boolean, expr0x7f41982d8f78, expr0x7f419823b468))
+    in let step_5_12 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_5_13 = 
+      Action.assign(expr0x7f419833b3f0, expr0x7f419833b438)
+    in Block.block(
+      5,
+      [|
+        step_5_11;
+        step_5_12;
+        step_5_13;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_2 != 232)";
+        "// predicted unlikely by continue predictor.";
+        "j_17 = j_18";
+      |]
+    )
+  in let block_6 = 
+    let step_6_14 = 
+      Action.assume(4, Expr.beq(GccType.boolean, expr0x7f41982d8f78, expr0x7f419823b468))
+    in let step_6_15 = 
+      Action.assign(expr0x7f41982d8e58, expr0x7f419833b5a0)
+    in let step_6_16 = 
+      Action.assign(expr0x7f41982ec000, Expr.plus(
+        type0x7f41993c47e0, expr0x7f419833b438, expr0x7f41982d8e58))
+    in let step_6_17 = 
+      Action.assign(expr0x7f419833b7e0, Expr.plus(
+        type0x7f41993c47e0, expr0x7f41982ec000, expr0x7f419955ca80))
+    in let step_6_18 = 
+      Action.debug("# DEBUG target => target_31")
+    in let step_6_19 = 
+      Action.assign(expr0x7f41982ec048, Expr.plus(
+        type0x7f41993c4000, expr0x7f419833b438, expr0x7f41993acde0))
+    in let step_6_20 = 
+      Action.assign(expr0x7f41982ec090, Expr.pointer_plus(
+        type0x7f4199574f18, expr0x7f419833b5e8, expr0x7f41982ec048))
+    in let step_6_21 = 
+      Action.assign(expr0x7f41982ec0d8, expr0x7f41982e7398)
+    in let step_6_22 = 
+      Action.assign(expr0x7f41982ec120, expr0x7f41982ec0d8)
+    in let step_6_23 = 
+      Action.assign(expr0x7f419833b828, Expr.plus(
+        type0x7f41993c47e0, expr0x7f419833b7e0, expr0x7f41982ec120))
+    in let step_6_24 = 
+      Action.debug("# DEBUG target => target_32")
+    in let step_6_25 = 
+      Action.assign(expr0x7f41982ec168, expr0x7f419833b828)
+    in let step_6_26 = 
+      Action.call(call0x7f41982e2480)
+    in let step_6_27 = 
+      Action.assign(expr0x7f41982ec1b0, call0x7f41982e2480)
+    in let step_6_28 = 
+      Action.assign(expr0x7f419833b3f0, expr0x7f419833b438)
+    in Block.block(
+      6,
+      [|
+        step_6_14;
+        step_6_15;
+        step_6_16;
+        step_6_17;
+        step_6_18;
+        step_6_19;
+        step_6_20;
+        step_6_21;
+        step_6_22;
+        step_6_23;
+        step_6_24;
+        step_6_25;
+        step_6_26;
+        step_6_27;
+        step_6_28;
+      |],
+      [|
+        ("dladdr", 1);
+      |],
+      [|
+        "assume FALSE (_2 != 232)";
+        "addr.41_3 = (long unsigned int) addr_23(D);";
+        "_4 = j_18 + addr.41_3;";
+        "target_31 = _4 + 5;";
+        "# DEBUG target => target_31";
+        "_5 = j_18 + 1;";
+        "_6 = p_24 + _5;";
+        "# VUSE <.MEM_21>\n_7 = MEM[(int32_t *)_6];";
+        "_8 = (long unsigned int) _7;";
+        "target_32 = target_31 + _8;";
+        "# DEBUG target => target_32";
+        "target.42_9 = (const void *) target_32;";
+        "# .MEM_33 = VDEF <.MEM_21>\n_10 = dladdr (target.42_9, &info);";
+        "<CAPTURES RETURN>";
+        "j_17 = j_18";
+      |]
+    )
+  in let block_7 = 
+    let step_7_29 = 
+      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f41982ec1b0, expr0x7f41993c9078))
+    in let step_7_30 = 
+      Action.assign(expr0x7f41982ec1f8, expr0x7f41982d4840)
+    in let step_7_31 = 
+      Action.assign(expr0x7f419833b3f0, expr0x7f419833b438)
+    in Block.block(
+      7,
+      [|
+        step_7_29;
+        step_7_30;
+        step_7_31;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_10 != 0)";
+        "# VUSE <.MEM_33>\n_11 = info.dli_sname;";
+        "j_17 = j_18";
+      |]
+    )
+  in let block_8 = 
+    let step_8_32 = 
+      Action.assume(7, Expr.bneq(GccType.boolean, expr0x7f41982ec1f8, expr0x7f41981fe060))
+    in let step_8_33 = 
+      Action.assign(expr0x7f41982ec240, Expr.bit_and(
+        type0x7f41993c47e0, expr0x7f419833b828, expr0x7f4198229ac8))
+    in let step_8_34 = 
+      Action.assign(expr0x7f41982ec288, expr0x7f41982e4b98)
+    in Block.block(
+      8,
+      [|
+        step_8_32;
+        step_8_33;
+        step_8_34;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_11 != 0B)";
+        "_12 = target_32 & 255;";
+        "# VUSE <.MEM_33>\n_13 = ht[_12];";
+      |]
+    )
+  in let block_9 = 
+    let step_9_35 = 
+      Action.assume(8, Expr.bneq(GccType.boolean, expr0x7f419833b828, expr0x7f41982ec288))
+    in let step_9_36 = 
+      Action.assign(expr0x7f41982ec2d0, expr0x7f41982d4870)
+    in let step_9_37 = 
+      Action.call(call0x7f41982c5d10)
+    in let step_9_38 = 
+      Action.assign(expr0x7f41982ec318, Expr.bit_and(
+        type0x7f41993c47e0, expr0x7f419833b828, expr0x7f4198229ac8))
+    in let step_9_39 = 
+      Action.assign(expr0x7f419822c738, expr0x7f419833b828)
+    in Block.block(
+      9,
+      [|
+        step_9_35;
+        step_9_36;
+        step_9_37;
+        step_9_38;
+        step_9_39;
+      |],
+      [|
+        ("printf", 1);
+      |],
+      [|
+        "assume TRUE (target_32 != _13)";
+        "# VUSE <.MEM_33>\n_14 = info.dli_sname;";
+        "# .MEM_34 = VDEF <.MEM_33>\nprintf (\"Function at 0x%lx is %s\\n\", target_32, _14);";
+        "_15 = target_32 & 255;";
+        "# .MEM_35 = VDEF <.MEM_34>\nht[_15] = target_32;";
+      |]
+    )
+  in let block_10 = 
+    let step_10_40 = 
+      Action.assume(8, Expr.beq(GccType.boolean, expr0x7f419833b828, expr0x7f41982ec288))
+    in let step_10_41 = 
+      Action.assign(expr0x7f419833b948, Expr.plus(
+        type0x7f419950a348, expr0x7f419833b438, expr0x7f419823b3d8))
+    in let step_10_42 = 
+      Action.debug("# DEBUG j => j_36")
+    in let step_10_43 = 
+      Action.assign(expr0x7f419833b3f0, expr0x7f419833b948)
+    in Block.block(
+      10,
+      [|
+        step_10_40;
+        step_10_41;
+        step_10_42;
+        step_10_43;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (target_32 != _13)";
+        "j_36 = j_18 + 4;";
+        "# DEBUG j => j_36";
+        "j_17 = j_36";
+      |]
+    )
+  in let block_11 = 
+    let step_11_44 = 
+      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f41982ec1b0, expr0x7f41993c9078))
+    in let step_11_45 = 
+      Action.assume(7, Expr.beq(GccType.boolean, expr0x7f41982ec1f8, expr0x7f41981fe060))
+    in let step_11_46 = 
+      Action.debug("# DEBUG j => j_17")
+    in let step_11_47 = 
+      Action.assign(expr0x7f419833b990, Expr.plus(
+        type0x7f419950a348, expr0x7f419833b3f0, expr0x7f41995996c0))
+    in let step_11_48 = 
+      Action.debug("# DEBUG j => j_37")
+    in let step_11_49 = 
+      Action.assign(expr0x7f419833b438, expr0x7f419833b990)
+    in Block.block(
+      11,
+      [|
+        step_11_44;
+        step_11_45;
+        step_11_46;
+        step_11_47;
+        step_11_48;
+        step_11_49;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_10 != 0)";
+        "assume FALSE (_11 != 0B)";
+        "# DEBUG j => j_17";
+        "j_37 = j_17 + 1;";
+        "# DEBUG j => j_37";
+        "j_18 = j_37";
+      |]
+    )
+  in let block_12 = 
+    let step_12_50 = 
+      Action.debug("# DEBUG j => j_18")
+    in let step_12_51 = 
+      Action.assign(expr0x7f41982ec360, Expr.plus(
+        type0x7f41993c47e0, expr0x7f419833b6c0, expr0x7f419823e220))
+    in Block.block(
+      12,
+      [|
+        step_12_50;
+        step_12_51;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_18";
+        "_16 = len_27(D) + 18446744073709551612;";
+      |]
+    )
+  in let block_13 = 
+    let step_13_52 = 
+      Action.assume(12, Expr.bgte(GccType.boolean, expr0x7f419833b438, expr0x7f41982ec360))
+    in let step_13_53 = 
+      Action.assign(expr0x7f41982385a0, expr0x7f41982a1ee8)
+    in let step_13_54 = 
+      Action.assign(expr0x7f4198238630, expr0x7f41982a1f00)
+    in Block.block(
+      13,
+      [|
+        step_13_52;
+        step_13_53;
+        step_13_54;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (j_18 < _16)";
+        "# .MEM_29 = VDEF <.MEM_21>\ninfo ={v} {CLOBBER};";
+        "# .MEM_30 = VDEF <.MEM_29>\nht ={v} {CLOBBER};";
+      |]
+    )
+  in let block_14 = 
+    let step_14_55 = 
+      Action.assume(2, Expr.blte(GccType.boolean, expr0x7f419833b6c0, expr0x7f419823b3d8))
+    in let step_14_56 = 
+      Action.assign(expr0x7f41982385a0, expr0x7f41982a1f18)
+    in let step_14_57 = 
+      Action.assign(expr0x7f4198238630, expr0x7f41982a1f30)
+    in Block.block(
+      14,
+      [|
+        step_14_55;
+        step_14_56;
+        step_14_57;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (len_27(D) <= 4)";
+        "# .MEM_38 = VDEF <.MEM_26>\ninfo ={v} {CLOBBER};";
+        "# .MEM_39 = VDEF <.MEM_38>\nht ={v} {CLOBBER};";
+      |]
+    )
+  in let block_15 = 
+    let step_15_58 = 
+      Action.return(expr0)
+    in Block.block(
+      15,
+      [|
+        step_15_58;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_22>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_59 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_59 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    16,
+    Z.of_string "7",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "5");
+          Cfg.edge (5, "[14]", block_14, Z.of_string "6", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (15, "[0 | 12]", block_12, Z.of_string "0", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[13]", block_13, [|
+          Cfg.edge (6, "[15]", block_15, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[14]", block_14, [|
+          Cfg.edge (6, "[15]", block_15, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[15]", block_15, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (8, "[0 | 5]", block_5, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (9, "[0 | 6]", block_6, Z.of_string "1", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[0 | 5]", block_5, [|
+          Cfg.edge (14, "[0 | 11]", block_11, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 6]", block_6, [|
+          Cfg.edge (10, "[0 | 7]", block_7, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (14, "[0 | 11]", block_11, Z.of_string "3", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[0 | 7]", block_7, [|
+          Cfg.edge (11, "[0 | 8]", block_8, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (14, "[0 | 11]", block_11, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 8]", block_8, [|
+          Cfg.edge (12, "[0 | 9]", block_9, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (13, "[0 | 10]", block_10, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 | 9]", block_9, [|
+          Cfg.edge (13, "[0 | 10]", block_10, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 10]", block_10, [|
+          Cfg.edge (14, "[0 | 11]", block_11, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 11]", block_11, [|
+          Cfg.edge (16, "[1 | 12]", block_12, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 12]", block_12, [|
+          Cfg.edge (7, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "4");
+          Cfg.edge (4, "[13]", block_13, Z.of_string "5", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[1 | 12]", block_12, [|
+          Cfg.edge (4, "[13]", block_13, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "dumpX86Calls",
+    66,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: enableWatchdog
+  // fid: 71
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419950ff18 = 
+    GccType.record("__sigset_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983c7738 = 
+    GccType.record("sigaction", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419879d2a0 = 
+    GccType.pointer(type0x7f419950ff18)
+  in let type0x7f41987b1498 = 
+    GccType.record("siginfo_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983c7888 = 
+    GccType.pointer(type0x7f41987b1498)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41983c79d8 = 
+    GccType.func("T4034", type0x7f41993c4f18, [|
+        type0x7f41993c45e8;
+        type0x7f41983c7888;
+        type0x7f41993cc0a8;
+      |], false)
+  in let type0x7f41983c7b28 = 
+    GccType.pointer(type0x7f41983c79d8)
+  in let type0x7f41983c77e0 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983cac78 = 
+    GccType.pointer(type0x7f41983c7738)
+  in let type0x7f41983cad20 = 
+    GccType.pointer(type0x7f41983c7738)
+  in let expr0x7f41982f83f0 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f419824b800 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "period", type0x7f41993c45e8)
+  in let expr0x7f4198342708 = 
+    Expr.ssa("period_13(D)", 13, expr0x7f419824b800)
+  in let expr0x7f4198251120 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("min_period", 32, 32))
+  in let expr0x7f41983426c0 = 
+    Expr.ssa("min_period_12", 12, expr0x7f4198251120)
+  in let expr0x7f4198342480 = 
+    Expr.ssa("period_4", 4, expr0x7f419824b800)
+  in let expr0x7f4198342750 = 
+    Expr.ssa("period_14", 14, expr0x7f419824b800)
+  in let expr0x7f41984daa18 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("watchdog_period", "32", 32, "3040", 128, 64, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982d4e10 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984daa18)
+  in let expr0x7f41983c9130 = 
+    Expr.field_decl(type0x7f419950ff18, FieldDecl.make("sa_mask", "1024", 64, "0", 128, 64, false))
+  in let expr0x7f41982511b0 = 
+    Expr.variable_decl(type0x7f41983c7738, VarDecl.make("act", 1216, 64))
+  in let expr0x7f419824e390 = 
+    Expr.component_ref(type0x7f419950ff18, expr0x7f41982511b0, expr0x7f41983c9130)
+  in let expr0x7f41982521e0 = 
+    Expr.address_of(type0x7f419879d2a0, expr0x7f419824e390)
+  in let expr0x7f41983c91c8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("sa_flags", "32", 32, "128", 128, 64, false))
+  in let expr0x7f419824e3c0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982511b0, expr0x7f41983c91c8)
+  in let expr0x7f41982434b0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "134217732")
+  in let expr0x7f41983c9000 = 
+    Expr.field_decl(type0x7f41983c7b28, FieldDecl.make("sa_sigaction", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41983c9098 = 
+    Expr.field_decl(type0x7f41983c77e0, FieldDecl.make("__sigaction_handler", "64", 64, "0", 128, 0, false))
+  in let expr0x7f419824e3f0 = 
+    Expr.component_ref(type0x7f41983c77e0, expr0x7f41982511b0, expr0x7f41983c9098)
+  in let expr0x7f419824e420 = 
+    Expr.component_ref(type0x7f41983c7b28, expr0x7f419824e3f0, expr0x7f41983c9000)
+  in let expr0x7f4198236600 = 
+    Expr.unsupported("FUNCTION_DECL")
+  in let expr0x7f4198252240 = 
+    Expr.address_of(type0x7f41983c7b28, expr0x7f4198236600)
+  in let expr0x7f41986472b8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "14")
+  in let expr0x7f4198252260 = 
+    Expr.address_of(type0x7f41983cac78, expr0x7f41982511b0)
+  in let expr0x7f419823bf60 = 
+    Expr.u_int_cst(type0x7f41983cad20, Z.of_string "0")
+  in let expr0x7f41982ef198 = 
+    Expr.constructor(type0x7f41983c7738)
+  in let expr0x7f41982f8438 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984c5980 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("hz", "32", 32, "32", 128, 0, false))
+  in let expr0x7f41982d4e40 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984c5980)
+  in let expr0x7f41982f8480 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41985edf48 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1000")
+  in let expr0x7f41993c93d8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "2")
+  in let expr0x7f419824e540 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984daa18)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982f33f0 = Expr.call(
+    type0x7f41993c45e8,
+    "sigemptyset", [|
+      (Expr.parameter("p1", 0, expr0x7f41982521e0));
+  |])
+  in let call0x7f41982fd098 = Expr.call(
+    type0x7f41993c45e8,
+    "sigaction", [|
+      (Expr.parameter("p1", 0, expr0x7f41986472b8));
+      (Expr.parameter("p2", 1, expr0x7f4198252260));
+      (Expr.parameter("p3", 2, expr0x7f419823bf60));
+  |])
+  in let call0x7f41982f3480 = Expr.call(
+    type0x7f41993c4f18,
+    "watchdogScheduleSignal", [|
+      (Expr.parameter("period", 0, expr0x7f4198342480));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982f83f0, expr0x7f41982d4e10)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_6(D)>\n_1 = server.watchdog_period;";
+      |]
+    )
+  in let block_3 = 
+    let step_3_2 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f41982f83f0, expr0x7f41993c9078))
+    in let step_3_3 = 
+      Action.call(call0x7f41982f33f0)
+    in let step_3_4 = 
+      Action.assign(expr0x7f419824e3c0, expr0x7f41982434b0)
+    in let step_3_5 = 
+      Action.assign(expr0x7f419824e420, expr0x7f4198252240)
+    in let step_3_6 = 
+      Action.call(call0x7f41982fd098)
+    in let step_3_7 = 
+      Action.assign(expr0x7f41982511b0, expr0x7f41982ef198)
+    in Block.block(
+      3,
+      [|
+        step_3_2;
+        step_3_3;
+        step_3_4;
+        step_3_5;
+        step_3_6;
+        step_3_7;
+      |],
+      [|
+        ("sigaction", 1);
+        ("sigemptyset", 1);
+      |],
+      [|
+        "assume TRUE (_1 == 0)";
+        "# .MEM_7 = VDEF <.MEM_6(D)>\nsigemptyset (&act.sa_mask);";
+        "# .MEM_8 = VDEF <.MEM_7>\nact.sa_flags = 134217732;";
+        "# .MEM_9 = VDEF <.MEM_8>\nact.__sigaction_handler.sa_sigaction = watchdogSignalHandler;";
+        "# .MEM_10 = VDEF <.MEM_9>\nsigaction (14, &act, 0B);";
+        "# .MEM_11 = VDEF <.MEM_10>\nact ={v} {CLOBBER};";
+      |]
+    )
+  in let block_4 = 
+    let step_4_8 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f41982f83f0, expr0x7f41993c9078))
+    in let step_4_9 = 
+      Action.assign(expr0x7f41982f8438, expr0x7f41982d4e40)
+    in let step_4_10 = 
+      Action.assign(expr0x7f41982f8480, Expr.truncated_div(
+        type0x7f41993c45e8, expr0x7f41985edf48, expr0x7f41982f8438))
+    in let step_4_11 = 
+      Action.assign(expr0x7f41983426c0, Expr.times(
+        type0x7f41993c45e8, expr0x7f41982f8480, expr0x7f41993c93d8))
+    in let step_4_12 = 
+      Action.debug("# DEBUG min_period => min_period_12")
+    in let step_4_13 = 
+      Action.assign(expr0x7f4198342480, expr0x7f4198342708)
+    in Block.block(
+      4,
+      [|
+        step_4_8;
+        step_4_9;
+        step_4_10;
+        step_4_11;
+        step_4_12;
+        step_4_13;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_1 == 0)";
+        "# VUSE <.MEM_5>\n_2 = server.hz;";
+        "_3 = 1000 / _2;";
+        "min_period_12 = _3 * 2;";
+        "# DEBUG min_period => min_period_12";
+        "period_4 = period_13(D)";
+      |]
+    )
+  in let block_5 = 
+    let step_5_14 = 
+      Action.assume(4, Expr.blt(GccType.boolean, expr0x7f4198342708, expr0x7f41983426c0))
+    in let step_5_15 = 
+      Action.assign(expr0x7f4198342750, expr0x7f41983426c0)
+    in let step_5_16 = 
+      Action.debug("# DEBUG period => period_14")
+    in let step_5_17 = 
+      Action.assign(expr0x7f4198342480, expr0x7f4198342750)
+    in Block.block(
+      5,
+      [|
+        step_5_14;
+        step_5_15;
+        step_5_16;
+        step_5_17;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (period_13(D) < min_period_12)";
+        "period_14 = min_period_12;";
+        "# DEBUG period => period_14";
+        "period_4 = period_14";
+      |]
+    )
+  in let block_6 = 
+    let step_6_18 = 
+      Action.assume(4, Expr.bgte(GccType.boolean, expr0x7f4198342708, expr0x7f41983426c0))
+    in let step_6_19 = 
+      Action.debug("# DEBUG period => period_4")
+    in let step_6_20 = 
+      Action.call(call0x7f41982f3480)
+    in let step_6_21 = 
+      Action.assign(expr0x7f419824e540, expr0x7f4198342480)
+    in let step_6_22 = 
+      Action.return(expr0)
+    in Block.block(
+      6,
+      [|
+        step_6_18;
+        step_6_19;
+        step_6_20;
+        step_6_21;
+        step_6_22;
+      |],
+      [|
+        ("watchdogScheduleSignal", 1);
+      |],
+      [|
+        "assume FALSE (period_13(D) < min_period_12)";
+        "# DEBUG period => period_4";
+        "# .MEM_15 = VDEF <.MEM_5>\nwatchdogScheduleSignal (period_4);";
+        "# .MEM_16 = VDEF <.MEM_15>\nserver.watchdog_period = period_4;";
+        "# VUSE <.MEM_16>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_23 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_23 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    7,
+    Z.of_string "4",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (6, "[6]", block_6, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (6, "[6]", block_6, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[6]", block_6, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "enableWatchdog",
+    71,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: getMcontextEip
+  // fid: 58
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4888 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41983df348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "22")
+  in let type0x7f41983df1f8 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41983df888 = 
+    GccType.array(type0x7f41983df1f8, type0x7f41983df348)
+  in let type0x7f41983e6c78 = 
+    GccType.record("mcontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983ec540 = 
+    GccType.record("ucontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981c2150 = 
+    GccType.pointer(type0x7f41983ec540)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let expr0x7f41982d81b0 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41994f8f30 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "16")
+  in let expr0x7f41983e9130 = 
+    Expr.field_decl(type0x7f41983df888, FieldDecl.make("gregs", "1472", 64, "0", 128, 0, false))
+  in let expr0x7f41983e95f0 = 
+    Expr.field_decl(type0x7f41983e6c78, FieldDecl.make("uc_mcontext", "2048", 64, "32", 128, 64, false))
+  in let expr0x7f41982a1660 = 
+    Expr.u_int_cst(type0x7f41981c2150, Z.of_string "0")
+  in let expr0x7f4198218a00 = 
+    Expr.parameter_decl(type0x7f41981c2150, "uc", type0x7f41981c2150)
+  in let expr0x7f41982f8dc8 = 
+    Expr.ssa("uc_3(D)", 3, expr0x7f4198218a00)
+  in let expr0x7f41982d5f28 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f41982f8dc8, expr0x7f41982a1660)
+  in let expr0x7f41982d4480 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982d5f28, expr0x7f41983e95f0)
+  in let expr0x7f41982d4450 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d4480, expr0x7f41983e9130)
+  in let expr0x7f41982d90e0 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d4450, expr0x7f41994f8f30)
+  in let expr0x7f41982f8e10 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993cc0a8))
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982d81b0, expr0x7f41982d90e0)
+    in let step_2_2 = 
+      Action.assign(expr0x7f41982f8e10, expr0x7f41982d81b0)
+    in let step_2_3 = 
+      Action.return(expr0x7f41982f8e10)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_2(D)>\n_1 = uc_3(D)->uc_mcontext.gregs[16];";
+        "_4 = (void *) _1;";
+        "# VUSE <.MEM_2(D)>\nreturn _4;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_4 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_4 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "getMcontextEip",
+    58,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: logCurrentClient
+  // fid: 64
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41984a81f8 = 
+    GccType.record("client", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984c29d8 = 
+    GccType.pointer(type0x7f41984a81f8)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41983fc3f0 = 
+    GccType.record("dictEntry", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198405000 = 
+    GccType.pointer(type0x7f41983fc3f0)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41981fb540 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "35")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41981fb5e8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fb540)
+  in let type0x7f41981fb690 = 
+    GccType.pointer(type0x7f41981fb5e8)
+  in let type0x7f41995875e8 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f4199527dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "3")
+  in let type0x7f4199527e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199527dc8)
+  in let type0x7f41982017e0 = 
+    GccType.pointer(type0x7f4199527e70)
+  in let type0x7f4198497738 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198497540 = 
+    GccType.pointer(type0x7f4198497738)
+  in let type0x7f41984975e8 = 
+    GccType.pointer(type0x7f4198497540)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f419950fb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41981d6540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419950fb28)
+  in let type0x7f419821e540 = 
+    GccType.pointer(type0x7f41981d6540)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41984970a8 = 
+    GccType.record("redisDb", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419849e5e8 = 
+    GccType.pointer(type0x7f41984970a8)
+  in let type0x7f41984052a0 = 
+    GccType.record("dict", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984055e8 = 
+    GccType.pointer(type0x7f41984052a0)
+  in let type0x7f41983fcb28 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419822f348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "53")
+  in let type0x7f419822f3f0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419822f348)
+  in let type0x7f419822f9d8 = 
+    GccType.pointer(type0x7f419822f3f0)
+  in let expr0x7f41982d8240 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41984c29d8))
+  in let expr0x7f4198229660 = 
+    Expr.u_int_cst(type0x7f41984c29d8, Z.of_string "0")
+  in let expr0x7f419821f900 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("j", 32, 32))
+  in let expr0x7f4198333cf0 = 
+    Expr.ssa("j_18", 18, expr0x7f419821f900)
+  in let expr0x7f4198338090 = 
+    Expr.ssa("j_30", 30, expr0x7f419821f900)
+  in let expr0x7f4198338438 = 
+    Expr.ssa("j_43", 43, expr0x7f419821f900)
+  in let expr0x7f41982d8480 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982d84c8 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f419821fb40 = 
+    Expr.variable_decl(type0x7f4198405000, VarDecl.make("de", 64, 64))
+  in let expr0x7f41983381b0 = 
+    Expr.ssa("de_34", 34, expr0x7f419821fb40)
+  in let expr0x7f41981db720 = 
+    Expr.u_int_cst(type0x7f4198405000, Z.of_string "0")
+  in let expr0x7f41984ca000 = 
+    Expr.field_decl(type0x7f41984c29d8, FieldDecl.make("current_client", "64", 64, "528", 128, 64, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982d44e0 = 
+    Expr.component_ref(type0x7f41984c29d8, expr0x7f41987a4cf0, expr0x7f41984ca000)
+  in let expr0x7f419821f7e0 = 
+    Expr.variable_decl(type0x7f41984c29d8, VarDecl.make("cc", 64, 64))
+  in let expr0x7f4198333e58 = 
+    Expr.ssa("cc_23", 23, expr0x7f419821f7e0)
+  in let expr0x7f419822e5a0 = 
+    Expr.component_ref(type0x7f41984c29d8, expr0x7f41987a4cf0, expr0x7f41984ca000)
+  in let expr0x7f419821bd20 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1027")
+  in let expr0x7f4198219500 = 
+    Expr.string_cst(type0x7f41981fb5e8, 36, "\"\\n------ CURRENT CLIENT INFO ------\\n\"")
+  in let expr0x7f419822d7c0 = 
+    Expr.address_of(type0x7f41981fb690, expr0x7f4198219500)
+  in let expr0x7f41982d8288 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f419821f870 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("client", 64, 64))
+  in let expr0x7f4198333f78 = 
+    Expr.ssa("client_27", 27, expr0x7f419821f870)
+  in let expr0x7f419822d880 = 
+    Expr.string_cst(type0x7f4199527e70, 4, "\"%s\\n\"")
+  in let expr0x7f419822d8a0 = 
+    Expr.address_of(type0x7f41982017e0, expr0x7f419822d880)
+  in let expr0x7f41982d82d0 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41984a1980 = 
+    Expr.field_decl(type0x7f41984975e8, FieldDecl.make("argv", "64", 64, "64", 128, 0, false))
+  in let expr0x7f41982d5208 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f4198333e58, expr0x7f4198229660)
+  in let expr0x7f41982d4540 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982d5208, expr0x7f41984a1980)
+  in let expr0x7f41982d8318 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d8360 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41994f8d68 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "8")
+  in let expr0x7f41982d83a8 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982d83f0 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f4198266468 = 
+    Expr.u_int_cst(type0x7f41984975e8, Z.of_string "0")
+  in let expr0x7f41982d53c0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982d83a8, expr0x7f4198266468)
+  in let expr0x7f419821f990 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("decoded", 64, 64))
+  in let expr0x7f4198338360 = 
+    Expr.ssa("decoded_40", 40, expr0x7f419821f990)
+  in let expr0x7f41982d8438 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41981fef18 = 
+    Expr.u_int_cst(type0x7f4198497540, Z.of_string "0")
+  in let expr0x7f41982d5410 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198338360, expr0x7f41981fef18)
+  in let expr0x7f41982d4570 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982d5410, expr0x7f4198494980)
+  in let expr0x7f4198233348 = 
+    Expr.string_cst(type0x7f41981d6540, 16, "\"argv[%d]: \\'%s\\'\\n\"")
+  in let expr0x7f419822da20 = 
+    Expr.address_of(type0x7f419821e540, expr0x7f4198233348)
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41984a18e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("argc", "32", 32, "48", 128, 64, false))
+  in let expr0x7f41982d57a8 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f4198333e58, expr0x7f4198229660)
+  in let expr0x7f41982d45a0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982d57a8, expr0x7f41984a18e8)
+  in let expr0x7f41982d59b0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f4198333e58, expr0x7f4198229660)
+  in let expr0x7f41982d45d0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982d59b0, expr0x7f41984a18e8)
+  in let expr0x7f41982d8510 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982d5a28 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f4198333e58, expr0x7f4198229660)
+  in let expr0x7f41982d4600 = 
+    Expr.component_ref(type0x7f41984975e8, expr0x7f41982d5a28, expr0x7f41984a1980)
+  in let expr0x7f41982d8558 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41993accf0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "8")
+  in let expr0x7f41982d85a0 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982d5af0 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982d8558, expr0x7f4198266468)
+  in let expr0x7f419821fab0 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("key", 64, 64))
+  in let expr0x7f4198338120 = 
+    Expr.ssa("key_32", 32, expr0x7f419821fab0)
+  in let expr0x7f41982d85e8 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982d5b68 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198338120, expr0x7f41981fef18)
+  in let expr0x7f41982d4630 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982d5b68, expr0x7f4198494980)
+  in let expr0x7f41982d8630 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f419849e5e8))
+  in let expr0x7f41984a15f0 = 
+    Expr.field_decl(type0x7f419849e5e8, FieldDecl.make("db", "64", 64, "16", 128, 0, false))
+  in let expr0x7f41982d5aa0 = 
+    Expr.memory_ref(type0x7f41984a81f8, expr0x7f4198333e58, expr0x7f4198229660)
+  in let expr0x7f41982d4660 = 
+    Expr.component_ref(type0x7f419849e5e8, expr0x7f41982d5aa0, expr0x7f41984a15f0)
+  in let expr0x7f41982d8678 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41984055e8))
+  in let expr0x7f4198494c78 = 
+    Expr.field_decl(type0x7f41984055e8, FieldDecl.make("dict", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198243a20 = 
+    Expr.u_int_cst(type0x7f419849e5e8, Z.of_string "0")
+  in let expr0x7f41982d5bb8 = 
+    Expr.memory_ref(type0x7f41984970a8, expr0x7f41982d8630, expr0x7f4198243a20)
+  in let expr0x7f41982d4690 = 
+    Expr.component_ref(type0x7f41984055e8, expr0x7f41982d5bb8, expr0x7f4198494c78)
+  in let expr0x7f419821fa20 = 
+    Expr.variable_decl(type0x7f4198497540, VarDecl.make("val", 64, 64))
+  in let expr0x7f41983381f8 = 
+    Expr.ssa("val_35", 35, expr0x7f419821fa20)
+  in let expr0x7f41983ff1c8 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("val", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41983ff428 = 
+    Expr.field_decl(type0x7f41983fcb28, FieldDecl.make("v", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41982d5be0 = 
+    Expr.memory_ref(type0x7f41983fc3f0, expr0x7f41983381b0, expr0x7f41981db720)
+  in let expr0x7f419822e870 = 
+    Expr.component_ref(type0x7f41983fcb28, expr0x7f41982d5be0, expr0x7f41983ff428)
+  in let expr0x7f419822e8a0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419822e870, expr0x7f41983ff1c8)
+  in let expr0x7f41982d86c0 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982e0000 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f4198338120, expr0x7f41981fef18)
+  in let expr0x7f41982d46c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982e0000, expr0x7f4198494980)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f419822a780 = 
+    Expr.string_cst(type0x7f419822f3f0, 54, "\"key \\'%s\\' found in DB containing the following object:\"")
+  in let expr0x7f419822dd80 = 
+    Expr.address_of(type0x7f419822f9d8, expr0x7f419822a780)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982d16c0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419822d7c0));
+  |])
+  in let call0x7f41982ced80 = Expr.call(
+    type0x7f41995875e8,
+    "sdsempty", [|
+  |])
+  in let call0x7f41982d1750 = Expr.call(
+    type0x7f41995875e8,
+    "catClientInfoString", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d8288));
+      (Expr.parameter("p2", 1, expr0x7f4198333e58));
+  |])
+  in let call0x7f41982c5720 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419822d8a0));
+      (Expr.parameter("p3", 2, expr0x7f4198333f78));
+  |])
+  in let call0x7f41982d17e0 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198333f78));
+  |])
+  in let call0x7f41982d1870 = Expr.call(
+    type0x7f4198497540,
+    "getDecodedObject", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d83f0));
+  |])
+  in let call0x7f41982d7498 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419822da20));
+      (Expr.parameter("p3", 2, expr0x7f4198333cf0));
+      (Expr.parameter("p4", 3, expr0x7f41982d8438));
+  |])
+  in let call0x7f41982d1900 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338360));
+  |])
+  in let call0x7f41982d1990 = Expr.call(
+    type0x7f4198497540,
+    "getDecodedObject", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d85a0));
+  |])
+  in let call0x7f41982d1a20 = Expr.call(
+    type0x7f4198405000,
+    "dictFind", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d8678));
+      (Expr.parameter("p2", 1, expr0x7f41982d85e8));
+  |])
+  in let call0x7f41982c57b8 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f419822dd80));
+      (Expr.parameter("p3", 2, expr0x7f41982d86c0));
+  |])
+  in let call0x7f41982d1ab0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogObjectDebugInfo", [|
+      (Expr.parameter("o", 0, expr0x7f41983381f8));
+  |])
+  in let call0x7f41982d1b40 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338120));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982d8240, expr0x7f41982d44e0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_22(D)>\n_1 = server.current_client;";
+      |]
+    )
+  in let block_3 = 
+    let step_3_2 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f41982d8240, expr0x7f4198229660))
+    in let step_3_3 = 
+      Action.assign(expr0x7f4198333e58, expr0x7f419822e5a0)
+    in let step_3_4 = 
+      Action.debug("# DEBUG cc => cc_23")
+    in let step_3_5 = 
+      Action.call(call0x7f41982d16c0)
+    in let step_3_6 = 
+      Action.call(call0x7f41982ced80)
+    in let step_3_7 = 
+      Action.assign(expr0x7f41982d8288, call0x7f41982ced80)
+    in let step_3_8 = 
+      Action.call(call0x7f41982d1750)
+    in let step_3_9 = 
+      Action.assign(expr0x7f4198333f78, call0x7f41982d1750)
+    in let step_3_10 = 
+      Action.debug("# DEBUG client => client_27")
+    in let step_3_11 = 
+      Action.call(call0x7f41982c5720)
+    in let step_3_12 = 
+      Action.call(call0x7f41982d17e0)
+    in let step_3_13 = 
+      Action.assign(expr0x7f4198338090, expr0x7f41993c9078)
+    in let step_3_14 = 
+      Action.debug("# DEBUG j => j_30")
+    in let step_3_15 = 
+      Action.assign(expr0x7f4198333cf0, expr0x7f4198338090)
+    in Block.block(
+      3,
+      [|
+        step_3_2;
+        step_3_3;
+        step_3_4;
+        step_3_5;
+        step_3_6;
+        step_3_7;
+        step_3_8;
+        step_3_9;
+        step_3_10;
+        step_3_11;
+        step_3_12;
+        step_3_13;
+        step_3_14;
+        step_3_15;
+      |],
+      [|
+        ("catClientInfoString", 1);
+        ("sdsempty", 1);
+        ("sdsfree", 1);
+        ("serverLog", 1);
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume FALSE (_1 == 0B)";
+        "# VUSE <.MEM_22(D)>\ncc_23 = server.current_client;";
+        "# DEBUG cc => cc_23";
+        "# .MEM_24 = VDEF <.MEM_22(D)>\nserverLogRaw (1027, \"\\n------ CURRENT CLIENT INFO ------\\n\");";
+        "# .MEM_25 = VDEF <.MEM_24>\n_2 = sdsempty ();";
+        "<CAPTURES RETURN>";
+        "# .MEM_26 = VDEF <.MEM_25>\nclient_27 = catClientInfoString (_2, cc_23);";
+        "<CAPTURES RETURN>";
+        "# DEBUG client => client_27";
+        "# .MEM_28 = VDEF <.MEM_26>\nserverLog (1027, \"%s\\n\", client_27);";
+        "# .MEM_29 = VDEF <.MEM_28>\nsdsfree (client_27);";
+        "j_30 = 0;";
+        "# DEBUG j => j_30";
+        "j_18 = j_30";
+      |]
+    )
+  in let block_4 = 
+    let step_4_16 = 
+      Action.assume(5, Expr.blt(GccType.boolean, expr0x7f4198333cf0, expr0x7f41982d8480))
+    in let step_4_17 = 
+      Action.assign(expr0x7f41982d82d0, expr0x7f41982d4540)
+    in let step_4_18 = 
+      Action.assign(expr0x7f41982d8318, expr0x7f4198333cf0)
+    in let step_4_19 = 
+      Action.assign(expr0x7f41982d8360, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982d8318, expr0x7f41994f8d68))
+    in let step_4_20 = 
+      Action.assign(expr0x7f41982d83a8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982d82d0, expr0x7f41982d8360))
+    in let step_4_21 = 
+      Action.assign(expr0x7f41982d83f0, expr0x7f41982d53c0)
+    in let step_4_22 = 
+      Action.call(call0x7f41982d1870)
+    in let step_4_23 = 
+      Action.assign(expr0x7f4198338360, call0x7f41982d1870)
+    in let step_4_24 = 
+      Action.debug("# DEBUG decoded => decoded_40")
+    in let step_4_25 = 
+      Action.assign(expr0x7f41982d8438, expr0x7f41982d4570)
+    in let step_4_26 = 
+      Action.call(call0x7f41982d7498)
+    in let step_4_27 = 
+      Action.call(call0x7f41982d1900)
+    in let step_4_28 = 
+      Action.assign(expr0x7f4198338438, Expr.plus(
+        type0x7f41993c45e8, expr0x7f4198333cf0, expr0x7f41993c9090))
+    in let step_4_29 = 
+      Action.debug("# DEBUG j => j_43")
+    in let step_4_30 = 
+      Action.assign(expr0x7f4198333cf0, expr0x7f4198338438)
+    in Block.block(
+      4,
+      [|
+        step_4_16;
+        step_4_17;
+        step_4_18;
+        step_4_19;
+        step_4_20;
+        step_4_21;
+        step_4_22;
+        step_4_23;
+        step_4_24;
+        step_4_25;
+        step_4_26;
+        step_4_27;
+        step_4_28;
+        step_4_29;
+        step_4_30;
+      |],
+      [|
+        ("decrRefCount", 1);
+        ("getDecodedObject", 1);
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (j_18 < _9)";
+        "# VUSE <.MEM_19>\n_3 = cc_23->argv;";
+        "_4 = (long unsigned int) j_18;";
+        "_5 = _4 * 8;";
+        "_6 = _3 + _5;";
+        "# VUSE <.MEM_19>\n_7 = *_6;";
+        "# .MEM_39 = VDEF <.MEM_19>\ndecoded_40 = getDecodedObject (_7);";
+        "<CAPTURES RETURN>";
+        "# DEBUG decoded => decoded_40";
+        "# VUSE <.MEM_39>\n_8 = decoded_40->ptr;";
+        "# .MEM_41 = VDEF <.MEM_39>\nserverLog (1027, \"argv[%d]: \\'%s\\'\\n\", j_18, _8);";
+        "# .MEM_42 = VDEF <.MEM_41>\ndecrRefCount (decoded_40);";
+        "j_43 = j_18 + 1;";
+        "# DEBUG j => j_43";
+        "j_18 = j_43";
+      |]
+    )
+  in let block_5 = 
+    let step_5_31 = 
+      Action.debug("# DEBUG j => j_18")
+    in let step_5_32 = 
+      Action.assign(expr0x7f41982d8480, expr0x7f41982d45a0)
+    in Block.block(
+      5,
+      [|
+        step_5_31;
+        step_5_32;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_18";
+        "# VUSE <.MEM_19>\n_9 = cc_23->argc;";
+      |]
+    )
+  in let block_6 = 
+    let step_6_33 = 
+      Action.assume(5, Expr.bgte(GccType.boolean, expr0x7f4198333cf0, expr0x7f41982d8480))
+    in let step_6_34 = 
+      Action.assign(expr0x7f41982d84c8, expr0x7f41982d45d0)
+    in Block.block(
+      6,
+      [|
+        step_6_33;
+        step_6_34;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (j_18 < _9)";
+        "# VUSE <.MEM_19>\n_10 = cc_23->argc;";
+      |]
+    )
+  in let block_7 = 
+    let step_7_35 = 
+      Action.assume(6, Expr.bgt(GccType.boolean, expr0x7f41982d84c8, expr0x7f41993c9078))
+    in let step_7_36 = 
+      Action.assign(expr0x7f41982d8510, expr0x7f41982d4600)
+    in let step_7_37 = 
+      Action.assign(expr0x7f41982d8558, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982d8510, expr0x7f41993accf0))
+    in let step_7_38 = 
+      Action.assign(expr0x7f41982d85a0, expr0x7f41982d5af0)
+    in let step_7_39 = 
+      Action.call(call0x7f41982d1990)
+    in let step_7_40 = 
+      Action.assign(expr0x7f4198338120, call0x7f41982d1990)
+    in let step_7_41 = 
+      Action.debug("# DEBUG key => key_32")
+    in let step_7_42 = 
+      Action.assign(expr0x7f41982d85e8, expr0x7f41982d4630)
+    in let step_7_43 = 
+      Action.assign(expr0x7f41982d8630, expr0x7f41982d4660)
+    in let step_7_44 = 
+      Action.assign(expr0x7f41982d8678, expr0x7f41982d4690)
+    in let step_7_45 = 
+      Action.call(call0x7f41982d1a20)
+    in let step_7_46 = 
+      Action.assign(expr0x7f41983381b0, call0x7f41982d1a20)
+    in let step_7_47 = 
+      Action.debug("# DEBUG de => de_34")
+    in Block.block(
+      7,
+      [|
+        step_7_35;
+        step_7_36;
+        step_7_37;
+        step_7_38;
+        step_7_39;
+        step_7_40;
+        step_7_41;
+        step_7_42;
+        step_7_43;
+        step_7_44;
+        step_7_45;
+        step_7_46;
+        step_7_47;
+      |],
+      [|
+        ("dictFind", 1);
+        ("getDecodedObject", 1);
+      |],
+      [|
+        "assume TRUE (_10 > 0)";
+        "# VUSE <.MEM_19>\n_11 = cc_23->argv;";
+        "_12 = _11 + 8;";
+        "# VUSE <.MEM_19>\n_13 = *_12;";
+        "# .MEM_31 = VDEF <.MEM_19>\nkey_32 = getDecodedObject (_13);";
+        "<CAPTURES RETURN>";
+        "# DEBUG key => key_32";
+        "# VUSE <.MEM_31>\n_14 = key_32->ptr;";
+        "# VUSE <.MEM_31>\n_15 = cc_23->db;";
+        "# VUSE <.MEM_31>\n_16 = _15->dict;";
+        "# .MEM_33 = VDEF <.MEM_31>\nde_34 = dictFind (_16, _14);";
+        "<CAPTURES RETURN>";
+        "# DEBUG de => de_34";
+      |]
+    )
+  in let block_8 = 
+    let step_8_48 = 
+      Action.assume(7, Expr.bneq(GccType.boolean, expr0x7f41983381b0, expr0x7f41981db720))
+    in let step_8_49 = 
+      Action.assign(expr0x7f41983381f8, expr0x7f419822e8a0)
+    in let step_8_50 = 
+      Action.debug("# DEBUG val => val_35")
+    in let step_8_51 = 
+      Action.assign(expr0x7f41982d86c0, expr0x7f41982d46c0)
+    in let step_8_52 = 
+      Action.call(call0x7f41982c57b8)
+    in let step_8_53 = 
+      Action.call(call0x7f41982d1ab0)
+    in Block.block(
+      8,
+      [|
+        step_8_48;
+        step_8_49;
+        step_8_50;
+        step_8_51;
+        step_8_52;
+        step_8_53;
+      |],
+      [|
+        ("serverLog", 1);
+        ("serverLogObjectDebugInfo", 1);
+      |],
+      [|
+        "assume TRUE (de_34 != 0B)";
+        "# VUSE <.MEM_33>\nval_35 = de_34->v.val;";
+        "# DEBUG val => val_35";
+        "# VUSE <.MEM_33>\n_17 = key_32->ptr;";
+        "# .MEM_36 = VDEF <.MEM_33>\nserverLog (3, \"key \\'%s\\' found in DB containing the following object:\", _17);";
+        "# .MEM_37 = VDEF <.MEM_36>\nserverLogObjectDebugInfo (val_35);";
+      |]
+    )
+  in let block_9 = 
+    let step_9_54 = 
+      Action.assume(7, Expr.beq(GccType.boolean, expr0x7f41983381b0, expr0x7f41981db720))
+    in let step_9_55 = 
+      Action.call(call0x7f41982d1b40)
+    in Block.block(
+      9,
+      [|
+        step_9_54;
+        step_9_55;
+      |],
+      [|
+        ("decrRefCount", 1);
+      |],
+      [|
+        "assume FALSE (de_34 != 0B)";
+        "# .MEM_38 = VDEF <.MEM_20>\ndecrRefCount (key_32);";
+      |]
+    )
+  in let block_10 = 
+    let step_10_56 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f41982d8240, expr0x7f4198229660))
+    in let step_10_57 = 
+      Action.assume(6, Expr.blte(GccType.boolean, expr0x7f41982d84c8, expr0x7f41993c9078))
+    in let step_10_58 = 
+      Action.return(expr0)
+    in Block.block(
+      10,
+      [|
+        step_10_56;
+        step_10_57;
+        step_10_58;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_1 == 0B)";
+        "assume FALSE (_10 > 0)";
+        "# VUSE <.MEM_21>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_59 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_59 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    11,
+    Z.of_string "7",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "5");
+          Cfg.edge (8, "[10]", block_10, Z.of_string "6", Z.of_string "6");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (10, "[0 | 5]", block_5, Z.of_string "0", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[6]", block_6, [|
+          Cfg.edge (5, "[7]", block_7, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (8, "[10]", block_10, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[7]", block_7, [|
+          Cfg.edge (6, "[8]", block_8, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (7, "[9]", block_9, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[8]", block_8, [|
+          Cfg.edge (7, "[9]", block_9, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[9]", block_9, [|
+          Cfg.edge (8, "[10]", block_10, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[10]", block_10, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (11, "[1 | 5]", block_5, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 5]", block_5, [|
+          Cfg.edge (9, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (4, "[6]", block_6, Z.of_string "3", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[1 | 5]", block_5, [|
+          Cfg.edge (4, "[6]", block_6, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "logCurrentClient",
+    64,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: logRegisters
+  // fid: 60
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f4198204dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "25")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4198204e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204dc8)
+  in let type0x7f4198204f18 = 
+    GccType.pointer(type0x7f4198204e70)
+  in let type0x7f41993c4888 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41983df348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "22")
+  in let type0x7f41983df1f8 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41983df888 = 
+    GccType.array(type0x7f41983df1f8, type0x7f41983df348)
+  in let type0x7f41983e6c78 = 
+    GccType.record("mcontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983ec540 = 
+    GccType.record("ucontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981c2150 = 
+    GccType.pointer(type0x7f41983ec540)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4198227930 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "212")
+  in let type0x7f4198227bd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198227930)
+  in let type0x7f4198227c78 = 
+    GccType.pointer(type0x7f4198227bd0)
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41993d41f8 = 
+    GccType.pointer(type0x7f41993cc0a8)
+  in let expr0x7f419821bd20 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1027")
+  in let expr0x7f41982248a0 = 
+    Expr.string_cst(type0x7f4198204e70, 26, "\"\\n------ REGISTERS ------\\n\"")
+  in let expr0x7f4198226ae0 = 
+    Expr.address_of(type0x7f4198204f18, expr0x7f41982248a0)
+  in let expr0x7f41982d2000 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41986473a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "18")
+  in let expr0x7f41983e9130 = 
+    Expr.field_decl(type0x7f41983df888, FieldDecl.make("gregs", "1472", 64, "0", 128, 0, false))
+  in let expr0x7f41983e95f0 = 
+    Expr.field_decl(type0x7f41983e6c78, FieldDecl.make("uc_mcontext", "2048", 64, "32", 128, 64, false))
+  in let expr0x7f41982a1660 = 
+    Expr.u_int_cst(type0x7f41981c2150, Z.of_string "0")
+  in let expr0x7f4198218c80 = 
+    Expr.parameter_decl(type0x7f41981c2150, "uc", type0x7f41981c2150)
+  in let expr0x7f4198333090 = 
+    Expr.ssa("uc_43(D)", 43, expr0x7f4198218c80)
+  in let expr0x7f41982c9ca8 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4bd0 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9ca8, expr0x7f41983e95f0)
+  in let expr0x7f41982a4ba0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4bd0, expr0x7f41983e9130)
+  in let expr0x7f41982cf1c0 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4ba0, expr0x7f41986473a8)
+  in let expr0x7f41982d2048 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2090 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198647360 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "17")
+  in let expr0x7f41982c9d48 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4c30 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9d48, expr0x7f41983e95f0)
+  in let expr0x7f41982a4c00 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4c30, expr0x7f41983e9130)
+  in let expr0x7f41982cf1f8 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4c00, expr0x7f4198647360)
+  in let expr0x7f41982d20d8 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2120 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41994f8f30 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "16")
+  in let expr0x7f41982c9de8 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4c90 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9de8, expr0x7f41983e95f0)
+  in let expr0x7f41982a4c60 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4c90, expr0x7f41983e9130)
+  in let expr0x7f41982cf230 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4c60, expr0x7f41994f8f30)
+  in let expr0x7f41982d2168 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d21b0 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41995238b8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "7")
+  in let expr0x7f41982c9e88 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4cf0 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9e88, expr0x7f41983e95f0)
+  in let expr0x7f41982a4cc0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4cf0, expr0x7f41983e9130)
+  in let expr0x7f41982cf268 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4cc0, expr0x7f41995238b8)
+  in let expr0x7f41982d21f8 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2240 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c9420 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "6")
+  in let expr0x7f41982c9f28 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4d50 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9f28, expr0x7f41983e95f0)
+  in let expr0x7f41982a4d20 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4d50, expr0x7f41983e9130)
+  in let expr0x7f41982cf2a0 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4d20, expr0x7f41993c9420)
+  in let expr0x7f41982d2288 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d22d0 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c9408 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "5")
+  in let expr0x7f41982c9fc8 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4db0 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9fc8, expr0x7f41983e95f0)
+  in let expr0x7f41982a4d80 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4db0, expr0x7f41983e9130)
+  in let expr0x7f41982cf2d8 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4d80, expr0x7f41993c9408)
+  in let expr0x7f41982d2318 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2360 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c93f0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "4")
+  in let expr0x7f41982c95c8 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4e10 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c95c8, expr0x7f41983e95f0)
+  in let expr0x7f41982a4de0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4e10, expr0x7f41983e9130)
+  in let expr0x7f41982cf310 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4de0, expr0x7f41993c93f0)
+  in let expr0x7f41982d23a8 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d23f0 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f41982c97d0 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4e70 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c97d0, expr0x7f41983e95f0)
+  in let expr0x7f41982a4e40 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4e70, expr0x7f41983e9130)
+  in let expr0x7f41982cf348 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4e40, expr0x7f41993c90a8)
+  in let expr0x7f41982d2438 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2480 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c93d8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "2")
+  in let expr0x7f41982c9758 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4ed0 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9758, expr0x7f41983e95f0)
+  in let expr0x7f41982a4ea0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4ed0, expr0x7f41983e9130)
+  in let expr0x7f41982cf380 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4ea0, expr0x7f41993c93d8)
+  in let expr0x7f41982d24c8 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2510 = 
+    Expr.ssa("_19", 19, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41982c9848 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4f30 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9848, expr0x7f41983e95f0)
+  in let expr0x7f41982a4f00 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4f30, expr0x7f41983e9130)
+  in let expr0x7f41982cf3b8 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4f00, expr0x7f41993c9090)
+  in let expr0x7f41982d2558 = 
+    Expr.ssa("_20", 20, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d25a0 = 
+    Expr.ssa("_21", 21, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41982c9910 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4f90 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9910, expr0x7f41983e95f0)
+  in let expr0x7f41982a4f60 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4f90, expr0x7f41983e9130)
+  in let expr0x7f41982cf3f0 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4f60, expr0x7f41993c9078)
+  in let expr0x7f41982d25e8 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2630 = 
+    Expr.ssa("_23", 23, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f419953f768 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "15")
+  in let expr0x7f41982c9cf8 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4060 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9cf8, expr0x7f41983e95f0)
+  in let expr0x7f41982a4fc0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4060, expr0x7f41983e9130)
+  in let expr0x7f41982cf428 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a4fc0, expr0x7f419953f768)
+  in let expr0x7f41982d2678 = 
+    Expr.ssa("_24", 24, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d26c0 = 
+    Expr.ssa("_25", 25, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f419955c4f8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "10")
+  in let expr0x7f41982c9d98 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982a4b10 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9d98, expr0x7f41983e95f0)
+  in let expr0x7f41982a42a0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982a4b10, expr0x7f41983e9130)
+  in let expr0x7f41982cf460 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982a42a0, expr0x7f419955c4f8)
+  in let expr0x7f41982d2708 = 
+    Expr.ssa("_26", 26, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2750 = 
+    Expr.ssa("_27", 27, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41986471f8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "9")
+  in let expr0x7f41982c9e38 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d4030 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9e38, expr0x7f41983e95f0)
+  in let expr0x7f41982d4000 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d4030, expr0x7f41983e9130)
+  in let expr0x7f41982cf498 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d4000, expr0x7f41986471f8)
+  in let expr0x7f41982d2798 = 
+    Expr.ssa("_28", 28, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d27e0 = 
+    Expr.ssa("_29", 29, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41994f8d50 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "8")
+  in let expr0x7f41982c9ed8 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d4090 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9ed8, expr0x7f41983e95f0)
+  in let expr0x7f41982d4060 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d4090, expr0x7f41983e9130)
+  in let expr0x7f41982cf4d0 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d4060, expr0x7f41994f8d50)
+  in let expr0x7f41982d2828 = 
+    Expr.ssa("_30", 30, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2870 = 
+    Expr.ssa("_31", 31, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4199523108 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "12")
+  in let expr0x7f41982c9f78 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d40f0 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982c9f78, expr0x7f41983e95f0)
+  in let expr0x7f41982d40c0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d40f0, expr0x7f41983e9130)
+  in let expr0x7f41982cf508 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d40c0, expr0x7f4199523108)
+  in let expr0x7f41982d28b8 = 
+    Expr.ssa("_32", 32, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2900 = 
+    Expr.ssa("_33", 33, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41986472b8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "14")
+  in let expr0x7f41982d5000 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d4150 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982d5000, expr0x7f41983e95f0)
+  in let expr0x7f41982d4120 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d4150, expr0x7f41983e9130)
+  in let expr0x7f41982cf540 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d4120, expr0x7f41986472b8)
+  in let expr0x7f41982d2948 = 
+    Expr.ssa("_34", 34, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2990 = 
+    Expr.ssa("_35", 35, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4198647240 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "11")
+  in let expr0x7f41982d50a0 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d41b0 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982d50a0, expr0x7f41983e95f0)
+  in let expr0x7f41982d4180 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d41b0, expr0x7f41983e9130)
+  in let expr0x7f41982cf578 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d4180, expr0x7f4198647240)
+  in let expr0x7f41982d29d8 = 
+    Expr.ssa("_36", 36, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2a20 = 
+    Expr.ssa("_37", 37, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f4199599d20 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "13")
+  in let expr0x7f41982d5140 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d4210 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982d5140, expr0x7f41983e95f0)
+  in let expr0x7f41982d41e0 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d4210, expr0x7f41983e9130)
+  in let expr0x7f41982cf5b0 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d41e0, expr0x7f4199599d20)
+  in let expr0x7f41982d2a68 = 
+    Expr.ssa("_38", 38, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198228300 = 
+    Expr.string_cst(type0x7f4198227bd0, 213, "\"\\nRAX:%016lx RBX:%016lx\\nRCX:%016lx RDX:%016lx\\nRDI:%016lx RSI:%016lx\\nRBP:%016lx RSP:%016lx\\nR8 :%016lx R9 :%016lx\\nR10:%016lx R11:%016lx\\nR12:%016lx R13:%016lx\\nR14:%016lx R15:%016lx\\nRIP:%016lx EFL:%016lx\\nCSGSFS:%016lx\"")
+  in let expr0x7f4198226b60 = 
+    Expr.address_of(type0x7f4198227c78, expr0x7f4198228300)
+  in let expr0x7f41982d2ab0 = 
+    Expr.ssa("_39", 39, Expr.nothing(type0x7f41993c4888))
+  in let expr0x7f41982d51e0 = 
+    Expr.memory_ref(type0x7f41983ec540, expr0x7f4198333090, expr0x7f41982a1660)
+  in let expr0x7f41982d4270 = 
+    Expr.component_ref(type0x7f41983e6c78, expr0x7f41982d51e0, expr0x7f41983e95f0)
+  in let expr0x7f41982d4240 = 
+    Expr.component_ref(type0x7f41983df888, expr0x7f41982d4270, expr0x7f41983e9130)
+  in let expr0x7f41982cf5e8 = 
+    Expr.array_ref(type0x7f41983df1f8, expr0x7f41982d4240, expr0x7f419953f768)
+  in let expr0x7f41982d2af8 = 
+    Expr.ssa("_40", 40, Expr.nothing(type0x7f41993d41f8))
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982d1000 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f4198226ae0));
+  |])
+  in let call0x7f41982cba10 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198226b60));
+      (Expr.parameter("p3", 2, expr0x7f41982d2a68));
+      (Expr.parameter("p4", 3, expr0x7f41982d29d8));
+      (Expr.parameter("p5", 4, expr0x7f41982d2948));
+      (Expr.parameter("p6", 5, expr0x7f41982d28b8));
+      (Expr.parameter("p7", 6, expr0x7f41982d2828));
+      (Expr.parameter("p8", 7, expr0x7f41982d2798));
+      (Expr.parameter("p9", 8, expr0x7f41982d2708));
+      (Expr.parameter("p10", 9, expr0x7f41982d2678));
+      (Expr.parameter("p11", 10, expr0x7f41982d25e8));
+      (Expr.parameter("p12", 11, expr0x7f41982d2558));
+      (Expr.parameter("p13", 12, expr0x7f41982d24c8));
+      (Expr.parameter("p14", 13, expr0x7f41982d2438));
+      (Expr.parameter("p15", 14, expr0x7f41982d23a8));
+      (Expr.parameter("p16", 15, expr0x7f41982d2318));
+      (Expr.parameter("p17", 16, expr0x7f41982d2288));
+      (Expr.parameter("p18", 17, expr0x7f41982d21f8));
+      (Expr.parameter("p19", 18, expr0x7f41982d2168));
+      (Expr.parameter("p20", 19, expr0x7f41982d20d8));
+      (Expr.parameter("p21", 20, expr0x7f41982d2048));
+  |])
+  in let call0x7f41982d1090 = Expr.call(
+    type0x7f41993c4f18,
+    "logStackContent", [|
+      (Expr.parameter("sp", 0, expr0x7f41982d2af8));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f41982d1000)
+    in let step_2_2 = 
+      Action.assign(expr0x7f41982d2000, expr0x7f41982cf1c0)
+    in let step_2_3 = 
+      Action.assign(expr0x7f41982d2048, expr0x7f41982d2000)
+    in let step_2_4 = 
+      Action.assign(expr0x7f41982d2090, expr0x7f41982cf1f8)
+    in let step_2_5 = 
+      Action.assign(expr0x7f41982d20d8, expr0x7f41982d2090)
+    in let step_2_6 = 
+      Action.assign(expr0x7f41982d2120, expr0x7f41982cf230)
+    in let step_2_7 = 
+      Action.assign(expr0x7f41982d2168, expr0x7f41982d2120)
+    in let step_2_8 = 
+      Action.assign(expr0x7f41982d21b0, expr0x7f41982cf268)
+    in let step_2_9 = 
+      Action.assign(expr0x7f41982d21f8, expr0x7f41982d21b0)
+    in let step_2_10 = 
+      Action.assign(expr0x7f41982d2240, expr0x7f41982cf2a0)
+    in let step_2_11 = 
+      Action.assign(expr0x7f41982d2288, expr0x7f41982d2240)
+    in let step_2_12 = 
+      Action.assign(expr0x7f41982d22d0, expr0x7f41982cf2d8)
+    in let step_2_13 = 
+      Action.assign(expr0x7f41982d2318, expr0x7f41982d22d0)
+    in let step_2_14 = 
+      Action.assign(expr0x7f41982d2360, expr0x7f41982cf310)
+    in let step_2_15 = 
+      Action.assign(expr0x7f41982d23a8, expr0x7f41982d2360)
+    in let step_2_16 = 
+      Action.assign(expr0x7f41982d23f0, expr0x7f41982cf348)
+    in let step_2_17 = 
+      Action.assign(expr0x7f41982d2438, expr0x7f41982d23f0)
+    in let step_2_18 = 
+      Action.assign(expr0x7f41982d2480, expr0x7f41982cf380)
+    in let step_2_19 = 
+      Action.assign(expr0x7f41982d24c8, expr0x7f41982d2480)
+    in let step_2_20 = 
+      Action.assign(expr0x7f41982d2510, expr0x7f41982cf3b8)
+    in let step_2_21 = 
+      Action.assign(expr0x7f41982d2558, expr0x7f41982d2510)
+    in let step_2_22 = 
+      Action.assign(expr0x7f41982d25a0, expr0x7f41982cf3f0)
+    in let step_2_23 = 
+      Action.assign(expr0x7f41982d25e8, expr0x7f41982d25a0)
+    in let step_2_24 = 
+      Action.assign(expr0x7f41982d2630, expr0x7f41982cf428)
+    in let step_2_25 = 
+      Action.assign(expr0x7f41982d2678, expr0x7f41982d2630)
+    in let step_2_26 = 
+      Action.assign(expr0x7f41982d26c0, expr0x7f41982cf460)
+    in let step_2_27 = 
+      Action.assign(expr0x7f41982d2708, expr0x7f41982d26c0)
+    in let step_2_28 = 
+      Action.assign(expr0x7f41982d2750, expr0x7f41982cf498)
+    in let step_2_29 = 
+      Action.assign(expr0x7f41982d2798, expr0x7f41982d2750)
+    in let step_2_30 = 
+      Action.assign(expr0x7f41982d27e0, expr0x7f41982cf4d0)
+    in let step_2_31 = 
+      Action.assign(expr0x7f41982d2828, expr0x7f41982d27e0)
+    in let step_2_32 = 
+      Action.assign(expr0x7f41982d2870, expr0x7f41982cf508)
+    in let step_2_33 = 
+      Action.assign(expr0x7f41982d28b8, expr0x7f41982d2870)
+    in let step_2_34 = 
+      Action.assign(expr0x7f41982d2900, expr0x7f41982cf540)
+    in let step_2_35 = 
+      Action.assign(expr0x7f41982d2948, expr0x7f41982d2900)
+    in let step_2_36 = 
+      Action.assign(expr0x7f41982d2990, expr0x7f41982cf578)
+    in let step_2_37 = 
+      Action.assign(expr0x7f41982d29d8, expr0x7f41982d2990)
+    in let step_2_38 = 
+      Action.assign(expr0x7f41982d2a20, expr0x7f41982cf5b0)
+    in let step_2_39 = 
+      Action.assign(expr0x7f41982d2a68, expr0x7f41982d2a20)
+    in let step_2_40 = 
+      Action.call(call0x7f41982cba10)
+    in let step_2_41 = 
+      Action.assign(expr0x7f41982d2ab0, expr0x7f41982cf5e8)
+    in let step_2_42 = 
+      Action.assign(expr0x7f41982d2af8, expr0x7f41982d2ab0)
+    in let step_2_43 = 
+      Action.call(call0x7f41982d1090)
+    in let step_2_44 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+        step_2_11;
+        step_2_12;
+        step_2_13;
+        step_2_14;
+        step_2_15;
+        step_2_16;
+        step_2_17;
+        step_2_18;
+        step_2_19;
+        step_2_20;
+        step_2_21;
+        step_2_22;
+        step_2_23;
+        step_2_24;
+        step_2_25;
+        step_2_26;
+        step_2_27;
+        step_2_28;
+        step_2_29;
+        step_2_30;
+        step_2_31;
+        step_2_32;
+        step_2_33;
+        step_2_34;
+        step_2_35;
+        step_2_36;
+        step_2_37;
+        step_2_38;
+        step_2_39;
+        step_2_40;
+        step_2_41;
+        step_2_42;
+        step_2_43;
+        step_2_44;
+      |],
+      [|
+        ("logStackContent", 1);
+        ("serverLog", 2);
+      |],
+      [|
+        "# .MEM_42 = VDEF <.MEM_41(D)>\nserverLog (1027, \"\\n------ REGISTERS ------\\n\");";
+        "# VUSE <.MEM_42>\n_1 = uc_43(D)->uc_mcontext.gregs[18];";
+        "_2 = (long unsigned int) _1;";
+        "# VUSE <.MEM_42>\n_3 = uc_43(D)->uc_mcontext.gregs[17];";
+        "_4 = (long unsigned int) _3;";
+        "# VUSE <.MEM_42>\n_5 = uc_43(D)->uc_mcontext.gregs[16];";
+        "_6 = (long unsigned int) _5;";
+        "# VUSE <.MEM_42>\n_7 = uc_43(D)->uc_mcontext.gregs[7];";
+        "_8 = (long unsigned int) _7;";
+        "# VUSE <.MEM_42>\n_9 = uc_43(D)->uc_mcontext.gregs[6];";
+        "_10 = (long unsigned int) _9;";
+        "# VUSE <.MEM_42>\n_11 = uc_43(D)->uc_mcontext.gregs[5];";
+        "_12 = (long unsigned int) _11;";
+        "# VUSE <.MEM_42>\n_13 = uc_43(D)->uc_mcontext.gregs[4];";
+        "_14 = (long unsigned int) _13;";
+        "# VUSE <.MEM_42>\n_15 = uc_43(D)->uc_mcontext.gregs[3];";
+        "_16 = (long unsigned int) _15;";
+        "# VUSE <.MEM_42>\n_17 = uc_43(D)->uc_mcontext.gregs[2];";
+        "_18 = (long unsigned int) _17;";
+        "# VUSE <.MEM_42>\n_19 = uc_43(D)->uc_mcontext.gregs[1];";
+        "_20 = (long unsigned int) _19;";
+        "# VUSE <.MEM_42>\n_21 = uc_43(D)->uc_mcontext.gregs[0];";
+        "_22 = (long unsigned int) _21;";
+        "# VUSE <.MEM_42>\n_23 = uc_43(D)->uc_mcontext.gregs[15];";
+        "_24 = (long unsigned int) _23;";
+        "# VUSE <.MEM_42>\n_25 = uc_43(D)->uc_mcontext.gregs[10];";
+        "_26 = (long unsigned int) _25;";
+        "# VUSE <.MEM_42>\n_27 = uc_43(D)->uc_mcontext.gregs[9];";
+        "_28 = (long unsigned int) _27;";
+        "# VUSE <.MEM_42>\n_29 = uc_43(D)->uc_mcontext.gregs[8];";
+        "_30 = (long unsigned int) _29;";
+        "# VUSE <.MEM_42>\n_31 = uc_43(D)->uc_mcontext.gregs[12];";
+        "_32 = (long unsigned int) _31;";
+        "# VUSE <.MEM_42>\n_33 = uc_43(D)->uc_mcontext.gregs[14];";
+        "_34 = (long unsigned int) _33;";
+        "# VUSE <.MEM_42>\n_35 = uc_43(D)->uc_mcontext.gregs[11];";
+        "_36 = (long unsigned int) _35;";
+        "# VUSE <.MEM_42>\n_37 = uc_43(D)->uc_mcontext.gregs[13];";
+        "_38 = (long unsigned int) _37;";
+        "# .MEM_44 = VDEF <.MEM_42>\nserverLog (3, \"\\nRAX:%016lx RBX:%016lx\\nRCX:%016lx RDX:%016lx\\nRDI:%016lx RSI:%016lx\\nRBP:%016lx RSP:%016lx\\nR8 :%016lx R9 :%016lx\\nR10:%016lx R11:%016lx\\nR12:%016lx R13:%016lx\\nR14:%016lx R15:%016lx\\nRIP:%016lx EFL:%016lx\\nCSGSFS:%016lx\", _38, _36, _34, _32, _30, _28, _26, _24, _22, _20, _18, _16, _14, _12, _10, _8, _6, _4, _2);";
+        "# VUSE <.MEM_44>\n_39 = uc_43(D)->uc_mcontext.gregs[15];";
+        "_40 = (void * *) _39;";
+        "# .MEM_45 = VDEF <.MEM_44>\nlogStackContent (_40);";
+        "# VUSE <.MEM_45>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_45 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_45 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "logRegisters",
+    60,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: logStackContent
+  // fid: 59
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41993d41f8 = 
+    GccType.pointer(type0x7f41993cc0a8)
+  in let type0x7f4198204a80 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "18")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4198204b28 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204a80)
+  in let type0x7f4198204bd0 = 
+    GccType.pointer(type0x7f4198204b28)
+  in let expr0x7f419821f2d0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("i", 32, 32))
+  in let expr0x7f4198331d38 = 
+    Expr.ssa("i_7", 7, expr0x7f419821f2d0)
+  in let expr0x7f4198331dc8 = 
+    Expr.ssa("i_9", 9, expr0x7f419821f2d0)
+  in let expr0x7f4198331f78 = 
+    Expr.ssa("i_15", 15, expr0x7f419821f2d0)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f419953f768 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "15")
+  in let expr0x7f41982c3e10 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c3e58 = 
+    Expr.ssa("sp.36_2", 2, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198218a80 = 
+    Expr.parameter_decl(type0x7f41993d41f8, "sp", type0x7f41993d41f8)
+  in let expr0x7f4198331e58 = 
+    Expr.ssa("sp_11(D)", 11, expr0x7f4198218a80)
+  in let expr0x7f419821f360 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("addr", 64, 64))
+  in let expr0x7f4198331ea0 = 
+    Expr.ssa("addr_12", 12, expr0x7f419821f360)
+  in let expr0x7f41982c3ea0 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c3ee8 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41994f8d68 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "8")
+  in let expr0x7f41982c3f30 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993d41f8))
+  in let expr0x7f41982c3f78 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982a1648 = 
+    Expr.u_int_cst(type0x7f41993d41f8, Z.of_string "0")
+  in let expr0x7f41982c98e8 = 
+    Expr.memory_ref(type0x7f41993cc0a8, expr0x7f41982c3f30, expr0x7f41982a1648)
+  in let expr0x7f419821f3f0 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("val", 64, 64))
+  in let expr0x7f4198331ee8 = 
+    Expr.ssa("val_13", 13, expr0x7f419821f3f0)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f4198225d70 = 
+    Expr.string_cst(type0x7f4198204b28, 19, "\"(%016lx) -> %016lx\"")
+  in let expr0x7f41982269a0 = 
+    Expr.address_of(type0x7f4198204bd0, expr0x7f4198225d70)
+  in let expr0x7f41993c90c0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "-1")
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982c2bd0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982269a0));
+      (Expr.parameter("p3", 2, expr0x7f4198331ea0));
+      (Expr.parameter("p4", 3, expr0x7f4198331ee8));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f4198331dc8, expr0x7f419953f768)
+    in let step_2_2 = 
+      Action.debug("# DEBUG i => i_9")
+    in let step_2_3 = 
+      Action.assign(expr0x7f4198331d38, expr0x7f4198331dc8)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "i_9 = 15;";
+        "# DEBUG i => i_9";
+        "i_7 = i_9";
+      |]
+    )
+  in let block_3 = 
+    let step_3_4 = 
+      Action.assume(4, Expr.bgte(GccType.boolean, expr0x7f4198331d38, expr0x7f41993c9078))
+    in let step_3_5 = 
+      Action.assign(expr0x7f41982c3e10, expr0x7f4198331d38)
+    in let step_3_6 = 
+      Action.assign(expr0x7f41982c3e58, expr0x7f4198331e58)
+    in let step_3_7 = 
+      Action.assign(expr0x7f4198331ea0, Expr.plus(
+        type0x7f41993c47e0, expr0x7f41982c3e10, expr0x7f41982c3e58))
+    in let step_3_8 = 
+      Action.debug("# DEBUG addr => addr_12")
+    in let step_3_9 = 
+      Action.assign(expr0x7f41982c3ea0, expr0x7f4198331d38)
+    in let step_3_10 = 
+      Action.assign(expr0x7f41982c3ee8, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982c3ea0, expr0x7f41994f8d68))
+    in let step_3_11 = 
+      Action.assign(expr0x7f41982c3f30, Expr.pointer_plus(
+        type0x7f41993d41f8, expr0x7f4198331e58, expr0x7f41982c3ee8))
+    in let step_3_12 = 
+      Action.assign(expr0x7f41982c3f78, expr0x7f41982c98e8)
+    in let step_3_13 = 
+      Action.assign(expr0x7f4198331ee8, expr0x7f41982c3f78)
+    in let step_3_14 = 
+      Action.debug("# DEBUG val => val_13")
+    in let step_3_15 = 
+      Action.call(call0x7f41982c2bd0)
+    in let step_3_16 = 
+      Action.assign(expr0x7f4198331f78, Expr.plus(
+        type0x7f41993c45e8, expr0x7f4198331d38, expr0x7f41993c90c0))
+    in let step_3_17 = 
+      Action.debug("# DEBUG i => i_15")
+    in let step_3_18 = 
+      Action.assign(expr0x7f4198331d38, expr0x7f4198331f78)
+    in Block.block(
+      3,
+      [|
+        step_3_4;
+        step_3_5;
         step_3_6;
         step_3_7;
         step_3_8;
@@ -451,68 +16550,3476 @@ let main =
         step_3_16;
         step_3_17;
         step_3_18;
-        step_3_19;
-        step_3_20;
       |],
       [|
-        ("base64_encode", 1);
-        ("g_snprintf", 2);
+        ("serverLog", 1);
       |],
       [|
-        "assume TRUE (_1 != 0)";
-        "# .MEM_26 = VDEF <.MEM_24>\nn2_27 = g_snprintf (&auth_data2, 252, \"%s:%s\", &prefs.hex_net_proxy_user, &prefs.hex_net_proxy_pass);";
-        "<CAPTURES RETURN>";
-        "# DEBUG n2 => n2_27";
-        "n2.27_2 = (unsigned int) n2_27;";
-        "# .MEM_28 = VDEF <.MEM_26>\nbase64_encode (&auth_data, &auth_data2, n2.27_2);";
-        "_3 = (long unsigned int) n_25;";
-        "_4 = 512 - _3;";
-        "_5 = (sizetype) n_25;";
-        "_6 = &buf + _5;";
-        "# .MEM_29 = VDEF <.MEM_28>\n_30 = g_snprintf (_6, _4, \"Proxy-Authorization: Basic %s\\r\\n\", &auth_data);";
-        "<CAPTURES RETURN>";
-        "n_31 = _30 + n_25;";
-        "# DEBUG n => n_31";
-        "n_16 = n_31";
+        "assume TRUE (i_7 >= 0)";
+        "_1 = (long unsigned int) i_7;";
+        "sp.36_2 = (long unsigned int) sp_11(D);";
+        "addr_12 = _1 + sp.36_2;";
+        "# DEBUG addr => addr_12";
+        "_3 = (long unsigned int) i_7;";
+        "_4 = _3 * 8;";
+        "_5 = sp_11(D) + _4;";
+        "# VUSE <.MEM_8>\n_6 = *_5;";
+        "val_13 = (long unsigned int) _6;";
+        "# DEBUG val => val_13";
+        "# .MEM_14 = VDEF <.MEM_8>\nserverLog (3, \"(%016lx) -> %016lx\", addr_12, val_13);";
+        "i_15 = i_7 + -1;";
+        "# DEBUG i => i_15";
+        "i_7 = i_15";
       |]
     )
   in let block_4 = 
-    let step_4_21 = 
-      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f9e64980e58, expr0x7f9e66d54f48))
-    in let step_4_22 = 
-      Action.debug("# DEBUG n => n_16")
-    in let step_4_23 = 
-      Action.assign(expr0x7f9e6498d168, expr0x7f9e649ed090)
-    in let step_4_24 = 
-      Action.assign(expr0x7f9e6498d1b0, Expr.minus(
-        type0x7f9e66d6c7e0, expr0x7f9e64862738, expr0x7f9e6498d168))
-    in let step_4_25 = 
-      Action.assign(expr0x7f9e6498d1f8, expr0x7f9e649ed090)
-    in let step_4_26 = 
-      Action.assign(expr0x7f9e6498d240, Expr.pointer_plus(
-        type0x7f9e660e8150, expr0x7f9e6497ffe0, expr0x7f9e6498d1f8))
-    in let step_4_27 = 
-      Action.call(call0x7f9e64966be0)
-    in let step_4_28 = 
-      Action.assign(expr0x7f9e649ed558, call0x7f9e64966be0)
-    in let step_4_29 = 
-      Action.assign(expr0x7f9e649ed5a0, Expr.plus(
-        type0x7f9e66d6c5e8, expr0x7f9e649ed558, expr0x7f9e649ed090))
-    in let step_4_30 = 
-      Action.debug("# DEBUG n => n_34")
-    in let step_4_31 = 
-      Action.assign(expr0x7f9e6498d2d0, expr0x7f9e649ed5a0)
-    in let step_4_32 = 
-      Action.call(call0x7f9e64981930)
-    in let step_4_33 = 
-      Action.call(call0x7f9e649819d8)
-    in let step_4_34 = 
-      Action.assign(expr0x7f9e649ed708, call0x7f9e649819d8)
-    in let step_4_35 = 
-      Action.debug("# DEBUG n => n_39")
+    let step_4_19 = 
+      Action.debug("# DEBUG i => i_7")
     in Block.block(
       4,
       [|
+        step_4_19;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG i => i_7";
+      |]
+    )
+  in let block_5 = 
+    let step_5_20 = 
+      Action.assume(4, Expr.blt(GccType.boolean, expr0x7f4198331d38, expr0x7f41993c9078))
+    in let step_5_21 = 
+      Action.return(expr0)
+    in Block.block(
+      5,
+      [|
+        step_5_20;
+        step_5_21;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (i_7 >= 0)";
+        "# VUSE <.MEM_8>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_22 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_22 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    6,
+    Z.of_string "2",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (5, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 3]", block_3, [|
+          Cfg.edge (6, "[1 | 4]", block_4, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (4, "[0 | 3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (3, "[5]", block_5, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1 | 4]", block_4, [|
+          Cfg.edge (3, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "logStackContent",
+    59,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: logStackTrace
+  // fid: 63
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41993d41f8 = 
+    GccType.pointer(type0x7f41993cc0a8)
+  in let type0x7f419822f498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "100")
+  in let type0x7f419822f540 = 
+    GccType.array(type0x7f41993cc0a8, type0x7f419822f498)
+  in let type0x7f419822f690 = 
+    GccType.pointer(type0x7f419822f540)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41983ec540 = 
+    GccType.record("ucontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981c2150 = 
+    GccType.pointer(type0x7f41983ec540)
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41984ce150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "5")
+  in let type0x7f41981ec2a0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41984ce150)
+  in let type0x7f41981ec690 = 
+    GccType.pointer(type0x7f41981ec2a0)
+  in let type0x7f41985cc498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "12")
+  in let type0x7f41981ec0a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985cc498)
+  in let type0x7f41981ec150 = 
+    GccType.pointer(type0x7f41981ec0a8)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41995065e8 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41981c2c78 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41981c2d20 = 
+    GccType.pointer(type0x7f41981c2c78)
+  in let expr0x7f419821f630 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("fd", 32, 32))
+  in let expr0x7f41983336c0 = 
+    Expr.ssa("fd_14", 14, expr0x7f419821f630)
+  in let expr0x7f41993c90c0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "-1")
+  in let expr0x7f41982d2e58 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41993c90f0 = 
+    Expr.u_int_cst(type0x7f41993cc0a8, Z.of_string "0")
+  in let expr0x7f419821f5a0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("trace_size", 32, 32))
+  in let expr0x7f41983335e8 = 
+    Expr.ssa("trace_size_11", 11, expr0x7f419821f5a0)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41982d2e10 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993d41f8))
+  in let expr0x7f419821f510 = 
+    Expr.variable_decl(type0x7f419822f540, VarDecl.make("trace", 6464, 64))
+  in let expr0x7f41982ca900 = 
+    Expr.address_of(type0x7f419822f690, expr0x7f419821f510)
+  in let expr0x7f41993accf0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "8")
+  in let expr0x7f419865e960 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "100")
+  in let expr0x7f4198333750 = 
+    Expr.ssa("trace_size_16", 16, expr0x7f419821f5a0)
+  in let expr0x7f4198218e00 = 
+    Expr.parameter_decl(type0x7f41981c2150, "uc", type0x7f41981c2150)
+  in let expr0x7f4198333798 = 
+    Expr.ssa("uc_17(D)", 17, expr0x7f4198218e00)
+  in let expr0x7f419821f6c0 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("msg1", 64, 64))
+  in let expr0x7f4198333828 = 
+    Expr.ssa("msg1_19", 19, expr0x7f419821f6c0)
+  in let expr0x7f419822d400 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"EIP:\\n\"")
+  in let expr0x7f419822d420 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f419822d400)
+  in let expr0x7f419821f750 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("msg2", 64, 64))
+  in let expr0x7f4198333870 = 
+    Expr.ssa("msg2_20", 20, expr0x7f419821f750)
+  in let expr0x7f419822be10 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"\\nBacktrace:\\n\"")
+  in let expr0x7f419822d480 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f419822be10)
+  in let expr0x7f41982d2ea0 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d2ee8 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982d2f78 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419822c1c0 = 
+    Expr.array_ref(type0x7f41993cc0a8, expr0x7f419821f510, expr0x7f41993c9078)
+  in let expr0x7f419822d580 = 
+    Expr.address_of(type0x7f419822f690, expr0x7f419821f510)
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41982d8000 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d8048 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982d80d8 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41981c2d20))
+  in let expr0x7f41982cae20 = 
+    Expr.address_of(type0x7f419822f690, expr0x7f419821f510)
+  in let expr0x7f41982a1888 = 
+    Expr.constructor(type0x7f419822f540)
+  in let expr0x7f41982a18a0 = 
+    Expr.constructor(type0x7f419822f540)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982ce600 = Expr.call(
+    type0x7f41993c45e8,
+    "openDirectLogFiledes", [|
+  |])
+  in let call0x7f41982d12d0 = Expr.call(
+    type0x7f41993c45e8,
+    "backtrace", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d2e10));
+      (Expr.parameter("p2", 1, expr0x7f419865e960));
+  |])
+  in let call0x7f41982d1360 = Expr.call(
+    type0x7f41993cc0a8,
+    "getMcontextEip", [|
+      (Expr.parameter("uc", 0, expr0x7f4198333798));
+  |])
+  in let call0x7f41982d13f0 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f4198333828));
+  |])
+  in let call0x7f41982c54c0 = Expr.call(
+    type0x7f41995065e8,
+    "write", [|
+      (Expr.parameter("p1", 0, expr0x7f41983336c0));
+      (Expr.parameter("p2", 1, expr0x7f4198333828));
+      (Expr.parameter("p3", 2, expr0x7f41982d2ea0));
+  |])
+  in let call0x7f41982d1480 = Expr.call(
+    type0x7f41993cc0a8,
+    "getMcontextEip", [|
+      (Expr.parameter("uc", 0, expr0x7f4198333798));
+  |])
+  in let call0x7f41982c5558 = Expr.call(
+    type0x7f41993c4f18,
+    "backtrace_symbols_fd", [|
+      (Expr.parameter("p1", 0, expr0x7f419822d580));
+      (Expr.parameter("p2", 1, expr0x7f41993c9090));
+      (Expr.parameter("p3", 2, expr0x7f41983336c0));
+  |])
+  in let call0x7f41982d1510 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f4198333870));
+  |])
+  in let call0x7f41982c55f0 = Expr.call(
+    type0x7f41995065e8,
+    "write", [|
+      (Expr.parameter("p1", 0, expr0x7f41983336c0));
+      (Expr.parameter("p2", 1, expr0x7f4198333870));
+      (Expr.parameter("p3", 2, expr0x7f41982d8000));
+  |])
+  in let call0x7f41982c5688 = Expr.call(
+    type0x7f41993c4f18,
+    "backtrace_symbols_fd", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d80d8));
+      (Expr.parameter("p2", 1, expr0x7f4198333750));
+      (Expr.parameter("p3", 2, expr0x7f41983336c0));
+  |])
+  in let call0x7f41982d15a0 = Expr.call(
+    type0x7f41993c4f18,
+    "closeDirectLogFiledes", [|
+      (Expr.parameter("fd", 0, expr0x7f41983336c0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41983335e8, expr0x7f41993c9078)
+    in let step_2_2 = 
+      Action.debug("# DEBUG trace_size => trace_size_11")
+    in let step_2_3 = 
+      Action.call(call0x7f41982ce600)
+    in let step_2_4 = 
+      Action.assign(expr0x7f41983336c0, call0x7f41982ce600)
+    in let step_2_5 = 
+      Action.debug("# DEBUG fd => fd_14")
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+      |],
+      [|
+        ("openDirectLogFiledes", 1);
+      |],
+      [|
+        "trace_size_11 = 0;";
+        "# DEBUG trace_size => trace_size_11";
+        "# .MEM_13 = VDEF <.MEM_12(D)>\nfd_14 = openDirectLogFiledes ();";
+        "<CAPTURES RETURN>";
+        "# DEBUG fd => fd_14";
+      |]
+    )
+  in let block_3 = 
+    let step_3_6 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f41983336c0, expr0x7f41993c90c0))
+    in let step_3_7 = 
+      Action.assign(expr0x7f41982d2e10, Expr.pointer_plus(
+        type0x7f41993d41f8, expr0x7f41982ca900, expr0x7f41993accf0))
+    in let step_3_8 = 
+      Action.call(call0x7f41982d12d0)
+    in let step_3_9 = 
+      Action.assign(expr0x7f4198333750, call0x7f41982d12d0)
+    in let step_3_10 = 
+      Action.debug("# DEBUG trace_size => trace_size_16")
+    in let step_3_11 = 
+      Action.call(call0x7f41982d1360)
+    in let step_3_12 = 
+      Action.assign(expr0x7f41982d2e58, call0x7f41982d1360)
+    in Block.block(
+      3,
+      [|
+        step_3_6;
+        step_3_7;
+        step_3_8;
+        step_3_9;
+        step_3_10;
+        step_3_11;
+        step_3_12;
+      |],
+      [|
+        ("backtrace", 1);
+        ("getMcontextEip", 1);
+      |],
+      [|
+        "assume FALSE (fd_14 == -1)";
+        "_1 = &trace + 8;";
+        "# .MEM_15 = VDEF <.MEM_13>\ntrace_size_16 = backtrace (_1, 100);";
+        "<CAPTURES RETURN>";
+        "# DEBUG trace_size => trace_size_16";
+        "# .MEM_18 = VDEF <.MEM_15>\n_2 = getMcontextEip (uc_17(D));";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_4 = 
+    let step_4_13 = 
+      Action.assume(3, Expr.bneq(GccType.boolean, expr0x7f41982d2e58, expr0x7f41993c90f0))
+    in let step_4_14 = 
+      Action.assign(expr0x7f4198333828, expr0x7f419822d420)
+    in let step_4_15 = 
+      Action.debug("# DEBUG msg1 => msg1_19")
+    in let step_4_16 = 
+      Action.assign(expr0x7f4198333870, expr0x7f419822d480)
+    in let step_4_17 = 
+      Action.debug("# DEBUG msg2 => msg2_20")
+    in let step_4_18 = 
+      Action.call(call0x7f41982d13f0)
+    in let step_4_19 = 
+      Action.assign(expr0x7f41982d2ea0, call0x7f41982d13f0)
+    in let step_4_20 = 
+      Action.call(call0x7f41982c54c0)
+    in let step_4_21 = 
+      Action.assign(expr0x7f41982d2ee8, call0x7f41982c54c0)
+    in let step_4_22 = 
+      Action.call(call0x7f41982d1480)
+    in let step_4_23 = 
+      Action.assign(expr0x7f41982d2f78, call0x7f41982d1480)
+    in let step_4_24 = 
+      Action.assign(expr0x7f419822c1c0, expr0x7f41982d2f78)
+    in let step_4_25 = 
+      Action.call(call0x7f41982c5558)
+    in let step_4_26 = 
+      Action.call(call0x7f41982d1510)
+    in let step_4_27 = 
+      Action.assign(expr0x7f41982d8000, call0x7f41982d1510)
+    in let step_4_28 = 
+      Action.call(call0x7f41982c55f0)
+    in let step_4_29 = 
+      Action.assign(expr0x7f41982d8048, call0x7f41982c55f0)
+    in Block.block(
+      4,
+      [|
+        step_4_13;
+        step_4_14;
+        step_4_15;
+        step_4_16;
+        step_4_17;
+        step_4_18;
+        step_4_19;
+        step_4_20;
+        step_4_21;
+        step_4_22;
+        step_4_23;
+        step_4_24;
+        step_4_25;
+        step_4_26;
+        step_4_27;
+        step_4_28;
+        step_4_29;
+      |],
+      [|
+        ("backtrace_symbols_fd", 1);
+        ("getMcontextEip", 1);
+        ("strlen", 2);
+        ("write", 2);
+      |],
+      [|
+        "assume TRUE (_2 != 0B)";
+        "msg1_19 = \"EIP:\\n\";";
+        "# DEBUG msg1 => msg1_19";
+        "msg2_20 = \"\\nBacktrace:\\n\";";
+        "# DEBUG msg2 => msg2_20";
+        "# VUSE <.MEM_18>\n_3 = strlen (msg1_19);";
+        "<CAPTURES RETURN>";
+        "# .MEM_21 = VDEF <.MEM_18>\n_4 = write (fd_14, msg1_19, _3);";
+        "<CAPTURES RETURN>";
+        "# .MEM_22 = VDEF <.MEM_21>\n_5 = getMcontextEip (uc_17(D));";
+        "<CAPTURES RETURN>";
+        "# .MEM_23 = VDEF <.MEM_22>\ntrace[0] = _5;";
+        "# .MEM_24 = VDEF <.MEM_23>\nbacktrace_symbols_fd (&trace, 1, fd_14);";
+        "# VUSE <.MEM_24>\n_6 = strlen (msg2_20);";
+        "<CAPTURES RETURN>";
+        "# .MEM_25 = VDEF <.MEM_24>\n_7 = write (fd_14, msg2_20, _6);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_5 = 
+    let step_5_30 = 
+      Action.assume(3, Expr.beq(GccType.boolean, expr0x7f41982d2e58, expr0x7f41993c90f0))
+    in let step_5_31 = 
+      Action.assign(expr0x7f41982d80d8, Expr.pointer_plus(
+        type0x7f41981c2d20, expr0x7f41982cae20, expr0x7f41993accf0))
+    in let step_5_32 = 
+      Action.call(call0x7f41982c5688)
+    in let step_5_33 = 
+      Action.call(call0x7f41982d15a0)
+    in let step_5_34 = 
+      Action.assign(expr0x7f419821f510, expr0x7f41982a1888)
+    in Block.block(
+      5,
+      [|
+        step_5_30;
+        step_5_31;
+        step_5_32;
+        step_5_33;
+        step_5_34;
+      |],
+      [|
+        ("backtrace_symbols_fd", 1);
+        ("closeDirectLogFiledes", 1);
+      |],
+      [|
+        "assume FALSE (_2 != 0B)";
+        "_8 = &trace + 8;";
+        "# .MEM_26 = VDEF <.MEM_9>\nbacktrace_symbols_fd (_8, trace_size_16, fd_14);";
+        "# .MEM_27 = VDEF <.MEM_26>\ncloseDirectLogFiledes (fd_14);";
+        "# .MEM_28 = VDEF <.MEM_27>\ntrace ={v} {CLOBBER};";
+      |]
+    )
+  in let block_6 = 
+    let step_6_35 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f41983336c0, expr0x7f41993c90c0))
+    in let step_6_36 = 
+      Action.assign(expr0x7f419821f510, expr0x7f41982a18a0)
+    in Block.block(
+      6,
+      [|
+        step_6_35;
+        step_6_36;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (fd_14 == -1)";
+        "# .MEM_29 = VDEF <.MEM_13>\ntrace ={v} {CLOBBER};";
+      |]
+    )
+  in let block_7 = 
+    let step_7_37 = 
+      Action.return(expr0)
+    in Block.block(
+      7,
+      [|
+        step_7_37;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_10>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_38 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_38 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    8,
+    Z.of_string "3",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (6, "[6]", block_6, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (5, "[5]", block_5, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (7, "[7]", block_7, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[6]", block_6, [|
+          Cfg.edge (7, "[7]", block_7, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[7]", block_7, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "logStackTrace",
+    63,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: memtest_test_linux_anonymous_maps
+  // fid: 65
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f4199534e70 = 
+    GccType.record("FILE", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419955b540 = 
+    GccType.pointer(type0x7f4199534e70)
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41994fb0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "1")
+  in let type0x7f4198211888 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41994fb0a8)
+  in let type0x7f4198211930 = 
+    GccType.pointer(type0x7f4198211888)
+  in let type0x7f419950fb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41981d6540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419950fb28)
+  in let type0x7f419821e540 = 
+    GccType.pointer(type0x7f41981d6540)
+  in let type0x7f419822fb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "1023")
+  in let type0x7f419822fbd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419822fb28)
+  in let type0x7f4198237540 = 
+    GccType.pointer(type0x7f419822fbd0)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41984ce150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "5")
+  in let type0x7f41981ec2a0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41984ce150)
+  in let type0x7f41981ec690 = 
+    GccType.pointer(type0x7f41981ec2a0)
+  in let type0x7f41983d8738 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "4")
+  in let type0x7f41981f59d8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41983d8738)
+  in let type0x7f41981f5a80 = 
+    GccType.pointer(type0x7f41981f59d8)
+  in let type0x7f4199571348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "8")
+  in let type0x7f41995713f0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199571348)
+  in let type0x7f41981fb498 = 
+    GccType.pointer(type0x7f41995713f0)
+  in let type0x7f41985db498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "2")
+  in let type0x7f4198211d20 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985db498)
+  in let type0x7f4198211dc8 = 
+    GccType.pointer(type0x7f4198211d20)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4199567690 = 
+    GccType.pointer(type0x7f41993cff18)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f419846f2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "127")
+  in let type0x7f419822fa80 = 
+    GccType.array(type0x7f419950a348, type0x7f419846f2a0)
+  in let type0x7f41982370a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "52")
+  in let type0x7f4198237150 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41982370a8)
+  in let type0x7f41982371f8 = 
+    GccType.pointer(type0x7f4198237150)
+  in let type0x7f41995065e8 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41993d4000 = 
+    GccType.pointer(type0x7f41993c47e0)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let expr0x7f41982381b0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("fd", 32, 32))
+  in let expr0x7f4198338798 = 
+    Expr.ssa("fd_30", 30, expr0x7f41982381b0)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f419821fbd0 = 
+    Expr.variable_decl(type0x7f419955b540, VarDecl.make("fp", 64, 64))
+  in let expr0x7f4198338828 = 
+    Expr.ssa("fp_32", 32, expr0x7f419821fbd0)
+  in let expr0x7f4198229c48 = 
+    Expr.u_int_cst(type0x7f419955b540, Z.of_string "0")
+  in let expr0x7f4198238360 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("p", 64, 64))
+  in let expr0x7f4198338d38 = 
+    Expr.ssa("p_50", 50, expr0x7f4198238360)
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f4198338e58 = 
+    Expr.ssa("p_54", 54, expr0x7f4198238360)
+  in let expr0x7f41982d8828 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982d8870 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982d88b8 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982d8900 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982d8948 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f4198238090 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("regions", 32, 32))
+  in let expr0x7f4198338480 = 
+    Expr.ssa("regions_19", 19, expr0x7f4198238090)
+  in let expr0x7f41983386c0 = 
+    Expr.ssa("regions_27", 27, expr0x7f4198238090)
+  in let expr0x7f419833b1f8 = 
+    Expr.ssa("regions_66", 66, expr0x7f4198238090)
+  in let expr0x7f41982d8af8 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982383f0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("errors", 32, 32))
+  in let expr0x7f4198338b40 = 
+    Expr.ssa("errors_43", 43, expr0x7f41982383f0)
+  in let expr0x7f41983385a0 = 
+    Expr.ssa("iftmp.40_23", 23, Expr.nothing(type0x7f4198211930))
+  in let expr0x7f4198338bd0 = 
+    Expr.ssa("iftmp.40_45", 45, Expr.nothing(type0x7f4198211930))
+  in let expr0x7f4198338b88 = 
+    Expr.ssa("iftmp.40_44", 44, Expr.nothing(type0x7f4198211930))
+  in let expr0x7f4198238120 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("j", 32, 32))
+  in let expr0x7f41983384c8 = 
+    Expr.ssa("j_20", 20, expr0x7f4198238120)
+  in let expr0x7f4198338900 = 
+    Expr.ssa("j_35", 35, expr0x7f4198238120)
+  in let expr0x7f4198338c60 = 
+    Expr.ssa("j_47", 47, expr0x7f4198238120)
+  in let expr0x7f4198338510 = 
+    Expr.ssa("errors_21", 21, expr0x7f41982383f0)
+  in let expr0x7f41983388b8 = 
+    Expr.ssa("errors_34", 34, expr0x7f41982383f0)
+  in let expr0x7f4198338558 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419833b288 = 
+    Expr.ssa("_68", 68, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419833b240 = 
+    Expr.ssa("_67", 67, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198338a20 = 
+    Expr.ssa("_39", 39, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198233870 = 
+    Expr.string_cst(type0x7f41981d6540, 16, "\"/proc/self/maps\"")
+  in let expr0x7f4198239060 = 
+    Expr.address_of(type0x7f419821e540, expr0x7f4198233870)
+  in let expr0x7f4198229c18 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\"r\"")
+  in let expr0x7f41982390a0 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f4198229c18)
+  in let expr0x7f4198338ca8 = 
+    Expr.ssa("p_48", 48, expr0x7f4198238360)
+  in let expr0x7f419821fc60 = 
+    Expr.variable_decl(type0x7f419822fbd0, VarDecl.make("line", 8192, 8))
+  in let expr0x7f4198239220 = 
+    Expr.address_of(type0x7f4198237540, expr0x7f419821fc60)
+  in let expr0x7f4198238240 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("start", 64, 64))
+  in let expr0x7f4198338cf0 = 
+    Expr.ssa("start_49", 49, expr0x7f4198238240)
+  in let expr0x7f4198647d38 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "45")
+  in let expr0x7f41982d8798 = 
+    Expr.ssa("p.38_1", 1, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f4198338d80 = 
+    Expr.ssa("p_51", 51, expr0x7f4198238360)
+  in let expr0x7f41993acde0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "1")
+  in let expr0x7f41982e0550 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982d8798, expr0x7f41985ed570)
+  in let expr0x7f41985ed6d8 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "0")
+  in let expr0x7f41982382d0 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("end", 64, 64))
+  in let expr0x7f4198338e10 = 
+    Expr.ssa("end_53", 53, expr0x7f41982382d0)
+  in let expr0x7f4199523000 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "32")
+  in let expr0x7f41982d87e0 = 
+    Expr.ssa("p.39_2", 2, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f4198338ea0 = 
+    Expr.ssa("p_55", 55, expr0x7f4198238360)
+  in let expr0x7f41982e0618 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982d87e0, expr0x7f41985ed570)
+  in let expr0x7f4198239580 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"stack\"")
+  in let expr0x7f41982df480 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f4198239580)
+  in let expr0x7f4198239640 = 
+    Expr.string_cst(type0x7f41981f59d8, 5, "\"vdso\"")
+  in let expr0x7f41982df560 = 
+    Expr.address_of(type0x7f41981f5a80, expr0x7f4198239640)
+  in let expr0x7f4198239700 = 
+    Expr.string_cst(type0x7f41995713f0, 9, "\"vsyscall\"")
+  in let expr0x7f41982df640 = 
+    Expr.address_of(type0x7f41981fb498, expr0x7f4198239700)
+  in let expr0x7f4198239800 = 
+    Expr.string_cst(type0x7f41981ec2a0, 6, "\"00:00\"")
+  in let expr0x7f41982df720 = 
+    Expr.address_of(type0x7f41981ec690, expr0x7f4198239800)
+  in let expr0x7f4198229f00 = 
+    Expr.string_cst(type0x7f4198211d20, 3, "\"rw\"")
+  in let expr0x7f41982df800 = 
+    Expr.address_of(type0x7f4198211dc8, expr0x7f4198229f00)
+  in let expr0x7f419820c600 = 
+    Expr.u_int_cst(type0x7f4199567690, Z.of_string "0")
+  in let expr0x7f41994f8f30 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "16")
+  in let expr0x7f419821fd80 = 
+    Expr.variable_decl(type0x7f419950a348, VarDecl.make("start_addr", 64, 64))
+  in let expr0x7f4198338f78 = 
+    Expr.ssa("start_addr_58", 58, expr0x7f419821fd80)
+  in let expr0x7f419821fe10 = 
+    Expr.variable_decl(type0x7f419950a348, VarDecl.make("end_addr", 64, 64))
+  in let expr0x7f419833b048 = 
+    Expr.ssa("end_addr_60", 60, expr0x7f419821fe10)
+  in let expr0x7f419821fea0 = 
+    Expr.variable_decl(type0x7f419950a348, VarDecl.make("size", 64, 64))
+  in let expr0x7f419833b090 = 
+    Expr.ssa("size_61", 61, expr0x7f419821fea0)
+  in let expr0x7f419821ff30 = 
+    Expr.variable_decl(type0x7f419822fa80, VarDecl.make("start_vect", 8192, 64))
+  in let expr0x7f419822c4d0 = 
+    Expr.array_ref(type0x7f419950a348, expr0x7f419821ff30, expr0x7f4198338480)
+  in let expr0x7f4198238000 = 
+    Expr.variable_decl(type0x7f419822fa80, VarDecl.make("size_vect", 8192, 64))
+  in let expr0x7f419822c508 = 
+    Expr.array_ref(type0x7f419950a348, expr0x7f4198238000, expr0x7f4198338480)
+  in let expr0x7f41982d8990 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d9d20 = 
+    Expr.array_ref(type0x7f419950a348, expr0x7f4198238000, expr0x7f4198338480)
+  in let expr0x7f41982d89d8 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d9d58 = 
+    Expr.array_ref(type0x7f419950a348, expr0x7f419821ff30, expr0x7f4198338480)
+  in let expr0x7f419821fcf0 = 
+    Expr.variable_decl(type0x7f419822fbd0, VarDecl.make("logbuf", 8192, 8))
+  in let expr0x7f4198239a80 = 
+    Expr.address_of(type0x7f4198237540, expr0x7f419821fcf0)
+  in let expr0x7f41994f8d38 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "1024")
+  in let expr0x7f419822aa50 = 
+    Expr.string_cst(type0x7f4198237150, 53, "\"*** Preparing to test memory region %lx (%lu bytes)\\n\"")
+  in let expr0x7f4198239ac0 = 
+    Expr.address_of(type0x7f41982371f8, expr0x7f419822aa50)
+  in let expr0x7f41982df9c0 = 
+    Expr.address_of(type0x7f4198237540, expr0x7f419821fcf0)
+  in let expr0x7f41982d8a20 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982dfaa0 = 
+    Expr.address_of(type0x7f4198237540, expr0x7f419821fcf0)
+  in let expr0x7f41982d8a68 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41982dfb80 = 
+    Expr.address_of(type0x7f4198237540, expr0x7f419821fc60)
+  in let expr0x7f41993c9378 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1024")
+  in let expr0x7f419823b150 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\".\"")
+  in let expr0x7f41982dfc60 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f419823b150)
+  in let expr0x7f41995996c0 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "1")
+  in let expr0x7f41982d8b88 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982d8c18 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d9f88 = 
+    Expr.array_ref(type0x7f419950a348, expr0x7f4198238000, expr0x7f41983384c8)
+  in let expr0x7f41982d8c60 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982d9fc0 = 
+    Expr.array_ref(type0x7f419950a348, expr0x7f419821ff30, expr0x7f41983384c8)
+  in let expr0x7f41982d8ca8 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993d4000))
+  in let expr0x7f4198338af8 = 
+    Expr.ssa("_42", 42, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419823b1b0 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\"E\"")
+  in let expr0x7f4198239e60 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f419823b1b0)
+  in let expr0x7f419823b1c8 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\"O\"")
+  in let expr0x7f4198239ea0 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f419823b1c8)
+  in let expr0x7f41982d8d38 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f419823b2a0 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\"\\n\"")
+  in let expr0x7f41982dff00 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f419823b2a0)
+  in let expr0x7f41982d8dc8 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982a1e10 = 
+    Expr.constructor(type0x7f419822fbd0)
+  in let expr0x7f41982a1e28 = 
+    Expr.constructor(type0x7f419822fbd0)
+  in let expr0x7f41982a1e40 = 
+    Expr.constructor(type0x7f419822fa80)
+  in let expr0x7f41982a1e58 = 
+    Expr.constructor(type0x7f419822fa80)
+  in let call0x7f41982e1080 = Expr.call(
+    type0x7f41993c45e8,
+    "openDirectLogFiledes", [|
+  |])
+  in let call0x7f41982d1c60 = Expr.call(
+    type0x7f419955b540,
+    "fopen", [|
+      (Expr.parameter("p1", 0, expr0x7f4198239060));
+      (Expr.parameter("p2", 1, expr0x7f41982390a0));
+  |])
+  in let call0x7f41982d1cf0 = Expr.call(
+    type0x7f41993cff18,
+    "__builtin_strchr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338ca8));
+      (Expr.parameter("p2", 1, expr0x7f4198647d38));
+  |])
+  in let call0x7f41982d1d80 = Expr.call(
+    type0x7f41993cff18,
+    "__builtin_strchr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338d80));
+      (Expr.parameter("p2", 1, expr0x7f4199523000));
+  |])
+  in let call0x7f41982d1e10 = Expr.call(
+    type0x7f41993cff18,
+    "strstr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338ea0));
+      (Expr.parameter("p2", 1, expr0x7f41982df480));
+  |])
+  in let call0x7f41982d1ea0 = Expr.call(
+    type0x7f41993cff18,
+    "strstr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338ea0));
+      (Expr.parameter("p2", 1, expr0x7f41982df560));
+  |])
+  in let call0x7f41982d1f30 = Expr.call(
+    type0x7f41993cff18,
+    "strstr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338ea0));
+      (Expr.parameter("p2", 1, expr0x7f41982df640));
+  |])
+  in let call0x7f41982e2000 = Expr.call(
+    type0x7f41993cff18,
+    "strstr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338ea0));
+      (Expr.parameter("p2", 1, expr0x7f41982df720));
+  |])
+  in let call0x7f41982e2090 = Expr.call(
+    type0x7f41993cff18,
+    "strstr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338ea0));
+      (Expr.parameter("p2", 1, expr0x7f41982df800));
+  |])
+  in let call0x7f41982c5850 = Expr.call(
+    type0x7f41993c47e0,
+    "strtoul", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338cf0));
+      (Expr.parameter("p2", 1, expr0x7f419820c600));
+      (Expr.parameter("p3", 2, expr0x7f41994f8f30));
+  |])
+  in let call0x7f41982c58e8 = Expr.call(
+    type0x7f41993c47e0,
+    "strtoul", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338e10));
+      (Expr.parameter("p2", 1, expr0x7f419820c600));
+      (Expr.parameter("p3", 2, expr0x7f41994f8f30));
+  |])
+  in let call0x7f41982d7690 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f4198239a80));
+      (Expr.parameter("p2", 1, expr0x7f41994f8d38));
+      (Expr.parameter("p3", 2, expr0x7f4198239ac0));
+      (Expr.parameter("p4", 3, expr0x7f41982d89d8));
+      (Expr.parameter("p5", 4, expr0x7f41982d8990));
+  |])
+  in let call0x7f41982e2120 = Expr.call(
+    type0x7f419950a348,
+    "strlen", [|
+      (Expr.parameter("p1", 0, expr0x7f41982df9c0));
+  |])
+  in let call0x7f41982c5980 = Expr.call(
+    type0x7f41995065e8,
+    "write", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338798));
+      (Expr.parameter("p2", 1, expr0x7f41982dfaa0));
+      (Expr.parameter("p3", 2, expr0x7f41982d8a20));
+  |])
+  in let call0x7f41982c5a18 = Expr.call(
+    type0x7f41993cff18,
+    "fgets", [|
+      (Expr.parameter("p1", 0, expr0x7f41982dfb80));
+      (Expr.parameter("p2", 1, expr0x7f41993c9378));
+      (Expr.parameter("p3", 2, expr0x7f4198338828));
+  |])
+  in let call0x7f41982c5ab0 = Expr.call(
+    type0x7f41995065e8,
+    "write", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338798));
+      (Expr.parameter("p2", 1, expr0x7f41982dfc60));
+      (Expr.parameter("p3", 2, expr0x7f41995996c0));
+  |])
+  in let call0x7f41982c5b48 = Expr.call(
+    type0x7f41993c45e8,
+    "memtest_preserving_test", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d8ca8));
+      (Expr.parameter("p2", 1, expr0x7f41982d8c18));
+      (Expr.parameter("p3", 2, expr0x7f41993c9090));
+  |])
+  in let call0x7f41982c5be0 = Expr.call(
+    type0x7f41995065e8,
+    "write", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338798));
+      (Expr.parameter("p2", 1, expr0x7f41983385a0));
+      (Expr.parameter("p3", 2, expr0x7f41995996c0));
+  |])
+  in let call0x7f41982c5c78 = Expr.call(
+    type0x7f41995065e8,
+    "write", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338798));
+      (Expr.parameter("p2", 1, expr0x7f41982dff00));
+      (Expr.parameter("p3", 2, expr0x7f41995996c0));
+  |])
+  in let call0x7f41982e22d0 = Expr.call(
+    type0x7f41993c45e8,
+    "fclose", [|
+      (Expr.parameter("p1", 0, expr0x7f4198338828));
+  |])
+  in let call0x7f41982e2360 = Expr.call(
+    type0x7f41993c4f18,
+    "closeDirectLogFiledes", [|
+      (Expr.parameter("fd", 0, expr0x7f4198338798));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41983386c0, expr0x7f41993c9078)
+    in let step_2_2 = 
+      Action.debug("# DEBUG regions => regions_27")
+    in let step_2_3 = 
+      Action.call(call0x7f41982e1080)
+    in let step_2_4 = 
+      Action.assign(expr0x7f4198338798, call0x7f41982e1080)
+    in let step_2_5 = 
+      Action.debug("# DEBUG fd => fd_30")
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+      |],
+      [|
+        ("openDirectLogFiledes", 1);
+      |],
+      [|
+        "regions_27 = 0;";
+        "# DEBUG regions => regions_27";
+        "# .MEM_29 = VDEF <.MEM_28(D)>\nfd_30 = openDirectLogFiledes ();";
+        "<CAPTURES RETURN>";
+        "# DEBUG fd => fd_30";
+      |]
+    )
+  in let block_3 = 
+    let step_3_6 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f4198338798, expr0x7f41993c9078))
+    in let step_3_7 = 
+      Action.assign(expr0x7f419833b288, expr0x7f41993c9078)
+    in let step_3_8 = 
+      Action.assign(expr0x7f4198338558, expr0x7f419833b288)
+    in Block.block(
+      3,
+      [|
+        step_3_6;
+        step_3_7;
+        step_3_8;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (fd_30 == 0)";
+        "_68 = 0;";
+        "_22 = _68";
+      |]
+    )
+  in let block_4 = 
+    let step_4_9 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f4198338798, expr0x7f41993c9078))
+    in let step_4_10 = 
+      Action.call(call0x7f41982d1c60)
+    in let step_4_11 = 
+      Action.assign(expr0x7f4198338828, call0x7f41982d1c60)
+    in let step_4_12 = 
+      Action.debug("# DEBUG fp => fp_32")
+    in let step_4_13 = 
+      Action.assign(expr0x7f4198338480, expr0x7f41983386c0)
+    in Block.block(
+      4,
+      [|
+        step_4_9;
+        step_4_10;
+        step_4_11;
+        step_4_12;
+        step_4_13;
+      |],
+      [|
+        ("fopen", 1);
+      |],
+      [|
+        "assume FALSE (fd_30 == 0)";
+        "# .MEM_31 = VDEF <.MEM_29>\nfp_32 = fopen (\"/proc/self/maps\", \"r\");";
+        "<CAPTURES RETURN>";
+        "# DEBUG fp => fp_32";
+        "regions_19 = regions_27";
+      |]
+    )
+  in let block_5 = 
+    let step_5_14 = 
+      Action.assume(4, Expr.beq(GccType.boolean, expr0x7f4198338828, expr0x7f4198229c48))
+    in let step_5_15 = 
+      Action.assign(expr0x7f419833b240, expr0x7f41993c9078)
+    in let step_5_16 = 
+      Action.assign(expr0x7f4198338558, expr0x7f419833b240)
+    in Block.block(
+      5,
+      [|
+        step_5_14;
+        step_5_15;
+        step_5_16;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (fp_32 == 0B)";
+        "_67 = 0;";
+        "_22 = _67";
+      |]
+    )
+  in let block_6 = 
+    let step_6_17 = 
+      Action.assume(19, Expr.bneq(GccType.boolean, expr0x7f41982d8af8, expr0x7f41985ed570))
+    in let step_6_18 = 
+      Action.assign(expr0x7f4198338ca8, expr0x7f4198239220)
+    in let step_6_19 = 
+      Action.debug("# DEBUG p => p_48")
+    in let step_6_20 = 
+      Action.assign(expr0x7f4198338cf0, expr0x7f4198338ca8)
+    in let step_6_21 = 
+      Action.debug("# DEBUG start => start_49")
+    in let step_6_22 = 
+      Action.call(call0x7f41982d1cf0)
+    in let step_6_23 = 
+      Action.assign(expr0x7f4198338d38, call0x7f41982d1cf0)
+    in let step_6_24 = 
+      Action.debug("# DEBUG p => p_50")
+    in Block.block(
+      6,
+      [|
+        step_6_17;
+        step_6_18;
+        step_6_19;
+        step_6_20;
+        step_6_21;
+        step_6_22;
+        step_6_23;
+        step_6_24;
+      |],
+      [|
+        ("__builtin_strchr", 1);
+      |],
+      [|
+        "assume TRUE (_12 != 0B)";
+        "p_48 = &line;";
+        "# DEBUG p => p_48";
+        "start_49 = p_48;";
+        "# DEBUG start => start_49";
+        "# VUSE <.MEM_33>\np_50 = __builtin_strchr (p_48, 45);";
+        "<CAPTURES RETURN>";
+        "# DEBUG p => p_50";
+      |]
+    )
+  in let block_7 = 
+    let step_7_25 = 
+      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f4198338d38, expr0x7f41985ed570))
+    in let step_7_26 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_7_27 = 
+      Action.assign(expr0x7f4198338480, expr0x7f4198338480)
+    in Block.block(
+      7,
+      [|
+        step_7_25;
+        step_7_26;
+        step_7_27;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (p_50 == 0B)";
+        "// predicted unlikely by continue predictor.";
+        "regions_19 = regions_19";
+      |]
+    )
+  in let block_8 = 
+    let step_8_28 = 
+      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f4198338d38, expr0x7f41985ed570))
+    in let step_8_29 = 
+      Action.assign(expr0x7f41982d8798, expr0x7f4198338d38)
+    in let step_8_30 = 
+      Action.assign(expr0x7f4198338d80, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f41982d8798, expr0x7f41993acde0))
+    in let step_8_31 = 
+      Action.debug("# DEBUG p => p_51")
+    in let step_8_32 = 
+      Action.assign(expr0x7f41982e0550, expr0x7f41985ed6d8)
+    in let step_8_33 = 
+      Action.assign(expr0x7f4198338e10, expr0x7f4198338d80)
+    in let step_8_34 = 
+      Action.debug("# DEBUG end => end_53")
+    in let step_8_35 = 
+      Action.call(call0x7f41982d1d80)
+    in let step_8_36 = 
+      Action.assign(expr0x7f4198338e58, call0x7f41982d1d80)
+    in let step_8_37 = 
+      Action.debug("# DEBUG p => p_54")
+    in Block.block(
+      8,
+      [|
+        step_8_28;
+        step_8_29;
+        step_8_30;
+        step_8_31;
+        step_8_32;
+        step_8_33;
+        step_8_34;
+        step_8_35;
+        step_8_36;
+        step_8_37;
+      |],
+      [|
+        ("__builtin_strchr", 1);
+      |],
+      [|
+        "assume FALSE (p_50 == 0B)";
+        "p.38_1 = p_50;";
+        "p_51 = p.38_1 + 1;";
+        "# DEBUG p => p_51";
+        "# .MEM_52 = VDEF <.MEM_33>\n*p.38_1 = 0;";
+        "end_53 = p_51;";
+        "# DEBUG end => end_53";
+        "# VUSE <.MEM_52>\np_54 = __builtin_strchr (p_51, 32);";
+        "<CAPTURES RETURN>";
+        "# DEBUG p => p_54";
+      |]
+    )
+  in let block_9 = 
+    let step_9_38 = 
+      Action.assume(8, Expr.beq(GccType.boolean, expr0x7f4198338e58, expr0x7f41985ed570))
+    in let step_9_39 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_9_40 = 
+      Action.assign(expr0x7f4198338480, expr0x7f4198338480)
+    in Block.block(
+      9,
+      [|
+        step_9_38;
+        step_9_39;
+        step_9_40;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (p_54 == 0B)";
+        "// predicted unlikely by continue predictor.";
+        "regions_19 = regions_19";
+      |]
+    )
+  in let block_10 = 
+    let step_10_41 = 
+      Action.assume(8, Expr.bneq(GccType.boolean, expr0x7f4198338e58, expr0x7f41985ed570))
+    in let step_10_42 = 
+      Action.assign(expr0x7f41982d87e0, expr0x7f4198338e58)
+    in let step_10_43 = 
+      Action.assign(expr0x7f4198338ea0, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f41982d87e0, expr0x7f41993acde0))
+    in let step_10_44 = 
+      Action.debug("# DEBUG p => p_55")
+    in let step_10_45 = 
+      Action.assign(expr0x7f41982e0618, expr0x7f41985ed6d8)
+    in let step_10_46 = 
+      Action.call(call0x7f41982d1e10)
+    in let step_10_47 = 
+      Action.assign(expr0x7f41982d8828, call0x7f41982d1e10)
+    in Block.block(
+      10,
+      [|
+        step_10_41;
+        step_10_42;
+        step_10_43;
+        step_10_44;
+        step_10_45;
+        step_10_46;
+        step_10_47;
+      |],
+      [|
+        ("strstr", 1);
+      |],
+      [|
+        "assume FALSE (p_54 == 0B)";
+        "p.39_2 = p_54;";
+        "p_55 = p.39_2 + 1;";
+        "# DEBUG p => p_55";
+        "# .MEM_56 = VDEF <.MEM_52>\n*p.39_2 = 0;";
+        "# VUSE <.MEM_56>\n_3 = strstr (p_55, \"stack\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_11 = 
+    let step_11_48 = 
+      Action.assume(10, Expr.beq(GccType.boolean, expr0x7f41982d8828, expr0x7f41985ed570))
+    in let step_11_49 = 
+      Action.call(call0x7f41982d1ea0)
+    in let step_11_50 = 
+      Action.assign(expr0x7f41982d8870, call0x7f41982d1ea0)
+    in Block.block(
+      11,
+      [|
+        step_11_48;
+        step_11_49;
+        step_11_50;
+      |],
+      [|
+        ("strstr", 1);
+      |],
+      [|
+        "assume FALSE (_3 != 0B)";
+        "# VUSE <.MEM_56>\n_4 = strstr (p_55, \"vdso\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_12 = 
+    let step_12_51 = 
+      Action.assume(11, Expr.beq(GccType.boolean, expr0x7f41982d8870, expr0x7f41985ed570))
+    in let step_12_52 = 
+      Action.call(call0x7f41982d1f30)
+    in let step_12_53 = 
+      Action.assign(expr0x7f41982d88b8, call0x7f41982d1f30)
+    in Block.block(
+      12,
+      [|
+        step_12_51;
+        step_12_52;
+        step_12_53;
+      |],
+      [|
+        ("strstr", 1);
+      |],
+      [|
+        "assume FALSE (_4 != 0B)";
+        "# VUSE <.MEM_56>\n_5 = strstr (p_55, \"vsyscall\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_13 = 
+    let step_13_54 = 
+      Action.assume(10, Expr.bneq(GccType.boolean, expr0x7f41982d8828, expr0x7f41985ed570))
+    in let step_13_55 = 
+      Action.assume(11, Expr.bneq(GccType.boolean, expr0x7f41982d8870, expr0x7f41985ed570))
+    in let step_13_56 = 
+      Action.assume(12, Expr.bneq(GccType.boolean, expr0x7f41982d88b8, expr0x7f41985ed570))
+    in let step_13_57 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_13_58 = 
+      Action.assign(expr0x7f4198338480, expr0x7f4198338480)
+    in Block.block(
+      13,
+      [|
+        step_13_54;
+        step_13_55;
+        step_13_56;
+        step_13_57;
+        step_13_58;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_3 != 0B)";
+        "assume TRUE (_4 != 0B)";
+        "assume TRUE (_5 != 0B)";
+        "// predicted unlikely by continue predictor.";
+        "regions_19 = regions_19";
+      |]
+    )
+  in let block_14 = 
+    let step_14_59 = 
+      Action.assume(12, Expr.beq(GccType.boolean, expr0x7f41982d88b8, expr0x7f41985ed570))
+    in let step_14_60 = 
+      Action.call(call0x7f41982e2000)
+    in let step_14_61 = 
+      Action.assign(expr0x7f41982d8900, call0x7f41982e2000)
+    in Block.block(
+      14,
+      [|
+        step_14_59;
+        step_14_60;
+        step_14_61;
+      |],
+      [|
+        ("strstr", 1);
+      |],
+      [|
+        "assume FALSE (_5 != 0B)";
+        "# VUSE <.MEM_56>\n_6 = strstr (p_55, \"00:00\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_15 = 
+    let step_15_62 = 
+      Action.assume(14, Expr.beq(GccType.boolean, expr0x7f41982d8900, expr0x7f41985ed570))
+    in let step_15_63 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_15_64 = 
+      Action.assign(expr0x7f4198338480, expr0x7f4198338480)
+    in Block.block(
+      15,
+      [|
+        step_15_62;
+        step_15_63;
+        step_15_64;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_6 == 0B)";
+        "// predicted unlikely by continue predictor.";
+        "regions_19 = regions_19";
+      |]
+    )
+  in let block_16 = 
+    let step_16_65 = 
+      Action.assume(14, Expr.bneq(GccType.boolean, expr0x7f41982d8900, expr0x7f41985ed570))
+    in let step_16_66 = 
+      Action.call(call0x7f41982e2090)
+    in let step_16_67 = 
+      Action.assign(expr0x7f41982d8948, call0x7f41982e2090)
+    in Block.block(
+      16,
+      [|
+        step_16_65;
+        step_16_66;
+        step_16_67;
+      |],
+      [|
+        ("strstr", 1);
+      |],
+      [|
+        "assume FALSE (_6 == 0B)";
+        "# VUSE <.MEM_56>\n_7 = strstr (p_55, \"rw\");";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_17 = 
+    let step_17_68 = 
+      Action.assume(16, Expr.beq(GccType.boolean, expr0x7f41982d8948, expr0x7f41985ed570))
+    in let step_17_69 = 
+      Action.predict("// predicted unlikely by continue predictor.")
+    in let step_17_70 = 
+      Action.assign(expr0x7f4198338480, expr0x7f4198338480)
+    in Block.block(
+      17,
+      [|
+        step_17_68;
+        step_17_69;
+        step_17_70;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_7 == 0B)";
+        "// predicted unlikely by continue predictor.";
+        "regions_19 = regions_19";
+      |]
+    )
+  in let block_18 = 
+    let step_18_71 = 
+      Action.assume(16, Expr.bneq(GccType.boolean, expr0x7f41982d8948, expr0x7f41985ed570))
+    in let step_18_72 = 
+      Action.call(call0x7f41982c5850)
+    in let step_18_73 = 
+      Action.assign(expr0x7f4198338f78, call0x7f41982c5850)
+    in let step_18_74 = 
+      Action.debug("# DEBUG start_addr => start_addr_58")
+    in let step_18_75 = 
+      Action.call(call0x7f41982c58e8)
+    in let step_18_76 = 
+      Action.assign(expr0x7f419833b048, call0x7f41982c58e8)
+    in let step_18_77 = 
+      Action.debug("# DEBUG end_addr => end_addr_60")
+    in let step_18_78 = 
+      Action.assign(expr0x7f419833b090, Expr.minus(
+        type0x7f419950a348, expr0x7f419833b048, expr0x7f4198338f78))
+    in let step_18_79 = 
+      Action.debug("# DEBUG size => size_61")
+    in let step_18_80 = 
+      Action.assign(expr0x7f419822c4d0, expr0x7f4198338f78)
+    in let step_18_81 = 
+      Action.assign(expr0x7f419822c508, expr0x7f419833b090)
+    in let step_18_82 = 
+      Action.assign(expr0x7f41982d8990, expr0x7f41982d9d20)
+    in let step_18_83 = 
+      Action.assign(expr0x7f41982d89d8, expr0x7f41982d9d58)
+    in let step_18_84 = 
+      Action.call(call0x7f41982d7690)
+    in let step_18_85 = 
+      Action.call(call0x7f41982e2120)
+    in let step_18_86 = 
+      Action.assign(expr0x7f41982d8a20, call0x7f41982e2120)
+    in let step_18_87 = 
+      Action.call(call0x7f41982c5980)
+    in let step_18_88 = 
+      Action.assign(expr0x7f41982d8a68, call0x7f41982c5980)
+    in let step_18_89 = 
+      Action.assign(expr0x7f419833b1f8, Expr.plus(
+        type0x7f41993c45e8, expr0x7f4198338480, expr0x7f41993c9090))
+    in let step_18_90 = 
+      Action.debug("# DEBUG regions => regions_66")
+    in let step_18_91 = 
+      Action.assign(expr0x7f4198338480, expr0x7f419833b1f8)
+    in Block.block(
+      18,
+      [|
+        step_18_71;
+        step_18_72;
+        step_18_73;
+        step_18_74;
+        step_18_75;
+        step_18_76;
+        step_18_77;
+        step_18_78;
+        step_18_79;
+        step_18_80;
+        step_18_81;
+        step_18_82;
+        step_18_83;
+        step_18_84;
+        step_18_85;
+        step_18_86;
+        step_18_87;
+        step_18_88;
+        step_18_89;
+        step_18_90;
+        step_18_91;
+      |],
+      [|
+        ("snprintf", 1);
+        ("strlen", 1);
+        ("strtoul", 2);
+        ("write", 1);
+      |],
+      [|
+        "assume FALSE (_7 == 0B)";
+        "# .MEM_57 = VDEF <.MEM_56>\nstart_addr_58 = strtoul (start_49, 0B, 16);";
+        "<CAPTURES RETURN>";
+        "# DEBUG start_addr => start_addr_58";
+        "# .MEM_59 = VDEF <.MEM_57>\nend_addr_60 = strtoul (end_53, 0B, 16);";
+        "<CAPTURES RETURN>";
+        "# DEBUG end_addr => end_addr_60";
+        "size_61 = end_addr_60 - start_addr_58;";
+        "# DEBUG size => size_61";
+        "# .MEM_62 = VDEF <.MEM_59>\nstart_vect[regions_19] = start_addr_58;";
+        "# .MEM_63 = VDEF <.MEM_62>\nsize_vect[regions_19] = size_61;";
+        "# VUSE <.MEM_63>\n_8 = size_vect[regions_19];";
+        "# VUSE <.MEM_63>\n_9 = start_vect[regions_19];";
+        "# .MEM_64 = VDEF <.MEM_63>\nsnprintf (&logbuf, 1024, \"*** Preparing to test memory region %lx (%lu bytes)\\n\", _9, _8);";
+        "# VUSE <.MEM_64>\n_10 = strlen (&logbuf);";
+        "<CAPTURES RETURN>";
+        "# .MEM_65 = VDEF <.MEM_64>\n_11 = write (fd_30, &logbuf, _10);";
+        "<CAPTURES RETURN>";
+        "regions_66 = regions_19 + 1;";
+        "# DEBUG regions => regions_66";
+        "regions_19 = regions_66";
+      |]
+    )
+  in let block_19 = 
+    let step_19_92 = 
+      Action.assume(4, Expr.bneq(GccType.boolean, expr0x7f4198338828, expr0x7f4198229c48))
+    in let step_19_93 = 
+      Action.debug("# DEBUG regions => regions_19")
+    in let step_19_94 = 
+      Action.call(call0x7f41982c5a18)
+    in let step_19_95 = 
+      Action.assign(expr0x7f41982d8af8, call0x7f41982c5a18)
+    in Block.block(
+      19,
+      [|
+        step_19_92;
+        step_19_93;
+        step_19_94;
+        step_19_95;
+      |],
+      [|
+        ("fgets", 1);
+      |],
+      [|
+        "assume FALSE (fp_32 == 0B)";
+        "# DEBUG regions => regions_19";
+        "# .MEM_33 = VDEF <.MEM_24>\n_12 = fgets (&line, 1024, fp_32);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_20 = 
+    let step_20_96 = 
+      Action.assume(19, Expr.beq(GccType.boolean, expr0x7f41982d8af8, expr0x7f41985ed570))
+    in let step_20_97 = 
+      Action.assign(expr0x7f41983388b8, expr0x7f41993c9078)
+    in let step_20_98 = 
+      Action.debug("# DEBUG errors => errors_34")
+    in let step_20_99 = 
+      Action.assign(expr0x7f4198338900, expr0x7f41993c9078)
+    in let step_20_100 = 
+      Action.debug("# DEBUG j => j_35")
+    in let step_20_101 = 
+      Action.assign(expr0x7f41983384c8, expr0x7f4198338900)
+    in let step_20_102 = 
+      Action.assign(expr0x7f4198338510, expr0x7f41983388b8)
+    in Block.block(
+      20,
+      [|
+        step_20_96;
+        step_20_97;
+        step_20_98;
+        step_20_99;
+        step_20_100;
+        step_20_101;
+        step_20_102;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_12 != 0B)";
+        "errors_34 = 0;";
+        "# DEBUG errors => errors_34";
+        "j_35 = 0;";
+        "# DEBUG j => j_35";
+        "j_20 = j_35";
+        "errors_21 = errors_34";
+      |]
+    )
+  in let block_21 = 
+    let step_21_103 = 
+      Action.assume(25, Expr.blt(GccType.boolean, expr0x7f41983384c8, expr0x7f4198338480))
+    in let step_21_104 = 
+      Action.call(call0x7f41982c5ab0)
+    in let step_21_105 = 
+      Action.assign(expr0x7f41982d8b88, call0x7f41982c5ab0)
+    in let step_21_106 = 
+      Action.assign(expr0x7f41982d8c18, expr0x7f41982d9f88)
+    in let step_21_107 = 
+      Action.assign(expr0x7f41982d8c60, expr0x7f41982d9fc0)
+    in let step_21_108 = 
+      Action.assign(expr0x7f41982d8ca8, expr0x7f41982d8c60)
+    in let step_21_109 = 
+      Action.call(call0x7f41982c5b48)
+    in let step_21_110 = 
+      Action.assign(expr0x7f4198338af8, call0x7f41982c5b48)
+    in let step_21_111 = 
+      Action.assign(expr0x7f4198338b40, Expr.plus(
+        type0x7f41993c45e8, expr0x7f4198338af8, expr0x7f4198338510))
+    in let step_21_112 = 
+      Action.debug("# DEBUG errors => errors_43")
+    in Block.block(
+      21,
+      [|
+        step_21_103;
+        step_21_104;
+        step_21_105;
+        step_21_106;
+        step_21_107;
+        step_21_108;
+        step_21_109;
+        step_21_110;
+        step_21_111;
+        step_21_112;
+      |],
+      [|
+        ("memtest_preserving_test", 1);
+        ("write", 1);
+      |],
+      [|
+        "assume TRUE (j_20 < regions_19)";
+        "# .MEM_40 = VDEF <.MEM_25>\n_13 = write (fd_30, \".\", 1);";
+        "<CAPTURES RETURN>";
+        "# VUSE <.MEM_40>\n_14 = size_vect[j_20];";
+        "# VUSE <.MEM_40>\n_15 = start_vect[j_20];";
+        "_16 = (long unsigned int *) _15;";
+        "# .MEM_41 = VDEF <.MEM_40>\n_42 = memtest_preserving_test (_16, _14, 1);";
+        "<CAPTURES RETURN>";
+        "errors_43 = _42 + errors_21;";
+        "# DEBUG errors => errors_43";
+      |]
+    )
+  in let block_22 = 
+    let step_22_113 = 
+      Action.assume(21, Expr.bneq(GccType.boolean, expr0x7f4198338b40, expr0x7f41993c9078))
+    in let step_22_114 = 
+      Action.assign(expr0x7f4198338bd0, expr0x7f4198239e60)
+    in let step_22_115 = 
+      Action.assign(expr0x7f41983385a0, expr0x7f4198338bd0)
+    in Block.block(
+      22,
+      [|
+        step_22_113;
+        step_22_114;
+        step_22_115;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (errors_43 != 0)";
+        "iftmp.40_45 = \"E\";";
+        "iftmp.40_23 = iftmp.40_45";
+      |]
+    )
+  in let block_23 = 
+    let step_23_116 = 
+      Action.assume(21, Expr.beq(GccType.boolean, expr0x7f4198338b40, expr0x7f41993c9078))
+    in let step_23_117 = 
+      Action.assign(expr0x7f4198338b88, expr0x7f4198239ea0)
+    in let step_23_118 = 
+      Action.assign(expr0x7f41983385a0, expr0x7f4198338b88)
+    in Block.block(
+      23,
+      [|
+        step_23_116;
+        step_23_117;
+        step_23_118;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (errors_43 != 0)";
+        "iftmp.40_44 = \"O\";";
+        "iftmp.40_23 = iftmp.40_44";
+      |]
+    )
+  in let block_24 = 
+    let step_24_119 = 
+      Action.call(call0x7f41982c5be0)
+    in let step_24_120 = 
+      Action.assign(expr0x7f41982d8d38, call0x7f41982c5be0)
+    in let step_24_121 = 
+      Action.assign(expr0x7f4198338c60, Expr.plus(
+        type0x7f41993c45e8, expr0x7f41983384c8, expr0x7f41993c9090))
+    in let step_24_122 = 
+      Action.debug("# DEBUG j => j_47")
+    in let step_24_123 = 
+      Action.assign(expr0x7f41983384c8, expr0x7f4198338c60)
+    in let step_24_124 = 
+      Action.assign(expr0x7f4198338510, expr0x7f4198338b40)
+    in Block.block(
+      24,
+      [|
+        step_24_119;
+        step_24_120;
+        step_24_121;
+        step_24_122;
+        step_24_123;
+        step_24_124;
+      |],
+      [|
+        ("write", 1);
+      |],
+      [|
+        "# .MEM_46 = VDEF <.MEM_41>\n_17 = write (fd_30, iftmp.40_23, 1);";
+        "<CAPTURES RETURN>";
+        "j_47 = j_20 + 1;";
+        "# DEBUG j => j_47";
+        "j_20 = j_47";
+        "errors_21 = errors_43";
+      |]
+    )
+  in let block_25 = 
+    let step_25_125 = 
+      Action.debug("# DEBUG errors => errors_21")
+    in let step_25_126 = 
+      Action.debug("# DEBUG j => j_20")
+    in Block.block(
+      25,
+      [|
+        step_25_125;
+        step_25_126;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG errors => errors_21";
+        "# DEBUG j => j_20";
+      |]
+    )
+  in let block_26 = 
+    let step_26_127 = 
+      Action.assume(25, Expr.bgte(GccType.boolean, expr0x7f41983384c8, expr0x7f4198338480))
+    in let step_26_128 = 
+      Action.call(call0x7f41982c5c78)
+    in let step_26_129 = 
+      Action.assign(expr0x7f41982d8dc8, call0x7f41982c5c78)
+    in let step_26_130 = 
+      Action.call(call0x7f41982e22d0)
+    in let step_26_131 = 
+      Action.call(call0x7f41982e2360)
+    in let step_26_132 = 
+      Action.assign(expr0x7f4198338a20, expr0x7f4198338510)
+    in let step_26_133 = 
+      Action.assign(expr0x7f4198338558, expr0x7f4198338a20)
+    in Block.block(
+      26,
+      [|
+        step_26_127;
+        step_26_128;
+        step_26_129;
+        step_26_130;
+        step_26_131;
+        step_26_132;
+        step_26_133;
+      |],
+      [|
+        ("closeDirectLogFiledes", 1);
+        ("fclose", 1);
+        ("write", 1);
+      |],
+      [|
+        "assume FALSE (j_20 < regions_19)";
+        "# .MEM_36 = VDEF <.MEM_25>\n_18 = write (fd_30, \"\\n\", 1);";
+        "<CAPTURES RETURN>";
+        "# .MEM_37 = VDEF <.MEM_36>\nfclose (fp_32);";
+        "# .MEM_38 = VDEF <.MEM_37>\ncloseDirectLogFiledes (fd_30);";
+        "_39 = errors_21;";
+        "_22 = _39";
+      |]
+    )
+  in let block_27 = 
+    let step_27_134 = 
+      Action.assign(expr0x7f419821fc60, expr0x7f41982a1e10)
+    in let step_27_135 = 
+      Action.assign(expr0x7f419821fcf0, expr0x7f41982a1e28)
+    in let step_27_136 = 
+      Action.assign(expr0x7f419821ff30, expr0x7f41982a1e40)
+    in let step_27_137 = 
+      Action.assign(expr0x7f4198238000, expr0x7f41982a1e58)
+    in let step_27_138 = 
+      Action.return(expr0x7f4198338558)
+    in Block.block(
+      27,
+      [|
+        step_27_134;
+        step_27_135;
+        step_27_136;
+        step_27_137;
+        step_27_138;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# .MEM_69 = VDEF <.MEM_26>\nline ={v} {CLOBBER};";
+        "# .MEM_70 = VDEF <.MEM_69>\nlogbuf ={v} {CLOBBER};";
+        "# .MEM_71 = VDEF <.MEM_70>\nstart_vect ={v} {CLOBBER};";
+        "# .MEM_72 = VDEF <.MEM_71>\nsize_vect ={v} {CLOBBER};";
+        "# VUSE <.MEM_72>\nreturn _22;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_139 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_139 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    28,
+    Z.of_string "29",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "28");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "1", Z.of_string "28");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (8, "[27]", block_27, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (22, "[0 | 19]", block_19, Z.of_string "1", Z.of_string "27");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (8, "[27]", block_27, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[20]", block_20, [|
+          Cfg.edge (27, "[0 | 25]", block_25, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[26]", block_26, [|
+          Cfg.edge (8, "[27]", block_27, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[27]", block_27, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 6]", block_6, [|
+          Cfg.edge (10, "[0 | 7]", block_7, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (11, "[0 | 8]", block_8, Z.of_string "3", Z.of_string "23");
+        |]
+      );
+      Cfg.vert ("[0 | 7]", block_7, [|
+          Cfg.edge (28, "[1 | 19]", block_19, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 8]", block_8, [|
+          Cfg.edge (12, "[0 | 9]", block_9, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (13, "[0 | 10]", block_10, Z.of_string "3", Z.of_string "20");
+        |]
+      );
+      Cfg.vert ("[0 | 9]", block_9, [|
+          Cfg.edge (28, "[1 | 19]", block_19, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 10]", block_10, [|
+          Cfg.edge (14, "[0 | 11]", block_11, Z.of_string "0", Z.of_string "14");
+          Cfg.edge (16, "[0 | 13]", block_13, Z.of_string "15", Z.of_string "17");
+        |]
+      );
+      Cfg.vert ("[0 | 11]", block_11, [|
+          Cfg.edge (15, "[0 | 12]", block_12, Z.of_string "0", Z.of_string "11");
+          Cfg.edge (16, "[0 | 13]", block_13, Z.of_string "12", Z.of_string "14");
+        |]
+      );
+      Cfg.vert ("[0 | 12]", block_12, [|
+          Cfg.edge (16, "[0 | 13]", block_13, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (17, "[0 | 14]", block_14, Z.of_string "3", Z.of_string "11");
+        |]
+      );
+      Cfg.vert ("[0 | 13]", block_13, [|
+          Cfg.edge (28, "[1 | 19]", block_19, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 14]", block_14, [|
+          Cfg.edge (18, "[0 | 15]", block_15, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (19, "[0 | 16]", block_16, Z.of_string "3", Z.of_string "8");
+        |]
+      );
+      Cfg.vert ("[0 | 15]", block_15, [|
+          Cfg.edge (28, "[1 | 19]", block_19, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 16]", block_16, [|
+          Cfg.edge (20, "[0 | 17]", block_17, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (21, "[0 | 18]", block_18, Z.of_string "3", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[0 | 17]", block_17, [|
+          Cfg.edge (28, "[1 | 19]", block_19, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 18]", block_18, [|
+          Cfg.edge (28, "[1 | 19]", block_19, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 19]", block_19, [|
+          Cfg.edge (9, "[0 | 6]", block_6, Z.of_string "0", Z.of_string "23");
+          Cfg.edge (6, "[20]", block_20, Z.of_string "24", Z.of_string "26");
+        |]
+      );
+      Cfg.vert ("[0 | 21]", block_21, [|
+          Cfg.edge (24, "[0 | 22]", block_22, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (25, "[0 | 23]", block_23, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 | 22]", block_22, [|
+          Cfg.edge (26, "[0 | 24]", block_24, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 23]", block_23, [|
+          Cfg.edge (26, "[0 | 24]", block_24, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 24]", block_24, [|
+          Cfg.edge (29, "[1 | 25]", block_25, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 25]", block_25, [|
+          Cfg.edge (23, "[0 | 21]", block_21, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (7, "[26]", block_26, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[1 | 19]", block_19, [|
+          Cfg.edge (6, "[20]", block_20, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[1 | 25]", block_25, [|
+          Cfg.edge (7, "[26]", block_26, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "memtest_test_linux_anonymous_maps",
+    65,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: mixDigest
+  // fid: 47
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4198478930 = 
+    GccType.record("SHA1_CTX", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419847e0a8 = 
+    GccType.pointer(type0x7f4198478930)
+  in let type0x7f419957e3f0 = 
+    GccType.integer(false, 32, 32, Z.of_string "0", Z.of_string "4294967295")
+  in let expr0x7f4198520ab0 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("s", 64, 64))
+  in let expr0x7f419831a630 = 
+    Expr.ssa("s_2", 2, expr0x7f4198520ab0)
+  in let expr0x7f41981e0980 = 
+    Expr.parameter_decl(type0x7f41993cc0a8, "ptr", type0x7f41993cc0a8)
+  in let expr0x7f419831a5e8 = 
+    Expr.ssa("ptr_1(D)", 1, expr0x7f41981e0980)
+  in let expr0x7f41981e0900 = 
+    Expr.parameter_decl(type0x7f4199574f18, "digest", type0x7f4199574f18)
+  in let expr0x7f419831a6c0 = 
+    Expr.ssa("digest_4(D)", 4, expr0x7f41981e0900)
+  in let expr0x7f41981e0a00 = 
+    Expr.parameter_decl(type0x7f419950a348, "len", type0x7f419950a348)
+  in let expr0x7f419831a708 = 
+    Expr.ssa("len_5(D)", 5, expr0x7f41981e0a00)
+  in let expr0x7f4198520a20 = 
+    Expr.variable_decl(type0x7f4198478930, VarDecl.make("ctx", 736, 32))
+  in let expr0x7f41981d8c00 = 
+    Expr.address_of(type0x7f419847e0a8, expr0x7f4198520a20)
+  in let expr0x7f41981d8c40 = 
+    Expr.address_of(type0x7f419847e0a8, expr0x7f4198520a20)
+  in let expr0x7f41981db498 = 
+    Expr.u_int_cst(type0x7f419957e3f0, Z.of_string "20")
+  in let expr0x7f41981d8ca0 = 
+    Expr.address_of(type0x7f419847e0a8, expr0x7f4198520a20)
+  in let expr0x7f41982439a8 = 
+    Expr.constructor(type0x7f4198478930)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982465f0 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f419831a6c0));
+      (Expr.parameter("ptr", 1, expr0x7f419831a630));
+      (Expr.parameter("len", 2, expr0x7f419831a708));
+  |])
+  in let call0x7f4198251630 = Expr.call(
+    type0x7f41993c4f18,
+    "SHA1Init", [|
+      (Expr.parameter("p1", 0, expr0x7f41981d8c00));
+  |])
+  in let call0x7f4198246688 = Expr.call(
+    type0x7f41993c4f18,
+    "SHA1Update", [|
+      (Expr.parameter("p1", 0, expr0x7f41981d8c40));
+      (Expr.parameter("p2", 1, expr0x7f419831a6c0));
+      (Expr.parameter("p3", 2, expr0x7f41981db498));
+  |])
+  in let call0x7f41982516c0 = Expr.call(
+    type0x7f41993c4f18,
+    "SHA1Final", [|
+      (Expr.parameter("p1", 0, expr0x7f419831a6c0));
+      (Expr.parameter("p2", 1, expr0x7f41981d8ca0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f419831a630, expr0x7f419831a5e8)
+    in let step_2_2 = 
+      Action.debug("# DEBUG s => s_2")
+    in let step_2_3 = 
+      Action.call(call0x7f41982465f0)
+    in let step_2_4 = 
+      Action.call(call0x7f4198251630)
+    in let step_2_5 = 
+      Action.call(call0x7f4198246688)
+    in let step_2_6 = 
+      Action.call(call0x7f41982516c0)
+    in let step_2_7 = 
+      Action.assign(expr0x7f4198520a20, expr0x7f41982439a8)
+    in let step_2_8 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+      |],
+      [|
+        ("SHA1Final", 1);
+        ("SHA1Init", 1);
+        ("SHA1Update", 1);
+        ("xorDigest", 1);
+      |],
+      [|
+        "s_2 = ptr_1(D);";
+        "# DEBUG s => s_2";
+        "# .MEM_6 = VDEF <.MEM_3(D)>\nxorDigest (digest_4(D), s_2, len_5(D));";
+        "# .MEM_7 = VDEF <.MEM_6>\nSHA1Init (&ctx);";
+        "# .MEM_8 = VDEF <.MEM_7>\nSHA1Update (&ctx, digest_4(D), 20);";
+        "# .MEM_9 = VDEF <.MEM_8>\nSHA1Final (digest_4(D), &ctx);";
+        "# .MEM_10 = VDEF <.MEM_9>\nctx ={v} {CLOBBER};";
+        "# VUSE <.MEM_10>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_9 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_9 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "mixDigest",
+    47,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: mixObjectDigest
+  // fid: 48
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f4198497738 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198497540 = 
+    GccType.pointer(type0x7f4198497738)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let expr0x7f41981e0b00 = 
+    Expr.parameter_decl(type0x7f4198497540, "o", type0x7f4198497540)
+  in let expr0x7f419831a900 = 
+    Expr.ssa("o_5(D)", 5, expr0x7f41981e0b00)
+  in let expr0x7f419831a990 = 
+    Expr.ssa("o_7", 7, expr0x7f41981e0b00)
+  in let expr0x7f41982575e8 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41981fef18 = 
+    Expr.u_int_cst(type0x7f4198497540, Z.of_string "0")
+  in let expr0x7f4198259528 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419831a990, expr0x7f41981fef18)
+  in let expr0x7f419824e990 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198259528, expr0x7f4198494980)
+  in let expr0x7f4198257630 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198257678 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982595c8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419831a990, expr0x7f41981fef18)
+  in let expr0x7f419824e9c0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982595c8, expr0x7f4198494980)
+  in let expr0x7f41981e0a80 = 
+    Expr.parameter_decl(type0x7f4199574f18, "digest", type0x7f4199574f18)
+  in let expr0x7f419831aa20 = 
+    Expr.ssa("digest_9(D)", 9, expr0x7f41981e0a80)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f4198251750 = Expr.call(
+    type0x7f4198497540,
+    "getDecodedObject", [|
+      (Expr.parameter("p1", 0, expr0x7f419831a900));
+  |])
+  in let call0x7f41982517e0 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f41982575e8));
+  |])
+  in let call0x7f4198246720 = Expr.call(
+    type0x7f41993c4f18,
+    "mixDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f419831aa20));
+      (Expr.parameter("ptr", 1, expr0x7f4198257678));
+      (Expr.parameter("len", 2, expr0x7f4198257630));
+  |])
+  in let call0x7f4198251870 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f419831a990));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f4198251750)
+    in let step_2_2 = 
+      Action.assign(expr0x7f419831a990, call0x7f4198251750)
+    in let step_2_3 = 
+      Action.debug("# DEBUG o => o_7")
+    in let step_2_4 = 
+      Action.assign(expr0x7f41982575e8, expr0x7f419824e990)
+    in let step_2_5 = 
+      Action.call(call0x7f41982517e0)
+    in let step_2_6 = 
+      Action.assign(expr0x7f4198257630, call0x7f41982517e0)
+    in let step_2_7 = 
+      Action.assign(expr0x7f4198257678, expr0x7f419824e9c0)
+    in let step_2_8 = 
+      Action.call(call0x7f4198246720)
+    in let step_2_9 = 
+      Action.call(call0x7f4198251870)
+    in let step_2_10 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+      |],
+      [|
+        ("decrRefCount", 1);
+        ("getDecodedObject", 1);
+        ("mixDigest", 1);
+        ("sdslen", 1);
+      |],
+      [|
+        "# .MEM_6 = VDEF <.MEM_4(D)>\no_7 = getDecodedObject (o_5(D));";
+        "<CAPTURES RETURN>";
+        "# DEBUG o => o_7";
+        "# VUSE <.MEM_6>\n_1 = o_7->ptr;";
+        "# .MEM_8 = VDEF <.MEM_6>\n_2 = sdslen (_1);";
+        "<CAPTURES RETURN>";
+        "# VUSE <.MEM_8>\n_3 = o_7->ptr;";
+        "# .MEM_10 = VDEF <.MEM_8>\nmixDigest (digest_9(D), _3, _2);";
+        "# .MEM_11 = VDEF <.MEM_10>\ndecrRefCount (o_7);";
+        "# VUSE <.MEM_11>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_11 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_11 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "mixObjectDigest",
+    48,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: openDirectLogFiledes
+  // fid: 61
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41993c4b28 = 
+    GccType.boolean
+  in let expr0x7f41981f3f30 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("log_to_stdout", 32, 32))
+  in let expr0x7f4198333240 = 
+    Expr.ssa("log_to_stdout_8", 8, expr0x7f41981f3f30)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f4198333168 = 
+    Expr.ssa("iftmp.37_5", 5, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198333318 = 
+    Expr.ssa("iftmp.37_11", 11, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198333288 = 
+    Expr.ssa("iftmp.37_9", 9, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982d2b88 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41984d32f8 = 
+    Expr.field_decl(type0x7f41993cff18, FieldDecl.make("logfile", "64", 64, "2192", 128, 0, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982d42d0 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984d32f8)
+  in let expr0x7f41982d2bd0 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c43f0))
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f41982d5398 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982d2b88, expr0x7f41985ed570)
+  in let expr0x7f41982d2c18 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41985ed6d8 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "0")
+  in let expr0x7f41982d2c60 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41982d4300 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984d32f8)
+  in let expr0x7f4198229270 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1089")
+  in let expr0x7f4198229288 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "420")
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41981f3ea0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("fd", 32, 32))
+  in let expr0x7f4198333360 = 
+    Expr.ssa("fd_12", 12, expr0x7f41981f3ea0)
+  in let expr0x7f41983333a8 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c45e8))
+  in let call0x7f41982c5428 = Expr.call(
+    type0x7f41993c45e8,
+    "open", [|
+      (Expr.parameter("p1", 0, expr0x7f41982d2c60));
+      (Expr.parameter("p2", 1, expr0x7f4198229270));
+      (Expr.parameter("p3", 2, expr0x7f4198229288));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982d2b88, expr0x7f41982d42d0)
+    in let step_2_2 = 
+      Action.assign(expr0x7f41982d2bd0, expr0x7f41982d5398)
+    in let step_2_3 = 
+      Action.assign(expr0x7f41982d2c18, Expr.beq(
+        type0x7f41993c4b28, expr0x7f41982d2bd0, expr0x7f41985ed6d8))
+    in let step_2_4 = 
+      Action.assign(expr0x7f4198333240, expr0x7f41982d2c18)
+    in let step_2_5 = 
+      Action.debug("# DEBUG log_to_stdout => log_to_stdout_8")
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# VUSE <.MEM_7(D)>\n_1 = server.logfile;";
+        "# VUSE <.MEM_7(D)>\n_2 = *_1;";
+        "_3 = _2 == 0;";
+        "log_to_stdout_8 = (int) _3;";
+        "# DEBUG log_to_stdout => log_to_stdout_8";
+      |]
+    )
+  in let block_3 = 
+    let step_3_6 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f4198333240, expr0x7f41993c9078))
+    in let step_3_7 = 
+      Action.assign(expr0x7f41982d2c60, expr0x7f41982d4300)
+    in let step_3_8 = 
+      Action.call(call0x7f41982c5428)
+    in let step_3_9 = 
+      Action.assign(expr0x7f4198333318, call0x7f41982c5428)
+    in let step_3_10 = 
+      Action.assign(expr0x7f4198333168, expr0x7f4198333318)
+    in Block.block(
+      3,
+      [|
+        step_3_6;
+        step_3_7;
+        step_3_8;
+        step_3_9;
+        step_3_10;
+      |],
+      [|
+        ("open", 1);
+      |],
+      [|
+        "assume TRUE (log_to_stdout_8 == 0)";
+        "# VUSE <.MEM_7(D)>\n_4 = server.logfile;";
+        "# .MEM_10 = VDEF <.MEM_7(D)>\niftmp.37_11 = open (_4, 1089, 420);";
+        "<CAPTURES RETURN>";
+        "iftmp.37_5 = iftmp.37_11";
+      |]
+    )
+  in let block_4 = 
+    let step_4_11 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f4198333240, expr0x7f41993c9078))
+    in let step_4_12 = 
+      Action.assign(expr0x7f4198333288, expr0x7f41993c9090)
+    in let step_4_13 = 
+      Action.assign(expr0x7f4198333168, expr0x7f4198333288)
+    in Block.block(
+      4,
+      [|
+        step_4_11;
+        step_4_12;
+        step_4_13;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (log_to_stdout_8 == 0)";
+        "iftmp.37_9 = 1;";
+        "iftmp.37_5 = iftmp.37_9";
+      |]
+    )
+  in let block_5 = 
+    let step_5_14 = 
+      Action.assign(expr0x7f4198333360, expr0x7f4198333168)
+    in let step_5_15 = 
+      Action.debug("# DEBUG fd => fd_12")
+    in let step_5_16 = 
+      Action.assign(expr0x7f41983333a8, expr0x7f4198333360)
+    in let step_5_17 = 
+      Action.return(expr0x7f41983333a8)
+    in Block.block(
+      5,
+      [|
+        step_5_14;
+        step_5_15;
+        step_5_16;
+        step_5_17;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "fd_12 = iftmp.37_5;";
+        "# DEBUG fd => fd_12";
+        "_13 = fd_12;";
+        "# VUSE <.MEM_6>\nreturn _13;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_18 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_18 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    6,
+    Z.of_string "2",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "openDirectLogFiledes",
+    61,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: _serverAssert
+  // fid: 51
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f4198216bd0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "24")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4198216c78 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216bd0)
+  in let type0x7f4198216d20 = 
+    GccType.pointer(type0x7f4198216c78)
+  in let type0x7f4198204d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "26")
+  in let type0x7f419820a000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204d20)
+  in let type0x7f419820a0a8 = 
+    GccType.pointer(type0x7f419820a000)
+  in let type0x7f41993d0348 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993d03f0 = 
+    GccType.pointer(type0x7f41993d0348)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981fb0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "42")
+  in let type0x7f41981fb150 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981fb0a8)
+  in let type0x7f41981fb1f8 = 
+    GccType.pointer(type0x7f41981fb150)
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f419821c480 = 
+    Expr.string_cst(type0x7f4198216c78, 25, "\"=== ASSERTION FAILED ===\"")
+  in let expr0x7f41982178c0 = 
+    Expr.address_of(type0x7f4198216d20, expr0x7f419821c480)
+  in let expr0x7f419821c4b0 = 
+    Expr.string_cst(type0x7f419820a000, 27, "\"==> %s:%d \\'%s\\' is not true\"")
+  in let expr0x7f4198217940 = 
+    Expr.address_of(type0x7f419820a0a8, expr0x7f419821c4b0)
+  in let expr0x7f4198218180 = 
+    Expr.parameter_decl(type0x7f41993d03f0, "file", type0x7f41993d03f0)
+  in let expr0x7f419831e438 = 
+    Expr.ssa("file_5(D)", 5, expr0x7f4198218180)
+  in let expr0x7f4198218200 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "line", type0x7f41993c45e8)
+  in let expr0x7f419831e480 = 
+    Expr.ssa("line_6(D)", 6, expr0x7f4198218200)
+  in let expr0x7f4198218100 = 
+    Expr.parameter_decl(type0x7f41993d03f0, "estr", type0x7f41993d03f0)
+  in let expr0x7f419831e4c8 = 
+    Expr.ssa("estr_7(D)", 7, expr0x7f4198218100)
+  in let expr0x7f41984da7b8 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("assert_failed", "64", 64, "3024", 128, 0, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f419821c4e0 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f41987a4cf0, expr0x7f41984da7b8)
+  in let expr0x7f41984da850 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("assert_file", "64", 64, "3024", 128, 64, false))
+  in let expr0x7f419821c510 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f41987a4cf0, expr0x7f41984da850)
+  in let expr0x7f41984da8e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("assert_line", "32", 32, "3040", 128, 0, false))
+  in let expr0x7f419821c540 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984da8e8)
+  in let expr0x7f4198219140 = 
+    Expr.string_cst(type0x7f41981fb150, 43, "\"(forcing SIGSEGV to print the bug report.)\"")
+  in let expr0x7f41982179c0 = 
+    Expr.address_of(type0x7f41981fb1f8, expr0x7f4198219140)
+  in let expr0x7f41982ba2d0 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41981fc3a0 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "-1")
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f41982b9c08 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982ba2d0, expr0x7f41985ed570)
+  in let expr0x7f41981fe108 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "120")
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982bf000 = Expr.call(
+    type0x7f41993c4f18,
+    "bugReportStart", [|
+  |])
+  in let call0x7f41982a32d0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982178c0));
+  |])
+  in let call0x7f419827cf18 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198217940));
+      (Expr.parameter("p3", 2, expr0x7f419831e438));
+      (Expr.parameter("p4", 3, expr0x7f419831e480));
+      (Expr.parameter("p5", 4, expr0x7f419831e4c8));
+  |])
+  in let call0x7f41982a3360 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982179c0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f41982bf000)
+    in let step_2_2 = 
+      Action.call(call0x7f41982a32d0)
+    in let step_2_3 = 
+      Action.call(call0x7f419827cf18)
+    in let step_2_4 = 
+      Action.assign(expr0x7f419821c4e0, expr0x7f419831e4c8)
+    in let step_2_5 = 
+      Action.assign(expr0x7f419821c510, expr0x7f419831e438)
+    in let step_2_6 = 
+      Action.assign(expr0x7f419821c540, expr0x7f419831e480)
+    in let step_2_7 = 
+      Action.call(call0x7f41982a3360)
+    in let step_2_8 = 
+      Action.assign(expr0x7f41982ba2d0, expr0x7f41981fc3a0)
+    in let step_2_9 = 
+      Action.assign(expr0x7f41982b9c08, expr0x7f41981fe108)
+    in let step_2_10 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+      |],
+      [|
+        ("bugReportStart", 1);
+        ("serverLog", 3);
+      |],
+      [|
+        "# .MEM_3 = VDEF <.MEM_2(D)>\nbugReportStart ();";
+        "# .MEM_4 = VDEF <.MEM_3>\nserverLog (3, \"=== ASSERTION FAILED ===\");";
+        "# .MEM_8 = VDEF <.MEM_4>\nserverLog (3, \"==> %s:%d \\'%s\\' is not true\", file_5(D), line_6(D), estr_7(D));";
+        "# .MEM_9 = VDEF <.MEM_8>\nserver.assert_failed = estr_7(D);";
+        "# .MEM_10 = VDEF <.MEM_9>\nserver.assert_file = file_5(D);";
+        "# .MEM_11 = VDEF <.MEM_10>\nserver.assert_line = line_6(D);";
+        "# .MEM_12 = VDEF <.MEM_11>\nserverLog (3, \"(forcing SIGSEGV to print the bug report.)\");";
+        "_1 = -1B;";
+        "# .MEM_13 = VDEF <.MEM_12>\n*_1 = 120;";
+        "# VUSE <.MEM_13>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_11 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_11 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "_serverAssert",
+    51,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: _serverAssertPrintClientInfo
+  // fid: 52
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41993c4b28 = 
+    GccType.boolean
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f4199527690 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "39")
+  in let type0x7f4199527738 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199527690)
+  in let type0x7f419821e1f8 = 
+    GccType.pointer(type0x7f4199527738)
+  in let type0x7f4198590b28 = 
+    GccType.record("client", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198590d20 = 
+    GccType.pointer(type0x7f4198590b28)
+  in let type0x7f41985cc738 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f4198204a80 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "18")
+  in let type0x7f4198204b28 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204a80)
+  in let type0x7f4198204bd0 = 
+    GccType.pointer(type0x7f4198204b28)
+  in let type0x7f419950fb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41981d6540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419950fb28)
+  in let type0x7f419821e540 = 
+    GccType.pointer(type0x7f41981d6540)
+  in let type0x7f41981d6888 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "17")
+  in let type0x7f41981d6930 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981d6888)
+  in let type0x7f41981fbe70 = 
+    GccType.pointer(type0x7f41981d6930)
+  in let type0x7f4198497738 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198497540 = 
+    GccType.pointer(type0x7f4198497738)
+  in let type0x7f41984975e8 = 
+    GccType.pointer(type0x7f4198497540)
+  in let type0x7f419821e888 = 
+    GccType.pointer(type0x7f4198497540)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41984972a0 = 
+    GccType.integer(false, 4, 8, Z.of_string "0", Z.of_string "15")
+  in let type0x7f419846f2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "127")
+  in let type0x7f41981e20a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419846f2a0)
+  in let type0x7f41981ecdc8 = 
+    GccType.pointer(type0x7f41981e20a8)
+  in let type0x7f4198211498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "29")
+  in let type0x7f4198211540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198211498)
+  in let type0x7f41982115e8 = 
+    GccType.pointer(type0x7f4198211540)
+  in let type0x7f419821eb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "38")
+  in let type0x7f419821ebd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419821eb28)
+  in let type0x7f419821ec78 = 
+    GccType.pointer(type0x7f419821ebd0)
+  in let expr0x7f41982ba5e8 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41993acdf8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "0")
+  in let expr0x7f41982ba870 = 
+    Expr.ssa("_19", 19, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41993c9030 = 
+    Expr.u_int_cst(type0x7f41993c4b28, Z.of_string "0")
+  in let expr0x7f419821f000 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("arg", 64, 64))
+  in let expr0x7f419831e708 = 
+    Expr.ssa("arg_47", 47, expr0x7f419821f000)
+  in let expr0x7f419831ea68 = 
+    Expr.ssa("arg_59", 59, expr0x7f419821f000)
+  in let expr0x7f419831eaf8 = 
+    Expr.ssa("arg_61", 61, expr0x7f419821f000)
+  in let expr0x7f4198209ea0 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("j", 32, 32))
+  in let expr0x7f419831e6c0 = 
+    Expr.ssa("j_46", 46, expr0x7f4198209ea0)
+  in let expr0x7f419831e9d8 = 
+    Expr.ssa("j_57", 57, expr0x7f4198209ea0)
+  in let expr0x7f419831ebd0 = 
+    Expr.ssa("j_64", 64, expr0x7f4198209ea0)
+  in let expr0x7f41982c3000 = 
+    Expr.ssa("_45", 45, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f41982191c0 = 
+    Expr.string_cst(type0x7f4199527738, 40, "\"=== ASSERTION FAILED CLIENT CONTEXT ===\"")
+  in let expr0x7f4198217ae0 = 
+    Expr.address_of(type0x7f419821e1f8, expr0x7f41982191c0)
+  in let expr0x7f41982ba360 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984a5130 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("flags", "32", 32, "144", 128, 64, false))
+  in let expr0x7f419821bbe8 = 
+    Expr.u_int_cst(type0x7f4198590d20, Z.of_string "0")
+  in let expr0x7f4198218280 = 
+    Expr.parameter_decl(type0x7f4198590d20, "c", type0x7f4198590d20)
+  in let expr0x7f419831e8b8 = 
+    Expr.ssa("c_53(D)", 53, expr0x7f4198218280)
+  in let expr0x7f41982b9d20 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a4300 = 
+    Expr.component_ref(type0x7f41985cc738, expr0x7f41982b9d20, expr0x7f41984a5130)
+  in let expr0x7f419821a5a0 = 
+    Expr.string_cst(type0x7f4198204b28, 19, "\"client->flags = %d\"")
+  in let expr0x7f4198217b60 = 
+    Expr.address_of(type0x7f4198204bd0, expr0x7f419821a5a0)
+  in let expr0x7f41982ba3a8 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984a1558 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("fd", "32", 32, "0", 128, 64, false))
+  in let expr0x7f41982b9d98 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a4330 = 
+    Expr.component_ref(type0x7f41985cc738, expr0x7f41982b9d98, expr0x7f41984a1558)
+  in let expr0x7f419821a668 = 
+    Expr.string_cst(type0x7f41981d6540, 16, "\"client->fd = %d\"")
+  in let expr0x7f4198217c00 = 
+    Expr.address_of(type0x7f419821e540, expr0x7f419821a668)
+  in let expr0x7f41982ba3f0 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984a18e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("argc", "32", 32, "48", 128, 64, false))
+  in let expr0x7f41982b9e10 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a4360 = 
+    Expr.component_ref(type0x7f41985cc738, expr0x7f41982b9e10, expr0x7f41984a18e8)
+  in let expr0x7f419821a730 = 
+    Expr.string_cst(type0x7f41981d6930, 18, "\"client->argc = %d\"")
+  in let expr0x7f4198217ca0 = 
+    Expr.address_of(type0x7f41981fbe70, expr0x7f419821a730)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41982ba438 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41984a1980 = 
+    Expr.field_decl(type0x7f41984975e8, FieldDecl.make("argv", "64", 64, "64", 128, 0, false))
+  in let expr0x7f41982b9e88 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a43f0 = 
+    Expr.component_ref(type0x7f419821e888, expr0x7f41982b9e88, expr0x7f41984a1980)
+  in let expr0x7f41982ba480 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ba4c8 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41994f8d68 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "8")
+  in let expr0x7f41982ba510 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982ba558 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982a1378 = 
+    Expr.u_int_cst(type0x7f419821e888, Z.of_string "0")
+  in let expr0x7f41982b9fc8 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982ba510, expr0x7f41982a1378)
+  in let expr0x7f41982ba5a0 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981fef18 = 
+    Expr.u_int_cst(type0x7f4198497540, Z.of_string "0")
+  in let expr0x7f41982b9050 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982ba558, expr0x7f41981fef18)
+  in let expr0x7f41982a4420 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982b9050, 8, 0)
+  in let expr0x7f41981db870 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "15")
+  in let expr0x7f41982ba630 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982b9140 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a4450 = 
+    Expr.component_ref(type0x7f419821e888, expr0x7f41982b9140, expr0x7f41984a1980)
+  in let expr0x7f41982ba678 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ba6c0 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ba708 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982ba750 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982b9280 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982ba708, expr0x7f41982a1378)
+  in let expr0x7f41982ba798 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982b92f8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982ba750, expr0x7f41981fef18)
+  in let expr0x7f41982a4480 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982b92f8, 8, 0)
+  in let expr0x7f419831ea20 = 
+    Expr.ssa("_58", 58, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981db858 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "240")
+  in let expr0x7f41982ba7e0 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41982ba828 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41981fedc8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "128")
+  in let expr0x7f41982ba8b8 = 
+    Expr.ssa("_20", 20, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982b94b0 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a44b0 = 
+    Expr.component_ref(type0x7f419821e888, expr0x7f41982b94b0, expr0x7f41984a1980)
+  in let expr0x7f41982ba900 = 
+    Expr.ssa("_21", 21, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ba948 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ba990 = 
+    Expr.ssa("_23", 23, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982ba9d8 = 
+    Expr.ssa("_24", 24, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982b9618 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982ba990, expr0x7f41982a1378)
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41982b9640 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982ba9d8, expr0x7f41981fef18)
+  in let expr0x7f419821c900 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982b9640, expr0x7f4198494980)
+  in let expr0x7f41982baa20 = 
+    Expr.ssa("_25", 25, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982b9730 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a44e0 = 
+    Expr.component_ref(type0x7f419821e888, expr0x7f41982b9730, expr0x7f41984a1980)
+  in let expr0x7f41982baa68 = 
+    Expr.ssa("_26", 26, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982baab0 = 
+    Expr.ssa("_27", 27, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982baaf8 = 
+    Expr.ssa("_28", 28, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982bab40 = 
+    Expr.ssa("_29", 29, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982b9a78 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982baaf8, expr0x7f41982a1378)
+  in let expr0x7f41982bab88 = 
+    Expr.ssa("_30", 30, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f41984947b8 = 
+    Expr.field_decl(type0x7f41984972a0, FieldDecl.make("encoding", "4", 1, "0", 128, 4, true))
+  in let expr0x7f41982b9d48 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982bab40, expr0x7f41981fef18)
+  in let expr0x7f41982a4510 = 
+    Expr.component_ref(type0x7f41984972a0, expr0x7f41982b9d48, expr0x7f41984947b8)
+  in let expr0x7f41982babd0 = 
+    Expr.ssa("_31", 31, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982bac18 = 
+    Expr.ssa("_32", 32, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982b9e38 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a4540 = 
+    Expr.component_ref(type0x7f419821e888, expr0x7f41982b9e38, expr0x7f41984a1980)
+  in let expr0x7f41982bac60 = 
+    Expr.ssa("_33", 33, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982baca8 = 
+    Expr.ssa("_34", 34, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982bacf0 = 
+    Expr.ssa("_35", 35, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982bad38 = 
+    Expr.ssa("_36", 36, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982b9f78 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982bacf0, expr0x7f41982a1378)
+  in let expr0x7f41982bad80 = 
+    Expr.ssa("_37", 37, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f4198494720 = 
+    Expr.field_decl(type0x7f41984972a0, FieldDecl.make("type", "4", 1, "0", 128, 0, true))
+  in let expr0x7f41982c1050 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982bad38, expr0x7f41981fef18)
+  in let expr0x7f41982a4570 = 
+    Expr.component_ref(type0x7f41984972a0, expr0x7f41982c1050, expr0x7f4198494720)
+  in let expr0x7f41982badc8 = 
+    Expr.ssa("_38", 38, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198209f30 = 
+    Expr.variable_decl(type0x7f41981e20a8, VarDecl.make("buf", 1024, 8))
+  in let expr0x7f41982200e0 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209f30)
+  in let expr0x7f41987155d0 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "128")
+  in let expr0x7f41982038f8 = 
+    Expr.string_cst(type0x7f4198211540, 30, "\"Object type: %u, encoding: %u\"")
+  in let expr0x7f4198220120 = 
+    Expr.address_of(type0x7f41982115e8, expr0x7f41982038f8)
+  in let expr0x7f4198220320 = 
+    Expr.address_of(type0x7f41981ecdc8, expr0x7f4198209f30)
+  in let expr0x7f41982bae10 = 
+    Expr.ssa("_39", 39, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982c10f0 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a45a0 = 
+    Expr.component_ref(type0x7f419821e888, expr0x7f41982c10f0, expr0x7f41984a1980)
+  in let expr0x7f41982bae58 = 
+    Expr.ssa("_40", 40, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982baea0 = 
+    Expr.ssa("_41", 41, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982baee8 = 
+    Expr.ssa("_42", 42, Expr.nothing(type0x7f41984975e8))
+  in let expr0x7f41982baf30 = 
+    Expr.ssa("_43", 43, Expr.nothing(type0x7f4198497540))
+  in let expr0x7f41982c1230 = 
+    Expr.memory_ref(type0x7f4198497540, expr0x7f41982baee8, expr0x7f41982a1378)
+  in let expr0x7f41982baf78 = 
+    Expr.ssa("_44", 44, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984948e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("refcount", "32", 32, "0", 128, 32, false))
+  in let expr0x7f41982c12a8 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f41982baf30, expr0x7f41981fef18)
+  in let expr0x7f41982a45d0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982c12a8, expr0x7f41984948e8)
+  in let expr0x7f4198219240 = 
+    Expr.string_cst(type0x7f419821ebd0, 39, "\"client->argv[%d] = \\\"%s\\\" (refcount: %d)\"")
+  in let expr0x7f4198220360 = 
+    Expr.address_of(type0x7f419821ec78, expr0x7f4198219240)
+  in let expr0x7f41982a1390 = 
+    Expr.constructor(type0x7f41981e20a8)
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41982c1370 = 
+    Expr.memory_ref(type0x7f4198590b28, expr0x7f419831e8b8, expr0x7f419821bbe8)
+  in let expr0x7f41982a4600 = 
+    Expr.component_ref(type0x7f41985cc738, expr0x7f41982c1370, expr0x7f41984a18e8)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982bf100 = Expr.call(
+    type0x7f41993c4f18,
+    "bugReportStart", [|
+  |])
+  in let call0x7f41982a33f0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198217ae0));
+  |])
+  in let call0x7f4198292ab0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198217b60));
+      (Expr.parameter("p3", 2, expr0x7f41982ba360));
+  |])
+  in let call0x7f4198292b48 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198217c00));
+      (Expr.parameter("p3", 2, expr0x7f41982ba3a8));
+  |])
+  in let call0x7f4198292be0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198217ca0));
+      (Expr.parameter("p3", 2, expr0x7f41982ba3f0));
+  |])
+  in let call0x7f419827cbd0 = Expr.call(
+    type0x7f41993c45e8,
+    "snprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41982200e0));
+      (Expr.parameter("p2", 1, expr0x7f41987155d0));
+      (Expr.parameter("p3", 2, expr0x7f4198220120));
+      (Expr.parameter("p4", 3, expr0x7f41982badc8));
+      (Expr.parameter("p5", 4, expr0x7f41982babd0));
+  |])
+  in let call0x7f41982c2000 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220360));
+      (Expr.parameter("p3", 2, expr0x7f419831e6c0));
+      (Expr.parameter("p4", 3, expr0x7f419831e708));
+      (Expr.parameter("p5", 4, expr0x7f41982baf78));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f41982bf100)
+    in let step_2_2 = 
+      Action.call(call0x7f41982a33f0)
+    in let step_2_3 = 
+      Action.assign(expr0x7f41982ba360, expr0x7f41982a4300)
+    in let step_2_4 = 
+      Action.call(call0x7f4198292ab0)
+    in let step_2_5 = 
+      Action.assign(expr0x7f41982ba3a8, expr0x7f41982a4330)
+    in let step_2_6 = 
+      Action.call(call0x7f4198292b48)
+    in let step_2_7 = 
+      Action.assign(expr0x7f41982ba3f0, expr0x7f41982a4360)
+    in let step_2_8 = 
+      Action.call(call0x7f4198292be0)
+    in let step_2_9 = 
+      Action.assign(expr0x7f419831e9d8, expr0x7f41993c9078)
+    in let step_2_10 = 
+      Action.debug("# DEBUG j => j_57")
+    in let step_2_11 = 
+      Action.assign(expr0x7f419831e6c0, expr0x7f419831e9d8)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+        step_2_11;
+      |],
+      [|
+        ("bugReportStart", 1);
+        ("serverLog", 4);
+      |],
+      [|
+        "# .MEM_51 = VDEF <.MEM_50(D)>\nbugReportStart ();";
+        "# .MEM_52 = VDEF <.MEM_51>\nserverLog (3, \"=== ASSERTION FAILED CLIENT CONTEXT ===\");";
+        "# VUSE <.MEM_52>\n_1 = c_53(D)->flags;";
+        "# .MEM_54 = VDEF <.MEM_52>\nserverLog (3, \"client->flags = %d\", _1);";
+        "# VUSE <.MEM_54>\n_2 = c_53(D)->fd;";
+        "# .MEM_55 = VDEF <.MEM_54>\nserverLog (3, \"client->fd = %d\", _2);";
+        "# VUSE <.MEM_55>\n_3 = c_53(D)->argc;";
+        "# .MEM_56 = VDEF <.MEM_55>\nserverLog (3, \"client->argc = %d\", _3);";
+        "j_57 = 0;";
+        "# DEBUG j => j_57";
+        "j_46 = j_57";
+      |]
+    )
+  in let block_3 = 
+    let step_3_12 = 
+      Action.assume(8, Expr.blt(GccType.boolean, expr0x7f419831e6c0, expr0x7f41982c3000))
+    in let step_3_13 = 
+      Action.assign(expr0x7f41982ba438, expr0x7f41982a43f0)
+    in let step_3_14 = 
+      Action.assign(expr0x7f41982ba480, expr0x7f419831e6c0)
+    in let step_3_15 = 
+      Action.assign(expr0x7f41982ba4c8, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982ba480, expr0x7f41994f8d68))
+    in let step_3_16 = 
+      Action.assign(expr0x7f41982ba510, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982ba438, expr0x7f41982ba4c8))
+    in let step_3_17 = 
+      Action.assign(expr0x7f41982ba558, expr0x7f41982b9fc8)
+    in let step_3_18 = 
+      Action.assign(expr0x7f41982ba5a0, expr0x7f41982a4420)
+    in let step_3_19 = 
+      Action.assign(expr0x7f41982ba5e8, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982ba5a0, expr0x7f41981db870))
+    in Block.block(
+      3,
+      [|
+        step_3_12;
+        step_3_13;
+        step_3_14;
+        step_3_15;
+        step_3_16;
+        step_3_17;
+        step_3_18;
+        step_3_19;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (j_46 < _45)";
+        "# VUSE <.MEM_49>\n_4 = c_53(D)->argv;";
+        "_5 = (long unsigned int) j_46;";
+        "_6 = _5 * 8;";
+        "_7 = _4 + _6;";
+        "# VUSE <.MEM_49>\n_8 = *_7;";
+        "# VUSE <.MEM_49>\n_9 = BIT_FIELD_REF <*_8, 8, 0>;";
+        "_10 = _9 & 15;";
+      |]
+    )
+  in let block_4 = 
+    let step_4_20 = 
+      Action.assume(3, Expr.beq(GccType.boolean, expr0x7f41982ba5e8, expr0x7f41993acdf8))
+    in let step_4_21 = 
+      Action.assign(expr0x7f41982ba630, expr0x7f41982a4450)
+    in let step_4_22 = 
+      Action.assign(expr0x7f41982ba678, expr0x7f419831e6c0)
+    in let step_4_23 = 
+      Action.assign(expr0x7f41982ba6c0, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982ba678, expr0x7f41994f8d68))
+    in let step_4_24 = 
+      Action.assign(expr0x7f41982ba708, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982ba630, expr0x7f41982ba6c0))
+    in let step_4_25 = 
+      Action.assign(expr0x7f41982ba750, expr0x7f41982b9280)
+    in let step_4_26 = 
+      Action.assign(expr0x7f41982ba798, expr0x7f41982a4480)
+    in let step_4_27 = 
+      Action.assign(expr0x7f419831ea20, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982ba798, expr0x7f41981db858))
+    in let step_4_28 = 
+      Action.assign(expr0x7f41982ba7e0, Expr.beq(
+        type0x7f41993c4b28, expr0x7f419831ea20, expr0x7f41993acdf8))
+    in let step_4_29 = 
+      Action.assign(expr0x7f41982ba828, Expr.beq(
+        type0x7f41993c4b28, expr0x7f419831ea20, expr0x7f41981fedc8))
+    in let step_4_30 = 
+      Action.assign(expr0x7f41982ba870, Expr.bit_or(
+        type0x7f41993c4b28, expr0x7f41982ba7e0, expr0x7f41982ba828))
+    in Block.block(
+      4,
+      [|
+        step_4_20;
         step_4_21;
         step_4_22;
         step_4_23;
@@ -523,269 +20030,2270 @@ let main =
         step_4_28;
         step_4_29;
         step_4_30;
-        step_4_31;
-        step_4_32;
-        step_4_33;
-        step_4_34;
-        step_4_35;
-      |],
-      [|
-        ("g_snprintf", 1);
-        ("http_read_line", 1);
-        ("send", 1);
-      |],
-      [|
-        "assume FALSE (_1 != 0)";
-        "# DEBUG n => n_16";
-        "_7 = (long unsigned int) n_16;";
-        "_8 = 512 - _7;";
-        "_9 = (sizetype) n_16;";
-        "_10 = &buf + _9;";
-        "# .MEM_32 = VDEF <.MEM_18>\n_33 = g_snprintf (_10, _8, \"\\r\\n\");";
-        "<CAPTURES RETURN>";
-        "n_34 = _33 + n_16;";
-        "# DEBUG n => n_34";
-        "_11 = (long unsigned int) n_34;";
-        "# .MEM_36 = VDEF <.MEM_32>\nsend (sok_35(D), &buf, _11, 0);";
-        "# .MEM_38 = VDEF <.MEM_36>\nn_39 = http_read_line (print_fd_37(D), sok_35(D), &buf, 512);";
-        "<CAPTURES RETURN>";
-        "# DEBUG n => n_39";
-      |]
-    )
-  in let block_5 = 
-    let step_5_36 = 
-      Action.assume(4, Expr.blte(GccType.boolean, expr0x7f9e649ed708, expr0x7f9e65fa1240))
-    in let step_5_37 = 
-      Action.assign(expr0x7f9e649ed870, expr0x7f9e66d71090)
-    in let step_5_38 = 
-      Action.assign(expr0x7f9e649ed0d8, expr0x7f9e649ed870)
-    in Block.block(
-      5,
-      [|
-        step_5_36;
-        step_5_37;
-        step_5_38;
       |],
       [|
         (* no calls *)
       |],
       [|
-        "assume TRUE (n_39 <= 11)";
-        "_44 = 1;";
-        "_17 = _44";
+        "assume TRUE (_10 == 0)";
+        "# VUSE <.MEM_49>\n_11 = c_53(D)->argv;";
+        "_12 = (long unsigned int) j_46;";
+        "_13 = _12 * 8;";
+        "_14 = _11 + _13;";
+        "# VUSE <.MEM_49>\n_15 = *_14;";
+        "# VUSE <.MEM_49>\n_16 = BIT_FIELD_REF <*_15, 8, 0>;";
+        "_58 = _16 & 240;";
+        "_17 = _58 == 0;";
+        "_18 = _58 == 128;";
+        "_19 = _17 | _18;";
+      |]
+    )
+  in let block_5 = 
+    let step_5_31 = 
+      Action.assume(4, Expr.bneq(GccType.boolean, expr0x7f41982ba870, expr0x7f41993c9030))
+    in let step_5_32 = 
+      Action.assign(expr0x7f41982ba8b8, expr0x7f41982a44b0)
+    in let step_5_33 = 
+      Action.assign(expr0x7f41982ba900, expr0x7f419831e6c0)
+    in let step_5_34 = 
+      Action.assign(expr0x7f41982ba948, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982ba900, expr0x7f41994f8d68))
+    in let step_5_35 = 
+      Action.assign(expr0x7f41982ba990, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982ba8b8, expr0x7f41982ba948))
+    in let step_5_36 = 
+      Action.assign(expr0x7f41982ba9d8, expr0x7f41982b9618)
+    in let step_5_37 = 
+      Action.assign(expr0x7f419831ea68, expr0x7f419821c900)
+    in let step_5_38 = 
+      Action.debug("# DEBUG arg => arg_59")
+    in let step_5_39 = 
+      Action.assign(expr0x7f419831e708, expr0x7f419831ea68)
+    in Block.block(
+      5,
+      [|
+        step_5_31;
+        step_5_32;
+        step_5_33;
+        step_5_34;
+        step_5_35;
+        step_5_36;
+        step_5_37;
+        step_5_38;
+        step_5_39;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_19 != 0)";
+        "# VUSE <.MEM_49>\n_20 = c_53(D)->argv;";
+        "_21 = (long unsigned int) j_46;";
+        "_22 = _21 * 8;";
+        "_23 = _20 + _22;";
+        "# VUSE <.MEM_49>\n_24 = *_23;";
+        "# VUSE <.MEM_49>\narg_59 = _24->ptr;";
+        "# DEBUG arg => arg_59";
+        "arg_47 = arg_59";
       |]
     )
   in let block_6 = 
-    let step_6_39 = 
-      Action.assume(4, Expr.bgt(GccType.boolean, expr0x7f9e649ed708, expr0x7f9e65fa1240))
-    in let step_6_40 = 
-      Action.call(call0x7f9e64966c78)
+    let step_6_40 = 
+      Action.assume(3, Expr.bneq(GccType.boolean, expr0x7f41982ba5e8, expr0x7f41993acdf8))
     in let step_6_41 = 
-      Action.assign(expr0x7f9e6498d318, call0x7f9e64966c78)
+      Action.assume(4, Expr.beq(GccType.boolean, expr0x7f41982ba870, expr0x7f41993c9030))
+    in let step_6_42 = 
+      Action.assign(expr0x7f41982baa20, expr0x7f41982a44e0)
+    in let step_6_43 = 
+      Action.assign(expr0x7f41982baa68, expr0x7f419831e6c0)
+    in let step_6_44 = 
+      Action.assign(expr0x7f41982baab0, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982baa68, expr0x7f41994f8d68))
+    in let step_6_45 = 
+      Action.assign(expr0x7f41982baaf8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982baa20, expr0x7f41982baab0))
+    in let step_6_46 = 
+      Action.assign(expr0x7f41982bab40, expr0x7f41982b9a78)
+    in let step_6_47 = 
+      Action.assign(expr0x7f41982bab88, expr0x7f41982a4510)
+    in let step_6_48 = 
+      Action.assign(expr0x7f41982babd0, expr0x7f41982bab88)
+    in let step_6_49 = 
+      Action.assign(expr0x7f41982bac18, expr0x7f41982a4540)
+    in let step_6_50 = 
+      Action.assign(expr0x7f41982bac60, expr0x7f419831e6c0)
+    in let step_6_51 = 
+      Action.assign(expr0x7f41982baca8, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982bac60, expr0x7f41994f8d68))
+    in let step_6_52 = 
+      Action.assign(expr0x7f41982bacf0, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982bac18, expr0x7f41982baca8))
+    in let step_6_53 = 
+      Action.assign(expr0x7f41982bad38, expr0x7f41982b9f78)
+    in let step_6_54 = 
+      Action.assign(expr0x7f41982bad80, expr0x7f41982a4570)
+    in let step_6_55 = 
+      Action.assign(expr0x7f41982badc8, expr0x7f41982bad80)
+    in let step_6_56 = 
+      Action.call(call0x7f419827cbd0)
+    in let step_6_57 = 
+      Action.assign(expr0x7f419831eaf8, expr0x7f4198220320)
+    in let step_6_58 = 
+      Action.debug("# DEBUG arg => arg_61")
+    in let step_6_59 = 
+      Action.assign(expr0x7f419831e708, expr0x7f419831eaf8)
     in Block.block(
       6,
       [|
-        step_6_39;
         step_6_40;
         step_6_41;
+        step_6_42;
+        step_6_43;
+        step_6_44;
+        step_6_45;
+        step_6_46;
+        step_6_47;
+        step_6_48;
+        step_6_49;
+        step_6_50;
+        step_6_51;
+        step_6_52;
+        step_6_53;
+        step_6_54;
+        step_6_55;
+        step_6_56;
+        step_6_57;
+        step_6_58;
+        step_6_59;
       |],
       [|
-        ("memcmp", 1);
+        ("snprintf", 1);
       |],
       [|
-        "assume FALSE (n_39 <= 11)";
-        "# VUSE <.MEM_38>\n_12 = memcmp (&buf, \"HTTP/\", 5);";
-        "<CAPTURES RETURN>";
+        "assume FALSE (_10 == 0)";
+        "assume FALSE (_19 != 0)";
+        "# VUSE <.MEM_49>\n_25 = c_53(D)->argv;";
+        "_26 = (long unsigned int) j_46;";
+        "_27 = _26 * 8;";
+        "_28 = _25 + _27;";
+        "# VUSE <.MEM_49>\n_29 = *_28;";
+        "# VUSE <.MEM_49>\n_30 = _29->encoding;";
+        "_31 = (int) _30;";
+        "# VUSE <.MEM_49>\n_32 = c_53(D)->argv;";
+        "_33 = (long unsigned int) j_46;";
+        "_34 = _33 * 8;";
+        "_35 = _32 + _34;";
+        "# VUSE <.MEM_49>\n_36 = *_35;";
+        "# VUSE <.MEM_49>\n_37 = _36->type;";
+        "_38 = (int) _37;";
+        "# .MEM_60 = VDEF <.MEM_49>\nsnprintf (&buf, 128, \"Object type: %u, encoding: %u\", _38, _31);";
+        "arg_61 = &buf;";
+        "# DEBUG arg => arg_61";
+        "arg_47 = arg_61";
       |]
     )
   in let block_7 = 
-    let step_7_42 = 
-      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f9e6498d318, expr0x7f9e66d71078))
-    in let step_7_43 = 
-      Action.assign(expr0x7f9e6498d3a8, Expr.pointer_plus(
-        type0x7f9e66d741f8, expr0x7f9e6498e2e0, expr0x7f9e66ec7960))
-    in let step_7_44 = 
-      Action.call(call0x7f9e64966d10)
-    in let step_7_45 = 
-      Action.assign(expr0x7f9e6498d3f0, call0x7f9e64966d10)
+    let step_7_60 = 
+      Action.debug("# DEBUG arg => arg_47")
+    in let step_7_61 = 
+      Action.assign(expr0x7f41982bae10, expr0x7f41982a45a0)
+    in let step_7_62 = 
+      Action.assign(expr0x7f41982bae58, expr0x7f419831e6c0)
+    in let step_7_63 = 
+      Action.assign(expr0x7f41982baea0, Expr.times(
+        type0x7f41993c47e0, expr0x7f41982bae58, expr0x7f41994f8d68))
+    in let step_7_64 = 
+      Action.assign(expr0x7f41982baee8, Expr.pointer_plus(
+        type0x7f41984975e8, expr0x7f41982bae10, expr0x7f41982baea0))
+    in let step_7_65 = 
+      Action.assign(expr0x7f41982baf30, expr0x7f41982c1230)
+    in let step_7_66 = 
+      Action.assign(expr0x7f41982baf78, expr0x7f41982a45d0)
+    in let step_7_67 = 
+      Action.call(call0x7f41982c2000)
+    in let step_7_68 = 
+      Action.assign(expr0x7f4198209f30, expr0x7f41982a1390)
+    in let step_7_69 = 
+      Action.assign(expr0x7f419831ebd0, Expr.plus(
+        type0x7f41993c45e8, expr0x7f419831e6c0, expr0x7f41993c9090))
+    in let step_7_70 = 
+      Action.debug("# DEBUG j => j_64")
+    in let step_7_71 = 
+      Action.assign(expr0x7f419831e6c0, expr0x7f419831ebd0)
     in Block.block(
       7,
       [|
+        step_7_60;
+        step_7_61;
+        step_7_62;
+        step_7_63;
+        step_7_64;
+        step_7_65;
+        step_7_66;
+        step_7_67;
+        step_7_68;
+        step_7_69;
+        step_7_70;
+        step_7_71;
+      |],
+      [|
+        ("serverLog", 1);
+      |],
+      [|
+        "# DEBUG arg => arg_47";
+        "# VUSE <.MEM_48>\n_39 = c_53(D)->argv;";
+        "_40 = (long unsigned int) j_46;";
+        "_41 = _40 * 8;";
+        "_42 = _39 + _41;";
+        "# VUSE <.MEM_48>\n_43 = *_42;";
+        "# VUSE <.MEM_48>\n_44 = _43->refcount;";
+        "# .MEM_62 = VDEF <.MEM_48>\nserverLog (3, \"client->argv[%d] = \\\"%s\\\" (refcount: %d)\", j_46, arg_47, _44);";
+        "# .MEM_63 = VDEF <.MEM_62>\nbuf ={v} {CLOBBER};";
+        "j_64 = j_46 + 1;";
+        "# DEBUG j => j_64";
+        "j_46 = j_64";
+      |]
+    )
+  in let block_8 = 
+    let step_8_72 = 
+      Action.debug("# DEBUG j => j_46")
+    in let step_8_73 = 
+      Action.assign(expr0x7f41982c3000, expr0x7f41982a4600)
+    in Block.block(
+      8,
+      [|
+        step_8_72;
+        step_8_73;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_46";
+        "# VUSE <.MEM_49>\n_45 = c_53(D)->argc;";
+      |]
+    )
+  in let block_9 = 
+    let step_9_74 = 
+      Action.assume(8, Expr.bgte(GccType.boolean, expr0x7f419831e6c0, expr0x7f41982c3000))
+    in let step_9_75 = 
+      Action.return(expr0)
+    in Block.block(
+      9,
+      [|
+        step_9_74;
+        step_9_75;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (j_46 < _45)";
+        "# VUSE <.MEM_49>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_76 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_76 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    10,
+    Z.of_string "4",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (9, "[0 | 8]", block_8, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[9]", block_9, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 3]", block_3, [|
+          Cfg.edge (5, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (7, "[0 | 6]", block_6, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (6, "[0 | 5]", block_5, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (7, "[0 | 6]", block_6, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 | 5]", block_5, [|
+          Cfg.edge (8, "[0 | 7]", block_7, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 6]", block_6, [|
+          Cfg.edge (8, "[0 | 7]", block_7, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 7]", block_7, [|
+          Cfg.edge (10, "[1 | 8]", block_8, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 8]", block_8, [|
+          Cfg.edge (4, "[0 | 3]", block_3, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (3, "[9]", block_9, Z.of_string "3", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[1 | 8]", block_8, [|
+          Cfg.edge (3, "[9]", block_9, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "_serverAssertPrintClientInfo",
+    52,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: _serverAssertPrintObject
+  // fid: 54
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f4199527690 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "39")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4199527738 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199527690)
+  in let type0x7f419821e1f8 = 
+    GccType.pointer(type0x7f4199527738)
+  in let type0x7f41985372a0 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41985373f0 = 
+    GccType.pointer(type0x7f41985372a0)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f4198219280 = 
+    Expr.string_cst(type0x7f4199527738, 40, "\"=== ASSERTION FAILED OBJECT CONTEXT ===\"")
+  in let expr0x7f41982260c0 = 
+    Expr.address_of(type0x7f419821e1f8, expr0x7f4198219280)
+  in let expr0x7f4198218500 = 
+    Expr.parameter_decl(type0x7f41985373f0, "o", type0x7f41985373f0)
+  in let expr0x7f419831ecf0 = 
+    Expr.ssa("o_4(D)", 4, expr0x7f4198218500)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982bfd80 = Expr.call(
+    type0x7f41993c4f18,
+    "bugReportStart", [|
+  |])
+  in let call0x7f41982a3ab0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982260c0));
+  |])
+  in let call0x7f41982a3b40 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogObjectDebugInfo", [|
+      (Expr.parameter("o", 0, expr0x7f419831ecf0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f41982bfd80)
+    in let step_2_2 = 
+      Action.call(call0x7f41982a3ab0)
+    in let step_2_3 = 
+      Action.call(call0x7f41982a3b40)
+    in let step_2_4 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+      |],
+      [|
+        ("bugReportStart", 1);
+        ("serverLog", 1);
+        ("serverLogObjectDebugInfo", 1);
+      |],
+      [|
+        "# .MEM_2 = VDEF <.MEM_1(D)>\nbugReportStart ();";
+        "# .MEM_3 = VDEF <.MEM_2>\nserverLog (3, \"=== ASSERTION FAILED OBJECT CONTEXT ===\");";
+        "# .MEM_5 = VDEF <.MEM_3>\nserverLogObjectDebugInfo (o_4(D));";
+        "# VUSE <.MEM_5>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_5 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_5 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "_serverAssertPrintObject",
+    54,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: _serverAssertWithInfo
+  // fid: 55
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f4198590b28 = 
+    GccType.record("client", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198590d20 = 
+    GccType.pointer(type0x7f4198590b28)
+  in let type0x7f41985372a0 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41985373f0 = 
+    GccType.pointer(type0x7f41985372a0)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993d0348 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993d03f0 = 
+    GccType.pointer(type0x7f41993d0348)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let expr0x7f4198218580 = 
+    Expr.parameter_decl(type0x7f4198590d20, "c", type0x7f4198590d20)
+  in let expr0x7f419831ee10 = 
+    Expr.ssa("c_3(D)", 3, expr0x7f4198218580)
+  in let expr0x7f419821bbe8 = 
+    Expr.u_int_cst(type0x7f4198590d20, Z.of_string "0")
+  in let expr0x7f4198218600 = 
+    Expr.parameter_decl(type0x7f41985373f0, "o", type0x7f41985373f0)
+  in let expr0x7f419831eee8 = 
+    Expr.ssa("o_6(D)", 6, expr0x7f4198218600)
+  in let expr0x7f419821bc48 = 
+    Expr.u_int_cst(type0x7f41985373f0, Z.of_string "0")
+  in let expr0x7f4198218680 = 
+    Expr.parameter_decl(type0x7f41993d03f0, "estr", type0x7f41993d03f0)
+  in let expr0x7f419831ef78 = 
+    Expr.ssa("estr_8(D)", 8, expr0x7f4198218680)
+  in let expr0x7f4198218700 = 
+    Expr.parameter_decl(type0x7f41993d03f0, "file", type0x7f41993d03f0)
+  in let expr0x7f4198323000 = 
+    Expr.ssa("file_9(D)", 9, expr0x7f4198218700)
+  in let expr0x7f4198218780 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "line", type0x7f41993c45e8)
+  in let expr0x7f4198323048 = 
+    Expr.ssa("line_10(D)", 10, expr0x7f4198218780)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982a3bd0 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssertPrintClientInfo", [|
+      (Expr.parameter("c", 0, expr0x7f419831ee10));
+  |])
+  in let call0x7f41982a3c60 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssertPrintObject", [|
+      (Expr.parameter("o", 0, expr0x7f419831eee8));
+  |])
+  in let call0x7f41982c5390 = Expr.call(
+    type0x7f41993c4f18,
+    "_serverAssert", [|
+      (Expr.parameter("estr", 0, expr0x7f419831ef78));
+      (Expr.parameter("file", 1, expr0x7f4198323000));
+      (Expr.parameter("line", 2, expr0x7f4198323048));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    Block.block(
+      2,
+      [|
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+      |]
+    )
+  in let block_3 = 
+    let step_3_1 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f419831ee10, expr0x7f419821bbe8))
+    in let step_3_2 = 
+      Action.call(call0x7f41982a3bd0)
+    in Block.block(
+      3,
+      [|
+        step_3_1;
+        step_3_2;
+      |],
+      [|
+        ("_serverAssertPrintClientInfo", 1);
+      |],
+      [|
+        "assume TRUE (c_3(D) != 0B)";
+        "# .MEM_5 = VDEF <.MEM_4(D)>\n_serverAssertPrintClientInfo (c_3(D));";
+      |]
+    )
+  in let block_4 = 
+    let step_4_3 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f419831ee10, expr0x7f419821bbe8))
+    in Block.block(
+      4,
+      [|
+        step_4_3;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (c_3(D) != 0B)";
+      |]
+    )
+  in let block_5 = 
+    let step_5_4 = 
+      Action.assume(4, Expr.bneq(GccType.boolean, expr0x7f419831eee8, expr0x7f419821bc48))
+    in let step_5_5 = 
+      Action.call(call0x7f41982a3c60)
+    in Block.block(
+      5,
+      [|
+        step_5_4;
+        step_5_5;
+      |],
+      [|
+        ("_serverAssertPrintObject", 1);
+      |],
+      [|
+        "assume TRUE (o_6(D) != 0B)";
+        "# .MEM_7 = VDEF <.MEM_1>\n_serverAssertPrintObject (o_6(D));";
+      |]
+    )
+  in let block_6 = 
+    let step_6_6 = 
+      Action.assume(4, Expr.beq(GccType.boolean, expr0x7f419831eee8, expr0x7f419821bc48))
+    in let step_6_7 = 
+      Action.call(call0x7f41982c5390)
+    in let step_6_8 = 
+      Action.return(expr0)
+    in Block.block(
+      6,
+      [|
+        step_6_6;
+        step_6_7;
+        step_6_8;
+      |],
+      [|
+        ("_serverAssert", 1);
+      |],
+      [|
+        "assume FALSE (o_6(D) != 0B)";
+        "# .MEM_11 = VDEF <.MEM_2>\n_serverAssert (estr_8(D), file_9(D), line_10(D));";
+        "# VUSE <.MEM_11>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_9 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_9 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    7,
+    Z.of_string "4",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "2", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (6, "[6]", block_6, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (6, "[6]", block_6, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[6]", block_6, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "_serverAssertWithInfo",
+    55,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: serverLogHexDump
+  // fid: 68
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f4198216150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "16")
+  in let type0x7f41982161f8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216150)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f4198204d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "26")
+  in let type0x7f419820a000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204d20)
+  in let type0x7f419820a0a8 = 
+    GccType.pointer(type0x7f419820a000)
+  in let type0x7f41983cf2a0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "64")
+  in let type0x7f41981fb7e0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41983cf2a0)
+  in let type0x7f41981fb888 = 
+    GccType.pointer(type0x7f41981fb7e0)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41994fb0a8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "1")
+  in let type0x7f4198211888 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41994fb0a8)
+  in let type0x7f4198211930 = 
+    GccType.pointer(type0x7f4198211888)
+  in let expr0x7f41982f80d8 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41987a5df8 = 
+    Expr.s_int_cst(type0x7f41993c4738, Z.of_string "64")
+  in let expr0x7f4198234a00 = 
+    Expr.parameter_decl(type0x7f419950a348, "len", type0x7f419950a348)
+  in let expr0x7f4198340048 = 
+    Expr.ssa("len_36", 36, expr0x7f4198234a00)
+  in let expr0x7f419955cb58 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "0")
+  in let expr0x7f419833ba68 = 
+    Expr.ssa("len_16", 16, expr0x7f4198234a00)
+  in let expr0x7f419833bd38 = 
+    Expr.ssa("len_26(D)", 26, expr0x7f4198234a00)
+  in let expr0x7f4198238e10 = 
+    Expr.variable_decl(type0x7f41993cff18, VarDecl.make("b", 64, 64))
+  in let expr0x7f419833bab0 = 
+    Expr.ssa("b_17", 17, expr0x7f4198238e10)
+  in let expr0x7f419833bdc8 = 
+    Expr.ssa("b_28", 28, expr0x7f4198238e10)
+  in let expr0x7f4198340000 = 
+    Expr.ssa("b_35", 35, expr0x7f4198238e10)
+  in let expr0x7f4198340120 = 
+    Expr.ssa("b_39", 39, expr0x7f4198238e10)
+  in let expr0x7f4198238ea0 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("v", 64, 64))
+  in let expr0x7f419833baf8 = 
+    Expr.ssa("v_18", 18, expr0x7f4198238ea0)
+  in let expr0x7f419833bbd0 = 
+    Expr.ssa("v_21", 21, expr0x7f4198238ea0)
+  in let expr0x7f4198340090 = 
+    Expr.ssa("v_37", 37, expr0x7f4198238ea0)
+  in let expr0x7f4198234980 = 
+    Expr.parameter_decl(type0x7f41993cc0a8, "value", type0x7f41993cc0a8)
+  in let expr0x7f419833bb88 = 
+    Expr.ssa("value_20(D)", 20, expr0x7f4198234980)
+  in let expr0x7f4198238f30 = 
+    Expr.variable_decl(type0x7f41982161f8, VarDecl.make("charset", 136, 8))
+  in let expr0x7f4198240d98 = 
+    Expr.string_cst(type0x7f41982161f8, 17, "\"0123456789abcdef\"")
+  in let expr0x7f4198234880 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "level", type0x7f41993c45e8)
+  in let expr0x7f419833bca8 = 
+    Expr.ssa("level_24(D)", 24, expr0x7f4198234880)
+  in let expr0x7f419823dba0 = 
+    Expr.string_cst(type0x7f419820a000, 27, "\"%s (hexdump of %zu bytes):\"")
+  in let expr0x7f41982416e0 = 
+    Expr.address_of(type0x7f419820a0a8, expr0x7f419823dba0)
+  in let expr0x7f4198234900 = 
+    Expr.parameter_decl(type0x7f41993cff18, "descr", type0x7f41993cff18)
+  in let expr0x7f419833bcf0 = 
+    Expr.ssa("descr_25(D)", 25, expr0x7f4198234900)
+  in let expr0x7f4198238d80 = 
+    Expr.variable_decl(type0x7f41981fb7e0, VarDecl.make("buf", 520, 8))
+  in let expr0x7f4198241760 = 
+    Expr.address_of(type0x7f41981fb888, expr0x7f4198238d80)
+  in let expr0x7f41982ecd80 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbcc0 = 
+    Expr.u_int_cst(type0x7f4199574f18, Z.of_string "0")
+  in let expr0x7f41982e7fc8 = 
+    Expr.memory_ref(type0x7f41993c4348, expr0x7f419833baf8, expr0x7f41981dbcc0)
+  in let expr0x7f41982ecdc8 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41993c93f0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "4")
+  in let expr0x7f41982ece10 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982ece58 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c43f0))
+  in let expr0x7f41982f5310 = 
+    Expr.array_ref(type0x7f41993c43f0, expr0x7f4198238f30, expr0x7f41982ece10)
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f41982f70a0 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f419833bab0, expr0x7f41985ed570)
+  in let expr0x7f41982ecea0 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982f7118 = 
+    Expr.memory_ref(type0x7f41993c4348, expr0x7f419833baf8, expr0x7f41981dbcc0)
+  in let expr0x7f41982ecee8 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982ecf30 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419953f768 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "15")
+  in let expr0x7f41982ecf78 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41993acde0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "1")
+  in let expr0x7f41982eccf0 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c43f0))
+  in let expr0x7f41982f5348 = 
+    Expr.array_ref(type0x7f41993c43f0, expr0x7f4198238f30, expr0x7f41982ecf30)
+  in let expr0x7f41982f7230 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982ecf78, expr0x7f41985ed570)
+  in let expr0x7f41982f8000 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41993acea0 = 
+    Expr.u_int_cst(type0x7f41993c4000, Z.of_string "2")
+  in let expr0x7f41982f72d0 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982f8000, expr0x7f41985ed570)
+  in let expr0x7f41985ed6d8 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "0")
+  in let expr0x7f41982e8b20 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "18446744073709551615")
+  in let expr0x7f41982f8048 = 
+    Expr.ssa("b.46_11", 11, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982f8090 = 
+    Expr.ssa("buf.47_12", 12, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982e8c20 = 
+    Expr.address_of(type0x7f41981fb888, expr0x7f4198238d80)
+  in let expr0x7f41982f8120 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9378 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1024")
+  in let expr0x7f4198241a20 = 
+    Expr.address_of(type0x7f41981fb888, expr0x7f4198238d80)
+  in let expr0x7f4198241aa0 = 
+    Expr.address_of(type0x7f41981fb888, expr0x7f4198238d80)
+  in let expr0x7f41982f8168 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982431c8 = 
+    Expr.string_cst(type0x7f4198211888, 2, "\"\\n\"")
+  in let expr0x7f4198241ba0 = 
+    Expr.address_of(type0x7f4198211930, expr0x7f41982431c8)
+  in let expr0x7f41982ef150 = 
+    Expr.constructor(type0x7f41981fb7e0)
+  in let expr0x7f41982ef168 = 
+    Expr.constructor(type0x7f41982161f8)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982d7f18 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f419833bca8));
+      (Expr.parameter("p2", 1, expr0x7f41982416e0));
+      (Expr.parameter("p3", 2, expr0x7f419833bcf0));
+      (Expr.parameter("p4", 3, expr0x7f419833bd38));
+  |])
+  in let call0x7f41982f3120 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f41982f8120));
+      (Expr.parameter("p2", 1, expr0x7f4198241a20));
+  |])
+  in let call0x7f41982f31b0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f41982f8168));
+      (Expr.parameter("p2", 1, expr0x7f4198241ba0));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f419833bbd0, expr0x7f419833bb88)
+    in let step_2_2 = 
+      Action.debug("# DEBUG v => v_21")
+    in let step_2_3 = 
+      Action.assign(expr0x7f4198238f30, expr0x7f4198240d98)
+    in let step_2_4 = 
+      Action.call(call0x7f41982d7f18)
+    in let step_2_5 = 
+      Action.assign(expr0x7f419833bdc8, expr0x7f4198241760)
+    in let step_2_6 = 
+      Action.debug("# DEBUG b => b_28")
+    in let step_2_7 = 
+      Action.assign(expr0x7f419833ba68, expr0x7f419833bd38)
+    in let step_2_8 = 
+      Action.assign(expr0x7f419833bab0, expr0x7f419833bdc8)
+    in let step_2_9 = 
+      Action.assign(expr0x7f419833baf8, expr0x7f419833bbd0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+      |],
+      [|
+        ("serverLog", 1);
+      |],
+      [|
+        "v_21 = value_20(D);";
+        "# DEBUG v => v_21";
+        "# .MEM_23 = VDEF <.MEM_22(D)>\ncharset = \"0123456789abcdef\";";
+        "# .MEM_27 = VDEF <.MEM_23>\nserverLog (level_24(D), \"%s (hexdump of %zu bytes):\", descr_25(D), len_26(D));";
+        "b_28 = &buf;";
+        "# DEBUG b => b_28";
+        "len_16 = len_26(D)";
+        "b_17 = b_28";
+        "v_18 = v_21";
+      |]
+    )
+  in let block_3 = 
+    let step_3_10 = 
+      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f419833ba68, expr0x7f419955cb58))
+    in let step_3_11 = 
+      Action.assign(expr0x7f41982ecd80, expr0x7f41982e7fc8)
+    in let step_3_12 = 
+      Action.assign(expr0x7f41982ecdc8, Expr.right_shift(
+        type0x7f41993c4348, expr0x7f41982ecd80, expr0x7f41993c93f0))
+    in let step_3_13 = 
+      Action.assign(expr0x7f41982ece10, expr0x7f41982ecdc8)
+    in let step_3_14 = 
+      Action.assign(expr0x7f41982ece58, expr0x7f41982f5310)
+    in let step_3_15 = 
+      Action.assign(expr0x7f41982f70a0, expr0x7f41982ece58)
+    in let step_3_16 = 
+      Action.assign(expr0x7f41982ecea0, expr0x7f41982f7118)
+    in let step_3_17 = 
+      Action.assign(expr0x7f41982ecee8, expr0x7f41982ecea0)
+    in let step_3_18 = 
+      Action.assign(expr0x7f41982ecf30, Expr.bit_and(
+        type0x7f41993c45e8, expr0x7f41982ecee8, expr0x7f419953f768))
+    in let step_3_19 = 
+      Action.assign(expr0x7f41982ecf78, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419833bab0, expr0x7f41993acde0))
+    in let step_3_20 = 
+      Action.assign(expr0x7f41982eccf0, expr0x7f41982f5348)
+    in let step_3_21 = 
+      Action.assign(expr0x7f41982f7230, expr0x7f41982eccf0)
+    in let step_3_22 = 
+      Action.assign(expr0x7f41982f8000, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419833bab0, expr0x7f41993acea0))
+    in let step_3_23 = 
+      Action.assign(expr0x7f41982f72d0, expr0x7f41985ed6d8)
+    in let step_3_24 = 
+      Action.assign(expr0x7f4198340000, Expr.pointer_plus(
+        type0x7f41993cff18, expr0x7f419833bab0, expr0x7f41993acea0))
+    in let step_3_25 = 
+      Action.debug("# DEBUG b => b_35")
+    in let step_3_26 = 
+      Action.assign(expr0x7f4198340048, Expr.plus(
+        type0x7f419950a348, expr0x7f419833ba68, expr0x7f41982e8b20))
+    in let step_3_27 = 
+      Action.debug("# DEBUG len => len_36")
+    in let step_3_28 = 
+      Action.assign(expr0x7f4198340090, Expr.pointer_plus(
+        type0x7f4199574f18, expr0x7f419833baf8, expr0x7f41993acde0))
+    in let step_3_29 = 
+      Action.debug("# DEBUG v => v_37")
+    in let step_3_30 = 
+      Action.assign(expr0x7f41982f8048, expr0x7f4198340000)
+    in let step_3_31 = 
+      Action.assign(expr0x7f41982f8090, expr0x7f41982e8c20)
+    in let step_3_32 = 
+      Action.assign(expr0x7f41982f80d8, Expr.minus(
+        type0x7f41993c4738, expr0x7f41982f8048, expr0x7f41982f8090))
+    in Block.block(
+      3,
+      [|
+        step_3_10;
+        step_3_11;
+        step_3_12;
+        step_3_13;
+        step_3_14;
+        step_3_15;
+        step_3_16;
+        step_3_17;
+        step_3_18;
+        step_3_19;
+        step_3_20;
+        step_3_21;
+        step_3_22;
+        step_3_23;
+        step_3_24;
+        step_3_25;
+        step_3_26;
+        step_3_27;
+        step_3_28;
+        step_3_29;
+        step_3_30;
+        step_3_31;
+        step_3_32;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (len_16 != 0)";
+        "# VUSE <.MEM_19>\n_1 = *v_18;";
+        "_2 = _1 >> 4;";
+        "_3 = (int) _2;";
+        "# VUSE <.MEM_19>\n_4 = charset[_3];";
+        "# .MEM_32 = VDEF <.MEM_19>\n*b_17 = _4;";
+        "# VUSE <.MEM_32>\n_5 = *v_18;";
+        "_6 = (int) _5;";
+        "_7 = _6 & 15;";
+        "_8 = b_17 + 1;";
+        "# VUSE <.MEM_32>\n_9 = charset[_7];";
+        "# .MEM_33 = VDEF <.MEM_32>\n*_8 = _9;";
+        "_10 = b_17 + 2;";
+        "# .MEM_34 = VDEF <.MEM_33>\n*_10 = 0;";
+        "b_35 = b_17 + 2;";
+        "# DEBUG b => b_35";
+        "len_36 = len_16 + 18446744073709551615;";
+        "# DEBUG len => len_36";
+        "v_37 = v_18 + 1;";
+        "# DEBUG v => v_37";
+        "b.46_11 = (long int) b_35;";
+        "buf.47_12 = (long int) &buf;";
+        "_13 = b.46_11 - buf.47_12;";
+      |]
+    )
+  in let block_4 = 
+    let step_4_33 = 
+      Action.assume(3, Expr.bneq(GccType.boolean, expr0x7f41982f80d8, expr0x7f41987a5df8))
+    in let step_4_34 = 
+      Action.assign(expr0x7f419833ba68, expr0x7f4198340048)
+    in let step_4_35 = 
+      Action.assign(expr0x7f419833bab0, expr0x7f4198340000)
+    in let step_4_36 = 
+      Action.assign(expr0x7f419833baf8, expr0x7f4198340090)
+    in Block.block(
+      4,
+      [|
+        step_4_33;
+        step_4_34;
+        step_4_35;
+        step_4_36;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_13 == 64)";
+        "len_16 = len_36";
+        "b_17 = b_35";
+        "v_18 = v_37";
+      |]
+    )
+  in let block_5 = 
+    let step_5_37 = 
+      Action.assume(3, Expr.beq(GccType.boolean, expr0x7f41982f80d8, expr0x7f41987a5df8))
+    in let step_5_38 = 
+      Action.assume(4, Expr.beq(GccType.boolean, expr0x7f4198340048, expr0x7f419955cb58))
+    in let step_5_39 = 
+      Action.assign(expr0x7f41982f8120, Expr.bit_or(
+        type0x7f41993c45e8, expr0x7f419833bca8, expr0x7f41993c9378))
+    in let step_5_40 = 
+      Action.call(call0x7f41982f3120)
+    in let step_5_41 = 
+      Action.assign(expr0x7f4198340120, expr0x7f4198241aa0)
+    in let step_5_42 = 
+      Action.debug("# DEBUG b => b_39")
+    in let step_5_43 = 
+      Action.assign(expr0x7f419833ba68, expr0x7f4198340048)
+    in let step_5_44 = 
+      Action.assign(expr0x7f419833bab0, expr0x7f4198340120)
+    in let step_5_45 = 
+      Action.assign(expr0x7f419833baf8, expr0x7f4198340090)
+    in Block.block(
+      5,
+      [|
+        step_5_37;
+        step_5_38;
+        step_5_39;
+        step_5_40;
+        step_5_41;
+        step_5_42;
+        step_5_43;
+        step_5_44;
+        step_5_45;
+      |],
+      [|
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume TRUE (_13 == 64)";
+        "assume TRUE (len_36 == 0)";
+        "_14 = level_24(D) | 1024;";
+        "# .MEM_38 = VDEF <.MEM_34>\nserverLogRaw (_14, &buf);";
+        "b_39 = &buf;";
+        "# DEBUG b => b_39";
+        "len_16 = len_36";
+        "b_17 = b_39";
+        "v_18 = v_37";
+      |]
+    )
+  in let block_6 = 
+    let step_6_46 = 
+      Action.assume(4, Expr.bneq(GccType.boolean, expr0x7f4198340048, expr0x7f419955cb58))
+    in let step_6_47 = 
+      Action.debug("# DEBUG v => v_18")
+    in let step_6_48 = 
+      Action.debug("# DEBUG b => b_17")
+    in let step_6_49 = 
+      Action.debug("# DEBUG len => len_16")
+    in Block.block(
+      6,
+      [|
+        step_6_46;
+        step_6_47;
+        step_6_48;
+        step_6_49;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (len_36 == 0)";
+        "# DEBUG v => v_18";
+        "# DEBUG b => b_17";
+        "# DEBUG len => len_16";
+      |]
+    )
+  in let block_7 = 
+    let step_7_50 = 
+      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f419833ba68, expr0x7f419955cb58))
+    in let step_7_51 = 
+      Action.assign(expr0x7f41982f8168, Expr.bit_or(
+        type0x7f41993c45e8, expr0x7f419833bca8, expr0x7f41993c9378))
+    in let step_7_52 = 
+      Action.call(call0x7f41982f31b0)
+    in let step_7_53 = 
+      Action.assign(expr0x7f4198238d80, expr0x7f41982ef150)
+    in let step_7_54 = 
+      Action.assign(expr0x7f4198238f30, expr0x7f41982ef168)
+    in let step_7_55 = 
+      Action.return(expr0)
+    in Block.block(
+      7,
+      [|
+        step_7_50;
+        step_7_51;
+        step_7_52;
+        step_7_53;
+        step_7_54;
+        step_7_55;
+      |],
+      [|
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume FALSE (len_16 != 0)";
+        "_15 = level_24(D) | 1024;";
+        "# .MEM_29 = VDEF <.MEM_19>\nserverLogRaw (_15, \"\\n\");";
+        "# .MEM_30 = VDEF <.MEM_29>\nbuf ={v} {CLOBBER};";
+        "# .MEM_31 = VDEF <.MEM_30>\ncharset ={v} {CLOBBER};";
+        "# VUSE <.MEM_31>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_56 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_56 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    8,
+    Z.of_string "4",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (7, "[0 | 6]", block_6, Z.of_string "0", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[7]", block_7, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 3]", block_3, [|
+          Cfg.edge (5, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (6, "[0 | 5]", block_5, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (6, "[0 | 5]", block_5, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (8, "[1 | 6]", block_6, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[0 | 5]", block_5, [|
+          Cfg.edge (8, "[1 | 6]", block_6, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 6]", block_6, [|
+          Cfg.edge (4, "[0 | 3]", block_3, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (3, "[7]", block_7, Z.of_string "3", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[1 | 6]", block_6, [|
+          Cfg.edge (3, "[7]", block_7, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "serverLogHexDump",
+    68,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: serverLogObjectDebugInfo
+  // fid: 53
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41993c4b28 = 
+    GccType.boolean
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41984972a0 = 
+    GccType.integer(false, 4, 8, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41985372a0 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41985373f0 = 
+    GccType.pointer(type0x7f41985372a0)
+  in let type0x7f419821e0a8 = 
+    GccType.integer(false, 4, 8, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f419950fb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "15")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41981d6540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419950fb28)
+  in let type0x7f419821e540 = 
+    GccType.pointer(type0x7f41981d6540)
+  in let type0x7f4199542dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "19")
+  in let type0x7f4199542e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199542dc8)
+  in let type0x7f41981f5540 = 
+    GccType.pointer(type0x7f4199542e70)
+  in let type0x7f41985cc738 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41981c2c78 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f4198204d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "26")
+  in let type0x7f419820a000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204d20)
+  in let type0x7f419820a0a8 = 
+    GccType.pointer(type0x7f419820a000)
+  in let type0x7f41995875e8 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f4198211498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "29")
+  in let type0x7f4198211540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198211498)
+  in let type0x7f41982115e8 = 
+    GccType.pointer(type0x7f4198211540)
+  in let type0x7f41985cc498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "12")
+  in let type0x7f41981ec0a8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985cc498)
+  in let type0x7f41981ec150 = 
+    GccType.pointer(type0x7f41981ec0a8)
+  in let type0x7f4198713498 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "13")
+  in let type0x7f4198713540 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198713498)
+  in let type0x7f4198204888 = 
+    GccType.pointer(type0x7f4198713540)
+  in let type0x7f41984b3a80 = 
+    GccType.record("zskiplist", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41984b3d20 = 
+    GccType.pointer(type0x7f41984b3a80)
+  in let type0x7f419821e348 = 
+    GccType.record("zset", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419821e690 = 
+    GccType.pointer(type0x7f419821e348)
+  in let type0x7f419821e7e0 = 
+    GccType.pointer(type0x7f41984b3a80)
+  in let type0x7f4198204a80 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "18")
+  in let type0x7f4198204b28 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204a80)
+  in let type0x7f4198204bd0 = 
+    GccType.pointer(type0x7f4198204b28)
+  in let expr0x7f41982c3240 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41993acdf8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "0")
+  in let expr0x7f41982c3360 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41993c9030 = 
+    Expr.u_int_cst(type0x7f41993c4b28, Z.of_string "0")
+  in let expr0x7f41982c3480 = 
+    Expr.ssa("_15", 15, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419821b858 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "4095")
+  in let expr0x7f41982c3630 = 
+    Expr.ssa("_21", 21, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981db8d0 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "1")
+  in let expr0x7f41982c3750 = 
+    Expr.ssa("_25", 25, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dba50 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "2")
+  in let expr0x7f41982c3870 = 
+    Expr.ssa("_29", 29, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981f1210 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "4")
+  in let expr0x7f41982c3990 = 
+    Expr.ssa("_33", 33, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f419955ce70 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "3")
+  in let expr0x7f41982c3ab0 = 
+    Expr.ssa("_37", 37, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbf48 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "112")
+  in let expr0x7f41982c3090 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f4198494720 = 
+    Expr.field_decl(type0x7f41984972a0, FieldDecl.make("type", "4", 1, "0", 128, 0, true))
+  in let expr0x7f419821bc48 = 
+    Expr.u_int_cst(type0x7f41985373f0, Z.of_string "0")
+  in let expr0x7f4198218480 = 
+    Expr.parameter_decl(type0x7f41985373f0, "o", type0x7f41985373f0)
+  in let expr0x7f419831ab88 = 
+    Expr.ssa("o_43(D)", 43, expr0x7f4198218480)
+  in let expr0x7f41982c1730 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4660 = 
+    Expr.component_ref(type0x7f419821e0a8, expr0x7f41982c1730, expr0x7f4198494720)
+  in let expr0x7f41982c30d8 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f41982222d0 = 
+    Expr.string_cst(type0x7f41981d6540, 16, "\"Object type: %d\"")
+  in let expr0x7f4198220540 = 
+    Expr.address_of(type0x7f419821e540, expr0x7f41982222d0)
+  in let expr0x7f41982c3120 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41984972a0))
+  in let expr0x7f41984947b8 = 
+    Expr.field_decl(type0x7f41984972a0, FieldDecl.make("encoding", "4", 1, "0", 128, 4, true))
+  in let expr0x7f41982c17d0 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4690 = 
+    Expr.component_ref(type0x7f419821e0a8, expr0x7f41982c17d0, expr0x7f41984947b8)
+  in let expr0x7f41982c3168 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419821cb70 = 
+    Expr.string_cst(type0x7f4199542e70, 20, "\"Object encoding: %d\"")
+  in let expr0x7f4198220600 = 
+    Expr.address_of(type0x7f41981f5540, expr0x7f419821cb70)
+  in let expr0x7f41982c31b0 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984948e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("refcount", "32", 32, "0", 128, 32, false))
+  in let expr0x7f41982c1870 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a46c0 = 
+    Expr.component_ref(type0x7f41985cc738, expr0x7f41982c1870, expr0x7f41984948e8)
+  in let expr0x7f419821cbd0 = 
+    Expr.string_cst(type0x7f4199542e70, 20, "\"Object refcount: %d\"")
+  in let expr0x7f41982206c0 = 
+    Expr.address_of(type0x7f41981f5540, expr0x7f419821cbd0)
+  in let expr0x7f41982c31f8 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c18e8 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4750 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c18e8, 8, 0)
+  in let expr0x7f41981db870 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "15")
+  in let expr0x7f41982c3288 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c19b0 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4780 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c19b0, 8, 0)
+  in let expr0x7f419831aca8 = 
+    Expr.ssa("_47", 47, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981db858 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "240")
+  in let expr0x7f41982c32d0 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41982c3318 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41981fedc8 = 
+    Expr.u_int_cst(type0x7f41993c4348, Z.of_string "128")
+  in let expr0x7f41982c33a8 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41982c1b68 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a47b0 = 
+    Expr.component_ref(type0x7f41981c2c78, expr0x7f41982c1b68, expr0x7f4198494980)
+  in let expr0x7f41982c33f0 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f419821cd50 = 
+    Expr.string_cst(type0x7f419820a000, 27, "\"Object raw string len: %zu\"")
+  in let expr0x7f4198220840 = 
+    Expr.address_of(type0x7f419820a0a8, expr0x7f419821cd50)
+  in let expr0x7f41982c3438 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982c1c08 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a47e0 = 
+    Expr.component_ref(type0x7f41981c2c78, expr0x7f41982c1c08, expr0x7f4198494980)
+  in let expr0x7f41982c34c8 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982c1cd0 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4810 = 
+    Expr.component_ref(type0x7f41981c2c78, expr0x7f41982c1cd0, expr0x7f4198494980)
+  in let expr0x7f41982c3510 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c3558 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982c1d70 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4840 = 
+    Expr.component_ref(type0x7f41981c2c78, expr0x7f41982c1d70, expr0x7f4198494980)
+  in let expr0x7f41982c35a0 = 
+    Expr.ssa("_19", 19, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f419821f120 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("repr", 64, 64))
+  in let expr0x7f419831aea0 = 
+    Expr.ssa("repr_54", 54, expr0x7f419821f120)
+  in let expr0x7f41982039d8 = 
+    Expr.string_cst(type0x7f4198211540, 30, "\"Object raw string content: %s\"")
+  in let expr0x7f4198220a80 = 
+    Expr.address_of(type0x7f41982115e8, expr0x7f41982039d8)
+  in let expr0x7f41982c35e8 = 
+    Expr.ssa("_20", 20, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c1e10 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a48a0 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c1e10, 8, 0)
+  in let expr0x7f41982c3678 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c36c0 = 
+    Expr.ssa("_23", 23, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198222af0 = 
+    Expr.string_cst(type0x7f41981d6540, 16, "\"List length: %d\"")
+  in let expr0x7f4198220b60 = 
+    Expr.address_of(type0x7f419821e540, expr0x7f4198222af0)
+  in let expr0x7f41982c3708 = 
+    Expr.ssa("_24", 24, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c1f28 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a48d0 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c1f28, 8, 0)
+  in let expr0x7f41982c3798 = 
+    Expr.ssa("_26", 26, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c37e0 = 
+    Expr.ssa("_27", 27, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198222c58 = 
+    Expr.string_cst(type0x7f41981ec0a8, 13, "\"Set size: %d\"")
+  in let expr0x7f4198220c60 = 
+    Expr.address_of(type0x7f41981ec150, expr0x7f4198222c58)
+  in let expr0x7f41982c3828 = 
+    Expr.ssa("_28", 28, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c1078 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4900 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c1078, 8, 0)
+  in let expr0x7f41982c38b8 = 
+    Expr.ssa("_30", 30, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c3900 = 
+    Expr.ssa("_31", 31, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198222dc0 = 
+    Expr.string_cst(type0x7f4198713540, 14, "\"Hash size: %d\"")
+  in let expr0x7f4198220d60 = 
+    Expr.address_of(type0x7f4198204888, expr0x7f4198222dc0)
+  in let expr0x7f41982c3948 = 
+    Expr.ssa("_32", 32, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c1118 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4930 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c1118, 8, 0)
+  in let expr0x7f41982c39d8 = 
+    Expr.ssa("_34", 34, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982c3a20 = 
+    Expr.ssa("_35", 35, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198224090 = 
+    Expr.string_cst(type0x7f4199542e70, 20, "\"Sorted set size: %d\"")
+  in let expr0x7f4198220e60 = 
+    Expr.address_of(type0x7f41981f5540, expr0x7f4198224090)
+  in let expr0x7f41982c3a68 = 
+    Expr.ssa("_36", 36, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41982c1258 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4960 = 
+    Expr.bitfield_ref(type0x7f41993c4348, expr0x7f41982c1258, 8, 0)
+  in let expr0x7f41982c3af8 = 
+    Expr.ssa("_38", 38, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982c1758 = 
+    Expr.memory_ref(type0x7f41985372a0, expr0x7f419831ab88, expr0x7f419821bc48)
+  in let expr0x7f41982a4990 = 
+    Expr.component_ref(type0x7f41981c2c78, expr0x7f41982c1758, expr0x7f4198494980)
+  in let expr0x7f41982c3b40 = 
+    Expr.ssa("_39", 39, Expr.nothing(type0x7f41984b3d20))
+  in let expr0x7f41984bc1c8 = 
+    Expr.field_decl(type0x7f41984b3d20, FieldDecl.make("zsl", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41982a15e8 = 
+    Expr.u_int_cst(type0x7f419821e690, Z.of_string "0")
+  in let expr0x7f41982c17f8 = 
+    Expr.memory_ref(type0x7f419821e348, expr0x7f41982c3af8, expr0x7f41982a15e8)
+  in let expr0x7f41982a49c0 = 
+    Expr.component_ref(type0x7f419821e7e0, expr0x7f41982c17f8, expr0x7f41984bc1c8)
+  in let expr0x7f41982c3b88 = 
+    Expr.ssa("_40", 40, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984b2ed8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("level", "32", 32, "16", 128, 64, false))
+  in let expr0x7f41982a1600 = 
+    Expr.u_int_cst(type0x7f419821e7e0, Z.of_string "0")
+  in let expr0x7f41982c1898 = 
+    Expr.memory_ref(type0x7f41984b3a80, expr0x7f41982c3b40, expr0x7f41982a1600)
+  in let expr0x7f41982a49f0 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41982c1898, expr0x7f41984b2ed8)
+  in let expr0x7f4198225078 = 
+    Expr.string_cst(type0x7f4198204b28, 19, "\"Skiplist level: %d\"")
+  in let expr0x7f4198220f60 = 
+    Expr.address_of(type0x7f4198204bd0, expr0x7f4198225078)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f4198292c78 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220540));
+      (Expr.parameter("p3", 2, expr0x7f41982c30d8));
+  |])
+  in let call0x7f4198292d10 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220600));
+      (Expr.parameter("p3", 2, expr0x7f41982c3168));
+  |])
+  in let call0x7f4198292da8 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982206c0));
+      (Expr.parameter("p3", 2, expr0x7f41982c31b0));
+  |])
+  in let call0x7f41982a35a0 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f41982c33a8));
+  |])
+  in let call0x7f4198292e40 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220840));
+      (Expr.parameter("p3", 2, expr0x7f41982c33f0));
+  |])
+  in let call0x7f41982a3630 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f41982c3438));
+  |])
+  in let call0x7f41982a36c0 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f41982c34c8));
+  |])
+  in let call0x7f41982bf680 = Expr.call(
+    type0x7f41995875e8,
+    "sdsempty", [|
+  |])
+  in let call0x7f4198292ed8 = Expr.call(
+    type0x7f41995875e8,
+    "sdscatrepr", [|
+      (Expr.parameter("p1", 0, expr0x7f41982c35a0));
+      (Expr.parameter("p2", 1, expr0x7f41982c3558));
+      (Expr.parameter("p3", 2, expr0x7f41982c3510));
+  |])
+  in let call0x7f41982c5000 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220a80));
+      (Expr.parameter("p3", 2, expr0x7f419831aea0));
+  |])
+  in let call0x7f41982a3750 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f419831aea0));
+  |])
+  in let call0x7f41982a37e0 = Expr.call(
+    type0x7f41993c47e0,
+    "listTypeLength", [|
+      (Expr.parameter("p1", 0, expr0x7f419831ab88));
+  |])
+  in let call0x7f41982c5098 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220b60));
+      (Expr.parameter("p3", 2, expr0x7f41982c36c0));
+  |])
+  in let call0x7f41982a3870 = Expr.call(
+    type0x7f41993c47e0,
+    "setTypeSize", [|
+      (Expr.parameter("p1", 0, expr0x7f419831ab88));
+  |])
+  in let call0x7f41982c5130 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220c60));
+      (Expr.parameter("p3", 2, expr0x7f41982c37e0));
+  |])
+  in let call0x7f41982a3900 = Expr.call(
+    type0x7f41993c47e0,
+    "hashTypeLength", [|
+      (Expr.parameter("p1", 0, expr0x7f419831ab88));
+  |])
+  in let call0x7f41982c51c8 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220d60));
+      (Expr.parameter("p3", 2, expr0x7f41982c3900));
+  |])
+  in let call0x7f41982a3990 = Expr.call(
+    type0x7f41993c47e0,
+    "zsetLength", [|
+      (Expr.parameter("p1", 0, expr0x7f419831ab88));
+  |])
+  in let call0x7f41982c5260 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220e60));
+      (Expr.parameter("p3", 2, expr0x7f41982c3a20));
+  |])
+  in let call0x7f41982c52f8 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198220f60));
+      (Expr.parameter("p3", 2, expr0x7f41982c3b88));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982c3090, expr0x7f41982a4660)
+    in let step_2_2 = 
+      Action.assign(expr0x7f41982c30d8, expr0x7f41982c3090)
+    in let step_2_3 = 
+      Action.call(call0x7f4198292c78)
+    in let step_2_4 = 
+      Action.assign(expr0x7f41982c3120, expr0x7f41982a4690)
+    in let step_2_5 = 
+      Action.assign(expr0x7f41982c3168, expr0x7f41982c3120)
+    in let step_2_6 = 
+      Action.call(call0x7f4198292d10)
+    in let step_2_7 = 
+      Action.assign(expr0x7f41982c31b0, expr0x7f41982a46c0)
+    in let step_2_8 = 
+      Action.call(call0x7f4198292da8)
+    in let step_2_9 = 
+      Action.assign(expr0x7f41982c31f8, expr0x7f41982a4750)
+    in let step_2_10 = 
+      Action.assign(expr0x7f41982c3240, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c31f8, expr0x7f41981db870))
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+      |],
+      [|
+        ("serverLog", 3);
+      |],
+      [|
+        "# VUSE <.MEM_42(D)>\n_1 = o_43(D)->type;";
+        "_2 = (int) _1;";
+        "# .MEM_44 = VDEF <.MEM_42(D)>\nserverLog (3, \"Object type: %d\", _2);";
+        "# VUSE <.MEM_44>\n_3 = o_43(D)->encoding;";
+        "_4 = (int) _3;";
+        "# .MEM_45 = VDEF <.MEM_44>\nserverLog (3, \"Object encoding: %d\", _4);";
+        "# VUSE <.MEM_45>\n_5 = o_43(D)->refcount;";
+        "# .MEM_46 = VDEF <.MEM_45>\nserverLog (3, \"Object refcount: %d\", _5);";
+        "# VUSE <.MEM_46>\n_6 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_7 = _6 & 15;";
+      |]
+    )
+  in let block_3 = 
+    let step_3_11 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f41982c3240, expr0x7f41993acdf8))
+    in let step_3_12 = 
+      Action.assign(expr0x7f41982c3288, expr0x7f41982a4780)
+    in let step_3_13 = 
+      Action.assign(expr0x7f419831aca8, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c3288, expr0x7f41981db858))
+    in let step_3_14 = 
+      Action.assign(expr0x7f41982c32d0, Expr.beq(
+        type0x7f41993c4b28, expr0x7f419831aca8, expr0x7f41993acdf8))
+    in let step_3_15 = 
+      Action.assign(expr0x7f41982c3318, Expr.beq(
+        type0x7f41993c4b28, expr0x7f419831aca8, expr0x7f41981fedc8))
+    in let step_3_16 = 
+      Action.assign(expr0x7f41982c3360, Expr.bit_or(
+        type0x7f41993c4b28, expr0x7f41982c32d0, expr0x7f41982c3318))
+    in Block.block(
+      3,
+      [|
+        step_3_11;
+        step_3_12;
+        step_3_13;
+        step_3_14;
+        step_3_15;
+        step_3_16;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_7 == 0)";
+        "# VUSE <.MEM_46>\n_8 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_47 = _8 & 240;";
+        "_9 = _47 == 0;";
+        "_10 = _47 == 128;";
+        "_11 = _9 | _10;";
+      |]
+    )
+  in let block_4 = 
+    let step_4_17 = 
+      Action.assume(3, Expr.bneq(GccType.boolean, expr0x7f41982c3360, expr0x7f41993c9030))
+    in let step_4_18 = 
+      Action.assign(expr0x7f41982c33a8, expr0x7f41982a47b0)
+    in let step_4_19 = 
+      Action.call(call0x7f41982a35a0)
+    in let step_4_20 = 
+      Action.assign(expr0x7f41982c33f0, call0x7f41982a35a0)
+    in let step_4_21 = 
+      Action.call(call0x7f4198292e40)
+    in let step_4_22 = 
+      Action.assign(expr0x7f41982c3438, expr0x7f41982a47e0)
+    in let step_4_23 = 
+      Action.call(call0x7f41982a3630)
+    in let step_4_24 = 
+      Action.assign(expr0x7f41982c3480, call0x7f41982a3630)
+    in Block.block(
+      4,
+      [|
+        step_4_17;
+        step_4_18;
+        step_4_19;
+        step_4_20;
+        step_4_21;
+        step_4_22;
+        step_4_23;
+        step_4_24;
+      |],
+      [|
+        ("sdslen", 2);
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (_11 != 0)";
+        "# VUSE <.MEM_46>\n_12 = o_43(D)->ptr;";
+        "# .MEM_48 = VDEF <.MEM_46>\n_13 = sdslen (_12);";
+        "<CAPTURES RETURN>";
+        "# .MEM_49 = VDEF <.MEM_48>\nserverLog (3, \"Object raw string len: %zu\", _13);";
+        "# VUSE <.MEM_49>\n_14 = o_43(D)->ptr;";
+        "# .MEM_50 = VDEF <.MEM_49>\n_15 = sdslen (_14);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_5 = 
+    let step_5_25 = 
+      Action.assume(4, Expr.blte(GccType.boolean, expr0x7f41982c3480, expr0x7f419821b858))
+    in let step_5_26 = 
+      Action.assign(expr0x7f41982c34c8, expr0x7f41982a4810)
+    in let step_5_27 = 
+      Action.call(call0x7f41982a36c0)
+    in let step_5_28 = 
+      Action.assign(expr0x7f41982c3510, call0x7f41982a36c0)
+    in let step_5_29 = 
+      Action.assign(expr0x7f41982c3558, expr0x7f41982a4840)
+    in let step_5_30 = 
+      Action.call(call0x7f41982bf680)
+    in let step_5_31 = 
+      Action.assign(expr0x7f41982c35a0, call0x7f41982bf680)
+    in let step_5_32 = 
+      Action.call(call0x7f4198292ed8)
+    in let step_5_33 = 
+      Action.assign(expr0x7f419831aea0, call0x7f4198292ed8)
+    in let step_5_34 = 
+      Action.debug("# DEBUG repr => repr_54")
+    in let step_5_35 = 
+      Action.call(call0x7f41982c5000)
+    in let step_5_36 = 
+      Action.call(call0x7f41982a3750)
+    in Block.block(
+      5,
+      [|
+        step_5_25;
+        step_5_26;
+        step_5_27;
+        step_5_28;
+        step_5_29;
+        step_5_30;
+        step_5_31;
+        step_5_32;
+        step_5_33;
+        step_5_34;
+        step_5_35;
+        step_5_36;
+      |],
+      [|
+        ("sdscatrepr", 1);
+        ("sdsempty", 1);
+        ("sdsfree", 1);
+        ("sdslen", 1);
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (_15 <= 4095)";
+        "# VUSE <.MEM_50>\n_16 = o_43(D)->ptr;";
+        "# .MEM_51 = VDEF <.MEM_50>\n_17 = sdslen (_16);";
+        "<CAPTURES RETURN>";
+        "# VUSE <.MEM_51>\n_18 = o_43(D)->ptr;";
+        "# .MEM_52 = VDEF <.MEM_51>\n_19 = sdsempty ();";
+        "<CAPTURES RETURN>";
+        "# .MEM_53 = VDEF <.MEM_52>\nrepr_54 = sdscatrepr (_19, _18, _17);";
+        "<CAPTURES RETURN>";
+        "# DEBUG repr => repr_54";
+        "# .MEM_55 = VDEF <.MEM_53>\nserverLog (3, \"Object raw string content: %s\", repr_54);";
+        "# .MEM_56 = VDEF <.MEM_55>\nsdsfree (repr_54);";
+      |]
+    )
+  in let block_6 = 
+    let step_6_37 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f41982c3240, expr0x7f41993acdf8))
+    in let step_6_38 = 
+      Action.assume(3, Expr.beq(GccType.boolean, expr0x7f41982c3360, expr0x7f41993c9030))
+    in let step_6_39 = 
+      Action.assign(expr0x7f41982c35e8, expr0x7f41982a48a0)
+    in let step_6_40 = 
+      Action.assign(expr0x7f41982c3630, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c35e8, expr0x7f41981db870))
+    in Block.block(
+      6,
+      [|
+        step_6_37;
+        step_6_38;
+        step_6_39;
+        step_6_40;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_7 == 0)";
+        "assume FALSE (_11 != 0)";
+        "# VUSE <.MEM_46>\n_20 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_21 = _20 & 15;";
+      |]
+    )
+  in let block_7 = 
+    let step_7_41 = 
+      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f41982c3630, expr0x7f41981db8d0))
+    in let step_7_42 = 
+      Action.call(call0x7f41982a37e0)
+    in let step_7_43 = 
+      Action.assign(expr0x7f41982c3678, call0x7f41982a37e0)
+    in let step_7_44 = 
+      Action.assign(expr0x7f41982c36c0, expr0x7f41982c3678)
+    in let step_7_45 = 
+      Action.call(call0x7f41982c5098)
+    in Block.block(
+      7,
+      [|
+        step_7_41;
         step_7_42;
         step_7_43;
         step_7_44;
         step_7_45;
       |],
       [|
-        ("memcmp", 1);
+        ("listTypeLength", 1);
+        ("serverLog", 1);
       |],
       [|
-        "assume FALSE (_12 != 0)";
-        "_13 = &buf + 9;";
-        "# VUSE <.MEM_38>\n_14 = memcmp (_13, \"200\", 3);";
+        "assume TRUE (_21 == 1)";
+        "# .MEM_64 = VDEF <.MEM_46>\n_22 = listTypeLength (o_43(D));";
         "<CAPTURES RETURN>";
+        "_23 = (int) _22;";
+        "# .MEM_65 = VDEF <.MEM_64>\nserverLog (3, \"List length: %d\", _23);";
       |]
     )
   in let block_8 = 
     let step_8_46 = 
-      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f9e6498d318, expr0x7f9e66d71078))
+      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f41982c3630, expr0x7f41981db8d0))
     in let step_8_47 = 
-      Action.assume(7, Expr.bneq(GccType.boolean, expr0x7f9e6498d3f0, expr0x7f9e66d71078))
+      Action.assign(expr0x7f41982c3708, expr0x7f41982a48d0)
     in let step_8_48 = 
-      Action.assign(expr0x7f9e649ed828, expr0x7f9e66d71090)
-    in let step_8_49 = 
-      Action.assign(expr0x7f9e649ed0d8, expr0x7f9e649ed828)
+      Action.assign(expr0x7f41982c3750, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c3708, expr0x7f41981db870))
     in Block.block(
       8,
       [|
         step_8_46;
         step_8_47;
         step_8_48;
-        step_8_49;
       |],
       [|
         (* no calls *)
       |],
       [|
-        "assume TRUE (_12 != 0)";
-        "assume TRUE (_14 != 0)";
-        "_43 = 1;";
-        "_17 = _43";
+        "assume FALSE (_21 == 1)";
+        "# VUSE <.MEM_46>\n_24 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_25 = _24 & 15;";
       |]
     )
   in let block_9 = 
-    let step_9_50 = 
-      Action.assume(7, Expr.beq(GccType.boolean, expr0x7f9e6498d3f0, expr0x7f9e66d71078))
+    let step_9_49 = 
+      Action.assume(8, Expr.beq(GccType.boolean, expr0x7f41982c3750, expr0x7f41981dba50))
+    in let step_9_50 = 
+      Action.call(call0x7f41982a3870)
     in let step_9_51 = 
-      Action.assume(10, Expr.bneq(GccType.boolean, expr0x7f9e649ed798, expr0x7f9e66d71090))
+      Action.assign(expr0x7f41982c3798, call0x7f41982a3870)
     in let step_9_52 = 
-      Action.assume(11, Expr.bneq(GccType.boolean, expr0x7f9e6498d480, expr0x7f9e648a0f90))
+      Action.assign(expr0x7f41982c37e0, expr0x7f41982c3798)
     in let step_9_53 = 
-      Action.call(call0x7f9e64981a80)
-    in let step_9_54 = 
-      Action.assign(expr0x7f9e649ed798, call0x7f9e64981a80)
-    in let step_9_55 = 
-      Action.debug("# DEBUG n => n_41")
+      Action.call(call0x7f41982c5130)
     in Block.block(
       9,
       [|
+        step_9_49;
         step_9_50;
         step_9_51;
         step_9_52;
         step_9_53;
-        step_9_54;
-        step_9_55;
       |],
       [|
-        ("http_read_line", 1);
+        ("serverLog", 1);
+        ("setTypeSize", 1);
       |],
       [|
-        "assume FALSE (_14 != 0)";
-        "assume FALSE (n_41 == 1)";
-        "assume FALSE (_15 == 10)";
-        "# .MEM_40 = VDEF <.MEM_19>\nn_41 = http_read_line (print_fd_37(D), sok_35(D), &buf, 512);";
+        "assume TRUE (_25 == 2)";
+        "# .MEM_62 = VDEF <.MEM_46>\n_26 = setTypeSize (o_43(D));";
         "<CAPTURES RETURN>";
-        "# DEBUG n => n_41";
+        "_27 = (int) _26;";
+        "# .MEM_63 = VDEF <.MEM_62>\nserverLog (3, \"Set size: %d\", _27);";
       |]
     )
   in let block_10 = 
-    let step_10_56 = 
-      Action.assume(9, Expr.bgt(GccType.boolean, expr0x7f9e649ed798, expr0x7f9e66d71078))
+    let step_10_54 = 
+      Action.assume(8, Expr.bneq(GccType.boolean, expr0x7f41982c3750, expr0x7f41981dba50))
+    in let step_10_55 = 
+      Action.assign(expr0x7f41982c3828, expr0x7f41982a4900)
+    in let step_10_56 = 
+      Action.assign(expr0x7f41982c3870, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c3828, expr0x7f41981db870))
     in Block.block(
       10,
       [|
+        step_10_54;
+        step_10_55;
         step_10_56;
       |],
       [|
         (* no calls *)
       |],
       [|
-        "assume FALSE (n_41 <= 0)";
+        "assume FALSE (_25 == 2)";
+        "# VUSE <.MEM_46>\n_28 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_29 = _28 & 15;";
       |]
     )
   in let block_11 = 
     let step_11_57 = 
-      Action.assume(10, Expr.beq(GccType.boolean, expr0x7f9e649ed798, expr0x7f9e66d71090))
+      Action.assume(10, Expr.beq(GccType.boolean, expr0x7f41982c3870, expr0x7f41981f1210))
     in let step_11_58 = 
-      Action.assign(expr0x7f9e6498d480, expr0x7f9e6498a3b8)
+      Action.call(call0x7f41982a3900)
+    in let step_11_59 = 
+      Action.assign(expr0x7f41982c38b8, call0x7f41982a3900)
+    in let step_11_60 = 
+      Action.assign(expr0x7f41982c3900, expr0x7f41982c38b8)
+    in let step_11_61 = 
+      Action.call(call0x7f41982c51c8)
     in Block.block(
       11,
       [|
         step_11_57;
         step_11_58;
+        step_11_59;
+        step_11_60;
+        step_11_61;
       |],
       [|
-        (* no calls *)
+        ("hashTypeLength", 1);
+        ("serverLog", 1);
       |],
       [|
-        "assume TRUE (n_41 == 1)";
-        "# VUSE <.MEM_40>\n_15 = buf[0];";
+        "assume TRUE (_29 == 4)";
+        "# .MEM_60 = VDEF <.MEM_46>\n_30 = hashTypeLength (o_43(D));";
+        "<CAPTURES RETURN>";
+        "_31 = (int) _30;";
+        "# .MEM_61 = VDEF <.MEM_60>\nserverLog (3, \"Hash size: %d\", _31);";
       |]
     )
   in let block_12 = 
-    let step_12_59 = 
-      Action.assume(9, Expr.blte(GccType.boolean, expr0x7f9e649ed798, expr0x7f9e66d71078))
-    in let step_12_60 = 
-      Action.assume(11, Expr.beq(GccType.boolean, expr0x7f9e6498d480, expr0x7f9e648a0f90))
-    in let step_12_61 = 
-      Action.assign(expr0x7f9e649ed7e0, expr0x7f9e66d71078)
-    in let step_12_62 = 
-      Action.assign(expr0x7f9e649ed0d8, expr0x7f9e649ed7e0)
+    let step_12_62 = 
+      Action.assume(10, Expr.bneq(GccType.boolean, expr0x7f41982c3870, expr0x7f41981f1210))
+    in let step_12_63 = 
+      Action.assign(expr0x7f41982c3948, expr0x7f41982a4930)
+    in let step_12_64 = 
+      Action.assign(expr0x7f41982c3990, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c3948, expr0x7f41981db870))
     in Block.block(
       12,
       [|
-        step_12_59;
-        step_12_60;
-        step_12_61;
         step_12_62;
+        step_12_63;
+        step_12_64;
       |],
       [|
         (* no calls *)
       |],
       [|
-        "assume TRUE (n_41 <= 0)";
-        "assume TRUE (_15 == 10)";
-        "_42 = 0;";
-        "_17 = _42";
+        "assume FALSE (_29 == 4)";
+        "# VUSE <.MEM_46>\n_32 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_33 = _32 & 15;";
       |]
     )
   in let block_13 = 
-    let step_13_63 = 
-      Action.assign(expr0x7f9e6489e360, expr0x7f9e6496fb40)
-    in let step_13_64 = 
-      Action.assign(expr0x7f9e6489e3f0, expr0x7f9e6496fb58)
-    in let step_13_65 = 
-      Action.assign(expr0x7f9e6489e480, expr0x7f9e6496fb70)
+    let step_13_65 = 
+      Action.assume(12, Expr.beq(GccType.boolean, expr0x7f41982c3990, expr0x7f419955ce70))
     in let step_13_66 = 
-      Action.return(expr0x7f9e649ed0d8)
+      Action.call(call0x7f41982a3990)
+    in let step_13_67 = 
+      Action.assign(expr0x7f41982c39d8, call0x7f41982a3990)
+    in let step_13_68 = 
+      Action.assign(expr0x7f41982c3a20, expr0x7f41982c39d8)
+    in let step_13_69 = 
+      Action.call(call0x7f41982c5260)
+    in let step_13_70 = 
+      Action.assign(expr0x7f41982c3a68, expr0x7f41982a4960)
+    in let step_13_71 = 
+      Action.assign(expr0x7f41982c3ab0, Expr.bit_and(
+        type0x7f41993c4348, expr0x7f41982c3a68, expr0x7f41981db858))
     in Block.block(
       13,
       [|
-        step_13_63;
-        step_13_64;
         step_13_65;
         step_13_66;
+        step_13_67;
+        step_13_68;
+        step_13_69;
+        step_13_70;
+        step_13_71;
+      |],
+      [|
+        ("serverLog", 1);
+        ("zsetLength", 1);
+      |],
+      [|
+        "assume TRUE (_33 == 3)";
+        "# .MEM_57 = VDEF <.MEM_46>\n_34 = zsetLength (o_43(D));";
+        "<CAPTURES RETURN>";
+        "_35 = (int) _34;";
+        "# .MEM_58 = VDEF <.MEM_57>\nserverLog (3, \"Sorted set size: %d\", _35);";
+        "# VUSE <.MEM_58>\n_36 = BIT_FIELD_REF <*o_43(D), 8, 0>;";
+        "_37 = _36 & 240;";
+      |]
+    )
+  in let block_14 = 
+    let step_14_72 = 
+      Action.assume(13, Expr.beq(GccType.boolean, expr0x7f41982c3ab0, expr0x7f41981dbf48))
+    in let step_14_73 = 
+      Action.assign(expr0x7f41982c3af8, expr0x7f41982a4990)
+    in let step_14_74 = 
+      Action.assign(expr0x7f41982c3b40, expr0x7f41982a49c0)
+    in let step_14_75 = 
+      Action.assign(expr0x7f41982c3b88, expr0x7f41982a49f0)
+    in let step_14_76 = 
+      Action.call(call0x7f41982c52f8)
+    in Block.block(
+      14,
+      [|
+        step_14_72;
+        step_14_73;
+        step_14_74;
+        step_14_75;
+        step_14_76;
+      |],
+      [|
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (_37 == 112)";
+        "# VUSE <.MEM_58>\n_38 = o_43(D)->ptr;";
+        "# VUSE <.MEM_58>\n_39 = MEM[(const struct zset *)_38].zsl;";
+        "# VUSE <.MEM_58>\n_40 = _39->level;";
+        "# .MEM_59 = VDEF <.MEM_58>\nserverLog (3, \"Skiplist level: %d\", _40);";
+      |]
+    )
+  in let block_15 = 
+    let step_15_77 = 
+      Action.assume(4, Expr.bgt(GccType.boolean, expr0x7f41982c3480, expr0x7f419821b858))
+    in let step_15_78 = 
+      Action.assume(12, Expr.bneq(GccType.boolean, expr0x7f41982c3990, expr0x7f419955ce70))
+    in let step_15_79 = 
+      Action.assume(13, Expr.bneq(GccType.boolean, expr0x7f41982c3ab0, expr0x7f41981dbf48))
+    in let step_15_80 = 
+      Action.return(expr0)
+    in Block.block(
+      15,
+      [|
+        step_15_77;
+        step_15_78;
+        step_15_79;
+        step_15_80;
       |],
       [|
         (* no calls *)
       |],
       [|
-        "# .MEM_45 = VDEF <.MEM_20>\nbuf ={v} {CLOBBER};";
-        "# .MEM_46 = VDEF <.MEM_45>\nauth_data ={v} {CLOBBER};";
-        "# .MEM_47 = VDEF <.MEM_46>\nauth_data2 ={v} {CLOBBER};";
-        "# VUSE <.MEM_47>\nreturn _17;";
+        "assume FALSE (_15 <= 4095)";
+        "assume FALSE (_33 == 3)";
+        "assume FALSE (_37 == 112)";
+        "# VUSE <.MEM_41>\nreturn;";
       |]
     )
   in let block_1 = 
-    let step_0_67 = Action.finish 
+    let step_0_81 = Action.finish 
     in Block.block (
       1,
-      [| step_0_67 |],
+      [| step_0_81 |],
       [||],
       [| "<EXIT>" |]
     )
   in let cfg = Cfg.cfg (
-    14,
+    16,
     Z.of_string "14",
     [|
       Cfg.vert ("[0]", block_0, [|
@@ -796,72 +22304,2805 @@ let main =
         |]
       );
       Cfg.vert ("[2]", block_2, [|
-          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "6");
-          Cfg.edge (4, "[4]", block_4, Z.of_string "7", Z.of_string "13");
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "7");
+          Cfg.edge (6, "[6]", block_6, Z.of_string "8", Z.of_string "13");
         |]
       );
       Cfg.vert ("[3]", block_3, [|
-          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "6");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (6, "[6]", block_6, Z.of_string "2", Z.of_string "7");
         |]
       );
       Cfg.vert ("[4]", block_4, [|
           Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "0");
-          Cfg.edge (6, "[6]", block_6, Z.of_string "1", Z.of_string "6");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "1", Z.of_string "1");
         |]
       );
       Cfg.vert ("[5]", block_5, [|
-          Cfg.edge (10, "[13]", block_13, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "0");
         |]
       );
       Cfg.vert ("[6]", block_6, [|
-          Cfg.edge (7, "[7]", block_7, Z.of_string "0", Z.of_string "4");
-          Cfg.edge (8, "[8]", block_8, Z.of_string "5", Z.of_string "5");
+          Cfg.edge (7, "[7]", block_7, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (8, "[8]", block_8, Z.of_string "1", Z.of_string "5");
         |]
       );
       Cfg.vert ("[7]", block_7, [|
-          Cfg.edge (8, "[8]", block_8, Z.of_string "0", Z.of_string "0");
-          Cfg.edge (11, "[0 | 9]", block_9, Z.of_string "1", Z.of_string "4");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "0");
         |]
       );
       Cfg.vert ("[8]", block_8, [|
-          Cfg.edge (10, "[13]", block_13, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (9, "[9]", block_9, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (10, "[10]", block_10, Z.of_string "1", Z.of_string "4");
+        |]
+      );
+      Cfg.vert ("[9]", block_9, [|
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[10]", block_10, [|
+          Cfg.edge (11, "[11]", block_11, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (12, "[12]", block_12, Z.of_string "1", Z.of_string "3");
+        |]
+      );
+      Cfg.vert ("[11]", block_11, [|
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "0");
         |]
       );
       Cfg.vert ("[12]", block_12, [|
-          Cfg.edge (10, "[13]", block_13, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (13, "[13]", block_13, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "2", Z.of_string "2");
         |]
       );
       Cfg.vert ("[13]", block_13, [|
+          Cfg.edge (14, "[14]", block_14, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[14]", block_14, [|
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[15]", block_15, [|
           Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
-        |]
-      );
-      Cfg.vert ("[0 | 9]", block_9, [|
-          Cfg.edge (12, "[0 | 10]", block_10, Z.of_string "0", Z.of_string "2");
-          Cfg.edge (9, "[12]", block_12, Z.of_string "3", Z.of_string "3");
-        |]
-      );
-      Cfg.vert ("[0 | 10]", block_10, [|
-          Cfg.edge (14, "[1 | 9]", block_9, Z.of_string "0", Z.of_string "0");
-          Cfg.edge (13, "[0 | 11]", block_11, Z.of_string "1", Z.of_string "2");
-        |]
-      );
-      Cfg.vert ("[0 | 11]", block_11, [|
-          Cfg.edge (14, "[1 | 9]", block_9, Z.of_string "0", Z.of_string "0");
-          Cfg.edge (9, "[12]", block_12, Z.of_string "1", Z.of_string "1");
-        |]
-      );
-      Cfg.vert ("[1 | 9]", block_9, [|
-          Cfg.edge (9, "[12]", block_12, Z.of_string "0", Z.of_string "0");
         |]
       );
     |]
   )
   in Proc.proc(
-   "traverse_http",
-    1008,
-   "/target/hexchat/build",
-   "../src/common/server.c",
-   "server.c",
+   "serverLogObjectDebugInfo",
+    53,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
     cfg
   )
 in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: _serverPanic
+  // fid: 56
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cfdc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "0")
+  in let type0x7f41993cfd20 = 
+    GccType.record("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41995562a0 = 
+    GccType.array(type0x7f41993cfd20, type0x7f41993cfdc8)
+  in let type0x7f419821ee70 = 
+    GccType.pointer(type0x7f41995562a0)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41984c2d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "255")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41984c2dc8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41984c2d20)
+  in let type0x7f41982272a0 = 
+    GccType.pointer(type0x7f41984c2dc8)
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993d0348 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993d03f0 = 
+    GccType.pointer(type0x7f41993d0348)
+  in let type0x7f4198201348 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "48")
+  in let type0x7f41982013f0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198201348)
+  in let type0x7f4198201498 = 
+    GccType.pointer(type0x7f41982013f0)
+  in let type0x7f4198227690 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "57")
+  in let type0x7f4198227738 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198227690)
+  in let type0x7f41982277e0 = 
+    GccType.pointer(type0x7f4198227738)
+  in let type0x7f4198204d20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "26")
+  in let type0x7f419820a000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198204d20)
+  in let type0x7f419820a0a8 = 
+    GccType.pointer(type0x7f419820a000)
+  in let type0x7f41982279d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "51")
+  in let type0x7f4198227a80 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41982279d8)
+  in let type0x7f4198227b28 = 
+    GccType.pointer(type0x7f4198227a80)
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let expr0x7f419821f1b0 = 
+    Expr.variable_decl(type0x7f41995562a0, VarDecl.make("ap", 192, 64))
+  in let expr0x7f4198226220 = 
+    Expr.address_of(type0x7f419821ee70, expr0x7f419821f1b0)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f419821f240 = 
+    Expr.variable_decl(type0x7f41984c2dc8, VarDecl.make("fmtmsg", 2048, 8))
+  in let expr0x7f41982262a0 = 
+    Expr.address_of(type0x7f41982272a0, expr0x7f419821f240)
+  in let expr0x7f419821b870 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "256")
+  in let expr0x7f4198218900 = 
+    Expr.parameter_decl(type0x7f41993d03f0, "msg", type0x7f41993d03f0)
+  in let expr0x7f4198323168 = 
+    Expr.ssa("msg_4(D)", 4, expr0x7f4198218900)
+  in let expr0x7f41982262e0 = 
+    Expr.address_of(type0x7f419821ee70, expr0x7f419821f1b0)
+  in let expr0x7f4198226340 = 
+    Expr.address_of(type0x7f419821ee70, expr0x7f419821f1b0)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f41982146c0 = 
+    Expr.string_cst(type0x7f41982013f0, 49, "\"------------------------------------------------\"")
+  in let expr0x7f41982263c0 = 
+    Expr.address_of(type0x7f4198201498, expr0x7f41982146c0)
+  in let expr0x7f419820e4b0 = 
+    Expr.string_cst(type0x7f4198227738, 58, "\"!!! Software Failure. Press left mouse button to continue\"")
+  in let expr0x7f4198226440 = 
+    Expr.address_of(type0x7f41982277e0, expr0x7f419820e4b0)
+  in let expr0x7f41982244e0 = 
+    Expr.string_cst(type0x7f419820a000, 27, "\"Guru Meditation: %s #%s:%d\"")
+  in let expr0x7f41982264c0 = 
+    Expr.address_of(type0x7f419820a0a8, expr0x7f41982244e0)
+  in let expr0x7f4198226500 = 
+    Expr.address_of(type0x7f41982272a0, expr0x7f419821f240)
+  in let expr0x7f4198218800 = 
+    Expr.parameter_decl(type0x7f41993d03f0, "file", type0x7f41993d03f0)
+  in let expr0x7f4198323318 = 
+    Expr.ssa("file_10(D)", 10, expr0x7f4198218800)
+  in let expr0x7f4198218880 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "line", type0x7f41993c45e8)
+  in let expr0x7f4198323360 = 
+    Expr.ssa("line_11(D)", 11, expr0x7f4198218880)
+  in let expr0x7f419820e500 = 
+    Expr.string_cst(type0x7f4198227a80, 52, "\"(forcing SIGSEGV in order to print the stack trace)\"")
+  in let expr0x7f4198226580 = 
+    Expr.address_of(type0x7f4198227b28, expr0x7f419820e500)
+  in let expr0x7f4198214708 = 
+    Expr.string_cst(type0x7f41982013f0, 49, "\"------------------------------------------------\"")
+  in let expr0x7f4198226600 = 
+    Expr.address_of(type0x7f4198201498, expr0x7f4198214708)
+  in let expr0x7f41982c3cf0 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41981fc3a0 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "-1")
+  in let expr0x7f41985ed570 = 
+    Expr.u_int_cst(type0x7f41993cff18, Z.of_string "0")
+  in let expr0x7f41982c94b0 = 
+    Expr.memory_ref(type0x7f41993c43f0, expr0x7f41982c3cf0, expr0x7f41985ed570)
+  in let expr0x7f41981fe108 = 
+    Expr.s_int_cst(type0x7f41993c43f0, Z.of_string "120")
+  in let expr0x7f41982a1618 = 
+    Expr.constructor(type0x7f41995562a0)
+  in let expr0x7f41982a1630 = 
+    Expr.constructor(type0x7f41984c2dc8)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982a3cf0 = Expr.call(
+    type0x7f41993c4f18,
+    "__builtin_va_start", [|
+      (Expr.parameter("p1", 0, expr0x7f4198226220));
+      (Expr.parameter("p2", 1, expr0x7f41993c9078));
+  |])
+  in let call0x7f41982c25e8 = Expr.call(
+    type0x7f41993c45e8,
+    "vsnprintf", [|
+      (Expr.parameter("p1", 0, expr0x7f41982262a0));
+      (Expr.parameter("p2", 1, expr0x7f419821b870));
+      (Expr.parameter("p3", 2, expr0x7f4198323168));
+      (Expr.parameter("p4", 3, expr0x7f41982262e0));
+  |])
+  in let call0x7f41982a3d80 = Expr.call(
+    type0x7f41993c4f18,
+    "__builtin_va_end", [|
+      (Expr.parameter("p1", 0, expr0x7f4198226340));
+  |])
+  in let call0x7f41982ce000 = Expr.call(
+    type0x7f41993c4f18,
+    "bugReportStart", [|
+  |])
+  in let call0x7f41982a3e10 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982263c0));
+  |])
+  in let call0x7f41982a3ea0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198226440));
+  |])
+  in let call0x7f41982c27e0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f41982264c0));
+      (Expr.parameter("p3", 2, expr0x7f4198226500));
+      (Expr.parameter("p4", 3, expr0x7f4198323318));
+      (Expr.parameter("p5", 4, expr0x7f4198323360));
+  |])
+  in let call0x7f41982a3f30 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198226580));
+  |])
+  in let call0x7f41982a3090 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198226600));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f41982a3cf0)
+    in let step_2_2 = 
+      Action.call(call0x7f41982c25e8)
+    in let step_2_3 = 
+      Action.call(call0x7f41982a3d80)
+    in let step_2_4 = 
+      Action.call(call0x7f41982ce000)
+    in let step_2_5 = 
+      Action.call(call0x7f41982a3e10)
+    in let step_2_6 = 
+      Action.call(call0x7f41982a3ea0)
+    in let step_2_7 = 
+      Action.call(call0x7f41982c27e0)
+    in let step_2_8 = 
+      Action.call(call0x7f41982a3f30)
+    in let step_2_9 = 
+      Action.call(call0x7f41982a3090)
+    in let step_2_10 = 
+      Action.assign(expr0x7f41982c3cf0, expr0x7f41981fc3a0)
+    in let step_2_11 = 
+      Action.assign(expr0x7f41982c94b0, expr0x7f41981fe108)
+    in let step_2_12 = 
+      Action.assign(expr0x7f419821f1b0, expr0x7f41982a1618)
+    in let step_2_13 = 
+      Action.assign(expr0x7f419821f240, expr0x7f41982a1630)
+    in let step_2_14 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+        step_2_11;
+        step_2_12;
+        step_2_13;
+        step_2_14;
+      |],
+      [|
+        ("__builtin_va_end", 1);
+        ("__builtin_va_start", 1);
+        ("bugReportStart", 1);
+        ("serverLog", 5);
+        ("vsnprintf", 1);
+      |],
+      [|
+        "# .MEM_3 = VDEF <.MEM_2(D)>\n__builtin_va_start (&ap, 0);";
+        "# .MEM_5 = VDEF <.MEM_3>\nvsnprintf (&fmtmsg, 256, msg_4(D), &ap);";
+        "# .MEM_6 = VDEF <.MEM_5>\n__builtin_va_end (&ap);";
+        "# .MEM_7 = VDEF <.MEM_6>\nbugReportStart ();";
+        "# .MEM_8 = VDEF <.MEM_7>\nserverLog (3, \"------------------------------------------------\");";
+        "# .MEM_9 = VDEF <.MEM_8>\nserverLog (3, \"!!! Software Failure. Press left mouse button to continue\");";
+        "# .MEM_12 = VDEF <.MEM_9>\nserverLog (3, \"Guru Meditation: %s #%s:%d\", &fmtmsg, file_10(D), line_11(D));";
+        "# .MEM_13 = VDEF <.MEM_12>\nserverLog (3, \"(forcing SIGSEGV in order to print the stack trace)\");";
+        "# .MEM_14 = VDEF <.MEM_13>\nserverLog (3, \"------------------------------------------------\");";
+        "_1 = -1B;";
+        "# .MEM_15 = VDEF <.MEM_14>\n*_1 = 120;";
+        "# .MEM_16 = VDEF <.MEM_15>\nap ={v} {CLOBBER};";
+        "# .MEM_17 = VDEF <.MEM_16>\nfmtmsg ={v} {CLOBBER};";
+        "# VUSE <.MEM_17>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_15 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_15 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "_serverPanic",
+    56,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: sigsegvHandler
+  // fid: 67
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41993c4b28 = 
+    GccType.boolean
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41983ec540 = 
+    GccType.record("ucontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981c2150 = 
+    GccType.pointer(type0x7f41983ec540)
+  in let type0x7f4198237b28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "30")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f4198237bd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198237b28)
+  in let type0x7f4198237dc8 = 
+    GccType.pointer(type0x7f4198237bd0)
+  in let type0x7f41985e65e8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "11")
+  in let type0x7f41985e6690 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41985e65e8)
+  in let type0x7f41982117e0 = 
+    GccType.pointer(type0x7f41985e6690)
+  in let type0x7f419821eb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "38")
+  in let type0x7f419821ebd0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419821eb28)
+  in let type0x7f419821ec78 = 
+    GccType.pointer(type0x7f419821ebd0)
+  in let type0x7f41987acd20 = 
+    GccType.record("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419879d930 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41987b1498 = 
+    GccType.record("siginfo_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983c7888 = 
+    GccType.pointer(type0x7f41987b1498)
+  in let type0x7f4198211f18 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "21")
+  in let type0x7f4198216000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198211f18)
+  in let type0x7f41982160a8 = 
+    GccType.pointer(type0x7f4198216000)
+  in let type0x7f41984c2498 = 
+    GccType.record("redisServer", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41993d0348 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41993d03f0 = 
+    GccType.pointer(type0x7f41993d0348)
+  in let type0x7f4198237e70 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "28")
+  in let type0x7f419823f000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198237e70)
+  in let type0x7f419823f0a8 = 
+    GccType.pointer(type0x7f419823f000)
+  in let type0x7f419879d9d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "27")
+  in let type0x7f41981f0498 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419879d9d8)
+  in let type0x7f41981f0540 = 
+    GccType.pointer(type0x7f41981f0498)
+  in let type0x7f41995875e8 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f4199527dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "3")
+  in let type0x7f4199527e70 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4199527dc8)
+  in let type0x7f41982017e0 = 
+    GccType.pointer(type0x7f4199527e70)
+  in let type0x7f419823f7e0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "34")
+  in let type0x7f419823f888 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419823f7e0)
+  in let type0x7f419823f930 = 
+    GccType.pointer(type0x7f419823f888)
+  in let type0x7f419823f9d8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "32")
+  in let type0x7f419823fa80 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419823f9d8)
+  in let type0x7f419823fb28 = 
+    GccType.pointer(type0x7f419823fa80)
+  in let type0x7f41981faf18 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "54")
+  in let type0x7f41981fa150 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41981faf18)
+  in let type0x7f41981fa1f8 = 
+    GccType.pointer(type0x7f41981fa150)
+  in let type0x7f419823fd20 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "122")
+  in let type0x7f419823fdc8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419823fd20)
+  in let type0x7f419823fe70 = 
+    GccType.pointer(type0x7f419823fdc8)
+  in let type0x7f41981b9000 = 
+    GccType.record("Dl_info", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981b9888 = 
+    GccType.pointer(type0x7f41981b9000)
+  in let type0x7f419823ff18 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "197")
+  in let type0x7f419823f150 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419823ff18)
+  in let type0x7f419823f1f8 = 
+    GccType.pointer(type0x7f419823f150)
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f4198216150 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "16")
+  in let type0x7f41982161f8 = 
+    GccType.array(type0x7f41993c43f0, type0x7f4198216150)
+  in let type0x7f41982162a0 = 
+    GccType.pointer(type0x7f41982161f8)
+  in let type0x7f419823fc78 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "253")
+  in let type0x7f4198242000 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419823fc78)
+  in let type0x7f41982420a8 = 
+    GccType.pointer(type0x7f4198242000)
+  in let type0x7f41993cff18 = 
+    GccType.pointer(type0x7f41993c43f0)
+  in let type0x7f419950ff18 = 
+    GccType.record("__sigset_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983c7738 = 
+    GccType.record("sigaction", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419879d2a0 = 
+    GccType.pointer(type0x7f419950ff18)
+  in let type0x7f41993d6dc8 = 
+    GccType.func("T191", type0x7f41993c4f18, [|
+        type0x7f41993c45e8;
+      |], false)
+  in let type0x7f41983bd1f8 = 
+    GccType.pointer(type0x7f41993d6dc8)
+  in let type0x7f41983c77e0 = 
+    GccType.union("", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41983bd0a8 = 
+    GccType.pointer(type0x7f41993d6dc8)
+  in let type0x7f41983cac78 = 
+    GccType.pointer(type0x7f41983c7738)
+  in let type0x7f41983cad20 = 
+    GccType.pointer(type0x7f41983c7738)
+  in let type0x7f41994f6e70 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let expr0x7f41982387e0 = 
+    Expr.variable_decl(type0x7f41993cc0a8, VarDecl.make("eip", 64, 64))
+  in let expr0x7f4198340480 = 
+    Expr.ssa("eip_43", 43, expr0x7f41982387e0)
+  in let expr0x7f41993c90f0 = 
+    Expr.u_int_cst(type0x7f41993cc0a8, Z.of_string "0")
+  in let expr0x7f41982ec4c8 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41993c9030 = 
+    Expr.u_int_cst(type0x7f41993c4b28, Z.of_string "0")
+  in let expr0x7f41982ec630 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f41982ec678 = 
+    Expr.ssa("_9", 9, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198238b40 = 
+    Expr.variable_decl(type0x7f419950a348, VarDecl.make("len", 64, 64))
+  in let expr0x7f4198340ca8 = 
+    Expr.ssa("len_72", 72, expr0x7f4198238b40)
+  in let expr0x7f419823bbe8 = 
+    Expr.u_int_cst(type0x7f419950a348, Z.of_string "8191")
+  in let expr0x7f4198238cf0 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("end", 64, 64))
+  in let expr0x7f4198340dc8 = 
+    Expr.ssa("end_76", 76, expr0x7f4198238cf0)
+  in let expr0x7f4198238c60 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("next", 64, 64))
+  in let expr0x7f4198340d80 = 
+    Expr.ssa("next_75", 75, expr0x7f4198238c60)
+  in let expr0x7f4198340168 = 
+    Expr.ssa("end_32", 32, expr0x7f4198238cf0)
+  in let expr0x7f4198340e10 = 
+    Expr.ssa("end_77", 77, expr0x7f4198238cf0)
+  in let expr0x7f41982ecbd0 = 
+    Expr.ssa("_28", 28, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982ecc18 = 
+    Expr.ssa("_29", 29, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f4198238750 = 
+    Expr.variable_decl(type0x7f41981c2150, VarDecl.make("uc", 64, 64))
+  in let expr0x7f41983403a8 = 
+    Expr.ssa("uc_40", 40, expr0x7f4198238750)
+  in let expr0x7f4198234800 = 
+    Expr.parameter_decl(type0x7f41993cc0a8, "secret", type0x7f41993cc0a8)
+  in let expr0x7f4198340360 = 
+    Expr.ssa("secret_39(D)", 39, expr0x7f4198234800)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f419822c7a8 = 
+    Expr.string_cst(type0x7f4198237bd0, 31, "\"Redis %s crashed by signal: %d\"")
+  in let expr0x7f419823e7c0 = 
+    Expr.address_of(type0x7f4198237dc8, expr0x7f419822c7a8)
+  in let expr0x7f419823cc08 = 
+    Expr.string_cst(type0x7f41985e6690, 12, "\"999.999.999\"")
+  in let expr0x7f419823e800 = 
+    Expr.address_of(type0x7f41982117e0, expr0x7f419823cc08)
+  in let expr0x7f4198234700 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "sig", type0x7f41993c45e8)
+  in let expr0x7f4198340510 = 
+    Expr.ssa("sig_45(D)", 45, expr0x7f4198234700)
+  in let expr0x7f4198219980 = 
+    Expr.string_cst(type0x7f419821ebd0, 39, "\"Crashed running the instruction at: %p\"")
+  in let expr0x7f419823e880 = 
+    Expr.address_of(type0x7f419821ec78, expr0x7f4198219980)
+  in let expr0x7f41982ec438 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f4198647240 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "11")
+  in let expr0x7f41982ec480 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c4b28))
+  in let expr0x7f41995238b8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "7")
+  in let expr0x7f41982ec510 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41987ad428 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("si_addr", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41987ad7b8 = 
+    Expr.field_decl(type0x7f41987acd20, FieldDecl.make("_sigfault", "256", 64, "0", 128, 0, false))
+  in let expr0x7f41987adda8 = 
+    Expr.field_decl(type0x7f419879d930, FieldDecl.make("_sifields", "896", 64, "16", 128, 0, false))
+  in let expr0x7f41982a1f78 = 
+    Expr.u_int_cst(type0x7f41983c7888, Z.of_string "0")
+  in let expr0x7f4198234780 = 
+    Expr.parameter_decl(type0x7f41983c7888, "info", type0x7f41983c7888)
+  in let expr0x7f41983405e8 = 
+    Expr.ssa("info_48(D)", 48, expr0x7f4198234780)
+  in let expr0x7f41982e7cf8 = 
+    Expr.memory_ref(type0x7f41987b1498, expr0x7f41983405e8, expr0x7f41982a1f78)
+  in let expr0x7f41982d4930 = 
+    Expr.component_ref(type0x7f419879d930, expr0x7f41982e7cf8, expr0x7f41987adda8)
+  in let expr0x7f41982d4900 = 
+    Expr.component_ref(type0x7f41987acd20, expr0x7f41982d4930, expr0x7f41987ad7b8)
+  in let expr0x7f41982d48d0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f41982d4900, expr0x7f41987ad428)
+  in let expr0x7f419823d3c0 = 
+    Expr.string_cst(type0x7f4198216000, 22, "\"Accessing address: %p\"")
+  in let expr0x7f419823e900 = 
+    Expr.address_of(type0x7f41982160a8, expr0x7f419823d3c0)
+  in let expr0x7f41982ec558 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41984da8e8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("assert_line", "32", 32, "3040", 128, 0, false))
+  in let expr0x7f41987a4cf0 = 
+    Expr.variable_decl(type0x7f41984c2498, VarDecl.make("server", 25472, 64))
+  in let expr0x7f41982d4960 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984da8e8)
+  in let expr0x7f41982ec5a0 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993d03f0))
+  in let expr0x7f41984da850 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("assert_file", "64", 64, "3024", 128, 64, false))
+  in let expr0x7f41982d4990 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f41987a4cf0, expr0x7f41984da850)
+  in let expr0x7f41982ec5e8 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f41993d03f0))
+  in let expr0x7f41984da7b8 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("assert_failed", "64", 64, "3024", 128, 0, false))
+  in let expr0x7f41982d49c0 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f41987a4cf0, expr0x7f41984da7b8)
+  in let expr0x7f419822c818 = 
+    Expr.string_cst(type0x7f419823f000, 29, "\"Failed assertion: %s (%s:%d)\"")
+  in let expr0x7f419823e9c0 = 
+    Expr.address_of(type0x7f419823f0a8, expr0x7f419822c818)
+  in let expr0x7f419821bd20 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1027")
+  in let expr0x7f419822c850 = 
+    Expr.string_cst(type0x7f41981f0498, 28, "\"\\n------ STACK TRACE ------\\n\"")
+  in let expr0x7f419823ea40 = 
+    Expr.address_of(type0x7f41981f0540, expr0x7f419822c850)
+  in let expr0x7f419822c8c0 = 
+    Expr.string_cst(type0x7f41981f0498, 28, "\"\\n------ INFO OUTPUT ------\\n\"")
+  in let expr0x7f419823eae0 = 
+    Expr.address_of(type0x7f41981f0540, expr0x7f419822c8c0)
+  in let expr0x7f419823eb60 = 
+    Expr.string_cst(type0x7f4199527e70, 4, "\"all\"")
+  in let expr0x7f419823eb80 = 
+    Expr.address_of(type0x7f41982017e0, expr0x7f419823eb60)
+  in let expr0x7f4198238870 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("infostring", 64, 64))
+  in let expr0x7f41983407e0 = 
+    Expr.ssa("infostring_55", 55, expr0x7f4198238870)
+  in let expr0x7f419822c930 = 
+    Expr.string_cst(type0x7f419823f888, 35, "\"\\n------ CLIENT LIST OUTPUT ------\\n\"")
+  in let expr0x7f419823ec20 = 
+    Expr.address_of(type0x7f419823f930, expr0x7f419822c930)
+  in let expr0x7f4198238900 = 
+    Expr.variable_decl(type0x7f41995875e8, VarDecl.make("clients", 64, 64))
+  in let expr0x7f4198340900 = 
+    Expr.ssa("clients_59", 59, expr0x7f4198238900)
+  in let expr0x7f419822ca10 = 
+    Expr.string_cst(type0x7f419823fa80, 33, "\"\\n------ FAST MEMORY TEST ------\\n\"")
+  in let expr0x7f419823ed80 = 
+    Expr.address_of(type0x7f419823fb28, expr0x7f419822ca10)
+  in let expr0x7f419822ac30 = 
+    Expr.string_cst(type0x7f41981fa150, 55, "\"!!! MEMORY ERROR DETECTED! Check your memory ASAP !!!\\n\"")
+  in let expr0x7f419823ee40 = 
+    Expr.address_of(type0x7f41981fa1f8, expr0x7f419822ac30)
+  in let expr0x7f4198238a20 = 
+    Expr.string_cst(type0x7f419823fdc8, 123, "\"Fast memory test PASSED, however your memory can still be broken. Please run a memory test for several hours if possible.\\n\"")
+  in let expr0x7f419823eec0 = 
+    Expr.address_of(type0x7f419823fe70, expr0x7f4198238a20)
+  in let expr0x7f4198238ab0 = 
+    Expr.variable_decl(type0x7f41981b9000, VarDecl.make("info", 256, 64))
+  in let expr0x7f41982e86a0 = 
+    Expr.address_of(type0x7f41981b9888, expr0x7f4198238ab0)
+  in let expr0x7f41982ec6c0 = 
+    Expr.ssa("_10", 10, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419856a688 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("dli_saddr", "64", 64, "16", 128, 64, false))
+  in let expr0x7f41982d4a20 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a688)
+  in let expr0x7f41982ec708 = 
+    Expr.ssa("_11", 11, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419856a558 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("dli_fbase", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41982d4a50 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a558)
+  in let expr0x7f41982ec750 = 
+    Expr.ssa("_12", 12, Expr.nothing(type0x7f41993d03f0))
+  in let expr0x7f419856a4c0 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("dli_fname", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41982d4a80 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f4198238ab0, expr0x7f419856a4c0)
+  in let expr0x7f41982ec798 = 
+    Expr.ssa("_13", 13, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982d4ab0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a688)
+  in let expr0x7f41982ec7e0 = 
+    Expr.ssa("_14", 14, Expr.nothing(type0x7f41993d03f0))
+  in let expr0x7f419856a5f0 = 
+    Expr.field_decl(type0x7f41993d03f0, FieldDecl.make("dli_sname", "64", 64, "16", 128, 0, false))
+  in let expr0x7f41982d4ae0 = 
+    Expr.component_ref(type0x7f41993d03f0, expr0x7f4198238ab0, expr0x7f419856a5f0)
+  in let expr0x7f4198236500 = 
+    Expr.string_cst(type0x7f419823f150, 198, "\"\\n------ DUMPING CODE AROUND EIP ------\\nSymbol: %s (base: %p)\\nModule: %s (base %p)\\n$ xxd -r -p /tmp/dump.hex /tmp/dump.bin\\n$ objdump --adjust-vma=%p -D -b binary -m i386:x86-64 /tmp/dump.bin\\n------\\n\"")
+  in let expr0x7f419823efe0 = 
+    Expr.address_of(type0x7f419823f1f8, expr0x7f4198236500)
+  in let expr0x7f41982ec828 = 
+    Expr.ssa("eip.43_15", 15, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982ec870 = 
+    Expr.ssa("_16", 16, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982d4b10 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a688)
+  in let expr0x7f41982ec8b8 = 
+    Expr.ssa("_17", 17, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41982ec900 = 
+    Expr.ssa("_18", 18, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41986479c0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "30")
+  in let expr0x7f41982ec948 = 
+    Expr.ssa("_19", 19, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f4198238bd0 = 
+    Expr.variable_decl(type0x7f41993c47e0, VarDecl.make("sz", 64, 64))
+  in let expr0x7f4198340d38 = 
+    Expr.ssa("sz_74", 74, expr0x7f4198238bd0)
+  in let expr0x7f41982ec990 = 
+    Expr.ssa("eip.44_20", 20, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982ec9d8 = 
+    Expr.ssa("_21", 21, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982eca20 = 
+    Expr.ssa("_22", 22, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982eca68 = 
+    Expr.ssa("eip.45_23", 23, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41987155d0 = 
+    Expr.u_int_cst(type0x7f41993c47e0, Z.of_string "128")
+  in let expr0x7f41982ecab0 = 
+    Expr.ssa("_24", 24, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982d4b40 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a688)
+  in let expr0x7f41982ecaf8 = 
+    Expr.ssa("_25", 25, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f4198340e58 = 
+    Expr.ssa("len_78", 78, expr0x7f4198238b40)
+  in let expr0x7f41982ecb40 = 
+    Expr.ssa("_26", 26, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982d4b70 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a688)
+  in let expr0x7f41982408c0 = 
+    Expr.string_cst(type0x7f41982161f8, 17, "\"dump of function\"")
+  in let expr0x7f41982413c0 = 
+    Expr.address_of(type0x7f41982162a0, expr0x7f41982408c0)
+  in let expr0x7f41982ecb88 = 
+    Expr.ssa("_27", 27, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f41982d4ba0 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f4198238ab0, expr0x7f419856a688)
+  in let expr0x7f41982ef090 = 
+    Expr.constructor(type0x7f41981b9000)
+  in let expr0x7f4198230730 = 
+    Expr.string_cst(type0x7f4198242000, 254, "\"\\n=== REDIS BUG REPORT END. Make sure to include from START to END. ===\\n\\n       Please report the crash by opening an issue on github:\\n\\n           http://github.com/antirez/redis/issues\\n\\n  Suspect RAM error? Use redis-server --test-memory to verify it.\\n\\n\"")
+  in let expr0x7f4198241440 = 
+    Expr.address_of(type0x7f41982420a8, expr0x7f4198230730)
+  in let expr0x7f41984cdda8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("daemonize", "32", 32, "1760", 128, 96, false))
+  in let expr0x7f41982d4c00 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984cdda8)
+  in let expr0x7f41984cdc78 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("supervised", "32", 32, "1760", 128, 32, false))
+  in let expr0x7f41982d4c30 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f41987a4cf0, expr0x7f41984cdc78)
+  in let expr0x7f41982ecc60 = 
+    Expr.ssa("_30", 30, Expr.nothing(type0x7f41993cff18))
+  in let expr0x7f41984c8000 = 
+    Expr.field_decl(type0x7f41993cff18, FieldDecl.make("pidfile", "64", 64, "96", 128, 0, false))
+  in let expr0x7f41982d4c60 = 
+    Expr.component_ref(type0x7f41993cff18, expr0x7f41987a4cf0, expr0x7f41984c8000)
+  in let expr0x7f41983c9130 = 
+    Expr.field_decl(type0x7f419950ff18, FieldDecl.make("sa_mask", "1024", 64, "0", 128, 64, false))
+  in let expr0x7f4198238990 = 
+    Expr.variable_decl(type0x7f41983c7738, VarDecl.make("act", 1216, 64))
+  in let expr0x7f419823da20 = 
+    Expr.component_ref(type0x7f419950ff18, expr0x7f4198238990, expr0x7f41983c9130)
+  in let expr0x7f4198241500 = 
+    Expr.address_of(type0x7f419879d2a0, expr0x7f419823da20)
+  in let expr0x7f41983c91c8 = 
+    Expr.field_decl(type0x7f41993c45e8, FieldDecl.make("sa_flags", "32", 32, "128", 128, 64, false))
+  in let expr0x7f419823da50 = 
+    Expr.component_ref(type0x7f41993c45e8, expr0x7f4198238990, expr0x7f41983c91c8)
+  in let expr0x7f419823bee8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "-939524096")
+  in let expr0x7f41983b4ed8 = 
+    Expr.field_decl(type0x7f41983bd1f8, FieldDecl.make("sa_handler", "64", 64, "0", 128, 0, false))
+  in let expr0x7f41983c9098 = 
+    Expr.field_decl(type0x7f41983c77e0, FieldDecl.make("__sigaction_handler", "64", 64, "0", 128, 0, false))
+  in let expr0x7f419823da80 = 
+    Expr.component_ref(type0x7f41983c77e0, expr0x7f4198238990, expr0x7f41983c9098)
+  in let expr0x7f419823dab0 = 
+    Expr.component_ref(type0x7f41983bd1f8, expr0x7f419823da80, expr0x7f41983b4ed8)
+  in let expr0x7f419823bf30 = 
+    Expr.u_int_cst(type0x7f41983bd0a8, Z.of_string "0")
+  in let expr0x7f4198241580 = 
+    Expr.address_of(type0x7f41983cac78, expr0x7f4198238990)
+  in let expr0x7f419823bf60 = 
+    Expr.u_int_cst(type0x7f41983cad20, Z.of_string "0")
+  in let expr0x7f41982ecca8 = 
+    Expr.ssa("_31", 31, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982ef0d8 = 
+    Expr.constructor(type0x7f41983c7738)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982e2510 = Expr.call(
+    type0x7f41993cc0a8,
+    "getMcontextEip", [|
+      (Expr.parameter("uc", 0, expr0x7f41983403a8));
+  |])
+  in let call0x7f41982eb600 = Expr.call(
+    type0x7f41993c4f18,
+    "bugReportStart", [|
+  |])
+  in let call0x7f41982d7b28 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f419823e7c0));
+      (Expr.parameter("p3", 2, expr0x7f419823e800));
+      (Expr.parameter("p4", 3, expr0x7f4198340510));
+  |])
+  in let call0x7f41982c5da8 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f419823e880));
+      (Expr.parameter("p3", 2, expr0x7f4198340480));
+  |])
+  in let call0x7f41982c5e40 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f419823e900));
+      (Expr.parameter("p3", 2, expr0x7f41982ec510));
+  |])
+  in let call0x7f41982d7bd0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f419823e9c0));
+      (Expr.parameter("p3", 2, expr0x7f41982ec5e8));
+      (Expr.parameter("p4", 3, expr0x7f41982ec5a0));
+      (Expr.parameter("p5", 4, expr0x7f41982ec558));
+  |])
+  in let call0x7f41982e25a0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823ea40));
+  |])
+  in let call0x7f41982e2630 = Expr.call(
+    type0x7f41993c4f18,
+    "logStackTrace", [|
+      (Expr.parameter("uc", 0, expr0x7f41983403a8));
+  |])
+  in let call0x7f41982e26c0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823eae0));
+  |])
+  in let call0x7f41982e2750 = Expr.call(
+    type0x7f41995875e8,
+    "genRedisInfoString", [|
+      (Expr.parameter("p1", 0, expr0x7f419823eb80));
+  |])
+  in let call0x7f41982e27e0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f41983407e0));
+  |])
+  in let call0x7f41982e2870 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823ec20));
+  |])
+  in let call0x7f41982eb880 = Expr.call(
+    type0x7f41995875e8,
+    "getAllClientsInfoString", [|
+  |])
+  in let call0x7f41982e2900 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f4198340900));
+  |])
+  in let call0x7f41982e2990 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f41983407e0));
+  |])
+  in let call0x7f41982e2a20 = Expr.call(
+    type0x7f41993c4f18,
+    "sdsfree", [|
+      (Expr.parameter("p1", 0, expr0x7f4198340900));
+  |])
+  in let call0x7f41982eb900 = Expr.call(
+    type0x7f41993c4f18,
+    "logCurrentClient", [|
+  |])
+  in let call0x7f41982e2ab0 = Expr.call(
+    type0x7f41993c4f18,
+    "logRegisters", [|
+      (Expr.parameter("uc", 0, expr0x7f41983403a8));
+  |])
+  in let call0x7f41982e2b40 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823ed80));
+  |])
+  in let call0x7f41982eb980 = Expr.call(
+    type0x7f41993c4f18,
+    "bioKillThreads", [|
+  |])
+  in let call0x7f41982eba00 = Expr.call(
+    type0x7f41993c45e8,
+    "memtest_test_linux_anonymous_maps", [|
+  |])
+  in let call0x7f41982e2bd0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823ee40));
+  |])
+  in let call0x7f41982e2c60 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823eec0));
+  |])
+  in let call0x7f41982e2cf0 = Expr.call(
+    type0x7f41993c45e8,
+    "dladdr", [|
+      (Expr.parameter("p1", 0, expr0x7f4198340480));
+      (Expr.parameter("p2", 1, expr0x7f41982e86a0));
+  |])
+  in let call0x7f41982e6400 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLog", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f419823efe0));
+      (Expr.parameter("p3", 2, expr0x7f41982ec7e0));
+      (Expr.parameter("p4", 3, expr0x7f41982ec798));
+      (Expr.parameter("p5", 4, expr0x7f41982ec750));
+      (Expr.parameter("p6", 5, expr0x7f41982ec708));
+      (Expr.parameter("p7", 6, expr0x7f41982ec6c0));
+  |])
+  in let call0x7f41982e2d80 = Expr.call(
+    type0x7f41993c4738,
+    "sysconf", [|
+      (Expr.parameter("p1", 0, expr0x7f41986479c0));
+  |])
+  in let call0x7f41982d7c78 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogHexDump", [|
+      (Expr.parameter("level", 0, expr0x7f41993c90a8));
+      (Expr.parameter("descr", 1, expr0x7f41982413c0));
+      (Expr.parameter("value", 2, expr0x7f41982ecb40));
+      (Expr.parameter("len", 3, expr0x7f4198340e58));
+  |])
+  in let call0x7f41982e2e10 = Expr.call(
+    type0x7f41993c4f18,
+    "dumpX86Calls", [|
+      (Expr.parameter("addr", 0, expr0x7f41982ecb88));
+      (Expr.parameter("len", 1, expr0x7f4198340e58));
+  |])
+  in let call0x7f41982e2ea0 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogRaw", [|
+      (Expr.parameter("p1", 0, expr0x7f419821bd20));
+      (Expr.parameter("p2", 1, expr0x7f4198241440));
+  |])
+  in let call0x7f41982e2f30 = Expr.call(
+    type0x7f41993c45e8,
+    "unlink", [|
+      (Expr.parameter("p1", 0, expr0x7f41982ecc60));
+  |])
+  in let call0x7f41982e23f0 = Expr.call(
+    type0x7f41993c45e8,
+    "sigemptyset", [|
+      (Expr.parameter("p1", 0, expr0x7f4198241500));
+  |])
+  in let call0x7f41982c5ed8 = Expr.call(
+    type0x7f41993c45e8,
+    "sigaction", [|
+      (Expr.parameter("p1", 0, expr0x7f4198340510));
+      (Expr.parameter("p2", 1, expr0x7f4198241580));
+      (Expr.parameter("p3", 2, expr0x7f419823bf60));
+  |])
+  in let call0x7f41982f2200 = Expr.call(
+    type0x7f41994f6e70,
+    "getpid", [|
+  |])
+  in let call0x7f41982f3000 = Expr.call(
+    type0x7f41993c45e8,
+    "kill", [|
+      (Expr.parameter("p1", 0, expr0x7f41982ecca8));
+      (Expr.parameter("p2", 1, expr0x7f4198340510));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41983403a8, expr0x7f4198340360)
+    in let step_2_2 = 
+      Action.debug("# DEBUG uc => uc_40")
+    in let step_2_3 = 
+      Action.call(call0x7f41982e2510)
+    in let step_2_4 = 
+      Action.assign(expr0x7f4198340480, call0x7f41982e2510)
+    in let step_2_5 = 
+      Action.debug("# DEBUG eip => eip_43")
+    in let step_2_6 = 
+      Action.call(call0x7f41982eb600)
+    in let step_2_7 = 
+      Action.call(call0x7f41982d7b28)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+      |],
+      [|
+        ("bugReportStart", 1);
+        ("getMcontextEip", 1);
+        ("serverLog", 1);
+      |],
+      [|
+        "uc_40 = secret_39(D);";
+        "# DEBUG uc => uc_40";
+        "# .MEM_42 = VDEF <.MEM_41(D)>\neip_43 = getMcontextEip (uc_40);";
+        "<CAPTURES RETURN>";
+        "# DEBUG eip => eip_43";
+        "# .MEM_44 = VDEF <.MEM_42>\nbugReportStart ();";
+        "# .MEM_46 = VDEF <.MEM_44>\nserverLog (3, \"Redis %s crashed by signal: %d\", \"999.999.999\", sig_45(D));";
+      |]
+    )
+  in let block_3 = 
+    let step_3_8 = 
+      Action.assume(2, Expr.bneq(GccType.boolean, expr0x7f4198340480, expr0x7f41993c90f0))
+    in let step_3_9 = 
+      Action.call(call0x7f41982c5da8)
+    in Block.block(
+      3,
+      [|
+        step_3_8;
+        step_3_9;
+      |],
+      [|
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (eip_43 != 0B)";
+        "# .MEM_47 = VDEF <.MEM_46>\nserverLog (3, \"Crashed running the instruction at: %p\", eip_43);";
+      |]
+    )
+  in let block_4 = 
+    let step_4_10 = 
+      Action.assume(2, Expr.beq(GccType.boolean, expr0x7f4198340480, expr0x7f41993c90f0))
+    in let step_4_11 = 
+      Action.assign(expr0x7f41982ec438, Expr.beq(
+        type0x7f41993c4b28, expr0x7f4198340510, expr0x7f4198647240))
+    in let step_4_12 = 
+      Action.assign(expr0x7f41982ec480, Expr.beq(
+        type0x7f41993c4b28, expr0x7f4198340510, expr0x7f41995238b8))
+    in let step_4_13 = 
+      Action.assign(expr0x7f41982ec4c8, Expr.bit_or(
+        type0x7f41993c4b28, expr0x7f41982ec438, expr0x7f41982ec480))
+    in Block.block(
+      4,
+      [|
+        step_4_10;
+        step_4_11;
+        step_4_12;
+        step_4_13;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (eip_43 != 0B)";
+        "_1 = sig_45(D) == 11;";
+        "_2 = sig_45(D) == 7;";
+        "_3 = _1 | _2;";
+      |]
+    )
+  in let block_5 = 
+    let step_5_14 = 
+      Action.assume(4, Expr.bneq(GccType.boolean, expr0x7f41982ec4c8, expr0x7f41993c9030))
+    in let step_5_15 = 
+      Action.assign(expr0x7f41982ec510, expr0x7f41982d48d0)
+    in let step_5_16 = 
+      Action.call(call0x7f41982c5e40)
+    in Block.block(
+      5,
+      [|
+        step_5_14;
+        step_5_15;
+        step_5_16;
+      |],
+      [|
+        ("serverLog", 1);
+      |],
+      [|
+        "assume TRUE (_3 != 0)";
+        "# VUSE <.MEM_33>\n_4 = info_48(D)->_sifields._sigfault.si_addr;";
+        "# .MEM_49 = VDEF <.MEM_33>\nserverLog (3, \"Accessing address: %p\", _4);";
+      |]
+    )
+  in let block_6 = 
+    let step_6_17 = 
+      Action.assume(4, Expr.beq(GccType.boolean, expr0x7f41982ec4c8, expr0x7f41993c9030))
+    in let step_6_18 = 
+      Action.assign(expr0x7f41982ec558, expr0x7f41982d4960)
+    in let step_6_19 = 
+      Action.assign(expr0x7f41982ec5a0, expr0x7f41982d4990)
+    in let step_6_20 = 
+      Action.assign(expr0x7f41982ec5e8, expr0x7f41982d49c0)
+    in let step_6_21 = 
+      Action.call(call0x7f41982d7bd0)
+    in let step_6_22 = 
+      Action.call(call0x7f41982e25a0)
+    in let step_6_23 = 
+      Action.call(call0x7f41982e2630)
+    in let step_6_24 = 
+      Action.call(call0x7f41982e26c0)
+    in let step_6_25 = 
+      Action.call(call0x7f41982e2750)
+    in let step_6_26 = 
+      Action.assign(expr0x7f41983407e0, call0x7f41982e2750)
+    in let step_6_27 = 
+      Action.debug("# DEBUG infostring => infostring_55")
+    in let step_6_28 = 
+      Action.call(call0x7f41982e27e0)
+    in let step_6_29 = 
+      Action.call(call0x7f41982e2870)
+    in let step_6_30 = 
+      Action.call(call0x7f41982eb880)
+    in let step_6_31 = 
+      Action.assign(expr0x7f4198340900, call0x7f41982eb880)
+    in let step_6_32 = 
+      Action.debug("# DEBUG clients => clients_59")
+    in let step_6_33 = 
+      Action.call(call0x7f41982e2900)
+    in let step_6_34 = 
+      Action.call(call0x7f41982e2990)
+    in let step_6_35 = 
+      Action.call(call0x7f41982e2a20)
+    in let step_6_36 = 
+      Action.call(call0x7f41982eb900)
+    in let step_6_37 = 
+      Action.call(call0x7f41982e2ab0)
+    in let step_6_38 = 
+      Action.call(call0x7f41982e2b40)
+    in let step_6_39 = 
+      Action.call(call0x7f41982eb980)
+    in let step_6_40 = 
+      Action.call(call0x7f41982eba00)
+    in let step_6_41 = 
+      Action.assign(expr0x7f41982ec630, call0x7f41982eba00)
+    in Block.block(
+      6,
+      [|
+        step_6_17;
+        step_6_18;
+        step_6_19;
+        step_6_20;
+        step_6_21;
+        step_6_22;
+        step_6_23;
+        step_6_24;
+        step_6_25;
+        step_6_26;
+        step_6_27;
+        step_6_28;
+        step_6_29;
+        step_6_30;
+        step_6_31;
+        step_6_32;
+        step_6_33;
+        step_6_34;
+        step_6_35;
+        step_6_36;
+        step_6_37;
+        step_6_38;
+        step_6_39;
+        step_6_40;
+        step_6_41;
+      |],
+      [|
+        ("bioKillThreads", 1);
+        ("genRedisInfoString", 1);
+        ("getAllClientsInfoString", 1);
+        ("logCurrentClient", 1);
+        ("logRegisters", 1);
+        ("logStackTrace", 1);
+        ("memtest_test_linux_anonymous_maps", 1);
+        ("sdsfree", 2);
+        ("serverLog", 1);
+        ("serverLogRaw", 6);
+      |],
+      [|
+        "assume FALSE (_3 != 0)";
+        "# VUSE <.MEM_34>\n_5 = server.assert_line;";
+        "# VUSE <.MEM_34>\n_6 = server.assert_file;";
+        "# VUSE <.MEM_34>\n_7 = server.assert_failed;";
+        "# .MEM_50 = VDEF <.MEM_34>\nserverLog (3, \"Failed assertion: %s (%s:%d)\", _7, _6, _5);";
+        "# .MEM_51 = VDEF <.MEM_50>\nserverLogRaw (1027, \"\\n------ STACK TRACE ------\\n\");";
+        "# .MEM_52 = VDEF <.MEM_51>\nlogStackTrace (uc_40);";
+        "# .MEM_53 = VDEF <.MEM_52>\nserverLogRaw (1027, \"\\n------ INFO OUTPUT ------\\n\");";
+        "# .MEM_54 = VDEF <.MEM_53>\ninfostring_55 = genRedisInfoString (\"all\");";
+        "<CAPTURES RETURN>";
+        "# DEBUG infostring => infostring_55";
+        "# .MEM_56 = VDEF <.MEM_54>\nserverLogRaw (1027, infostring_55);";
+        "# .MEM_57 = VDEF <.MEM_56>\nserverLogRaw (1027, \"\\n------ CLIENT LIST OUTPUT ------\\n\");";
+        "# .MEM_58 = VDEF <.MEM_57>\nclients_59 = getAllClientsInfoString ();";
+        "<CAPTURES RETURN>";
+        "# DEBUG clients => clients_59";
+        "# .MEM_60 = VDEF <.MEM_58>\nserverLogRaw (1027, clients_59);";
+        "# .MEM_61 = VDEF <.MEM_60>\nsdsfree (infostring_55);";
+        "# .MEM_62 = VDEF <.MEM_61>\nsdsfree (clients_59);";
+        "# .MEM_63 = VDEF <.MEM_62>\nlogCurrentClient ();";
+        "# .MEM_64 = VDEF <.MEM_63>\nlogRegisters (uc_40);";
+        "# .MEM_65 = VDEF <.MEM_64>\nserverLogRaw (1027, \"\\n------ FAST MEMORY TEST ------\\n\");";
+        "# .MEM_66 = VDEF <.MEM_65>\nbioKillThreads ();";
+        "# .MEM_67 = VDEF <.MEM_66>\n_8 = memtest_test_linux_anonymous_maps ();";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_7 = 
+    let step_7_42 = 
+      Action.assume(6, Expr.bneq(GccType.boolean, expr0x7f41982ec630, expr0x7f41993c9078))
+    in let step_7_43 = 
+      Action.call(call0x7f41982e2bd0)
+    in Block.block(
+      7,
+      [|
+        step_7_42;
+        step_7_43;
+      |],
+      [|
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume TRUE (_8 != 0)";
+        "# .MEM_69 = VDEF <.MEM_67>\nserverLogRaw (1027, \"!!! MEMORY ERROR DETECTED! Check your memory ASAP !!!\\n\");";
+      |]
+    )
+  in let block_8 = 
+    let step_8_44 = 
+      Action.assume(6, Expr.beq(GccType.boolean, expr0x7f41982ec630, expr0x7f41993c9078))
+    in let step_8_45 = 
+      Action.call(call0x7f41982e2c60)
+    in Block.block(
+      8,
+      [|
+        step_8_44;
+        step_8_45;
+      |],
+      [|
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume FALSE (_8 != 0)";
+        "# .MEM_68 = VDEF <.MEM_67>\nserverLogRaw (1027, \"Fast memory test PASSED, however your memory can still be broken. Please run a memory test for several hours if possible.\\n\");";
+      |]
+    )
+  in let block_9 = 
+    Block.block(
+      9,
+      [|
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+      |]
+    )
+  in let block_10 = 
+    let step_10_46 = 
+      Action.assume(9, Expr.bneq(GccType.boolean, expr0x7f4198340480, expr0x7f41993c90f0))
+    in let step_10_47 = 
+      Action.call(call0x7f41982e2cf0)
+    in let step_10_48 = 
+      Action.assign(expr0x7f41982ec678, call0x7f41982e2cf0)
+    in Block.block(
+      10,
+      [|
+        step_10_46;
+        step_10_47;
+        step_10_48;
+      |],
+      [|
+        ("dladdr", 1);
+      |],
+      [|
+        "assume TRUE (eip_43 != 0B)";
+        "# .MEM_70 = VDEF <.MEM_35>\n_9 = dladdr (eip_43, &info);";
+        "<CAPTURES RETURN>";
+      |]
+    )
+  in let block_11 = 
+    let step_11_49 = 
+      Action.assume(10, Expr.bneq(GccType.boolean, expr0x7f41982ec678, expr0x7f41993c9078))
+    in let step_11_50 = 
+      Action.assign(expr0x7f41982ec6c0, expr0x7f41982d4a20)
+    in let step_11_51 = 
+      Action.assign(expr0x7f41982ec708, expr0x7f41982d4a50)
+    in let step_11_52 = 
+      Action.assign(expr0x7f41982ec750, expr0x7f41982d4a80)
+    in let step_11_53 = 
+      Action.assign(expr0x7f41982ec798, expr0x7f41982d4ab0)
+    in let step_11_54 = 
+      Action.assign(expr0x7f41982ec7e0, expr0x7f41982d4ae0)
+    in let step_11_55 = 
+      Action.call(call0x7f41982e6400)
+    in let step_11_56 = 
+      Action.assign(expr0x7f41982ec828, expr0x7f4198340480)
+    in let step_11_57 = 
+      Action.assign(expr0x7f41982ec870, expr0x7f41982d4b10)
+    in let step_11_58 = 
+      Action.assign(expr0x7f41982ec8b8, expr0x7f41982ec870)
+    in let step_11_59 = 
+      Action.assign(expr0x7f41982ec900, Expr.minus(
+        type0x7f41993c4738, expr0x7f41982ec828, expr0x7f41982ec8b8))
+    in let step_11_60 = 
+      Action.assign(expr0x7f4198340ca8, expr0x7f41982ec900)
+    in let step_11_61 = 
+      Action.debug("# DEBUG len => len_72")
+    in let step_11_62 = 
+      Action.call(call0x7f41982e2d80)
+    in let step_11_63 = 
+      Action.assign(expr0x7f41982ec948, call0x7f41982e2d80)
+    in let step_11_64 = 
+      Action.assign(expr0x7f4198340d38, expr0x7f41982ec948)
+    in let step_11_65 = 
+      Action.debug("# DEBUG sz => sz_74")
+    in Block.block(
+      11,
+      [|
+        step_11_49;
+        step_11_50;
+        step_11_51;
+        step_11_52;
+        step_11_53;
+        step_11_54;
+        step_11_55;
+        step_11_56;
+        step_11_57;
+        step_11_58;
+        step_11_59;
+        step_11_60;
+        step_11_61;
+        step_11_62;
+        step_11_63;
+        step_11_64;
+        step_11_65;
+      |],
+      [|
+        ("serverLog", 1);
+        ("sysconf", 1);
+      |],
+      [|
+        "assume TRUE (_9 != 0)";
+        "# VUSE <.MEM_70>\n_10 = info.dli_saddr;";
+        "# VUSE <.MEM_70>\n_11 = info.dli_fbase;";
+        "# VUSE <.MEM_70>\n_12 = info.dli_fname;";
+        "# VUSE <.MEM_70>\n_13 = info.dli_saddr;";
+        "# VUSE <.MEM_70>\n_14 = info.dli_sname;";
+        "# .MEM_71 = VDEF <.MEM_70>\nserverLog (1027, \"\\n------ DUMPING CODE AROUND EIP ------\\nSymbol: %s (base: %p)\\nModule: %s (base %p)\\n$ xxd -r -p /tmp/dump.hex /tmp/dump.bin\\n$ objdump --adjust-vma=%p -D -b binary -m i386:x86-64 /tmp/dump.bin\\n------\\n\", _14, _13, _12, _11, _10);";
+        "eip.43_15 = (long int) eip_43;";
+        "# VUSE <.MEM_71>\n_16 = info.dli_saddr;";
+        "_17 = (long int) _16;";
+        "_18 = eip.43_15 - _17;";
+        "len_72 = (size_t) _18;";
+        "# DEBUG len => len_72";
+        "# .MEM_73 = VDEF <.MEM_71>\n_19 = sysconf (30);";
+        "<CAPTURES RETURN>";
+        "sz_74 = (long unsigned int) _19;";
+        "# DEBUG sz => sz_74";
+      |]
+    )
+  in let block_12 = 
+    let step_12_66 = 
+      Action.assume(11, Expr.blte(GccType.boolean, expr0x7f4198340ca8, expr0x7f419823bbe8))
+    in let step_12_67 = 
+      Action.assign(expr0x7f41982ec990, expr0x7f4198340480)
+    in let step_12_68 = 
+      Action.assign(expr0x7f41982ec9d8, Expr.plus(
+        type0x7f41993c47e0, expr0x7f4198340d38, expr0x7f41982ec990))
+    in let step_12_69 = 
+      Action.assign(expr0x7f41982eca20, expr0x7f4198340d38)
+    in let step_12_70 = 
+      Action.assign(expr0x7f4198340d80, Expr.bit_and(
+        type0x7f41993c47e0, expr0x7f41982ec9d8, expr0x7f41982eca20))
+    in let step_12_71 = 
+      Action.debug("# DEBUG next => next_75")
+    in let step_12_72 = 
+      Action.assign(expr0x7f41982eca68, expr0x7f4198340480)
+    in let step_12_73 = 
+      Action.assign(expr0x7f4198340dc8, Expr.plus(
+        type0x7f41993c47e0, expr0x7f41982eca68, expr0x7f41987155d0))
+    in let step_12_74 = 
+      Action.debug("# DEBUG end => end_76")
+    in let step_12_75 = 
+      Action.assign(expr0x7f4198340168, expr0x7f4198340dc8)
+    in Block.block(
+      12,
+      [|
+        step_12_66;
+        step_12_67;
+        step_12_68;
+        step_12_69;
+        step_12_70;
+        step_12_71;
+        step_12_72;
+        step_12_73;
+        step_12_74;
+        step_12_75;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (len_72 <= 8191)";
+        "eip.44_20 = (long unsigned int) eip_43;";
+        "_21 = sz_74 + eip.44_20;";
+        "_22 = -sz_74;";
+        "next_75 = _21 & _22;";
+        "# DEBUG next => next_75";
+        "eip.45_23 = (long unsigned int) eip_43;";
+        "end_76 = eip.45_23 + 128;";
+        "# DEBUG end => end_76";
+        "end_32 = end_76";
+      |]
+    )
+  in let block_13 = 
+    let step_13_76 = 
+      Action.assume(12, Expr.bgt(GccType.boolean, expr0x7f4198340dc8, expr0x7f4198340d80))
+    in let step_13_77 = 
+      Action.assign(expr0x7f4198340e10, expr0x7f4198340d80)
+    in let step_13_78 = 
+      Action.debug("# DEBUG end => end_77")
+    in let step_13_79 = 
+      Action.assign(expr0x7f4198340168, expr0x7f4198340e10)
+    in Block.block(
+      13,
+      [|
+        step_13_76;
+        step_13_77;
+        step_13_78;
+        step_13_79;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (end_76 > next_75)";
+        "end_77 = next_75;";
+        "# DEBUG end => end_77";
+        "end_32 = end_77";
+      |]
+    )
+  in let block_14 = 
+    let step_14_80 = 
+      Action.assume(12, Expr.blte(GccType.boolean, expr0x7f4198340dc8, expr0x7f4198340d80))
+    in let step_14_81 = 
+      Action.debug("# DEBUG end => end_32")
+    in let step_14_82 = 
+      Action.assign(expr0x7f41982ecab0, expr0x7f41982d4b40)
+    in let step_14_83 = 
+      Action.assign(expr0x7f41982ecaf8, expr0x7f41982ecab0)
+    in let step_14_84 = 
+      Action.assign(expr0x7f4198340e58, Expr.minus(
+        type0x7f419950a348, expr0x7f4198340168, expr0x7f41982ecaf8))
+    in let step_14_85 = 
+      Action.debug("# DEBUG len => len_78")
+    in let step_14_86 = 
+      Action.assign(expr0x7f41982ecb40, expr0x7f41982d4b70)
+    in let step_14_87 = 
+      Action.call(call0x7f41982d7c78)
+    in let step_14_88 = 
+      Action.assign(expr0x7f41982ecb88, expr0x7f41982d4ba0)
+    in let step_14_89 = 
+      Action.call(call0x7f41982e2e10)
+    in Block.block(
+      14,
+      [|
+        step_14_80;
+        step_14_81;
+        step_14_82;
+        step_14_83;
+        step_14_84;
+        step_14_85;
+        step_14_86;
+        step_14_87;
+        step_14_88;
+        step_14_89;
+      |],
+      [|
+        ("dumpX86Calls", 1);
+        ("serverLogHexDump", 1);
+      |],
+      [|
+        "assume FALSE (end_76 > next_75)";
+        "# DEBUG end => end_32";
+        "# VUSE <.MEM_73>\n_24 = info.dli_saddr;";
+        "_25 = (long unsigned int) _24;";
+        "len_78 = end_32 - _25;";
+        "# DEBUG len => len_78";
+        "# VUSE <.MEM_73>\n_26 = info.dli_saddr;";
+        "# .MEM_79 = VDEF <.MEM_73>\nserverLogHexDump (3, \"dump of function\", _26, len_78);";
+        "# VUSE <.MEM_79>\n_27 = info.dli_saddr;";
+        "# .MEM_80 = VDEF <.MEM_79>\ndumpX86Calls (_27, len_78);";
+      |]
+    )
+  in let block_15 = 
+    let step_15_90 = 
+      Action.assume(10, Expr.beq(GccType.boolean, expr0x7f41982ec678, expr0x7f41993c9078))
+    in let step_15_91 = 
+      Action.assume(11, Expr.bgt(GccType.boolean, expr0x7f4198340ca8, expr0x7f419823bbe8))
+    in let step_15_92 = 
+      Action.assign(expr0x7f4198238ab0, expr0x7f41982ef090)
+    in Block.block(
+      15,
+      [|
+        step_15_90;
+        step_15_91;
+        step_15_92;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (_9 != 0)";
+        "assume FALSE (len_72 <= 8191)";
+        "# .MEM_81 = VDEF <.MEM_36>\ninfo ={v} {CLOBBER};";
+      |]
+    )
+  in let block_16 = 
+    let step_16_93 = 
+      Action.assume(9, Expr.beq(GccType.boolean, expr0x7f4198340480, expr0x7f41993c90f0))
+    in let step_16_94 = 
+      Action.call(call0x7f41982e2ea0)
+    in let step_16_95 = 
+      Action.assign(expr0x7f41982ecbd0, expr0x7f41982d4c00)
+    in Block.block(
+      16,
+      [|
+        step_16_93;
+        step_16_94;
+        step_16_95;
+      |],
+      [|
+        ("serverLogRaw", 1);
+      |],
+      [|
+        "assume FALSE (eip_43 != 0B)";
+        "# .MEM_82 = VDEF <.MEM_37>\nserverLogRaw (1027, \"\\n=== REDIS BUG REPORT END. Make sure to include from START to END. ===\\n\\n       Please report the crash by opening an issue on github:\\n\\n           http://github.com/antirez/redis/issues\\n\\n  Suspect RAM error? Use redis-server --test-memory to verify it.\\n\\n\");";
+        "# VUSE <.MEM_82>\n_28 = server.daemonize;";
+      |]
+    )
+  in let block_17 = 
+    let step_17_96 = 
+      Action.assume(16, Expr.bneq(GccType.boolean, expr0x7f41982ecbd0, expr0x7f41993c9078))
+    in let step_17_97 = 
+      Action.assign(expr0x7f41982ecc18, expr0x7f41982d4c30)
+    in Block.block(
+      17,
+      [|
+        step_17_96;
+        step_17_97;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (_28 != 0)";
+        "# VUSE <.MEM_82>\n_29 = server.supervised;";
+      |]
+    )
+  in let block_18 = 
+    let step_18_98 = 
+      Action.assume(17, Expr.beq(GccType.boolean, expr0x7f41982ecc18, expr0x7f41993c9078))
+    in let step_18_99 = 
+      Action.assign(expr0x7f41982ecc60, expr0x7f41982d4c60)
+    in let step_18_100 = 
+      Action.call(call0x7f41982e2f30)
+    in Block.block(
+      18,
+      [|
+        step_18_98;
+        step_18_99;
+        step_18_100;
+      |],
+      [|
+        ("unlink", 1);
+      |],
+      [|
+        "assume TRUE (_29 == 0)";
+        "# VUSE <.MEM_82>\n_30 = server.pidfile;";
+        "# .MEM_83 = VDEF <.MEM_82>\nunlink (_30);";
+      |]
+    )
+  in let block_19 = 
+    let step_19_101 = 
+      Action.assume(16, Expr.beq(GccType.boolean, expr0x7f41982ecbd0, expr0x7f41993c9078))
+    in let step_19_102 = 
+      Action.assume(17, Expr.bneq(GccType.boolean, expr0x7f41982ecc18, expr0x7f41993c9078))
+    in let step_19_103 = 
+      Action.call(call0x7f41982e23f0)
+    in let step_19_104 = 
+      Action.assign(expr0x7f419823da50, expr0x7f419823bee8)
+    in let step_19_105 = 
+      Action.assign(expr0x7f419823dab0, expr0x7f419823bf30)
+    in let step_19_106 = 
+      Action.call(call0x7f41982c5ed8)
+    in let step_19_107 = 
+      Action.call(call0x7f41982f2200)
+    in let step_19_108 = 
+      Action.assign(expr0x7f41982ecca8, call0x7f41982f2200)
+    in let step_19_109 = 
+      Action.call(call0x7f41982f3000)
+    in let step_19_110 = 
+      Action.assign(expr0x7f4198238990, expr0x7f41982ef0d8)
+    in let step_19_111 = 
+      Action.return(expr0)
+    in Block.block(
+      19,
+      [|
+        step_19_101;
+        step_19_102;
+        step_19_103;
+        step_19_104;
+        step_19_105;
+        step_19_106;
+        step_19_107;
+        step_19_108;
+        step_19_109;
+        step_19_110;
+        step_19_111;
+      |],
+      [|
+        ("getpid", 1);
+        ("kill", 1);
+        ("sigaction", 1);
+        ("sigemptyset", 1);
+      |],
+      [|
+        "assume FALSE (_28 != 0)";
+        "assume FALSE (_29 == 0)";
+        "# .MEM_84 = VDEF <.MEM_38>\nsigemptyset (&act.sa_mask);";
+        "# .MEM_85 = VDEF <.MEM_84>\nact.sa_flags = -939524096;";
+        "# .MEM_86 = VDEF <.MEM_85>\nact.__sigaction_handler.sa_handler = 0B;";
+        "# .MEM_87 = VDEF <.MEM_86>\nsigaction (sig_45(D), &act, 0B);";
+        "# .MEM_88 = VDEF <.MEM_87>\n_31 = getpid ();";
+        "<CAPTURES RETURN>";
+        "# .MEM_89 = VDEF <.MEM_88>\nkill (_31, sig_45(D));";
+        "# .MEM_90 = VDEF <.MEM_89>\nact ={v} {CLOBBER};";
+        "# VUSE <.MEM_90>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_112 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_112 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    20,
+    Z.of_string "120",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "119");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (3, "[3]", block_3, Z.of_string "0", Z.of_string "59");
+          Cfg.edge (4, "[4]", block_4, Z.of_string "60", Z.of_string "119");
+        |]
+      );
+      Cfg.vert ("[3]", block_3, [|
+          Cfg.edge (4, "[4]", block_4, Z.of_string "0", Z.of_string "59");
+        |]
+      );
+      Cfg.vert ("[4]", block_4, [|
+          Cfg.edge (5, "[5]", block_5, Z.of_string "0", Z.of_string "29");
+          Cfg.edge (6, "[6]", block_6, Z.of_string "30", Z.of_string "59");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (6, "[6]", block_6, Z.of_string "0", Z.of_string "29");
+        |]
+      );
+      Cfg.vert ("[6]", block_6, [|
+          Cfg.edge (7, "[7]", block_7, Z.of_string "0", Z.of_string "14");
+          Cfg.edge (8, "[8]", block_8, Z.of_string "15", Z.of_string "29");
+        |]
+      );
+      Cfg.vert ("[7]", block_7, [|
+          Cfg.edge (9, "[9]", block_9, Z.of_string "0", Z.of_string "14");
+        |]
+      );
+      Cfg.vert ("[8]", block_8, [|
+          Cfg.edge (9, "[9]", block_9, Z.of_string "0", Z.of_string "14");
+        |]
+      );
+      Cfg.vert ("[9]", block_9, [|
+          Cfg.edge (10, "[10]", block_10, Z.of_string "0", Z.of_string "11");
+          Cfg.edge (16, "[16]", block_16, Z.of_string "12", Z.of_string "14");
+        |]
+      );
+      Cfg.vert ("[10]", block_10, [|
+          Cfg.edge (11, "[11]", block_11, Z.of_string "0", Z.of_string "8");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "9", Z.of_string "11");
+        |]
+      );
+      Cfg.vert ("[11]", block_11, [|
+          Cfg.edge (12, "[12]", block_12, Z.of_string "0", Z.of_string "5");
+          Cfg.edge (15, "[15]", block_15, Z.of_string "6", Z.of_string "8");
+        |]
+      );
+      Cfg.vert ("[12]", block_12, [|
+          Cfg.edge (13, "[13]", block_13, Z.of_string "0", Z.of_string "2");
+          Cfg.edge (14, "[14]", block_14, Z.of_string "3", Z.of_string "5");
+        |]
+      );
+      Cfg.vert ("[13]", block_13, [|
+          Cfg.edge (14, "[14]", block_14, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[14]", block_14, [|
+          Cfg.edge (15, "[15]", block_15, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[15]", block_15, [|
+          Cfg.edge (16, "[16]", block_16, Z.of_string "0", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[16]", block_16, [|
+          Cfg.edge (17, "[17]", block_17, Z.of_string "0", Z.of_string "1");
+          Cfg.edge (19, "[19]", block_19, Z.of_string "2", Z.of_string "2");
+        |]
+      );
+      Cfg.vert ("[17]", block_17, [|
+          Cfg.edge (18, "[18]", block_18, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (19, "[19]", block_19, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[18]", block_18, [|
+          Cfg.edge (19, "[19]", block_19, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[19]", block_19, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "sigsegvHandler",
+    67,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: watchdogScheduleSignal
+  // fid: 70
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c4738 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f41994fbb28 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f419951c2a0 = 
+    GccType.record("timeval", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198248498 = 
+    GccType.record("itimerval", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41994fbdc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "-9223372036854775808", Z.of_string "9223372036854775807")
+  in let type0x7f4198248738 = 
+    GccType.unrepresentable("ENUMERAL_TYPE")
+  in let type0x7f4198248888 = 
+    GccType.pointer(type0x7f4198248498)
+  in let type0x7f4198248c78 = 
+    GccType.pointer(type0x7f4198248498)
+  in let expr0x7f41982f8240 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f419824b780 = 
+    Expr.parameter_decl(type0x7f41993c45e8, "period", type0x7f41993c45e8)
+  in let expr0x7f4198342240 = 
+    Expr.ssa("period_6(D)", 6, expr0x7f419824b780)
+  in let expr0x7f41985edf48 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1000")
+  in let expr0x7f41982f8288 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f4199517558 = 
+    Expr.field_decl(type0x7f41994fbb28, FieldDecl.make("tv_sec", "64", 64, "0", 128, 0, false))
+  in let expr0x7f4198246390 = 
+    Expr.field_decl(type0x7f419951c2a0, FieldDecl.make("it_value", "128", 64, "16", 128, 0, false))
+  in let expr0x7f4198251090 = 
+    Expr.variable_decl(type0x7f4198248498, VarDecl.make("it", 256, 64))
+  in let expr0x7f419824e150 = 
+    Expr.component_ref(type0x7f419951c2a0, expr0x7f4198251090, expr0x7f4198246390)
+  in let expr0x7f419824e180 = 
+    Expr.component_ref(type0x7f41994fbb28, expr0x7f419824e150, expr0x7f4199517558)
+  in let expr0x7f41982f82d0 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982f8318 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c45e8))
+  in let expr0x7f41982f8360 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c4738))
+  in let expr0x7f41995175f0 = 
+    Expr.field_decl(type0x7f41994fbdc8, FieldDecl.make("tv_usec", "64", 64, "0", 128, 64, false))
+  in let expr0x7f419824e1b0 = 
+    Expr.component_ref(type0x7f419951c2a0, expr0x7f4198251090, expr0x7f4198246390)
+  in let expr0x7f419824e1e0 = 
+    Expr.component_ref(type0x7f41994fbdc8, expr0x7f419824e1b0, expr0x7f41995175f0)
+  in let expr0x7f41982462f8 = 
+    Expr.field_decl(type0x7f419951c2a0, FieldDecl.make("it_interval", "128", 64, "0", 128, 0, false))
+  in let expr0x7f419824e210 = 
+    Expr.component_ref(type0x7f419951c2a0, expr0x7f4198251090, expr0x7f41982462f8)
+  in let expr0x7f419824e240 = 
+    Expr.component_ref(type0x7f41994fbb28, expr0x7f419824e210, expr0x7f4199517558)
+  in let expr0x7f4198243450 = 
+    Expr.s_int_cst(type0x7f41994fbb28, Z.of_string "0")
+  in let expr0x7f419824e270 = 
+    Expr.component_ref(type0x7f419951c2a0, expr0x7f4198251090, expr0x7f41982462f8)
+  in let expr0x7f419824e2a0 = 
+    Expr.component_ref(type0x7f41994fbdc8, expr0x7f419824e270, expr0x7f41995175f0)
+  in let expr0x7f4198243480 = 
+    Expr.s_int_cst(type0x7f41994fbdc8, Z.of_string "0")
+  in let expr0x7f419823bed0 = 
+    Expr.u_int_cst(type0x7f4198248738, Z.of_string "0")
+  in let expr0x7f4198252120 = 
+    Expr.address_of(type0x7f4198248888, expr0x7f4198251090)
+  in let expr0x7f41982434c8 = 
+    Expr.u_int_cst(type0x7f4198248c78, Z.of_string "0")
+  in let expr0x7f41982ef180 = 
+    Expr.constructor(type0x7f4198248498)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982fd000 = Expr.call(
+    type0x7f41993c45e8,
+    "setitimer", [|
+      (Expr.parameter("p1", 0, expr0x7f419823bed0));
+      (Expr.parameter("p2", 1, expr0x7f4198252120));
+      (Expr.parameter("p3", 2, expr0x7f41982434c8));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f41982f8240, Expr.truncated_div(
+        type0x7f41993c45e8, expr0x7f4198342240, expr0x7f41985edf48))
+    in let step_2_2 = 
+      Action.assign(expr0x7f41982f8288, expr0x7f41982f8240)
+    in let step_2_3 = 
+      Action.assign(expr0x7f419824e180, expr0x7f41982f8288)
+    in let step_2_4 = 
+      Action.assign(expr0x7f41982f82d0, Expr.truncated_mod(
+        type0x7f41993c45e8, expr0x7f4198342240, expr0x7f41985edf48))
+    in let step_2_5 = 
+      Action.assign(expr0x7f41982f8318, Expr.times(
+        type0x7f41993c45e8, expr0x7f41982f82d0, expr0x7f41985edf48))
+    in let step_2_6 = 
+      Action.assign(expr0x7f41982f8360, expr0x7f41982f8318)
+    in let step_2_7 = 
+      Action.assign(expr0x7f419824e1e0, expr0x7f41982f8360)
+    in let step_2_8 = 
+      Action.assign(expr0x7f419824e240, expr0x7f4198243450)
+    in let step_2_9 = 
+      Action.assign(expr0x7f419824e2a0, expr0x7f4198243480)
+    in let step_2_10 = 
+      Action.call(call0x7f41982fd000)
+    in let step_2_11 = 
+      Action.assign(expr0x7f4198251090, expr0x7f41982ef180)
+    in let step_2_12 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+        step_2_11;
+        step_2_12;
+      |],
+      [|
+        ("setitimer", 1);
+      |],
+      [|
+        "_1 = period_6(D) / 1000;";
+        "_2 = (long int) _1;";
+        "# .MEM_8 = VDEF <.MEM_7(D)>\nit.it_value.tv_sec = _2;";
+        "_3 = period_6(D) % 1000;";
+        "_4 = _3 * 1000;";
+        "_5 = (long int) _4;";
+        "# .MEM_9 = VDEF <.MEM_8>\nit.it_value.tv_usec = _5;";
+        "# .MEM_10 = VDEF <.MEM_9>\nit.it_interval.tv_sec = 0;";
+        "# .MEM_11 = VDEF <.MEM_10>\nit.it_interval.tv_usec = 0;";
+        "# .MEM_12 = VDEF <.MEM_11>\nsetitimer (0, &it, 0B);";
+        "# .MEM_13 = VDEF <.MEM_12>\nit ={v} {CLOBBER};";
+        "# VUSE <.MEM_13>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_13 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_13 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "watchdogScheduleSignal",
+    70,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: watchdogSignalHandler
+  // fid: 69
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41983ec540 = 
+    GccType.record("ucontext_t", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f41981c2150 = 
+    GccType.pointer(type0x7f41983ec540)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41995341f8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "31")
+  in let type0x7f41993c43f0 = 
+    GccType.integer(true, 8, 8, Z.of_string "-128", Z.of_string "127")
+  in let type0x7f41995342a0 = 
+    GccType.array(type0x7f41993c43f0, type0x7f41995341f8)
+  in let type0x7f419824d2a0 = 
+    GccType.pointer(type0x7f41995342a0)
+  in let type0x7f419955b3f0 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "9")
+  in let type0x7f419955b498 = 
+    GccType.array(type0x7f41993c43f0, type0x7f419955b3f0)
+  in let type0x7f419820a738 = 
+    GccType.pointer(type0x7f419955b498)
+  in let expr0x7f4198251000 = 
+    Expr.variable_decl(type0x7f41981c2150, VarDecl.make("uc", 64, 64))
+  in let expr0x7f4198333b88 = 
+    Expr.ssa("uc_2", 2, expr0x7f4198251000)
+  in let expr0x7f419824b700 = 
+    Expr.parameter_decl(type0x7f41993cc0a8, "secret", type0x7f41993cc0a8)
+  in let expr0x7f4198333b40 = 
+    Expr.ssa("secret_1(D)", 1, expr0x7f419824b700)
+  in let expr0x7f41993c90a8 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "3")
+  in let expr0x7f419822cdc8 = 
+    Expr.string_cst(type0x7f41995342a0, 32, "\"\\n--- WATCHDOG TIMER EXPIRED ---\"")
+  in let expr0x7f4198241f80 = 
+    Expr.address_of(type0x7f419824d2a0, expr0x7f419822cdc8)
+  in let expr0x7f4198252020 = 
+    Expr.string_cst(type0x7f419955b498, 10, "\"--------\\n\"")
+  in let expr0x7f4198252040 = 
+    Expr.address_of(type0x7f419820a738, expr0x7f4198252020)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982f3240 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogFromHandler", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198241f80));
+  |])
+  in let call0x7f41982f32d0 = Expr.call(
+    type0x7f41993c4f18,
+    "logStackTrace", [|
+      (Expr.parameter("uc", 0, expr0x7f4198333b88));
+  |])
+  in let call0x7f41982f3360 = Expr.call(
+    type0x7f41993c4f18,
+    "serverLogFromHandler", [|
+      (Expr.parameter("p1", 0, expr0x7f41993c90a8));
+      (Expr.parameter("p2", 1, expr0x7f4198252040));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f4198333b88, expr0x7f4198333b40)
+    in let step_2_2 = 
+      Action.debug("# DEBUG uc => uc_2")
+    in let step_2_3 = 
+      Action.call(call0x7f41982f3240)
+    in let step_2_4 = 
+      Action.call(call0x7f41982f32d0)
+    in let step_2_5 = 
+      Action.call(call0x7f41982f3360)
+    in let step_2_6 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+      |],
+      [|
+        ("logStackTrace", 1);
+        ("serverLogFromHandler", 2);
+      |],
+      [|
+        "uc_2 = secret_1(D);";
+        "# DEBUG uc => uc_2";
+        "# .MEM_4 = VDEF <.MEM_3(D)>\nserverLogFromHandler (3, \"\\n--- WATCHDOG TIMER EXPIRED ---\");";
+        "# .MEM_5 = VDEF <.MEM_4>\nlogStackTrace (uc_2);";
+        "# .MEM_6 = VDEF <.MEM_5>\nserverLogFromHandler (3, \"--------\\n\");";
+        "# VUSE <.MEM_6>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_7 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_7 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "watchdogSignalHandler",
+    69,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: xorDigest
+  // fid: 45
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f41993c45e8 = 
+    GccType.integer(true, 32, 32, Z.of_string "-2147483648", Z.of_string "2147483647")
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f4198478930 = 
+    GccType.record("SHA1_CTX", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f419847e0a8 = 
+    GccType.pointer(type0x7f4198478930)
+  in let type0x7f41993c4690 = 
+    GccType.integer(false, 32, 32, Z.of_string "0", Z.of_string "4294967295")
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f4199542dc8 = 
+    GccType.integer(true, 64, 64, Z.of_string "0", Z.of_string "19")
+  in let type0x7f419847e540 = 
+    GccType.array(type0x7f41993c4348, type0x7f4199542dc8)
+  in let type0x7f41981e2690 = 
+    GccType.pointer(type0x7f419847e540)
+  in let type0x7f41993c4000 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let expr0x7f4198520990 = 
+    Expr.variable_decl(type0x7f41993c45e8, VarDecl.make("j", 32, 32))
+  in let expr0x7f41982f8f30 = 
+    Expr.ssa("j_9", 9, expr0x7f4198520990)
+  in let expr0x7f419831a1f8 = 
+    Expr.ssa("j_18", 18, expr0x7f4198520990)
+  in let expr0x7f419831a360 = 
+    Expr.ssa("j_23", 23, expr0x7f4198520990)
+  in let expr0x7f41986473f0 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "19")
+  in let expr0x7f4198520900 = 
+    Expr.variable_decl(type0x7f4199574f18, VarDecl.make("s", 64, 64))
+  in let expr0x7f419831a048 = 
+    Expr.ssa("s_12", 12, expr0x7f4198520900)
+  in let expr0x7f41981e0580 = 
+    Expr.parameter_decl(type0x7f41993cc0a8, "ptr", type0x7f41993cc0a8)
+  in let expr0x7f419831a000 = 
+    Expr.ssa("ptr_11(D)", 11, expr0x7f41981e0580)
+  in let expr0x7f41985207e0 = 
+    Expr.variable_decl(type0x7f4198478930, VarDecl.make("ctx", 736, 32))
+  in let expr0x7f41981d8780 = 
+    Expr.address_of(type0x7f419847e0a8, expr0x7f41985207e0)
+  in let expr0x7f41981e4d38 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993c4690))
+  in let expr0x7f41981e0600 = 
+    Expr.parameter_decl(type0x7f419950a348, "len", type0x7f419950a348)
+  in let expr0x7f419831a120 = 
+    Expr.ssa("len_15(D)", 15, expr0x7f41981e0600)
+  in let expr0x7f41981d87c0 = 
+    Expr.address_of(type0x7f419847e0a8, expr0x7f41985207e0)
+  in let expr0x7f4198520870 = 
+    Expr.variable_decl(type0x7f419847e540, VarDecl.make("hash", 160, 8))
+  in let expr0x7f41981d8840 = 
+    Expr.address_of(type0x7f41981e2690, expr0x7f4198520870)
+  in let expr0x7f41981d8880 = 
+    Expr.address_of(type0x7f419847e0a8, expr0x7f41985207e0)
+  in let expr0x7f41993c9078 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "0")
+  in let expr0x7f4198214dc8 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f4198214e10 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f41981e0500 = 
+    Expr.parameter_decl(type0x7f4199574f18, "digest", type0x7f4199574f18)
+  in let expr0x7f419831a2d0 = 
+    Expr.ssa("digest_21(D)", 21, expr0x7f41981e0500)
+  in let expr0x7f4198214e58 = 
+    Expr.ssa("_4", 4, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f41981dbcc0 = 
+    Expr.u_int_cst(type0x7f4199574f18, Z.of_string "0")
+  in let expr0x7f419824fa28 = 
+    Expr.memory_ref(type0x7f41993c4348, expr0x7f4198214e10, expr0x7f41981dbcc0)
+  in let expr0x7f4198214ea0 = 
+    Expr.ssa("_5", 5, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f4198255038 = 
+    Expr.array_ref(type0x7f41993c4348, expr0x7f4198520870, expr0x7f41982f8f30)
+  in let expr0x7f4198214ee8 = 
+    Expr.ssa("_6", 6, Expr.nothing(type0x7f41993c4000))
+  in let expr0x7f4198214f30 = 
+    Expr.ssa("_7", 7, Expr.nothing(type0x7f4199574f18))
+  in let expr0x7f4198214f78 = 
+    Expr.ssa("_8", 8, Expr.nothing(type0x7f41993c4348))
+  in let expr0x7f419824fb18 = 
+    Expr.memory_ref(type0x7f41993c4348, expr0x7f4198214f30, expr0x7f41981dbcc0)
+  in let expr0x7f41993c9090 = 
+    Expr.s_int_cst(type0x7f41993c45e8, Z.of_string "1")
+  in let expr0x7f41982437f8 = 
+    Expr.constructor(type0x7f4198478930)
+  in let expr0x7f4198243810 = 
+    Expr.constructor(type0x7f419847e540)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982512d0 = Expr.call(
+    type0x7f41993c4f18,
+    "SHA1Init", [|
+      (Expr.parameter("p1", 0, expr0x7f41981d8780));
+  |])
+  in let call0x7f41982464c0 = Expr.call(
+    type0x7f41993c4f18,
+    "SHA1Update", [|
+      (Expr.parameter("p1", 0, expr0x7f41981d87c0));
+      (Expr.parameter("p2", 1, expr0x7f419831a048));
+      (Expr.parameter("p3", 2, expr0x7f41981e4d38));
+  |])
+  in let call0x7f4198251360 = Expr.call(
+    type0x7f41993c4f18,
+    "SHA1Final", [|
+      (Expr.parameter("p1", 0, expr0x7f41981d8840));
+      (Expr.parameter("p2", 1, expr0x7f41981d8880));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.assign(expr0x7f419831a048, expr0x7f419831a000)
+    in let step_2_2 = 
+      Action.debug("# DEBUG s => s_12")
+    in let step_2_3 = 
+      Action.call(call0x7f41982512d0)
+    in let step_2_4 = 
+      Action.assign(expr0x7f41981e4d38, expr0x7f419831a120)
+    in let step_2_5 = 
+      Action.call(call0x7f41982464c0)
+    in let step_2_6 = 
+      Action.call(call0x7f4198251360)
+    in let step_2_7 = 
+      Action.assign(expr0x7f419831a1f8, expr0x7f41993c9078)
+    in let step_2_8 = 
+      Action.debug("# DEBUG j => j_18")
+    in let step_2_9 = 
+      Action.assign(expr0x7f41982f8f30, expr0x7f419831a1f8)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+      |],
+      [|
+        ("SHA1Final", 1);
+        ("SHA1Init", 1);
+        ("SHA1Update", 1);
+      |],
+      [|
+        "s_12 = ptr_11(D);";
+        "# DEBUG s => s_12";
+        "# .MEM_14 = VDEF <.MEM_13(D)>\nSHA1Init (&ctx);";
+        "_1 = (unsigned int) len_15(D);";
+        "# .MEM_16 = VDEF <.MEM_14>\nSHA1Update (&ctx, s_12, _1);";
+        "# .MEM_17 = VDEF <.MEM_16>\nSHA1Final (&hash, &ctx);";
+        "j_18 = 0;";
+        "# DEBUG j => j_18";
+        "j_9 = j_18";
+      |]
+    )
+  in let block_3 = 
+    let step_3_10 = 
+      Action.assume(4, Expr.blte(GccType.boolean, expr0x7f41982f8f30, expr0x7f41986473f0))
+    in let step_3_11 = 
+      Action.assign(expr0x7f4198214dc8, expr0x7f41982f8f30)
+    in let step_3_12 = 
+      Action.assign(expr0x7f4198214e10, Expr.pointer_plus(
+        type0x7f4199574f18, expr0x7f419831a2d0, expr0x7f4198214dc8))
+    in let step_3_13 = 
+      Action.assign(expr0x7f4198214e58, expr0x7f419824fa28)
+    in let step_3_14 = 
+      Action.assign(expr0x7f4198214ea0, expr0x7f4198255038)
+    in let step_3_15 = 
+      Action.assign(expr0x7f4198214ee8, expr0x7f41982f8f30)
+    in let step_3_16 = 
+      Action.assign(expr0x7f4198214f30, Expr.pointer_plus(
+        type0x7f4199574f18, expr0x7f419831a2d0, expr0x7f4198214ee8))
+    in let step_3_17 = 
+      Action.assign(expr0x7f4198214f78, Expr.bit_xor(
+        type0x7f41993c4348, expr0x7f4198214e58, expr0x7f4198214ea0))
+    in let step_3_18 = 
+      Action.assign(expr0x7f419824fb18, expr0x7f4198214f78)
+    in let step_3_19 = 
+      Action.assign(expr0x7f419831a360, Expr.plus(
+        type0x7f41993c45e8, expr0x7f41982f8f30, expr0x7f41993c9090))
+    in let step_3_20 = 
+      Action.debug("# DEBUG j => j_23")
+    in let step_3_21 = 
+      Action.assign(expr0x7f41982f8f30, expr0x7f419831a360)
+    in Block.block(
+      3,
+      [|
+        step_3_10;
+        step_3_11;
+        step_3_12;
+        step_3_13;
+        step_3_14;
+        step_3_15;
+        step_3_16;
+        step_3_17;
+        step_3_18;
+        step_3_19;
+        step_3_20;
+        step_3_21;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume TRUE (j_9 <= 19)";
+        "_2 = (sizetype) j_9;";
+        "_3 = digest_21(D) + _2;";
+        "# VUSE <.MEM_10>\n_4 = *_3;";
+        "# VUSE <.MEM_10>\n_5 = hash[j_9];";
+        "_6 = (sizetype) j_9;";
+        "_7 = digest_21(D) + _6;";
+        "_8 = _4 ^ _5;";
+        "# .MEM_22 = VDEF <.MEM_10>\n*_7 = _8;";
+        "j_23 = j_9 + 1;";
+        "# DEBUG j => j_23";
+        "j_9 = j_23";
+      |]
+    )
+  in let block_4 = 
+    let step_4_22 = 
+      Action.debug("# DEBUG j => j_9")
+    in Block.block(
+      4,
+      [|
+        step_4_22;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "# DEBUG j => j_9";
+      |]
+    )
+  in let block_5 = 
+    let step_5_23 = 
+      Action.assume(4, Expr.bgt(GccType.boolean, expr0x7f41982f8f30, expr0x7f41986473f0))
+    in let step_5_24 = 
+      Action.assign(expr0x7f41985207e0, expr0x7f41982437f8)
+    in let step_5_25 = 
+      Action.assign(expr0x7f4198520870, expr0x7f4198243810)
+    in let step_5_26 = 
+      Action.return(expr0)
+    in Block.block(
+      5,
+      [|
+        step_5_23;
+        step_5_24;
+        step_5_25;
+        step_5_26;
+      |],
+      [|
+        (* no calls *)
+      |],
+      [|
+        "assume FALSE (j_9 <= 19)";
+        "# .MEM_19 = VDEF <.MEM_10>\nctx ={v} {CLOBBER};";
+        "# .MEM_20 = VDEF <.MEM_19>\nhash ={v} {CLOBBER};";
+        "# VUSE <.MEM_20>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_27 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_27 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    6,
+    Z.of_string "2",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (5, "[0 | 4]", block_4, Z.of_string "0", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[5]", block_5, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 3]", block_3, [|
+          Cfg.edge (6, "[1 | 4]", block_4, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[0 | 4]", block_4, [|
+          Cfg.edge (4, "[0 | 3]", block_3, Z.of_string "0", Z.of_string "0");
+          Cfg.edge (3, "[5]", block_5, Z.of_string "1", Z.of_string "1");
+        |]
+      );
+      Cfg.vert ("[1 | 4]", block_4, [|
+          Cfg.edge (3, "[5]", block_5, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "xorDigest",
+    45,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+
+
+let main = 
+(*-------------------------------------------------------- 
+  // working_directory: /target/redis/src
+  // source_file_name: debug.c
+  // base_name: debug.c
+  // name: xorObjectDigest
+  // fid: 46
+  ---------------------------------------------------------*)
+
+  let _typeSELF = GccType.pointer(GccType.self)
+  in let type0x7f4198497738 = 
+    GccType.record("robj", [|
+        (* var decls *)
+      |], [|
+        (* field decls *)
+      |], [|
+        (* type decls *)
+      |], [|
+        (* const decls *)
+      |])
+  in let type0x7f4198497540 = 
+    GccType.pointer(type0x7f4198497738)
+  in let type0x7f41993c4f18 = 
+    GccType.void
+  in let type0x7f41993cc0a8 = 
+    GccType.pointer(type0x7f41993c4f18)
+  in let type0x7f419950a348 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c47e0 = 
+    GccType.integer(false, 64, 64, Z.of_string "0", Z.of_string "18446744073709551615")
+  in let type0x7f41993c4348 = 
+    GccType.integer(false, 8, 8, Z.of_string "0", Z.of_string "255")
+  in let type0x7f4199574f18 = 
+    GccType.pointer(type0x7f41993c4348)
+  in let expr0x7f41981e0880 = 
+    Expr.parameter_decl(type0x7f4198497540, "o", type0x7f4198497540)
+  in let expr0x7f419831a3f0 = 
+    Expr.ssa("o_5(D)", 5, expr0x7f41981e0880)
+  in let expr0x7f419831a480 = 
+    Expr.ssa("o_7", 7, expr0x7f41981e0880)
+  in let expr0x7f4198257048 = 
+    Expr.ssa("_1", 1, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f4198494980 = 
+    Expr.field_decl(type0x7f41993cc0a8, FieldDecl.make("ptr", "64", 64, "0", 128, 64, false))
+  in let expr0x7f41981fef18 = 
+    Expr.u_int_cst(type0x7f4198497540, Z.of_string "0")
+  in let expr0x7f419824fe10 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419831a480, expr0x7f41981fef18)
+  in let expr0x7f419824e810 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419824fe10, expr0x7f4198494980)
+  in let expr0x7f4198257090 = 
+    Expr.ssa("_2", 2, Expr.nothing(type0x7f41993c47e0))
+  in let expr0x7f41982570d8 = 
+    Expr.ssa("_3", 3, Expr.nothing(type0x7f41993cc0a8))
+  in let expr0x7f419824feb0 = 
+    Expr.memory_ref(type0x7f4198497738, expr0x7f419831a480, expr0x7f41981fef18)
+  in let expr0x7f419824e840 = 
+    Expr.component_ref(type0x7f41993cc0a8, expr0x7f419824feb0, expr0x7f4198494980)
+  in let expr0x7f41981e0800 = 
+    Expr.parameter_decl(type0x7f4199574f18, "digest", type0x7f4199574f18)
+  in let expr0x7f419831a510 = 
+    Expr.ssa("digest_9(D)", 9, expr0x7f41981e0800)
+  in let expr0 = 
+    Expr.nothing(GccType.none)
+  in let call0x7f41982513f0 = Expr.call(
+    type0x7f4198497540,
+    "getDecodedObject", [|
+      (Expr.parameter("p1", 0, expr0x7f419831a3f0));
+  |])
+  in let call0x7f4198251480 = Expr.call(
+    type0x7f419950a348,
+    "sdslen", [|
+      (Expr.parameter("s", 0, expr0x7f4198257048));
+  |])
+  in let call0x7f4198246558 = Expr.call(
+    type0x7f41993c4f18,
+    "xorDigest", [|
+      (Expr.parameter("digest", 0, expr0x7f419831a510));
+      (Expr.parameter("ptr", 1, expr0x7f41982570d8));
+      (Expr.parameter("len", 2, expr0x7f4198257090));
+  |])
+  in let call0x7f4198251510 = Expr.call(
+    type0x7f41993c4f18,
+    "decrRefCount", [|
+      (Expr.parameter("p1", 0, expr0x7f419831a480));
+  |])
+  in let block_0 = 
+    let step_0_0 = Action.start 
+    in Block.block (
+      0,
+      [| step_0_0 |],
+      [||],
+      [| "<ENTRY>" |]
+    )
+  in let block_2 = 
+    let step_2_1 = 
+      Action.call(call0x7f41982513f0)
+    in let step_2_2 = 
+      Action.assign(expr0x7f419831a480, call0x7f41982513f0)
+    in let step_2_3 = 
+      Action.debug("# DEBUG o => o_7")
+    in let step_2_4 = 
+      Action.assign(expr0x7f4198257048, expr0x7f419824e810)
+    in let step_2_5 = 
+      Action.call(call0x7f4198251480)
+    in let step_2_6 = 
+      Action.assign(expr0x7f4198257090, call0x7f4198251480)
+    in let step_2_7 = 
+      Action.assign(expr0x7f41982570d8, expr0x7f419824e840)
+    in let step_2_8 = 
+      Action.call(call0x7f4198246558)
+    in let step_2_9 = 
+      Action.call(call0x7f4198251510)
+    in let step_2_10 = 
+      Action.return(expr0)
+    in Block.block(
+      2,
+      [|
+        step_2_1;
+        step_2_2;
+        step_2_3;
+        step_2_4;
+        step_2_5;
+        step_2_6;
+        step_2_7;
+        step_2_8;
+        step_2_9;
+        step_2_10;
+      |],
+      [|
+        ("decrRefCount", 1);
+        ("getDecodedObject", 1);
+        ("sdslen", 1);
+        ("xorDigest", 1);
+      |],
+      [|
+        "# .MEM_6 = VDEF <.MEM_4(D)>\no_7 = getDecodedObject (o_5(D));";
+        "<CAPTURES RETURN>";
+        "# DEBUG o => o_7";
+        "# VUSE <.MEM_6>\n_1 = o_7->ptr;";
+        "# .MEM_8 = VDEF <.MEM_6>\n_2 = sdslen (_1);";
+        "<CAPTURES RETURN>";
+        "# VUSE <.MEM_8>\n_3 = o_7->ptr;";
+        "# .MEM_10 = VDEF <.MEM_8>\nxorDigest (digest_9(D), _3, _2);";
+        "# .MEM_11 = VDEF <.MEM_10>\ndecrRefCount (o_7);";
+        "# VUSE <.MEM_11>\nreturn;";
+      |]
+    )
+  in let block_1 = 
+    let step_0_11 = Action.finish 
+    in Block.block (
+      1,
+      [| step_0_11 |],
+      [||],
+      [| "<EXIT>" |]
+    )
+  in let cfg = Cfg.cfg (
+    3,
+    Z.of_string "1",
+    [|
+      Cfg.vert ("[0]", block_0, [|
+          Cfg.edge (2, "[2]", block_2, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+      Cfg.vert ("[1]", block_1, [|
+        |]
+      );
+      Cfg.vert ("[2]", block_2, [|
+          Cfg.edge (1, "[1]", block_1, Z.of_string "0", Z.of_string "0");
+        |]
+      );
+    |]
+  )
+  in Proc.proc(
+   "xorObjectDigest",
+    46,
+   "/target/redis/src",
+   "debug.c",
+   "debug.c",
+    cfg
+  )
+in Driver.execute main;;
+

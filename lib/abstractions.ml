@@ -346,7 +346,7 @@ module Abstractions =
         acc @ (clean ( 
           checkparamto a @ 
           checkcalled a @ 
-          paramconstr a (Z.of_string "-2") pr @ 
+          (* paramconstr a (Z.of_string "-2") pr @ 
           paramconstr a (Z.of_string "-1") pr @ 
           paramconstr a (Z.of_string "0") pr @ 
           paramconstr a (Z.of_string "1") pr @
@@ -356,7 +356,7 @@ module Abstractions =
           paramconstr a (Z.of_string "8") pr @
           paramconstr a (Z.of_string "16") pr @
           paramconstr a (Z.of_string "32") pr @
-          paramconstr a (Z.of_string "64") pr @
+          paramconstr a (Z.of_string "64") pr @ *)
           matchconstant a (Z.of_string "-2") @ 
           matchconstant a (Z.of_string "-1") @ 
           matchconstant a (Z.of_string "0") @ 

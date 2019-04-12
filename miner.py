@@ -70,7 +70,7 @@ def get_tails(current, K):
   return '|'.join(resultset)
 
 
-def build_graph(tree, K=3):
+def build_graph(tree, K=1):
   vertices = {}
   edges = {}
   vidx = 1
@@ -81,6 +81,7 @@ def build_graph(tree, K=3):
     p, c, n = workingset.pop()
 
     k_tails = get_tails(c, K)
+    print(k_tails)
 
     if k_tails not in vertices:
       vertices[k_tails] = vidx
@@ -95,13 +96,51 @@ def build_graph(tree, K=3):
         vertices[k_tails], c[key], key
       ))
 
-  print('digraph G {')
-  for (a,b,c),d in edges.items():
-    print('  {} -> {} [ label = "{}" ];'.format(a,c,b))
-  print('}')
+  # DOT
+  print('%DOT digraph G {')
+  for (a,b,c),_ in edges.items():
+    print('%DOT {} -> {} [ label="{}"];'.format(a,c,b))
+  print('%DOT }')
+  print()
 
+  # FSA
+  # labels = set()
+  # end_states = set()
+  # for (a,b,c),_ in sorted(edges.items(), key=lambda x: x[0][0]):
+  #   print('%FSA {} {} {}'.format(a,c,b))
+  #   labels.add(b)
+  #   if b == '$END':
+  #     end_states.add(c)
+  # for s in end_states:
+  #   print('%FSA {}'.format(s))
+  # print()
+
+  # # Symbols
+  # print('%SYM <eps> 0')
+  # as_list = list(labels)
+  # for i in range(0, len(as_list)):
+  #   print('%SYM {} {}'.format(as_list[i], i+1))
+  # print()
+
+  # # One-Error FST
+  # for l1 in labels:
+  #   # Stay at these states and emit identity
+  #   print('%FST 0 0 {} {}'.format(l1, l1))
+  #   print('%FST 1 1 {} {}'.format(l1, l1))
+
+  #   # Could delete word l1
+  #   print('%FST 0 1 {} <eps>'.format(l1))
+  #   print('%FST 1 0 {} <eps>'.format(l1))
+  #   for l2 in labels:
+  #     if l1 == l2:
+  #       continue
+  #     # Could re-write word l1 -> l2 for any l2
+  #     print('%FST 0 1 {} {}'.format(l1, l2))
+  #     print('%FST 1 0 {} {}'.format(l1, l2))
+  # print('%FST 0')
+  # print('%FST 1')
 
 if __name__ == '__main__':
   tree = build_tree(data)
-  # print(json.dumps(tree, indent=2, sort_keys=True))
+  print(json.dumps(tree, indent=2, sort_keys=True))
   build_graph(tree)

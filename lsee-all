@@ -17,7 +17,7 @@ done
 echo "" >> "$MAKEFILE"
 for t in $(find $1 -type f -name "*.ml"); do
   echo -e "$t:" >> "$MAKEFILE"
-  echo -e "\t$DIR/lsee $t" >> "$MAKEFILE"
+  echo -e "\t$DIR/lsee $t $2" >> "$MAKEFILE"
   echo -e "\t@echo '[lsee][$CNT/$TOT] Ingesting $t...'" >> "$MAKEFILE" 
   echo "" >> "$MAKEFILE"
   CNT=$((CNT+1))

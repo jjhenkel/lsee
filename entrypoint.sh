@@ -24,7 +24,7 @@ jbuilder build ./driver/main.exe &> "$BUILD_FILE"
 
 # Generate traces
 echo "[lsee] Generating traces..."
-./_build/default/driver/main.exe > "$TRACE_FILE" 2> "$ERRS_FILE"
+./_build/default/driver/main.exe 2> "$ERRS_FILE" > "$TRACE_FILE"
 
 echo "[lsee] Generated $(wc -l $TRACE_FILE | awk '{print $1}') traces!"
 echo "[lsee] Stored in '$TRACE_FILE'"
